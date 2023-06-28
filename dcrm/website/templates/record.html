@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>record_list</h1>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      RECORD BOX
+    </div>
+    <ul class="list-group list-group-flush">
+
+<li>{{record_list.first_name}}</li>
+<li>{{record_list.last_name}}</li>
+<li>{{record_list.email}}</li>
+<li>{{record_list.phone}}</li>
+<li>{{record_list.address}}</li>
+<li>{{record_list.city}}</li>
+<li>{{record_list.state}}</li>
+<li>{{record_list.zip_code}}</li>
+<li>{{record_list.country}}</li>
+
+    </ul>
+  </div>
+  <button type="button" class="btn btn-primary btn-lg" style="background-color: red;"><a href="{% url 'delete_record' record_list.id %}" style="color: white; text-decoration: none;">Delete Record</a></button>
+
+{% endblock %}
+```

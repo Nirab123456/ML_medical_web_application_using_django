@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import record
 
 
 
@@ -30,3 +31,49 @@ class signupForm(UserCreationForm):
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
         self.fields['password2'].label = ''
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Enter the same password as before, for verification.</small></span>'	
+
+
+
+
+
+class updaterecordform(forms.ModelForm):
+    email = forms.EmailField(required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
+    first_name = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'first name'}))
+    last_name = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'last name'}))
+    phone = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'phone'}))
+    address = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'address'}))
+    city = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'city'}))
+    state = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'state'}))
+    zip_code = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'zip code'}))
+    country = forms.CharField(max_length=100, required=True,label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'country'}))
+    class Meta:
+        model = record
+        fields = ('first_name', 'last_name', 'email', 'phone', 'address', 'city', 'state', 'zip_code', 'country')
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'first name'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'last name'}),
+            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'email'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'phone'}),
+            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'address'}),
+            'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'city'}),
+            'state': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'state'}),
+            'zip_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'zip code'}),
+            'country': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'country'}),
+        }
+
+
+
+    # class Meta:
+    #     model = record
+    #     fields = ('first_name', 'last_name', 'email', 'phone', 'address', 'city', 'state', 'zip_code', 'country')
+    #     widgets = {
+    #         'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'first name'}),
+    #         'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'last name'}),
+    #         'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'email'}),
+    #         'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'phone'}),
+    #         'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'address'}),
+    #         'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'city'}),
+    #         'state': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'state'}),
+    #         'zip_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'zip code'}),
+    #         'country': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'country'}),
+    #     }
