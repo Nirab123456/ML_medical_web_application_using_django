@@ -1,15 +1,15 @@
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-otj032x257w$1l@dgfha6xx9$%kx997&ah7jm8*#!5fdhgbs81'
+SECRET_KEY = 'django-insecure-r27+$k8x0m@xp*zh*5p@xq(p$nz%+9$0%ld(f7!4l%%%rp@pf-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'nirab'#nirab is the name of the app
+    'nirab'
 ]
 
 MIDDLEWARE = [
@@ -39,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'social.urls'
+ROOT_URLCONF = 'Rifat.urls'
 
 TEMPLATES = [
     {
@@ -57,12 +57,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'social.wsgi.application'
+WSGI_APPLICATION = 'Rifat.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 
 DATABASES = {
     'default': {
@@ -70,10 +69,10 @@ DATABASES = {
         'NAME':'nirab',
         'USER':'root',
         'PASSWORD':'Nahida@123',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
-
-
 
 
 # Password validation
@@ -110,13 +109,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL ='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
-]
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
