@@ -3,18 +3,33 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import RegisterForm , addrecord
 from . models import Record
+import datetime
+import calendar
+from calendar import HTMLCalendar
+import time
+from datetime import datetime, timedelta
 # Create your views here.
 
 
 
 def home(request):
-    return render(request,'home.html')
-
+    current_year = datetime.now().year
+    current_month = datetime.now().strftime('%B')
+    return render(request, 'home.html', {'current_year': current_year, 'current_month': current_month})
 
 def real(request):
     return render(request,'real.html')
 
-
+def event(request,year=datetime.now().year,month=datetime.now().strftime('%B')):
+    month = month.capitalize()
+    month_number = list(calendar.month_name).index(month)
+    month_number = int(month_number)
+    cal = HTMLCalendar().formatmonth(year,month_number)
+    now = datetime.now()
+    return render(request,'event.html',{'month':month,
+                                        'year':year,
+                                        'cal':cal,
+                                        'now':now})
 
 
 

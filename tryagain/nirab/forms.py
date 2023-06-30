@@ -64,6 +64,48 @@ class addrecord(forms.ModelForm):
 
 
 
+class eventrecord(forms.ModelForm):
+    event_name = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Event Name'}))
+    event_date = forms.DateField(required=True,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Event Date'}))
+    event_time = forms.TimeField(required=True,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Event Time'}))
+    # event_location = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Event Location'}))
+    # event_location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    event_description = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Event Description'}))
+    event_image = forms.ImageField(required=True,label="",widget=forms.FileInput(attrs={'class':'form-control','placeholder':'Event Image'}))
+
+    class Meta:
+        model = Record
+        fields = ['event_name','event_date','event_time','event_location','event_description','event_image']
+        widgets = {
+            'event_name': forms.TextInput(attrs={'class':'form-control','placeholder':'Event Name'}),
+            'event_date': forms.TextInput(attrs={'class':'form-control','placeholder':'Event Date'}),
+            'event_time': forms.TextInput(attrs={'class':'form-control','placeholder':'Event Time'}),
+            'event_location': forms.TextInput(attrs={'class':'form-control','placeholder':'Event Location'}),
+            'event_description': forms.TextInput(attrs={'class':'form-control','placeholder':'Event Description'}),
+            'event_image': forms.FileInput(attrs={'class':'form-control','placeholder':'Event Image'}),
+        }
+
+class event_location(forms.ModelForm):
+    name=forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Name'}))
+    address=forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Address'}))
+    zipcode=forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'}))
+    phone=forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Phone'}))
+    email=forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email'}))
+    website=forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Website'}))
+    class Meta:
+        model=Event_location
+        fields=['name','address','zipcode','phone','email','website']
+        widgets={
+            'name':forms.TextInput(attrs={'class':'form-control','placeholder':'Name'}),
+            'address':forms.TextInput(attrs={'class':'form-control','placeholder':'Address'}),
+            'zipcode':forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'}),
+            'phone':forms.TextInput(attrs={'class':'form-control','placeholder':'Phone'}),
+            'email':forms.TextInput(attrs={'class':'form-control','placeholder':'Email'}),
+            'website':forms.TextInput(attrs={'class':'form-control','placeholder':'Website'}),
+        }
+
+
+
 
 
 # #2nd way to create form
