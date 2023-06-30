@@ -1,6 +1,31 @@
-{% include 'base.html'%}
+{% include 'base.html' %}
 {% block content %}
-<div class ='col-md-6 offset-md-3'>
-{{cal|safe}}
+<div class="col-md-6 offset-md-3">
+    {{ cal|safe }}
+    </br>
+    </br>
+
+    {% if events %}
+    {% for event in events %}
+    <h2>{{ event.title }}</h2>
+    <p>Date: {{ event.date }}</p>
+    <p>Time: {{ event.time }}</p>
+    <p>Venue: {{ event.venue }}</p>
+    <p>Description: {{ event.description }}</p>
+    {% endfor %}
+    {% else %}
+    <p>No event found for the selected month.</p>
+    {% endif %}
+
+    {% if events %}
+    <h2>All Events</h2>
+    <ul>
+        {% for event in events %}
+        <li>{{ event.title }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No events found.</p>
+    {% endif %}
 </div>
 {% endblock %}

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord
-from . models import Record
+from .forms import RegisterForm , addrecord 
+from . models import Record , Event , EventVenue , EventAttendee
 import datetime
 import calendar
 from calendar import HTMLCalendar
@@ -20,17 +20,21 @@ def home(request):
 def real(request):
     return render(request,'real.html')
 
-def event(request,year=datetime.now().year,month=datetime.now().strftime('%B')):
+def event(request, year=datetime.now().year, month=datetime.now().strftime('%B')):
     month = month.capitalize()
     month_number = list(calendar.month_name).index(month)
     month_number = int(month_number)
-    cal = HTMLCalendar().formatmonth(year,month_number)
+    cal = HTMLCalendar().formatmonth(year, month_number)
     now = datetime.now()
-    return render(request,'event.html',{'month':month,
-                                        'year':year,
-                                        'cal':cal,
-                                        'now':now})
+    
+    # Fetch all events for the given year and month
+    events = Event.objects.filter(date__year=year, date__month=month_number)
 
+    return render(request, 'event.html', {'month': month, 'year': year, 'cal': cal, 'now': now, 'events': events})
+
+def all_events(request):
+    events = Event.objects.all()
+    return render(request, 'event.html', {'events': events})
 
 
 
