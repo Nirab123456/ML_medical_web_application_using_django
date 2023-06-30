@@ -1,0 +1,45 @@
+{%include 'base.html'%}
+{% block content %}
+ <h2>RECORDS</h2>
+
+ <table class="table table-dark table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First NAME</th>
+        <th scope="col">Last NAME</th>
+        <th scope="col">ENAIL</th>
+        <th scope="col">PHONE</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">CITY</th>
+        <th scope="col">STATE</th>
+        <th scope="col">ZIP CODE</th>
+        <th scope="col">COUNTRY</th>
+        <th scope="col">CREATED AT</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+        {% if records %} 
+        {% for record in records %}
+        <tr>
+            <th scope="row"><a href="{% url 'record' record.id %}">{{record.id}}</a></th>
+            <td>{{record.first_name}}</td>
+            <td>{{record.last_name}}</td>
+            <td>{{record.email}}</td>
+            <td>{{record.phone}}</td>
+            <td>{{record.address}}</td>
+            <td>{{record.city}}</td>
+            <td>{{record.state}}</td>
+            <td>{{record.zip_code}}</td>
+            <td>{{record.country}}</td>
+            <td>{{record.created_at}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+    </table>
+
+ {% endblock %}
+
+
