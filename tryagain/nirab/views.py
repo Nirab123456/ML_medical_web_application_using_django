@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm
+from .forms import RegisterForm , addrecord
 from . models import Record
 # Create your views here.
 
@@ -71,3 +71,40 @@ def view_records(request):
 def view_record(request,pk):
     record = Record.objects.get(id=pk)
     return render(request,'record.html',{'record':record})
+
+
+
+def delete_record(request,pk):
+    record = Record.objects.get(id=pk)
+    record.delete()
+    messages.success(request,'Record Deleted Successfully')
+    return redirect('real')
+
+
+
+
+def add_record(request):
+    if request.method == 'POST':
+        form = addrecord(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Record Added Successfully')
+            return redirect('records')
+    else:
+        form = addrecord()
+    return render(request,'add_record.html',{'form':form})
+
+
+
+
+def update_record(request,pk):
+    record = Record.objects.get(id=pk)
+    if request.method == 'POST':
+        form = addrecord(request.POST,instance=record)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Record Updated Successfully')
+            return redirect('records')
+    else:
+        form = addrecord(instance=record)
+    return render(request,'update_record.html',{'form':form})

@@ -1,10 +1,11 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import Record
 
 
 
-
+#1st way to create form
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
     first_name = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}))
@@ -36,3 +37,47 @@ class RegisterForm(UserCreationForm):
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Enter the same password as before, for verification.</small></span>'	
 
 
+
+class addrecord(forms.ModelForm):
+    first_name = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}))
+    last_name = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Last Name'}))
+    email = forms.EmailField(required=True,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email'}))
+    phone = forms.CharField(required=True,max_length=15,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Phone'}))
+    address = forms.CharField(required=True,max_length=200,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Address'}))
+    country = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Country'}))
+    city = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'City'}))
+    zipcode = forms.CharField(required=True,max_length=10,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'}))
+
+    class Meta:
+        model = Record
+        fields = ['first_name','last_name','email','phone','address','country','city','zipcode']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}),
+            'last_name': forms.TextInput(attrs={'class':'form-control','placeholder':'Last Name'}),
+            'email': forms.TextInput(attrs={'class':'form-control','placeholder':'Email'}),
+            'phone': forms.TextInput(attrs={'class':'form-control','placeholder':'Phone'}),
+            'address': forms.TextInput(attrs={'class':'form-control','placeholder':'Address'}),
+            'country': forms.TextInput(attrs={'class':'form-control','placeholder':'Country'}),
+            'city': forms.TextInput(attrs={'class':'form-control','placeholder':'City'}),
+            'zipcode': forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'}),
+        }
+
+
+
+
+
+# #2nd way to create form
+# class addrecord(forms.ModelForm):
+#     class Meta:
+#         model = Record
+#         fields = ['first_name','last_name','email','phone','address','country','city','zipcode']
+#         widgets = {
+#             'first_name': forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}),
+#             'last_name': forms.TextInput(attrs={'class':'form-control','placeholder':'Last Name'}),
+#             'email': forms.TextInput(attrs={'class':'form-control','placeholder':'Email'}),
+#             'phone': forms.TextInput(attrs={'class':'form-control','placeholder':'Phone'}),
+#             'address': forms.TextInput(attrs={'class':'form-control','placeholder':'Address'}),
+#             'country': forms.TextInput(attrs={'class':'form-control','placeholder':'Country'}),
+#             'city': forms.TextInput(attrs={'class':'form-control','placeholder':'City'}),
+#             'zipcode': forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'}),
+#         }
