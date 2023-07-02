@@ -30,12 +30,11 @@ def event(request, year=datetime.now().year, month=datetime.now().strftime('%B')
     # Fetch all events for the given year and month
     events = Event.objects.filter(date__year=year, date__month=month_number)
 
-    return render(request, 'event.html', {'month': month, 'year': year, 'cal': cal, 'now': now, 'events': events})
+    return render(request, 'event.html', {'month': month, 'year': year, 'cal': cal, 'now': now, 'month_events': events})
 
 def all_events(request):
-    events = Event.objects.all()
-    return render(request, 'event.html', {'events': events})
-
+    all_events = Event.objects.all()
+    return render(request, 'event.html', {'all_events_list': all_events})
 
 
 def login_user(request):

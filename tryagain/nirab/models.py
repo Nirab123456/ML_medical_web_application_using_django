@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -23,6 +24,7 @@ class Record (models.Model):
 
 class Event(models.Model):
     title = models.CharField(max_length=100)
+    mannager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     date = models.DateField()
     time = models.TimeField()
     # venue = models.CharField(max_length=100)
@@ -39,7 +41,8 @@ class EventVenue(models.Model):
     address = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=10)
     phone = models.CharField(max_length=15)
-    website = models.URLField(max_length=200)
+    website = models.URLField(max_length=200,blank=True)
+    venue_manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

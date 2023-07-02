@@ -1,31 +1,33 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <div class="col-md-6 offset-md-3">
     {{ cal|safe }}
     </br>
     </br>
 
-    {% if events %}
-    {% for event in events %}
-    <h2>{{ event.title }}</h2>
-    <p>Date: {{ event.date }}</p>
-    <p>Time: {{ event.time }}</p>
-    <p>Venue: {{ event.venue }}</p>
-    <p>Description: {{ event.description }}</p>
-    {% endfor %}
-    {% else %}
-    <p>No event found for the selected month.</p>
-    {% endif %}
-
-    {% if events %}
-    <h2>All Events</h2>
-    <ul>
-        {% for event in events %}
-        <li>{{ event.title }}</li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No events found.</p>
-    {% endif %}
+    <div class="row">
+        {% if month_events %}
+          {% for event in month_events %}
+            <div class="col-md-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">{{ event.title }}</h5>
+                  <p class="card-text">{{ event.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>EVENT DATE:</strong> {{ event.date }}</li>
+                  <li class="list-group-item"><strong>EVENT TIME:</strong> {{ event.time }}</li>       
+                  <li class="list-group-item"><strong>EVENT VENUE:</strong> {{ event.venue }}</li>
+                </ul>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col">
+            <p>No events found for the selected month.</p>
+          </div>
+        {% endif %}
+      </div>
+      
 </div>
 {% endblock %}
