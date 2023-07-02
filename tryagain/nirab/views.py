@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm ,UserRecordForm
+from .forms import RegisterForm , addrecord , VenueForm , EventForm 
 from . models import Record , Event , EventVenue , EventAttendee
 import datetime
 import calendar
@@ -79,52 +79,52 @@ def register_user(request):
 
 
 
-def view_records(request):
-    records = Record.objects.all()
-    return render(request,'records.html',{'records':records})
+# def view_records(request):
+#     records = Record.objects.all()
+#     return render(request,'records.html',{'records':records})
 
 
 
-def view_record(request,pk):
-    record = Record.objects.get(id=pk)
-    return render(request,'record.html',{'record':record})
+# def view_record(request,pk):
+#     record = Record.objects.get(id=pk)
+#     return render(request,'record.html',{'record':record})
+
+def view_record(request):
+    record = Record.objects.filter(user=request.user).first()
+    print(record)
+
+    return render(request, 'record.html', {'record': record})
 
 
-
-def delete_record(request,pk):
-    record = Record.objects.get(id=pk)
+def delete_record(request):
+    record = Record.objects.filter(user=request.user)
     record.delete()
     messages.success(request,'Record Deleted Successfully')
     return redirect('real')
 
 
 
-
 def add_record(request):
-    if request.method == 'POST':
-        form = addrecord(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request,'Record Added Successfully')
-            return redirect('records')
+
+    existing_record = Record.objects.filter(user=request.user).exists()
+
+    if existing_record:
+        return redirect('records')  # Redirect to the record list page or show an error message
     else:
-        form = addrecord()
-    return render(request,'add_record.html',{'form':form})
+        if request.method == 'POST':
+            form = addrecord(request.POST)
+            if form.is_valid():
+                record = form.save(commit=False)
+                record.user = request.user  # Set the current logged-in user as the user
+                record.save()
+                messages.success(request, 'Record Added Successfully')
+                return redirect('records')  # Redirect to the record list page
+        else:
+            form = addrecord()
+        
+        return render(request, 'add_record.html', {'form': form})
 
 
-def add_user_record(request):
-    
-    if request.method == 'POST':
-        form = UserRecordForm(request.POST)
-        if form.is_valid():
-            record = form.save(commit=False)
-            record.user = request.user
-            record.save()
-            return redirect('success')  # Replace 'success' with the desired URL after record creation
-    else:
-        form = UserRecordForm()
-    
-    return render(request, 'add_user_record.html', {'form': form})
 
 def add_event(request):
     if request.method == 'POST':
@@ -173,8 +173,11 @@ def join_event(request, event_id):
     return redirect('real')
 
 
-def update_record(request,pk):
-    record = Record.objects.get(id=pk)
+
+
+
+def update_record(request):
+    record = record = Record.objects.filter(user=request.user)
     if request.method == 'POST':
         form = addrecord(request.POST,instance=record)
         if form.is_valid():
