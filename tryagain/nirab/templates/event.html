@@ -21,6 +21,9 @@
                 <div class="card-body">
                   <a href="{% url 'join_event' event.id %}" class="btn btn-primary">Join Event</a>  <!-- Add the Join Event button with a link to the join_event view, passing the event ID -->
                 </div>
+                <div class="card-body">
+                  <a href="{% url 'leave_event' event.id %}" class="btn btn-danger">LEAVE Event</a>  <!-- Add the Join Event button with a link to the join_event view, passing the event ID -->
+                </div>
               </div>
             </div>
           {% endfor %}

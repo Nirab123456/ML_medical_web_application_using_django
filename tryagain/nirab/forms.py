@@ -2,7 +2,7 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage
 from django.forms import ModelForm
 
 
@@ -92,7 +92,13 @@ class EventForm(ModelForm):
             }
 
 
-
+class OCRImageForm(ModelForm):
+    class Meta:
+        model = RecordImage
+        fields = ['image']
+        widgets = {
+            'image': forms.FileInput(attrs={'class':'form-control','placeholder':'Image'}),
+        }
 
 
 

@@ -1,11 +1,12 @@
 from django.contrib import admin
-from .models import Record, Event, EventVenue, EventAttendee
+from .models import Record, Event, EventVenue, EventAttendee , RecordImage
 
 # Register your models here.
 
 admin.site.register(Record)
 admin.site.register(EventVenue)
 admin.site.register(EventAttendee)
+admin.site.register(RecordImage)
 
 
 @admin.register(Event)

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm 
-from . models import Record , Event , EventVenue , EventAttendee
+from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm
+from . models import Record , Event , EventVenue , EventAttendee , RecordImage
 import datetime
 import calendar
 from calendar import HTMLCalendar
@@ -116,6 +116,45 @@ def add_record(request):
         
         return render(request, 'add_record.html', {'form': form})
 
+def add_image(request):
+    existing_record = RecordImage.objects.filter(user=request.user).exists()
+    if not existing_record:
+        if request.method == 'POST':
+            form = OCRImageForm(request.POST, request.FILES)
+            if form.is_valid():
+                record_image = form.save(commit=False)
+                record_image.user = request.user
+                record_image.save()
+                messages.success(request, 'Image Added Successfully')
+                return redirect('real')
+        else:
+            form = OCRImageForm()
+        return render(request, 'add_image.html', {'form': form})
+    else:
+        messages.error(request, 'please update your image')
+        return redirect('user_profile')
+    
+def update_image(request):
+    existing_record = RecordImage.objects.filter(user=request.user).exists()
+    delete_record = RecordImage.objects.filter(user=request.user).first()
+    if existing_record:
+        if request.method == 'POST':
+            form = OCRImageForm(request.POST, request.FILES)
+            if form.is_valid():
+                record_image = form.save(commit=False)
+                record_image.user = request.user
+                record_image.save()
+                messages.success(request, 'Image Updated Successfully')
+                return redirect('real')
+        else:
+            form = OCRImageForm()
+        return render(request, 'add_image.html', {'form': form})
+    else:
+        messages.error(request, 'please add your image')
+        return redirect('user_profile')
+    
+
+
 
 
 def add_event(request):
@@ -164,6 +203,14 @@ def join_event(request, event_id):
         messages.warning(request, 'You are already registered for this event')
     return redirect('real')
 
+
+def leave_event(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    record = Record.objects.filter(user=request.user).first()
+    attendee = EventAttendee.objects.filter(record=record).first()
+    attendee.event.remove(event)
+    messages.success(request, 'You have left the event')
+    return redirect('real')
 
 
 

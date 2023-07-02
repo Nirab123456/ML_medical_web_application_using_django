@@ -19,6 +19,22 @@ class Record(models.Model):
         return f'{self.first_name} {self.last_name}'
 
 
+class RecordImage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='images', null=True)
+    image = models.ImageField(upload_to='images/')
+    def __str__(self):
+        return f'{self.user}'
+
+
+
+
+
+
+
+
+
+
+
 
 class Event(models.Model):
     title = models.CharField(max_length=100)

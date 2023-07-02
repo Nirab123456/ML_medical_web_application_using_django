@@ -15,5 +15,9 @@ urlpatterns = [
     path('add_record',views.add_record,name='add_record'),
     path('add_event',views.add_event,name='add_event'),
     path('join_event/<int:event_id>', views.join_event, name='join_event'),
+    path('leave_event/<int:event_id>', views.leave_event, name='leave_event'),
+    path('add_image',views.add_image,name='add_image'),
+    path('update_image',views.update_image,name='update_image'),
+    # path('add_image/<int:event_id>',views.add_image,name='add_image'),
 
 ]
