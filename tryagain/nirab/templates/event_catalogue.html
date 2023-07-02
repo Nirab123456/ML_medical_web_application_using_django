@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="col-md-6 offset-md-3">
+    <h3>Create a new Venue</h3>
+
+    <form method="post" action="{% url 'add_event' %}">
+        {% csrf_token %}
+        {{ venue_form.as_p }}
+
+        <div class="col-md-6 offset-md-3">
+            <button type="submit" class="btn btn-primary">ADD Venue</button>
+        </div>
+    </form>
+
+    <h3>Event Details</h3>
+
+    <form method="post" action="{% url 'add_event' %}">
+        {% csrf_token %}
+        {{ event_form.as_p }}
+
+        <div class="col-md-6 offset-md-3">
+            <button type="submit" class="btn btn-primary">ADD EVENT</button>
+        </div>
+    </form>
+</div>
+
+{% else %}
+<div class="col-md-6 offset-md-3">
+    <h3>PLEASE REGISTER FIRST TO CREATE AN EVENT</h3>
+</div>
+{% endif %}
+
+{% endblock %}
