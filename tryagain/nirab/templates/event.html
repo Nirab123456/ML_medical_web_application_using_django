@@ -2,8 +2,7 @@
 {% block content %}
 <div class="col-md-6 offset-md-3">
     {{ cal|safe }}
-    </br>
-    </br>
+    <br><br>
 
     <div class="row">
         {% if month_events %}
@@ -19,6 +18,9 @@
                   <li class="list-group-item"><strong>EVENT TIME:</strong> {{ event.time }}</li>       
                   <li class="list-group-item"><strong>EVENT VENUE:</strong> {{ event.venue }}</li>
                 </ul>
+                <div class="card-body">
+                  <a href="{% url 'join_event' event.id %}" class="btn btn-primary">Join Event</a>  <!-- Add the Join Event button with a link to the join_event view, passing the event ID -->
+                </div>
               </div>
             </div>
           {% endfor %}
@@ -27,7 +29,6 @@
             <p>No events found for the selected month.</p>
           </div>
         {% endif %}
-      </div>
-      
+    </div>  
 </div>
 {% endblock %}

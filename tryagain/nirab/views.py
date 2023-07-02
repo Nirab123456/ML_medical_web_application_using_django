@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord 
+from .forms import RegisterForm , addrecord , VenueForm , EventForm
 from . models import Record , Event , EventVenue , EventAttendee
 import datetime
 import calendar
 from calendar import HTMLCalendar
 import time
 from datetime import datetime, timedelta
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 
@@ -112,8 +113,49 @@ def add_record(request):
         form = addrecord()
     return render(request,'add_record.html',{'form':form})
 
+def add_event(request):
+    if request.method == 'POST':
+        venue_form = VenueForm(request.POST, prefix='venue')
+        event_form = EventForm(request.POST, prefix='event')
+
+        if event_form.is_valid() and venue_form.is_valid():
+            venue = venue_form.save()
+            event = event_form.save(commit=False)
+            event.venue = venue
+            event.save()
+            messages.success(request, 'Event and Venue Successfully Added')
+            return redirect('real')
+
+        elif event_form.is_valid():
+            event = event_form.save(commit=False)
+            event.save()
+            messages.success(request, 'Event Added Successfully')
+            return redirect('real')
+
+        elif venue_form.is_valid():
+            venue = venue_form.save()
+            messages.success(request, 'Venue Added Successfully')
+            return redirect('real')
+
+        else:
+            messages.error(request, 'Invalid Data. Please try again.')
+    else:
+        venue_form = VenueForm(prefix='venue')
+        event_form = EventForm(prefix='event', initial={'date': datetime.now().date(), 'time': datetime.now().time()})
+
+    return render(request, 'event_catalogue.html', {'venue_form': venue_form, 'event_form': event_form})
 
 
+
+
+def join_event(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    attendee, created = Record.objects.get_or_create(event=event, user=request.user)
+    if created:
+        messages.success(request, 'You have joined the event')
+    else:
+        messages.warning(request, 'You are already registered for this event')
+    return redirect('real')
 
 def update_record(request,pk):
     record = Record.objects.get(id=pk)

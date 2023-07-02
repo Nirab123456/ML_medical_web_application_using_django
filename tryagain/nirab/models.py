@@ -42,7 +42,6 @@ class EventVenue(models.Model):
     zipcode = models.CharField(max_length=10)
     phone = models.CharField(max_length=15)
     website = models.URLField(max_length=200,blank=True)
-    venue_manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -52,9 +51,6 @@ class EventVenue(models.Model):
 class EventAttendee(models.Model):
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
     event = models.ManyToManyField(Event , blank=True)
-    name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
-    phone = models.CharField(max_length=15)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
