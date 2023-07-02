@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-# Create your models here.
-
+from django.core.exceptions import PermissionDenied
 
 
 class Record (models.Model):
@@ -20,6 +18,17 @@ class Record (models.Model):
     def __str__(self):
         return (f'{self.first_name} {self.last_name}')
     
+
+
+class UserRecord(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='record')
+    record = models.OneToOneField(Record, on_delete=models.CASCADE, related_name='user_record')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return (f'{self.user.username} record')
+
+
 
 
 class Event(models.Model):
@@ -54,4 +63,4 @@ class EventAttendee(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.record.first_name

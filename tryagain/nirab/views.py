@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm
+from .forms import RegisterForm , addrecord , VenueForm , EventForm ,UserRecordForm
 from . models import Record , Event , EventVenue , EventAttendee
 import datetime
 import calendar
@@ -9,8 +9,6 @@ from calendar import HTMLCalendar
 import time
 from datetime import datetime, timedelta
 from django.shortcuts import get_object_or_404
-# Create your views here.
-
 
 
 def home(request):
@@ -113,6 +111,21 @@ def add_record(request):
         form = addrecord()
     return render(request,'add_record.html',{'form':form})
 
+
+def add_user_record(request):
+    
+    if request.method == 'POST':
+        form = UserRecordForm(request.POST)
+        if form.is_valid():
+            record = form.save(commit=False)
+            record.user = request.user
+            record.save()
+            return redirect('success')  # Replace 'success' with the desired URL after record creation
+    else:
+        form = UserRecordForm()
+    
+    return render(request, 'add_user_record.html', {'form': form})
+
 def add_event(request):
     if request.method == 'POST':
         venue_form = VenueForm(request.POST, prefix='venue')
@@ -150,12 +163,15 @@ def add_event(request):
 
 def join_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
-    attendee, created = Record.objects.get_or_create(event=event, user=request.user)
+    record, created = Record.objects.get_or_create(user=request.user)
+    attendee, attendee_created = EventAttendee.objects.get_or_create(record=record)
+    attendee.event.add(event)
     if created:
         messages.success(request, 'You have joined the event')
     else:
         messages.warning(request, 'You are already registered for this event')
     return redirect('real')
+
 
 def update_record(request,pk):
     record = Record.objects.get(id=pk)

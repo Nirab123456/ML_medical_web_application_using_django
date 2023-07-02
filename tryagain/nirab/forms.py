@@ -1,7 +1,8 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, PasswordChangeForm, 
+                                       PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee
+from .models import Record, Event, EventVenue, EventAttendee, UserRecord
 from django.forms import ModelForm
 
 
@@ -63,6 +64,15 @@ class addrecord(forms.ModelForm):
             'zipcode': forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'}),
         }
 
+
+class UserRecordForm(forms.ModelForm):
+    class Meta:
+        model = UserRecord
+        fields = ['user', 'record']
+        widgets = {
+            'user': forms.Select(attrs={'class':'form-control','placeholder':'User'}),
+            'record': forms.Select(attrs={'class':'form-control','placeholder':'Record'}),
+        }
 
 
 class VenueForm(ModelForm):
