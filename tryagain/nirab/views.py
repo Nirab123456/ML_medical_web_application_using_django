@@ -78,16 +78,8 @@ def register_user(request):
 	return render(request, 'register.html', {'form': form})
 
 
-
-# def view_records(request):
-#     records = Record.objects.all()
-#     return render(request,'records.html',{'records':records})
-
-
-
-# def view_record(request,pk):
-#     record = Record.objects.get(id=pk)
-#     return render(request,'record.html',{'record':record})
+def user_profile(request):
+    return render(request, 'user_profile.html')
 
 def view_record(request):
     record = Record.objects.filter(user=request.user).first()
@@ -97,7 +89,7 @@ def view_record(request):
 
 
 def delete_record(request):
-    record = Record.objects.filter(user=request.user)
+    record = Record.objects.filter(user=request.user).first()
     record.delete()
     messages.success(request,'Record Deleted Successfully')
     return redirect('real')
@@ -109,7 +101,7 @@ def add_record(request):
     existing_record = Record.objects.filter(user=request.user).exists()
 
     if existing_record:
-        return redirect('records')  # Redirect to the record list page or show an error message
+        return redirect('real')  # Redirect to the record list page or show an error message
     else:
         if request.method == 'POST':
             form = addrecord(request.POST)
@@ -118,7 +110,7 @@ def add_record(request):
                 record.user = request.user  # Set the current logged-in user as the user
                 record.save()
                 messages.success(request, 'Record Added Successfully')
-                return redirect('records')  # Redirect to the record list page
+                return redirect('real')  # Redirect to the record list page
         else:
             form = addrecord()
         
@@ -177,13 +169,13 @@ def join_event(request, event_id):
 
 
 def update_record(request):
-    record = record = Record.objects.filter(user=request.user)
+    record = record = Record.objects.filter(user=request.user).first()
     if request.method == 'POST':
         form = addrecord(request.POST,instance=record)
         if form.is_valid():
             form.save()
             messages.success(request,'Record Updated Successfully')
-            return redirect('records')
+            return redirect('real')
     else:
         form = addrecord(instance=record)
     return render(request,'update_record.html',{'form':form})

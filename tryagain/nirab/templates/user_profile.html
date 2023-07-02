@@ -1,0 +1,18 @@
+{% include 'base.html' %}
+{% block content %}
+
+
+
+<div  class = 'col-md-6 offset-md-3'>
+<h1>Profile</h1>
+
+<button type="button" class="btn btn-sm btn-danger">
+    <a href="{% url 'record' %}" style="color: inherit; text-decoration: none;">MY RECORD</a>
+</button>
+
+<button type="button" class="btn btn-sm btn-warning">
+    <a href="{% url 'add_record' %}" style="color: inherit; text-decoration: none;">ADD NEW RECORD</a>
+</button>
+</div>  
+
+{% endblock %}
