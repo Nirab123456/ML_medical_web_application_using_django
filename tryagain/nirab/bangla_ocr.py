@@ -28,7 +28,8 @@ class BanglaOCR:
                     existing_record.save()
                     messages.success(request, 'Image Updated Successfully')
                     image_url = existing_record.image.url
-                    file_path = self.get_ocr(image_url)
+                    text,file_path = self.get_ocr(image_url)
+                    messages.success(request, f'text: {text}')
                     if file_path:
                         print(file_path)
                     return render(request, 'bangla_ocr.html', {'form': form, 'image_url': existing_record.image.url})
@@ -38,7 +39,8 @@ class BanglaOCR:
                     record_image.save()
                     messages.success(request, 'Image Added Successfully')
                     image_url = record_image.image.url
-                    file_path = self.get_ocr(image_url)
+                    text,file_path = self.get_ocr(image_url)
+                    messages.success(request, f'text: {text}')
                     if file_path:
                         print(file_path)
                     return render(request, 'bangla_ocr.html', {'form': form, 'image_url': record_image.image.url})
@@ -64,7 +66,7 @@ class BanglaOCR:
                 with open(file_path, 'w', encoding='utf-8') as file:
                     file.write(text)
 
-                return file_path
+                return text,file_path
         return None
 
 
