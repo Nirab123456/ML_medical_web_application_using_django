@@ -40,7 +40,7 @@ def save_mail_form(request):
 def home(request):
     current_year = datetime.now().year
     current_month = datetime.now().strftime('%B')
-    return render(request, 'home.html', {'current_year': current_year, 'current_month': current_month})
+    return render(request, 'real.html', {'current_year': current_year, 'current_month': current_month})
 
 def real(request):
     return render(request,'real.html')
