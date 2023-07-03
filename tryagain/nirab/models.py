@@ -24,18 +24,9 @@ class RecordImage(models.Model):
     image = models.ImageField(upload_to='images/')
     def __str__(self):
         return f'{self.user}'
+    
 
-
-
-
-
-
-
-
-
-
-
-
+    
 class Event(models.Model):
     title = models.CharField(max_length=100)
     mannager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)

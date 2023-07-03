@@ -20,6 +20,11 @@ def index(request):
 
 
 
+def mail_me(request):
+    return render(request, 'mail_me.html')
+
+
+
 def home(request):
     current_year = datetime.now().year
     current_month = datetime.now().strftime('%B')
