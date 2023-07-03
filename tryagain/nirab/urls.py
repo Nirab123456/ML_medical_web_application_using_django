@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path ('mail_me',views.mail_me,name='mail_me'),
     path('<int:year>/<str:month>',views.event,name='event'),
     path('login/',views.login_user,name='login_user'),
     path('user_profile',views.user_profile,name='user_profile'),
@@ -21,5 +20,6 @@ urlpatterns = [
     path('bangla_ocr',views.bangla_ocr,name='bangla_ocr'),
     path('get_ocr',views.get_ocr,name='get_ocr'),
     path('download_text/<path:text_path>/', views.download_text, name='download_text'),
-    path('index',views.index,name='index'),
+    path('index/', views.index, name='index'),
+    path('save_mail_form/', views.save_mail_form, name='save_mail_form'),
 ]

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm
-from . models import Record , Event , EventVenue , EventAttendee , RecordImage
+from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form
+from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me
 import datetime
 import calendar
 from calendar import HTMLCalendar
@@ -20,9 +20,21 @@ def index(request):
 
 
 
-def mail_me(request):
-    return render(request, 'mail_me.html')
+def save_mail_form(request):
+    if request.method == 'POST':
+        form = Mail_me_Form(request.POST)
 
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your Record Has Been Saved Successfully!")
+            return redirect('index')  # Change 'real' to 'index'
+        else:
+            print(form.errors)
+            messages.error(request, "There was an error in your form submission.")
+    else:
+        form = Mail_me_Form()
+    
+    return render(request, 'index.html', {'form': form})
 
 
 def home(request):

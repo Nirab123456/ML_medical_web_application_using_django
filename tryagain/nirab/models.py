@@ -26,6 +26,16 @@ class RecordImage(models.Model):
         return f'{self.user}'
     
 
+class Record_mail_me(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    message = models.TextField(max_length=1000)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.name}'
+    
+
     
 class Event(models.Model):
     title = models.CharField(max_length=100)

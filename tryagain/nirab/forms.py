@@ -2,12 +2,25 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee,RecordImage
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me
 from django.forms import ModelForm
 
 
+class Mail_me_Form(forms.ModelForm):
+    name = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Subject'}))
+    email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
+    message = forms.CharField(max_length=100,label="",widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Message'}))
+    class Meta:
+        model = Record_mail_me
+        fields = ['name','email','message']
+        widgets = {
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'subject': forms.TextInput(attrs={'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'class': 'form-control'}),
+        }
 
-#1st way to create form
+
+
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
     first_name = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}))
