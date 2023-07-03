@@ -19,5 +19,16 @@
             </button>
         </div>
     </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            {% if text %}
+            <p>{{ text }}</p>
+            {% else %}
+            <p>No text available</p>
+            {% endif %}
+        </div>
+      </div>
+
 </div>
 {% endblock %}

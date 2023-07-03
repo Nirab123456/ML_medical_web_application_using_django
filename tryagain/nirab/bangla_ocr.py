@@ -32,7 +32,7 @@ class BanglaOCR:
                     messages.success(request, f'text: {text}')
                     if file_path:
                         print(file_path)
-                    return render(request, 'bangla_ocr.html', {'form': form, 'image_url': existing_record.image.url})
+                    return render(request, 'bangla_ocr.html', {'form': form, 'image_url': existing_record.image.url, 'text': text})
                 else:
                     record_image = form.save(commit=False)
                     record_image.user = request.user
@@ -43,7 +43,7 @@ class BanglaOCR:
                     messages.success(request, f'text: {text}')
                     if file_path:
                         print(file_path)
-                    return render(request, 'bangla_ocr.html', {'form': form, 'image_url': record_image.image.url})
+                    return render(request, 'bangla_ocr.html', {'form': form, 'image_url': record_image.image.url, 'text': text})
         else:
             form = OCRImageForm()
         return render(request, 'add_image.html', {'form': form})
