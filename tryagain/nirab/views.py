@@ -9,7 +9,13 @@ from calendar import HTMLCalendar
 import time
 from datetime import datetime, timedelta
 from django.shortcuts import get_object_or_404
+from PIL import Image
+from .bangla_ocr import BanglaOCR
+import os
+from django.http import FileResponse,HttpResponse
 
+
+BANGLA_OCR = BanglaOCR()
 
 def home(request):
     current_year = datetime.now().year
@@ -116,46 +122,69 @@ def add_record(request):
         
         return render(request, 'add_record.html', {'form': form})
 
+def bangla_ocr(request):
+    return render(request, 'bangla_ocr.html')
+
+
+
 def add_image(request):
-    existing_record = RecordImage.objects.filter(user=request.user).exists()
-    if not existing_record:
-        if request.method == 'POST':
-            form = OCRImageForm(request.POST, request.FILES)
-            if form.is_valid():
-                record_image = form.save(commit=False)
-                record_image.user = request.user
-                record_image.save()
-                messages.success(request, 'Image Added Successfully')
-                return redirect('real')
-        else:
-            form = OCRImageForm()
-        return render(request, 'add_image.html', {'form': form})
-    else:
-        messages.error(request, 'please update your image')
-        return redirect('user_profile')
+    return BANGLA_OCR.add_image(request)
+
+
+def download_text(request, text_path):
+    with open(text_path, 'r', encoding='utf-8') as file:
+        text = file.read()
+
+    response = HttpResponse(text, content_type='text/plain')
+    response['Content-Disposition'] = f'attachment; filename={os.path.basename(text_path)}'
+    return response
+
+
+
+
+
+
+
+
+# def add_image(request):
+#     if request.method == 'POST':
+#         form = OCRImageForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             existing_record = RecordImage.objects.filter(user=request.user).first()
+#             if existing_record:
+#                 existing_record.image.delete()  # Delete the old image
+#                 existing_record.image = form.cleaned_data['image']  # Update the image
+#                 existing_record.save()
+#                 messages.success(request, 'Image Updated Successfully')
+#                 # Load the image
+#                 image = Image.open(existing_record.image.path)
+#                 return render(request, 'bangla_ocr.html', {'form': form, 'image_url': existing_record.image.url})
+#             else:
+#                 record_image = form.save(commit=False)
+#                 record_image.user = request.user
+#                 record_image.save()
+#                 image = Image.open(record_image.image.path)
+#                 messages.success(request, 'Image Added Successfully')
+#                 return render(request, 'bangla_ocr.html', {'form': form, 'image_url': record_image.image.url})
+               
+#     else:
+#         form = OCRImageForm()
     
-def update_image(request):
-    existing_record = RecordImage.objects.filter(user=request.user).exists()
-    delete_record = RecordImage.objects.filter(user=request.user).first()
-    if existing_record:
-        if request.method == 'POST':
-            form = OCRImageForm(request.POST, request.FILES)
-            if form.is_valid():
-                record_image = form.save(commit=False)
-                record_image.user = request.user
-                record_image.save()
-                messages.success(request, 'Image Updated Successfully')
-                return redirect('real')
-        else:
-            form = OCRImageForm()
-        return render(request, 'add_image.html', {'form': form})
-    else:
-        messages.error(request, 'please add your image')
-        return redirect('user_profile')
-    
+#     return render(request, 'add_image.html', {'form': form})
 
 
+def get_ocr(request):
+    if request.method == 'POST':
+        form = OCRImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            existing_record = RecordImage.objects.filter(user=request.user).first()
+            if existing_record:
+                messages.success(request, 'Image found to extract text from')
+                return render(request, 'bangla_ocr_result.html', {'form': form, 'image_url': existing_record.image.url})
 
+    form = OCRImageForm()
+    messages.success(request, 'No Image Found')
+    return render(request, 'bangla_ocr.html', {'form': form})
 
 def add_event(request):
     if request.method == 'POST':
