@@ -19,5 +19,5 @@ urlpatterns = [
     path('add_image',views.add_image,name='add_image'),
     path('bangla_ocr',views.bangla_ocr,name='bangla_ocr'),
     path('get_ocr',views.get_ocr,name='get_ocr'),
-
+    path('download_text/<path:text_path>/', views.download_text, name='download_text'),
 ]

@@ -28,7 +28,21 @@
             <p>No text available</p>
             {% endif %}
         </div>
-      </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            {% if file_path %}
+            <p>{{ file_path }}</p>
 
+            <button type="button" class="btn btn-sm btn-warning">
+                <a href="{% url 'download_text' file_path %}" style="color: inherit; text-decoration: none;">Download Text File</a>
+            </button>
+            
+            {% else %}
+            <p>No text available</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}
