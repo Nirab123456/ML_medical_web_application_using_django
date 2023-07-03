@@ -17,7 +17,7 @@ urlpatterns = [
     path('join_event/<int:event_id>', views.join_event, name='join_event'),
     path('leave_event/<int:event_id>', views.leave_event, name='leave_event'),
     path('add_image',views.add_image,name='add_image'),
-    path('update_image',views.update_image,name='update_image'),
-    # path('add_image/<int:event_id>',views.add_image,name='add_image'),
+    path('bangla_ocr',views.bangla_ocr,name='bangla_ocr'),
+    path('get_ocr',views.get_ocr,name='get_ocr'),
 
 ]
