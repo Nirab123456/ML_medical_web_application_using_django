@@ -1,11 +1,29 @@
 {% include 'base.html' %}
 
 {% block content %}
-  <div class="col-md-6 offset-md-3">
-    <h1>Home</h1>
-
-    <button type="button" class="btn btn-sm btn btn-info">
-      <a href="{% url 'event' current_year current_month %}" style="color: inherit; text-decoration: none;">CURRENT EVENT</a>
-    </button>
-  </div>  
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h2>Hello, EVERYONE!</h2>
+            <p>AUTHOR: RIFATUL ISLAM MAJUMDER</p>
+            <p>MAIL: rifatulislam212@gmail.com</p>
+            <p>GIT: <a href="https://github.com/Nirab123456" target="_blank">https://github.com/Nirab123456</a></p>
+            <p>FACEBOOK: <a href="https://www.facebook.com/nirab.islam.77?mibextid=LQQJ4d" target="_blank">https://www.facebook.com/nirab.islam.77?mibextid=LQQJ4d</a></p>
+          </div>
+        </div>
+      </div>
+      {% if user.is_authenticated %}
+      <p>Welcome, {{ user.username }}!</p>
+      <button type="button" class="btn btn-sm btn-info">
+        <a href="{% url 'event' current_year current_month %}" style="color: inherit; text-decoration: none;">CURRENT EVENT</a>
+      </button>
+      {% else %}
+      <p>You are not logged in</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% endblock %}

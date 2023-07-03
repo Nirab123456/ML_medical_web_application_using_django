@@ -15,7 +15,10 @@ import os
 from django.http import FileResponse,HttpResponse
 
 
-BANGLA_OCR = BanglaOCR()
+def index(request):
+    return render(request, 'index.html')
+
+
 
 def home(request):
     current_year = datetime.now().year
@@ -126,7 +129,7 @@ def bangla_ocr(request):
     return render(request, 'bangla_ocr.html')
 
 
-
+BANGLA_OCR = BanglaOCR()
 def add_image(request):
     return BANGLA_OCR.add_image(request)
 
@@ -138,39 +141,6 @@ def download_text(request, text_path):
     response = HttpResponse(text, content_type='text/plain')
     response['Content-Disposition'] = f'attachment; filename={os.path.basename(text_path)}'
     return response
-
-
-
-
-
-
-
-
-# def add_image(request):
-#     if request.method == 'POST':
-#         form = OCRImageForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             existing_record = RecordImage.objects.filter(user=request.user).first()
-#             if existing_record:
-#                 existing_record.image.delete()  # Delete the old image
-#                 existing_record.image = form.cleaned_data['image']  # Update the image
-#                 existing_record.save()
-#                 messages.success(request, 'Image Updated Successfully')
-#                 # Load the image
-#                 image = Image.open(existing_record.image.path)
-#                 return render(request, 'bangla_ocr.html', {'form': form, 'image_url': existing_record.image.url})
-#             else:
-#                 record_image = form.save(commit=False)
-#                 record_image.user = request.user
-#                 record_image.save()
-#                 image = Image.open(record_image.image.path)
-#                 messages.success(request, 'Image Added Successfully')
-#                 return render(request, 'bangla_ocr.html', {'form': form, 'image_url': record_image.image.url})
-               
-#     else:
-#         form = OCRImageForm()
-    
-#     return render(request, 'add_image.html', {'form': form})
 
 
 def get_ocr(request):

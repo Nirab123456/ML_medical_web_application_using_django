@@ -2,12 +2,20 @@ from pathlib import Path
 import os
 
 MEDIA_URL = '/media/'
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Specify the directory where static files will be collected.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Specify the URL prefix for static files.
+STATIC_URL = '/static/'
+
+# Add the following lines at the end of the file.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets'),
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -114,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
