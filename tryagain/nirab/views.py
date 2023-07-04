@@ -102,7 +102,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'You have successfully logged in')
-            return redirect('real')
+            return redirect('profile')
         else:
             messages.success(request, 'Error logging in, please try again')
             return redirect('login_user')
@@ -187,18 +187,6 @@ def download_text(request, text_path):
     return response
 
 
-def get_ocr(request):
-    if request.method == 'POST':
-        form = OCRImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            existing_record = RecordImage.objects.filter(user=request.user).first()
-            if existing_record:
-                messages.success(request, 'Image found to extract text from')
-                return render(request, 'bangla_ocr_result.html', {'form': form, 'image_url': existing_record.image.url})
-
-    form = OCRImageForm()
-    messages.success(request, 'No Image Found')
-    return render(request, 'bangla_ocr.html', {'form': form})
 
 def add_event(request):
     if request.method == 'POST':
