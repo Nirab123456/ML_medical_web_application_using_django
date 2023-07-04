@@ -30,9 +30,12 @@ def profile_picture(request):
     return render(request, 'profile_picture.html', {'form': form, 'record': record})
 
 
+
 def dashboard(request):
     return render(request, 'dashboard.html')
     
+
+
 
 def profile(request):
     record = Record.objects.filter(user=request.user).first()
@@ -77,6 +80,8 @@ def real(request):
     current_month = datetime.now().strftime('%B')
     return render(request, 'real.html', {'current_year': current_year, 'current_month': current_month})
 
+
+
 def event(request, year=datetime.now().year, month=datetime.now().strftime('%B')):
     month = month.capitalize()
     month_number = list(calendar.month_name).index(month)
@@ -89,9 +94,7 @@ def event(request, year=datetime.now().year, month=datetime.now().strftime('%B')
 
     return render(request, 'event.html', {'month': month, 'year': year, 'cal': cal, 'now': now, 'month_events': events})
 
-def all_events(request):
-    all_events = Event.objects.all()
-    return render(request, 'event.html', {'all_events_list': all_events})
+
 
 
 def login_user(request):
@@ -135,9 +138,6 @@ def register_user(request):
 		form = RegisterForm()
 	return render(request, 'register.html', {'form': form})
 
-
-def user_profile(request):
-    return render(request, 'user_profile.html')
 
 def view_record(request):
     record = Record.objects.filter(user=request.user).first()
