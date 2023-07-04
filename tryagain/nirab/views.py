@@ -38,12 +38,13 @@ def save_mail_form(request):
 
 
 def home(request):
+    return render(request, 'home.html')
+
+
+def real(request):
     current_year = datetime.now().year
     current_month = datetime.now().strftime('%B')
     return render(request, 'real.html', {'current_year': current_year, 'current_month': current_month})
-
-def real(request):
-    return render(request,'real.html')
 
 def event(request, year=datetime.now().year, month=datetime.now().strftime('%B')):
     month = month.capitalize()

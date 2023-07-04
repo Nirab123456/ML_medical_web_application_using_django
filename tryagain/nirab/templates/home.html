@@ -14,16 +14,6 @@
             <p>FACEBOOK: <a href="https://www.facebook.com/nirab.islam.77?mibextid=LQQJ4d" target="_blank">https://www.facebook.com/nirab.islam.77?mibextid=LQQJ4d</a></p>
           </div>
         </div>
-      </div>
-      {% if user.is_authenticated %}
-      <p>Welcome, {{ user.username }}!</p>
-      <button type="button" class="btn btn-sm btn-info">
-        <a href="{% url 'event' current_year current_month %}" style="color: inherit; text-decoration: none;">CURRENT EVENT</a>
-      </button>
-      {% else %}
-      <p>You are not logged in</p>
-      {% endif %}
-    </div>
   </div>
 </div>
 {% endblock %}
