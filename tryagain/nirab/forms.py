@@ -78,6 +78,19 @@ class addrecord(forms.ModelForm):
         }
 
 
+class profilepicForm(forms.ModelForm):
+    photo = forms.ImageField(required=True,label="",widget=forms.FileInput(attrs={'class':'form-control'}))
+    class Meta:
+        model = Record
+        fields = ['photo']
+        widgets = {
+            'photo': forms.FileInput(attrs={'class':'form-control','placeholder':'Photo'}),
+        }
+
+
+
+
+
 
 class VenueForm(ModelForm):
     class Meta:

@@ -5,6 +5,7 @@ from django.core.exceptions import PermissionDenied
 
 class Record(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='records', null=True)
+    photo = models.ImageField(upload_to='images/profile/',null=True,blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)

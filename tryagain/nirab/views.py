@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form
+from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm
 from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me
 import datetime
 import calendar
@@ -13,6 +13,34 @@ from PIL import Image
 from .bangla_ocr import BanglaOCR
 import os
 from django.http import FileResponse,HttpResponse
+
+
+
+
+
+
+
+
+
+def profile(request):
+    record = Record.objects.filter(user=request.user).first()
+    photo_url = record.photo.url 
+    
+    if request.method == 'POST':
+        form = profilepicForm(request.POST, request.FILES, instance=record)
+        if form.is_valid():
+            if record:
+                record.photo = form.cleaned_data['photo']
+                record.save()
+                photo_url = record.photo.url 
+                print(photo_url) 
+            form.save()
+            messages.success(request, "Your Record Has Been Saved Successfully!")
+            return redirect('profile')
+    else:
+        form = profilepicForm(instance=record)
+    
+    return render(request, 'profile.html', {'form': form, 'record': record, 'photo_url': photo_url})
 
 
 def index(request):
@@ -110,8 +138,6 @@ def user_profile(request):
 
 def view_record(request):
     record = Record.objects.filter(user=request.user).first()
-    print(record)
-
     return render(request, 'record.html', {'record': record})
 
 
