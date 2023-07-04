@@ -15,32 +15,35 @@ import os
 from django.http import FileResponse,HttpResponse
 
 
-
-
-
-
-
-
-
-def profile(request):
+def profile_picture(request):
     record = Record.objects.filter(user=request.user).first()
-    photo_url = record.photo.url 
-    
-    if request.method == 'POST':
-        form = profilepicForm(request.POST, request.FILES, instance=record)
-        if form.is_valid():
-            if record:
-                record.photo = form.cleaned_data['photo']
-                record.save()
-                photo_url = record.photo.url 
-                print(photo_url) 
-            form.save()
-            messages.success(request, "Your Record Has Been Saved Successfully!")
-            return redirect('profile')
+    form = profilepicForm(request.POST, request.FILES, instance=record)    
+    if record:
+        if request.method == 'POST':
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Your Record Has Been Saved Successfully!")
+                return redirect('profile')
     else:
         form = profilepicForm(instance=record)
     
-    return render(request, 'profile.html', {'form': form, 'record': record, 'photo_url': photo_url})
+    return render(request, 'profile_picture.html', {'form': form, 'record': record})
+
+
+def dashboard(request):
+    return render(request, 'dashboard.html')
+    
+
+def profile(request):
+    record = Record.objects.filter(user=request.user).first()
+    if record and record.photo:
+        photo_url = record.photo.url
+        return render(request, 'profile.html', {'record': record, 'photo_url': photo_url})
+    else:
+        messages.error(request, "You have not uploaded any photo yet!")
+        return redirect('dashboard')
+
+
 
 
 def index(request):
@@ -102,7 +105,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'You have successfully logged in')
-            return redirect('profile')
+            return redirect('dashboard')
         else:
             messages.success(request, 'Error logging in, please try again')
             return redirect('login_user')
@@ -126,8 +129,8 @@ def register_user(request):
 			# Authenticate
 			user = authenticate(username=username, password=password)
 			login(request, user)
-			messages.success(request, "You Have Registered Successfully!")
-			return redirect('real')
+			messages.success(request, "You Have Registered Successfully! compleate by updating details and profile picture PLEASE")
+			return redirect('dashboard')
 	else:
 		form = RegisterForm()
 	return render(request, 'register.html', {'form': form})
@@ -154,7 +157,7 @@ def add_record(request):
     existing_record = Record.objects.filter(user=request.user).exists()
 
     if existing_record:
-        return redirect('real')  # Redirect to the record list page or show an error message
+        return redirect('profile')  # Redirect to the record list page or show an error message
     else:
         if request.method == 'POST':
             form = addrecord(request.POST)
@@ -163,7 +166,7 @@ def add_record(request):
                 record.user = request.user  # Set the current logged-in user as the user
                 record.save()
                 messages.success(request, 'Record Added Successfully')
-                return redirect('real')  # Redirect to the record list page
+                return redirect('dashboard')  # Redirect to the record list page
         else:
             form = addrecord()
         
