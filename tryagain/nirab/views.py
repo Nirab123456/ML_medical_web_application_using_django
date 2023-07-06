@@ -40,9 +40,25 @@ def view_record(request):
     record = Record.objects.filter(user=request.user).first()
     return render(request, 'dashboard.html', {'record': record})
 
+def add_record(request):
 
+    existing_record = Record.objects.filter(user=request.user).exists()
 
-
+    if existing_record:
+        return redirect('profile')  # Redirect to the record list page or show an error message
+    else:
+        if request.method == 'POST':
+            form = addrecord(request.POST)
+            if form.is_valid():
+                record = form.save(commit=False)
+                record.user = request.user  # Set the current logged-in user as the user
+                record.save()
+                messages.success(request, 'Record Added Successfully')
+                return redirect('dashboard')  # Redirect to the record list page
+        else:
+            form = addrecord()
+        
+        return render(request, 'dashboard.html', {'form': form})
 
 
 def profile(request):
@@ -156,25 +172,6 @@ def delete_record(request):
 
 
 
-def add_record(request):
-
-    existing_record = Record.objects.filter(user=request.user).exists()
-
-    if existing_record:
-        return redirect('profile')  # Redirect to the record list page or show an error message
-    else:
-        if request.method == 'POST':
-            form = addrecord(request.POST)
-            if form.is_valid():
-                record = form.save(commit=False)
-                record.user = request.user  # Set the current logged-in user as the user
-                record.save()
-                messages.success(request, 'Record Added Successfully')
-                return redirect('dashboard')  # Redirect to the record list page
-        else:
-            form = addrecord()
-        
-        return render(request, 'add_record.html', {'form': form})
 
 def bangla_ocr(request):
     return render(request, 'bangla_ocr.html')

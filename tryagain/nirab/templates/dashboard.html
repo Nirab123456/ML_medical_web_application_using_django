@@ -46,6 +46,7 @@
     </aside>
 
     <div class="container" style="margin: 14px;padding: 3px;padding-bottom: 0px;width: 762px;height: 545px;padding-right: 9px;padding-left: 334px;margin-left: 29px;">
+
         {% if record %}
         <div class="card text-dark bg-info mb-3" style="width: 18rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
@@ -70,7 +71,35 @@
         <button type="button" class="btn btn-sm btn-warning">
             <a href="{% url 'update_record' %}" style="color: inherit; text-decoration: none;">UPDATE RECORD</a>
         </button>
+        {% else %}
+
+        <!-- Add record form -->
+        {% if form %}
+        <h3>ADD RECORD</h3>
+        <form method="post" action="{% url 'add_record' %}">
+            {% csrf_token %}
+            {% if form.errors %}
+            <div class="alert alert-warning">
+                Your form has errors:
+                {% for field in form %}
+                {% for error in field.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+                {% endfor %}
+            </div>
+            {% endif %}
+    
+            {{ form.as_p }}
+    
+            <div class="col-md-6 offset-md-3">
+                <button type="submit" class="btn btn-primary">ADD RECORD</button>
+            </div>
+        </form>
         {% endif %}
+        {% endif %}
+    
+    </div>
+    
     </div>
     
 
