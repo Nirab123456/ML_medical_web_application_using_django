@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-r5y(k((!k$s&xmm#kgo(%zahkfv5v-mmhi12&e4fy7g=&i0mn&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rifatulislammajumder.me']
+CSRF_TRUSTED_ORIGINS = ['http://rifatulislammajumder.me', 'https://rifatulislammajumder.me']
+CORS_ALLOWED_ORIGINS = ['rifatulislammajumder.me', 'https://rifatulislammajumder.me']
 
 
 # Application definition
