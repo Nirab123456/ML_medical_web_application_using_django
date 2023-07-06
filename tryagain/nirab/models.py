@@ -1,11 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-# Create your models here.
-
+from django.core.exceptions import PermissionDenied
 
 
-class Record (models.Model):
+class Record(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='records', null=True)
+    photo = models.ImageField(upload_to='images/profile/',null=True,blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
@@ -16,12 +16,28 @@ class Record (models.Model):
     zipcode = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now_add=True)
 
-
     def __str__(self):
-        return (f'{self.first_name} {self.last_name}')
+        return f'{self.first_name} {self.last_name}'
+
+
+class RecordImage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='images', null=True)
+    image = models.ImageField(upload_to='images/')
+    def __str__(self):
+        return f'{self.user}'
     
 
+class Record_mail_me(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    message = models.TextField(max_length=1000)
+    created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.name}'
+    
+
+    
 class Event(models.Model):
     title = models.CharField(max_length=100)
     mannager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
@@ -54,4 +70,4 @@ class EventAttendee(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.record.first_name
