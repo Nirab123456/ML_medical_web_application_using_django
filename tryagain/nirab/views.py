@@ -36,6 +36,14 @@ def dashboard(request):
     
 
 
+def view_record(request):
+    record = Record.objects.filter(user=request.user).first()
+    return render(request, 'dashboard.html', {'record': record})
+
+
+
+
+
 
 def profile(request):
     record = Record.objects.filter(user=request.user).first()
@@ -138,10 +146,6 @@ def register_user(request):
 		form = RegisterForm()
 	return render(request, 'register.html', {'form': form})
 
-
-def view_record(request):
-    record = Record.objects.filter(user=request.user).first()
-    return render(request, 'record.html', {'record': record})
 
 
 def delete_record(request):
