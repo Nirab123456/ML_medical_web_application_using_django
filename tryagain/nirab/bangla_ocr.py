@@ -26,25 +26,25 @@ class BanglaOCR:
                     existing_record.image.delete()  # Delete the old image
                     existing_record.image = form.cleaned_data['image']  # Update the image
                     existing_record.save()
-                    messages.success(request, 'Image Updated Successfully')
+                    messages.success(request, 'PRESS BN OCR AGAIN TO SEE THE RESULT')
                     image_url = existing_record.image.url
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
                         print(file_path)
-                    return render(request, 'bangla_ocr.html', {'form': form, 'image_url': existing_record.image.url, 'text': text, 'file_path': file_path})
+                    return render(request, 'apps.html', {'form': form, 'image_url': existing_record.image.url, 'text': text, 'file_path': file_path})
                 else:
                     record_image = form.save(commit=False)
                     record_image.user = request.user
                     record_image.save()
-                    messages.success(request, 'Image Added Successfully')
+                    messages.success(request, 'PRESS BN OCR AGAIN TO SEE THE RESULT')
                     image_url = record_image.image.url
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
                         print(file_path)
-                    return render(request, 'bangla_ocr.html', {'form': form, 'image_url': record_image.image.url, 'text': text, 'file_path': file_path})
+                    return render(request, 'apps.html', {'form': form, 'image_url': record_image.image.url, 'text': text, 'file_path': file_path})
         else:
             form = OCRImageForm()
-        return render(request, 'add_image.html', {'form': form})
+        return render(request, 'apps.html', {'form': form})
 
     def get_ocr(self, image_url):
         image_path = os.path.join(settings.MEDIA_ROOT, image_url.lstrip('/').replace('media/', ''))

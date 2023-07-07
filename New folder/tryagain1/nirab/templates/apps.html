@@ -1,0 +1,88 @@
+{% include 'base_ex_nav.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Articles-Badges-images.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Contact-Details-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer-copyright_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Ludens-Users---3-Profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Profile-Picture-With-Badge-profile-pic-with-badge.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Profile-Picture-With-Badge.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Soft-UI-Aside-Navbar.css' %}">
+</head>
+
+<body>
+    <aside id="sidenav-main" class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-left ms-3" style="padding-top: 73px;">
+        <div class="sidenav-header"><i class="fa fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none"></i><a class="navbar-brand m-0" href=""><img class="navbar-brand-img h-100 w-15" src="{% static 'img/logo-ct.png' %}"><span class="ms-2 font-weight-bolder"><span style="color: rgb(208, 37, 37);">APPS</span></span></a>
+            <hr class="horizontal dark mt-0">
+            <div id="sidenav-collapse-main" class="collapse navbar-collapse w-auto">
+                <ul class="navbar-nav" style="padding-right: 0px;margin-right: -30px;">
+                    <li class="nav-item"></li>
+
+
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'bangla_ocr' %}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <path d="M8 4.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622ZM2.5 5a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Z"></path>
+                                <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z"></path>
+                            </svg><span class="nav-link-text ms-1">BN OCR</span></a>
+                            <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <path d="M8 4.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622ZM2.5 5a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Z"></path>
+                                <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z"></path>
+                            </svg><span class="nav-link-text ms-1">EN OCR</span></a>
+                            <a class="nav-link" href=""><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-pencil icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="font-size: 60px;">
+                                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path>
+                            </svg><span class="nav-link-text ms-1">EN&nbsp; TEXT TO HANDWRITTEN</span></a>
+                            <a class="nav-link" href=""><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-pencil icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="font-size: 60px;">
+                                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path>
+                            </svg><span class="nav-link-text ms-1">BN TEXT TO HANDWRITTEN</span></a>
+                        </li>
+
+
+                    <li class="nav-item mt-3"><span class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account Pages</span></li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-user icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"></i><span class="nav-link-text ms-1">Profile<br></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+
+    <div class="container" style="margin: 14px;padding: 3px;padding-bottom: 0px;width: 762px;height: 545px;padding-right: 9px;padding-left: 334px;margin-left: 29px;">
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+        
+    
+    
+    
+    
+    </div>
+
+
+
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
+
+
+
+{% endblock %}

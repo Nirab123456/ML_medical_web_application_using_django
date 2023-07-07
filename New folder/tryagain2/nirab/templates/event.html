@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    {{ cal|safe }}
+    <br><br>
+
+    <div class="row">
+        {% if month_events %}
+          {% for event in month_events %}
+            <div class="col-md-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">{{ event.title }}</h5>
+                  <p class="card-text">{{ event.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>EVENT DATE:</strong> {{ event.date }}</li>
+                  <li class="list-group-item"><strong>EVENT TIME:</strong> {{ event.time }}</li>       
+                  <li class="list-group-item"><strong>EVENT VENUE:</strong> {{ event.venue }}</li>
+                </ul>
+                <div class="card-body">
+                  <a href="{% url 'join_event' event.id %}" class="btn btn-primary">Join Event</a>  <!-- Add the Join Event button with a link to the join_event view, passing the event ID -->
+                </div>
+                <div class="card-body">
+                  <a href="{% url 'leave_event' event.id %}" class="btn btn-danger">LEAVE Event</a>  <!-- Add the Join Event button with a link to the join_event view, passing the event ID -->
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col">
+            <p>No events found for the selected month.</p>
+          </div>
+        {% endif %}
+    </div>  
+</div>
+{% endblock %}

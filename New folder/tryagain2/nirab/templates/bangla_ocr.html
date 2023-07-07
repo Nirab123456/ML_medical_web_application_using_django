@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center mb-4">CONVERT YOUR PHOTO INTO TEXT</h3>
+            <div class="card mb-4">
+                {% if image_url %}
+                <img src="{{ image_url }}" class="card-img-top" alt="Image">
+                {% else %}
+                <div class="card-body text-center">
+                    <p class="text-muted">No image available</p>
+                </div>
+                {% endif %}
+                <div class="card-body text-center">
+                    <a href="{% url 'add_image' %}" class="btn btn-primary btn-lg">Add New Image</a>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    {% if text %}
+                    <p class="text-center">{{ text }}</p>
+                    {% else %}
+                    <p class="text-muted text-center">No text available</p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    {% if file_path %}
+                    <div class="text-center mb-3">
+                        <p>{{ file_path }}</p>
+                    </div>
+    
+                    <div class="text-center">
+                        <a href="{% url 'download_text' file_path %}" class="btn btn-warning btn-lg">Download Text File</a>
+                    </div>
+                    
+                    {% else %}
+                    <p class="text-muted text-center">No text available</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

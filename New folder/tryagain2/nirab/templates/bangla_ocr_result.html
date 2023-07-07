@@ -1,0 +1,23 @@
+{% include 'base.html' %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <h1>BANGLA OCR PAGE</h1>
+    <div class="card" style="width: 18rem;">
+        {% if image_url %}
+        <p>{{ image_url }}</p>
+        <img src="{{ image_url }}" class="card-img-top" alt="Image">
+        {% else %}
+        <p>No image available</p>
+        {% endif %}
+        <div class="card-body">
+            <button type="button" class="btn btn-sm btn-warning">
+                <a href="{% url 'add_image' %}" style="color: inherit; text-decoration: none;">ADD NEW IMAGE</a>
+            </button>
+            <button type="button" class="btn btn-sm btn-warning">
+                <a href="{% url 'get_ocr' %}" style="color: inherit; text-decoration: none;">OCR RESULT</a>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -30,7 +30,7 @@
 
 
 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'bangla_ocr' %}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <a class="nav-link" href="#" onclick="toggleOCRDiv('bn-ocr');"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <path d="M8 4.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622ZM2.5 5a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Z"></path>
                                 <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z"></path>
                             </svg><span class="nav-link-text ms-1">BN OCR</span></a>
@@ -53,7 +53,95 @@
             </div>
         </div>
     </aside>
-    <div class="container" style="margin: 14px;padding: 3px;padding-bottom: 0px;width: 762px;height: 545px;padding-right: 9px;padding-left: 334px;margin-left: 29px;"></div>
+
+
+    <div class="container" style="margin: 14px;padding: 3px;padding-bottom: 0px;width: 762px;height: 545px;padding-left: 0px;padding-right: 225px;margin-right: -215px;margin-left: 361px;">
+    
+    
+    
+    
+    
+        <div id="bn-ocr" class="container" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h3 class="text-center mb-4">CONVERT YOUR PHOTO INTO TEXT</h3>
+                    <div class="card mb-4">
+                        {% if image_url %}
+                        <img src="{{ image_url }}" class="card-img-top" alt="Image">
+                        {% else %}
+                        <div class="card-body text-center">
+                            <p class="text-muted">No image available</p>
+                        </div>
+                        {% endif %}
+                        
+                    </div>
+
+
+
+
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+
+
+                        
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            {% if text %}
+                            <p class="text-center">{{ text }}</p>
+                            {% else %}
+                            <p class="text-muted text-center">No text available</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            {% if file_path %}
+                            <div class="text-center mb-3">
+                                <p>{{ file_path }}</p>
+                            </div>
+            
+                            <div class="text-center">
+                                <a href="{% url 'download_text' file_path %}" class="btn btn-warning btn-lg">Download Text File</a>
+                            </div>
+                            
+                            {% else %}
+                            <p class="text-muted text-center">No text available</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleOCRDiv(divId) {
+            var div = document.getElementById(divId);
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+    </script>
+
+
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 
