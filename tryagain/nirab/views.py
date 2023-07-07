@@ -15,6 +15,24 @@ import os
 from django.http import FileResponse,HttpResponse
 
 
+
+
+def apps(request):
+    return render(request, 'apps.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def profile_picture(request):
     record = Record.objects.filter(user=request.user).first()
     form = profilepicForm(request.POST, request.FILES, instance=record)    

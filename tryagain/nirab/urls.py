@@ -23,4 +23,5 @@ urlpatterns = [
     path('save_mail_form/', views.save_mail_form, name='save_mail_form'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile_picture/', views.profile_picture, name='profile_picture'),
+    path('apps/', views.apps, name='apps'),
 ]
