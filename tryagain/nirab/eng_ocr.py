@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import OCRImageForm
 from .models import RecordImage
+from ENG_HANDWRITTEN import HandwrittenImageGenerator
 from PIL import Image
 import cv2
 import numpy as np
@@ -66,3 +67,62 @@ class ENGOCR:
 
                 return text,file_path
         return None
+    
+    def eng_ocr_handwritten(self, request):
+        if request.method == 'POST':
+            form = OCRImageForm(request.POST, request.FILES)
+            if form.is_valid():
+                existing_record = RecordImage.objects.filter(user=request.user).first()
+                if existing_record:
+                    existing_record.image.delete()  # Delete the old image
+                    existing_record.image = form.cleaned_data['image']  # Update the image
+                    existing_record.save()
+                    messages.success(request, 'Image Updated Successfully')
+                    image_url = existing_record.image.url
+                    text,file_path = self.get_ocr(image_url)
+
+                    l = len(text)
+                    nn = len(text) // 600
+                    chunks, chunk_size = len(text), len(text) // (nn + 1)
+                    p = [text[i:i + chunk_size] for i in range(0, chunks, chunk_size)]
+
+                    generator = HandwrittenImageGenerator("myfont/bg.png", "myfont")
+                    for i in range(len(p)):
+                        generator.generate_handwritten_image(p[i], f"{i}outt.png")
+
+
+
+
+
+
+                    if file_path:
+                        print(file_path)
+                    return render(request, 'apps.html', {'form': form, 'image_url': existing_record.image.url, 'text': text, 'file_path': file_path})
+                else:
+                    record_image = form.save(commit=False)
+                    record_image.user = request.user
+                    record_image.save()
+                    messages.success(request, 'Image Added Successfully')
+                    image_url = record_image.image.url
+                    text,file_path = self.get_ocr(image_url)
+
+                    l = len(text)
+                    nn = len(text) // 600
+                    chunks, chunk_size = len(text), len(text) // (nn + 1)
+                    p = [text[i:i + chunk_size] for i in range(0, chunks, chunk_size)]
+
+                    generator = HandwrittenImageGenerator("myfont/bg.png", "myfont")
+                    for i in range(len(p)):
+                        generator.generate_handwritten_image(p[i], f"{i}outt.png")
+
+
+
+
+
+
+                    if file_path:
+                        print(file_path)
+                    return render(request, 'apps.html', {'form': form, 'image_url': record_image.image.url, 'text': text, 'file_path': file_path})
+        else:
+            form = OCRImageForm()
+        return render(request, 'apps.html', {'form': form})

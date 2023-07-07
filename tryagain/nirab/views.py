@@ -18,21 +18,26 @@ from django.http import FileResponse,HttpResponse
 
 
 
+def ENG_OCR_HANDWRITTEN(request):
+    return render(request, 'ENG_OCR_HANDWRITTEN.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def apps(request):
     return render(request, 'apps.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def profile_picture(request):
     record = Record.objects.filter(user=request.user).first()

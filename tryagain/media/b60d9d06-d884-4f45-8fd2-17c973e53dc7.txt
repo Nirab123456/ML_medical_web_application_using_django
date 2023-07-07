@@ -1,0 +1,40 @@
+& OB
+
+01:26:59
+TN) NS
+
+ilab week3.rvapy
+
+File Edit View
+
+# testing the implemented agent
+while True:
+print("Which location? [Enter ‘A’ or *B°]") # ‘At or 'B'
+loc = input()
+
+print("Is dirty? [Enter ‘dirty or 'clean']") # ‘dirty’ or ‘clean'
+dust = input()
+
+selected_action = heflex_Vacuumagent(1oc, dust) I
+I
+
+if selected_action != None:
+msg = "The selected action for the current state is '%s'." % selected_action
+print(msg)
+
+else:
+print("Action not found for the current perception.")
+
+print("\nWant to check action again? [Enter 'N' for No.]")
+
+isExit = input()
+if isExit == ‘N':
+break
+
+- x
+
+ 
+
+« ENG 5:30PM
+| ০০.০ Xe PW oO YT
+

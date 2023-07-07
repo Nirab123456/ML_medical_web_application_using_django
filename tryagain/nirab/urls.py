@@ -25,4 +25,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile_picture/', views.profile_picture, name='profile_picture'),
     path('apps/', views.apps, name='apps'),
+    path('ENG_OCR_HANDWRITTEN', views.ENG_OCR_HANDWRITTEN, name='ENG_OCR_HANDWRITTEN'),
 ]
