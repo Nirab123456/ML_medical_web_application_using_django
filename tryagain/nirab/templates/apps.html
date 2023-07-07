@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="{% static 'css/Profile-Picture-With-Badge-profile-pic-with-badge.css' %}">
     <link rel="stylesheet" href="{% static 'css/Profile-Picture-With-Badge.css' %}">
     <link rel="stylesheet" href="{% static 'css/Soft-UI-Aside-Navbar.css' %}">
+    <style>
+        .fixed-medium-image {
+            width: 300px; /* Adjust the width as per your requirements */
+            height: 300px; /* Automatically calculate the height based on the aspect ratio */
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -54,37 +61,36 @@
         </div>
     </aside>
 
-
-    <div class="container" style="margin: 14px;padding: 3px;padding-bottom: 0px;width: 762px;height: 545px;padding-left: 0px;padding-right: 225px;margin-right: -215px;margin-left: 361px;">
-    
-    
-    
-    
-    
+    <div class="card-img-overlay" style="margin-left: -35px;padding-left: 350px;margin-right: 4px;margin-bottom: -438px;padding-bottom: 322px;">
         <div id="bn-ocr" class="container" style="display: none;">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <h3 class="text-center mb-4">CONVERT YOUR PHOTO INTO TEXT</h3>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
                     <div class="card mb-4">
                         {% if image_url %}
-                        <img src="{{ image_url }}" class="card-img-top" alt="Image">
+                        <img src="{{ image_url }}" class="card-img-top fixed-medium-image" alt="Image">
                         {% else %}
                         <div class="card-body text-center">
                             <p class="text-muted">No image available</p>
                         </div>
                         {% endif %}
-                        
                     </div>
+                    
 
                     <form action="{% url 'add_image' %}" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="btn btn-primary" id="add-button">Add</button>
+                        </br>
+                        </br>                       
                     </form>
                     
                         
                     </div>
-                    
+              
                     <div class="card mb-4">
                         <div class="card-body">
                             {% if text %}
@@ -113,8 +119,6 @@
                     </div>
                 </div>
             </div>
-
-        </div>
     </div>
 
     <script>
@@ -132,12 +136,10 @@
         }
     </script>
 
-
+    
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>
-
-
 
 {% endblock %}
