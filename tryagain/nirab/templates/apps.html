@@ -37,11 +37,11 @@
 
 
 
-                    <a class="nav-link" href="#" onclick="toggleOCRDiv('bn-ocr');"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <a class="nav-link" href="{% url 'BN_OCR' %}" ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <path d="M8 4.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622ZM2.5 5a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Z"></path>
                                 <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z"></path>
                             </svg><span class="nav-link-text ms-1">BN OCR</span></a>
-                            <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <a class="nav-link" href="{% url 'ENG_OCR' %}" ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-postcard-heart icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <path d="M8 4.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622ZM2.5 5a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Z"></path>
                                 <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z"></path>
                             </svg><span class="nav-link-text ms-1">EN OCR</span></a>
@@ -61,80 +61,9 @@
         </div>
     </aside>
 
-    <div class="card-img-overlay" style="margin-left: -35px;padding-left: 350px;margin-right: 4px;margin-bottom: -438px;padding-bottom: 322px;">
-        <div id="bn-ocr" class="container" style="display: none;">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    </br>
-                    </br>
-                    </br>
-                    </br>
-                    <div class="card mb-4">
-                        {% if image_url %}
-                        <img src="{{ image_url }}" class="card-img-top fixed-medium-image" alt="Image">
-                        {% else %}
-                        <div class="card-body text-center">
-                            <p class="text-muted">No image available</p>
-                        </div>
-                        {% endif %}
-                    </div>
-                    
+    <div class="card-img-overlay" style="margin-left: -35px; padding-left: 350px; margin-right: 4px; margin-bottom: -438px; padding-bottom: 322px;">
 
-                    <form action="{% url 'add_image' %}" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary" id="add-button">Add</button>
-                        </br>
-                        </br>                       
-                    </form>
-                    
-                        
-                    </div>
-              
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            {% if text %}
-                            <p class="text-center">{{ text }}</p>
-                            {% else %}
-                            <p class="text-muted text-center">No text available</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            {% if file_path %}
-                            <div class="text-center mb-3">
-                                <p>{{ file_path }}</p>
-                            </div>
-            
-                            <div class="text-center">
-                                <a href="{% url 'download_text' file_path %}" class="btn btn-warning btn-lg">Download Text File</a>
-                            </div>
-                            
-                            {% else %}
-                            <p class="text-muted text-center">No text available</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
     </div>
-
-    <script>
-        function toggleOCRDiv(divId) {
-            var div = document.getElementById(divId);
-            var addButton = document.getElementById('add-button');
-            if (div.style.display === "none") {
-                div.style.display = "block";
-                addButton.style.display = "block";
-                addButton.click(); // Trigger the click event of the "Add" button
-            } else {
-                div.style.display = "none";
-                addButton.style.display = "none";
-            }
-        }
-    </script>
 
     
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>

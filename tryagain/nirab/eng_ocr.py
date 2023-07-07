@@ -13,7 +13,7 @@ import sys
 import uuid
 from django.conf import settings
 
-class BanglaOCR:
+class ENGOCR:
     def __init__(self):
         pass
 
@@ -55,7 +55,7 @@ class BanglaOCR:
                 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 pytesseract.pytesseract.tesseract_cmd = r'C:\Users\rifat\miniconda3\envs\tf\Library\bin\tesseract.exe'
                 os.environ['TESSDATA_PREFIX'] = r'c:\Users\rifat\miniconda3\envs\tf\lib\site-packages\pytesseract'
-                text = pytesseract.image_to_string(gray, lang='Bengali')
+                text = pytesseract.image_to_string(gray, lang='eng')
 
                 # Generate a unique file name
                 file_name = f'{uuid.uuid4()}.txt'

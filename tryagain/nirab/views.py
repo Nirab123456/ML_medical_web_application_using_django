@@ -11,6 +11,7 @@ from datetime import datetime, timedelta
 from django.shortcuts import get_object_or_404
 from PIL import Image
 from .bangla_ocr import BanglaOCR
+from .eng_ocr import ENGOCR
 import os
 from django.http import FileResponse,HttpResponse
 
@@ -195,9 +196,14 @@ def bangla_ocr(request):
     return render(request, 'bangla_ocr.html')
 
 
-def add_image(request):
-    bangla_ocr = BanglaOCR()
-    return bangla_ocr.add_image(request)
+
+def BN_OCR(request):
+    BANGLA_OCR = BanglaOCR()
+    return BANGLA_OCR.add_image(request)
+
+def ENG_OCR(request):
+    ENGLISH_OCR = ENGOCR()
+    return ENGLISH_OCR.add_image(request)
 
 
 def download_text(request, text_path):
