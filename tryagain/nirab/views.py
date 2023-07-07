@@ -195,9 +195,9 @@ def bangla_ocr(request):
     return render(request, 'bangla_ocr.html')
 
 
-BANGLA_OCR = BanglaOCR()
 def add_image(request):
-    return BANGLA_OCR.add_image(request)
+    bangla_ocr = BanglaOCR()
+    return bangla_ocr.add_image(request)
 
 
 def download_text(request, text_path):
