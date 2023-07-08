@@ -60,7 +60,7 @@ def profile_picture(request):
     else:
         form = profilepicForm(instance=record)
     
-    return render(request, 'profile_picture.html', {'form': form, 'record': record})
+    return render(request, 'dashboard.html', {'profile_picture_form': form})
 
 
 

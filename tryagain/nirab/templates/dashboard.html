@@ -45,7 +45,7 @@
         </div>
     </aside>
 
-    <div class="container" style="margin: 14px;padding: 3px;padding-bottom: 0px;width: 762px;height: 545px;padding-right: 9px;padding-left: 334px;margin-left: 29px;">
+    <div class="card-img-overlay" style="margin-left: -35px; padding-left: 350px; margin-right: 4px; margin-bottom: -438px; padding-bottom: 322px;">
 
         {% if record %}
         <div class="card text-dark bg-info mb-3" style="width: 18rem;">
@@ -97,11 +97,20 @@
         </form>
         {% endif %}
         {% endif %}
-    
+
+        {% if profile_picture_form %}
+
+        <div style="margin-top: 300px;">
+            <form method="post"  enctype="multipart/form-data" >
+                {% csrf_token %}
+                {{ profile_picture_form.as_p }}
+                <button type="submit" class="btn btn-primary">ADD/UPDATE PHOTO</button>
+            </form>
+        </div>
+            
+        {% endif %}
+        
     </div>
-    
-    </div>
-    
 
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
