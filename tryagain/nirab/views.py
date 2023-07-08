@@ -78,7 +78,7 @@ def add_record(request):
     existing_record = Record.objects.filter(user=request.user).exists()
 
     if existing_record:
-        return redirect('profile')  # Redirect to the record list page or show an error message
+        return redirect('update_record')  # Redirect to the record list page or show an error message
     else:
         if request.method == 'POST':
             form = addrecord(request.POST)
@@ -100,8 +100,7 @@ def profile(request):
         photo_url = record.photo.url
         return render(request, 'profile.html', {'record': record, 'photo_url': photo_url})
     else:
-        messages.error(request, "You have not uploaded any photo yet!")
-        return redirect('dashboard')
+        return render(request, 'profile.html', {'record': record})
 
 
 

@@ -62,7 +62,6 @@ class addrecord(forms.ModelForm):
     country = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Country'}))
     city = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'City'}))
     zipcode = forms.CharField(required=True,max_length=10,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'}))
-
     class Meta:
         model = Record
         fields = ['first_name','last_name','email','phone','address','country','city','zipcode']
