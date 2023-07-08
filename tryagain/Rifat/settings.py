@@ -9,6 +9,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Specify the directory where static files will be collected.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
 # Specify the URL prefix for static files.
 STATIC_URL = '/static/'
 
@@ -16,6 +17,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets'),
 ]
+
+ENG_HANDWRITTEN_URL = '/eng_handwritten/'
+ENG_HANDWRITTEN_ROOT = os.path.join(BASE_DIR, 'eng_handwritten')
+
+BAN_HANDWRITTEN_URL = '/ban_handwritten/'
+BAN_HANDWRITTEN_ROOT = os.path.join(BASE_DIR, 'ban_handwritten')
+
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
