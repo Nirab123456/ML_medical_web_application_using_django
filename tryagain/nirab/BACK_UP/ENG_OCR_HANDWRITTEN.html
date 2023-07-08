@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            </br></br></br>
+            {% if request.resolver_match.view_name == 'BN_OCR' %}
+                <h1>বাংলায় আপনার ছবির পাঠ্য রূপান্তর করুন</h1>
+            {% elif request.resolver_match.view_name == 'ENG_OCR' %}
+                <h1>CONVERT YOUR Photo text in BANGLA</h1>
+            {% endif %}
+            
+            <div>
+                {% if image_url %}
+                    <img src="{{ image_url }}" class="card-img-top" alt="Image">
+                {% else %}
+                    <div class="card-body text-center"></div>
+                {% endif %}
+                
+                <div class="card-body text-center">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-body">
+                    {% if text %}
+                        <p class="text-center">{{ text }}</p>
+                    {% else %}
+                        <div class="card-body text-center"></div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="card">
+                <div>
+                    {% if file_path %}
+                        <div class="text-center mb-3">
+                            <p>{{ file_path }}</p>
+                        </div>
+    
+                        <div class="text-center">
+                            <a href="{% url 'download_text' file_path %}" class="btn btn-warning btn-lg">Download Text File</a>
+                        </div>
+                    {% else %}
+                        <div class="card-body text-center"></div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card" style="margin-top: 20px;">
+                <div>
+                    {% if pdf_output_file %}
+                        <div class="text-center mb-3">
+                            <p>{{ pdf_output_file }}</p>
+                        </div>
+    
+                        <div class="text-center">
+                            <a href="{% url 'download_pdf' pdf_output_file %}" class="btn btn-warning btn-lg">Download PDF File</a>
+                        </div>
+                    {% else %}
+                        <div class="card-body text-center"></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

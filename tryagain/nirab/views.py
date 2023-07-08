@@ -26,8 +26,21 @@ def ENG_OCR_HANDWRITTEN(request):
 
 
 
+def download_pdf(request, pdf_path):
+    with open(pdf_path, 'rb') as file:
+        response = HttpResponse(file.read(), content_type='application/pdf')
+        response['Content-Disposition'] = f'attachment; filename={os.path.basename(pdf_path)}'
+        return response
 
 
+
+def download_text(request, text_path):
+    with open(text_path, 'r', encoding='utf-8') as file:
+        text = file.read()
+
+    response = HttpResponse(text, content_type='text/plain')
+    response['Content-Disposition'] = f'attachment; filename={os.path.basename(text_path)}'
+    return response
 
 
 
@@ -206,14 +219,6 @@ def ENG_OCR(request):
     ENGLISH_OCR = ENGOCR()
     return ENGLISH_OCR.add_image(request)
 
-
-def download_text(request, text_path):
-    with open(text_path, 'r', encoding='utf-8') as file:
-        text = file.read()
-
-    response = HttpResponse(text, content_type='text/plain')
-    response['Content-Disposition'] = f'attachment; filename={os.path.basename(text_path)}'
-    return response
 
 
 

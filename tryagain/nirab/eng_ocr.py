@@ -94,9 +94,6 @@ class ENGOCR:
                     MAIN_FILE_NAME_WITHOUT_EXT = os.path.splitext(MAIN_FILE_NAME)[0]# split the filename and extension
                     output_dir = MAIN_FILE_PATH# output directory
                     output_file = os.path.join(output_dir, f"{MAIN_FILE_NAME_WITHOUT_EXT}.pdf")# output file name
-
-                    print(MAIN_TXT_FILE)
-                    print(MAIN_FILE_NAME)
                     with open(MAIN_TXT_FILE, 'r') as file:
                         data = file.read().replace('\n', '')
 
@@ -112,10 +109,6 @@ class ENGOCR:
                         with open(file_name, 'w') as file:
                             file.write(data[i * 600:(i + 1) * 600])
                             
-
-                    print(FILE_NAMES)
-
-
 ####################################################################################
 
                     PHOTO_FILENAME = []
@@ -132,14 +125,13 @@ class ENGOCR:
                         os.remove(file_name)
                     for file_name in PHOTO_FILENAME:
                         os.remove(file_name)
-                       
 
-
+                    pdf_output_file = output_file
 
 
                     if file_path:
                         print(file_path)
-                    return render(request, 'ENG_OCR_HANDWRITTEN.html', {'form': form, 'image_url': existing_record.image.url, 'text': text, 'file_path': file_path})
+                    return render(request, 'apps.html', {'form': form, 'image_url': existing_record.image.url, 'text': text, 'file_path': file_path , 'pdf_output_file':pdf_output_file})
                 
                 
                 
@@ -162,8 +154,6 @@ class ENGOCR:
                     MAIN_FILE_NAME_WITHOUT_EXT = os.path.splitext(MAIN_FILE_NAME)[0]# split the filename and extension
                     output_dir = MAIN_FILE_PATH# output directory
                     output_file = os.path.join(output_dir, f"{MAIN_FILE_NAME_WITHOUT_EXT}.pdf")# output file name
-                    print(MAIN_TXT_FILE)
-                    print(MAIN_FILE_NAME)
                     with open(MAIN_TXT_FILE, 'r') as file:
                         data = file.read().replace('\n', '')
 
@@ -178,10 +168,6 @@ class ENGOCR:
                         
                         with open(file_name, 'w') as file:
                             file.write(data[i * 600:(i + 1) * 600])
-
-                    print(FILE_NAMES)
-
-
 
 
 ####################################################################################
@@ -199,17 +185,13 @@ class ENGOCR:
                         os.remove(file_name)
                     for file_name in PHOTO_FILENAME:
                         os.remove(file_name)
-                                    
 
-                    
-                            
-
-
+                    pdf_output_file = output_file
 
 
                     if file_path:
                         print(file_path)
-                    return render(request, 'ENG_OCR_HANDWRITTEN.html', {'form': form, 'image_url': record_image.image.url, 'text': text, 'file_path': file_path})
+                    return render(request, 'apps.html', {'form': form, 'image_url': record_image.image.url, 'text': text, 'file_path': file_path, 'pdf_output_file':pdf_output_file})
         else:
             form = OCRImageForm()
-        return render(request, 'ENG_OCR_HANDWRITTEN.html', {'form': form})
+        return render(request, 'apps.html', {'form': form})

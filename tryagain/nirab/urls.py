@@ -20,6 +20,7 @@ urlpatterns = [
     path('ENG_OCR',views.ENG_OCR,name='ENG_OCR'),
     path('bangla_ocr',views.bangla_ocr,name='bangla_ocr'),
     path('download_text/<path:text_path>/', views.download_text, name='download_text'),
+    path('download_pdf/<path:pdf_path>/', views.download_pdf, name='download_pdf'),
     path('index/', views.index, name='index'),
     path('save_mail_form/', views.save_mail_form, name='save_mail_form'),
     path('dashboard/', views.dashboard, name='dashboard'),

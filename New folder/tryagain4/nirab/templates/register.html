@@ -1,0 +1,40 @@
+{% include "base_ex_nav.html" %}
+{% block content %}
+<div class="container">
+    <div class="row d-flex d-xl-flex justify-content-center justify-content-xl-center">
+        <div class="col-sm-12 col-lg-10 col-xl-9 col-xxl-7 bg-white shadow-lg" style="border-radius: 5px;">
+            <div class="p-5">
+                <div class="text-center">
+                    <h4 class="text-dark mb-4">Create an Account!</h4>
+                </div>
+                <form class="user" method="post" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            Your form has errors:
+                            {% for field in form %}
+                                {% if field.errors %}
+                                    {{ field.errors }}
+                                {% endif %}
+                            {% endfor %}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+                    {{ form.as_p }}
+                    <button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit">Register Account</button>
+                </form>
+                <hr>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <button class="btn btn-danger btn-user w-40">
+                      <a href="{% url 'real' %}" style="text-decoration: none; color: inherit;">BACK TO HOME</a>
+                    </button>
+                    <button class="btn btn-dark btn-user w-40">
+                      <a href="{% url 'login_user' %}" style="text-decoration: none; color: inherit;">Already have an account? Login!</a>
+                    </button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
