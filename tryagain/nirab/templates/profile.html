@@ -62,10 +62,23 @@
                             <p>PLEASE UPDATE YOUR PROFILE PICTURE</p>
                             {% endif %}
                         </div>
-                        {% if record %}
+
                         <div class="card-body info">
                             <div class="row" style="margin-top: -24px;">
                                 <div class="col-md-12" style="margin-top: 22px;">
+
+                                    {% if i_c_record %}
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">REMAINING IMAGE COUNT</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels">{{ i_c_record.allowed_image_count }}</p>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    
+                                    {% if record %}
                                     <div class="row">
                                         <div class="col">
                                             <p class="labels">FIRST NAME</p>
