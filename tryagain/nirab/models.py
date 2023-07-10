@@ -1,11 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 
 
 class Record(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='records', null=True)
-    photo = models.ImageField(upload_to='images/profile/',null=True,blank=True)
+    photo = models.ImageField(upload_to='images/profile/', null=True, blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
@@ -20,12 +24,31 @@ class Record(models.Model):
         return f'{self.first_name} {self.last_name}'
 
 
+
+
+
 class RecordImage(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='images', null=True)
     image = models.ImageField(upload_to='images/')
+    image_count = models.IntegerField(default=0)
+
     def __str__(self):
         return f'{self.user}'
-    
+
+@receiver(post_save, sender=RecordImage)
+def update_image_count(sender, instance, **kwargs):
+    if instance.pk:  # Check if the instance already exists
+        try:
+            old_instance = RecordImage.objects.get(pk=instance.pk)
+            if old_instance.image != instance.image:  # Check if the image field has changed
+                instance.image_count = old_instance.image_count + 1  # Increment the count by 1
+        except RecordImage.DoesNotExist:
+            pass  # Handle the case if the old instance doesn't exist yet
+    else:  # New instance is being created
+        instance.image_count += 1  # Increment the count by 1 for new instance
+
+
+
 
 class Record_mail_me(models.Model):
     name = models.CharField(max_length=100)
@@ -35,9 +58,8 @@ class Record_mail_me(models.Model):
 
     def __str__(self):
         return f'{self.name}'
-    
 
-    
+
 class Event(models.Model):
     title = models.CharField(max_length=100)
     mannager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
