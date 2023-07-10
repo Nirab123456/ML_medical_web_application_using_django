@@ -31,7 +31,7 @@ class RecordImage(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='images', null=True)
     image = models.ImageField(upload_to='images/')
     image_count = models.IntegerField(default=0)
-
+    allowed_image_count = models.IntegerField(default=5)
     def __str__(self):
         return f'{self.user}'
 
@@ -46,6 +46,18 @@ def update_image_count(sender, instance, **kwargs):
             pass  # Handle the case if the old instance doesn't exist yet
     else:  # New instance is being created
         instance.image_count += 1  # Increment the count by 1 for new instance
+
+@receiver(post_save, sender=RecordImage)
+def reduce_allowed_image_count(sender, instance, **kwargs):
+    if instance.pk:
+        try:
+            old_instance = RecordImage.objects.get(pk=instance.pk)
+            if old_instance.image != instance.image:
+                instance.allowed_image_count = old_instance.allowed_image_count - 1
+        except RecordImage.DoesNotExist:
+            pass
+    else:
+        instance.allowed_image_count -= 1
 
 
 
