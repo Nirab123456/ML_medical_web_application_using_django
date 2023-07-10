@@ -21,6 +21,22 @@ from django.http import FileResponse,HttpResponse
 
 
 
+def end_allowed_image_count(request):
+    i_c_record = RecordImage.objects.filter(user=request.user).first()
+    if i_c_record:
+        remaining_image_count = i_c_record.allowed_image_count
+        print(remaining_image_count)
+        if remaining_image_count > 0:
+            return True
+        else:
+            return False
+  
+
+
+
+
+
+
 
 def ENG_OCR_HANDWRITTEN(request):
     ENGLISH_OCR = ENGOCR()
@@ -50,7 +66,11 @@ def download_text(request, text_path):
 
 
 def apps(request):
-    return render(request, 'apps.html')
+    i_c_record = RecordImage.objects.filter(user=request.user).first()
+    if i_c_record:
+        return render(request, 'apps.html', {'i_c_record': i_c_record})
+    else:
+        return render(request, 'apps.html')
 
 def profile_picture(request):
     record = Record.objects.filter(user=request.user).first()

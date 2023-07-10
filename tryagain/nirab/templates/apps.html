@@ -1,7 +1,10 @@
 {% include 'base_ex_nav.html' %}
 {% load static %}
 {% block content %}
+{% load custom_filters %}
+{% check_allowed_image_count request.user as is_allowed %}
 
+{% if is_allowed %}
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -140,5 +143,15 @@
 </body>
 
 </html>
+
+
+{% else %}
+
+
+<h1>PLEASE INCREASE ALLOWENCE</h1>
+
+
+{% endif %}
+
 
 {% endblock %}
