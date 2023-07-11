@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm
-from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me
+from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm
+from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post
 import datetime
 import calendar
 from calendar import HTMLCalendar
