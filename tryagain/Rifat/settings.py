@@ -6,17 +6,25 @@ MEDIA_URL = '/media/'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# Specify the directory where static files will be collected.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 # Specify the URL prefix for static files.
 STATIC_URL = '/static/'
+
+BLOG_STATIC_URL = '/blog_static/'
+
+# Specify the directory for the blog static files.
+BLOG_STATIC_ROOT = os.path.join(BASE_DIR, 'blog')
+
+ABOUT_ME_URL = '/about_me/'
+ABOUT_ME_ROOT = os.path.join(BASE_DIR, 'about_me')
+
 
 # Add the following lines at the end of the file.
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets'),
 ]
+
 
 ENG_HANDWRITTEN_URL = '/eng_handwritten/'
 ENG_HANDWRITTEN_ROOT = os.path.join(BASE_DIR, 'eng_handwritten')

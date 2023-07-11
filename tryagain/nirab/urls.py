@@ -28,4 +28,6 @@ urlpatterns = [
     path('apps/', views.apps, name='apps'),
     path('ENG_OCR_HANDWRITTEN', views.ENG_OCR_HANDWRITTEN, name='ENG_OCR_HANDWRITTEN'),
     path('end_allowed_image_count', views.end_allowed_image_count, name='end_allowed_image_count'),
+    path('about/', views.about, name='about'),
+    path('hire_me/', views.hire_me, name='hire_me'),
 ]
