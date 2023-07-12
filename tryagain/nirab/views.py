@@ -109,25 +109,6 @@ def view_record(request):
     record = Record.objects.filter(user=request.user).first()
     return render(request, 'dashboard.html', {'record': record})
 
-def add_record(request):
-
-    existing_record = Record.objects.filter(user=request.user).exists()
-
-    if existing_record:
-        return redirect('update_record')  # Redirect to the record list page or show an error message
-    else:
-        if request.method == 'POST':
-            form = addrecord(request.POST)
-            if form.is_valid():
-                record = form.save(commit=False)
-                record.user = request.user  # Set the current logged-in user as the user
-                record.save()
-                messages.success(request, 'Record Added Successfully')
-                return redirect('profile')  # Redirect to the record list page
-        else:
-            form = addrecord()
-        
-        return render(request, 'profile.html', {'add_recoed_form': form})
 
 
 def profile(request):
@@ -314,22 +295,35 @@ def leave_event(request, event_id):
     return redirect('real')
 
 
-
-
 def update_record(request):
-    record = record = Record.objects.filter(user=request.user).first()
-    if request.method == 'POST':
-        form = addrecord(request.POST,instance=record)
-        if form.is_valid():
-            form.save()
-            messages.success(request,'Record Updated Successfully')
-            return redirect('real')
+    record =  Record.objects.filter(user=request.user).first()
+    if record is not None:
+        if request.method == 'POST':
+            form = addrecord(request.POST,instance=record)
+            if form.is_valid():
+                form.save()
+                messages.success(request,'Record Updated Successfully')
+                return redirect('profile')
+        else:
+            form = addrecord(instance=record)
+        return render(request,'update_record.html',{'form':form})
     else:
-        form = addrecord(instance=record)
-    return render(request,'update_record.html',{'form':form})
+        if request.method == 'POST':
+            form = addrecord(request.POST)
+            if form.is_valid():
+                record = form.save(commit=False)
+                record.user = request.user  # Set the current logged-in user as the user
+                record.save()
+                messages.success(request, 'Record Added Successfully')
+                return redirect('profile')  # Redirect to the record list page
+        else:
+            form = addrecord()
+        
+        return render(request, 'update_record.html',{'form':form})
+        
 
 
 
 def add_or_update_record(request):
-    
+
     return render(request, 'add_or_update_record.html')

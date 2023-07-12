@@ -12,7 +12,6 @@ urlpatterns = [
     path('record',views.view_record,name='record'),
     path('delete_record',views.delete_record,name='delete_record'),
     path('update_record',views.update_record,name='update_record'),
-    path('add_record',views.add_record,name='add_record'),
     path('add_event',views.add_event,name='add_event'),
     path('join_event/<int:event_id>', views.join_event, name='join_event'),
     path('leave_event/<int:event_id>', views.leave_event, name='leave_event'),
