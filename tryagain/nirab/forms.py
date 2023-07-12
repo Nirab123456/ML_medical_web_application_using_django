@@ -41,20 +41,27 @@ class BlogForm(forms.ModelForm):
 
 
 
-
 class Mail_me_Form(forms.ModelForm):
-    name = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Subject'}))
-    email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
-    message = forms.CharField(max_length=100,label="",widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Message'}))
+    TOPIC_CHOICES = [
+        ('HIRE_ME', 'HIRE ME'),
+        ('CONTACT_ME', 'CONTACT ME'),
+        ('COLLABORATION', 'COLLABORATION REQUEST'),
+    ]
+
+    name = forms.CharField(max_length=100, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Name'}))
+    email = forms.EmailField(label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
+    message = forms.CharField(max_length=100, label="", widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Message'}))
+    topic = forms.ChoiceField(choices=TOPIC_CHOICES, label="", widget=forms.Select(attrs={'class':'form-control'}))
+
     class Meta:
         model = Record_mail_me
-        fields = ['name','email','message']
+        fields = ['name', 'email', 'message', 'topic']
         widgets = {
             'email': forms.TextInput(attrs={'class': 'form-control'}),
             'subject': forms.TextInput(attrs={'class': 'form-control'}),
             'message': forms.Textarea(attrs={'class': 'form-control'}),
+            'topic': forms.Select(attrs={'class': 'form-control'}),
         }
-
 
 
 class RegisterForm(UserCreationForm):

@@ -63,13 +63,20 @@ def reduce_allowed_image_count(sender, instance, **kwargs):
 
 
 class Record_mail_me(models.Model):
+    TOPIC_CHOICES = [
+        ('HIRE_ME', 'HIRE ME'),
+        ('CONTACT_ME', 'CONTACT ME'),
+        ('COLLABORATION', 'COLLABORATION REQUEST'),
+    ]
+
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     message = models.TextField(max_length=1000)
+    topic = models.CharField(max_length=100, default='CONTACT_ME', choices=TOPIC_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name} {self.topic}'
 
 
 class Event(models.Model):

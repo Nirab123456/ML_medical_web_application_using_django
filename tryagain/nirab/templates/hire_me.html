@@ -20,7 +20,7 @@
         <div class="container"><a class="navbar-brand logo" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects-grid-cards.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
                     <li class="nav-item"><a class="nav-link active" href="hire-me.html">Hire me</a></li>
@@ -34,23 +34,31 @@
                 <div class="heading">
                     <h2>Hire Me</h2>
                 </div>
-                <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light">
-                    <div class="mb-3"><label class="form-label" for="subject">Subject</label><select class="form-select" id="subject">
-                            <optgroup label="This is a group">
-                                <option value="12" selected="">This is item 1</option>
-                                <option value="13">This is item 2</option>
-                                <option value="14">This is item 3</option>
-                            </optgroup>
-                        </select></div>
-                    <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control" type="email" id="email"></div>
-                    <div class="mb-3"><label class="form-label" for="message">Message</label><textarea class="form-control" id="message"></textarea></div>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-md-6"><label class="form-label" for="hire-date">Date</label><input class="form-control" id="hire-date" type="date"></div>
-                            <div class="col-md-6 button"><button class="btn btn-primary d-block w-100" type="submit">Hire Me</button></div>
+
+                <div>
+                    <form class="p-3 p-xl-4" method="post" action="{% url 'save_mail_form' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input class="form-control" type="text" id="name-1" name="name" placeholder="Name">
                         </div>
-                    </div>
-                </form>
+                        <div class="mb-3">
+                            <input class="form-control" type="email" id="email-1" name="email" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Message"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-control" id="topic" name="topic">
+                                <option value="HIRE_ME">HIRE ME</option>
+                                <option value="CONTACT_ME">CONTACT ME</option>
+                                <option value="COLLABORATION">COLLABORATION REQUEST</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary d-block w-100" type="submit">Send</button>
+                        </div>
+                    </form>                                                                
+                </div>
             </div>
         </section>
     </main>
