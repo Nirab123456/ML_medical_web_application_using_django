@@ -327,3 +327,9 @@ def update_record(request):
     else:
         form = addrecord(instance=record)
     return render(request,'update_record.html',{'form':form})
+
+
+
+def add_or_update_record(request):
+    
+    return render(request, 'add_or_update_record.html')

@@ -31,4 +31,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('hire_me/', views.hire_me, name='hire_me'),
     path('projects/', views.projects, name='projects'),
+    path('add_or_update_record/', views.add_or_update_record, name='add_or_update_record'),
 ]
