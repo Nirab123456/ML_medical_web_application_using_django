@@ -30,4 +30,5 @@ urlpatterns = [
     path('end_allowed_image_count', views.end_allowed_image_count, name='end_allowed_image_count'),
     path('about/', views.about, name='about'),
     path('hire_me/', views.hire_me, name='hire_me'),
+    path('projects/', views.projects, name='projects'),
 ]

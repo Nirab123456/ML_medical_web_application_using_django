@@ -18,16 +18,19 @@ from django.http import FileResponse,HttpResponse
 
 
 
+
+
+
+def projects(request):
+    return render(request, 'projects.html')
+
+
 def hire_me(request):
     return render(request, 'hire_me.html')
 
 
-
-
-
 def about(request):
     return render(request, 'about.html')
-
 
 
 def end_allowed_image_count(request):
