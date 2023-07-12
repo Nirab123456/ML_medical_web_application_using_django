@@ -295,7 +295,9 @@ def leave_event(request, event_id):
     return redirect('real')
 
 
-def update_record(request):
+
+
+def add_or_update_record(request):
     record =  Record.objects.filter(user=request.user).first()
     if record is not None:
         if request.method == 'POST':
@@ -306,7 +308,7 @@ def update_record(request):
                 return redirect('profile')
         else:
             form = addrecord(instance=record)
-        return render(request,'update_record.html',{'form':form})
+        return render(request,'add_or_update_record.html',{'form':form})
     else:
         if request.method == 'POST':
             form = addrecord(request.POST)
@@ -319,11 +321,5 @@ def update_record(request):
         else:
             form = addrecord()
         
-        return render(request, 'update_record.html',{'form':form})
+        return render(request, 'add_or_update_record.html',{'form':form})
         
-
-
-
-def add_or_update_record(request):
-
-    return render(request, 'add_or_update_record.html')
