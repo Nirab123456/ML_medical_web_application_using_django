@@ -123,11 +123,11 @@ def add_record(request):
                 record.user = request.user  # Set the current logged-in user as the user
                 record.save()
                 messages.success(request, 'Record Added Successfully')
-                return redirect('dashboard')  # Redirect to the record list page
+                return redirect('profile')  # Redirect to the record list page
         else:
             form = addrecord()
         
-        return render(request, 'dashboard.html', {'form': form})
+        return render(request, 'profile.html', {'add_recoed_form': form})
 
 
 def profile(request):
