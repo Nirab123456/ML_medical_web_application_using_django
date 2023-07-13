@@ -19,6 +19,16 @@ from django.http import FileResponse,HttpResponse
 
 
 
+def base_ocr(request):
+    return render(request, 'base_ocr.html')
+
+
+
+
+
+
+
+
 
 
 def projects(request):

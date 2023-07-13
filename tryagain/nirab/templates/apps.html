@@ -31,7 +31,6 @@
                 <body>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-md-6">
 
 
 
@@ -39,11 +38,13 @@
 
 
                                 <div class="my-5">
+
                                     {% if request.resolver_match.view_name == 'BN_OCR' %}
                                         <h1 class="text-center">বাংলায় আপনার ছবির পাঠ্য রূপান্তর করুন</h1>
                                     {% elif request.resolver_match.view_name == 'ENG_OCR' %}
                                         <h1 class="text-center">CONVERT YOUR Photo text in BANGLA</h1>
                                     {% endif %}
+                                    
                                 </div>
                                 
 
@@ -54,14 +55,16 @@
 
 
                                 <div>
-                                    {% if image_url %}
-                                        <div class="text-center">
-                                            <img src="{{ image_url }}" class="img-fluid" alt="Image">
-                                        </div>
-                                    {% else %}
-                                        <div class="card-body text-center"></div>
-                                    {% endif %}
-                                    
+                                    <div>
+                                        {% if image_url %}
+                                            <div class="text-center">
+                                                <img src="{{ image_url }}" class="img-fluid" alt="Image">
+                                            </div>
+                                        {% else %}
+                                            <div class="card-body text-center"></div>
+                                        {% endif %}
+                                    </div>
+
                                     <div class="card-body text-center">
                                         <form action="" method="POST" enctype="multipart/form-data">
                                             {% csrf_token %}
@@ -69,7 +72,16 @@
                                             <button type="submit" class="btn btn-primary">Add</button>
                                         </form>
                                     </div>
+
                                 </div>
+
+
+
+
+
+
+
+
                                 
                                 <div class="card my-4">
                                     <div class="card-body">
@@ -80,39 +92,55 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                
-                                <div class="card">
+
+
+
+
+
+
+                           
+                                <div>
+                                    {% if file_path %}    
                                     <div>
-                                        {% if file_path %}
-                                            <div class="text-center my-3">
-                                                <p>{{ file_path }}</p>
-                                            </div>
-                        
-                                            <div class="text-center">
-                                                <a href="{% url 'download_text' file_path %}" class="btn btn-warning btn-lg">Download Text File</a>
-                                            </div>
+                                        <div>
+                                            <p>{{ file_path }}</p>
+                                        </div>
+                    
+                                        <div class="text-center">
+                                            <a href="{% url 'download_text' file_path %}" class="btn btn-warning btn-lg">Download Text File</a>
+                                        </div>
                                         {% else %}
-                                            <div class="card-body text-center"></div>
-                                        {% endif %}
                                     </div>
+                                    {% endif %}
                                 </div>
+
+
+
+
                                 
                                 <div class="card my-4">
                                     <div>
-                                        {% if pdf_output_file %}
-                                            <div class="text-center my-3">
-                                                <p>{{ pdf_output_file }}</p>
-                                            </div>
-                        
-                                            <div class="text-center">
-                                                <a href="{% url 'download_pdf' pdf_output_file %}" class="btn btn-warning btn-lg">Download PDF File</a>
-                                            </div>
-                                        {% else %}
-                                            <div class="card-body text-center"></div>
-                                        {% endif %}
+                                            {% if pdf_output_file %}
+
+                                                <div>
+                                                    <p>{{ pdf_output_file }}</p>
+                                                </div>
+                            
+                                                <div>
+                                                    <a href="{% url 'download_pdf' pdf_output_file %}" class="btn btn-warning btn-lg">Download PDF File</a>
+                                                </div>
+                                            {% else %}
+
+                                            {% endif %}
                                     </div>
                                 </div>
-                            </div>
+
+
+
+
+
+
+
                         </div>
                     </div>
                     {% else %}

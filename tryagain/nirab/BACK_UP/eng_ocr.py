@@ -38,7 +38,7 @@ class ENGOCR:
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
                         print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path})
+                    return render(request, 'apps.html', {'form': form, 'image_url': existing_record.image.url, 'text': text, 'file_path': file_path})
                 else:
                     record_image = form.save(commit=False)
                     record_image.user = request.user
@@ -48,10 +48,10 @@ class ENGOCR:
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
                         print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path})
+                    return render(request, 'apps.html', {'form': form, 'image_url': record_image.image.url, 'text': text, 'file_path': file_path})
         else:
             form = OCRImageForm()
-        return render(request, 'base_ocr.html', {'ENG_OCR_form': form})
+        return render(request, 'apps.html', {'form': form})
 
     def get_ocr(self, image_url):
         image_path = os.path.join(settings.MEDIA_ROOT, image_url.lstrip('/').replace('media/', ''))
@@ -131,7 +131,7 @@ class ENGOCR:
 
                     if file_path:
                         print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path , 'ENG_OCR_pdf_output_file':pdf_output_file})
+                    return render(request, 'apps.html', {'form': form, 'image_url': existing_record.image.url, 'text': text, 'file_path': file_path , 'pdf_output_file':pdf_output_file})
                 
                 
                 
@@ -191,7 +191,7 @@ class ENGOCR:
 
                     if file_path:
                         print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path, 'ENG_OCR_pdf_output_file':pdf_output_file})
+                    return render(request, 'apps.html', {'form': form, 'image_url': record_image.image.url, 'text': text, 'file_path': file_path, 'pdf_output_file':pdf_output_file})
         else:
             form = OCRImageForm()
-        return render(request, 'base_ocr.html', {'ENG_OCR_form': form})
+        return render(request, 'apps.html', {'form': form})

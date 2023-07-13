@@ -31,4 +31,5 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('add_or_update_record/', views.add_or_update_record, name='add_or_update_record'),
     path('add_or_update_profile_picture/', views.add_or_update_profile_picture, name='add_or_update_profile_picture'),
+    path('base_ocr/', views.base_ocr, name='base_ocr'),
 ]
