@@ -1,6 +1,6 @@
 {%load about_me%}
 {% block content %}
-{% include "base_nav.html" %}
+{% include "base_dash_NAV.html" %}
 
 <!DOCTYPE html>
 <html data-bs-theme="light">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% about_me 'css/pikaday.min.css' %}">
     <style>
         .main-content {
-            margin-left: 4.5rem; /* Adjust this value to match the width of your first div */
+            margin-left: 6.5rem; /* Adjust this value to match the width of your first div */
         }
     </style>
 </head>
@@ -108,7 +108,7 @@
                                                     <input type="text" class="form-control" id="id_zipcode" name="zipcode" placeholder="Zipcode">
                                                 </div>
                                             {% endif %}
-                                            <div class="col-md-6 offset-md-3">
+                                            <div style="margin-top: 10px;">
                                                 <button type="button" class="btn btn-primary" onclick="submitForm()">UPDATE RECORD</button>
                                             </div>
                                         </form>
@@ -157,7 +157,7 @@
                                             </div>
                                         </div>
                                         {% endif %}
-                                        <div>
+                                        <div style="margin-top: 10px;">
                                             <button type="button" class="btn btn-primary" onclick="submitProfilePicForm()">UPDATE PROFILE PICTURE</button>
                                         </div>
                                     </form>
