@@ -345,6 +345,7 @@ def add_or_update_profile_picture(request):
 
 def add_or_update_record(request):
     record =  Record.objects.filter(user=request.user).first()
+    photo_url = record.photo.url  # Declare and assign a default value to photo_url
     if record is not None:
         if request.method == 'POST':
             form = addrecord(request.POST,instance=record)
@@ -354,7 +355,7 @@ def add_or_update_record(request):
                 return redirect('profile')
         else:
             form = addrecord(instance=record)
-        return render(request,'add_or_update_record.html',{'add_or_update_record_form':form})
+        return render(request,'add_or_update_record.html',{'add_or_update_record_form':form,'photo_url':photo_url})
     else:
         if request.method == 'POST':
             form = addrecord(request.POST)
@@ -367,4 +368,4 @@ def add_or_update_record(request):
         else:
             form = addrecord()
         
-        return render(request, 'add_or_update_record.html',{'add_or_update_record_form':form})
+        return render(request, 'add_or_update_record.html',{'add_or_update_record_form':form,'photo_url':photo_url})

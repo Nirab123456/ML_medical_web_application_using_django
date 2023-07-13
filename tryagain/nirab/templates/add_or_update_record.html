@@ -142,19 +142,33 @@
 
  
 
-                                    <form id="profilepicForm" method="post" action="{% url 'add_or_update_profile_picture' %}" enctype="multipart/form-data">
+                                    <form id="profilepicForm" method="post" enctype="multipart/form-data">
                                         {% csrf_token %}
                                         {% if add_or_update_profile_picture_form %}
                                         <div style="margin-top: 30px;">
                                             <div>
                                                 {{ add_or_update_profile_picture_form.as_p }}
                                             </div>
-                                            <button type="submit" class="btn btn-primary">ADD/UPDATE PHOTO</button>
                                         </div>
                                         {% else %}
-                                        <h1>No form available</h1>
+                                        <div style="margin-top: 30px;">
+                                            <div enctype="multipart/form-data">
+                                                <input type="file" name="photo" id="photo" class="form-control">
+                                            </div>
+                                        </div>
                                         {% endif %}
+                                        <div>
+                                            <button type="button" class="btn btn-primary" onclick="submitProfilePicForm()">UPDATE PROFILE PICTURE</button>
+                                        </div>
                                     </form>
+                                    
+                                    <script>
+                                        function submitProfilePicForm() {
+                                            document.getElementById("profilepicForm").action = "{% url 'add_or_update_profile_picture' %}";
+                                            document.getElementById("profilepicForm").submit();
+                                        }
+                                    </script>
+                                    
                                     
                                     
                                 </div>
