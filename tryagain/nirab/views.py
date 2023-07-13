@@ -84,20 +84,6 @@ def apps(request):
     else:
         return render(request, 'apps.html')
 
-def profile_picture(request):
-    record = Record.objects.filter(user=request.user).first()
-    form = profilepicForm(request.POST, request.FILES, instance=record)    
-    if record:
-        if request.method == 'POST':
-            if form.is_valid():
-                form.save()
-                messages.success(request, "Your Record Has Been Saved Successfully!")
-                return redirect('profile')
-    else:
-        form = profilepicForm(instance=record)
-    
-    return render(request, 'dashboard.html', {'profile_picture_form': form})
-
 
 
 def dashboard(request):
@@ -297,6 +283,66 @@ def leave_event(request, event_id):
 
 
 
+
+
+
+
+
+def profile(request):
+    record = Record.objects.filter(user=request.user).first()
+    i_c_record = RecordImage.objects.filter(user=request.user).first()
+    if record and record.photo and i_c_record:
+        photo_url = record.photo.url
+        return render(request, 'profile.html', {'record': record, 'photo_url': photo_url, 'i_c_record': i_c_record})
+    else:
+        return render(request, 'profile.html', {'record': record, 'i_c_record': i_c_record})
+
+
+
+
+
+def profile_picture(request):
+    record = Record.objects.filter(user=request.user).first()
+    form = profilepicForm(request.POST, request.FILES, instance=record)    
+    if record:
+        if request.method == 'POST':
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Your Record Has Been Saved Successfully!")
+                return redirect('profile')
+    else:
+        form = profilepicForm(instance=record)
+    
+    return render(request, 'dashboard.html', {'profile_picture_form': form})
+
+
+
+
+
+
+
+def add_or_update_profile_picture(request):
+    record = Record.objects.filter(user=request.user).first()
+
+    photo_url = record.photo.url  # Declare and assign a default value to photo_url
+    form = profilepicForm(request.POST, request.FILES, instance=record)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your Record Has Been Saved Successfully!")
+            return redirect('profile')
+    else:
+        form = profilepicForm(instance=record)
+
+    return render(request, 'add_or_update_record.html', {'add_or_update_profile_picture_form': form, 'photo_url': photo_url})
+
+
+
+
+
+
+
 def add_or_update_record(request):
     record =  Record.objects.filter(user=request.user).first()
     if record is not None:
@@ -308,7 +354,7 @@ def add_or_update_record(request):
                 return redirect('profile')
         else:
             form = addrecord(instance=record)
-        return render(request,'add_or_update_record.html',{'add_or_update_form':form})
+        return render(request,'add_or_update_record.html',{'add_or_update_record_form':form})
     else:
         if request.method == 'POST':
             form = addrecord(request.POST)
@@ -321,4 +367,4 @@ def add_or_update_record(request):
         else:
             form = addrecord()
         
-        return render(request, 'add_or_update_record.html',{'add_or_update_form':form})
+        return render(request, 'add_or_update_record.html',{'add_or_update_record_form':form})

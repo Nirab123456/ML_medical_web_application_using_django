@@ -98,12 +98,12 @@
         {% endif %}
         {% endif %}
 
-        {% if profile_picture_form %}
+        {% if add_or_update_profile_picture_form %}
 
         <div style="margin-top: 300px;">
             <form method="post"  enctype="multipart/form-data" >
                 {% csrf_token %}
-                {{ profile_picture_form.as_p }}
+                {{ add_or_update_profile_picture_form.as_p }}
                 <button type="submit" class="btn btn-primary">ADD/UPDATE PHOTO</button>
             </form>
         </div>
