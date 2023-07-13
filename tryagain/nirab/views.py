@@ -308,7 +308,7 @@ def add_or_update_record(request):
                 return redirect('profile')
         else:
             form = addrecord(instance=record)
-        return render(request,'add_or_update_record.html',{'form':form})
+        return render(request,'add_or_update_record.html',{'add_or_update_form':form})
     else:
         if request.method == 'POST':
             form = addrecord(request.POST)
@@ -321,5 +321,4 @@ def add_or_update_record(request):
         else:
             form = addrecord()
         
-        return render(request, 'add_or_update_record.html',{'form':form})
-        
+        return render(request, 'add_or_update_record.html',{'add_or_update_form':form})
