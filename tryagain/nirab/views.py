@@ -292,16 +292,17 @@ def leave_event(request, event_id):
 
 
 
-
-
 def profile(request):
-    record = Record.objects.filter(user=request.user).first()
-    i_c_record = RecordImage.objects.filter(user=request.user).first()
-    if record and record.photo and i_c_record:
-        photo_url = record.photo.url
-        return render(request, 'profile.html', {'record': record, 'photo_url': photo_url, 'i_c_record': i_c_record})
-    else:
-        return render(request, 'profile.html', {'record': record, 'i_c_record': i_c_record})
+    return render(request, 'profile.html')
+
+# def profile(request):
+#     record = Record.objects.filter(user=request.user).first()
+#     i_c_record = RecordImage.objects.filter(user=request.user).first()
+#     if record and record.photo and i_c_record:
+#         photo_url = record.photo.url
+#         return render(request, 'profile.html', {'record': record, 'photo_url': photo_url, 'i_c_record': i_c_record})
+#     else:
+#         return render(request, 'profile.html', {'record': record, 'i_c_record': i_c_record})
 
 
 

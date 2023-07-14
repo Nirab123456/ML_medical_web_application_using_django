@@ -1,5 +1,5 @@
 from django import template
-from ..models import RecordImage
+from ..models import RecordImage , Record
 
 register = template.Library()
 
@@ -14,3 +14,11 @@ def check_allowed_image_count(user):
             return False
     else:
         return False
+    
+@register.simple_tag
+def get_record(user):
+    try:
+        record = Record.objects.get(user=user)
+        return record
+    except Record.DoesNotExist:
+        return None
