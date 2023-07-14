@@ -100,41 +100,29 @@
                                     <div style="margin-top: 10px;">
 
 
-                                        {% if BN_OCR_text %}
+                                            {% if BN_OCR_text %}
 
-                                            <p>{{ BN_OCR_text }}</p>
+                                                <p>{{ BN_OCR_text }}</p>
 
-                                        {% else %}
-                                        
-                                        {% endif %}
-                                
-                                
-                                </div>
-                                
-
-
-
-
-                                <div style="margin-top: 10px;">
-
-                                    {% if BN_OCR_file_path %}    
-
-                                    <div>
-
-                                        <div>
-                                            <a href="{% url 'download_text' BN_OCR_file_path %}" class="btn btn-danger btn-mid">টেক্সট ফাইল ডাউনলোড করুন</a>
-
-                                        </div>
-
-                                        {% else %}
-
-
+                                            {% else %}
+                                            
+                                            {% endif %}
+                                    
+                                    
                                     </div>
                                     
-                                    {% endif %}
 
 
-                                </div>
+                                    <div style="margin-top: 10px;">
+                                        {% if BN_OCR_file_path %}    
+                                        <div>
+                                            <div class="text-center">
+                                                <a href="{% url 'download_text' BN_OCR_file_path %}" class="btn btn-warning btn-lg">Download Text File</a>
+                                            </div>
+                                            {% else %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
 
 
 
@@ -167,79 +155,12 @@
 
                         <div class="price-card featured">
                             <h2>ENG-OCR</h2>
-                            <p>CONVERT YOUR PHOtO INTO TEXT</p>
+                            <p>Most popular choice</p>
                             
                             
-                            <div style="margin-top: 20px;">
-
-
-                                <div>
-                                    {% if ENG_OCR_image_url %}
-                                        <div>
-                                            <img src="{{ ENG_OCR_image_url }}" class="img-fluid" alt="Image">
-                                        </div>
-                                    {% else %}
-
-
-
-                                    {% endif %}
-                                </div>
-
-
-                                <div style="margin-top: 10px;">
-                                    <form id="ENGFORM" action="" method="POST" enctype="multipart/form-data">
-                                        {% csrf_token %}
-                                        {{ ENG_OCR_form.as_p }}
-                                        <a class="btn btn-primary btn-mid" role="button" onclick="ENGFORM()" href="#">CONVERT</a>
-                                    </form>
-
-                                    <script>
-                                        function ENGFORM() {
-                                            document.getElementById("ENGFORM").action = "{% url 'ENG_OCR' %}";
-                                            document.getElementById("ENGFORM").submit();
-                                        }
-                                    </script>
-                                </div>
-
-
-
-                                <div style="margin-top: 10px;">
-
-
-                                    {% if ENG_OCR_text %}
-
-                                        <p>{{ ENG_OCR_text }}</p>
-
-                                    {% else %}
-
-                                    {% endif %}
                             
-                            
-                                </div>
-                            
+                            <a class="btn btn-primary btn-mid" role="button" href="#">Buy Now</a>
 
-
-
-                                <div style="margin-top: 10px;">
-
-                                    {% if ENG_OCR_file_path %}    
-
-                                    <div>
-
-                                        <div>
-                                            <a href="{% url 'download_text' ENG_OCR_file_path %}" class="btn btn-danger btn-mid">Download Text File</a>
-
-                                        </div>
-
-                                        {% else %}
-
-
-                                    </div>
-
-                                    {% endif %}
-
-
-                                </div>
 
 
 
