@@ -2,8 +2,64 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,Post
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,Post ,SocialMedia
 from django.forms import ModelForm
+
+
+
+
+
+class SocialMediaForm(forms.ModelForm):
+    website = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Website'}))
+    facebook = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Facebook'}))
+    instagram = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Instagram'}))
+    twitter = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Twitter'}))
+    linkedin = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Linkedin'}))
+    github = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Github'}))
+    upwork = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Upwork'}))
+    discord = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Discord'}))
+    class Meta:
+        model = SocialMedia
+        fields = ['website','facebook','instagram','twitter','linkedin','github','upwork','discord']
+        widgets = {
+            'website': forms.TextInput(attrs={'class': 'form-control'}),
+            'facebook': forms.TextInput(attrs={'class': 'form-control'}),
+            'instagram': forms.TextInput(attrs={'class': 'form-control'}),
+            'twitter': forms.TextInput(attrs={'class': 'form-control'}),
+            'linkedin': forms.TextInput(attrs={'class': 'form-control'}),
+            'github': forms.TextInput(attrs={'class': 'form-control'}),
+            'upwork': forms.TextInput(attrs={'class': 'form-control'}),
+            'discord': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+    def clean(self):
+        cleaned_data = super().clean()
+        website = cleaned_data.get('website')
+        facebook = cleaned_data.get('facebook')
+        instagram = cleaned_data.get('instagram')
+        twitter = cleaned_data.get('twitter')
+        linkedin = cleaned_data.get('linkedin')
+        github = cleaned_data.get('github')
+        upwork = cleaned_data.get('upwork')
+        discord = cleaned_data.get('discord')
+
+        if not any([website, facebook, instagram, twitter, linkedin, github, upwork, discord]):
+            raise forms.ValidationError("Please provide at least one social media link.")
+
+        return cleaned_data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

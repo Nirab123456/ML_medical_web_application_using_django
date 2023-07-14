@@ -135,3 +135,24 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+# i will change the name of this model  next time i work on this project
+class SocialMedia(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='social_media', null=True)
+    website = models.URLField(max_length=200,blank=True)
+    facebook = models.URLField(max_length=200,blank=True)
+    instagram = models.URLField(max_length=200,blank=True)
+    twitter = models.URLField(max_length=200,blank=True)
+    linkedin = models.URLField(max_length=200,blank=True)
+    github = models.URLField(max_length=200,blank =True)
+    upwork = models.URLField(max_length=200,blank=True)
+    discord = models.URLField(max_length=200,blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at', '-updated_at']
+
+    def __str__(self):
+        return f'{self.user}'
+

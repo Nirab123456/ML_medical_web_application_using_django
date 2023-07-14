@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm
-from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post
+from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm,SocialMediaForm
+from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia
 import datetime
 import calendar
 from calendar import HTMLCalendar
@@ -14,6 +14,18 @@ from .bangla_ocr import BanglaOCR
 from .eng_ocr import ENGOCR
 import os
 from django.http import FileResponse,HttpResponse
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -102,15 +114,6 @@ def view_record(request):
     return render(request, 'dashboard.html', {'record': record})
 
 
-
-def profile(request):
-    record = Record.objects.filter(user=request.user).first()
-    i_c_record = RecordImage.objects.filter(user=request.user).first()
-    if record and record.photo and i_c_record:
-        photo_url = record.photo.url
-        return render(request, 'profile.html', {'record': record, 'photo_url': photo_url, 'i_c_record': i_c_record})
-    else:
-        return render(request, 'profile.html', {'record': record, 'i_c_record': i_c_record})
 
 
 
@@ -206,6 +209,18 @@ def register_user(request):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 def delete_record(request):
     record = Record.objects.filter(user=request.user).first()
     record.delete()
@@ -295,14 +310,6 @@ def leave_event(request, event_id):
 def profile(request):
     return render(request, 'profile.html')
 
-# def profile(request):
-#     record = Record.objects.filter(user=request.user).first()
-#     i_c_record = RecordImage.objects.filter(user=request.user).first()
-#     if record and record.photo and i_c_record:
-#         photo_url = record.photo.url
-#         return render(request, 'profile.html', {'record': record, 'photo_url': photo_url, 'i_c_record': i_c_record})
-#     else:
-#         return render(request, 'profile.html', {'record': record, 'i_c_record': i_c_record})
 
 
 
@@ -387,3 +394,35 @@ def add_or_update_record(request):
             form = addrecord()
         
         return render(request, 'add_or_update_record.html',{'add_or_update_record_form':form})
+    
+
+
+def social_media_form_view(request):
+    record = SocialMedia.objects.filter(user=request.user).first()
+    if record:
+        if request.method == 'POST':
+            form = SocialMediaForm(request.POST, instance=record)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Social Media Links Updated Successfully')
+                return redirect('profile')
+        else:
+            form = SocialMediaForm(instance=record)
+        return render(request, 'social_media_Page.html', {'social_media_form': form, 'social_media_record': record})
+    else:
+        if request.method == 'POST':
+            form = SocialMediaForm(request.POST)
+            if form.is_valid():
+                record = form.save(commit=False)
+                record.user = request.user
+                record.save()
+                messages.success(request, 'Social Media Links Added Successfully')
+                return redirect('profile')
+        else:
+            form = SocialMediaForm()
+        return render(request, 'social_media_Page.html', {'social_media_form': form})
+
+
+
+
+

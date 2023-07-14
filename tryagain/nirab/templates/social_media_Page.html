@@ -1,0 +1,22 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+
+</head>
+
+<body>
+    <form method="post" >
+        <div class="card mt-3">
+
+                {% csrf_token %}
+                {% if social_media_form %}
+                {{ social_media_form.as_p }}
+                {% endif %}
+        </div>
+        <button class="btn btn-primary" type="submit" style="color: var(--bs-body-bg);background: var(--bs-dark);">Button</button>
+    </form>
+</body>
+
+</html>
