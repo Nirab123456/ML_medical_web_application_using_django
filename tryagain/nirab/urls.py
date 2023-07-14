@@ -16,7 +16,6 @@ urlpatterns = [
     path('leave_event/<int:event_id>', views.leave_event, name='leave_event'),
     path('BN_OCR/',views.BN_OCR,name='BN_OCR'),
     path('ENG_OCR/',views.ENG_OCR,name='ENG_OCR'),
-    path('bangla_ocr',views.bangla_ocr,name='bangla_ocr'),
     path('download_text/<path:text_path>/', views.download_text, name='download_text'),
     path('download_pdf/<path:pdf_path>/', views.download_pdf, name='download_pdf'),
     path('index/', views.index, name='index'),
@@ -32,4 +31,5 @@ urlpatterns = [
     path('add_or_update_record/', views.add_or_update_record, name='add_or_update_record'),
     path('add_or_update_profile_picture/', views.add_or_update_profile_picture, name='add_or_update_profile_picture'),
     path('base_ocr/', views.base_ocr, name='base_ocr'),
+    path('base_handwritten/', views.base_handwritten, name='base_handwritten'),
 ]

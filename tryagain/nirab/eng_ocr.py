@@ -131,7 +131,7 @@ class ENGOCR:
 
                     if file_path:
                         print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path , 'ENG_OCR_pdf_output_file':pdf_output_file})
+                    return render(request, 'base_handwritten.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path , 'ENG_OCR_pdf_output_file':pdf_output_file})
                 
                 
                 
@@ -191,7 +191,7 @@ class ENGOCR:
 
                     if file_path:
                         print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path, 'ENG_OCR_pdf_output_file':pdf_output_file})
+                    return render(request, 'base_handwritten.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path, 'ENG_OCR_pdf_output_file':pdf_output_file})
         else:
             form = OCRImageForm()
-        return render(request, 'base_ocr.html', {'ENG_OCR_form': form})
+        return render(request, 'base_handwritten.html', {'ENG_OCR_form': form})

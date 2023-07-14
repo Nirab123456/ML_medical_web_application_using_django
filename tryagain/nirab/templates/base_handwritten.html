@@ -1,0 +1,254 @@
+{%load about_me%}
+{% block content %}
+{% include "base_apps_NAV.html" %}
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>base ocr</title>
+    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
+    <style>
+        .main-content {
+            margin-left: 7rem; /* Adjust this value to match the width of your first div */
+        }
+     
+    </style>
+
+</head>
+
+<body>
+    <div class="page cv-page main-content">
+        <section class="pricing-section">
+
+
+
+            <div class="container">
+
+
+
+                <div class="row justify-content-md-center">
+
+
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="text-center section-title title-ex1">
+                            <h2><span style="color: rgb(33, 37, 41);">OPTICAL IMAGE READING</span></h2>
+                            <p><br><span style="color: rgb(5, 6, 6);">Welcome to our website, where you can effortlessly convert images into text using either Bangla or English language. Simply upload your image and select your preferred method, and voila! You'll receive your text file or string in no time.</span><br><br></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row">
+
+
+
+
+                    <div class="col-md-12">
+
+
+                        <div class="price-card featured">
+
+
+
+                            <h2 style="color: rgb(36, 71, 5);">CONVERT YOUR ENGLISH OPTICAL IMAGE  TO HANDWRITTEN PDF </h2>
+                            <p style="color: rgb(36, 71, 5);" >OI TO PDF</p>
+                            
+                            
+                            <div style="margin-top: 20px;">
+
+
+                                <div>
+                                    {% if ENG_OCR_image_url %}
+                                        <div>
+                                            <img src="{{ ENG_OCR_image_url }}" class="img-fluid" alt="Image">
+                                        </div>
+                                    {% else %}
+
+
+
+                                    {% endif %}
+                                </div>
+
+
+                                <div style="margin-top: 10px;">
+                                    <form id="ENGHANDWRITTEN" action="" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{ ENG_OCR_form.as_p }}
+                                        <a class="btn btn-primary btn-mid" role="button" onclick="ENGHANDWRITTEN()" href="#">CONVERT</a>
+                                    </form>
+
+                                    <script>
+                                        function ENGHANDWRITTEN() {
+                                            document.getElementById("ENGHANDWRITTEN").action = "{% url 'ENG_OCR_HANDWRITTEN' %}";
+                                            document.getElementById("ENGHANDWRITTEN").submit();
+                                        }
+                                    </script>
+                                </div>
+
+
+
+                                <div style="margin-top: 10px;">
+
+
+                                    {% if ENG_OCR_text %}
+
+                                        <p>{{ ENG_OCR_text }}</p>
+
+                                    {% else %}
+
+                                    {% endif %}
+                            
+                            
+                                </div>
+                            
+
+
+
+                                <div style="margin-top: 10px;">
+
+                                    {% if ENG_OCR_file_path %}    
+
+                                    <div>
+
+                                        <div>
+                                            <a href="{% url 'download_text' ENG_OCR_file_path %}" class="btn btn-danger btn-mid">Download Text File</a>
+
+                                        </div>
+
+                                        {% else %}
+
+
+                                    </div>
+
+                                    {% endif %}
+
+
+                                </div>
+
+
+
+
+
+
+                                <div style="margin-top: 10px;">
+
+                                    <div>
+                                            {% if ENG_OCR_pdf_output_file %}
+
+                                                <div>
+                                                    <p>{{ ENG_OCR_pdf_output_file }}</p>
+                                                </div>
+                            
+                                                <div>
+                                                    <a href="{% url 'download_pdf' ENG_OCR_pdf_output_file %}" class="btn btn-warning btn-lg">Download PDF File</a>
+                                                </div>
+                                            {% else %}
+
+                                            {% endif %}
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+
+
+
+
+
+                            
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="col-md-12" style="margin-top: 10px;">
+
+
+                        <div class="price-card">
+
+
+
+                            <h3 style="color: rgb(237, 16, 16);">BANGLA OPTICAL IMAGE  TO HANDWRITTEN PDF </h3>
+
+                            <p>এই বৈশিষ্ট্যটি বর্তমানে অনুপলব্ধ আমি এটি আনার জন্য কঠোর পরিশ্রম করছি৷ ধন্যবাদ</p>
+
+
+                            <div style="margin-top: 20px;">
+
+
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+    </div>
+</body>
+
+</html>
+{% endblock %}
