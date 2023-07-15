@@ -38,12 +38,12 @@ def change_password(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Your Password Has Been Changed Successfully!")
-            return redirect('profile')
+            return redirect('home')
         else:
             messages.error(request, "Please Correct The Error Below")
     else:
         form = ChangePasswordForm(request.user)
-    return render(request, 'change_password.html', {'change_password_form': form})
+    return render(request, 'add_or_update_record.html', {'change_password_form': form})
 
 
 
