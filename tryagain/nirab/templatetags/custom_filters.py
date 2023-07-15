@@ -40,4 +40,12 @@ def add_or_update_social_media(user):
     
     return form
 
+@register.simple_tag
+def social_media_link(user):
+    try:
+        social_media = SocialMedia.objects.get(user=user)
+        return social_media
+    except SocialMedia.DoesNotExist:
+        return None
+
 
