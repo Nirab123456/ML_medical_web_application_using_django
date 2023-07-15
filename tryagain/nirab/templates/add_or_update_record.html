@@ -1,6 +1,8 @@
 {%load about_me%}
 {% block content %}
 {% include "base_dash_NAV.html" %}
+{% load custom_filters %}
+{% add_or_update_social_media user as social_media %}
 
 <!DOCTYPE html>
 <html data-bs-theme="light">
@@ -180,12 +182,10 @@
                         <div class="col-xxl-6 mb-5 mb-xxl-0">
                             <div class="bg-secondary-soft px-4 py-5 rounded">
                                 <div class="row g-3"><h4 class="mb-4 mt-0">Social media detail</h4>
-                                    <div class="col-md-6"><label class="form-label form-label"><i class="fab fa-facebook fa-fw me-2 text-facebook"></i>Facebook *</label><input class="form-control form-control" type="text" placeholder="" aria-label="Facebook" value="http://www.facebook.com"></div>
-                                    <div class="col-md-6"><label class="form-label form-label"><i class="fab fa-twitter fa-fw text-twitter me-2"></i>Twitter *</label><input class="form-control form-control" type="text" placeholder="" aria-label="Twitter" value="http://www.twitter.com"></div>
-                                    <div class="col-md-6"><label class="form-label form-label"><i class="fab fa-linkedin-in fa-fw text-linkedin me-2"></i>Linkedin *</label><input class="form-control form-control" type="text" placeholder="" aria-label="Linkedin" value="http://www.linkedin.com"></div>
-                                    <div class="col-md-6"><label class="form-label form-label"><i class="fab fa-instagram fa-fw text-instagram me-2"></i>Instagram *</label><input class="form-control form-control" type="text" placeholder="" aria-label="Instragram" value="http://www.instragram.com"></div>
-                                    <div class="col-md-6"><label class="form-label form-label"><i class="fas fa-basketball-ball fa-fw text-dribbble me-2"></i>Dribble *</label><input class="form-control form-control" type="text" placeholder="" aria-label="Dribble" value="http://www.dribble.com"></div>
-                                    <div class="col-md-6"><label class="form-label form-label"><i class="fab fa-pinterest fa-fw text-pinterest"></i>Pinterest *</label><input class="form-control form-control" type="text" placeholder="" aria-label="Pinterest" value="http://www.pinterest.com"></div>
+
+
+                                    {% include 'social_media_Page.html' %}
+                      
                                 </div>
                             </div>
                         </div>

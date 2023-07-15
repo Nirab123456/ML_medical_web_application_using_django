@@ -1,5 +1,6 @@
 from django import template
-from ..models import RecordImage , Record
+from ..models import RecordImage , Record, SocialMedia
+from ..forms import SocialMediaForm
 
 register = template.Library()
 
@@ -22,3 +23,21 @@ def get_record(user):
         return record
     except Record.DoesNotExist:
         return None
+
+
+
+
+
+@register.simple_tag
+def add_or_update_social_media(user):
+    try:
+        social_media = SocialMedia.objects.get(user=user)
+        form = SocialMediaForm(instance=social_media)
+    except SocialMedia.DoesNotExist:
+        form = SocialMediaForm(initial={'user': user})  # Set the initial value of 'user' field
+    
+    form.user = user  # Set the user attribute of the form
+    
+    return form
+
+

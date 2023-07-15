@@ -31,22 +31,6 @@ class SocialMediaForm(forms.ModelForm):
             'upwork': forms.TextInput(attrs={'class': 'form-control'}),
             'discord': forms.TextInput(attrs={'class': 'form-control'}),
         }
-    def clean(self):
-        cleaned_data = super().clean()
-        website = cleaned_data.get('website')
-        facebook = cleaned_data.get('facebook')
-        instagram = cleaned_data.get('instagram')
-        twitter = cleaned_data.get('twitter')
-        linkedin = cleaned_data.get('linkedin')
-        github = cleaned_data.get('github')
-        upwork = cleaned_data.get('upwork')
-        discord = cleaned_data.get('discord')
-
-        if not any([website, facebook, instagram, twitter, linkedin, github, upwork, discord]):
-            raise forms.ValidationError("Please provide at least one social media link.")
-
-        return cleaned_data
-
 
 
 

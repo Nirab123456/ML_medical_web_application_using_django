@@ -14,6 +14,8 @@ from .bangla_ocr import BanglaOCR
 from .eng_ocr import ENGOCR
 import os
 from django.http import FileResponse,HttpResponse
+from .templatetags.custom_filters import add_or_update_social_media
+from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 
 
 
@@ -365,64 +367,6 @@ def add_or_update_profile_picture(request):
 
 
 
-
-
-
 def add_or_update_record(request):
-    record =  Record.objects.filter(user=request.user).first()
-    if record and record.photo:  # Check if record exists and if photo is not None
-        photo_url = record.photo.url 
-        if request.method == 'POST':
-            form = addrecord(request.POST,instance=record)
-            if form.is_valid():
-                form.save()
-                messages.success(request,'Record Updated Successfully')
-                return redirect('profile')
-        else:
-            form = addrecord(instance=record)
-        return render(request,'add_or_update_record.html',{'add_or_update_record_form':form,'photo_url':photo_url})
-    else:
-        if request.method == 'POST':
-            form = addrecord(request.POST)
-            if form.is_valid():
-                record = form.save(commit=False)
-                record.user = request.user  # Set the current logged-in user as the user
-                record.save()
-                messages.success(request, 'Record Added Successfully')
-                return redirect('profile')  # Redirect to the record list page
-        else:
-            form = addrecord()
-        
-        return render(request, 'add_or_update_record.html',{'add_or_update_record_form':form})
-    
-
-
-def social_media_form_view(request):
-    record = SocialMedia.objects.filter(user=request.user).first()
-    if record:
-        if request.method == 'POST':
-            form = SocialMediaForm(request.POST, instance=record)
-            if form.is_valid():
-                form.save()
-                messages.success(request, 'Social Media Links Updated Successfully')
-                return redirect('profile')
-        else:
-            form = SocialMediaForm(instance=record)
-        return render(request, 'social_media_Page.html', {'social_media_form': form, 'social_media_record': record})
-    else:
-        if request.method == 'POST':
-            form = SocialMediaForm(request.POST)
-            if form.is_valid():
-                record = form.save(commit=False)
-                record.user = request.user
-                record.save()
-                messages.success(request, 'Social Media Links Added Successfully')
-                return redirect('profile')
-        else:
-            form = SocialMediaForm()
-        return render(request, 'social_media_Page.html', {'social_media_form': form})
-
-
-
-
-
+    ADD_OR_update_record = ADD_OR_UPDATE_record(request=request)
+    return ADD_OR_update_record.add_or_update_record()
