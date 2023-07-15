@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm,SocialMediaForm
+from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm,SocialMediaForm,ChangePasswordForm
 from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia
 import datetime
 import calendar
@@ -29,6 +29,21 @@ from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 
 
 
+
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = ChangePasswordForm(request.user, request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your Password Has Been Changed Successfully!")
+            return redirect('profile')
+        else:
+            messages.error(request, "Please Correct The Error Below")
+    else:
+        form = ChangePasswordForm(request.user)
+    return render(request, 'change_password.html', {'change_password_form': form})
 
 
 

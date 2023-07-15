@@ -9,101 +9,6 @@ from django.forms import ModelForm
 
 
 
-class SocialMediaForm(forms.ModelForm):
-    website = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Website'}))
-    facebook = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Facebook'}))
-    instagram = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Instagram'}))
-    twitter = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Twitter'}))
-    linkedin = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Linkedin'}))
-    github = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Github'}))
-    upwork = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Upwork'}))
-    discord = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Discord'}))
-    class Meta:
-        model = SocialMedia
-        fields = ['website','facebook','instagram','twitter','linkedin','github','upwork','discord']
-        widgets = {
-            'website': forms.TextInput(attrs={'class': 'form-control'}),
-            'facebook': forms.TextInput(attrs={'class': 'form-control'}),
-            'instagram': forms.TextInput(attrs={'class': 'form-control'}),
-            'twitter': forms.TextInput(attrs={'class': 'form-control'}),
-            'linkedin': forms.TextInput(attrs={'class': 'form-control'}),
-            'github': forms.TextInput(attrs={'class': 'form-control'}),
-            'upwork': forms.TextInput(attrs={'class': 'form-control'}),
-            'discord': forms.TextInput(attrs={'class': 'form-control'}),
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class BlogForm(forms.ModelForm):
-    title = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Title'}))
-    slug = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Slug'}))
-    content = forms.CharField(max_length=100,label="",widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Content'}))
-    status = forms.IntegerField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Status'}))
-    class Meta:
-        model = Post
-        fields = ['title','slug','content','status']
-        widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
-            'status': forms.TextInput(attrs={'class': 'form-control'}),
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Mail_me_Form(forms.ModelForm):
-    TOPIC_CHOICES = [
-        ('HIRE_ME', 'HIRE ME'),
-        ('CONTACT_ME', 'CONTACT ME'),
-        ('COLLABORATION', 'COLLABORATION REQUEST'),
-    ]
-
-    name = forms.CharField(max_length=100, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Name'}))
-    email = forms.EmailField(label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
-    message = forms.CharField(max_length=100, label="", widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Message'}))
-    topic = forms.ChoiceField(choices=TOPIC_CHOICES, label="", widget=forms.Select(attrs={'class':'form-control'}))
-
-    class Meta:
-        model = Record_mail_me
-        fields = ['name', 'email', 'message', 'topic']
-        widgets = {
-            'email': forms.TextInput(attrs={'class': 'form-control'}),
-            'subject': forms.TextInput(attrs={'class': 'form-control'}),
-            'message': forms.Textarea(attrs={'class': 'form-control'}),
-            'topic': forms.Select(attrs={'class': 'form-control'}),
-        }
-
-
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
     first_name = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}))
@@ -133,6 +38,86 @@ class RegisterForm(UserCreationForm):
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
         self.fields['password2'].label = ''
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Enter the same password as before, for verification.</small></span>'	
+
+
+
+
+class ChangePasswordForm(PasswordChangeForm):
+    old_password = forms.CharField(max_length=100,label="",widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'Old Password'}))
+    new_password1 = forms.CharField(max_length=100,label="",widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'New Password'}))
+    new_password2 = forms.CharField(max_length=100,label="",widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'Confirm Password'}))
+    class Meta:
+        model = User
+        fields = ['old_password','new_password1','new_password2']
+
+        
+
+
+
+class SocialMediaForm(forms.ModelForm):
+    website = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Website'}))
+    facebook = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Facebook'}))
+    instagram = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Instagram'}))
+    twitter = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Twitter'}))
+    linkedin = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Linkedin'}))
+    github = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Github'}))
+    upwork = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Upwork'}))
+    discord = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Discord'}))
+    class Meta:
+        model = SocialMedia
+        fields = ['website','facebook','instagram','twitter','linkedin','github','upwork','discord']
+        widgets = {
+            'website': forms.TextInput(attrs={'class': 'form-control'}),
+            'facebook': forms.TextInput(attrs={'class': 'form-control'}),
+            'instagram': forms.TextInput(attrs={'class': 'form-control'}),
+            'twitter': forms.TextInput(attrs={'class': 'form-control'}),
+            'linkedin': forms.TextInput(attrs={'class': 'form-control'}),
+            'github': forms.TextInput(attrs={'class': 'form-control'}),
+            'upwork': forms.TextInput(attrs={'class': 'form-control'}),
+            'discord': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+
+class BlogForm(forms.ModelForm):
+    title = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Title'}))
+    slug = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Slug'}))
+    content = forms.CharField(max_length=100,label="",widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Content'}))
+    status = forms.IntegerField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Status'}))
+    class Meta:
+        model = Post
+        fields = ['title','slug','content','status']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'status': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+
+
+
+class Mail_me_Form(forms.ModelForm):
+    TOPIC_CHOICES = [
+        ('HIRE_ME', 'HIRE ME'),
+        ('CONTACT_ME', 'CONTACT ME'),
+        ('COLLABORATION', 'COLLABORATION REQUEST'),
+    ]
+
+    name = forms.CharField(max_length=100, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Name'}))
+    email = forms.EmailField(label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email Address'}))
+    message = forms.CharField(max_length=100, label="", widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Message'}))
+    topic = forms.ChoiceField(choices=TOPIC_CHOICES, label="", widget=forms.Select(attrs={'class':'form-control'}))
+
+    class Meta:
+        model = Record_mail_me
+        fields = ['name', 'email', 'message', 'topic']
+        widgets = {
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'subject': forms.TextInput(attrs={'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'class': 'form-control'}),
+            'topic': forms.Select(attrs={'class': 'form-control'}),
+        }
+
 
 
 

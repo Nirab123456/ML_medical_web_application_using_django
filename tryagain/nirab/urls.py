@@ -32,4 +32,5 @@ urlpatterns = [
     path('add_or_update_profile_picture/', views.add_or_update_profile_picture, name='add_or_update_profile_picture'),
     path('base_ocr/', views.base_ocr, name='base_ocr'),
     path('base_handwritten/', views.base_handwritten, name='base_handwritten'),
+    path('change_password/', views.change_password, name='change_password'),
 ]
