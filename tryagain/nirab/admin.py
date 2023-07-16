@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Record, Event, EventVenue, EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia
+from .models import Record, Event, EventVenue, EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication
 
 # Register your models here.
 
@@ -10,7 +10,7 @@ admin.site.register(RecordImage)
 admin.site.register(Record_mail_me)
 admin.site.register(Post)
 admin.site.register(SocialMedia)
-
+admin.site.register(Medication)
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):

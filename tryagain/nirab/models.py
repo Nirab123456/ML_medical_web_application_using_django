@@ -7,6 +7,34 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 
+
+
+
+
+class Medication(models.Model):
+    name = models.CharField(max_length=100)
+    dosage_form = models.CharField(max_length=100)
+    generic_name = models.CharField(max_length=200)
+    strength = models.CharField(max_length=100)
+    manufacturer = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Record(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='records', null=True)
     photo = models.ImageField(upload_to='images/profile/', null=True, blank=True)
