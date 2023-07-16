@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm,SocialMediaForm,ChangePasswordForm
-from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia
+from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm,SocialMediaForm,ChangePasswordForm,MedicineForm
+from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication
 import datetime
 import calendar
 from calendar import HTMLCalendar
@@ -22,11 +22,29 @@ from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 
 
 
+def medication_search(request):
+    if request.method == 'POST':
+        form = MedicineForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            matching_medications = Medication.objects.filter(name__icontains=name)
+            return render(request, 'medication_search.html', {'medications': matching_medications})
+    else:
+        form = MedicineForm()
+    return render(request, 'medication_search.html', {'form': form})
 
 
 
+# def medication_search(request):
+#     search_query = request.GET.get('search_query', '')
+#     matching_medications = Medication.objects.filter(name__icontains=search_query)
 
+#     context = {
+#         'search_query': search_query,
+#         'medications': matching_medications
+#     }
 
+#     return render(request, 'medication_search.html', context)
 
 
 

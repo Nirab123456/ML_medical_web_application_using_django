@@ -2,8 +2,22 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,Post ,SocialMedia
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,Post ,SocialMedia,Medication
 from django.forms import ModelForm
+
+
+
+
+class MedicineForm(ModelForm):
+    name = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Medicine Name'}))
+    class Meta:
+        model = Medication
+        fields = ['name']
+
+
+
+
+
 
 
 

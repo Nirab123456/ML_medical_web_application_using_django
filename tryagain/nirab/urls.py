@@ -33,4 +33,5 @@ urlpatterns = [
     path('base_ocr/', views.base_ocr, name='base_ocr'),
     path('base_handwritten/', views.base_handwritten, name='base_handwritten'),
     path('change_password/', views.change_password, name='change_password'),
+    path('medication_search/', views.medication_search, name='medication_search'),
 ]

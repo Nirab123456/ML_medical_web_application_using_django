@@ -1,0 +1,42 @@
+{% block content %}
+
+{% if form %}
+<body>
+    <h1>Search Medicine</h1>
+    
+    <form method="POST" action="{% url 'medication_search' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+{% endif %}
+
+{% if medications %}
+<title>Search Results</title>
+<h1>Search Results</h1>
+
+    <h2>Matching Medications:</h2>
+
+        <ul>
+            {% for medication in medications %}
+                <li>{{ medication }}</li>
+                <li>{{medication.generic_name}}</li>
+                <li>{{medication.strength}}</li>
+                <li>{{medication.dosage_form}}</li>
+                <li>{{medication.manufacturer}}</li>
+                <li>{{medication.price}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No medications found.</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+
+
+{% endblock %}
