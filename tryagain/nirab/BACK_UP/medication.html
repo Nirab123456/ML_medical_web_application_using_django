@@ -1,0 +1,65 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
+</head>
+
+<body>
+    <main class="page hire-me-page"></main>
+    <div class="price-card">
+        <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label" for="name">NAME OF THE DRUG</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+
+
+
+
+
+            {% if medications %}
+              <div class="mb-3">
+                <label class="form-label" for="strength">Strength</label>
+                <select class="form-select" id="strength" name="strength">
+                  <optgroup label="strength">
+                    {% for strength in strengths %}
+                      <option value="{{ strength }}">{{ strength }}</option>
+                    {% endfor %}
+                  </optgroup>
+                </select>
+              </div>
+            {% endif %}
+
+
+
+
+          
+            <div class="mb-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" id="message"></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-12 button">
+                        <button class="btn btn-primary d-block w-100" type="submit" style="font-size: 18px;">
+                            <strong><span style="color: rgb(252, 249, 249);">GET RECOMMENDATION</span></strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

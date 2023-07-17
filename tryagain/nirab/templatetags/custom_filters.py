@@ -1,5 +1,5 @@
 from django import template
-from ..models import RecordImage , Record, SocialMedia
+from ..models import RecordImage , Record, SocialMedia , Medication
 from ..forms import SocialMediaForm
 
 register = template.Library()
@@ -49,3 +49,12 @@ def social_media_link(user):
         return None
 
 
+@register.simple_tag
+def get_medication(strength):
+    try:
+        medication = Medication.objects.get(strength=strength)
+        print("Medication found:", medication)
+        return medication
+    except Medication.DoesNotExist:
+        print("Medication not found")
+        return None

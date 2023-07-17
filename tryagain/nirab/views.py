@@ -16,6 +16,30 @@ import os
 from django.http import FileResponse,HttpResponse
 from .templatetags.custom_filters import add_or_update_social_media
 from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
+from django.http import JsonResponse
+
+
+
+
+def get_medication_details(request):
+    selected_strength = request.GET.get('strength')
+    medications = Medication.objects.filter(strength=selected_strength)
+    if medications.exists():
+        medication_details = []
+        for medication in medications:
+            details = {
+                'name': medication.name,
+                'dosage_form': medication.dosage_form,
+                'generic_name': medication.generic_name,
+                'manufacturer': medication.manufacturer,
+                'price': str(medication.price),
+                # add any other fields you want to include
+            }
+            medication_details.append(details)
+        return JsonResponse(medication_details, safe=False)
+    else:
+        return JsonResponse({'error': 'Medication not found'}, status=404)
+
 
 
 
@@ -28,23 +52,11 @@ def medication_search(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             matching_medications = Medication.objects.filter(name__icontains=name)
-            return render(request, 'medication_search.html', {'medications': matching_medications})
+            strengths = [medication.strength for medication in matching_medications]
+            return render(request, 'medication.html', {'medication_form': form, 'medications': matching_medications, 'strengths': strengths})
     else:
         form = MedicineForm()
-    return render(request, 'medication_search.html', {'form': form})
-
-
-
-# def medication_search(request):
-#     search_query = request.GET.get('search_query', '')
-#     matching_medications = Medication.objects.filter(name__icontains=search_query)
-
-#     context = {
-#         'search_query': search_query,
-#         'medications': matching_medications
-#     }
-
-#     return render(request, 'medication_search.html', context)
+    return render(request, 'medication.html', {'medication_form': form})
 
 
 

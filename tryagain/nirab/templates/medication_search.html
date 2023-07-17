@@ -1,42 +1,112 @@
 {% block content %}
+{% include 'base.html' %}
 
-{% if form %}
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+    <style>
+        .cardStyle {
+           width: 500px;
+           border-color: white;
+           background: #fff;
+           padding: 36px 0;
+           border-radius: 4px;
+           margin: 30px 0;
+           box-shadow: 0px 0 2px 0 rgba(0,0,0,0.25);
+         }
+       
+         .formTitle{
+         font-weight: 600;
+         margin-top: 20px;
+         color: #2F2D3B;
+         text-align: center;
+       }
+       .inputLabel {
+         font-size: 12px;
+         color: #555;
+         margin-bottom: 6px;
+         margin-top: 24px;
+       }
+       .inputDiv {
+           width: 70%;
+           display: flex;
+           flex-direction: column;
+           margin: auto;
+         }
+       
+         .buttonWrapper {
+         margin-top: 40px;
+       }
+       .submitButton {
+           width: 70%;
+           height: 40px;
+           margin: auto;
+           display: block;
+           color: #fff;
+           background-color: #065492;
+           border-color: #065492;
+           text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+           box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+           border-radius: 4px;
+           font-size: 14px;
+           cursor: pointer;
+         }
+           .submitButton:hover {
+               background-color: #c04208;
+               border-color: #065492;
+           }
+           .submitButton:active {
+               background-color: #0cbd09;
+               border-color: #065492;
+           }
+       .submitButton:disabled,
+           button[disabled] {
+           border: 1px solid #cccccc;
+           background-color: #cccccc;
+           color: #666666;
+           }
+       </style>
+</head>
+
 <body>
-    <h1>Search Medicine</h1>
-    
-    <form method="POST" action="{% url 'medication_search' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Search</button>
-    </form>
-{% endif %}
+    <div class="cardStyle">
+        <form action="" method="post" >
+            {% csrf_token %}
+            <h2 class="formTitle">PROVIDE THE NAME OF YOUR DRUG</h2>
+            <div class="inputDiv"><label class="form-label inputLabel" for="text">NAME OF THE DRUG</label><input type="text" id="name" name="name" required=""></div>
+            
+            <div class="buttonWrapper"><button type="submit" id="submitButton" class="submitButton pure-button pure-button-primary"><span>SEARCH</span><span id="loader"></span></button></div>
+            
+            <div class="inputDiv">
 
-{% if medications %}
-<title>Search Results</title>
-<h1>Search Results</h1>
+                {% if medications %}
+                <title>Search Results</title>
+                
+                    <h2>Matching Medications:</h2>
+                
+                        <ul>
+                            {% for medication in medications %}
+                                <li>{{ medication }}</li>
+                                <li>{{medication.generic_name}}</li>
+                                <li>{{medication.strength}}</li>
+                                <li>{{medication.dosage_form}}</li>
+                                <li>{{medication.manufacturer}}</li>
+                                <li>{{medication.price}}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No medications found.</p>
+                    {% endif %}
 
-    <h2>Matching Medications:</h2>
 
-        <ul>
-            {% for medication in medications %}
-                <li>{{ medication }}</li>
-                <li>{{medication.generic_name}}</li>
-                <li>{{medication.strength}}</li>
-                <li>{{medication.dosage_form}}</li>
-                <li>{{medication.manufacturer}}</li>
-                <li>{{medication.price}}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No medications found.</p>
-    {% endif %}
+
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
 
-
-
-
-
-
-
 {% endblock %}
+
