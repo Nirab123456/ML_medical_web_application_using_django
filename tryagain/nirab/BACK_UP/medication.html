@@ -1,8 +1,10 @@
 {% load about_me %}
 {% include 'base.html' %}
 {% block content %}
+{% load custom_filters %}
 
-<!DOCTYPE html>
+{% get_medication selected_strength as medication_update %}
+
 <html data-bs-theme="light">
 
 <head>
@@ -16,28 +18,78 @@
             {% csrf_token %}
 
             <div class="mb-3">
-                <label class="form-label" for="name">NAME OF THE DRUG</label>
-                <input type="text" id="name" name="name" required>
+              <label class="form-label" for="name">NAME OF THE DRUG</label>
+              <input type="text" id="name" name="name" value="{{ name_of_medication }}" required>
             </div>
+            
 
 
 
-
-
-
-            {% if medications %}
-              <div class="mb-3">
-                <label class="form-label" for="strength">Strength</label>
-                <select class="form-select" id="strength" name="strength">
-                  <optgroup label="strength">
-                    {% for strength in strengths %}
-                      <option value="{{ strength }}">{{ strength }}</option>
-                    {% endfor %}
-                  </optgroup>
-                </select>
-              </div>
-            {% endif %}
-
+            <div class="mb-3">
+              <label class="form-label" for="strength">Strength</label>
+              <select class="form-select" id="strength" name="strength">
+                <optgroup label="Strength">
+                  {% for strength in strengths %}
+                    <option value="{{ strength }}">{{ strength }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label" for="dosage_form">DOSAGE FORM</label>
+              <select class="form-select" id="dosage_form" name="dosage_form" onchange="handleStrengthChange(this)">
+                <optgroup label="Dosage Form">
+                  {% for dosage_form in dosage_forms %}
+                    <option value="{{ dosage_form }}">{{ dosage_form }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </div>
+            
+            <p id="selectedStrength">Selected Strength: </p>
+            <div id="medicationDetails"></div>
+            
+            <script>
+              function handleStrengthChange(selectElement) {
+                var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+                var selectedDosageForm = encodeURIComponent(selectElement.value);
+                var drugName = document.getElementById("name").value;
+            
+                document.getElementById("selectedStrength").textContent = "Selected Strength: " + selectedStrength;
+            
+                // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + encodeURIComponent(drugName), true);
+                xhr.onload = function() {
+                  if (xhr.status === 200) {
+                    var medicationDetails = JSON.parse(xhr.responseText);
+                    if (Array.isArray(medicationDetails)) {
+                      // Display details for each medication
+                      var detailsHtml = "";
+                      for (var i = 0; i < medicationDetails.length; i++) {
+                        var medication = medicationDetails[i];
+                        detailsHtml += "<p>Name: " + medication.name + "</p>";
+                        detailsHtml += "<p>Dosage Form: " + medication.dosage_form + "</p>";
+                        detailsHtml += "<p>Generic Name: " + medication.generic_name + "</p>";
+                        detailsHtml += "<p>Manufacturer: " + medication.manufacturer + "</p>";
+                        detailsHtml += "<p>Price: " + medication.price + "</p>";
+                        // Add more fields here
+                        detailsHtml += "<hr>";
+                      }
+                      document.getElementById("medicationDetails").innerHTML = detailsHtml;
+                    } else {
+                      // Display error message
+                      document.getElementById("medicationDetails").textContent = medicationDetails.error;
+                    }
+                  } else {
+                    console.error('Request failed. Status:', xhr.status);
+                  }
+                };
+                xhr.send();
+              }
+            </script>
+            
 
 
 

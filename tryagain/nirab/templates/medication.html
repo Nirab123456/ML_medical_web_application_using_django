@@ -27,8 +27,9 @@
 
             <div class="mb-3">
               <label class="form-label" for="strength">Strength</label>
-              <select class="form-select" id="strength" name="strength">
+              <select class="form-select" id="strength" name="strength" onchange="handleSelectionChange()">
                 <optgroup label="Strength">
+                  <option value="">None</option>
                   {% for strength in strengths %}
                     <option value="{{ strength }}">{{ strength }}</option>
                   {% endfor %}
@@ -38,8 +39,9 @@
             
             <div class="mb-3">
               <label class="form-label" for="dosage_form">DOSAGE FORM</label>
-              <select class="form-select" id="dosage_form" name="dosage_form" onchange="handleStrengthChange(this)">
+              <select class="form-select" id="dosage_form" name="dosage_form" onchange="handleSelectionChange()">
                 <optgroup label="Dosage Form">
+                  <option value="">None</option>
                   {% for dosage_form in dosage_forms %}
                     <option value="{{ dosage_form }}">{{ dosage_form }}</option>
                   {% endfor %}
@@ -47,20 +49,18 @@
               </select>
             </div>
             
-            <p id="selectedStrength">Selected Strength: </p>
+            <p id="selectedStrength"> </p>
             <div id="medicationDetails"></div>
             
             <script>
-              function handleStrengthChange(selectElement) {
+              function handleSelectionChange() {
                 var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
-                var selectedDosageForm = encodeURIComponent(selectElement.value);
-                var drugName = document.getElementById("name").value;
-            
-                document.getElementById("selectedStrength").textContent = "Selected Strength: " + selectedStrength;
+                var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+                var drugName = encodeURIComponent(document.getElementById("name").value);
             
                 // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + encodeURIComponent(drugName), true);
+                xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + drugName, true);
                 xhr.onload = function() {
                   if (xhr.status === 200) {
                     var medicationDetails = JSON.parse(xhr.responseText);
@@ -69,12 +69,13 @@
                       var detailsHtml = "";
                       for (var i = 0; i < medicationDetails.length; i++) {
                         var medication = medicationDetails[i];
-                        detailsHtml += "<p>Name: " + medication.name + "</p>";
-                        detailsHtml += "<p>Dosage Form: " + medication.dosage_form + "</p>";
-                        detailsHtml += "<p>Generic Name: " + medication.generic_name + "</p>";
-                        detailsHtml += "<p>Manufacturer: " + medication.manufacturer + "</p>";
-                        detailsHtml += "<p>Price: " + medication.price + "</p>";
+                        detailsHtml += "<div class='medication-details'>";
+                        detailsHtml += "<p><strong>Name:</strong> " + medication.name + "</p>";
+                        detailsHtml += "<p><strong>Generic Name:</strong> " + medication.generic_name + "</p>";
+                        detailsHtml += "<p><strong>Manufacturer:</strong> " + medication.manufacturer + "</p>";
+                        detailsHtml += "<p><strong>Price:</strong> " + medication.price + "</p>";
                         // Add more fields here
+                        detailsHtml += "</div>";
                         detailsHtml += "<hr>";
                       }
                       document.getElementById("medicationDetails").innerHTML = detailsHtml;
@@ -89,14 +90,13 @@
                 xhr.send();
               }
             </script>
-            
+                        
 
 
 
           
             <div class="mb-3">
-                <label class="form-label" for="message">Message</label>
-                <textarea class="form-control" id="message"></textarea>
+
             </div>
             
             <div class="mb-3">
