@@ -14,7 +14,6 @@
       .main-content {
           margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
       }
-
   </style>
 </head>
 
@@ -56,54 +55,76 @@
                 </optgroup>
               </select>
             </div>
-            
-            <p id="selectedStrength"> </p>
+
+            <select id="sortOption" onchange="handleSelectionChange()">
+              <option value="default">Default</option>
+              <option value="priceAsc">Price (Low to High)</option>
+              <option value="priceDesc">Price (High to Low)</option>
+            </select>
+
+            <p id="selectedStrength"></p>
             <div id="medicationDetails"></div>
+            <!-- Add a dropdown menu for sorting -->
+
+
             
             <script>
-              function handleSelectionChange() {
-                var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
-                var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
-                var drugName = encodeURIComponent(document.getElementById("name").value);
-            
-                // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + drugName, true);
-                xhr.onload = function() {
-                  if (xhr.status === 200) {
-                    var medicationDetails = JSON.parse(xhr.responseText);
-                    if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
-                      // Display details for each medication
-                      var detailsHtml = "";
-                      for (var i = 0; i < medicationDetails.length; i++) {
-                        var medication = medicationDetails[i];
-                        detailsHtml += "<div class='medication-details'>";
-                        detailsHtml += "<p><strong>Name:</strong> " + medication.name + "</p>";
-                        detailsHtml += "<p><strong>Generic Name:</strong> " + medication.generic_name + "</p>";
-                        detailsHtml += "<p><strong>Manufacturer:</strong> " + medication.manufacturer + "</p>";
-                        detailsHtml += "<p><strong>Price:</strong> " + medication.price + "</p>";
-                        // Add more fields here
-                        detailsHtml += "</div>";
-                        detailsHtml += "<hr>";
+                function handleSelectionChange() {
+                  var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+                  var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+                  var drugName = encodeURIComponent(document.getElementById("name").value);
+                  var sortOption = document.getElementById("sortOption").value;
+
+                  // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + drugName + '&sort=' + sortOption, true);
+                  xhr.onload = function() {
+                    if (xhr.status === 200) {
+                      var medicationDetails = JSON.parse(xhr.responseText);
+                      if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
+                        // Sort the medication details based on the selected sort option
+                        if (sortOption === "priceAsc") {
+                          medicationDetails.sort(function(a, b) {
+                            return a.price - b.price;
+                          });
+                        } else if (sortOption === "priceDesc") {
+                          medicationDetails.sort(function(a, b) {
+                            return b.price - a.price;
+                          });
+                        }
+                        
+                        // Display details for each medication
+                        var detailsHtml = "";
+                        for (var i = 0; i < medicationDetails.length; i++) {
+                          var medication = medicationDetails[i];
+                          detailsHtml += "<div class='medication-details'>";
+                          detailsHtml += "<p><strong>Name:</strong> " + medication.name + "</p>";
+                          detailsHtml += "<p><strong>Generic Name:</strong> " + medication.generic_name + "</p>";
+                          detailsHtml += "<p><strong>Manufacturer:</strong> " + medication.manufacturer + "</p>";
+                          detailsHtml += "<p><strong>Price:</strong> " + medication.price + "</p>";
+                          // Add more fields here
+                          detailsHtml += "</div>";
+                          detailsHtml += "<hr>";
+                        }
+                        document.getElementById("medicationDetails").innerHTML = detailsHtml;
+                      } else {
+                        // Display "No data found" message
+                        document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
                       }
-                      document.getElementById("medicationDetails").innerHTML = detailsHtml;
                     } else {
-                      // Display "No data found" message
+                      console.error('Request failed. Status:', xhr.status);
+                      // Display "No data found" message for error cases
                       document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
                     }
-                  } else {
-                    console.error('Request failed. Status:', xhr.status);
-                    // Display "No data found" message for error cases
+                  };
+                  xhr.onerror = function() {
+                    console.error('Request failed. Network error');
+                    // Display "No data found" message for network errors
                     document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
-                  }
-                };
-                xhr.onerror = function() {
-                  console.error('Request failed. Network error');
-                  // Display "No data found" message for network errors
-                  document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
-                };
-                xhr.send();
-              }
+                  };
+                  xhr.send();
+                }
+
             </script>  
 
 
