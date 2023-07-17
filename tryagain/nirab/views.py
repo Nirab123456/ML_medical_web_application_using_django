@@ -23,7 +23,10 @@ from django.http import JsonResponse
 
 def get_medication_details(request):
     selected_strength = request.GET.get('strength')
-    medications = Medication.objects.filter(strength=selected_strength)
+    name = request.GET.get('name')
+    generic_name = Medication.objects.filter(name=name,strength=selected_strength).first().generic_name
+    print(generic_name)
+    medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name)
     if medications.exists():
         medication_details = []
         for medication in medications:
@@ -53,7 +56,7 @@ def medication_search(request):
             name = form.cleaned_data['name']
             matching_medications = Medication.objects.filter(name__icontains=name)
             strengths = [medication.strength for medication in matching_medications]
-            return render(request, 'medication.html', {'medication_form': form, 'medications': matching_medications, 'strengths': strengths})
+            return render(request, 'medication.html', {'medication_form': form, 'medications': matching_medications, 'strengths': strengths, 'name_of_medication': name})
     else:
         form = MedicineForm()
     return render(request, 'medication.html', {'medication_form': form})

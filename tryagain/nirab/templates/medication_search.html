@@ -1,106 +1,102 @@
-{% block content %}
+{% load about_me %}
 {% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
 
-<!DOCTYPE html>
+{% get_medication selected_strength as medication_update %}
+
 <html data-bs-theme="light">
 
 <head>
-    <style>
-        .cardStyle {
-           width: 500px;
-           border-color: white;
-           background: #fff;
-           padding: 36px 0;
-           border-radius: 4px;
-           margin: 30px 0;
-           box-shadow: 0px 0 2px 0 rgba(0,0,0,0.25);
-         }
-       
-         .formTitle{
-         font-weight: 600;
-         margin-top: 20px;
-         color: #2F2D3B;
-         text-align: center;
-       }
-       .inputLabel {
-         font-size: 12px;
-         color: #555;
-         margin-bottom: 6px;
-         margin-top: 24px;
-       }
-       .inputDiv {
-           width: 70%;
-           display: flex;
-           flex-direction: column;
-           margin: auto;
-         }
-       
-         .buttonWrapper {
-         margin-top: 40px;
-       }
-       .submitButton {
-           width: 70%;
-           height: 40px;
-           margin: auto;
-           display: block;
-           color: #fff;
-           background-color: #065492;
-           border-color: #065492;
-           text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-           box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
-           border-radius: 4px;
-           font-size: 14px;
-           cursor: pointer;
-         }
-           .submitButton:hover {
-               background-color: #c04208;
-               border-color: #065492;
-           }
-           .submitButton:active {
-               background-color: #0cbd09;
-               border-color: #065492;
-           }
-       .submitButton:disabled,
-           button[disabled] {
-           border: 1px solid #cccccc;
-           background-color: #cccccc;
-           color: #666666;
-           }
-       </style>
+    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
 </head>
 
 <body>
-    <div class="cardStyle">
-        <form action="" method="post" >
+    <main class="page hire-me-page"></main>
+    <div class="price-card">
+        <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST">
             {% csrf_token %}
-            <h2 class="formTitle">PROVIDE THE NAME OF YOUR DRUG</h2>
-            <div class="inputDiv"><label class="form-label inputLabel" for="text">NAME OF THE DRUG</label><input type="text" id="name" name="name" required=""></div>
+
+            <div class="mb-3">
+                <label class="form-label" for="name">NAME OF THE DRUG</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+
+
+
+
+
+            <div class="mb-3">
+              <label class="form-label" for="strength">Strength</label>
+              <select class="form-select" id="strength" name="strength" onchange="handleStrengthChange(this)">
+                <optgroup label="Strength">
+                  {% for strength in strengths %}
+                    <option value="{{ strength }}">{{ strength }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </div>
             
-            <div class="buttonWrapper"><button type="submit" id="submitButton" class="submitButton pure-button pure-button-primary"><span>SEARCH</span><span id="loader"></span></button></div>
+            <p id="selectedStrength">Selected Strength: </p>
+            <div id="medicationDetails"></div>
             
-            <div class="inputDiv">
 
-                {% if medications %}
-                <title>Search Results</title>
+            
+            <script>
+              function handleStrengthChange(selectElement) {
+                var selectedStrength = encodeURIComponent(selectElement.value);
+                document.getElementById("selectedStrength").textContent = "Selected Strength: " + selectElement.value;
                 
-                    <h2>Matching Medications:</h2>
-                
-                        <ul>
-                            {% for medication in medications %}
-                                <li>{{ medication }}</li>
-                                <li>{{medication.generic_name}}</li>
-                                <li>{{medication.strength}}</li>
-                                <li>{{medication.dosage_form}}</li>
-                                <li>{{medication.manufacturer}}</li>
-                                <li>{{medication.price}}</li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        <p>No medications found.</p>
-                    {% endif %}
+                // Make an AJAX call to fetch the medication details based on the selected strength
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/get_medication/?strength=' + selectedStrength, true);
+                xhr.onload = function() {
+                  if (xhr.status === 200) {
+                    var medicationDetails = JSON.parse(xhr.responseText);
+                    if (Array.isArray(medicationDetails)) {
+                      // Display details for each medication
+                      var detailsHtml = "";
+                      for (var i = 0; i < medicationDetails.length; i++) {
+                        var medication = medicationDetails[i];
+                        detailsHtml += "<p>Name: " + medication.name + "</p>";
+                        detailsHtml += "<p>Dosage Form: " + medication.dosage_form + "</p>";
+                        detailsHtml += "<p>Generic Name: " + medication.generic_name + "</p>";
+                        detailsHtml += "<p>Manufacturer: " + medication.manufacturer + "</p>";
+                        detailsHtml += "<p>Price: " + medication.price + "</p>";
+                        // Add more fields here
+                        detailsHtml += "<hr>";
+                      }
+                      document.getElementById("medicationDetails").innerHTML = detailsHtml;
+                    } else {
+                      // Display error message
+                      document.getElementById("medicationDetails").textContent = medicationDetails.error;
+                    }
+                  } else {
+                    console.error('Request failed. Status:', xhr.status);
+                  }
+                };
+                xhr.send();
+              }
+            </script>
+            
 
 
 
+          
+            <div class="mb-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" id="message"></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-12 button">
+                        <button class="btn btn-primary d-block w-100" type="submit" style="font-size: 18px;">
+                            <strong><span style="color: rgb(252, 249, 249);">GET RECOMMENDATION</span></strong>
+                        </button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -109,4 +105,3 @@
 </html>
 
 {% endblock %}
-

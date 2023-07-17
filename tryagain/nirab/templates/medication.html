@@ -18,10 +18,10 @@
             {% csrf_token %}
 
             <div class="mb-3">
-                <label class="form-label" for="name">NAME OF THE DRUG</label>
-                <input type="text" id="name" name="name" required>
+              <label class="form-label" for="name">NAME OF THE DRUG</label>
+              <input type="text" id="name" name="name" value="{{ name_of_medication }}" required>
             </div>
-
+            
 
 
 
@@ -42,15 +42,17 @@
             <div id="medicationDetails"></div>
             
 
-            
+
             <script>
               function handleStrengthChange(selectElement) {
                 var selectedStrength = encodeURIComponent(selectElement.value);
+                var drugName = document.getElementById("name").value;
+                
                 document.getElementById("selectedStrength").textContent = "Selected Strength: " + selectElement.value;
                 
-                // Make an AJAX call to fetch the medication details based on the selected strength
+                // Make an AJAX call to fetch the medication details based on the selected strength and drug name
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', '/get_medication/?strength=' + selectedStrength, true);
+                xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&name=' + encodeURIComponent(drugName), true);
                 xhr.onload = function() {
                   if (xhr.status === 200) {
                     var medicationDetails = JSON.parse(xhr.responseText);
@@ -79,7 +81,7 @@
                 xhr.send();
               }
             </script>
-            
+
 
 
 
