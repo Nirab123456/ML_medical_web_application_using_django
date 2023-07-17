@@ -97,12 +97,12 @@ WSGI_APPLICATION = 'Rifat.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'nirab',
-        'USER':'root',
-        'PASSWORD':'Nahida@123',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'niab',
+        'USER': 'postgres',
+        'PASSWORD': 'Nahida@123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

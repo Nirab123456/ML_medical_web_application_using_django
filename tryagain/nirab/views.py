@@ -23,11 +23,15 @@ from django.http import JsonResponse
 
 def get_medication_details(request):
     selected_strength = request.GET.get('strength')
+    print(f'selected strength: {selected_strength}')
     name = request.GET.get('name')
+    print(f'name: {name}')
     dosage_form = request.GET.get('dosage_form')
+    print(f'dosage form: {dosage_form}')
     generic_name = Medication.objects.filter(name=name,strength=selected_strength).first().generic_name
     print(generic_name)
     medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name, dosage_form=dosage_form)
+    print(f'medications: {medications}')
     if medications.exists():
         medication_details = []
         for medication in medications:
