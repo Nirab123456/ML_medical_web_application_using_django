@@ -6,15 +6,15 @@ register = template.Library()
 
 @register.simple_tag
 def check_allowed_image_count(user):
-    i_c_record = RecordImage.objects.filter(user=user).first()
-    if i_c_record:
-        remaining_image_count = i_c_record.allowed_image_count
-        if remaining_image_count > 0:
-            return True
-        else:
-            return False
-    else:
-        return False
+    i_c_record, created = RecordImage.objects.get_or_create(user=user)
+    if created:
+        # Set initial values for the newly created instance
+        i_c_record.image_count = 0
+        i_c_record.allowed_image_count = 5
+        i_c_record.save()
+
+    remaining_image_count = i_c_record.allowed_image_count
+    return remaining_image_count > 0
     
 @register.simple_tag
 def get_record(user):

@@ -1,6 +1,8 @@
 {%load about_me%}
 {% block content %}
 {% include "base_apps_NAV.html" %}
+{% check_allowed_image_count request.user as is_allowed %}
+{% if is_allowed %}
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
     
@@ -272,4 +274,5 @@
 </body>
 
 </html>
+{% endi %f}
 {% endblock %}
