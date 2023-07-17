@@ -64,7 +64,7 @@
                 xhr.onload = function() {
                   if (xhr.status === 200) {
                     var medicationDetails = JSON.parse(xhr.responseText);
-                    if (Array.isArray(medicationDetails)) {
+                    if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
                       // Display details for each medication
                       var detailsHtml = "";
                       for (var i = 0; i < medicationDetails.length; i++) {
@@ -80,17 +80,23 @@
                       }
                       document.getElementById("medicationDetails").innerHTML = detailsHtml;
                     } else {
-                      // Display error message
-                      document.getElementById("medicationDetails").textContent = medicationDetails.error;
+                      // Display "No data found" message
+                      document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
                     }
                   } else {
                     console.error('Request failed. Status:', xhr.status);
+                    // Display "No data found" message for error cases
+                    document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
                   }
+                };
+                xhr.onerror = function() {
+                  console.error('Request failed. Network error');
+                  // Display "No data found" message for network errors
+                  document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
                 };
                 xhr.send();
               }
-            </script>
-                        
+            </script>  
 
 
 
