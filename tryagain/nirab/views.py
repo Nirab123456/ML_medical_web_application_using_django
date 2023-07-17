@@ -24,9 +24,10 @@ from django.http import JsonResponse
 def get_medication_details(request):
     selected_strength = request.GET.get('strength')
     name = request.GET.get('name')
+    dosage_form = request.GET.get('dosage_form')
     generic_name = Medication.objects.filter(name=name,strength=selected_strength).first().generic_name
     print(generic_name)
-    medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name)
+    medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name, dosage_form=dosage_form)
     if medications.exists():
         medication_details = []
         for medication in medications:
@@ -55,8 +56,13 @@ def medication_search(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             matching_medications = Medication.objects.filter(name__icontains=name)
-            strengths = [medication.strength for medication in matching_medications]
-            return render(request, 'medication.html', {'medication_form': form, 'medications': matching_medications, 'strengths': strengths, 'name_of_medication': name})
+            strengths = list(set([medication.strength for medication in matching_medications]))
+            print(f'strengths: {strengths}')
+
+            dosage_forms = list(set([medication.dosage_form for medication in matching_medications]))
+            print(f'dosage forms: {dosage_forms}')
+            return render(request, 'medication.html', {'medication_form': form, 'medications': matching_medications,
+                                                        'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
     else:
         form = MedicineForm()
     return render(request, 'medication.html', {'medication_form': form})

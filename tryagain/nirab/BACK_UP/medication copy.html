@@ -27,7 +27,7 @@
 
             <div class="mb-3">
               <label class="form-label" for="strength">Strength</label>
-              <select class="form-select" id="strength" name="strength">
+              <select class="form-select" id="strength" name="strength" >
                 <optgroup label="Strength">
                   {% for strength in strengths %}
                     <option value="{{ strength }}">{{ strength }}</option>
@@ -35,11 +35,12 @@
                 </optgroup>
               </select>
             </div>
-            
+
+
             <div class="mb-3">
               <label class="form-label" for="dosage_form">DOSAGE FORM</label>
-              <select class="form-select" id="dosage_form" name="dosage_form" onchange="handleStrengthChange(this)">
-                <optgroup label="Dosage Form">
+              <select class="form-select" id="dosage_form" name="dosage_form"  onchange="handleStrengthChange(this)" >
+                <optgroup label="Strength">
                   {% for dosage_form in dosage_forms %}
                     <option value="{{ dosage_form }}">{{ dosage_form }}</option>
                   {% endfor %}
@@ -47,20 +48,24 @@
               </select>
             </div>
             
+
+
             <p id="selectedStrength">Selected Strength: </p>
             <div id="medicationDetails"></div>
             
+
+
             <script>
               function handleStrengthChange(selectElement) {
-                var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
-                var selectedDosageForm = encodeURIComponent(selectElement.value);
+                var selectedStrength = encodeURIComponent(selectElement.value);
                 var drugName = document.getElementById("name").value;
-            
-                document.getElementById("selectedStrength").textContent = "Selected Strength: " + selectedStrength;
-            
-                // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
+
+                
+                document.getElementById("selectedStrength").textContent = "Selected Strength: " + selectElement.value;
+                
+                // Make an AJAX call to fetch the medication details based on the selected strength and drug name
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + encodeURIComponent(drugName), true);
+                xhr.open('GET', '/get_medication/?strength=' + selectedStrength + '&name=' + encodeURIComponent(drugName), true);
                 xhr.onload = function() {
                   if (xhr.status === 200) {
                     var medicationDetails = JSON.parse(xhr.responseText);
@@ -89,7 +94,7 @@
                 xhr.send();
               }
             </script>
-            
+
 
 
 
