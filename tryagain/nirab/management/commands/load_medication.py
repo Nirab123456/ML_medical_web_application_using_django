@@ -8,7 +8,7 @@ class Command(BaseCommand):
     help = 'Import medication data from CSV'
 
     def add_arguments(self, parser):
-        parser.add_argument('csv_file', type=str, help='full_fixed.csv')
+        parser.add_argument('csv_file', type=str, help='django.csv')
 
     def handle(self, *args, **options):
         csv_file = options['csv_file']
@@ -21,7 +21,8 @@ class Command(BaseCommand):
                     generic_name=row['generic_name'],
                     strength=row['strength'],
                     manufacturer=row['manufacturer'],
-                    price=row['price']
+                    price=row['price'],
+                    price_analysis=row['price_analysis'],
                 )
                 medication.save()
         self.stdout.write(self.style.SUCCESS('Medication data imported successfully.'))
