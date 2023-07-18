@@ -37,6 +37,7 @@ def get_medication_details(request):
                 'generic_name': medication.generic_name,
                 'manufacturer': medication.manufacturer,
                 'price': str(medication.price),
+                'price_analysis': str(medication.price_analysis),
                 # add any other fields you want to include
             }
             medication_details.append(details)

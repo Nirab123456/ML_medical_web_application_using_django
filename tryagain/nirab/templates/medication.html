@@ -85,11 +85,11 @@
                         // Sort the medication details based on the selected sort option
                         if (sortOption === "priceAsc") {
                           medicationDetails.sort(function(a, b) {
-                            return a.price - b.price;
+                            return a.price_analysis - b.price_analysis;
                           });
                         } else if (sortOption === "priceDesc") {
                           medicationDetails.sort(function(a, b) {
-                            return b.price - a.price;
+                            return b.price_analysis - a.price_analysis;
                           });
                         }
                         
