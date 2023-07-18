@@ -55,11 +55,17 @@ def medication_search(request):
         form = MedicineForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
+            name = name.lower()
             matching_medications = Medication.objects.filter(name__icontains=name)
-            strengths = list(set([medication.strength for medication in matching_medications]))
+            strengths = Medication.objects.filter(name=name).values_list('strength', flat=True)
+            strengths = set(strengths)
+            # Convert the result to a list
+            strengths = list(strengths)
             print(f'strengths: {strengths}')
-
-            dosage_forms = list(set([medication.dosage_form for medication in matching_medications]))
+            dosage_forms = Medication.objects.filter(name=name).values_list('dosage_form', flat=True)
+            dosage_forms = set(dosage_forms)
+            # Convert the result to a list
+            dosage_forms = list(dosage_forms)
             print(f'dosage forms: {dosage_forms}')
             return render(request, 'medication.html', {'medication_form': form, 'medications': matching_medications,
                                                         'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
