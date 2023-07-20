@@ -77,6 +77,15 @@ def medication_search(request):
 
 
 
+def medication_details(request):
+    return render(request, 'medication_details.html')
+
+
+
+
+
+
+
 
 def change_password(request):
     if request.method == 'POST':

@@ -31,7 +31,7 @@
             
 
 
-
+            {% if strengths %}
             <div class="mb-3">
               <label class="form-label" for="strength">Strength</label>
               <select class="form-select" id="strength" name="strength" onchange="handleSelectionChange()">
@@ -43,7 +43,9 @@
                 </optgroup>
               </select>
             </div>
-            
+            {% endif %}
+
+            {% if dosage_forms %}
             <div class="mb-3">
               <label class="form-label" for="dosage_form">DOSAGE FORM</label>
               <select class="form-select" id="dosage_form" name="dosage_form" onchange="handleSelectionChange()">
@@ -55,6 +57,7 @@
                 </optgroup>
               </select>
             </div>
+            {% endif %}
 
             <select id="sortOption" onchange="handleSelectionChange()">
               <option value="default">Default</option>
@@ -137,9 +140,8 @@
             <div class="mb-3">
                 <div class="row">
                     <div class="col-md-12 button">
-                        <button class="btn btn-primary d-block w-100" type="submit" style="font-size: 18px;">
-                            <strong><span style="color: rgb(252, 249, 249);">GET RECOMMENDATION</span></strong>
-                        </button>
+                      <button class="btn btn-primary w-50" type="button" style="height: 24.5px;font-size: 15px;">GET RECOMENDATION</button>
+                      <button class="btn btn-primary w-50" type="button" style="height: 24.5px;font-size: 15px;">GET FULL MEDICINE DETAILS</button>
                     </div>
                 </div>
             </div>
