@@ -99,7 +99,7 @@
                         for (var i = 0; i < medicationDetails.length; i++) {
                           var medication = medicationDetails[i];
                           detailsHtml += "<div class='medication-details'>";
-                          detailsHtml += "<p><strong>generic_name:</strong> " + medication.name + "</p>";
+                          detailsHtml += "<p><strong>Name:</strong> " + medication.name + "</p>";
                           detailsHtml += "<p><strong>Generic Name:</strong> " + medication.generic_name + "</p>";
                           detailsHtml += "<p><strong>Manufacturer:</strong> " + medication.manufacturer + "</p>";
                           detailsHtml += "<p><strong>Price:</strong> " + medication.price + "</p>";
@@ -138,12 +138,12 @@
             <div class="mb-3">
                 <div class="row">
                     <div class="col-md-12 button">
-                      <div class="d-flex align-items-center justify-content-center">
-
-                        <button class="btn btn-primary d-block w-50" type="submit" style="font-size: 18px;">
-                          <strong><span style="color: rgb(252, 249, 249);">GET RECOMMENDATION</span></strong>
-                        </button>
-                      </div>  
+                      <button class="btn btn-primary d-block w-50" type="submit" style="font-size: 18px;">
+                        <strong><span style="color: rgb(252, 249, 249);">GET RECOMMENDATION</span></strong>
+                    </button>
+                    <button class="btn btn-primary d-block w-50" type="submit" style="font-size: 18px;">
+                      <strong><span style="color: rgb(252, 249, 249);">GET MEDICINE DETAILS</span></strong>
+                  </button>
                     </div>
                 </div>
             </div>

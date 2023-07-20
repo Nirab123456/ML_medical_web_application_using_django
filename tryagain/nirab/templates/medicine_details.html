@@ -1,0 +1,119 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+{% include "base_apps_NAV.html" %}
+<html data-bs-theme="light">
+
+<head>
+    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
+
+    <style>
+      .main-content {
+          margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
+      }
+  </style>
+</head>
+
+<body>
+  <div class="page cv-page main-content">
+    <main class="page hire-me-page"></main>
+    <div class="price-card">
+      <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST" onsubmit="handleFormSubmit(event)">
+        {% csrf_token %}
+
+            <div class="mb-3">
+              <label class="form-label" for="name">NAME OF THE DRUG</label>
+              <input type="text" id="name" name="name" value="{{ name_of_medication }}" required>
+            </div>
+            
+
+            <p id="selectedStrength"></p>
+            <div id="get_medicine_details"></div>
+            <!-- Add a dropdown menu for sorting -->
+
+
+            
+            <script>
+                function handleFormSubmit(event) {
+                  event.preventDefault(); // Prevent the form from being submitted traditionally
+                  handleSelectionChange();
+                }
+                function handleSelectionChange() {
+                  var drugName = encodeURIComponent(document.getElementById("name").value);
+
+                  // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('GET', '/get_medicine_details/?name=' + drugName , true);
+                  xhr.onload = function() {
+                    if (xhr.status === 200) {
+                      var get_medicine_details = JSON.parse(xhr.responseText);
+                      if (Array.isArray(get_medicine_details) && get_medicine_details.length > 0) {
+  
+                        // Display details for each medication
+                        var detailsHtml = "";
+                        for (var i = 0; i < get_medicine_details.length; i++) {
+                          var medication = get_medicine_details[i];
+                          detailsHtml += "<div class='medication-details'>";
+                          detailsHtml += "<p><strong>Generic Name:</strong> " + medication.generic_name + "</p>";
+                          detailsHtml += "<p><strong>DRUG CLASS:</strong> " + medication.drug_class + "</p>";
+                          detailsHtml += "<p><strong>Indication:</strong> " + medication.indication + "</p>";
+                          detailsHtml += "<p><strong>INDICATION DESCRIPTION:</strong> " + medication.indication_description + "</p>";
+                          detailsHtml += "<p><strong>THERAPEUTIC CLASS:</strong> " + medication.therapeutic_class_description + "</p>";
+                          detailsHtml += "<p><strong>PHARMACOLOGY DESCRIPTION:</strong> " + medication.pharmacology_description + "</p>";
+                          detailsHtml += "<p><strong>DOSAGE DESCRIPTION:</strong> " + medication.dosage_description + "</p>";
+                          detailsHtml += "<p><strong> INTERACTIONS DESCRIPTION:</strong> " + medication.interaction_description + "</p>";
+                          detailsHtml += "<p><strong>CONTRAINDICATIONS DESCRIPTION:</strong> " + medication.contraindications_description + "</p>";
+                          detailsHtml += "<p><strong> SIDE EFFECTS DESCRIPTION:</strong> " + medication.side_effects_description + "</p>";
+                          // Add more fields here
+                          detailsHtml += "</div>";
+                          detailsHtml += "<hr>";
+                        }
+                        document.getElementById("get_medicine_details").innerHTML = detailsHtml;
+                      } else {
+                        // Display "No data found" message
+                        document.getElementById("get_medicine_details").innerHTML = "<p>No data found</p>";
+                      }
+                    } else {
+                      console.error('Request failed. Status:', xhr.status);
+                      // Display "No data found" message for error cases
+                      document.getElementById("get_medicine_details").innerHTML = "<p>No data found</p>";
+                    }
+                  };
+                  xhr.onerror = function() {
+                    console.error('Request failed. Network error');
+                    // Display "No data found" message for network errors
+                    document.getElementById("get_medicine_details").innerHTML = "<p>No data found</p>";
+                  };
+                  xhr.send();
+                }
+
+            </script>  
+
+
+
+          
+            <div class="mb-3">
+
+            </div>
+            
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-12 button">
+                      <div class="d-flex align-items-center justify-content-center">
+
+                        <button class="btn btn-primary d-block w-50" type="submit" style="font-size: 18px;">
+                          <strong><span style="color: rgb(252, 249, 249);">GET MEDICINE DETAILS</span></strong>
+                        </button>
+                      </div>  
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</body>
+
+</html>
+
+{% endblock %}

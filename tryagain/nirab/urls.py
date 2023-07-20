@@ -34,5 +34,6 @@ urlpatterns = [
     path('change_password/', views.change_password, name='change_password'),
     path('medication_search/', views.medication_search, name='medication_search'),
     path('get_medication/', views.get_medication_details, name='get_medication'),
-    path('medication_details/', views.medication_details, name='medication_details'),
+    path('medicine_details/', views.medicine_details, name='medicine_details'),
+    path('get_medicine_details/', views.get_medicine_details, name='get_medicine_details'),
 ]

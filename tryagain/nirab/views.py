@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm,SocialMediaForm,ChangePasswordForm,MedicineForm
-from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication
+from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication,MedicationDetails
 import datetime
 import calendar
 from calendar import HTMLCalendar
@@ -17,6 +17,48 @@ from django.http import FileResponse,HttpResponse
 from .templatetags.custom_filters import add_or_update_social_media
 from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 from django.http import JsonResponse
+
+
+
+
+def get_medicine_details(request):
+    name = request.GET.get('name')
+    name = name.lower()
+    generic_name = Medication.objects.filter(name=name).first()
+    if generic_name:
+        details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
+        if details_of_medicine.exists():
+            details_list = []
+            for detail in details_of_medicine:
+                details = {
+                    'generic_name': detail.generic_name,
+                    'drug_class': detail.drug_class,
+                    'indication': detail.indication,
+                    'indication_description': detail.indication_description,
+                    'therapeutic_class_description': detail.therapeutic_class_description,
+                    'pharmacology_description': detail.pharmacology_description,
+                    'dosage_description': detail.dosage_description,
+                    'interaction_description': detail.interaction_description,
+                    'contraindications_description': detail.contraindications_description,
+                    'side_effects_description': detail.side_effects_description,
+                }
+                details_list.append(details)
+            return JsonResponse(details_list, safe=False)
+        else:
+            return JsonResponse({'error': 'Medication details not found'}, status=404)
+    else:
+        return JsonResponse({'error': 'Medication not found'}, status=404)
+
+def medicine_details(request):
+    if request.method == 'POST':
+        form = MedicineForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            name = name.lower()
+            return render(request, 'medicine_details.html', {'medication_form': form, 'name_of_medication': name})
+    else:
+        form = MedicineForm()
+    return render(request, 'medicine_details.html', {'medication_form': form})
 
 
 
@@ -76,9 +118,6 @@ def medication_search(request):
 
 
 
-
-def medication_details(request):
-    return render(request, 'medication_details.html')
 
 
 
