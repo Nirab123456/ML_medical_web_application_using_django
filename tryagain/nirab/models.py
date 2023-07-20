@@ -23,6 +23,25 @@ class Medication(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.name
+    
+
+class MedicationDetails(models.Model):
+    generic_name = models.TextField(max_length=500)
+    drug_class = models.TextField(max_length=500)
+    indication = models.TextField(max_length=500)
+    indication_description = models.TextField(max_length=500)
+    therapeutic_class_description = models.TextField(max_length=500)
+    pharmacology_description = models.TextField(max_length=500)
+    dosage_description = models.TextField(max_length=500)
+    interaction_description = models.TextField(max_length=500)
+    contraindications_description = models.TextField(max_length=500)
+    side_effects_description = models.TextField(max_length=500)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.generic_name
+
+
+
 
 
 
