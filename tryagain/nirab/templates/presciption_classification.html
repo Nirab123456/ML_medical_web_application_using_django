@@ -1,0 +1,127 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+{% include "MED_nav.html" %}
+<html data-bs-theme="light">
+
+<head>
+    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
+
+    <style>
+      .main-content {
+          margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
+      }
+  </style>
+</head>
+
+<body>
+  <div class="page cv-page main-content">
+    <main class="page hire-me-page"></main>
+    <div class="price-card">
+      <h2>PROVIDE THE BRAND NAME OF ANY BANGLADESHI DRUG TO DET DETAILS </h2>
+      <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST" onsubmit="handleFormSubmit(event)">
+        {% csrf_token %}
+
+            <div class="mb-3">
+              <label class="form-label" for="name">NAME OF THE DRUG</label>
+              <input type="text" id="name" name="name" value="{{ name_of_medication }}" required oninput="showWordRecommendations()">
+              <div id="wordRecommendations"></div>
+            </div>
+            
+
+
+
+            <!-- Add a dropdown menu for sorting -->
+
+
+            
+            <script>
+              var timeout; // Global variable to store timeout reference
+            
+              function showWordRecommendations() {
+                clearTimeout(timeout); // Clear previous timeout, if any
+            
+                // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+                timeout = setTimeout(function() {
+                  var input = document.getElementById("name").value.trim();
+            
+                  // Check if there is any input
+                  if (input.length === 0) {
+                    document.getElementById("wordRecommendations").innerHTML = "";
+                    return;
+                  }
+            
+                  // Make an AJAX call to fetch word recommendations based on the input
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+                  xhr.onload = function() {
+                    if (xhr.status === 200) {
+                      var wordRecommendations = JSON.parse(xhr.responseText);
+            
+                      // Display word recommendations in a list
+                      var recommendationsHtml = "<ul>";
+                      recommendationsHtml += " <select >";
+                      recommendationsHtml += "<option value=''>None</option>";
+                      for (var i = 0; i < wordRecommendations.length; i++) {
+                        var word = wordRecommendations[i];
+
+                        
+                        recommendationsHtml += "<option value='" + word + "' onclick='selectRecommendation(\"" + word + "\")'>" + word + "</option>";
+  
+
+                      }
+                      recommendationsHtml += "</select>";
+                      recommendationsHtml += "</ul>";
+            
+                      document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
+                    } else {
+                      console.error('Request failed. Status:', xhr.status);
+                      // Display no recommendations for error cases
+                      document.getElementById("wordRecommendations").innerHTML = "";
+                    }
+                  };
+                  xhr.onerror = function() {
+                    console.error('Request failed. Network error');
+                    // Display no recommendations for network errors
+                    document.getElementById("wordRecommendations").innerHTML = "";
+                  };
+                  xhr.send();
+                }, 300); // Adjust the delay as needed (in milliseconds)
+              }
+            
+              // Function to select a word recommendation and populate the input field with it
+              function selectRecommendation(word) {
+                document.getElementById("name").value = word;
+                document.getElementById("wordRecommendations").innerHTML = "";
+              }
+            </script>
+            
+
+
+
+          
+            <div class="mb-3">
+
+            </div>
+            
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-12 button">
+                      <div class="d-flex align-items-center justify-content-center">
+
+                        <button class="btn btn-primary d-block w-50" type="submit" style="font-size: 18px;">
+                          <strong><span style="color: rgb(252, 249, 249);">GET MEDICINE DETAILS</span></strong>
+                        </button>
+                      </div>  
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</body>
+
+</html>
+
+{% endblock %}

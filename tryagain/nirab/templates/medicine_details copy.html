@@ -23,76 +23,20 @@
       <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST" onsubmit="handleFormSubmit(event)">
         {% csrf_token %}
 
-        <div class="mb-3">
-          <label class="form-label" for="name">NAME OF THE DRUG</label>
-          <input type="text" id="name" name="name" value="" required oninput="showWordRecommendations()">
-          <div id="wordRecommendations"></div>
-        </div>
-        
-        <p id="selectedStrength"></p>
-        <div id="get_medicine_details"></div>
-        <!-- Add a dropdown menu for sorting -->
-        
-        <script>
-          var timeout; // Global variable to store timeout reference
-        
-          function showWordRecommendations() {
-            clearTimeout(timeout); // Clear previous timeout, if any
-        
-            // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
-            timeout = setTimeout(function() {
-              var input = document.getElementById("name").value.trim();
-        
-              // Check if there is any input
-              if (input.length === 0) {
-                document.getElementById("wordRecommendations").innerHTML = "";
-                return;
-              }
-        
-              // Make an AJAX call to fetch word recommendations based on the input
-              var xhr = new XMLHttpRequest();
-              xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
-              xhr.onload = function() {
-                if (xhr.status === 200) {
-                  var wordRecommendations = JSON.parse(xhr.responseText);
-        
-                  // Display word recommendations in a list
-                  var recommendationsHtml = " <select onchange='selectRecommendation()'>";
-                      recommendationsHtml += '<option> SELECT AN OPTION </option>';        
-                  for (var i = 0; i < wordRecommendations.length; i++) {
+            <div class="mb-3">
+              <label class="form-label" for="name">NAME OF THE DRUG</label>
+              <input type="text" id="name" name="name" value="{{ name_of_medication }}" required>
+            </div>
+            
+
+            <p id="selectedStrength"></p>
+            <div id="get_medicine_details"></div>
+            <!-- Add a dropdown menu for sorting -->
 
 
-                    var word = wordRecommendations[i];
-
-        
-                    recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
-                  }
-                  recommendationsHtml += "</select>";
-        
-                  document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
-                } else {
-                  console.error('Request failed. Status:', xhr.status);
-                  // Display no recommendations for error cases
-                  document.getElementById("wordRecommendations").innerHTML = "";
-                }
-              };
-              xhr.onerror = function() {
-                console.error('Request failed. Network error');
-                // Display no recommendations for network errors
-                document.getElementById("wordRecommendations").innerHTML = "";
-              };
-              xhr.send();
-            }, 300); // Adjust the delay as needed (in milliseconds)
-          }
-        
-          // Function to select a word recommendation and populate the input field with it
-          function selectRecommendation() {
-            var selectElement = document.querySelector("select");
-            var selectedOption = selectElement.options[selectElement.selectedIndex].value;
-            document.getElementById("name").value = selectedOption;
-            document.getElementById("wordRecommendations").innerHTML = "";
-          }
-
+            
+            <script>
+              
                 function handleFormSubmit(event) {
                   event.preventDefault(); // Prevent the form from being submitted traditionally
                   handleSelectionChange();
