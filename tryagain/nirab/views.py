@@ -72,26 +72,36 @@ def get_medicine_details(request):
     
 
 def get_presciption_classification(request):
-    name = request.GET.get('name')
-    name = name.lower()
-    generic_name = Medication.objects.filter(name=name).first()
-    if generic_name:
-        details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
-        if details_of_medicine.exists():
-            details_list = []
-            for detail in details_of_medicine:
-                details = {
-                    'generic_name': detail.generic_name,
-                    'drug_class': detail.drug_class,
-                    'indication': detail.indication,
-                }
-                details_list.append(details)
-            return JsonResponse(details_list, safe=False)
+    names = request.GET.get('name', '')  # Get the comma-separated names as a single string
+    names_list = names.split(',')  # Split the string into a list of names
+
+    print(f'all names: {names_list}')
+    all_details = []  # List to store details of all medications
+
+    for name in names_list:
+        name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
+        print(f'name: {name}')
+        generic_name = Medication.objects.filter(name=name).first()
+
+        if generic_name:
+            details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
+            if details_of_medicine.exists():
+                for detail in details_of_medicine:
+                    details = {
+                        'generic_name': detail.generic_name,
+                        'drug_class': detail.drug_class,
+                        'indication': detail.indication,
+                    }
+                    all_details.append(details)
         else:
-            return JsonResponse({'error': 'Medication details not found'}, status=404)
+            # If medication details not found, continue to the next name
+            continue
+
+    if all_details:
+        return JsonResponse(all_details, safe=False)
     else:
-        return JsonResponse({'error': 'Medication not found'}, status=404)
-    
+        # If no medication details found for any name, return an empty list
+        return JsonResponse([], safe=False)
 
 
 

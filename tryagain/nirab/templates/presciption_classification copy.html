@@ -24,8 +24,10 @@
         {% csrf_token %}
 
         <div class="mb-3">
-          <button onclick="addNewInput()">Add Drug Name Input</button>
-          <div id="inputContainer">
+          <div>
+            <label class="form-label" for="name">NAME OF THE DRUG</label>
+            <input type="text" id="name" name="name" value="" required oninput="showWordRecommendations()">
+            <div id="wordRecommendations"></div>
           </div>
         </div>
         
@@ -34,76 +36,64 @@
         <!-- Add a dropdown menu for sorting -->
         
         <script>
-  var timeoutMap = new Map(); // Map to store timeout references for each input field
+          var timeout; // Global variable to store timeout reference
+        
+          function showWordRecommendations() {
+            clearTimeout(timeout); // Clear previous timeout, if any
+        
+            // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+            timeout = setTimeout(function() {
+              var input = document.getElementById("name").value.trim();
+        
+              // Check if there is any input
+              if (input.length === 0) {
+                document.getElementById("wordRecommendations").innerHTML = "";
+                return;
+              }
+        
+              // Make an AJAX call to fetch word recommendations based on the input
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+              xhr.onload = function() {
+                if (xhr.status === 200) {
+                  var wordRecommendations = JSON.parse(xhr.responseText);
+        
+                  // Display word recommendations in a list
+                  var recommendationsHtml = " <select onchange='selectRecommendation()'>";
+                      recommendationsHtml += '<option>CAN SELECT MATCHING DRUG NAME</option>';        
+                  for (var i = 0; i < wordRecommendations.length; i++) {
 
-function showWordRecommendations(inputElement) {
-  var input = inputElement.value.trim();
-  var recommendationsContainer = inputElement.nextElementSibling;
 
-  clearTimeout(timeoutMap.get(inputElement)); // Clear previous timeout, if any
+                    var word = wordRecommendations[i];
 
-  // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
-  var timeout = setTimeout(function() {
-    // Check if there is any input
-    if (input.length === 0) {
-      recommendationsContainer.innerHTML = "";
-      return;
-    }
-
-    // Make an AJAX call to fetch word recommendations based on the input
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        var wordRecommendations = JSON.parse(xhr.responseText);
-
-        // Display word recommendations in a list
-        var recommendationsHtml = "<select onchange='selectRecommendation(this)'>";
-
-        for (var i = 0; i < wordRecommendations.length; i++) {
-          var word = wordRecommendations[i];
-          recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
-        }
-        recommendationsHtml += "</select>";
-
-        recommendationsContainer.innerHTML = recommendationsHtml;
-      } else {
-        console.error('Request failed. Status:', xhr.status);
-        // Display no recommendations for error cases
-        recommendationsContainer.innerHTML = "";
-      }
-    };
-    xhr.onerror = function() {
-      console.error('Request failed. Network error');
-      // Display no recommendations for network errors
-      recommendationsContainer.innerHTML = "";
-    };
-    xhr.send();
-  }, 300); // Adjust the delay as needed (in milliseconds)
-
-  // Store the timeout reference in the map
-  timeoutMap.set(inputElement, timeout);
-}
-
-// Function to select a word recommendation and populate the input field with it
-function selectRecommendation(selectElement) {
-  var selectedOption = selectElement.options[selectElement.selectedIndex].value;
-  var inputElement = selectElement.parentNode.previousElementSibling;
-  inputElement.value = selectedOption;
-  selectElement.parentNode.innerHTML = "";
-}
-
-// Function to add a new drug name input
-function addNewInput() {
-  var inputContainer = document.getElementById("inputContainer");
-  var newInputDiv = document.createElement("div");
-  newInputDiv.innerHTML = `
-    <label class="form-label" for="name">NAME OF THE DRUG</label>
-    <input type="text" class="nameInput" name="name" value="" required oninput="showWordRecommendations(this)">
-    <div class="wordRecommendations"></div>
-  `;
-  inputContainer.appendChild(newInputDiv);
-}
+        
+                    recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
+                  }
+                  recommendationsHtml += "</select>";
+        
+                  document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
+                } else {
+                  console.error('Request failed. Status:', xhr.status);
+                  // Display no recommendations for error cases
+                  document.getElementById("wordRecommendations").innerHTML = "";
+                }
+              };
+              xhr.onerror = function() {
+                console.error('Request failed. Network error');
+                // Display no recommendations for network errors
+                document.getElementById("wordRecommendations").innerHTML = "";
+              };
+              xhr.send();
+            }, 300); // Adjust the delay as needed (in milliseconds)
+          }
+        
+          // Function to select a word recommendation and populate the input field with it
+          function selectRecommendation() {
+            var selectElement = document.querySelector("select");
+            var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+            document.getElementById("name").value = selectedOption;
+            document.getElementById("wordRecommendations").innerHTML = "";
+          }
 
                 function handleFormSubmit(event) {
                   event.preventDefault(); // Prevent the form from being submitted traditionally
