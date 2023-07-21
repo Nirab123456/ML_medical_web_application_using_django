@@ -1,0 +1,1804 @@
+usp_category,usp_class,usp_drug,drug_example
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,celecoxib,celecoxib
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac potassium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac diethylamine
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac hydroxyethylpyrrolidine
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac calcium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,diflunisal,diflunisal
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,etodolac,etodolac
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,fenoprofen,fenoprofen
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,fenoprofen,fenoprofen calcium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,flurbiprofen
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,flurbiprofen axetil
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,flurbiprofen sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,esflurbiprofen
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen piconol
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen aluminum
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen lysine
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen arginine salt
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,indomethacin,indomethacin
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,indomethacin,indomethacin sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ketoprofen,ketoprofen
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ketoprofen,ketoprofen lysine
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ketoprofen,ketoprofen sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ketorolac,ketorolac
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,ketorolac,ketorolac tromethamine
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,meclofenamate,meclofenamic acid
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,meclofenamate,meclofenamate sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,meclofenamate,meclofenamate sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,mefenamic acid,mefenamic acid
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,meloxicam,meloxicam
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,nabumetone,nabumetone
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,naproxen,naproxen
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,naproxen,naproxen sodium
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,naproxen,naproxen etemesil
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,oxaprozin,oxaprozin
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam betadex
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam cinnamate
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam olamine
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,sulindac,sulindac
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,tolmetin,tolmetin
+Analgesics,Nonsteroidal Anti-inflammatory Drugs,tolmetin,tolmetin sodium
+Analgesics,"Opioid Analgesics, Long-acting",hydromorphone,hydromorphone
+Analgesics,"Opioid Analgesics, Long-acting",hydromorphone,hydromorphone hydrochloride
+Analgesics,"Opioid Analgesics, Long-acting",fentanyl,fentanyl
+Analgesics,"Opioid Analgesics, Long-acting",fentanyl,fentanyl citrate
+Analgesics,"Opioid Analgesics, Long-acting",levorphanol,levorphanol
+Analgesics,"Opioid Analgesics, Long-acting",levorphanol,levorphanol tartrate
+Analgesics,"Opioid Analgesics, Long-acting",methadone,methadone
+Analgesics,"Opioid Analgesics, Long-acting",methadone,methadone hydrochloride
+Analgesics,"Opioid Analgesics, Long-acting",morphine,morphine
+Analgesics,"Opioid Analgesics, Long-acting",morphine,morphine sulfate
+Analgesics,"Opioid Analgesics, Long-acting",morphine,morphine hydrochloride hydrate
+Analgesics,"Opioid Analgesics, Long-acting",morphine,morphine tartrate
+Analgesics,"Opioid Analgesics, Long-acting",oxycodone,oxycodone
+Analgesics,"Opioid Analgesics, Long-acting",oxycodone,oxycodone hydrochloride
+Analgesics,"Opioid Analgesics, Long-acting",oxycodone,compound oxycodone
+Analgesics,"Opioid Analgesics, Long-acting",oxycodone,oxycodone terephthalate
+Analgesics,"Opioid Analgesics, Long-acting",oxycodone,oxycodone hydrochloride hydrate
+Analgesics,"Opioid Analgesics, Long-acting",oxymorphone,oxymorphone
+Analgesics,"Opioid Analgesics, Long-acting",oxymorphone,oxymorphone hydrochloride
+Analgesics,"Opioid Analgesics, Long-acting",tramadol,tramadol
+Analgesics,"Opioid Analgesics, Long-acting",tramadol,tramadol hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",butorphanol,butorphanol
+Analgesics,"Opioid Analgesics, Short-acting",butorphanol,butorphanol tartrate
+Analgesics,"Opioid Analgesics, Short-acting",codeine,codeine
+Analgesics,"Opioid Analgesics, Short-acting",codeine,codeine phosphate
+Analgesics,"Opioid Analgesics, Short-acting",codeine,codeine polistirex
+Analgesics,"Opioid Analgesics, Short-acting",codeine,codeine sulfate
+Analgesics,"Opioid Analgesics, Short-acting",codeine,codeine hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",fentanyl,fentanyl
+Analgesics,"Opioid Analgesics, Short-acting",fentanyl,fentanyl citrate
+Analgesics,"Opioid Analgesics, Short-acting",hydromorphone,hydromorphone
+Analgesics,"Opioid Analgesics, Short-acting",hydromorphone,hydromorphone hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",meperidine,pethidine
+Analgesics,"Opioid Analgesics, Short-acting",meperidine,meperidine hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",nalbuphine,nalbuphine
+Analgesics,"Opioid Analgesics, Short-acting",nalbuphine,nalbuphine hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",oxycodone,oxycodone
+Analgesics,"Opioid Analgesics, Short-acting",oxycodone,oxycodone hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",oxycodone,compound oxycodone
+Analgesics,"Opioid Analgesics, Short-acting",oxycodone,oxycodone terephthalate
+Analgesics,"Opioid Analgesics, Short-acting",oxycodone,oxycodone hydrochloride hydrate
+Analgesics,"Opioid Analgesics, Short-acting",oxymorphone,oxymorphone
+Analgesics,"Opioid Analgesics, Short-acting",oxymorphone,oxymorphone hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",pentazocine,pentazocine
+Analgesics,"Opioid Analgesics, Short-acting",pentazocine,pentazocine lactate
+Analgesics,"Opioid Analgesics, Short-acting",pentazocine,pentazocine hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",tapentadol,tapentadol
+Analgesics,"Opioid Analgesics, Short-acting",tapentadol,tapentadol hydrochloride
+Analgesics,"Opioid Analgesics, Short-acting",tramadol,tramadol
+Analgesics,"Opioid Analgesics, Short-acting",tramadol,tramadol hydrochloride
+Anesthetics,Local Anesthetics,lidocaine,lidocaine
+Anesthetics,Local Anesthetics,lidocaine,lidocaine hydrochloride
+Anesthetics,Local Anesthetics,lidocaine,lidocaine hydrochloride monohydrate
+Anesthetics,Local Anesthetics,lidocaine and prilocaine,lidocaine - prilocaine mixt
+Anti-Addiction/Substance Abuse Treatment Agents,Alcohol Deterrents/Anti-craving,acamprosate,acamprosate
+Anti-Addiction/Substance Abuse Treatment Agents,Alcohol Deterrents/Anti-craving,acamprosate,acamprosate calcium
+Anti-Addiction/Substance Abuse Treatment Agents,Alcohol Deterrents/Anti-craving,disulfiram,disulfiram
+Anti-Addiction/Substance Abuse Treatment Agents,Alcohol Deterrents/Anti-craving,naltrexone,naltrexone
+Anti-Addiction/Substance Abuse Treatment Agents,Alcohol Deterrents/Anti-craving,naltrexone,naltrexone hydrochloride
+Anti-Addiction/Substance Abuse Treatment Agents,Opioid Dependence Treatments,buprenorphine,buprenorphine
+Anti-Addiction/Substance Abuse Treatment Agents,Opioid Dependence Treatments,buprenorphine,buprenorphine hydrochloride
+Anti-Addiction/Substance Abuse Treatment Agents,Opioid Dependence Treatments,buprenorphine/naloxone,buprenorphine - naloxone mixt
+Anti-Addiction/Substance Abuse Treatment Agents,Opioid Dependence Treatments,naltrexone,naltrexone
+Anti-Addiction/Substance Abuse Treatment Agents,Opioid Dependence Treatments,naltrexone,naltrexone hydrochloride
+Anti-Addiction/Substance Abuse Treatment Agents,Opioid Reversal Agents,naloxone,naloxone
+Anti-Addiction/Substance Abuse Treatment Agents,Opioid Reversal Agents,naloxone,naloxone hydrochloride
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,bupropion,bupropion
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,bupropion,bupropion hydrochloride
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,bupropion,bupropion hydrobromide
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,nicotine,nicotine
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,nicotine,nicotine bitartrate
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,nicotine,nicotine polacrilex
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,varenicline,varenicline
+Anti-Addiction/Substance Abuse Treatment Agents,Smoking Cessation Agents,varenicline,varenicline tartrate
+Antibacterials,Aminoglycosides,amikacin,amikacin
+Antibacterials,Aminoglycosides,amikacin,amikacin sulfate
+Antibacterials,Aminoglycosides,gentamicin,gentamicin
+Antibacterials,Aminoglycosides,gentamicin,gentamicin sulfate
+Antibacterials,Aminoglycosides,kanamycin,kanamycin sulfate
+Antibacterials,Aminoglycosides,kanamycin,kanamycin sulfate
+Antibacterials,Aminoglycosides,neomycin,neomycin
+Antibacterials,Aminoglycosides,neomycin,neomycin sulfate
+Antibacterials,Aminoglycosides,neomycin,neomycin palmitate
+Antibacterials,Aminoglycosides,neomycin,neomycin undecylenate
+Antibacterials,Aminoglycosides,paromomycin,paromomycin
+Antibacterials,Aminoglycosides,paromomycin,paromomycin sulfate
+Antibacterials,Aminoglycosides,streptomycin,streptomycin
+Antibacterials,Aminoglycosides,streptomycin,streptomycin sulfate
+Antibacterials,Aminoglycosides,tobramycin,tobramycin
+Antibacterials,Aminoglycosides,tobramycin,tobramycin sulfate
+Antibacterials,"Beta-lactam, Cephalosporins",cefadroxil,cefadroxil
+Antibacterials,"Beta-lactam, Cephalosporins",cefadroxil,cefadroxil
+Antibacterials,"Beta-lactam, Cephalosporins",cefazolin,cefazolin
+Antibacterials,"Beta-lactam, Cephalosporins",cefazolin,cefazolin sodium
+Antibacterials,"Beta-lactam, Cephalosporins",cefazolin,cefazolin sodium hydrate
+Antibacterials,"Beta-lactam, Cephalosporins",cephalexin,cefalexin
+Antibacterials,"Beta-lactam, Cephalosporins",cephalexin,cephalexin
+Antibacterials,"Beta-lactam, Cephalosporins",cephalexin,cephalexin hydrochloride
+Antibacterials,"Beta-lactam, Cephalosporins",cefaclor,cefaclor
+Antibacterials,"Beta-lactam, Cephalosporins",cefaclor,cefaclor
+Antibacterials,"Beta-lactam, Cephalosporins",cefoxitin,cefoxitin
+Antibacterials,"Beta-lactam, Cephalosporins",cefoxitin,cefoxitin sodium
+Antibacterials,"Beta-lactam, Cephalosporins",cefprozil,cefprozil
+Antibacterials,"Beta-lactam, Cephalosporins",cefprozil,cefprozil
+Antibacterials,"Beta-lactam, Cephalosporins",cefuroxime,cefuroxime
+Antibacterials,"Beta-lactam, Cephalosporins",cefuroxime,cefuroxime axetil
+Antibacterials,"Beta-lactam, Cephalosporins",cefuroxime,cefuroxime sodium
+Antibacterials,"Beta-lactam, Cephalosporins",cefuroxime,cefuroxime pivoxetil
+Antibacterials,"Beta-lactam, Cephalosporins",cefdinir,cefdinir
+Antibacterials,"Beta-lactam, Cephalosporins",cefditoren,cefditoren
+Antibacterials,"Beta-lactam, Cephalosporins",cefditoren,cefditoren pivoxil
+Antibacterials,"Beta-lactam, Cephalosporins",cefixime,cefixime
+Antibacterials,"Beta-lactam, Cephalosporins",cefixime,cefixime hydrate
+Antibacterials,"Beta-lactam, Cephalosporins",cefotaxime,cefotaxime
+Antibacterials,"Beta-lactam, Cephalosporins",cefotaxime,cefotaxime sodium
+Antibacterials,"Beta-lactam, Cephalosporins",cefpodoxime,cefpodoxime
+Antibacterials,"Beta-lactam, Cephalosporins",cefpodoxime,cefpodoxime proxetil
+Antibacterials,"Beta-lactam, Cephalosporins",ceftazidime,ceftazidime
+Antibacterials,"Beta-lactam, Cephalosporins",ceftazidime,ceftazidime
+Antibacterials,"Beta-lactam, Cephalosporins",ceftibuten,ceftibuten
+Antibacterials,"Beta-lactam, Cephalosporins",ceftibuten,ceftibuten hydrate
+Antibacterials,"Beta-lactam, Cephalosporins",ceftriaxone,ceftriaxone
+Antibacterials,"Beta-lactam, Cephalosporins",ceftriaxone,ceftriaxone sodium
+Antibacterials,"Beta-lactam, Cephalosporins",cefepime,cefepime
+Antibacterials,"Beta-lactam, Cephalosporins",cefepime,cefepime hydrochloride
+Antibacterials,"Beta-lactam, Cephalosporins",ceftaroline,ceftaroline fosamil
+Antibacterials,"Beta-lactam, Penicillins",amoxicillin,amoxicillin
+Antibacterials,"Beta-lactam, Penicillins",amoxicillin,amoxicillin
+Antibacterials,"Beta-lactam, Penicillins",amoxicillin,amoxicillin sodium
+Antibacterials,"Beta-lactam, Penicillins",amoxicillin and clavulanate potassium,amoxicillin - potassium clavulanate combination
+Antibacterials,"Beta-lactam, Penicillins",ampicillin,ampicillin
+Antibacterials,"Beta-lactam, Penicillins",ampicillin,ampicillin hydrate
+Antibacterials,"Beta-lactam, Penicillins",ampicillin,ampicillin sodium
+Antibacterials,"Beta-lactam, Penicillins",ampicillin,ampicillin benzathine
+Antibacterials,"Beta-lactam, Penicillins",ampicillin sodium and sulbactam sodium,ampicillin sodium and sulbactam sodium for injection
+Antibacterials,"Beta-lactam, Penicillins",piperacillin,piperacillin
+Antibacterials,"Beta-lactam, Penicillins",piperacillin,piperacillin sodium
+Antibacterials,"Beta-lactam, Penicillins",piperacillin,piperacillin
+Antibacterials,"Beta-lactam, Penicillins",penicillin g,benzylpenicillin
+Antibacterials,"Beta-lactam, Penicillins",penicillin g,penicillin g potassium
+Antibacterials,"Beta-lactam, Penicillins",penicillin g,penicillin g benzathine
+Antibacterials,"Beta-lactam, Penicillins",penicillin g,penicillin g procaine
+Antibacterials,"Beta-lactam, Penicillins",penicillin g,penicillin g sodium
+Antibacterials,"Beta-lactam, Penicillins",penicillin g,clemizole penicillin
+Antibacterials,"Beta-lactam, Penicillins",penicillin v,penicillin v
+Antibacterials,"Beta-lactam, Penicillins",penicillin v,penicillin v potassium
+Antibacterials,"Beta-lactam, Penicillins",penicillin v,penicillin v benzathine
+Antibacterials,"Beta-lactam, Penicillins",penicillin v,phenoxymethylpenicillin benzathine
+Antibacterials,"Beta-lactam, Penicillins",penicillin v,penicillin v hydrabamine
+Antibacterials,"Beta-lactam, Penicillins",penicillin v,phenoxymethylpenicillin calcium
+Antibacterials,"Beta-lactam, Penicillins",dicloxacillin,dicloxacillin
+Antibacterials,"Beta-lactam, Penicillins",dicloxacillin,dicloxacillin sodium
+Antibacterials,"Beta-lactam, Penicillins",nafcillin,nafcillin
+Antibacterials,"Beta-lactam, Penicillins",nafcillin,nafcillin sodium
+Antibacterials,"Beta-lactam, Penicillins",oxacillin,oxacillin
+Antibacterials,"Beta-lactam, Penicillins",oxacillin,oxacillin sodium
+Antibacterials,"Beta-lactam, Other",aztreonam,aztreonam
+Antibacterials,"Beta-lactam, Other",aztreonam,aztreonam lysine
+Antibacterials,"Beta-lactam, Other",doripenem,doripenem
+Antibacterials,"Beta-lactam, Other",doripenem,doripenem hydrate
+Antibacterials,"Beta-lactam, Other",ertapenem,ertapenem
+Antibacterials,"Beta-lactam, Other",ertapenem,ertapenem sodium
+Antibacterials,"Beta-lactam, Other",imipenem and cilastatin sodium,imipenem hydrate - cilastatin sodium
+Antibacterials,"Beta-lactam, Other",meropenem,meropenem
+Antibacterials,"Beta-lactam, Other",meropenem,meropenem
+Antibacterials,Macrolides,azithromycin,azithromycin
+Antibacterials,Macrolides,azithromycin,azithromycin hydrate
+Antibacterials,Macrolides,azithromycin,azithromycin
+Antibacterials,Macrolides,clarithromycin,clarithromycin
+Antibacterials,Macrolides,clarithromycin,clarithromycin lactobionate
+Antibacterials,Macrolides,erythromycin,erythromycin
+Antibacterials,Macrolides,erythromycin,erythromycin estolate
+Antibacterials,Macrolides,erythromycin,erythromycin ethylsuccinate
+Antibacterials,Macrolides,erythromycin,erythromycin lactobionate
+Antibacterials,Macrolides,erythromycin,erythromycin stearate
+Antibacterials,Macrolides,erythromycin,erythromycin acistrate
+Antibacterials,Macrolides,erythromycin,erythromycin gluceptate
+Antibacterials,Macrolides,erythromycin,erythromycin propionate
+Antibacterials,Macrolides,erythromycin,erythromycin salnacedin
+Antibacterials,Macrolides,erythromycin,erythromycin thiocyanate
+Antibacterials,Macrolides,erythromycin,erythromycin stinoprate
+Antibacterials,Macrolides,fidaxomicin,fidaxomicin
+Antibacterials,Macrolides,telithromycin,telithromycin
+Antibacterials,Quinolones,besifloxacin,besifloxacin hydrochloride
+Antibacterials,Quinolones,ciprofloxacin,ciprofloxacin
+Antibacterials,Quinolones,ciprofloxacin,ciprofloxacin hydrochloride
+Antibacterials,Quinolones,ciprofloxacin,ciprofloxacin lactate
+Antibacterials,Quinolones,gatifloxacin,gatifloxacin
+Antibacterials,Quinolones,gatifloxacin,gatifloxacin
+Antibacterials,Quinolones,gemifloxacin,gemifloxacin
+Antibacterials,Quinolones,gemifloxacin,gemifloxacin mesylate
+Antibacterials,Quinolones,levofloxacin,levofloxacin
+Antibacterials,Quinolones,levofloxacin,levofloxacin
+Antibacterials,Quinolones,moxifloxacin,moxifloxacin
+Antibacterials,Quinolones,moxifloxacin,moxifloxacin hydrochloride
+Antibacterials,Quinolones,norfloxacin,norfloxacin
+Antibacterials,Quinolones,norfloxacin,norfloxacin nicotinate
+Antibacterials,Quinolones,ofloxacin,ofloxacin
+Antibacterials,Quinolones,ofloxacin,ofloxacin hydrochloride
+Antibacterials,Sulfonamides,sulfacetamide,sulfacetamide
+Antibacterials,Sulfonamides,sulfacetamide,sulfacetamide sodium
+Antibacterials,Sulfonamides,sulfadiazine,sulfadiazine
+Antibacterials,Sulfonamides,sulfadiazine,sulfadiazine sodium
+Antibacterials,Sulfonamides,sulfadiazine,"sulfadiazine, silver"
+Antibacterials,Sulfonamides,sulfamethoxazole and trimethoprim,co-trimoxazole
+Antibacterials,Tetracyclines,demeclocycline,demeclocycline
+Antibacterials,Tetracyclines,demeclocycline,demeclocycline hydrochloride
+Antibacterials,Tetracyclines,doxycycline,doxycycline
+Antibacterials,Tetracyclines,doxycycline,doxycycline
+Antibacterials,Tetracyclines,doxycycline,doxycycline hyclate
+Antibacterials,Tetracyclines,doxycycline,doxycycline calcium
+Antibacterials,Tetracyclines,doxycycline,doxycycline fosfatex
+Antibacterials,Tetracyclines,doxycycline,doxycycline hydrochloride
+Antibacterials,Tetracyclines,minocycline,minocycline
+Antibacterials,Tetracyclines,minocycline,minocycline hydrochloride
+Antibacterials,Tetracyclines,tetracycline,tetracycline
+Antibacterials,Tetracyclines,tetracycline,tetracycline hydrochloride
+Antibacterials,Tetracyclines,tetracycline,tetracycline metaphosphate
+Antibacterials,"Antibacterials, Other",trimethoprim,trimethoprim
+Antibacterials,"Antibacterials, Other",trimethoprim,trimethoprim sulfate
+Antibacterials,"Antibacterials, Other",trimethoprim,trimethoprim lactate
+Antibacterials,"Antibacterials, Other",vancomycin,vancomycin
+Antibacterials,"Antibacterials, Other",vancomycin,vancomycin hydrochloride
+Antibacterials,"Antibacterials, Other",clindamycin,clindamycin
+Antibacterials,"Antibacterials, Other",clindamycin,clindamycin phosphate
+Antibacterials,"Antibacterials, Other",clindamycin,clindamycin palmitate hydrochloride
+Antibacterials,"Antibacterials, Other",clindamycin,clindamycin hydrochloride
+Antibacterials,"Antibacterials, Other",clindamycin,clindamycin phosphate hydrate
+Antibacterials,"Antibacterials, Other",lincomycin,lincomycin
+Antibacterials,"Antibacterials, Other",lincomycin,lincomycin hydrochloride hydrate
+Antibacterials,"Antibacterials, Other",nitrofurantoin,nitrofurantoin
+Antibacterials,"Antibacterials, Other",linezolid,linezolid
+Antibacterials,"Antibacterials, Other",acetic acid,"acetic acid, glacial"
+Antibacterials,"Antibacterials, Other",bacitracin,bacitracin
+Antibacterials,"Antibacterials, Other",bacitracin,bacitracin methylene disalicylate
+Antibacterials,"Antibacterials, Other",bacitracin,bacitracin zinc
+Antibacterials,"Antibacterials, Other",chloramphenicol,chloramphenicol
+Antibacterials,"Antibacterials, Other",chloramphenicol,chloramphenicol palmitate
+Antibacterials,"Antibacterials, Other",chloramphenicol,chloramphenicol sodium succinate
+Antibacterials,"Antibacterials, Other",chloramphenicol,chloramphenicol stearate
+Antibacterials,"Antibacterials, Other",chloramphenicol,chloramphenicol succinate
+Antibacterials,"Antibacterials, Other",chloramphenicol,chloramphenicol pantothenate complex
+Antibacterials,"Antibacterials, Other",daptomycin,daptomycin
+Antibacterials,"Antibacterials, Other",fosfomycin,fosfomycin
+Antibacterials,"Antibacterials, Other",fosfomycin,fosfomycin tromethamine
+Antibacterials,"Antibacterials, Other",fosfomycin,fosfomycin calcium hydrate
+Antibacterials,"Antibacterials, Other",fosfomycin,fosfomycin sodium
+Antibacterials,"Antibacterials, Other",fosfomycin,fosfomycin calcium
+Antibacterials,"Antibacterials, Other",gramicidin,gramicidin
+Antibacterials,"Antibacterials, Other",gramicidin,gramicidin s hydrochloride
+Antibacterials,"Antibacterials, Other",mafenide,mafenide
+Antibacterials,"Antibacterials, Other",mafenide,mafenide acetate
+Antibacterials,"Antibacterials, Other",mafenide,homosulfamine
+Antibacterials,"Antibacterials, Other",methenamine,methenamine
+Antibacterials,"Antibacterials, Other",methenamine,methenamine hippurate
+Antibacterials,"Antibacterials, Other",methenamine,methenamine mandelate
+Antibacterials,"Antibacterials, Other",methenamine,methenamine sulfosalicylate
+Antibacterials,"Antibacterials, Other",metronidazole,metronidazole
+Antibacterials,"Antibacterials, Other",metronidazole,metronidazole hydrochloride
+Antibacterials,"Antibacterials, Other",metronidazole,metronidazole phosphate
+Antibacterials,"Antibacterials, Other",metronidazole,metronidazole benzoate
+Antibacterials,"Antibacterials, Other",mupirocin,mupirocin
+Antibacterials,"Antibacterials, Other",mupirocin,mupirocin calcium
+Antibacterials,"Antibacterials, Other",polymyxin b,polymyxin b
+Antibacterials,"Antibacterials, Other",polymyxin b,polymyxin b sulfate
+Antibacterials,"Antibacterials, Other",retapamulin,retapamulin
+Antibacterials,"Antibacterials, Other",rifaximin,rifaximin
+Antibacterials,"Antibacterials, Other",telavancin,telavancin hydrochloride
+Antibacterials,"Antibacterials, Other",tinidazole,tinidazole
+Antibacterials,"Antibacterials, Other",tigecycline,tigecycline
+Anticonvulsants,Calcium Channel Modifying Agents,ethosuximide,ethosuximide
+Anticonvulsants,Calcium Channel Modifying Agents,methsuximide,methsuximide
+Anticonvulsants,Calcium Channel Modifying Agents,pregabalin,pregabalin
+Anticonvulsants,Calcium Channel Modifying Agents,zonisamide,zonisamide
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,clobazam,clobazam
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,clonazepam,clonazepam
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,clorazepate,clorazepate dipotassium
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,clorazepate,clorazepate monopotassium
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,diazepam,diazepam
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,lorazepam,lorazepam
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,mephobarbital,mephobarbital
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,primidone,primidone
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,divalproex,divalproex sodium
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,gabapentin,gabapentin
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,gabapentin,gabapentin enacarbil
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,primidone,primidone
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,tiagabine,tiagabine
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,tiagabine,tiagabine hydrochloride
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,valproate,valproic acid
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,valproate,divalproex sodium
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,valproate,valproate sodium
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,valproate,calcium valproate
+Anticonvulsants,Gamma-aminobutyric Acid (GABA) Augmenting Agents,vigabatrin,vigabatrin
+Anticonvulsants,Glutamate Reducing Agents,felbamate,felbamate
+Anticonvulsants,Glutamate Reducing Agents,lamotrigine,lamotrigine
+Anticonvulsants,Glutamate Reducing Agents,perampanel,perampanel
+Anticonvulsants,Glutamate Reducing Agents,perampanel,perampanel hydrate
+Anticonvulsants,Glutamate Reducing Agents,topiramate,topiramate
+Anticonvulsants,Sodium Channel Agents,carbamazepine,carbamazepine
+Anticonvulsants,Sodium Channel Agents,eslicarbazepine,eslicarbazepine
+Anticonvulsants,Sodium Channel Agents,eslicarbazepine,eslicarbazepine acetate
+Anticonvulsants,Sodium Channel Agents,ethotoin,ethotoin
+Anticonvulsants,Sodium Channel Agents,fosphenytoin,fosphenytoin
+Anticonvulsants,Sodium Channel Agents,fosphenytoin,fosphenytoin sodium
+Anticonvulsants,Sodium Channel Agents,fosphenytoin,fosphenytoin sodium hydrate
+Anticonvulsants,Sodium Channel Agents,lacosamide,lacosamide
+Anticonvulsants,Sodium Channel Agents,oxcarbazepine,oxcarbazepine
+Anticonvulsants,Sodium Channel Agents,phenytoin,phenytoin
+Anticonvulsants,Sodium Channel Agents,phenytoin,phenytoin sodium
+Anticonvulsants,Sodium Channel Agents,rufinamide,rufinamide
+Anticonvulsants,"Anticonvulsants, Other",levetiracetam,levetiracetam
+Anticonvulsants,"Anticonvulsants, Other",ezogabine,ezogabine
+Antidementia Agents,Cholinesterase Inhibitors,donepezil,donepezil
+Antidementia Agents,Cholinesterase Inhibitors,donepezil,donepezil hydrochloride
+Antidementia Agents,Cholinesterase Inhibitors,galantamine,galantamine
+Antidementia Agents,Cholinesterase Inhibitors,galantamine,galantamine hydrobromide
+Antidementia Agents,Cholinesterase Inhibitors,rivastigmine,rivastigmine
+Antidementia Agents,Cholinesterase Inhibitors,rivastigmine,rivastigmine tartrate
+Antidementia Agents,N-methyl-D-aspartate (NMDA) Receptor Antagonist,memantine,memantine
+Antidementia Agents,N-methyl-D-aspartate (NMDA) Receptor Antagonist,memantine,memantine hydrochloride
+Antidementia Agents,"Antidementia Agents, Other",ergoloid mesylates,ergoloid mesylates
+Antidepressants,Monoamine Oxidase Inhibitors,phenelzine,phenelzine
+Antidepressants,Monoamine Oxidase Inhibitors,phenelzine,phenelzine sulfate
+Antidepressants,Monoamine Oxidase Inhibitors,selegiline,selegiline
+Antidepressants,Monoamine Oxidase Inhibitors,selegiline,selegiline hydrochloride
+Antidepressants,Monoamine Oxidase Inhibitors,tranylcypromine,tranylcypromine
+Antidepressants,Monoamine Oxidase Inhibitors,tranylcypromine,tranylcypromine sulfate
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),citalopram,citalopram
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),citalopram,citalopram hydrobromide
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),citalopram,citalopram hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),desvenlafaxine,desvenlafaxine
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),desvenlafaxine,desvenlafaxine succinate
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),duloxetine,duloxetine
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),duloxetine,duloxetine hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),escitalopram,escitalopram
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),escitalopram,escitalopram oxalate
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),fluoxetine,fluoxetine
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),fluoxetine,fluoxetine hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),fluvoxamine,fluvoxamine
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),fluvoxamine,fluvoxamine maleate
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),levomilnacipran,levomilnacipran
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),levomilnacipran,levomilnacipran hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),maprotiline,maprotiline
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),maprotiline,maprotiline hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),nefazodone,nefazodone
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),nefazodone,nefazodone hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine hydrochloride hydrate
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine mesylate
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),sertraline,sertraline
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),sertraline,sertraline hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),trazodone,trazodone
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),trazodone,trazodone hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),venlafaxine,venlafaxine
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),venlafaxine,venlafaxine hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),vilazodone,vilazodone
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),vilazodone,vilazodone hydrochloride
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),vortioxetine,vortioxetine
+Antidepressants,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),vortioxetine,vortioxetine hydrobromide
+Antidepressants,Tricyclics,amitriptyline,amitriptyline
+Antidepressants,Tricyclics,amitriptyline,amitriptyline hydrochloride
+Antidepressants,Tricyclics,amoxapine,amoxapine
+Antidepressants,Tricyclics,clomipramine,clomipramine
+Antidepressants,Tricyclics,clomipramine,clomipramine hydrochloride
+Antidepressants,Tricyclics,desipramine,desipramine
+Antidepressants,Tricyclics,desipramine,desipramine hydrochloride
+Antidepressants,Tricyclics,doxepin,doxepin
+Antidepressants,Tricyclics,doxepin,doxepin hydrochloride
+Antidepressants,Tricyclics,imipramine,imipramine
+Antidepressants,Tricyclics,imipramine,imipramine hydrochloride
+Antidepressants,Tricyclics,imipramine,imipramine pamoate
+Antidepressants,Tricyclics,nortriptyline,nortriptyline
+Antidepressants,Tricyclics,nortriptyline,nortriptyline hydrochloride
+Antidepressants,Tricyclics,protriptyline,protriptyline
+Antidepressants,Tricyclics,protriptyline,protriptyline hydrochloride
+Antidepressants,Tricyclics,trimipramine,trimipramine
+Antidepressants,Tricyclics,trimipramine,trimipramine maleate
+Antidepressants,"Antidepressants, Other",bupropion,bupropion
+Antidepressants,"Antidepressants, Other",bupropion,bupropion hydrochloride
+Antidepressants,"Antidepressants, Other",bupropion,bupropion hydrobromide
+Antidepressants,"Antidepressants, Other",mirtazapine,mirtazapine
+Antidepressants,"Antidepressants, Other",aripiprazole,aripiprazole
+Antidepressants,"Antidepressants, Other",aripiprazole,aripiprazole cavoxil
+Antidepressants,"Antidepressants, Other",aripiprazole,aripiprazole lauroxil
+Antidepressants,"Antidepressants, Other",aripiprazole,aripiprazole hydrate
+Antidepressants,"Antidepressants, Other",quetiapine,quetiapine
+Antidepressants,"Antidepressants, Other",quetiapine,quetiapine fumarate
+Antiemetics,Emetogenic Therapy Adjuncts,dolasetron,dolasetron
+Antiemetics,Emetogenic Therapy Adjuncts,dolasetron,dolasetron mesylate
+Antiemetics,Emetogenic Therapy Adjuncts,granisetron,granisetron
+Antiemetics,Emetogenic Therapy Adjuncts,granisetron,granisetron hydrochloride
+Antiemetics,Emetogenic Therapy Adjuncts,ondansetron,ondansetron
+Antiemetics,Emetogenic Therapy Adjuncts,ondansetron,ondansetron hydrochloride hydrate
+Antiemetics,Emetogenic Therapy Adjuncts,palonosetron,palonosetron
+Antiemetics,Emetogenic Therapy Adjuncts,palonosetron,palonosetron hydrochloride
+Antiemetics,Emetogenic Therapy Adjuncts,aprepitant,aprepitant
+Antiemetics,Emetogenic Therapy Adjuncts,aprepitant,fosaprepitant dimeglumine
+Antiemetics,Emetogenic Therapy Adjuncts,nabilone,nabilone
+Antiemetics,Emetogenic Therapy Adjuncts,dronabinol,dronabinol
+Antiemetics,"Antiemetics, Other",chlorpromazine,chlorpromazine
+Antiemetics,"Antiemetics, Other",chlorpromazine,chlorpromazine hydrochloride
+Antiemetics,"Antiemetics, Other",chlorpromazine,chlorpromazine hibenzate
+Antiemetics,"Antiemetics, Other",chlorpromazine,chlorpromazine phenolphthalinate
+Antiemetics,"Antiemetics, Other",chlorpromazine,chlorpromazine tannate
+Antiemetics,"Antiemetics, Other",diphenhydramine,diphenhydramine
+Antiemetics,"Antiemetics, Other",diphenhydramine,diphenhydramine hydrochloride
+Antiemetics,"Antiemetics, Other",diphenhydramine,diphenhydramine salicylate
+Antiemetics,"Antiemetics, Other",diphenhydramine,diphenhydramine tannate
+Antiemetics,"Antiemetics, Other",diphenhydramine,diphenhydramine laurylsulfate
+Antiemetics,"Antiemetics, Other",diphenhydramine,diphenhydramine citrate
+Antiemetics,"Antiemetics, Other",doxylamine succinate/pyridoxine hydrochloride,doxylamine succinate - pyridoxine hydrochloride mixt
+Antiemetics,"Antiemetics, Other",hydroxyzine,hydroxyzine
+Antiemetics,"Antiemetics, Other",hydroxyzine,hydroxyzine hydrochloride
+Antiemetics,"Antiemetics, Other",hydroxyzine,hydroxyzine pamoate
+Antiemetics,"Antiemetics, Other",meclizine,meclozine
+Antiemetics,"Antiemetics, Other",meclizine,meclizine hydrochloride
+Antiemetics,"Antiemetics, Other",metoclopramide,metoclopramide
+Antiemetics,"Antiemetics, Other",metoclopramide,metoclopramide hydrochloride
+Antiemetics,"Antiemetics, Other",metoclopramide,metoclopramide hydrochloride
+Antiemetics,"Antiemetics, Other",perphenazine,perphenazine
+Antiemetics,"Antiemetics, Other",perphenazine,perphenazine maleate
+Antiemetics,"Antiemetics, Other",perphenazine,perphenazine fendizoate
+Antiemetics,"Antiemetics, Other",perphenazine,perphenazine hydrochloride
+Antiemetics,"Antiemetics, Other",perphenazine,perphenazine decanoate
+Antiemetics,"Antiemetics, Other",perphenazine,perphenazine enantate
+Antiemetics,"Antiemetics, Other",prochlorperazine,prochlorperazine
+Antiemetics,"Antiemetics, Other",prochlorperazine,prochlorperazine maleate
+Antiemetics,"Antiemetics, Other",prochlorperazine,prochlorperazine mesilate
+Antiemetics,"Antiemetics, Other",prochlorperazine,prochlorperazine edisylate
+Antiemetics,"Antiemetics, Other",promethazine,promethazine
+Antiemetics,"Antiemetics, Other",promethazine,promethazine hydrochloride
+Antiemetics,"Antiemetics, Other",promethazine,promethazine teoclate
+Antiemetics,"Antiemetics, Other",promethazine,promethazine methylenedisalicylate
+Antiemetics,"Antiemetics, Other",promethazine,promethazine maleate
+Antiemetics,"Antiemetics, Other",promethazine,promethazine hibenzate
+Antiemetics,"Antiemetics, Other",scopolamine,scopolamine
+Antiemetics,"Antiemetics, Other",scopolamine,scopolamine hydrobromide
+Antiemetics,"Antiemetics, Other",trimethobenzamide,trimethobenzamide
+Antiemetics,"Antiemetics, Other",trimethobenzamide,trimethobenzamide hydrochloride
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,celecoxib,celecoxib
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac potassium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac diethylamine
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac hydroxyethylpyrrolidine
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,diclofenac,diclofenac calcium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,diflunisal,diflunisal
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,etodolac,etodolac
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,fenoprofen,fenoprofen
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,fenoprofen,fenoprofen calcium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,flurbiprofen
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,flurbiprofen axetil
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,flurbiprofen sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,flurbiprofen,esflurbiprofen
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen piconol
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen aluminum
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen lysine
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen arginine salt
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ibuprofen,ibuprofen sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,indomethacin,indomethacin
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,indomethacin,indomethacin sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ketoprofen,ketoprofen
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ketoprofen,ketoprofen lysine
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ketoprofen,ketoprofen sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ketorolac,ketorolac
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,ketorolac,ketorolac tromethamine
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,meclofenamate,meclofenamic acid
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,meclofenamate,meclofenamate sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,meclofenamate,meclofenamate sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,mefenamic acid,mefenamic acid
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,meloxicam,meloxicam
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,nabumetone,nabumetone
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,naproxen,naproxen
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,naproxen,naproxen sodium
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,naproxen,naproxen etemesil
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,oxaprozin,oxaprozin
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam betadex
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam cinnamate
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,piroxicam,piroxicam olamine
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,sulindac,sulindac
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,tolmetin,tolmetin
+Anti-inflammatory Agents,Nonsteroidal Anti-inflammatory Drugs,tolmetin,tolmetin sodium
+Antimigraine Agents,Ergot Alkaloids,dihydroergotamine,dihydroergotamine
+Antimigraine Agents,Ergot Alkaloids,dihydroergotamine,dihydroergotamine mesylate
+Antimigraine Agents,Ergot Alkaloids,dihydroergotamine,dihydroergotamine tartrate
+Antimigraine Agents,Ergot Alkaloids,ergotamine,ergotamine
+Antimigraine Agents,Ergot Alkaloids,ergotamine,ergotamine tartrate
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,almotriptan,almotriptan
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,almotriptan,almotriptan malate
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,eletriptan,eletriptan
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,eletriptan,eletriptan hydrobromide
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,frovatriptan,frovatriptan
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,frovatriptan,frovatriptan succinate
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,naratriptan,naratriptan
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,naratriptan,naratriptan hydrochloride
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,rizatriptan,rizatriptan
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,rizatriptan,rizatriptan benzoate
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,rizatriptan,rizatriptan sulfate
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,sumatriptan,sumatriptan
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,sumatriptan,sumatriptan succinate
+Antimigraine Agents,Serotonin (5-HT) 1b/1d Receptor Agonists,zolmitriptan,zolmitriptan
+Antimigraine Agents,Prophylactic,timolol,timolol
+Antimigraine Agents,Prophylactic,timolol,timolol
+Antimigraine Agents,Prophylactic,timolol,timolol maleate
+Antimigraine Agents,Prophylactic,divalproex,divalproex sodium
+Antimigraine Agents,Prophylactic,topiramate,topiramate
+Antimigraine Agents,Prophylactic,valproate,valproic acid
+Antimigraine Agents,Prophylactic,valproate,divalproex sodium
+Antimigraine Agents,Prophylactic,valproate,valproate sodium
+Antimigraine Agents,Prophylactic,valproate,calcium valproate
+Antimyasthenic Agents,Parasympathomimetics,ambenonium,ambenonium chloride
+Antimyasthenic Agents,Parasympathomimetics,pyridostigmine,pyridostigmine bromide
+Antimycobacterials,Antituberculars,bedaquiline,bedaquiline
+Antimycobacterials,Antituberculars,bedaquiline,bedaquiline fumarate
+Antimycobacterials,Antituberculars,capreomycin,capreomycin
+Antimycobacterials,Antituberculars,capreomycin,capreomycin sulfate
+Antimycobacterials,Antituberculars,cycloserine,cycloserine
+Antimycobacterials,Antituberculars,ethambutol,ethambutol
+Antimycobacterials,Antituberculars,ethambutol,ethambutol hydrochloride
+Antimycobacterials,Antituberculars,ethionamide,ethionamide
+Antimycobacterials,Antituberculars,isoniazid,isoniazid
+Antimycobacterials,Antituberculars,isoniazid,isoniazid calcium pyruvinate
+Antimycobacterials,Antituberculars,isoniazid,isoniazid sodium methanesulfonate hydrate
+Antimycobacterials,Antituberculars,isoniazid,isoniazid glucuronate sodium
+Antimycobacterials,Antituberculars,pyrazinamide,pyrazinamide
+Antimycobacterials,Antituberculars,rifampin,rifampin
+Antimycobacterials,Antituberculars,rifapentine,rifapentine
+Antimycobacterials,"Antimycobacterials, Other",dapsone,dapsone
+Antimycobacterials,"Antimycobacterials, Other",rifabutin,rifabutin
+Antineoplastics,Alkylating Agents,altretamine,altretamine
+Antineoplastics,Alkylating Agents,chlorambucil,chlorambucil
+Antineoplastics,Alkylating Agents,mechlorethamine,mechlorethamine hydrochloride
+Antineoplastics,Alkylating Agents,melphalan,melphalan
+Antineoplastics,Alkylating Agents,melphalan,melphalan hydrochloride
+Antineoplastics,Alkylating Agents,lomustine,lomustine
+Antineoplastics,Alkylating Agents,busulfan,busulfan
+Antineoplastics,Alkylating Agents,cyclophosphamide,cyclophosphamide
+Antineoplastics,Alkylating Agents,cyclophosphamide,cyclophosphamide
+Antineoplastics,Alkylating Agents,procarbazine,procarbazine
+Antineoplastics,Alkylating Agents,procarbazine,procarbazine hydrochloride
+Antineoplastics,Antiandrogens,enzalutamide,enzalutamide
+Antineoplastics,Antiandrogens,bicalutamide,bicalutamide
+Antineoplastics,Antiandrogens,flutamide,flutamide
+Antineoplastics,Antiandrogens,nilutamide,nilutamide
+Antineoplastics,Antiandrogens,abiraterone,abiraterone acetate
+Antineoplastics,Antiangiogenic Agents,lenalidomide,lenalidomide
+Antineoplastics,Antiangiogenic Agents,lenalidomide,lenalidomide hydrate
+Antineoplastics,Antiangiogenic Agents,pomalidomide,pomalidomide
+Antineoplastics,Antiangiogenic Agents,thalidomide,thalidomide
+Antineoplastics,Antiestrogens/Modifiers,estramustine,estramustine
+Antineoplastics,Antiestrogens/Modifiers,estramustine,estramustine phosphate sodium
+Antineoplastics,Antiestrogens/Modifiers,estramustine,estramustine phosphate sodium hydrate
+Antineoplastics,Antiestrogens/Modifiers,tamoxifen,tamoxifen
+Antineoplastics,Antiestrogens/Modifiers,tamoxifen,tamoxifen citrate
+Antineoplastics,Antiestrogens/Modifiers,toremifene,toremifene
+Antineoplastics,Antiestrogens/Modifiers,toremifene,toremifene citrate
+Antineoplastics,Antimetabolites,mercaptopurine,mercaptopurine
+Antineoplastics,Antimetabolites,mercaptopurine,mercaptopurine
+Antineoplastics,Antimetabolites,thioguanine,tioguanine
+Antineoplastics,Antimetabolites,thioguanine,thioguanine
+Antineoplastics,Antimetabolites,hydroxyurea,hydroxyurea
+Antineoplastics,"Aromatase Inhibitors, 3rd Generation",anastrozole,anastrozole
+Antineoplastics,"Aromatase Inhibitors, 3rd Generation",exemestane,exemestane
+Antineoplastics,"Aromatase Inhibitors, 3rd Generation",letrozole,letrozole
+Antineoplastics,Enzyme Inhibitors,etoposide,etoposide
+Antineoplastics,Enzyme Inhibitors,etoposide,etoposide phosphate
+Antineoplastics,Enzyme Inhibitors,topotecan,topotecan
+Antineoplastics,Enzyme Inhibitors,topotecan,topotecan hydrochloride
+Antineoplastics,Molecular Target Inhibitors,vemurafenib,vemurafenib
+Antineoplastics,Molecular Target Inhibitors,dabrafenib,dabrafenib
+Antineoplastics,Molecular Target Inhibitors,dabrafenib,dabrafenib mesylate
+Antineoplastics,Molecular Target Inhibitors,trametinib,trametinib
+Antineoplastics,Molecular Target Inhibitors,trametinib,trametinib dimethyl sulfoxide
+Antineoplastics,Molecular Target Inhibitors,ibrutinib,ibrutinib
+Antineoplastics,Molecular Target Inhibitors,afatinib,afatinib
+Antineoplastics,Molecular Target Inhibitors,afatinib,afatinib dimaleate
+Antineoplastics,Molecular Target Inhibitors,erlotinib,erlotinib
+Antineoplastics,Molecular Target Inhibitors,erlotinib,erlotinib hydrochloride
+Antineoplastics,Molecular Target Inhibitors,vismodegib,vismodegib
+Antineoplastics,Molecular Target Inhibitors,ruxolitinib,ruxolitinib
+Antineoplastics,Molecular Target Inhibitors,ruxolitinib,ruxolitinib phosphate
+Antineoplastics,Molecular Target Inhibitors,everolimus,everolimus
+Antineoplastics,Molecular Target Inhibitors,crizotinib,crizotinib
+Antineoplastics,Molecular Target Inhibitors,bosutinib,bosutinib
+Antineoplastics,Molecular Target Inhibitors,bosutinib,bosutinib hydrate
+Antineoplastics,Molecular Target Inhibitors,dasatinib,dasatinib
+Antineoplastics,Molecular Target Inhibitors,dasatinib,dasatinib
+Antineoplastics,Molecular Target Inhibitors,imatinib,imatinib
+Antineoplastics,Molecular Target Inhibitors,imatinib,imatinib mesylate
+Antineoplastics,Molecular Target Inhibitors,nilotinib,nilotinib
+Antineoplastics,Molecular Target Inhibitors,nilotinib,nilotinib hydrochloride hydrate
+Antineoplastics,Molecular Target Inhibitors,ponatinib,ponatinib
+Antineoplastics,Molecular Target Inhibitors,ponatinib,ponatinib hydrochloride
+Antineoplastics,Molecular Target Inhibitors,lapatinib,lapatinib
+Antineoplastics,Molecular Target Inhibitors,lapatinib,lapatinib ditosylate
+Antineoplastics,Molecular Target Inhibitors,axitinib,axitinib
+Antineoplastics,Molecular Target Inhibitors,cabozantinib,cabozantinib
+Antineoplastics,Molecular Target Inhibitors,cabozantinib,cabozantinib s-malate
+Antineoplastics,Molecular Target Inhibitors,pazopanib,pazopanib hydrochloride
+Antineoplastics,Molecular Target Inhibitors,regorafenib,regorafenib
+Antineoplastics,Molecular Target Inhibitors,regorafenib,regorafenib hydrate
+Antineoplastics,Molecular Target Inhibitors,sorafenib,sorafenib
+Antineoplastics,Molecular Target Inhibitors,sorafenib,sorafenib tosylate
+Antineoplastics,Molecular Target Inhibitors,sunitinib,sunitinib
+Antineoplastics,Molecular Target Inhibitors,sunitinib,sunitinib malate
+Antineoplastics,Monoclonal Antibodies,rituximab,rituximab
+Antineoplastics,Monoclonal Antibodies,ofatumumab,ofatumumab
+Antineoplastics,Retinoids,alitretinoin,alitretinoin
+Antineoplastics,Retinoids,bexarotene,bexarotene
+Antineoplastics,Retinoids,tretinoin,tretinoin
+Antineoplastics,Retinoids,tretinoin,tretinoin tocoferil
+Antineoplastics,"Antineoplastics, Other",fludarabine,fludarabine
+Antineoplastics,"Antineoplastics, Other",fludarabine,fludarabine phosphate
+Antineoplastics,"Antineoplastics, Other",leucovorin,folinic acid
+Antineoplastics,"Antineoplastics, Other",leucovorin,leucovorin calcium
+Antineoplastics,"Antineoplastics, Other",leucovorin,folinic acid calcium salt pentahydrate
+Antineoplastics,"Antineoplastics, Other",mitoxantrone,mitoxantrone
+Antineoplastics,"Antineoplastics, Other",mitoxantrone,mitoxantrone hydrochloride
+Antineoplastics,"Antineoplastics, Other",vorinostat,vorinostat
+Antiparasitics,Anthelmintics,albendazole,albendazole
+Antiparasitics,Anthelmintics,albendazole,albendazole oxide
+Antiparasitics,Anthelmintics,ivermectin,ivermectin
+Antiparasitics,Anthelmintics,mebendazole,mebendazole
+Antiparasitics,Anthelmintics,praziquantel,praziquantel
+Antiparasitics,Antiprotozoals,artemether and lumefantrine,artemether - lumefantrine mixt
+Antiparasitics,Antiprotozoals,atovaquone and proguanil hydrochloride,atovaquone - proguanil hydrochloride mixt
+Antiparasitics,Antiprotozoals,chloroquine,chloroquine
+Antiparasitics,Antiprotozoals,chloroquine,chloroquine phosphate
+Antiparasitics,Antiprotozoals,chloroquine,chloroquine hydrochloride
+Antiparasitics,Antiprotozoals,chloroquine,chloroquine sulfate
+Antiparasitics,Antiprotozoals,hydroxychloroquine,hydroxychloroquine
+Antiparasitics,Antiprotozoals,hydroxychloroquine,hydroxychloroquine sulfate
+Antiparasitics,Antiprotozoals,mefloquine,mefloquine
+Antiparasitics,Antiprotozoals,mefloquine,mefloquine hydrochloride
+Antiparasitics,Antiprotozoals,primaquine,primaquine
+Antiparasitics,Antiprotozoals,primaquine,primaquine phosphate
+Antiparasitics,Antiprotozoals,pyrimethamine,pyrimethamine
+Antiparasitics,Antiprotozoals,pyrimethamine,pyrimethamine - sulfadoxine mixt
+Antiparasitics,Antiprotozoals,quinine,quinine
+Antiparasitics,Antiprotozoals,quinine,quinine ethylcarbonate
+Antiparasitics,Antiprotozoals,quinine,quinine hydrochloride hydrate
+Antiparasitics,Antiprotozoals,quinine,quinine sulfate
+Antiparasitics,Antiprotozoals,quinine,quinine ascorbate
+Antiparasitics,Antiprotozoals,quinine,quinine dihydrochloride
+Antiparasitics,Antiprotozoals,atovaquone,atovaquone
+Antiparasitics,Antiprotozoals,nitazoxanide,nitazoxanide
+Antiparasitics,Antiprotozoals,pentamidine,pentamidine
+Antiparasitics,Antiprotozoals,pentamidine,pentamidine isethionate
+Antiparasitics,Pediculicides/Scabicides,benzyl alcohol,benzyl alcohol
+Antiparasitics,Pediculicides/Scabicides,crotamiton,crotamiton
+Antiparasitics,Pediculicides/Scabicides,lindane,lindane
+Antiparasitics,Pediculicides/Scabicides,malathion,malathion
+Antiparasitics,Pediculicides/Scabicides,permethrin,permethrin
+Antiparasitics,Pediculicides/Scabicides,spinosad,spinosad
+Antiparkinson Agents,Anticholinergics,benztropine,benzatropine
+Antiparkinson Agents,Anticholinergics,benztropine,benztropine mesylate
+Antiparkinson Agents,Anticholinergics,diphenhydramine,diphenhydramine
+Antiparkinson Agents,Anticholinergics,diphenhydramine,diphenhydramine hydrochloride
+Antiparkinson Agents,Anticholinergics,diphenhydramine,diphenhydramine salicylate
+Antiparkinson Agents,Anticholinergics,diphenhydramine,diphenhydramine tannate
+Antiparkinson Agents,Anticholinergics,diphenhydramine,diphenhydramine laurylsulfate
+Antiparkinson Agents,Anticholinergics,diphenhydramine,diphenhydramine citrate
+Antiparkinson Agents,Anticholinergics,trihexyphenidyl,trihexyphenidyl
+Antiparkinson Agents,Anticholinergics,trihexyphenidyl,trihexyphenidyl hydrochloride
+Antiparkinson Agents,Dopamine Agonists,apomorphine,apomorphine
+Antiparkinson Agents,Dopamine Agonists,apomorphine,apomorphine hydrochloride
+Antiparkinson Agents,Dopamine Agonists,bromocriptine,bromocriptine
+Antiparkinson Agents,Dopamine Agonists,bromocriptine,bromocriptine mesylate
+Antiparkinson Agents,Dopamine Agonists,pramipexole,pramipexole
+Antiparkinson Agents,Dopamine Agonists,pramipexole,pramipexole hydrochloride
+Antiparkinson Agents,Dopamine Agonists,ropinirole,ropinirole
+Antiparkinson Agents,Dopamine Agonists,ropinirole,ropinirole hydrochloride
+Antiparkinson Agents,Dopamine Agonists,rotigotine,rotigotine
+Antiparkinson Agents,Dopamine Precursors/L-Amino Acid Decarboxylase Inhibitors,carbidopa,carbidopa
+Antiparkinson Agents,Dopamine Precursors/L-Amino Acid Decarboxylase Inhibitors,carbidopa and levodopa,carbidopa hydrate - levodopa mixt
+Antiparkinson Agents,Monoamine Oxidase B (MAO-B) Inhibitors,rasagiline,rasagiline
+Antiparkinson Agents,Monoamine Oxidase B (MAO-B) Inhibitors,rasagiline,rasagiline mesylate
+Antiparkinson Agents,Monoamine Oxidase B (MAO-B) Inhibitors,selegiline,selegiline
+Antiparkinson Agents,Monoamine Oxidase B (MAO-B) Inhibitors,selegiline,selegiline hydrochloride
+Antiparkinson Agents,"Antiparkinson Agents, Other",entacapone,entacapone
+Antiparkinson Agents,"Antiparkinson Agents, Other",tolcapone,tolcapone
+Antiparkinson Agents,"Antiparkinson Agents, Other",amantadine,amantadine
+Antiparkinson Agents,"Antiparkinson Agents, Other",amantadine,amantadine hydrochloride
+Antipsychotics,1st Generation/Typical,chlorpromazine,chlorpromazine
+Antipsychotics,1st Generation/Typical,chlorpromazine,chlorpromazine hydrochloride
+Antipsychotics,1st Generation/Typical,chlorpromazine,chlorpromazine hibenzate
+Antipsychotics,1st Generation/Typical,chlorpromazine,chlorpromazine phenolphthalinate
+Antipsychotics,1st Generation/Typical,chlorpromazine,chlorpromazine tannate
+Antipsychotics,1st Generation/Typical,fluphenazine,fluphenazine
+Antipsychotics,1st Generation/Typical,fluphenazine,fluphenazine hydrochloride
+Antipsychotics,1st Generation/Typical,fluphenazine,fluphenazine enanthate
+Antipsychotics,1st Generation/Typical,fluphenazine,fluphenazine decanoate
+Antipsychotics,1st Generation/Typical,fluphenazine,fluphenazine maleate
+Antipsychotics,1st Generation/Typical,haloperidol,haloperidol
+Antipsychotics,1st Generation/Typical,haloperidol,haloperidol decanoate
+Antipsychotics,1st Generation/Typical,haloperidol,haloperidol lactate
+Antipsychotics,1st Generation/Typical,loxapine,loxapine
+Antipsychotics,1st Generation/Typical,loxapine,loxapine succinate
+Antipsychotics,1st Generation/Typical,loxapine,loxapine hydrochloride
+Antipsychotics,1st Generation/Typical,perphenazine,perphenazine
+Antipsychotics,1st Generation/Typical,perphenazine,perphenazine maleate
+Antipsychotics,1st Generation/Typical,perphenazine,perphenazine fendizoate
+Antipsychotics,1st Generation/Typical,perphenazine,perphenazine hydrochloride
+Antipsychotics,1st Generation/Typical,perphenazine,perphenazine decanoate
+Antipsychotics,1st Generation/Typical,perphenazine,perphenazine enantate
+Antipsychotics,1st Generation/Typical,pimozide,pimozide
+Antipsychotics,1st Generation/Typical,prochlorperazine,prochlorperazine
+Antipsychotics,1st Generation/Typical,prochlorperazine,prochlorperazine maleate
+Antipsychotics,1st Generation/Typical,prochlorperazine,prochlorperazine mesilate
+Antipsychotics,1st Generation/Typical,prochlorperazine,prochlorperazine edisylate
+Antipsychotics,1st Generation/Typical,thioridazine,thioridazine
+Antipsychotics,1st Generation/Typical,thioridazine,thioridazine hydrochloride
+Antipsychotics,1st Generation/Typical,thiothixene,thiothixene
+Antipsychotics,1st Generation/Typical,thiothixene,thiothixene hydrochloride
+Antipsychotics,1st Generation/Typical,trifluoperazine,trifluoperazine
+Antipsychotics,1st Generation/Typical,trifluoperazine,trifluoperazine hydrochloride
+Antipsychotics,1st Generation/Typical,trifluoperazine,trifluoperazine maleate
+Antipsychotics,2nd Generation/Atypical,aripiprazole,aripiprazole
+Antipsychotics,2nd Generation/Atypical,aripiprazole,aripiprazole cavoxil
+Antipsychotics,2nd Generation/Atypical,aripiprazole,aripiprazole lauroxil
+Antipsychotics,2nd Generation/Atypical,aripiprazole,aripiprazole hydrate
+Antipsychotics,2nd Generation/Atypical,asenapine,asenapine maleate
+Antipsychotics,2nd Generation/Atypical,iloperidone,iloperidone
+Antipsychotics,2nd Generation/Atypical,lurasidone,lurasidone hydrochloride
+Antipsychotics,2nd Generation/Atypical,olanzapine,olanzapine
+Antipsychotics,2nd Generation/Atypical,olanzapine,olanzapine pamoate
+Antipsychotics,2nd Generation/Atypical,quetiapine,quetiapine
+Antipsychotics,2nd Generation/Atypical,quetiapine,quetiapine fumarate
+Antipsychotics,2nd Generation/Atypical,paliperidone,paliperidone
+Antipsychotics,2nd Generation/Atypical,paliperidone,paliperidone palmitate
+Antipsychotics,2nd Generation/Atypical,risperidone,risperidone
+Antipsychotics,2nd Generation/Atypical,ziprasidone,ziprasidone
+Antipsychotics,2nd Generation/Atypical,ziprasidone,ziprasidone hydrochloride
+Antipsychotics,2nd Generation/Atypical,ziprasidone,ziprasidone mesylate
+Antipsychotics,Treatment-Resistant,clozapine,clozapine
+Antivirals,Anti-cytomegalovirus (CMV) Agents,cidofovir,cidofovir
+Antivirals,Anti-cytomegalovirus (CMV) Agents,foscarnet,foscarnet sodium
+Antivirals,Anti-cytomegalovirus (CMV) Agents,foscarnet,foscarnet sodium hydrate
+Antivirals,Anti-cytomegalovirus (CMV) Agents,ganciclovir,ganciclovir
+Antivirals,Anti-cytomegalovirus (CMV) Agents,ganciclovir,ganciclovir sodium
+Antivirals,Anti-cytomegalovirus (CMV) Agents,valganciclovir,valganciclovir
+Antivirals,Anti-cytomegalovirus (CMV) Agents,valganciclovir,valganciclovir hydrochloride
+Antivirals,Anti-hepatitis B (HBV) Agents,adefovir,adefovir
+Antivirals,Anti-hepatitis B (HBV) Agents,adefovir,adefovir dipivoxil
+Antivirals,Anti-hepatitis B (HBV) Agents,entecavir,entecavir
+Antivirals,Anti-hepatitis B (HBV) Agents,entecavir,entecavir
+Antivirals,Anti-hepatitis B (HBV) Agents,lamivudine,lamivudine
+Antivirals,Anti-hepatitis B (HBV) Agents,ribavirin,ribavirin
+Antivirals,Anti-hepatitis B (HBV) Agents,telbivudine,telbivudine
+Antivirals,Anti-hepatitis B (HBV) Agents,tenofovir,tenofovir
+Antivirals,Anti-hepatitis B (HBV) Agents,tenofovir,tenofovir disoproxil fumarate
+Antivirals,Anti-hepatitis B (HBV) Agents,tenofovir,tenofovir alafenamide
+Antivirals,Anti-hepatitis B (HBV) Agents,tenofovir,tenofovir alafenamide fumarate
+Antivirals,Anti-hepatitis B (HBV) Agents,"interferon alfa-2b, recombinant",interferon alfa-2b
+Antivirals,Anti-hepatitis B (HBV) Agents,interferon alfa-n3,interferon alfa-n3
+Antivirals,Anti-hepatitis B (HBV) Agents,peginterferon alfa-2a,peginterferon alfa-2a
+Antivirals,Anti-hepatitis B (HBV) Agents,peginterferon alfa-2b,peginterferon alfa-2b
+Antivirals,Anti-hepatitis C (HCV) Agents,ribavirin,ribavirin
+Antivirals,Anti-hepatitis C (HCV) Agents,"interferon alfa-2b, recombinant",interferon alfa-2b
+Antivirals,Anti-hepatitis C (HCV) Agents,interferon alfa-n3,interferon alfa-n3
+Antivirals,Anti-hepatitis C (HCV) Agents,interferon alfacon-1,interferon alfacon-1
+Antivirals,Anti-hepatitis C (HCV) Agents,peginterferon alfa-2a,peginterferon alfa-2a
+Antivirals,Anti-hepatitis C (HCV) Agents,peginterferon alfa-2b,peginterferon alfa-2b
+Antivirals,Anti-hepatitis C (HCV) Agents,boceprevir,boceprevir
+Antivirals,Anti-hepatitis C (HCV) Agents,simeprevir,simeprevir
+Antivirals,Anti-hepatitis C (HCV) Agents,simeprevir,simeprevir sodium
+Antivirals,Anti-hepatitis C (HCV) Agents,telaprevir,telaprevir
+Antivirals,Anti-hepatitis C (HCV) Agents,sofosbuvir,sofosbuvir
+Antivirals,Antiherpetic Agents,acyclovir,acyclovir
+Antivirals,Antiherpetic Agents,acyclovir,acyclovir sodium
+Antivirals,Antiherpetic Agents,famciclovir,famciclovir
+Antivirals,Antiherpetic Agents,foscarnet,foscarnet sodium
+Antivirals,Antiherpetic Agents,foscarnet,foscarnet sodium hydrate
+Antivirals,Antiherpetic Agents,idoxuridine,idoxuridine
+Antivirals,Antiherpetic Agents,trifluridine,trifluridine
+Antivirals,Antiherpetic Agents,penciclovir,penciclovir
+Antivirals,Antiherpetic Agents,penciclovir,penciclovir sodium
+Antivirals,Antiherpetic Agents,valacyclovir,valaciclovir
+Antivirals,Antiherpetic Agents,valacyclovir,valacyclovir hydrochloride
+Antivirals,"Anti-HIV Agents, Non-nucleoside Reverse Transcriptase Inhibitors (NNRTI)",delavirdine,delavirdine
+Antivirals,"Anti-HIV Agents, Non-nucleoside Reverse Transcriptase Inhibitors (NNRTI)",delavirdine,delavirdine mesylate
+Antivirals,"Anti-HIV Agents, Non-nucleoside Reverse Transcriptase Inhibitors (NNRTI)",efavirenz,efavirenz
+Antivirals,"Anti-HIV Agents, Non-nucleoside Reverse Transcriptase Inhibitors (NNRTI)",etravirine,etravirine
+Antivirals,"Anti-HIV Agents, Non-nucleoside Reverse Transcriptase Inhibitors (NNRTI)",nevirapine,nevirapine
+Antivirals,"Anti-HIV Agents, Non-nucleoside Reverse Transcriptase Inhibitors (NNRTI)",rilpivirine,rilpivirine
+Antivirals,"Anti-HIV Agents, Non-nucleoside Reverse Transcriptase Inhibitors (NNRTI)",rilpivirine,rilpivirine hydrochloride
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",abacavir,abacavir
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",abacavir,abacavir sulfate
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",abacavir,abacavir succinate
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",abacavir and lamivudine,abacavir sulfate - lamivudine mixt
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",didanosine,didanosine
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",emtricitabine,emtricitabine
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",emtricitabine and tenofovir,emtricitabine - tenofovir disoproxil mixt
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",lamivudine,lamivudine
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",lamivudine and zidovudine,zidovudine - lamivudine mixt
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",stavudine,stavudine
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",tenofovir,tenofovir
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",tenofovir,tenofovir disoproxil fumarate
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",tenofovir,tenofovir alafenamide
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",tenofovir,tenofovir alafenamide fumarate
+Antivirals,"Anti-HIV Agents, Nucleoside and Nucleotide Reverse Transcriptase Inhibitors (NRTI)v",zidovudine,zidovudine
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",atazanavir,atazanavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",atazanavir,atazanavir sulfate
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",darunavir,darunavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",darunavir,darunavir ethanolate
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",fosamprenavir,fosamprenavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",fosamprenavir,fosamprenavir calcium hydrate
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",fosamprenavir,fosamprenavir calcium
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",fosamprenavir,fosamprenavir sodium
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",indinavir,indinavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",indinavir,indinavir sulfate
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",indinavir,indinavir sulfate ethanolate
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",lopinavir and ritonavir,lopinavir mixture with ritonavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",nelfinavir,nelfinavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",nelfinavir,nelfinavir mesylate
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",ritonavir,ritonavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",saquinavir,saquinavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",saquinavir,saquinavir mesylate
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",tipranavir,tipranavir
+Antivirals,"Anti-HIV Agents, Protease Inhibitors",tipranavir,tipranavir disodium
+Antivirals,"Anti-HIV Agents, Integrase Inhibitors (INSTI)",dolutegravir,dolutegravir
+Antivirals,"Anti-HIV Agents, Integrase Inhibitors (INSTI)",dolutegravir,dolutegravir sodium
+Antivirals,"Anti-HIV Agents, Integrase Inhibitors (INSTI)",raltegravir,raltegravir
+Antivirals,"Anti-HIV Agents, Integrase Inhibitors (INSTI)",raltegravir,raltegravir potassium
+Antivirals,"Anti-HIV Agents, Other",enfuvirtide,enfuvirtide
+Antivirals,"Anti-HIV Agents, Other",maraviroc,maraviroc
+Antivirals,"Anti-HIV Agents, Other",raltegravir,raltegravir
+Antivirals,"Anti-HIV Agents, Other",raltegravir,raltegravir potassium
+Antivirals,Anti-influenza Agents,amantadine,amantadine
+Antivirals,Anti-influenza Agents,amantadine,amantadine hydrochloride
+Antivirals,Anti-influenza Agents,oseltamivir,oseltamivir
+Antivirals,Anti-influenza Agents,oseltamivir,oseltamivir phosphate
+Antivirals,Anti-influenza Agents,rimantadine,rimantadine
+Antivirals,Anti-influenza Agents,rimantadine,rimantadine hydrochloride
+Antivirals,Anti-influenza Agents,zanamivir,zanamivir
+Antivirals,Anti-influenza Agents,zanamivir,zanamivir hydrate
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),duloxetine,duloxetine
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),duloxetine,duloxetine hydrochloride
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),escitalopram,escitalopram
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),escitalopram,escitalopram oxalate
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine hydrochloride hydrate
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine hydrochloride
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),paroxetine,paroxetine mesylate
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),sertraline,sertraline
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),sertraline,sertraline hydrochloride
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),venlafaxine,venlafaxine
+Anxiolytics,SSRIs/SNRIs (Selective Serotonin Reuptake Inhibitors/Serotonin and Norepinephrine Reuptake Inhibitors),venlafaxine,venlafaxine hydrochloride
+Anxiolytics,Benzodiazepines,alprazolam,alprazolam
+Anxiolytics,Benzodiazepines,chlordiazepoxide,chlordiazepoxide
+Anxiolytics,Benzodiazepines,chlordiazepoxide,chlordiazepoxide hydrochloride
+Anxiolytics,Benzodiazepines,clonazepam,clonazepam
+Anxiolytics,Benzodiazepines,clorazepate,clorazepate dipotassium
+Anxiolytics,Benzodiazepines,clorazepate,clorazepate monopotassium
+Anxiolytics,Benzodiazepines,diazepam,diazepam
+Anxiolytics,Benzodiazepines,lorazepam,lorazepam
+Anxiolytics,Benzodiazepines,oxazepam,oxazepam
+Anxiolytics,"Anxiolytics, Other",buspirone,buspirone
+Anxiolytics,"Anxiolytics, Other",buspirone,buspirone hydrochloride
+Anxiolytics,"Anxiolytics, Other",doxepin,doxepin
+Anxiolytics,"Anxiolytics, Other",doxepin,doxepin hydrochloride
+Anxiolytics,"Anxiolytics, Other",hydroxyzine,hydroxyzine
+Anxiolytics,"Anxiolytics, Other",hydroxyzine,hydroxyzine hydrochloride
+Anxiolytics,"Anxiolytics, Other",hydroxyzine,hydroxyzine pamoate
+Anxiolytics,"Anxiolytics, Other",meprobamate,meprobamate
+Bipolar Agents,Mood Stabilizers,carbamazepine,carbamazepine
+Bipolar Agents,Mood Stabilizers,divalproex,divalproex sodium
+Bipolar Agents,Mood Stabilizers,lamotrigine,lamotrigine
+Bipolar Agents,Mood Stabilizers,lithium,lithium
+Bipolar Agents,Mood Stabilizers,lithium,lithium carbonate
+Bipolar Agents,Mood Stabilizers,lithium,lithium citrate
+Bipolar Agents,Mood Stabilizers,lithium,lithium hydroxide
+Bipolar Agents,Mood Stabilizers,lithium,lithium acetate
+Bipolar Agents,Mood Stabilizers,lithium,lithium bromide
+Bipolar Agents,Mood Stabilizers,lithium,lithium gluconate
+Bipolar Agents,Mood Stabilizers,lithium,lithium sulfate
+Bipolar Agents,Mood Stabilizers,valproate,valproic acid
+Bipolar Agents,Mood Stabilizers,valproate,divalproex sodium
+Bipolar Agents,Mood Stabilizers,valproate,valproate sodium
+Bipolar Agents,Mood Stabilizers,valproate,calcium valproate
+Bipolar Agents,"Bipolar Agents, Other",aripiprazole,aripiprazole
+Bipolar Agents,"Bipolar Agents, Other",aripiprazole,aripiprazole cavoxil
+Bipolar Agents,"Bipolar Agents, Other",aripiprazole,aripiprazole lauroxil
+Bipolar Agents,"Bipolar Agents, Other",aripiprazole,aripiprazole hydrate
+Bipolar Agents,"Bipolar Agents, Other",asenapine,asenapine maleate
+Bipolar Agents,"Bipolar Agents, Other",olanzapine,olanzapine
+Bipolar Agents,"Bipolar Agents, Other",olanzapine,olanzapine pamoate
+Bipolar Agents,"Bipolar Agents, Other",quetiapine,quetiapine
+Bipolar Agents,"Bipolar Agents, Other",quetiapine,quetiapine fumarate
+Bipolar Agents,"Bipolar Agents, Other",risperidone,risperidone
+Bipolar Agents,"Bipolar Agents, Other",ziprasidone,ziprasidone
+Bipolar Agents,"Bipolar Agents, Other",ziprasidone,ziprasidone hydrochloride
+Bipolar Agents,"Bipolar Agents, Other",ziprasidone,ziprasidone mesylate
+Blood Glucose Regulators,Antidiabetic Agents,acarbose,acarbose
+Blood Glucose Regulators,Antidiabetic Agents,miglitol,miglitol
+Blood Glucose Regulators,Antidiabetic Agents,pramlintide,pramlintide
+Blood Glucose Regulators,Antidiabetic Agents,pramlintide,pramlintide acetate
+Blood Glucose Regulators,Antidiabetic Agents,metformin,metformin
+Blood Glucose Regulators,Antidiabetic Agents,metformin,metformin hydrochloride
+Blood Glucose Regulators,Antidiabetic Agents,colesevelam,colesevelam
+Blood Glucose Regulators,Antidiabetic Agents,colesevelam,colesevelam hydrochloride
+Blood Glucose Regulators,Antidiabetic Agents,alogliptin,alogliptin benzoate
+Blood Glucose Regulators,Antidiabetic Agents,linagliptin,linagliptin
+Blood Glucose Regulators,Antidiabetic Agents,saxagliptin,saxagliptin
+Blood Glucose Regulators,Antidiabetic Agents,saxagliptin,saxagliptin hydrate
+Blood Glucose Regulators,Antidiabetic Agents,saxagliptin,saxagliptin hydrochloride
+Blood Glucose Regulators,Antidiabetic Agents,sitagliptin,sitagliptin
+Blood Glucose Regulators,Antidiabetic Agents,sitagliptin,sitagliptin phosphate
+Blood Glucose Regulators,Antidiabetic Agents,bromocriptine,bromocriptine
+Blood Glucose Regulators,Antidiabetic Agents,bromocriptine,bromocriptine mesylate
+Blood Glucose Regulators,Antidiabetic Agents,exenatide,exenatide
+Blood Glucose Regulators,Antidiabetic Agents,liraglutide,liraglutide
+Blood Glucose Regulators,Antidiabetic Agents,nateglinide,nateglinide
+Blood Glucose Regulators,Antidiabetic Agents,repaglinide,repaglinide
+Blood Glucose Regulators,Antidiabetic Agents,canagliflozin,canagliflozin
+Blood Glucose Regulators,Antidiabetic Agents,chlorpropamide,chlorpropamide
+Blood Glucose Regulators,Antidiabetic Agents,glimepiride,glimepiride
+Blood Glucose Regulators,Antidiabetic Agents,glipizide,glipizide
+Blood Glucose Regulators,Antidiabetic Agents,glyburide,glyburide
+Blood Glucose Regulators,Antidiabetic Agents,tolazamide,tolazamide
+Blood Glucose Regulators,Antidiabetic Agents,tolbutamide,tolbutamide
+Blood Glucose Regulators,Antidiabetic Agents,tolbutamide,"tolbutamide sodium, sterile"
+Blood Glucose Regulators,Antidiabetic Agents,pioglitazone,pioglitazone
+Blood Glucose Regulators,Antidiabetic Agents,pioglitazone,pioglitazone hydrochloride
+Blood Glucose Regulators,Antidiabetic Agents,rosiglitazone,rosiglitazone
+Blood Glucose Regulators,Antidiabetic Agents,rosiglitazone,rosiglitazone maleate
+Blood Glucose Regulators,Glycemic Agents,diazoxide,diazoxide
+Blood Glucose Regulators,Glycemic Agents,glucagon,glucagon
+Blood Glucose Regulators,Glycemic Agents,glucagon,glucagon hydrochloride
+Blood Glucose Regulators,Insulins,insulin aspart,insulin aspart
+Blood Glucose Regulators,Insulins,insulin glulisine,insulin glulisine
+Blood Glucose Regulators,Insulins,insulin lispro,insulin lispro
+Blood Glucose Regulators,Insulins,insulin human (regular),insulin human
+Blood Glucose Regulators,Insulins,isophane insulin (human),"insulin human, isophane"
+Blood Glucose Regulators,Insulins,isophane insulin (human),"insulin, isophane"
+Blood Glucose Regulators,Insulins,insulin detemir,insulin detemir
+Blood Glucose Regulators,Insulins,insulin glargine,insulin glargine
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,dabigatran,dabigatran
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,dabigatran,dabigatran etexilate
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,dabigatran,dabigatran etexilate mesylate
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,apixaban,apixaban
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,rivaroxaban,rivaroxaban
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,fondaparinux,fondaparinux sodium
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,dalteparin,dalteparin sodium
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,enoxaparin,enoxaparin sodium
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,warfarin,warfarin
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,warfarin,warfarin sodium
+Blood Products/Modifiers/Volume Expanders,Anticoagulants,warfarin,warfarin potassium
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,filgrastim,filgrastim
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,pegfilgrastim,pegfilgrastim
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,sargramostim,sargramostim
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,darbepoetin alfa,darbepoetin alfa
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,epoetin alfa,epoetin alfa
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,anagrelide,anagrelide
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,anagrelide,anagrelide hydrochloride
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,anagrelide,anagrelide hydrochloride hydrate
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,eltrombopag olamine,eltrombopag olamine
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,romiplostim,romiplostim
+Blood Products/Modifiers/Volume Expanders,Blood Formation Modifiers,plerixafor,plerixafor
+Blood Products/Modifiers/Volume Expanders,Coagulants,tranexamic acid,tranexamic acid
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,clopidogrel,clopidogrel
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,clopidogrel,clopidogrel bisulfate
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,prasugrel,prasugrel hydrochloride
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,ticlopidine,ticlopidine
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,ticlopidine,ticlopidine hydrochloride
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,ticagrelor,ticagrelor
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,dipyridamole,dipyridamole
+Blood Products/Modifiers/Volume Expanders,Platelet Modifying Agents,cilostazol,cilostazol
+Cardiovascular Agents,Alpha-adrenergic Agonists,clonidine,clonidine
+Cardiovascular Agents,Alpha-adrenergic Agonists,clonidine,clonidine hydrochloride
+Cardiovascular Agents,Alpha-adrenergic Agonists,guanfacine,guanfacine
+Cardiovascular Agents,Alpha-adrenergic Agonists,guanfacine,guanfacine hydrochloride
+Cardiovascular Agents,Alpha-adrenergic Agonists,methyldopa,methyldopa
+Cardiovascular Agents,Alpha-adrenergic Agonists,methyldopa,methyldopa
+Cardiovascular Agents,Alpha-adrenergic Agonists,methyldopate,methyldopate hydrochloride
+Cardiovascular Agents,Alpha-adrenergic Agonists,midodrine,midodrine
+Cardiovascular Agents,Alpha-adrenergic Agonists,midodrine,midodrine hydrochloride
+Cardiovascular Agents,Alpha-adrenergic Agonists,phenylephrine,phenylephrine
+Cardiovascular Agents,Alpha-adrenergic Agonists,phenylephrine,phenylephrine hydrochloride
+Cardiovascular Agents,Alpha-adrenergic Agonists,phenylephrine,phenylephrine tartrate
+Cardiovascular Agents,Alpha-adrenergic Agonists,phenylephrine,phenylephrine bitartrate
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,doxazosin,doxazosin
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,doxazosin,doxazosin mesylate
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,phenoxybenzamine,phenoxybenzamine
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,phenoxybenzamine,phenoxybenzamine hydrochloride
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,prazosin,prazosin
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,prazosin,prazosin hydrochloride
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,terazosin,terazosin
+Cardiovascular Agents,Alpha-adrenergic Blocking Agents,terazosin,terazosin hydrochloride
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,benazepril,benazepril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,benazepril,benazepril hydrochloride
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,captopril,captopril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,enalapril,enalapril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,enalapril,enalapril maleate
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,fosinopril,fosinopril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,fosinopril,fosinopril sodium
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,lisinopril,lisinopril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,lisinopril,lisinopril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,moexipril,moexipril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,moexipril,moexipril hydrochloride
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,perindopril,perindopril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,perindopril,perindopril erbumine
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,quinapril,quinapril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,quinapril,quinapril hydrochloride
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,ramipril,ramipril
+Cardiovascular Agents,Angiotensin-converting Enzyme (ACE) Inhibitors,trandolapril,trandolapril
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,azilsartan,azilsartan
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,azilsartan,azilsartan medoxomil
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,azilsartan,azilsartan kamedoxomil
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,candesartan,candesartan
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,candesartan,candesartan cilexetil
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,eprosartan,eprosartan
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,eprosartan,eprosartan mesylate
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,irbesartan,irbesartan
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,losartan,losartan
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,losartan,losartan potassium
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,olmesartan,olmesartan
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,olmesartan,olmesartan medoxomil
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,telmisartan,telmisartan
+Cardiovascular Agents,Angiotensin II Receptor Antagonists,valsartan,valsartan
+Cardiovascular Agents,Antiarrhythmics,amiodarone,amiodarone
+Cardiovascular Agents,Antiarrhythmics,amiodarone,amiodarone hydrochloride
+Cardiovascular Agents,Antiarrhythmics,disopyramide,disopyramide
+Cardiovascular Agents,Antiarrhythmics,disopyramide,disopyramide phosphate
+Cardiovascular Agents,Antiarrhythmics,dofetilide,dofetilide
+Cardiovascular Agents,Antiarrhythmics,dronedarone,dronedarone
+Cardiovascular Agents,Antiarrhythmics,dronedarone,dronedarone hydrochloride
+Cardiovascular Agents,Antiarrhythmics,flecainide,flecainide
+Cardiovascular Agents,Antiarrhythmics,flecainide,flecainide acetate
+Cardiovascular Agents,Antiarrhythmics,mexiletine,mexiletine
+Cardiovascular Agents,Antiarrhythmics,mexiletine,mexiletine hydrochloride
+Cardiovascular Agents,Antiarrhythmics,procainamide,procainamide
+Cardiovascular Agents,Antiarrhythmics,procainamide,procainamide hydrochloride
+Cardiovascular Agents,Antiarrhythmics,propafenone,propafenone
+Cardiovascular Agents,Antiarrhythmics,propafenone,propafenone hydrochloride
+Cardiovascular Agents,Antiarrhythmics,quinidine,quinidine
+Cardiovascular Agents,Antiarrhythmics,quinidine,quinidine gluconate
+Cardiovascular Agents,Antiarrhythmics,quinidine,quinidine polygalacturonate
+Cardiovascular Agents,Antiarrhythmics,quinidine,quinidine sulfate
+Cardiovascular Agents,Antiarrhythmics,quinidine,quinidine phenylethylbarbiturate
+Cardiovascular Agents,Antiarrhythmics,sotalol,sotalol
+Cardiovascular Agents,Antiarrhythmics,sotalol,sotalol hydrochloride
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,acebutolol,acebutolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,acebutolol,acebutolol hydrochloride
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,atenolol,atenolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,betaxolol,betaxolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,betaxolol,betaxolol hydrochloride
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,bisoprolol,bisoprolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,bisoprolol,bisoprolol fumarate
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,carvedilol,carvedilol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,carvedilol,carvedilol phosphate
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,labetalol,labetalol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,labetalol,labetalol hydrochloride
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,metoprolol,metoprolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,metoprolol,metoprolol tartrate
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,metoprolol,metoprolol succinate
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,metoprolol,metoprolol fumarate
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,nadolol,nadolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,nebivolol,nebivolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,nebivolol,nebivolol hydrochloride
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,penbutolol,penbutolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,penbutolol,penbutolol sulfate
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,pindolol,pindolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,propranolol,propranolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,propranolol,propranolol hydrochloride
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,timolol,timolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,timolol,timolol
+Cardiovascular Agents,Beta-adrenergic Blocking Agents,timolol,timolol maleate
+Cardiovascular Agents,Calcium Channel Blocking Agents,amlodipine,amlodipine
+Cardiovascular Agents,Calcium Channel Blocking Agents,amlodipine,amlodipine besylate
+Cardiovascular Agents,Calcium Channel Blocking Agents,amlodipine,amlodipine maleate
+Cardiovascular Agents,Calcium Channel Blocking Agents,felodipine,felodipine
+Cardiovascular Agents,Calcium Channel Blocking Agents,isradipine,isradipine
+Cardiovascular Agents,Calcium Channel Blocking Agents,nicardipine,nicardipine
+Cardiovascular Agents,Calcium Channel Blocking Agents,nicardipine,nicardipine hydrochloride
+Cardiovascular Agents,Calcium Channel Blocking Agents,nifedipine,nifedipine
+Cardiovascular Agents,Calcium Channel Blocking Agents,nimodipine,nimodipine
+Cardiovascular Agents,Calcium Channel Blocking Agents,nisoldipine,nisoldipine
+Cardiovascular Agents,Calcium Channel Blocking Agents,diltiazem,diltiazem
+Cardiovascular Agents,Calcium Channel Blocking Agents,diltiazem,diltiazem hydrochloride
+Cardiovascular Agents,Calcium Channel Blocking Agents,diltiazem,diltiazem malate
+Cardiovascular Agents,Calcium Channel Blocking Agents,verapamil,verapamil
+Cardiovascular Agents,Calcium Channel Blocking Agents,verapamil,verapamil hydrochloride
+Cardiovascular Agents,"Diuretics, Carbonic Anhydrase Inhibitors",acetazolamide,acetazolamide
+Cardiovascular Agents,"Diuretics, Carbonic Anhydrase Inhibitors",acetazolamide,acetazolamide sodium
+Cardiovascular Agents,"Diuretics, Carbonic Anhydrase Inhibitors",methazolamide,methazolamide
+Cardiovascular Agents,"Diuretics, Loop",bumetanide,bumetanide
+Cardiovascular Agents,"Diuretics, Loop",ethacrynate/ethacrynic acid,ethacrynic acid
+Cardiovascular Agents,"Diuretics, Loop",ethacrynate/ethacrynic acid,ethacrynate sodium
+Cardiovascular Agents,"Diuretics, Loop",furosemide,furosemide
+Cardiovascular Agents,"Diuretics, Loop",furosemide,sodium furosemide
+Cardiovascular Agents,"Diuretics, Loop",furosemide,furosemide diolamine
+Cardiovascular Agents,"Diuretics, Loop",torsemide,torsemide
+Cardiovascular Agents,"Diuretics, Potassium-sparing",amiloride,amiloride
+Cardiovascular Agents,"Diuretics, Potassium-sparing",amiloride,amiloride hydrochloride
+Cardiovascular Agents,"Diuretics, Potassium-sparing",eplerenone,eplerenone
+Cardiovascular Agents,"Diuretics, Potassium-sparing",spironolactone,spironolactone
+Cardiovascular Agents,"Diuretics, Potassium-sparing",triamterene,triamterene
+Cardiovascular Agents,"Diuretics, Thiazide",bendroflumethiazide,bendroflumethiazide
+Cardiovascular Agents,"Diuretics, Thiazide",chlorothiazide,chlorothiazide
+Cardiovascular Agents,"Diuretics, Thiazide",chlorothiazide,chlorothiazide sodium
+Cardiovascular Agents,"Diuretics, Thiazide",chlorthalidone,chlorthalidone
+Cardiovascular Agents,"Diuretics, Thiazide",hydrochlorothiazide,hydrochlorothiazide
+Cardiovascular Agents,"Diuretics, Thiazide",indapamide,indapamide
+Cardiovascular Agents,"Diuretics, Thiazide",indapamide,indapamide hydrate
+Cardiovascular Agents,"Diuretics, Thiazide",methyclothiazide,methyclothiazide
+Cardiovascular Agents,"Diuretics, Thiazide",metolazone,metolazone
+Cardiovascular Agents,"Dyslipidemics, Fibric Acid Derivatives",choline fenofibrate,choline fenofibrate
+Cardiovascular Agents,"Dyslipidemics, Fibric Acid Derivatives",fenofibrate/fenofibric acid,fenofibrate
+Cardiovascular Agents,"Dyslipidemics, Fibric Acid Derivatives",gemfibrozil,gemfibrozil
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",atorvastatin,atorvastatin
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",atorvastatin,atorvastatin calcium anhydorous
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",atorvastatin,atorvastatin calcium
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",fluvastatin,fluvastatin
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",fluvastatin,fluvastatin sodium
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",lovastatin,lovastatin
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",pitavastatin,pitavastatin calcium
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",pitavastatin,pitavastatin calcium hydrate
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",pravastatin,pravastatin
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",pravastatin,pravastatin sodium
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",rosuvastatin,rosuvastatin
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",rosuvastatin,rosuvastatin calcium
+Cardiovascular Agents,"Dyslipidemics, HMG CoA Reductase Inhibitors",simvastatin,simvastatin
+Cardiovascular Agents,"Dyslipidemics, Other",cholestyramine,cholestyramine resin
+Cardiovascular Agents,"Dyslipidemics, Other",colesevelam,colesevelam
+Cardiovascular Agents,"Dyslipidemics, Other",colesevelam,colesevelam hydrochloride
+Cardiovascular Agents,"Dyslipidemics, Other",colestipol,colestipol
+Cardiovascular Agents,"Dyslipidemics, Other",colestipol,colestipol hydrochloride
+Cardiovascular Agents,"Dyslipidemics, Other",ezetimibe,ezetimibe
+Cardiovascular Agents,"Dyslipidemics, Other",icosapent ethyl,icosapent ethyl
+Cardiovascular Agents,"Dyslipidemics, Other",lomitapide,lomitapide
+Cardiovascular Agents,"Dyslipidemics, Other",lomitapide,lomitapide mesylate
+Cardiovascular Agents,"Dyslipidemics, Other",mipomersen,mipomersen sodium
+Cardiovascular Agents,"Dyslipidemics, Other",niacin,niacin
+Cardiovascular Agents,"Dyslipidemics, Other",omega-3-acid ethyl esters,omega-3-acid ethyl esters
+Cardiovascular Agents,"Vasodilators, Direct-acting Arterial",hydralazine,hydralazine
+Cardiovascular Agents,"Vasodilators, Direct-acting Arterial",hydralazine,hydralazine hydrochloride
+Cardiovascular Agents,"Vasodilators, Direct-acting Arterial",hydralazine,hydralazine polistirex
+Cardiovascular Agents,"Vasodilators, Direct-acting Arterial",minoxidil,minoxidil
+Cardiovascular Agents,"Vasodilators, Direct-acting Arterial/Venous",isosorbide dinitrate,isosorbide dinitrate
+Cardiovascular Agents,"Vasodilators, Direct-acting Arterial/Venous",isosorbide mononitrate,isosorbide mononitrate
+Cardiovascular Agents,"Vasodilators, Direct-acting Arterial/Venous",nitroglycerin,nitroglycerin
+Cardiovascular Agents,"Cardiovascular Agents, Other",aliskiren,aliskiren
+Cardiovascular Agents,"Cardiovascular Agents, Other",aliskiren,aliskiren fumarate
+Cardiovascular Agents,"Cardiovascular Agents, Other",digoxin,digoxin
+Cardiovascular Agents,"Cardiovascular Agents, Other",pentoxifylline,pentoxifylline
+Cardiovascular Agents,"Cardiovascular Agents, Other",ranolazine,ranolazine
+Cardiovascular Agents,"Cardiovascular Agents, Other",ranolazine,ranolazine hydrochloride
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Amphetamines",dextroamphetamine,dextroamphetamine
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Amphetamines",dextroamphetamine,dextroamphetamine sulfate
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Amphetamines",lisdexamfetamine,lisdexamfetamine
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Amphetamines",lisdexamfetamine,lisdexamfetamine dimesylate
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Amphetamines",methamphetamine,metamfetamine
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Amphetamines",methamphetamine,methamphetamine hydrochloride
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",atomoxetine,atomoxetine
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",atomoxetine,atomoxetine hydrochloride
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",clonidine,clonidine
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",clonidine,clonidine hydrochloride
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",dexmethylphenidate,dexmethylphenidate
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",dexmethylphenidate,dexmethylphenidate hydrochloride
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",guanfacine,guanfacine
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",guanfacine,guanfacine hydrochloride
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",methylphenidate,methylphenidate
+Central Nervous System Agents,"Attention Deficit Hyperactivity Disorder Agents, Non- amphetamines",methylphenidate,methylphenidate hydrochloride
+Central Nervous System Agents,Fibromyalgia Agents,duloxetine,duloxetine
+Central Nervous System Agents,Fibromyalgia Agents,duloxetine,duloxetine hydrochloride
+Central Nervous System Agents,Fibromyalgia Agents,milnacipran,milnacipran
+Central Nervous System Agents,Fibromyalgia Agents,milnacipran,milnacipran hydrochloride
+Central Nervous System Agents,Fibromyalgia Agents,pregabalin,pregabalin
+Central Nervous System Agents,Multiple Sclerosis Agents,interferon beta-1a,interferon beta-1a
+Central Nervous System Agents,Multiple Sclerosis Agents,interferon beta-1b,interferon beta-1b
+Central Nervous System Agents,Multiple Sclerosis Agents,dalfampridine,dalfampridine
+Central Nervous System Agents,Multiple Sclerosis Agents,teriflunomide,teriflunomide
+Central Nervous System Agents,Multiple Sclerosis Agents,fingolimod,fingolimod hydrochloride
+Central Nervous System Agents,Multiple Sclerosis Agents,dimethyl fumarate,dimethyl fumarate
+Central Nervous System Agents,Multiple Sclerosis Agents,glatiramer,glatiramer acetate
+Central Nervous System Agents,Multiple Sclerosis Agents,mitoxantrone,mitoxantrone
+Central Nervous System Agents,Multiple Sclerosis Agents,mitoxantrone,mitoxantrone hydrochloride
+Central Nervous System Agents,Multiple Sclerosis Agents,natalizumab,natalizumab
+Central Nervous System Agents,"Central Nervous System, Other",gabapentin enacarbil,gabapentin enacarbil
+Central Nervous System Agents,"Central Nervous System, Other",tetrabenazine,tetrabenazine
+Central Nervous System Agents,"Central Nervous System, Other",riluzole,riluzole
+Central Nervous System Agents,"Central Nervous System, Other",dextromethorphan/quinidine,dextromethorphan hydrobromide and quinidine sulfate
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",atropine,atropine
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",atropine,methylatropine nitrate
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",atropine,atropine methylbromide
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",atropine,atropine oxide hydrochloride
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",atropine,atropine oxide
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",atropine,atropine sulfate
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",dicyclomine,dicycloverine
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",dicyclomine,dicyclomine hydrochloride
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",glycopyrrolate,glycopyrrolate
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",mepenzolate,mepenzolate bromide
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",methscopolamine,methscopolamine bromide
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",scopolamine,scopolamine
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",scopolamine,scopolamine butylbromide
+Gastrointestinal Agents,"Antispasmodics, Gastrointestinal",scopolamine,scopolamine hydrobromide
+Gastrointestinal Agents,Histamine2 (H2) receptor Antagonists,cimetidine,cimetidine
+Gastrointestinal Agents,Histamine2 (H2) receptor Antagonists,cimetidine,cimetidine hydrochloride
+Gastrointestinal Agents,Histamine2 (H2) receptor Antagonists,famotidine,famotidine
+Gastrointestinal Agents,Histamine2 (H2) receptor Antagonists,nizatidine,nizatidine
+Gastrointestinal Agents,Histamine2 (H2) receptor Antagonists,ranitidine,ranitidine
+Gastrointestinal Agents,Histamine2 (H2) receptor Antagonists,ranitidine,ranitidine bismuth citrate
+Gastrointestinal Agents,Histamine2 (H2) receptor Antagonists,ranitidine,ranitidine hydrochloride
+Gastrointestinal Agents,Irritable Bowel Syndrome Agents,alosetron,alosetron
+Gastrointestinal Agents,Irritable Bowel Syndrome Agents,alosetron,alosetron hydrochloride
+Gastrointestinal Agents,Irritable Bowel Syndrome Agents,linaclotide,linaclotide
+Gastrointestinal Agents,Irritable Bowel Syndrome Agents,linaclotide,linaclotide acetate
+Gastrointestinal Agents,Irritable Bowel Syndrome Agents,lubiprostone,lubiprostone
+Gastrointestinal Agents,Laxatives,lactulose,lactulose
+Gastrointestinal Agents,Protectants,misoprostol,misoprostol
+Gastrointestinal Agents,Protectants,sucralfate,sucralfate
+Gastrointestinal Agents,Proton Pump Inhibitors,dexlansoprazole,dexlansoprazole
+Gastrointestinal Agents,Proton Pump Inhibitors,esomeprazole,esomeprazole
+Gastrointestinal Agents,Proton Pump Inhibitors,esomeprazole,esomeprazole magnesium
+Gastrointestinal Agents,Proton Pump Inhibitors,esomeprazole,esomeprazole sodium
+Gastrointestinal Agents,Proton Pump Inhibitors,esomeprazole,esomeprazole potassium
+Gastrointestinal Agents,Proton Pump Inhibitors,esomeprazole,esomeprazole strontium
+Gastrointestinal Agents,Proton Pump Inhibitors,lansoprazole,lansoprazole
+Gastrointestinal Agents,Proton Pump Inhibitors,omeprazole,omeprazole
+Gastrointestinal Agents,Proton Pump Inhibitors,omeprazole,omeprazole sodium
+Gastrointestinal Agents,Proton Pump Inhibitors,omeprazole,omeprazole sodium injection
+Gastrointestinal Agents,Proton Pump Inhibitors,omeprazole,omeprazole magnesium
+Gastrointestinal Agents,Proton Pump Inhibitors,pantoprazole,pantoprazole
+Gastrointestinal Agents,Proton Pump Inhibitors,pantoprazole,pantoprazole sodium
+Gastrointestinal Agents,Proton Pump Inhibitors,rabeprazole,rabeprazole
+Gastrointestinal Agents,Proton Pump Inhibitors,rabeprazole,rabeprazole sodium
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",alvimopan,alvimopan
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",crofelemer,crofelemer
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",diphenoxylate hydrochloride and atropine sulfate,atropine sulfate - diphenoxylate hydrochloride mixt
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",loperamide,loperamide
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",loperamide,loperamide hydrochloride
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",loperamide,loperamide oxide
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",methylnaltrexone,methylnaltrexone bromide
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",metoclopramide,metoclopramide
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",metoclopramide,metoclopramide hydrochloride
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",metoclopramide,metoclopramide hydrochloride
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",rifaximin,rifaximin
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",ursodiol,ursodiol
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",glutamine,glutamine
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",somatropin,somatropin
+Gastrointestinal Agents,"Gastrointestinal Agents, Other",teduglutide,teduglutide
+Genitourinary Agents,"Antispasmodics, Urinary",mirabegron,mirabegron
+Genitourinary Agents,"Antispasmodics, Urinary",darifenacin,darifenacin
+Genitourinary Agents,"Antispasmodics, Urinary",darifenacin,darifenacin hydrobromide
+Genitourinary Agents,"Antispasmodics, Urinary",fesoterodine,fesoterodine
+Genitourinary Agents,"Antispasmodics, Urinary",fesoterodine,fesoterodine fumarate
+Genitourinary Agents,"Antispasmodics, Urinary",flavoxate,flavoxate
+Genitourinary Agents,"Antispasmodics, Urinary",flavoxate,flavoxate hydrochloride
+Genitourinary Agents,"Antispasmodics, Urinary",oxybutynin,oxybutynin
+Genitourinary Agents,"Antispasmodics, Urinary",oxybutynin,oxybutynin chloride
+Genitourinary Agents,"Antispasmodics, Urinary",solifenacin,solifenacin
+Genitourinary Agents,"Antispasmodics, Urinary",solifenacin,solifenacin succinate
+Genitourinary Agents,"Antispasmodics, Urinary",tolterodine,tolterodine
+Genitourinary Agents,"Antispasmodics, Urinary",tolterodine,tolterodine tartrate
+Genitourinary Agents,"Antispasmodics, Urinary",trospium,trospium chloride
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,alfuzosin,alfuzosin
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,alfuzosin,alfuzosin hydrochloride
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,doxazosin,doxazosin
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,doxazosin,doxazosin mesylate
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,prazosin,prazosin
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,prazosin,prazosin hydrochloride
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,silodosin,silodosin
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,tamsulosin,tamsulosin
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,tamsulosin,tamsulosin hydrochloride
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,terazosin,terazosin
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,terazosin,terazosin hydrochloride
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,dutasteride,dutasteride
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,finasteride,finasteride
+Genitourinary Agents,Benign Prostatic Hypertrophy Agents,tadalafil,tadalafil
+Genitourinary Agents,Phosphate Binders,calcium acetate,calcium acetate
+Genitourinary Agents,Phosphate Binders,calcium acetate,calcium acetate
+Genitourinary Agents,Phosphate Binders,lanthanum,lanthanum carbonate
+Genitourinary Agents,Phosphate Binders,sevelamer,sevelamer
+Genitourinary Agents,Phosphate Binders,sevelamer,sevelamer hydrochloride
+Genitourinary Agents,Phosphate Binders,sevelamer,sevelamer carbonate
+Genitourinary Agents,"Genitourinary Agents, Other",bethanechol,bethanechol chloride
+Genitourinary Agents,"Genitourinary Agents, Other",penicillamine,penicillamine
+Genitourinary Agents,"Genitourinary Agents, Other",penicillamine,penicillamine hydrochloride
+Genitourinary Agents,"Genitourinary Agents, Other",pentosan polysulfate,pentosan polysulfate sodium
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Anabolic Steroids,oxandrolone,oxandrolone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,danazol,danazol
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,fluoxymesterone,fluoxymesterone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,methyltestosterone,methyltestosterone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone cypionate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone enanthate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone propionate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone ketolaurate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone phenylacetate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone undecanoate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone decanoate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Androgens,testosterone,testosterone phenylpropionate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol valerate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol dipropionate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol benzoate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol acetate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol cypionate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol enanthate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol undecylate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol hemihydrate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estradiol,estradiol 17 beta-hemisuccinate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,"estrogens, conjugated","estrogens, conjugated"
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,"estrogens, conjugated synthetic","synthetic conjugated estrogens, b"
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,"estrogens, esterified","estrogens, esterified"
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estrone,estrone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estrone,estrone sodium sulfate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estrone,estropipate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,estropipate,estropipate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,ethinyl estradiol,ethinyl estradiol
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Estrogens,ethinyl estradiol,ethinylestradiol propanesulfonate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progesterone Agonists/Antagonists,ulipristal,ulipristal
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progesterone Agonists/Antagonists,ulipristal,ulipristal acetate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,levonorgestrel,levonorgestrel
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,medroxyprogesterone,medroxyprogesterone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,medroxyprogesterone,medroxyprogesterone acetate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,megestrol,megestrol
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,megestrol,megestrol acetate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,norethindrone,norethindrone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,norethindrone,norethindrone acetate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,norgestrel,norgestrel
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Progestins,progesterone,progesterone
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Selective Estrogen Receptor Modifying Agents,raloxifene,raloxifene
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Selective Estrogen Receptor Modifying Agents,raloxifene,raloxifene hydrochloride
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Selective Estrogen Receptor Modifying Agents,raloxifene,raloxifene hydrochloride hydrate
+"Hormonal Agents, Stimulant/Replacement/Modifying (Sex Hormones/Modifiers)",Selective Estrogen Receptor Modifying Agents,ospemifene,ospemifene
+"Hormonal Agents, Suppressant (Thyroid)",Antithyroid Agents,methimazole,methimazole
+"Hormonal Agents, Suppressant (Thyroid)",Antithyroid Agents,propylthiouracil,propylthiouracil
+Immunological Agents,Angioedema (HAE) Agents,icatibant,icatibant acetate
+Immunological Agents,Immune Suppressants,mycophenolic acid,mycophenolic acid
+Immunological Agents,Immune Suppressants,mycophenolic acid,mycophenolate mofetil
+Immunological Agents,Immune Suppressants,mycophenolic acid,mycophenolate mofetil hydrochloride
+Immunological Agents,Immune Suppressants,mycophenolic acid,mycophenolate sodium
+Immunological Agents,Immune Suppressants,tacrolimus,tacrolimus
+Immunological Agents,Immune Suppressants,tacrolimus,tacrolimus
+Immunological Agents,Immune Suppressants,cyclosporine,cyclosporine
+Immunological Agents,Immune Suppressants,tofacitinib,tofacitinib
+Immunological Agents,Immune Suppressants,tofacitinib,tofacitinib citrate
+Immunological Agents,Immune Suppressants,sirolimus,sirolimus
+Immunological Agents,Immune Suppressants,mercaptopurine,mercaptopurine
+Immunological Agents,Immune Suppressants,mercaptopurine,mercaptopurine
+Immunological Agents,Immune Suppressants,abatacept,abatacept
+Immunological Agents,Immune Suppressants,anakinra,anakinra
+Immunological Agents,Immune Suppressants,everolimus,everolimus
+Immunological Agents,Immune Suppressants,methotrexate,methotrexate
+Immunological Agents,Immune Suppressants,methotrexate,methotrexate sodium
+Immunological Agents,Immune Suppressants,penicillamine,penicillamine
+Immunological Agents,Immune Suppressants,penicillamine,penicillamine hydrochloride
+Immunological Agents,Immune Suppressants,pimecrolimus,pimecrolimus
+Immunological Agents,Immune Suppressants,azathioprine,azathioprine
+Immunological Agents,Immune Suppressants,azathioprine,azathioprine sodium
+Immunological Agents,Immune Suppressants,adalimumab,adalimumab
+Immunological Agents,Immune Suppressants,certolizumab pegol,certolizumab pegol
+Immunological Agents,Immune Suppressants,etanercept,etanercept
+Immunological Agents,Immune Suppressants,golimumab,golimumab
+Immunological Agents,Immune Suppressants,infliximab,infliximab
+Immunological Agents,"Immunizing Agents, Passive",anti-thymocyte globulin,"anti-human thymocyte immunoglobulin, equine"
+Immunological Agents,"Immunizing Agents, Passive",anti-thymocyte globulin,"anti-human thymocyte immunoglobulin, rabbit"
+Immunological Agents,"Immunizing Agents, Passive",immune globulin intravenous (human),immune globulin intravenous pentetate
+Immunological Agents,Immunomodulators,belimumab,belimumab
+Immunological Agents,Immunomodulators,"interferon gamma-1b, recombinant",interferon gamma-1b
+Immunological Agents,Immunomodulators,canakinumab,canakinumab
+Immunological Agents,Immunomodulators,rilonacept,rilonacept
+Immunological Agents,Immunomodulators,tocilizumab,tocilizumab
+Immunological Agents,Immunomodulators,auranofin,auranofin
+Immunological Agents,Immunomodulators,leflunomide,leflunomide
+Immunological Agents,Immunomodulators,natalizumab,natalizumab
+Immunological Agents,Vaccines,diphtheria and tetanus toxoids adsorbed (dt),adsorbed diphtheria-tetanus combined toxoid
+Immunological Agents,Vaccines,diphtheria and tetanus toxoids and acellular pertussis vaccine adsorbed (dtap),adsorbed diphtheria-purified pertussis-tetanus combined vaccine
+Immunological Agents,Vaccines,diphtheria and tetanus toxoids and acellular pertussis absorbed and inactivated poliovirus (dtap-ipv) vaccine,adsorbed diphtheria-purified pertussis-tetanus-inactivated polio combined vaccine
+Immunological Agents,Vaccines,haemophilus b conjugate vaccine,haemophilus influenzae type b conjugate vaccine
+Immunological Agents,Vaccines,hepatitis b virus vaccine recombinant,adsorbed hepatitis b vaccine
+Immunological Agents,Vaccines,hepatitis b virus vaccine recombinant,adsorbed hepatitis b vaccine
+Immunological Agents,Vaccines,japanese encephalitis virus vaccine inactivated,japanese encephalitis vaccine
+Immunological Agents,Vaccines,measles virus vaccine live,measles virus vaccine live
+Immunological Agents,Vaccines,measles virus vaccine live,freeze-dried live attenuated measles vaccine
+Immunological Agents,Vaccines,meningococcal polysaccharide vaccine,meningococcal polysaccharide vaccine group a
+Immunological Agents,Vaccines,meningococcal polysaccharide vaccine,meningococcal polysaccharide vaccine group c
+Immunological Agents,Vaccines,human papillomavirus bivalent (type 16 and 18) vaccine recombinant,recombinant adsorbed bivalent human papillomavirus-like particle vaccine
+Immunological Agents,Vaccines,"human papillomavirus quadrivalent (types 6, 11, 16 and 18) vaccine recombinant",recombinant adsorbed quadrivalent human papillomavirus virus-like particle vaccine
+Immunological Agents,Vaccines,poliovirus vaccine inactivated,poliovirus vaccine inactivated
+Immunological Agents,Vaccines,rabies vaccine,rabies vaccine
+Immunological Agents,Vaccines,rubella virus vaccine,rubella virus vaccine live
+Immunological Agents,Vaccines,rubella virus vaccine,freeze-dried live attenuated rubella vaccine
+Immunological Agents,Vaccines,tetanus toxoid,tetanus toxoid
+Immunological Agents,Vaccines,tetanus toxoid adsorbed,tetanus toxoid adsorbed
+Immunological Agents,Vaccines,typhoid vaccine live oral,typhoid vaccine
+Immunological Agents,Vaccines,varicella virus vaccine,freeze-dried live attenuated varicella vaccine
+Immunological Agents,Vaccines,yellow fever vaccine,yellow fever vaccine
+Inflammatory Bowel Disease Agents,Glucocorticoids,betamethasone,betamethasone
+Inflammatory Bowel Disease Agents,Glucocorticoids,betamethasone,betamethasone sodium phosphate
+Inflammatory Bowel Disease Agents,Glucocorticoids,betamethasone,betamethasone valerate
+Inflammatory Bowel Disease Agents,Glucocorticoids,betamethasone,betamethasone acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,betamethasone,betamethasone dipropionate
+Inflammatory Bowel Disease Agents,Glucocorticoids,betamethasone,betamethasone butyrate propionate
+Inflammatory Bowel Disease Agents,Glucocorticoids,betamethasone,betamethasone benzoate
+Inflammatory Bowel Disease Agents,Glucocorticoids,budesonide,budesonide
+Inflammatory Bowel Disease Agents,Glucocorticoids,cortisone,cortisone
+Inflammatory Bowel Disease Agents,Glucocorticoids,cortisone,cortisone acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone sodium phosphate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone metasulfobenzoate sodium
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone palmitate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone dipropionate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone valerate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone acefurate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone beloxil
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone cipecilate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone 21-acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone isonicotinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone sodium hemisulfate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone 21-tebutate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone 21-valerate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone phenylpropionate
+Inflammatory Bowel Disease Agents,Glucocorticoids,dexamethasone,dexamethasone phosphate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone cypionate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone sodium phosphate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone sodium succinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone succinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone butyrate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone probutate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone valerate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone hemisuccinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone aceponate
+Inflammatory Bowel Disease Agents,Glucocorticoids,hydrocortisone,hydrocortisone caproate
+Inflammatory Bowel Disease Agents,Glucocorticoids,methylprednisolone,methylprednisolone
+Inflammatory Bowel Disease Agents,Glucocorticoids,methylprednisolone,methylprednisolone sodium succinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,methylprednisolone,methylprednisolone acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,methylprednisolone,methylprednisolone hemisuccinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,methylprednisolone,methylprednisolone sodium phosphate
+Inflammatory Bowel Disease Agents,Glucocorticoids,methylprednisolone,methylprednisolone suleptanate
+Inflammatory Bowel Disease Agents,Glucocorticoids,methylprednisolone,methylprednisolone aceponate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone sodium phosphate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone tebutate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone sodium succinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone farnesylate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone hemisuccinate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone valerate acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone pivalate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone sodium metazoate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone 21-
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisolone,prednisolone steaglate
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisone,prednisone
+Inflammatory Bowel Disease Agents,Glucocorticoids,prednisone,prednisone acetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,triamcinolone,triamcinolone
+Inflammatory Bowel Disease Agents,Glucocorticoids,triamcinolone,triamcinolone acetonide
+Inflammatory Bowel Disease Agents,Glucocorticoids,triamcinolone,triamcinolone diacetate
+Inflammatory Bowel Disease Agents,Glucocorticoids,triamcinolone,triamcinolone hexacetonide
+Inflammatory Bowel Disease Agents,Glucocorticoids,triamcinolone,triamcinolone acetonide sodium phosphate
+Inflammatory Bowel Disease Agents,Aminosalicylates,balsalazide,balsalazide
+Inflammatory Bowel Disease Agents,Aminosalicylates,balsalazide,balsalazide disodium
+Inflammatory Bowel Disease Agents,Aminosalicylates,mesalamine,mesalamine
+Inflammatory Bowel Disease Agents,Aminosalicylates,olsalazine,olsalazine
+Inflammatory Bowel Disease Agents,Aminosalicylates,olsalazine,olsalazine sodium
+Inflammatory Bowel Disease Agents,Sulfonamides,sulfasalazine,sulfasalazine
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,azelastine,azelastine
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,azelastine,azelastine hydrochloride
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,bepotastine,bepotastine
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,bepotastine,bepotastine besylate
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,cromolyn,cromolyn sodium
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,emedastine,emedastine
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,emedastine,emedastine difumarate
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,epinastine,epinastine
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,epinastine,epinastine hydrochloride
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,lodoxamide,lodoxamide
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,lodoxamide,lodoxamide ethyl
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,lodoxamide,lodoxamide tromethamine
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,nedocromil,nedocromil
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,nedocromil,nedocromil sodium
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,nedocromil,nedocromil calcium
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,olopatadine,olopatadine
+Ophthalmic Agents,Ophthalmic Anti-allergy Agents,olopatadine,olopatadine hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,apraclonidine,apraclonidine
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,apraclonidine,apraclonidine hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,brimonidine,brimonidine
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,brimonidine,brimonidine tartrate
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,dipivefrin,dipivefrin
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,dipivefrin,dipivefrin hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,betaxolol,betaxolol
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,betaxolol,betaxolol hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,carteolol,carteolol
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,carteolol,carteolol hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,levobunolol,levobunolol
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,levobunolol,levobunolol hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,metipranolol,metipranolol
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,metipranolol,metipranolol hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,timolol,timolol
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,timolol,timolol
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,timolol,timolol maleate
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,acetazolamide,acetazolamide
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,acetazolamide,acetazolamide sodium
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,brinzolamide,brinzolamide
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,dorzolamide,dorzolamide
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,dorzolamide,dorzolamide hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,methazolamide,methazolamide
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,echothiophate,echothiophate iodide
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,pilocarpine,pilocarpine
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,pilocarpine,pilocarpine hydrochloride
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,pilocarpine,pilocarpine nitrate
+Ophthalmic Agents,Ophthalmic Antiglaucoma Agents,pilocarpine,pilocarpine borate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone sodium phosphate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone metasulfobenzoate sodium
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone palmitate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone dipropionate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone valerate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone acetate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone acefurate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone beloxil
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone cipecilate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone 21-acetate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone isonicotinate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone sodium hemisulfate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone 21-tebutate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone 21-valerate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone phenylpropionate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,dexamethasone,dexamethasone phosphate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,difluprednate,difluprednate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,fluocinolone,fluocinolone acetonide
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,loteprednol,loteprednol
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,loteprednol,loteprednol etabonate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone acetate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone sodium phosphate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone tebutate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone sodium succinate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone farnesylate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone hemisuccinate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone valerate acetate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone pivalate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone sodium metazoate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone 21-
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,prednisolone,prednisolone steaglate
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,rimexolone,rimexolone
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,bromfenac,bromfenac
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,bromfenac,bromfenac sodium
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,diclofenac,diclofenac
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,diclofenac,diclofenac potassium
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,diclofenac,diclofenac sodium
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,diclofenac,diclofenac diethylamine
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,diclofenac,diclofenac hydroxyethylpyrrolidine
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,diclofenac,diclofenac calcium
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,flurbiprofen,flurbiprofen
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,flurbiprofen,flurbiprofen axetil
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,flurbiprofen,flurbiprofen sodium
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,flurbiprofen,esflurbiprofen
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,ketorolac,ketorolac
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,ketorolac,ketorolac tromethamine
+Ophthalmic Agents,Ophthalmic Anti-inflammatories,nepafenac,nepafenac
+Ophthalmic Agents,Ophthalmic Prostaglandin and Prostamide Analogs,bimatoprost,bimatoprost
+Ophthalmic Agents,Ophthalmic Prostaglandin and Prostamide Analogs,latanoprost,latanoprost
+Ophthalmic Agents,Ophthalmic Prostaglandin and Prostamide Analogs,tafluprost,tafluprost
+Ophthalmic Agents,Ophthalmic Prostaglandin and Prostamide Analogs,travoprost,travoprost
+Ophthalmic Agents,"Ophthalmic Agents, Other",hydroxypropyl cellulose,hydroxypropylcellulose
+Ophthalmic Agents,"Ophthalmic Agents, Other",naphazoline,naphazoline
+Ophthalmic Agents,"Ophthalmic Agents, Other",naphazoline,naphazoline hydrochloride
+Ophthalmic Agents,"Ophthalmic Agents, Other",naphazoline,naphazoline nitrate
+Ophthalmic Agents,"Ophthalmic Agents, Other",cyclosporine,cyclosporine
+Respiratory Tract/Pulmonary Agents,Antihistamines,azelastine,azelastine
+Respiratory Tract/Pulmonary Agents,Antihistamines,azelastine,azelastine hydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,cetirizine,cetirizine
+Respiratory Tract/Pulmonary Agents,Antihistamines,cetirizine,cetirizine hydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,desloratadine,desloratadine
+Respiratory Tract/Pulmonary Agents,Antihistamines,levocetirizine,levocetirizine
+Respiratory Tract/Pulmonary Agents,Antihistamines,levocetirizine,levocetirizine dihydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,olopatadine,olopatadine
+Respiratory Tract/Pulmonary Agents,Antihistamines,olopatadine,olopatadine hydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,carbinoxamine,carbinoxamine
+Respiratory Tract/Pulmonary Agents,Antihistamines,carbinoxamine,carbinoxamine maleate
+Respiratory Tract/Pulmonary Agents,Antihistamines,carbinoxamine,carbinoxamine diphenyldisulfonate
+Respiratory Tract/Pulmonary Agents,Antihistamines,clemastine,clemastine
+Respiratory Tract/Pulmonary Agents,Antihistamines,clemastine,clemastine fumarate
+Respiratory Tract/Pulmonary Agents,Antihistamines,cyproheptadine,cyproheptadine
+Respiratory Tract/Pulmonary Agents,Antihistamines,cyproheptadine,cyproheptadine hydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,diphenhydramine,diphenhydramine
+Respiratory Tract/Pulmonary Agents,Antihistamines,diphenhydramine,diphenhydramine hydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,diphenhydramine,diphenhydramine salicylate
+Respiratory Tract/Pulmonary Agents,Antihistamines,diphenhydramine,diphenhydramine tannate
+Respiratory Tract/Pulmonary Agents,Antihistamines,diphenhydramine,diphenhydramine laurylsulfate
+Respiratory Tract/Pulmonary Agents,Antihistamines,diphenhydramine,diphenhydramine citrate
+Respiratory Tract/Pulmonary Agents,Antihistamines,hydroxyzine,hydroxyzine
+Respiratory Tract/Pulmonary Agents,Antihistamines,hydroxyzine,hydroxyzine hydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,hydroxyzine,hydroxyzine pamoate
+Respiratory Tract/Pulmonary Agents,Antihistamines,promethazine,promethazine
+Respiratory Tract/Pulmonary Agents,Antihistamines,promethazine,promethazine hydrochloride
+Respiratory Tract/Pulmonary Agents,Antihistamines,promethazine,promethazine teoclate
+Respiratory Tract/Pulmonary Agents,Antihistamines,promethazine,promethazine methylenedisalicylate
+Respiratory Tract/Pulmonary Agents,Antihistamines,promethazine,promethazine maleate
+Respiratory Tract/Pulmonary Agents,Antihistamines,promethazine,promethazine hibenzate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",beclomethasone,beclomethasone dipropionate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",budesonide,budesonide
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",ciclesonide,ciclesonide
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",flunisolide,flunisolide
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",flunisolide,flunisolide acetate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",fluticasone,fluticasone
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",fluticasone,fluticasone propionate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",fluticasone,fluticasone furoate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",mometasone,mometasone
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",mometasone,mometasone furoate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",mometasone,mometasone furoate hydrate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",triamcinolone,triamcinolone
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",triamcinolone,triamcinolone acetonide
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",triamcinolone,triamcinolone diacetate
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",triamcinolone,triamcinolone hexacetonide
+Respiratory Tract/Pulmonary Agents,"Anti-inflammatories, Inhaled Corticosteroids",triamcinolone,triamcinolone acetonide sodium phosphate
+Respiratory Tract/Pulmonary Agents,Antileukotrienes,montelukast,montelukast
+Respiratory Tract/Pulmonary Agents,Antileukotrienes,montelukast,montelukast sodium
+Respiratory Tract/Pulmonary Agents,Antileukotrienes,zafirlukast,zafirlukast
+Respiratory Tract/Pulmonary Agents,Antileukotrienes,zileuton,zileuton
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Anticholinergic",aclidinium,aclidinium bromide
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Anticholinergic",ipratropium,ipratropium bromide
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Anticholinergic",tiotropium,tiotropium bromide hydrate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",albuterol,albuterol
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",albuterol,albuterol sulfate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",arformoterol,arformoterol
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",arformoterol,arformoterol tartrate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",ephedrine,ephedrine
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",ephedrine,ephedrine hydrochloride
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",ephedrine,ephedrine sulfate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",epinephrine,epinephrine
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",epinephrine,epinephrine hydrochloride
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",epinephrine,epinephrine bitartrate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",formoterol,formoterol
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",formoterol,formoterol fumarate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",formoterol,formoterol fumarate hydrate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",indacaterol,indacaterol
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",indacaterol,indacaterol maleate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",levalbuterol,levalbuterol hydrochloride
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",levalbuterol,levalbuterol sulfate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",levalbuterol,levalbuterol tartrate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",metaproterenol,orciprenaline
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",metaproterenol,metaproterenol polistirex
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",metaproterenol,metaproterenol sulfate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",salmeterol,salmeterol
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",salmeterol,salmeterol xinafoate
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",terbutaline,terbutaline
+Respiratory Tract/Pulmonary Agents,"Bronchodilators, Sympathomimetic",terbutaline,terbutaline sulfate
+Respiratory Tract/Pulmonary Agents,Cystic Fibrosis Agents,ivacaftor,ivacaftor
+Respiratory Tract/Pulmonary Agents,Cystic Fibrosis Agents,tobramycin dry-powder inhaler,tobramycin
+Respiratory Tract/Pulmonary Agents,Cystic Fibrosis Agents,tobramycin dry-powder inhaler,tobramycin sulfate
+Respiratory Tract/Pulmonary Agents,Mast Cell Stabilizers,cromolyn,cromolyn sodium
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",aminophylline,aminophylline
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",aminophylline,aminophylline hydrate
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",dyphylline,dyphylline
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",theophylline,theophylline
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",theophylline,theophylline sodium acetate
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",theophylline,theophylline
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",theophylline,theophylline sodium glycinate
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",theophylline,diisobutylaminobenzoyloxypropyl theophylline
+Respiratory Tract/Pulmonary Agents,"Phosphodiesterase Inhibitors, Airways Disease",roflumilast,roflumilast
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,ambrisentan,ambrisentan
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,bosentan,bosentan
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,bosentan,bosentan
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,macitentan,macitentan
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,sildenafil,sildenafil
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,sildenafil,sildenafil citrate
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,tadalafil,tadalafil
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,epoprostenol,epoprostenol
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,epoprostenol,epoprostenol sodium
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,iloprost,iloprost
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,iloprost,iloprost tromethamine
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,treprostinil,treprostinil
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,treprostinil,treprostinil monosodium salt
+Respiratory Tract/Pulmonary Agents,Pulmonary Antihypertensives,riociguat,riociguat
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",acetylcysteine,acetylcysteine
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",acetylcysteine,acetylcysteine sodium salt
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",budesonide/formoterol fumarate,budesonide - formoterol fumarate dihydrate mixt
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",fluticasone furoate/vilanterol trifenatate,fluticasone furoate - vilanterol trifenatate mixt
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",fluticasone propionate/salmeterol,salmeterol xinafoate - fluticasone propionate mixt
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",tetrahydrozoline,tetryzoline
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",tetrahydrozoline,tetrahydrozoline nitrate
+Respiratory Tract/Pulmonary Agents,"Respiratory Tract Agents, Other",tetrahydrozoline,tetrahydrozoline hydrochloride
+Sleep Disorder Agents,GABA Receptor Modulators,flurazepam,flurazepam
+Sleep Disorder Agents,GABA Receptor Modulators,flurazepam,flurazepam hydrochloride
+Sleep Disorder Agents,GABA Receptor Modulators,flurazepam,flurazepam hydrochloride
+Sleep Disorder Agents,GABA Receptor Modulators,temazepam,temazepam
+Sleep Disorder Agents,GABA Receptor Modulators,eszopiclone,eszopiclone
+Sleep Disorder Agents,GABA Receptor Modulators,zaleplon,zaleplon
+Sleep Disorder Agents,GABA Receptor Modulators,zolpidem,zolpidem
+Sleep Disorder Agents,GABA Receptor Modulators,zolpidem,zolpidem tartrate
+Sleep Disorder Agents,"Sleep Disorders, Other",armodafinil,armodafinil
+Sleep Disorder Agents,"Sleep Disorders, Other",doxepin,doxepin
+Sleep Disorder Agents,"Sleep Disorders, Other",doxepin,doxepin hydrochloride
+Sleep Disorder Agents,"Sleep Disorders, Other",modafinil,modafinil
+Sleep Disorder Agents,"Sleep Disorders, Other",ramelteon,ramelteon
+Sleep Disorder Agents,"Sleep Disorders, Other",sodium oxybate,sodium oxybate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,deferasirox,deferasirox
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,deferiprone,deferiprone
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,penicillamine,penicillamine
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,penicillamine,penicillamine hydrochloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,sodium polystyrene sulfonate,sodium polystyrene sulfonate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,succimer,succimer
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,tolvaptan,tolvaptan
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Modifiers,trientine,trientine hydrochloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,ammonium,ammonium chloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,ammonium,ammonium carbonate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,ammonium,ammonium phosphate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,ammonium,ammonium sulfate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,carglumic acid,carglumic acid
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,chromic,chromic chloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,chromic,chromic chloride cr 51
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,chromic,chromic phosphate cr 51
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,chromic,chromic phosphate p 32
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,fluoride,sodium fluoride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,fluoride,silver diammine fluoride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,fluoride,sodium fluoride f 18
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,fluoride,stannous fluoride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium aluminometasilicate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium aluminum silicate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium l-aspartate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium carbonate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium chloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium citrate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium gluconate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium hydroxide
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium oxide
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium phosphate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium salicylate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium silicate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium sulfate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium stearate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,magnesium,magnesium trisilicate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,manganese,manganese chloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,manganese,manganese gluconate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,manganese,manganese sulfate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,potassium acetate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,potassium bicarbonate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,potassium carbonate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,potassium chloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,potassium citrate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,potassium gluconate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,"potassium phosphate, monobasic"
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,"potassium phosphate, dibasic"
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium,potassium metaphosphate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,potassium citrate and sodium citrate,potassium citrate - sodium citrate hydrate mixt
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,selenium,selenium sulfide
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,sodium acetate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,sodium bicarbonate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,dried sodium carbonate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,sodium carbonate hydrate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,sodium chloride
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,isotonic sodium chloride solution
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,sodium lactate
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,sodium ferric gluconate complex
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,"sodium phosphate, monobasic"
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,"sodium phosphate, dibasic"
+Therapeutic Nutrients/Minerals/Electrolytes,Electrolyte/Mineral Replacement,sodium,dibasic sodium phosphate hydrate
