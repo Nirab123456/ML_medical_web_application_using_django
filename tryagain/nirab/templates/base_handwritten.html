@@ -1,6 +1,7 @@
 {%load about_me%}
 {% block content %}
 {% include "base_apps_NAV.html" %}
+{% load custom_filters %}
 {% check_allowed_image_count request.user as is_allowed %}
 {% if is_allowed %}
 <!DOCTYPE html>
@@ -274,5 +275,5 @@
 </body>
 
 </html>
-{% endi %f}
+{% endif %}
 {% endblock %}

@@ -39,6 +39,21 @@ class MedicationDetails(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.generic_name
+    
+class USP_prescription_classification(models.Model):
+    usp_category = models.CharField(max_length=200)
+    usp_class = models.CharField(max_length=200)
+    usp_drug = models.CharField(max_length=200)
+    generic_name = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.generic_name
+
+
+
+
+
+
 
 
 
