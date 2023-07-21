@@ -117,9 +117,28 @@ def medication_search(request):
     return render(request, 'medication.html', {'medication_form': form})
 
 
+def get_word_recommendations(request):
+    if request.method == 'GET':
+        input_query = request.GET.get('input', '').strip()
+        unique_names_txt = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'staticfiles', 'unique_names.txt')
+
+        with open(unique_names_txt, 'r') as f:
+            unique_names = f.readlines()
+        unique_names = [x.replace('\n', '') for x in unique_names]
+        # Filter word_list based on the input_query
+        word_recommendations = [word for word in unique_names if word.lower().startswith(input_query.lower())]
+
+        return JsonResponse(word_recommendations, safe=False)
 
 
 
+
+
+
+
+
+def presciption_classification(request):
+    return render(request, 'presciption_classification.html')
 
 
 
