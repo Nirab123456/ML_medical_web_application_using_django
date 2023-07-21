@@ -26,12 +26,12 @@
             <div class="mb-3">
               <label class="form-label" for="name">NAME OF THE DRUG</label>
               <input type="text" id="name" name="name" value="{{ name_of_medication }}" required oninput="showWordRecommendations()">
-              <div id="wordRecommendations" class="word-recommendations"></div>
+              <div id="wordRecommendations"></div>
             </div>
             
 
-            <p id="selectedStrength"></p>
-            <div id="get_medicine_details"></div>
+
+
             <!-- Add a dropdown menu for sorting -->
 
 
@@ -61,9 +61,17 @@
             
                       // Display word recommendations in a list
                       var recommendationsHtml = "<ul>";
+                      recommendationsHtml += " <select >";
+                      recommendationsHtml += "<option value=''>None</option>";
                       for (var i = 0; i < wordRecommendations.length; i++) {
-                        recommendationsHtml += "<li onclick=\"selectRecommendation('" + wordRecommendations[i] + "')\">" + wordRecommendations[i] + "</li>";
+                        var word = wordRecommendations[i];
+
+                        
+                        recommendationsHtml += "<option value='" + word + "' onclick='selectRecommendation(\"" + word + "\")'>" + word + "</option>";
+  
+
                       }
+                      recommendationsHtml += "</select>";
                       recommendationsHtml += "</ul>";
             
                       document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
