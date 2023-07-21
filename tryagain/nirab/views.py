@@ -21,6 +21,27 @@ from django.http import JsonResponse
 
 
 
+def get_word_recommendations(request):
+    if request.method == 'GET':
+        input_query = request.GET.get('input', '').strip()
+        unique_names_txt = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'staticfiles', 'unique_names.txt')
+
+        with open(unique_names_txt, 'r') as f:
+            unique_names = f.readlines()
+        unique_names = [x.replace('\n', '') for x in unique_names]
+        # Filter word_list based on the input_query
+        word_recommendations = [word for word in unique_names if word.lower().startswith(input_query.lower())]
+
+        return JsonResponse(word_recommendations, safe=False)
+
+
+
+
+
+
+
+
+
 def get_medicine_details(request):
     name = request.GET.get('name')
     name = name.lower()
@@ -48,6 +69,34 @@ def get_medicine_details(request):
             return JsonResponse({'error': 'Medication details not found'}, status=404)
     else:
         return JsonResponse({'error': 'Medication not found'}, status=404)
+    
+
+def get_presciption_classification(request):
+    name = request.GET.get('name')
+    name = name.lower()
+    generic_name = Medication.objects.filter(name=name).first()
+    if generic_name:
+        details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
+        if details_of_medicine.exists():
+            details_list = []
+            for detail in details_of_medicine:
+                details = {
+                    'generic_name': detail.generic_name,
+                    'drug_class': detail.drug_class,
+                    'indication': detail.indication,
+                }
+                details_list.append(details)
+            return JsonResponse(details_list, safe=False)
+        else:
+            return JsonResponse({'error': 'Medication details not found'}, status=404)
+    else:
+        return JsonResponse({'error': 'Medication not found'}, status=404)
+    
+
+
+
+
+
 
 def medicine_details(request):
     if request.method == 'POST':
@@ -59,6 +108,19 @@ def medicine_details(request):
     else:
         form = MedicineForm()
     return render(request, 'medicine_details.html', {'medication_form': form})
+
+
+def presciption_classification(request):
+    if request.method == 'POST':
+        form = MedicineForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            name = name.lower()
+            return render(request, 'presciption_classification.html', {'medication_form': form, 'name_of_medication': name})
+    else:
+        form = MedicineForm()
+    return render(request, 'presciption_classification.html', {'medication_form': form})
+
 
 
 
@@ -93,6 +155,8 @@ def get_medication_details(request):
 
 
 
+
+
 def medication_search(request):
     if request.method == 'POST':
         form = MedicineForm(request.POST)
@@ -117,18 +181,6 @@ def medication_search(request):
     return render(request, 'medication.html', {'medication_form': form})
 
 
-def get_word_recommendations(request):
-    if request.method == 'GET':
-        input_query = request.GET.get('input', '').strip()
-        unique_names_txt = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'staticfiles', 'unique_names.txt')
-
-        with open(unique_names_txt, 'r') as f:
-            unique_names = f.readlines()
-        unique_names = [x.replace('\n', '') for x in unique_names]
-        # Filter word_list based on the input_query
-        word_recommendations = [word for word in unique_names if word.lower().startswith(input_query.lower())]
-
-        return JsonResponse(word_recommendations, safe=False)
 
 
 
@@ -136,9 +188,6 @@ def get_word_recommendations(request):
 
 
 
-
-def presciption_classification(request):
-    return render(request, 'presciption_classification.html')
 
 
 

@@ -23,80 +23,123 @@
       <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST" onsubmit="handleFormSubmit(event)">
         {% csrf_token %}
 
-            <div class="mb-3">
-              <label class="form-label" for="name">NAME OF THE DRUG</label>
-              <input type="text" id="name" name="name" value="{{ name_of_medication }}" required oninput="showWordRecommendations()">
-              <div id="wordRecommendations"></div>
-            </div>
-            
+        <div class="mb-3">
+          <label class="form-label" for="name">NAME OF THE DRUG</label>
+          <input type="text" id="name" name="name" value="" required oninput="showWordRecommendations()">
+          <div id="wordRecommendations"></div>
+        </div>
+        
+        <p id="selectedStrength"></p>
+        <div id="get_presciption_classification"></div>
+        <!-- Add a dropdown menu for sorting -->
+        
+        <script>
+          var timeout; // Global variable to store timeout reference
+        
+          function showWordRecommendations() {
+            clearTimeout(timeout); // Clear previous timeout, if any
+        
+            // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+            timeout = setTimeout(function() {
+              var input = document.getElementById("name").value.trim();
+        
+              // Check if there is any input
+              if (input.length === 0) {
+                document.getElementById("wordRecommendations").innerHTML = "";
+                return;
+              }
+        
+              // Make an AJAX call to fetch word recommendations based on the input
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+              xhr.onload = function() {
+                if (xhr.status === 200) {
+                  var wordRecommendations = JSON.parse(xhr.responseText);
+        
+                  // Display word recommendations in a list
+                  var recommendationsHtml = " <select onchange='selectRecommendation()'>";
+                      recommendationsHtml += '<option>CAN SELECT MATCHING DRUG NAME</option>';        
+                  for (var i = 0; i < wordRecommendations.length; i++) {
 
 
+                    var word = wordRecommendations[i];
 
-            <!-- Add a dropdown menu for sorting -->
-
-
-            
-            <script>
-              var timeout; // Global variable to store timeout reference
-            
-              function showWordRecommendations() {
-                clearTimeout(timeout); // Clear previous timeout, if any
-            
-                // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
-                timeout = setTimeout(function() {
-                  var input = document.getElementById("name").value.trim();
-            
-                  // Check if there is any input
-                  if (input.length === 0) {
-                    document.getElementById("wordRecommendations").innerHTML = "";
-                    return;
+        
+                    recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
                   }
-            
-                  // Make an AJAX call to fetch word recommendations based on the input
+                  recommendationsHtml += "</select>";
+        
+                  document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
+                } else {
+                  console.error('Request failed. Status:', xhr.status);
+                  // Display no recommendations for error cases
+                  document.getElementById("wordRecommendations").innerHTML = "";
+                }
+              };
+              xhr.onerror = function() {
+                console.error('Request failed. Network error');
+                // Display no recommendations for network errors
+                document.getElementById("wordRecommendations").innerHTML = "";
+              };
+              xhr.send();
+            }, 300); // Adjust the delay as needed (in milliseconds)
+          }
+        
+          // Function to select a word recommendation and populate the input field with it
+          function selectRecommendation() {
+            var selectElement = document.querySelector("select");
+            var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+            document.getElementById("name").value = selectedOption;
+            document.getElementById("wordRecommendations").innerHTML = "";
+          }
+
+                function handleFormSubmit(event) {
+                  event.preventDefault(); // Prevent the form from being submitted traditionally
+                  handleSelectionChange();
+                }
+                function handleSelectionChange() {
+                  var drugName = encodeURIComponent(document.getElementById("name").value);
+
+                  // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
                   var xhr = new XMLHttpRequest();
-                  xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+                  xhr.open('GET', '/get_presciption_classification/?name=' + drugName , true);
                   xhr.onload = function() {
                     if (xhr.status === 200) {
-                      var wordRecommendations = JSON.parse(xhr.responseText);
-            
-                      // Display word recommendations in a list
-                      var recommendationsHtml = "<ul>";
-                      recommendationsHtml += " <select >";
-                      recommendationsHtml += "<option value=''>None</option>";
-                      for (var i = 0; i < wordRecommendations.length; i++) {
-                        var word = wordRecommendations[i];
-
-                        
-                        recommendationsHtml += "<option value='" + word + "' onclick='selectRecommendation(\"" + word + "\")'>" + word + "</option>";
+                      var get_presciption_classification = JSON.parse(xhr.responseText);
+                      if (Array.isArray(get_presciption_classification) && get_presciption_classification.length > 0) {
   
-
+                        // Display details for each medication
+                        var detailsHtml = "";
+                        for (var i = 0; i < get_presciption_classification.length; i++) {
+                          var medication = get_presciption_classification[i];
+                          detailsHtml += "<div class='medication-details'>";
+                          detailsHtml += "<p><strong>GENERIC NAME: </strong>" + medication.generic_name + "</p>";
+                          detailsHtml += "<p><strong>CLASS: </strong>" + medication.drug_class + "</p>";
+                          detailsHtml += "<p><strong>INDICATION: </strong>" + medication.indication + "</p>";
+                          // Add more fields here
+                          detailsHtml += "</div>";
+                          detailsHtml += "<hr>";
+                        }
+                        document.getElementById("get_presciption_classification").innerHTML = detailsHtml;
+                      } else {
+                        // Display "No data found" message
+                        document.getElementById("get_presciption_classification").innerHTML = "<p>No data found</p>";
                       }
-                      recommendationsHtml += "</select>";
-                      recommendationsHtml += "</ul>";
-            
-                      document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
                     } else {
                       console.error('Request failed. Status:', xhr.status);
-                      // Display no recommendations for error cases
-                      document.getElementById("wordRecommendations").innerHTML = "";
+                      // Display "No data found" message for error cases
+                      document.getElementById("get_presciption_classification").innerHTML = "<p>No data found</p>";
                     }
                   };
                   xhr.onerror = function() {
                     console.error('Request failed. Network error');
-                    // Display no recommendations for network errors
-                    document.getElementById("wordRecommendations").innerHTML = "";
+                    // Display "No data found" message for network errors
+                    document.getElementById("get_presciption_classification").innerHTML = "<p>No data found</p>";
                   };
                   xhr.send();
-                }, 300); // Adjust the delay as needed (in milliseconds)
-              }
-            
-              // Function to select a word recommendation and populate the input field with it
-              function selectRecommendation(word) {
-                document.getElementById("name").value = word;
-                document.getElementById("wordRecommendations").innerHTML = "";
-              }
-            </script>
-            
+                }
+
+            </script>  
 
 
 
