@@ -1,0 +1,577 @@
+group,indication,Score,drug_class
+Medication,hydrocortisone,0.92296624,hydrocortisone & combined preparations
+Therapeutic_procedure,combined preparations,0.71817887,hydrocortisone & combined preparations
+Administration,topical,0.93662393,topical antiviral preparations
+Therapeutic_procedure,anti,0.49922165,topical antiviral preparations
+Therapeutic_procedure,preparations,0.5808506,topical antiviral preparations
+Disease_disorder,herpes,0.77169335,herpes simplex & varicella-zoster virus infections
+Disease_disorder,simplex,0.5988854,herpes simplex & varicella-zoster virus infections
+Disease_disorder,infections,0.99973863,herpes simplex & varicella-zoster virus infections
+Diagnostic_procedure,ophthalmic anti - viral products,0.9906392,ophthalmic anti-viral products
+Therapeutic_procedure,antidote preparations,0.8836351,antidote preparations
+Detailed_description,combined,0.93485177,combined bronchodilators
+Therapeutic_procedure,bronchodilators,0.93598926,combined bronchodilators
+Diagnostic_procedure,oral retinoid preparations,0.9383651,oral retinoid preparations
+Therapeutic_procedure,haemodialysis solutions,0.99399763,haemodialysis solutions
+Medication,carbonic,0.579399,carbonic anhydrase inhibitor
+Medication,steroidal anti - inflammatory drugs,0.983231,non-steroidal anti-inflammatory drugs (nsaids)
+Medication,nsaids,0.83558786,non-steroidal anti-inflammatory drugs (nsaids)
+Medication,drugs,0.97521734,drugs for osteoarthritis
+Disease_disorder,osteoarthritis,0.9525166,drugs for osteoarthritis
+Medication,herbal,0.5304499,herbal and nutraceuticals
+Medication,drugs,0.7210219,drugs used in gout
+History,gout,0.6896461,drugs used in gout
+Sign_symptom,retention,0.99770254,bph/ urinary retention/ urinary incontinence
+Detailed_description,urinary,0.8876981,bph/ urinary retention/ urinary incontinence
+Sign_symptom,incontinence,0.82377565,bph/ urinary retention/ urinary incontinence
+Diagnostic_procedure,vitamin in bone formation,0.999136,vitamin in bone formation
+Biological_structure,bone,0.9946467,combined preparations: inhibiting bone resorption
+Diagnostic_procedure,bisphosphonate preparations,0.9983842,bisphosphonate preparations
+Diagnostic_procedure,protein kinase inhibitor,0.99780685,protein kinase inhibitor
+Therapeutic_procedure,plasma expanders,0.97195196,plasma expanders
+Medication,anti - depressant drugs,0.9944534,atypical anti-depressant drugs
+Medication,chemotherapy,0.9987558,cytotoxic chemotherapy
+Diagnostic_procedure,tyrosine kinase inhibitor,0.974566,tyrosine kinase inhibitor
+Diagnostic_procedure,vaccines,0.95538664,"vaccines, anti-sera & immunoglobulin"
+Diagnostic_procedure,anti - sera,0.9829714,"vaccines, anti-sera & immunoglobulin"
+Therapeutic_procedure,supplements,0.9513062,supplements & adjuvant therapy
+Therapeutic_procedure,therapy,0.56243646,supplements & adjuvant therapy
+Detailed_description,chronic,0.9996749,drugs used in chronic kidney dialysis
+Biological_structure,kidney,0.99616665,drugs used in chronic kidney dialysis
+Therapeutic_procedure,dialysis,0.9808678,drugs used in chronic kidney dialysis
+Detailed_description,parent,0.7965905,parenteral nutritional preparations
+Diagnostic_procedure,nutritional,0.84982705,parenteral nutritional preparations
+Therapeutic_procedure,preparations,0.59250087,parenteral nutritional preparations
+Diagnostic_procedure,aminoglycosides,0.9996394,aminoglycosides
+Sign_symptom,cough,0.6656617,cough expectorants & mucolytics
+Diagnostic_procedure,expect,0.67895246,cough expectorants & mucolytics
+Diagnostic_procedure,mucolytics,0.98203444,cough expectorants & mucolytics
+Sign_symptom,anti,0.99133885,anti-hypertensive
+Sign_symptom,hyper,0.54899156,anti-hypertensive
+Detailed_description,respiratory,0.8215539,respiratory viral infections (influenza)
+Disease_disorder,viral,0.97077113,respiratory viral infections (influenza)
+Disease_disorder,infections,0.7557543,respiratory viral infections (influenza)
+Disease_disorder,influenza,0.9877175,respiratory viral infections (influenza)
+Diagnostic_procedure,anticholinergics,0.98343486,anticholinergics
+Medication,topical agents,0.98531497,miscellaneous topical agents
+Medication,benzodiazepine sedatives,0.9844994,benzodiazepine sedatives
+Diagnostic_procedure,other preparations,0.72849643,other preparations
+Administration,topical,0.9897344,topical antifungal preparations
+Therapeutic_procedure,antifungal preparations,0.8590313,topical antifungal preparations
+Detailed_description,combined,0.97804147,combined antihypertensive preparations
+Medication,antihypertensive preparations,0.9267351,combined antihypertensive preparations
+Medication,anti,0.5316817,anti-anginal & lipid lowering drugs
+Diagnostic_procedure,anginal,0.71700346,anti-anginal & lipid lowering drugs
+Therapeutic_procedure,lowering,0.71387535,anti-anginal & lipid lowering drugs
+Medication,drugs,0.9075105,anti-anginal & lipid lowering drugs
+Medication,calcium - channel blockers,0.9982969,calcium-channel blockers
+Detailed_description,combined,0.9958353,combined anxiolytics & anti-depressant drugs
+Medication,anti - depressant drugs,0.99026006,combined anxiolytics & anti-depressant drugs
+Disease_disorder,drugs,0.5259655,atypical neuroleptic drugs
+Medication,potassium channel blockers,0.9987442,potassium channel blockers
+Therapeutic_procedure,bronchodilator,0.9032737,bronchodilator
+Detailed_description,bulk - forming,0.9998377,bulk-forming laxatives
+Medication,anti - malarial drugs,0.9264658,anti-malarial drugs
+Medication,stimulant drugs,0.79246646,cns stimulant drugs
+Medication,anti - emetic drugs,0.75856173,anti-emetic drugs
+Detailed_description,disease,0.5905774,disease-modifying antirheumatic drugs (dmards)
+Detailed_description,modifying,0.9061409,disease-modifying antirheumatic drugs (dmards)
+Medication,antirheumatic drugs,0.9946097,disease-modifying antirheumatic drugs (dmards)
+Therapeutic_procedure,anti,0.59501195,anti-oxidant multivitamin multimineral preparations
+Diagnostic_procedure,#NAME?,0.7486811,anti-oxidant multivitamin multimineral preparations
+Diagnostic_procedure,multivitamin multimineral preparations,0.77332026,anti-oxidant multivitamin multimineral preparations
+Diagnostic_procedure,anti,0.99891305,antihaemophilic factor
+Therapeutic_procedure,preparations,0.6681051,other ophthalmic preparations
+Administration,topical,0.99752384,topical analgesics
+Therapeutic_procedure,analgesics,0.65408516,topical analgesics
+Diagnostic_procedure,mineral preparations,0.9859219,specific mineral preparations
+Diagnostic_procedure,anti - histamine preparations,0.99953747,anti-histamine preparations
+Therapeutic_procedure,acne treatment preparations,0.97122514,acne treatment preparations
+Medication,cytotoxic immunosuppressants,0.9955258,cytotoxic immunosuppressants
+Detailed_description,targeted,0.9997663,targeted cancer therapy
+Therapeutic_procedure,cancer therapy,0.99974716,targeted cancer therapy
+Medication,drugs,0.87862194,drugs for erectile dysfunction
+Disease_disorder,erectile dysfunction,0.9480923,drugs for erectile dysfunction
+Medication,agents,0.9472285,mydriatic and cycloplegic agents
+Detailed_description,non depolarizing,0.8562914,non depolarizing muscle relaxants
+Medication,muscle relaxants,0.9979129,non depolarizing muscle relaxants
+Medication,anti,0.5235265,other anti-anginal & anti-ischaemic drugs
+Detailed_description,anti,0.38540444,other anti-anginal & anti-ischaemic drugs
+Sign_symptom,ischaemi,0.34749866,other anti-anginal & anti-ischaemic drugs
+Medication,beta - adrenoceptor blocking drugs,0.9996144,beta-adrenoceptor blocking drugs
+Diagnostic_procedure,anticholinergics (,0.9526467,anticholinergics (antimuscarinics)/ anti-spasmodics
+Sign_symptom,anti,0.4623352,anticholinergics (antimuscarinics)/ anti-spasmodics
+Detailed_description,anti,0.9996594,anti-fungal or anti-bacterial ear drops
+Detailed_description,fungal,0.8918356,anti-fungal or anti-bacterial ear drops
+Detailed_description,anti - bacterial,0.94384795,anti-fungal or anti-bacterial ear drops
+Diagnostic_procedure,drops,0.45929375,anti-fungal or anti-bacterial ear drops
+Detailed_description,nasal,0.8346784,nasal steroid preparations
+Medication,steroid,0.95577073,nasal steroid preparations
+Diagnostic_procedure,preparations,0.6708654,nasal steroid preparations
+Detailed_description,respiratory,0.67958164,respiratory corticosteroids
+Medication,corticosteroids,0.98779184,respiratory corticosteroids
+Detailed_description,contrast medium,0.9946454,contrast medium for diagnostic procedures
+Diagnostic_procedure,diagnostic procedures,0.9993435,contrast medium for diagnostic procedures
+Detailed_description,short,0.9989666,short-acting selective & 2-adrenoceptor stimulants
+Detailed_description,acting,0.99721587,short-acting selective & 2-adrenoceptor stimulants
+Detailed_description,selective,0.98132354,short-acting selective & 2-adrenoceptor stimulants
+Medication,2 - ad,0.85469145,short-acting selective & 2-adrenoceptor stimulants
+Therapeutic_procedure,irrigation,0.9994747,irrigation during various surgical procedures
+Therapeutic_procedure,surgical procedures,0.9972348,irrigation during various surgical procedures
+Detailed_description,centrally acting,0.9994744,centrally acting skeletal muscle relaxants
+Medication,skeletal muscle relaxants,0.9963367,centrally acting skeletal muscle relaxants
+Diagnostic_procedure,opht,0.9035988,ophthalmic antibacterial drugs
+Medication,beta - lactam,0.99874926,other beta-lactam antibiotics
+Medication,antibiotics,0.9979259,other beta-lactam antibiotics
+Detailed_description,macrolides,0.542316,macrolides
+Medication,beta,0.9997888,betamethasone & combined preparations
+Diagnostic_procedure,combined,0.883731,betamethasone & combined preparations
+Therapeutic_procedure,preparations,0.8620146,betamethasone & combined preparations
+Medication,drugs,0.8820142,drugs used in meniere's diseases
+Disease_disorder,meniere ' s diseases,0.9994024,drugs used in meniere's diseases
+Diagnostic_procedure,anti - oxidant multivitamin preparations,0.87481475,anti-oxidant multivitamin preparations
+Medication,benzylpenicillin,0.95279694,benzylpenicillin & phenoxymethyl penicillin
+Therapeutic_procedure,parasiticidal preparations,0.7772847,parasiticidal preparations
+Therapeutic_procedure,scalp preparations,0.99029124,other scalp preparations
+Administration,topical,0.99729437,topical anti-inflammatory preparations
+Therapeutic_procedure,anti - inflammatory preparations,0.7815658,topical anti-inflammatory preparations
+Therapeutic_procedure,anti,0.4253808,other antifungal preparations
+Administration,topical,0.99251634,topical local anesthetics
+Detailed_description,local,0.7746806,topical local anesthetics
+Medication,anesthetics,0.99539125,topical local anesthetics
+Diagnostic_procedure,vitamin - e preparations,0.8167023,vitamin-e preparations
+Detailed_description,local,0.99993443,local & surface anesthesia
+Detailed_description,surface,0.99966,local & surface anesthesia
+Detailed_description,long acting,0.7837654,long acting penicillin
+Detailed_description,combination,0.9994991,combination insulin
+Medication,insulin,0.9955772,combination insulin
+Medication,drugs,0.9700558,drugs for miotics and glaucoma
+Disease_disorder,miotics,0.65290666,drugs for miotics and glaucoma
+Disease_disorder,glaucoma,0.9604821,drugs for miotics and glaucoma
+Medication,sedating antihistamines,0.9196014,non-sedating antihistamines
+Medication,chemotherapy,0.9994419,hormonal chemotherapy
+Medication,anti - platelet drugs,0.9866575,anti-platelet drugs
+Medication,aural steroid,0.88866234,aural steroid & antibiotic combined preparations
+Medication,antibiotic,0.99813175,aural steroid & antibiotic combined preparations
+Detailed_description,combined,0.80234087,aural steroid & antibiotic combined preparations
+Therapeutic_procedure,preparations,0.6703629,aural steroid & antibiotic combined preparations
+Therapeutic_procedure,vascular protecting preparation,0.9648497,phlebotonic & vascular protecting preparation
+Medication,steroid,0.99205846,ophthalmic steroid - antibiotic combined preparations
+Medication,antibiotic,0.99382305,ophthalmic steroid - antibiotic combined preparations
+Detailed_description,combined,0.48273814,ophthalmic steroid - antibiotic combined preparations
+Therapeutic_procedure,preparations,0.4560833,ophthalmic steroid - antibiotic combined preparations
+Administration,topical,0.99954385,other topical corticosteroids
+Therapeutic_procedure,disinfectants,0.89705205,bleaching and disinfectants
+Medication,opht,0.8839798,ophthalmic non-steroid drugs
+Medication,non - steroid drugs,0.94792014,ophthalmic non-steroid drugs
+Diagnostic_procedure,enzymes,0.9908188,enzymes
+Detailed_description,adjunct,0.9985819,adjunct anti-epileptic drugs
+Medication,anti - epileptic drugs,0.93978375,adjunct anti-epileptic drugs
+Medication,benzodiazepine antagonist,0.9900403,benzodiazepine antagonist
+Medication,anti adrenergic agent,0.98073816,anti adrenergic agent (beta blockers)
+Medication,beta blockers,0.9951504,anti adrenergic agent (beta blockers)
+Medication,angiot,0.780205,angiotensin-ll receptor blocker
+Detailed_description,nasal,0.5188382,nasal anti-histamine preparations
+Diagnostic_procedure,anti - histamine preparations,0.8714239,nasal anti-histamine preparations
+Administration,topical,0.62988776,topical vitamin d & related preparations
+Medication,vitamin d,0.8396188,topical vitamin d & related preparations
+Detailed_description,preparations,0.2534436,topical vitamin d & related preparations
+Detailed_description,local,0.9998198,local antipruritic
+Diagnostic_procedure,anti,0.7351995,local antipruritic
+Medication,painkiller,0.99951094,painkiller muscle relaxant
+Medication,muscle relaxant,0.99943286,painkiller muscle relaxant
+Medication,anti,0.99975234,antiparkinson drugs
+Biological_structure,vulval condition,0.982585,drugs used in vaginal and vulval condition
+Medication,cough,0.6691085,cough suppressant
+Sign_symptom,suppress,0.49063745,cough suppressant
+Detailed_description,regional,0.9999193,regional anesthesia
+Detailed_description,loop,0.99914896,loop diuretics
+Medication,diuretics,0.88755655,loop diuretics
+Disease_disorder,ulcerative colitis,0.8029793,ulcerative colitis
+Therapeutic_procedure,nasal decongestants,0.9618931,nasal decongestants & other nasal preparations
+Therapeutic_procedure,nasal preparations,0.96410656,nasal decongestants & other nasal preparations
+Detailed_description,oral,0.5854759,oral nutritional preparations
+Diagnostic_procedure,nutritional preparations,0.9588614,oral nutritional preparations
+Diagnostic_procedure,minerals in,0.95487666,minerals in bone formation
+Diagnostic_procedure,bone formation,0.8522018,minerals in bone formation
+Detailed_description,specific,0.98385644,specific mineral & vitamin combined preparations
+Diagnostic_procedure,mineral &,0.987396,specific mineral & vitamin combined preparations
+Diagnostic_procedure,vitamin combined preparations,0.8556504,specific mineral & vitamin combined preparations
+Therapeutic_procedure,supportive care therapy,0.99980927,supportive care therapy
+Medication,drugs,0.95356506,drugs used in ano-rectal region
+Diagnostic_procedure,vaso,0.66527754,vaso protective
+Detailed_description,protective,0.38141567,vaso protective
+Detailed_description,broad spectrum,0.9998385,broad spectrum penicillins
+Medication,penicillins,0.9944852,broad spectrum penicillins
+Medication,anti - fibrinolytic drugs,0.9921707,anti-fibrinolytic drugs
+Detailed_description,other genito - urinary,0.91675025,other genito-urinary preparations
+Therapeutic_procedure,preparations,0.55213255,other genito-urinary preparations
+Medication,drugs acting,0.89863664,drugs acting on the uterus
+Biological_structure,uterus,0.9999216,drugs acting on the uterus
+Diagnostic_procedure,iron,0.4869076,"iron, vitamin & mineral combined preparation"
+Therapeutic_procedure,", vitamin & mineral",0.7068267,"iron, vitamin & mineral combined preparation"
+Therapeutic_procedure,combined preparation,0.97044134,"iron, vitamin & mineral combined preparation"
+Diagnostic_procedure,iron &,0.7370105,iron & vitamin combined preparations
+Diagnostic_procedure,vitamin,0.6036233,iron & vitamin combined preparations
+Therapeutic_procedure,combined preparations,0.60898983,iron & vitamin combined preparations
+Medication,anti - thyroid drugs,0.9804871,anti-thyroid drugs
+Detailed_description,primary,0.8668321,primary anti-epileptic drugs
+Medication,anti - epileptic drugs,0.95162493,primary anti-epileptic drugs
+Medication,angiotensin - converting enzyme ( ace ) inhibitors,0.9058756,angiotensin-converting enzyme (ace) inhibitors
+Therapeutic_procedure,emollients,0.62640846,emollients & combined preparations
+Diagnostic_procedure,combined,0.5003123,emollients & combined preparations
+Therapeutic_procedure,preparations,0.91607124,emollients & combined preparations
+Medication,sodium - glucose cotransporter - 2 (,0.98077935,sodium-glucose cotransporter-2 (sglt2) inhibitors
+Medication,sglt2 ) inhibitors,0.99799186,sodium-glucose cotransporter-2 (sglt2) inhibitors
+Sign_symptom,hyper,0.9997483,hyperkalaemia products
+Medication,products,0.4055858,hyperkalaemia products
+Diagnostic_procedure,dipeptidyl peptidase - 4,0.9603221,dipeptidyl peptidase-4 (dpp-4) inhibitor
+Medication,dpp - 4,0.9439951,dipeptidyl peptidase-4 (dpp-4) inhibitor
+Medication,inhibitor,0.98893934,dipeptidyl peptidase-4 (dpp-4) inhibitor
+Medication,5 - ht,0.63553655,5-ht agonists
+Diagnostic_procedure,agonists,0.71888846,5-ht agonists
+Therapeutic_procedure,cerebral vasodilator,0.66130346,cerebral vasodilator & neurosensory oxygenator drugs
+Therapeutic_procedure,neurosensory oxygenator,0.8931933,cerebral vasodilator & neurosensory oxygenator drugs
+Medication,drugs,0.8164159,cerebral vasodilator & neurosensory oxygenator drugs
+Diagnostic_procedure,female,0.7388669,female sex hormones
+Diagnostic_procedure,sex hormones,0.96235657,female sex hormones
+Detailed_description,second generation,0.9906224,second generation cephalosporins
+Medication,cephalosporins,0.9127083,second generation cephalosporins
+Detailed_description,third generation,0.96252537,third generation cephalosporins
+Medication,cephalosporins,0.8801459,third generation cephalosporins
+Detailed_description,fourth generation,0.9799978,fourth generation cephalosporins
+Medication,cephalosporins,0.8631283,fourth generation cephalosporins
+Detailed_description,first generation,0.9979868,first generation cephalosporins
+Medication,cephalosporins,0.95736426,first generation cephalosporins
+Medication,alpha adrenoceptor blocking drugs,0.99942863,alpha adrenoceptor blocking drugs
+Medication,drugs,0.86477864,drugs for dry eyes
+Sign_symptom,dry eyes,0.8348382,drugs for dry eyes
+Detailed_description,locally acting,0.99757016,locally acting skeletal muscle relaxants
+Medication,skeletal muscle relaxants,0.9982221,locally acting skeletal muscle relaxants
+Disease_disorder,tachycardia,0.843559,paroxysmal supraventricular tachycardia (psvt)
+Disease_disorder,hepatitis b,0.9997308,hepatic viral infections (hepatitis b)
+Administration,topical,0.7704431,topical retinoid and related preparations
+Detailed_description,preparations,0.39985254,topical retinoid and related preparations
+Detailed_description,aura,0.9015374,aural anti-bacterial preparations
+Diagnostic_procedure,anti - bacterial preparations,0.9482407,aural anti-bacterial preparations
+Medication,drugs,0.96904325,drugs affecting (inhibiting) gonadotrophin
+Diagnostic_procedure,gonadotrophin,0.8943696,drugs affecting (inhibiting) gonadotrophin
+Medication,beta - blockers,0.9977902,beta-blockers
+Diagnostic_procedure,alpha - glucosidase inhibitor,0.90930784,alpha-glucosidase inhibitor
+Medication,drugs,0.97261727,drugs for hiv / anti-retroviral drugs
+Medication,anti - retroviral drugs,0.8770769,drugs for hiv / anti-retroviral drugs
+Administration,intra,0.9992219,intravenous fluid preparations
+Therapeutic_procedure,fluid preparations,0.99084127,intravenous fluid preparations
+Medication,diuretics,0.9666608,thiazide diuretics & related drugs
+Medication,drugs,0.99765944,thiazide diuretics & related drugs
+Diagnostic_procedure,preparations,0.34725833,chlorhexidine & chloroxylenol preparations
+Diagnostic_procedure,antibacterial preparation,0.9265437,other antibacterial preparation
+Medication,ssris,0.8693831,ssris & related anti-depressant drugs
+Medication,anti - depressant drugs,0.9765814,ssris & related anti-depressant drugs
+Medication,anti -,0.99396867,anti-diarrhoeal antimicrobial drugs
+Disease_disorder,diarrhoeal,0.95182693,anti-diarrhoeal antimicrobial drugs
+Medication,antimicrobial drugs,0.98777544,anti-diarrhoeal antimicrobial drugs
+Medication,anti,0.99939394,anti vertigo drugs
+Medication,vertigo drugs,0.984094,anti vertigo drugs
+Detailed_description,compound,0.99980575,compound steroidal preparations
+Diagnostic_procedure,calcium regulator,0.99219114,calcium regulator
+Medication,peripheral vasodilator,0.984549,peripheral vasodilator drugs: intermittent claudication
+Detailed_description,intermittent,0.9907747,peripheral vasodilator drugs: intermittent claudication
+Detailed_description,centrally acting,0.99931705,centrally acting antihypertensive drugs (central sympatholytic)
+Medication,antihypertensive drugs,0.94295126,centrally acting antihypertensive drugs (central sympatholytic)
+Detailed_description,central,0.93318975,centrally acting antihypertensive drugs (central sympatholytic)
+Medication,anti - depressant drugs,0.9919374,tricyclic & related anti-depressant drugs
+Medication,drugs for,0.83303356,drugs for infertility
+Diagnostic_procedure,infertility,0.97851187,drugs for infertility
+Diagnostic_procedure,combined,0.37345332,clobetasol / clobetasone & combined preparations
+Medication,preparations,0.56113344,clobetasol / clobetasone & combined preparations
+Medication,benzodiazepine hypnotics,0.9415374,benzodiazepine hypnotics
+Administration,topical,0.9552399,topical antibiotic & retinoid preparations
+Therapeutic_procedure,anti,0.43961933,topical antibiotic & retinoid preparations
+Therapeutic_procedure,preparations,0.6947071,topical antibiotic & retinoid preparations
+Medication,benzoyl peroxide,0.92075145,"benzoyl peroxide, azelaic acid & other preparations"
+Medication,azelaic acid,0.99239755,"benzoyl peroxide, azelaic acid & other preparations"
+Diagnostic_procedure,preparations,0.5565248,"benzoyl peroxide, azelaic acid & other preparations"
+Detailed_description,specific,0.9971528,specific combined vitamin preparations
+Diagnostic_procedure,combined vitamin preparations,0.95284075,specific combined vitamin preparations
+Diagnostic_procedure,coal - tar preparations,0.91442573,coal-tar preparations
+Medication,penicillin,0.65099996,penicillinase-resistant penicillins
+Lab_value,resistant,0.4465441,penicillinase-resistant penicillins
+Medication,penicillins,0.66353476,penicillinase-resistant penicillins
+Diagnostic_procedure,oral preparations,0.9836073,oral preparations
+Medication,drugs,0.99372756,drugs for subcutaneous and mycoses
+Detailed_description,mycoses,0.91183615,drugs for subcutaneous and mycoses
+Diagnostic_procedure,ophthalmic anti - fungal products,0.9819248,ophthalmic anti-fungal products
+Detailed_description,aura,0.99347526,aural anti-fungal preparations
+Diagnostic_procedure,anti - fungal preparations,0.813714,aural anti-fungal preparations
+Disease_disorder,hepatitis c,0.99935174,hepatic viral infections (hepatitis c)
+Detailed_description,trop,0.77167785,trophic hormones & related synthetic drugs
+Diagnostic_procedure,drugs,0.61007434,trophic hormones & related synthetic drugs
+Administration,oral,0.9989697,oral hormonal preparations for acne
+Medication,acne,0.3796714,oral hormonal preparations for acne
+Diagnostic_procedure,vitamin - b preparations,0.9139771,vitamin-b preparations
+Biological_structure,bone,0.9983096,inhibiting bone resorption
+Medication,4 - quinolone preparations,0.9170318,4-quinolone preparations
+Diagnostic_procedure,carboxylic acids,0.9984643,carboxylic acids and derivatives
+Diagnostic_procedure,derivatives,0.8137576,carboxylic acids and derivatives
+Medication,parent,0.9993537,parenteral anti-coagulants
+Detailed_description,combined,0.9857885,combined cough suppressants
+Medication,cough suppressants,0.87546444,combined cough suppressants
+Detailed_description,miscellaneous,0.9927422,miscellaneous sedatives & hypnotics
+Medication,sedatives,0.9363782,miscellaneous sedatives & hypnotics
+Medication,hypnotics,0.94682455,miscellaneous sedatives & hypnotics
+Medication,proton pump inhibitor,0.9248071,proton pump inhibitor
+Medication,norepinephrine reuptake inhibitor,0.810416,serotonin-norepinephrine reuptake inhibitor (snri)
+Administration,oral,0.99705935,oral contraceptive preparations
+Medication,contraceptive preparations,0.7044108,oral contraceptive preparations
+Detailed_description,synthetic,0.9859235,synthetic analogue of adh
+Therapeutic_procedure,steroid,0.6522833,ophthalmic steroid preparations
+Diagnostic_procedure,preparations,0.87256664,ophthalmic steroid preparations
+Detailed_description,other,0.7015664,other anti-protozoals
+Sign_symptom,anti - proto,0.66633695,other anti-protozoals
+Detailed_description,combination,0.99433786,combination oral hypoglycemic preparations
+Administration,oral,0.9996481,combination oral hypoglycemic preparations
+Therapeutic_procedure,bowel cleansing solution,0.93989015,enema & bowel cleansing solution
+Detailed_description,combined,0.99978954,combined cough expectorants
+Sign_symptom,cough,0.9201196,combined cough expectorants
+Detailed_description,expect,0.44581243,combined cough expectorants
+Medication,drugs,0.97375643,drugs for dementia
+Disease_disorder,dementia,0.9996568,drugs for dementia
+Sign_symptom,stim,0.50967914,motility stimulants
+Therapeutic_procedure,stool softener,0.89204603,stool softener
+Sign_symptom,sympathomimetics,0.94140005,inotropic-sympathomimetics
+Therapeutic_procedure,combined preparations,0.6891637,dithranol & combined preparations
+Therapeutic_procedure,membrane stabilizing,0.65073496,membrane stabilizing agent (sodium channel blockers)
+Medication,agent,0.916104,membrane stabilizing agent (sodium channel blockers)
+Medication,sodium channel blockers,0.9878933,membrane stabilizing agent (sodium channel blockers)
+Lab_value,positive,0.99990344,positive inotropic drugs
+Medication,inotropic drugs,0.93009233,positive inotropic drugs
+Medication,hair growth inhibitor,0.9657636,hair growth inhibitor
+Diagnostic_procedure,combined,0.84335357,triamcinolone & combined preparations
+Therapeutic_procedure,preparations,0.9481743,triamcinolone & combined preparations
+Diagnostic_procedure,glp - 1,0.83509386,glp-1 receptor agonists
+Diagnostic_procedure,agonists,0.9581869,glp-1 receptor agonists
+Medication,tetra,0.75142694,tetracycline group of drugs
+Medication,group,0.49912754,tetracycline group of drugs
+Medication,drugs,0.9388105,tetracycline group of drugs
+Detailed_description,haemol,0.6853687,drugs for haemolytic hypoplastic & renal anemia
+Biological_structure,renal,0.9998934,drugs for haemolytic hypoplastic & renal anemia
+Detailed_description,potassium - sparing,0.72240496,potassium-sparing diuretics
+Medication,diuretics,0.83652574,potassium-sparing diuretics
+Diagnostic_procedure,aldose reductase inhibitor,0.9978829,aldose reductase inhibitor
+Diagnostic_procedure,prokinetic drugs,0.9740813,prokinetic drugs
+Medication,haemostatic drugs,0.9663633,haemostatic drugs
+Medication,gonad,0.73584604,gonadotropin-releasing hormone (gnrh) antagonist
+Medication,gnrh,0.6908782,gonadotropin-releasing hormone (gnrh) antagonist
+Medication,anti,0.9808152,anti h. pylori drugs
+Diagnostic_procedure,pylori,0.7674618,anti h. pylori drugs
+Medication,drugs,0.6593793,anti h. pylori drugs
+Administration,topical,0.9994562,topical antibiotics for acne
+Medication,antibiotics,0.99972755,topical antibiotics for acne
+Medication,acne,0.9835992,topical antibiotics for acne
+Medication,drugs,0.496284,drugs for menopausal symptoms: hormone replacement therapy
+Sign_symptom,menopausa,0.94751364,drugs for menopausal symptoms: hormone replacement therapy
+Sign_symptom,symptoms,0.5432976,drugs for menopausal symptoms: hormone replacement therapy
+Medication,hormone replacement therapy,0.9988082,drugs for menopausal symptoms: hormone replacement therapy
+Diagnostic_procedure,anti,0.8320933,anti-tubercular chemotherapeutics
+Diagnostic_procedure,tubercular chemotherapeutics,0.9634361,anti-tubercular chemotherapeutics
+Administration,oral,0.7958317,oral iron preparations
+Diagnostic_procedure,iron preparations,0.9855355,oral iron preparations
+Administration,parent,0.9529622,parenteral iron preparations
+Diagnostic_procedure,iron preparations,0.9191396,parenteral iron preparations
+Therapeutic_procedure,analgesics,0.8711798,opioid analgesics
+Medication,anti - viral drugs,0.8844401,anti-viral drugs
+Medication,fluocinolone,0.89523447,fluocinolone & combined preparations
+Diagnostic_procedure,combined,0.5524875,fluocinolone & combined preparations
+Therapeutic_procedure,preparations,0.5907505,fluocinolone & combined preparations
+Detailed_description,prop,0.9913692,miscellaneous prophylactic migraine preparations
+Therapeutic_procedure,migraine preparations,0.9819711,miscellaneous prophylactic migraine preparations
+Medication,phenothiazine drugs,0.99131936,phenothiazine drugs
+Medication,phenothiazine related drugs,0.9929608,phenothiazine related drugs
+Medication,hydroquinone,0.9368556,hydroquinone preparations
+Diagnostic_procedure,preparations,0.81992614,hydroquinone preparations
+Detailed_description,intracellular,0.99968994,intracellular antibiotic
+Medication,antibiotic,0.70699054,intracellular antibiotic
+Detailed_description,long,0.9967128,long-acting selective -adrenoceptor stimulants
+Detailed_description,acting,0.8324879,long-acting selective -adrenoceptor stimulants
+Medication,selective - adrenoceptor stimulants,0.97323203,long-acting selective -adrenoceptor stimulants
+Medication,drugs,0.9731627,drugs for megaloblastic anemia
+Disease_disorder,megaloblastic anemia,0.97738814,drugs for megaloblastic anemia
+Diagnostic_procedure,combined,0.9320679,fluticasone & combined preparations topical
+Medication,preparations,0.67851365,fluticasone & combined preparations topical
+Administration,topical,0.997428,fluticasone & combined preparations topical
+Medication,sulfonylureas,0.97780424,sulfonylureas
+Detailed_description,crystal violet,0.9783865,crystal violet/ gentian violet preparations
+Diagnostic_procedure,preparations,0.9525254,crystal violet/ gentian violet preparations
+Administration,topical,0.98840684,topical antibiotic preparations
+Therapeutic_procedure,preparations,0.75157654,topical antibiotic preparations
+Therapeutic_procedure,irrigation solution,0.7146586,irrigation solution used in urological surgery
+Therapeutic_procedure,urological surgery,0.9994417,irrigation solution used in urological surgery
+History,osmot,0.4902003,osmotic purgatives
+History,purga,0.5707403,osmotic purgatives
+Diagnostic_procedure,cart,0.6465708,stimulation of cartilage formation
+Diagnostic_procedure,formation,0.66140354,stimulation of cartilage formation
+Medication,general,0.9717515,general (inhalation) anesthetics
+Medication,anesthetics,0.9956057,general (inhalation) anesthetics
+Disease_disorder,tremor,0.9954945,"drugs used in tremor, tics & related disorder"
+Disease_disorder,tics,0.4835199,"drugs used in tremor, tics & related disorder"
+Disease_disorder,related disorder,0.8538201,"drugs used in tremor, tics & related disorder"
+Therapeutic_procedure,water purifying agent,0.9923876,water purifying agent
+Disease_disorder,rheumatoid arthritis,0.99514914,drugs used for rheumatoid arthritis
+Detailed_description,oxidising agent,0.87708926,oxidising agent with antibacterial and antiviral properties
+Detailed_description,antibacterial and antiviral properties,0.9666869,oxidising agent with antibacterial and antiviral properties
+Medication,hormone preparations,0.6901753,hormone preparations for other uses
+Diagnostic_procedure,other,0.26482612,hormone preparations for other uses
+Detailed_description,uses,0.36380804,hormone preparations for other uses
+Therapeutic_procedure,sunblock preparation,0.9993651,sunblock preparation
+Diagnostic_procedure,nicotinic acid group,0.9980996,nicotinic acid group
+Medication,piperidinyl - benzisoxazole derivative,0.97959864,piperidinyl-benzisoxazole derivative
+Therapeutic_procedure,anticho,0.5940832,anticholinergic bronchodilators
+Medication,chemotherapy,0.9871837,immunological chemotherapy
+Detailed_description,rapid acting,0.99982774,rapid acting insulin
+Medication,insulin,0.99549073,rapid acting insulin
+Detailed_description,medium acting,0.9996088,medium acting insulin
+Medication,insulin,0.99806815,medium acting insulin
+Detailed_description,long acting,0.9970914,long acting insulin
+Medication,insulin,0.9965904,long acting insulin
+Administration,oral,0.9950014,oral retinoids for acne
+Diagnostic_procedure,nitrates,0.8410168,nitrates: coronary vasodilators
+Biological_structure,coronary,0.8145119,nitrates: coronary vasodilators
+Diagnostic_procedure,vasodilators,0.9349185,nitrates: coronary vasodilators
+Therapeutic_procedure,dressing,0.88684696,dressing products for wounds/burns/ulcers
+Therapeutic_procedure,wounds,0.77315,dressing products for wounds/burns/ulcers
+Sign_symptom,burns,0.9107289,dressing products for wounds/burns/ulcers
+Medication,cromoglycate & related drugs,0.9677244,cromoglycate & related drugs
+Therapeutic_procedure,analgesics,0.927403,non opioid analgesics
+Medication,general (,0.95353484,general (intravenous) anesthetics
+Administration,intra,0.99727184,general (intravenous) anesthetics
+Medication,) anesthetics,0.89906037,general (intravenous) anesthetics
+Diagnostic_procedure,digestive enzyme,0.99868447,digestive enzyme
+Medication,drugs,0.9129294,drugs for muscular energy metabolism
+Diagnostic_procedure,muscular energy metabolism,0.9875633,drugs for muscular energy metabolism
+Disease_disorder,migraine,0.9826165,other drugs for migraine
+Medication,thyroid,0.79653174,thyroid drugs & hormone
+Diagnostic_procedure,drugs & hormone,0.7205525,thyroid drugs & hormone
+Detailed_description,emergency,0.9981098,emergency contraceptive pill
+Medication,contra,0.9756749,emergency contraceptive pill
+Medication,anti -,0.84228384,anti-histamine & decongestant
+Medication,histamine,0.86801416,anti-histamine & decongestant
+Medication,deco,0.88088536,anti-histamine & decongestant
+Sign_symptom,anti,0.99769884,anti-diarrhoeal
+Sign_symptom,diarrhoeal,0.8803712,anti-diarrhoeal
+Medication,anti -,0.9900601,anti-manic drugs
+Disease_disorder,manic,0.6920125,anti-manic drugs
+Medication,drugs,0.98265475,anti-manic drugs
+Therapeutic_procedure,osmotic diuretics,0.9340529,osmotic diuretics
+Diagnostic_procedure,electrolytes preparations,0.98270977,electrolytes preparations
+Therapeutic_procedure,laxative preparations,0.9878686,other laxative preparations
+Medication,anti - alzheimer drugs,0.9719462,anti-alzheimer drugs
+Medication,methoxsalen preparation,0.88435674,methoxsalen preparation
+Diagnostic_procedure,aminosalicylates,0.99975646,aminosalicylates
+Medication,leishmaniacides,0.89967424,leishmaniacides
+Medication,leukotriene receptor antagonist,0.899064,leukotriene receptor antagonists
+Detailed_description,multi,0.99918693,multi-vitamin & multi-mineral combined preparations
+Detailed_description,vitamin,0.8092595,multi-vitamin & multi-mineral combined preparations
+Detailed_description,multi - mineral,0.87136954,multi-vitamin & multi-mineral combined preparations
+Diagnostic_procedure,combined preparations,0.76874316,multi-vitamin & multi-mineral combined preparations
+Medication,meglitinide analogue,0.8464842,meglitinide analogues
+Medication,steroid,0.7299391,ophthalmic non-steroid combined preparations
+Diagnostic_procedure,combined preparations,0.67304814,ophthalmic non-steroid combined preparations
+Diagnostic_procedure,hormone,0.9999474,hormone in bone formation by stimulation
+Biological_structure,bone,0.936129,hormone in bone formation by stimulation
+Diagnostic_procedure,formation,0.98514855,hormone in bone formation by stimulation
+Detailed_description,stimulation,0.7999119,hormone in bone formation by stimulation
+Diagnostic_procedure,potassium - channel activator,0.9190741,potassium-channel activator
+Diagnostic_procedure,anti - cholinesterases,0.91124815,anti-cholinesterases
+Medication,anti,0.9679872,anti-infective & anesthetic combined preparations
+Detailed_description,combined,0.4415794,anti-infective & anesthetic combined preparations
+Therapeutic_procedure,preparations,0.5331882,anti-infective & anesthetic combined preparations
+Administration,topical,0.5096783,ophthalmic and topical antibacterial products
+Diagnostic_procedure,antibacterial products,0.7134811,ophthalmic and topical antibacterial products
+Diagnostic_procedure,x receptor agonists,0.87471265,farnesoid x receptor agonists
+Lab_value,alpha,0.94112724,alpha and beta-adrenergic agonist
+Medication,h2 receptor antagonist,0.91264427,h2 receptor antagonist
+Detailed_description,systemic,0.99996865,systemic urinary anti- infective
+Detailed_description,anti - infective,0.929858,systemic urinary anti- infective
+Sign_symptom,anti,0.8546154,anti-diarrhoeal antiprotozoal
+Sign_symptom,diarrhoeal,0.89178836,anti-diarrhoeal antiprotozoal
+Administration,oral,0.99928814,oral electrolytes preparations
+Diagnostic_procedure,electro,0.93627924,oral electrolytes preparations
+Diagnostic_procedure,preparations,0.84132797,oral electrolytes preparations
+Medication,anti,0.9892005,antihistamines anti-allergies & hypo-sensitisation
+Sign_symptom,anti - allergies,0.9997946,antihistamines anti-allergies & hypo-sensitisation
+Medication,growth hormone antagonist,0.9984569,growth hormone antagonist
+Diagnostic_procedure,anti neo,0.5368074,anti neoplastic preparations
+Medication,ocular perioperative drugs,0.9963996,ocular perioperative drugs
+Medication,appetite suppressant drugs,0.9202675,appetite suppressant drugs/anti-obesity drugs
+Medication,anti - obesity drugs,0.92140293,appetite suppressant drugs/anti-obesity drugs
+Detailed_description,perito,0.8558838,peritoneal dialysis solution
+Therapeutic_procedure,dialysis solution,0.99598056,peritoneal dialysis solution
+Medication,drug,0.49545962,hematopoietic drug
+Diagnostic_procedure,mecillinams,0.72484225,mecillinams
+Diagnostic_procedure,group,0.49359217,thiazolidinedione group
+Medication,drugs affecting the,0.7872779,drugs affecting the immune response
+Diagnostic_procedure,immune response,0.90225905,drugs affecting the immune response
+Medication,drugs,0.8157731,drugs affecting exocrine secretions
+Sign_symptom,affecting,0.35857248,drugs affecting exocrine secretions
+Diagnostic_procedure,exocrine secretions,0.89238584,drugs affecting exocrine secretions
+Diagnostic_procedure,vitamin - k preparations,0.9516184,vitamin-k preparations
+Diagnostic_procedure,iodine compounds,0.8952396,iodine compounds (anti-septic preparations)
+Detailed_description,repeated,0.639057,prevention of repeated kidney stone formation
+Biological_structure,kidney,0.5602155,prevention of repeated kidney stone formation
+Sign_symptom,stone formation,0.65422153,prevention of repeated kidney stone formation
+Medication,drugs,0.97528857,drugs used in myasthenia gravis
+Disease_disorder,myasthenia,0.8927575,drugs used in myasthenia gravis
+Therapeutic_procedure,deco,0.53199387,decongestant
+Medication,drugs for,0.89739245,drugs for age-related macular degeneration (amd)
+Disease_disorder,related,0.45532796,drugs for age-related macular degeneration (amd)
+Disease_disorder,macular degeneration,0.993065,drugs for age-related macular degeneration (amd)
+Administration,oral,0.9994436,oral anti-coagulants
+Medication,anti - coagulants,0.99802655,oral anti-coagulants
+Disease_disorder,neuromuscular disorder,0.89626044,neurodegenerative disease drugs / neuromuscular disorder drugs
+Medication,drugs,0.74405473,neurodegenerative disease drugs / neuromuscular disorder drugs
+Medication,anti,0.8195872,combined anti- tubercular preparations
+Therapeutic_procedure,tube,0.3719814,combined anti- tubercular preparations
+Medication,anti,0.9996244,anti-tubercular antibiotics
+Medication,tube,0.99964345,anti-tubercular antibiotics
+Diagnostic_procedure,combined preparations,0.4374612,combined preparations
+Administration,topical,0.9983625,topical salicylic preparation
+Therapeutic_procedure,salicylic preparation,0.8111311,topical salicylic preparation
+Detailed_description,serum,0.9982665,drugs for reduction of serum phosphorus in patients with esrd
+Diagnostic_procedure,phosphorus,0.99957365,drugs for reduction of serum phosphorus in patients with esrd
+Diagnostic_procedure,prostacyclin receptor agonist,0.87347066,non-prostanoid ip prostacyclin receptor agonist
+Diagnostic_procedure,hormone,0.9999727,hormone in bone formation by inhibiting bone resorption
+Diagnostic_procedure,bone formation,0.97983146,hormone in bone formation by inhibiting bone resorption
+Diagnostic_procedure,bone resorption,0.9970822,hormone in bone formation by inhibiting bone resorption
+Therapeutic_procedure,mast,0.46575794,mast cell stabiliser
+Detailed_description,cell stabilis,0.60222584,mast cell stabiliser
+Sign_symptom,anti,0.36064726,anti-dyspeptic/carminatives
+Sign_symptom,dyspe,0.46915698,anti-dyspeptic/carminatives
+Medication,drugs,0.96469694,drugs for lens opacification
+Therapeutic_procedure,lens opacification,0.9762895,drugs for lens opacification
+Medication,vasodilator antihypertensive drugs,0.9858931,vasodilator antihypertensive drugs
+Detailed_description,antica,0.55137336,anticavity mouthwash
+Medication,sulphonamides,0.84143865,sulphonamides & trimethoprim
+Medication,trimethoprim,0.6862977,sulphonamides & trimethoprim
+Medication,drugs,0.95806473,drugs for irritable bowel syndrome
+Disease_disorder,irritable bowel syndrome,0.9901519,drugs for irritable bowel syndrome
+Diagnostic_procedure,chelating complex,0.98410565,chelating complex
+Disease_disorder,drugs,0.42847332,drugs for growth failure
+Disease_disorder,growth failure,0.89019716,drugs for growth failure
+Medication,muscle relaxants,0.98014927,depolarizing muscle relaxants
+Diagnostic_procedure,male sex hormones (,0.9707075,male sex hormones (androgens)
+Coreference,glycopeptide,0.88891447,glycopeptide
+Detailed_description,selective,0.9952493,selective vasopressin v2-receptor antagonist
+Medication,central depolarizing muscle relaxants,0.81815803,central depolarizing muscle relaxants
+Diagnostic_procedure,anti - gallstones,0.9056946,anti-gallstones drugs: bile acids
+Diagnostic_procedure,bile acids,0.999671,anti-gallstones drugs: bile acids
+Administration,topical,0.9543747,topical urea preparations
+Detailed_description,urea,0.40385836,topical urea preparations
+Diagnostic_procedure,preparations,0.5053187,topical urea preparations
+Medication,vitamin,0.46500874,vitamin-a preparations
+Therapeutic_procedure,#NAME?,0.53772885,vitamin-a preparations
+Diagnostic_procedure,soluble guanylate cyclase,0.9987062,stimulator of soluble guanylate cyclase
+History,substance dependence,0.93587947,drugs used in substance dependence
+Diagnostic_procedure,vitamin - c preparations,0.7223358,vitamin-c preparations
+Detailed_description,diaper,0.8457431,drugs used in diaper rash
+Sign_symptom,rash,0.5923541,drugs used in diaper rash

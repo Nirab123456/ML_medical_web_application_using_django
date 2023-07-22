@@ -80,18 +80,43 @@ class PRESCIPTION_CLASSIFICATION():
         return duplicates
     
     def classify_presciption_drugs(self):
+        presciprion_details= []
         all_details = self.all_details
+        print(f'all_details: {all_details}')
         for detail in all_details:
-            print(f'detail: {detail}')
+            # print(f'detail: {detail}')
             # Access the 'drug_class' value from the dictionary
             drug_class_string = detail['drug_class']
 
             print(f'drug_class_string: {drug_class_string}')
             results=self.pipe(drug_class_string)
+            resuts_Sign_symptom = []
+            resuts_Medication = []
+            resuts_Therapeutic_procedure = []
+            resuts_Disease_disorder = []
             for result in results:
                 if result['entity_group'] in self.result_geoup_list:
                     if len(result['word']) >= 4 and '#' not in result['word']:
-                        print(f"Entity: {result['entity_group']}")
-                        print(f"Score: {result['score']}")
-                        print(f"Word: {result['word']}")
-                        print()
+                        # print(f"Entity: {result['entity_group']}")
+                        # print(f"Score: {result['score']}")
+                        # print(f"Word: {result['word']}")
+                        # print()
+                        if result['entity_group'] == 'Sign_symptom':
+                            resuts_Sign_symptom.append(result['word'])
+
+                        elif result['entity_group'] == 'Medication':
+                            resuts_Medication.append(result['word'])
+
+                        elif result['entity_group'] == 'Therapeutic_procedure':
+                            resuts_Therapeutic_procedure.append(result['word'])
+
+                        elif result['entity_group'] == 'Disease_disorder':
+                            resuts_Disease_disorder.append(result['word'])
+
+            presciprion_details.append({
+                'Sign_symptom': resuts_Sign_symptom,
+                'Medication': resuts_Medication,
+                'Therapeutic_procedure': resuts_Therapeutic_procedure,
+                'Disease_disorder': resuts_Disease_disorder,
+            })
+        print(f'presciprion_details: {presciprion_details}')
