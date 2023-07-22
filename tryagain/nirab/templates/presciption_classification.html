@@ -137,8 +137,9 @@
                           var medication = get_presciption_classification[i];
                           detailsHtml += "<div class='medication-details'>";
                           detailsHtml += "<p><strong>BRAND NAME: </strong>" + medication.name + "</p>";
-                          detailsHtml += "<p><strong>GENERIC NAME: </strong>" + medication.generic_name + "</p>";
-                          detailsHtml += "<p><strong>CLASS: </strong>" + medication.drug_class + "</p>";
+                          detailsHtml += "<p><strong>DRUG CLASS: </strong>" + medication.drug_class + "</p>";
+                          detailsHtml += "<p><strong>GROUP: </strong>" + medication.group + "</p>";
+                          detailsHtml += "<p><strong>SCORE: </strong>" + medication.score + "</p>";
                           detailsHtml += "<p><strong>INDICATION: </strong>" + medication.indication + "</p>";
                           // Add more fields here
                           detailsHtml += "</div>";
