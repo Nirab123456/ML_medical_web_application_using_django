@@ -17,6 +17,7 @@ from django.http import FileResponse,HttpResponse
 from .templatetags.custom_filters import add_or_update_social_media
 from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 from django.http import JsonResponse
+from .presciption_classification import PRESCIPTION_CLASSIFICATION
 
 
 
@@ -72,36 +73,45 @@ def get_medicine_details(request):
     
 
 def get_presciption_classification(request):
-    names = request.GET.get('name', '')  # Get the comma-separated names as a single string
-    names_list = names.split(',')  # Split the string into a list of names
+    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
+    return PRESCIPTION_classification.get_presciption_classification()
 
-    print(f'all names: {names_list}')
-    all_details = []  # List to store details of all medications
 
-    for name in names_list:
-        name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
-        print(f'name: {name}')
-        generic_name = Medication.objects.filter(name=name).first()
 
-        if generic_name:
-            details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
-            if details_of_medicine.exists():
-                for detail in details_of_medicine:
-                    details = {
-                        'generic_name': detail.generic_name,
-                        'drug_class': detail.drug_class,
-                        'indication': detail.indication,
-                    }
-                    all_details.append(details)
-        else:
-            # If medication details not found, continue to the next name
-            continue
 
-    if all_details:
-        return JsonResponse(all_details, safe=False)
-    else:
-        # If no medication details found for any name, return an empty list
-        return JsonResponse([], safe=False)
+
+# def get_presciption_classification(request):
+#     names = request.GET.get('name', '')  # Get the comma-separated names as a single string
+#     names_list = names.split(',')  # Split the string into a list of names
+
+#     print(f'all names: {names_list}')
+#     all_details = []  # List to store details of all medications
+
+#     for name in names_list:
+#         name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
+#         print(f'name: {name}')
+#         generic_name = Medication.objects.filter(name=name).first()
+
+#         if generic_name:
+#             details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
+#             if details_of_medicine.exists():
+#                 for detail in details_of_medicine:
+#                     details = {
+#                         'name': name,
+#                         'generic_name': detail.generic_name,
+#                         'drug_class': detail.drug_class,
+#                         'indication': detail.indication,
+#                     }
+#                     all_details.append(details)
+#         else:
+#             # If medication details not found, continue to the next name
+#             continue
+
+#     if all_details:
+#         return JsonResponse(all_details, safe=False)
+#     else:
+#         # If no medication details found for any name, return an empty list
+#         return JsonResponse([], safe=False)
 
 
 
