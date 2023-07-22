@@ -72,96 +72,11 @@ def get_medicine_details(request):
         return JsonResponse({'error': 'Medication not found'}, status=404)
     
 
+
 def get_presciption_classification(request):
-    names = request.GET.get('name', '')  # Get the comma-separated names as a single string
-    names_list = names.split(',')  # Split the string into a list of names
-    generic_name_list = []
-    drug_class_list = []
-    drug_class_details_list = []
+    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
+    return PRESCIPTION_classification.get_presciption_classification()
 
-    for name in names_list:
-        name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
-        generic_name = Medication.objects.filter(name=name).first()
-        if generic_name:
-            generic_name_list.append(generic_name.generic_name)
-        else:
-            continue
-
-    for name in generic_name_list:
-        drug_class_object = MedicationDetails.objects.filter(generic_name=name).first()
-        if drug_class_object:
-            drug_class = drug_class_object.drug_class
-            drug_class_list.append(drug_class)
-        else:
-            continue
-
-    for drug_class in drug_class_list:
-        drug_class_details = Classify_Drug_Class.objects.filter(drug_class=drug_class)
-        if drug_class_details:
-            for drug_class_detail in drug_class_details:
-                details = {
-                    'name': name,
-                    'group': drug_class_detail.group,
-                    'indication': drug_class_detail.indication,
-                    'drug_class': drug_class_detail.drug_class,
-                    'score': str(drug_class_detail.score),
-                }
-                drug_class_details_list.append(details)
-        else:
-            continue
-
-    if drug_class_details_list:
-        return JsonResponse(drug_class_details_list, safe=False)
-    else:
-        return JsonResponse([], safe=False)
-    
-
-
-
-
-
-
-
-# def get_presciption_classification(request):
-#     PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
-#     return PRESCIPTION_classification.get_presciption_classification()
-
-
-
-
-
-# def get_presciption_classification(request):
-#     names = request.GET.get('name', '')  # Get the comma-separated names as a single string
-#     names_list = names.split(',')  # Split the string into a list of names
-
-#     print(f'all names: {names_list}')
-#     all_details = []  # List to store details of all medications
-
-#     for name in names_list:
-#         name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
-#         print(f'name: {name}')
-#         generic_name = Medication.objects.filter(name=name).first()
-
-#         if generic_name:
-#             details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
-#             if details_of_medicine.exists():
-#                 for detail in details_of_medicine:
-#                     details = {
-#                         'name': name,
-#                         'generic_name': detail.generic_name,
-#                         'drug_class': detail.drug_class,
-#                         'indication': detail.indication,
-#                     }
-#                     all_details.append(details)
-#         else:
-#             # If medication details not found, continue to the next name
-#             continue
-
-#     if all_details:
-#         return JsonResponse(all_details, safe=False)
-#     else:
-#         # If no medication details found for any name, return an empty list
-#         return JsonResponse([], safe=False)
 
 
 
