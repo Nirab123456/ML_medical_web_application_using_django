@@ -54,11 +54,11 @@ class PRESCIPTION_CLASSIFICATION():
             print(f'all_groups: {all_groups}')
 
         if all_groups:
-            # Concatenate the inner dictionaries' 'group', 'indication', and 'score' fields
+            # Concatenate the inner dictionaries' 'group', 'indication', and 'score' fields while maintaining the order
             for i in range(len(all_groups)):
-                combined_group = ','.join(set(d['group'] for d in all_groups[i]))
-                combined_indication = ','.join(set(d['indication'] for d in all_groups[i]))
-                combined_score = ','.join(set(d['score'] for d in all_groups[i]))
+                combined_group = ','.join(d['group'] for d in all_groups[i])
+                combined_indication = ','.join(d['indication'] for d in all_groups[i])
+                combined_score = ','.join(d['score'] for d in all_groups[i])
                 all_groups[i] = {
                     'name': all_groups[i][0]['name'],
                     'group': combined_group,
