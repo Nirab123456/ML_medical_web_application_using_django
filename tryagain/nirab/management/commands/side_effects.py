@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from ...models import Classify_Drug_Class
+from ...models import Classify_Side_Effect
 import csv
 
 class Command(BaseCommand):
@@ -15,11 +15,12 @@ class Command(BaseCommand):
         with open(csv_file, 'r') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                medication = Classify_Drug_Class(
+                medication = Classify_Side_Effect(
+                    generic_name=row['generic_name'],
                     group=row['group'],
                     indication=row['indication'],
                     score=row['Score'],
-                    drug_class=row['drug_class'],
+                    side_effect=row['side_effects'],
                 )
                 medication.save()
         self.stdout.write(self.style.SUCCESS('Medication data imported successfully.'))
