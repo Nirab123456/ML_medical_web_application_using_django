@@ -16,18 +16,32 @@ class PRESCIPTION_CLASSIFICATION():
         side_effect_groups = self.get_side_effect_classification()
         print(f'side_effect_groups: {side_effect_groups}')
         all_groups = []
-        if drug_class_groups and side_effect_groups:
-            for i in range(len(drug_class_groups)):
-                for j in range(len(side_effect_groups)):
-                    if drug_class_groups[i]['name'] == side_effect_groups[j]['name']:
-                        all_groups.append({
-                            'name': drug_class_groups[i]['name'],
-                            # 'drug_class': drug_class_groups[i]['drug_class'],
-                            'group': drug_class_groups[i]['group'],
-                            'indication': drug_class_groups[i]['indication'],
-                            'score': drug_class_groups[i]['score'],
-                        })
-        # print(f'all_groups: {all_groups}')
+        for drug_group in drug_class_groups:
+            name = drug_group['name']
+            merged_group = drug_group.copy()
+
+            for side_effect_group in side_effect_groups:
+                if side_effect_group['name'] == name:
+                    merged_group['side_effect_group'] = side_effect_group['group']
+                    merged_group['side_effect_indication'] = side_effect_group['indication']
+                    merged_group['side_effect_score'] = side_effect_group['score']
+                    break
+
+            all_groups.append(merged_group)
+        print(f'all_groups: {all_groups}')
+
+        # if drug_class_groups and side_effect_groups:
+        #     for i in range(len(drug_class_groups)):
+        #         for j in range(len(side_effect_groups)):
+        #             if drug_class_groups[i]['name'] == side_effect_groups[j]['name']:
+        #                 all_groups.append({
+        #                     'name': drug_class_groups[i]['name'],
+        #                     # 'drug_class': drug_class_groups[i]['drug_class'],
+        #                     'group': drug_class_groups[i]['group'],
+        #                     'indication': drug_class_groups[i]['indication'],
+        #                     'score': drug_class_groups[i]['score'],
+        #                 })
+        # # print(f'all_groups: {all_groups}')
         
         if all_groups:
             return JsonResponse(all_groups, safe=False)

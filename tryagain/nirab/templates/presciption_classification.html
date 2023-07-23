@@ -172,6 +172,19 @@
                             detailsHtml += "<p><strong class='medication-group'>" + group + " SCORE:</strong><span class='medication-score'>" + score + "</span></p>";
                           }
 
+                          detailsHtml += "<h4> SIDE EFECT CLASS </h4>";
+                          for (var j = 0; j < medication.side_effect_group.split(",").length; j++) {
+                            var group = medication.side_effect_group.split(",")[j].toUpperCase();
+                            var indication = medication.side_effect_indication.split(",")[j];
+                            detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
+                          }
+
+                          for (var j = 0; j < medication.side_effect_score.split(",").length; j++) {
+                            var group = medication.side_effect_group.split(",")[j].toUpperCase();
+                            var score = (parseFloat(medication.side_effect_score.split(",")[j]) * 100).toFixed(2) + "%";
+                            detailsHtml += "<p><strong class='medication-group'>" + group + " SCORE:</strong><span class='medication-score'>" + score + "</span></p>";
+                          }
+
                           // Add more fields here
                           detailsHtml += "</div>";
                           detailsHtml += "<hr>";
