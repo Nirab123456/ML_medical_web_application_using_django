@@ -8,7 +8,7 @@
 <head>
     <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
 
-  <style>
+    <style>
       .main-content {
           margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
       }
@@ -151,8 +151,6 @@
                     if (xhr.status === 200) {
                       var get_presciption_classification = JSON.parse(xhr.responseText);
                       if (Array.isArray(get_presciption_classification) && get_presciption_classification.length > 0) {
-
-
   
                         // Display details for each medication
                         var detailsHtml = "";
@@ -164,58 +162,61 @@
                           var drug_class_indication_groups = new Set();
 
 
-                          if (medication.group && medication.indication) {
-                              var drug_class_indication_groups = new Set();
-
-                              for (var j = 0; j < medication.indication.split(",").length; j++) {
-                                var group = medication.group.split(",")[j].toUpperCase();
-                                var indication = medication.indication.split(",")[j];
-
-                                // Check if the group is already processed
-                                if (!drug_class_indication_groups.has(indication)) {
-                                  detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
-
-                                  // Add the group to the set of processed groups for indication
-                                  drug_class_indication_groups.add(indication);
-                                }
-                              }
+                          for (var j = 0; j < medication.indication.split(",").length; j++) {
+                            var group = medication.group.split(",")[j].toUpperCase();
+                            var indication = medication.indication.split(",")[j];
+                            
+                            // Check if the group is already processed
+                            if (!drug_class_indication_groups.has(indication)) {
+                                detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
+                                
+                                // Add the group to the set of processed groups for indication
+                                drug_class_indication_groups.add(indication);
+                            }
                           }
 
-                        
+
+
+
+
+
+                          for (var j = 0; j < medication.score.split(",").length; j++) {
+                            var group = medication.group.split(",")[j].toUpperCase();
+                            var score = (parseFloat(medication.score.split(",")[j]) * 100).toFixed(2) + "%";
+                            detailsHtml += "<p><strong class='medication-group'>" + group + " SCORE:</strong><span class='medication-score'>" + score + "</span></p>";
+                          }
+
                           detailsHtml += "<h4> SIDE EFECT CLASS </h4>";
-
-
-
 
                           var side_effect_indication_groups = new Set();
 
 
-                          if (medication.side_effect_group && medication.side_effect_indication) {
-                              var side_effect_indication_groups = new Set();
-
-                              for (var j = 0; j < medication.side_effect_indication.split(",").length; j++) {
-                                var group = medication.side_effect_group.split(",")[j].toUpperCase();
-                                var indication = medication.side_effect_indication.split(",")[j];
-
-                                // Check if the group is already processed
-                                if (!side_effect_indication_groups.has(indication)) {
-                                  detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
-
-                                  // Add the group to the set of processed groups for indication
-                                  side_effect_indication_groups.add(indication);
-                                }
-                              }
+                          for (var j = 0; j < medication.side_effect_indication.split(",").length; j++) {
+                            var group = medication.side_effect_group.split(",")[j].toUpperCase();
+                            var indication = medication.side_effect_indication.split(",")[j];
+                            
+                            // Check if the group is already processed
+                            if (!side_effect_indication_groups.has(indication)) {
+                                detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
+                                
+                                // Add the group to the set of processed groups for indication
+                                side_effect_indication_groups.add(indication);
                             }
+                          }
 
+                          
+                          for (var j = 0; j < medication.side_effect_score.split(",").length; j++) {
+                            var group = medication.side_effect_group.split(",")[j].toUpperCase();
+                            var score = (parseFloat(medication.side_effect_score.split(",")[j]) * 100).toFixed(2) + "%";
+                            detailsHtml += "<p><strong class='medication-group'>" + group + " SCORE:</strong><span class='medication-score'>" + score + "</span></p>";
+                          }
 
                           // Add more fields here
                           detailsHtml += "</div>";
                           detailsHtml += "<hr>";
                         }
                         document.getElementById("get_presciption_classification").innerHTML = detailsHtml;
-                      }
-                      
-                      else {
+                      } else {
                         // Display "No data found" message
                         document.getElementById("get_presciption_classification").innerHTML = "<p>No data found</p>";
                       }
