@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Record, Event, EventVenue, EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication,MedicationDetails
-from .models import Classify_Drug_Class
+from .models import Classify_Drug_Class,Classify_Side_Effect
 
 # Register your models here.
 
@@ -14,6 +14,7 @@ admin.site.register(SocialMedia)
 admin.site.register(Medication)
 admin.site.register(MedicationDetails)
 admin.site.register(Classify_Drug_Class)
+admin.site.register(Classify_Side_Effect)
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
