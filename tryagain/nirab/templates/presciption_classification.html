@@ -13,6 +13,27 @@
           margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
       }
   </style>
+  <style>
+    /* Define CSS styles for better visibility */
+    .medication-details {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .medication-group {
+      color: blue; /* Change the color as per your preference */
+      font-weight: bold;
+    }
+  
+    .medication-indication {
+      color: green; /* Change the color as per your preference */
+    }
+  
+    .medication-score {
+      color: red; /* Change the color as per your preference */
+    }
+  </style>
 </head>
 
 <body>
@@ -138,18 +159,23 @@
                           detailsHtml += "<div class='medication-details'>";
                           detailsHtml += "<p><strong>BRAND NAME: </strong>" + medication.name + "</p>";
                           detailsHtml += "<h4> DRUG CLASS </h4>";
+
                           for (var j = 0; j < medication.group.split(",").length; j++) {
-                            detailsHtml += "<p><strong>" + medication.group.split(",")[j].toUpperCase() + ":</strong>" + medication.indication.split(",")[j] + "</p>";
+                            var group = medication.group.split(",")[j].toUpperCase();
+                            var indication = medication.indication.split(",")[j];
+                            detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
                           }
-                          for (var j = 0; j < medication.score.split(",").length; j++){
-                            for (var j = 0; j < medication.group.split(",").length; j++) {
-                            detailsHtml += "<p><strong>" + medication.group.split(",")[j].toUpperCase() + " SCORE :</strong>" + (parseFloat(medication.score.split(",")[j]) * 100).toFixed(2) + "%</p>";
+
+                          for (var j = 0; j < medication.score.split(",").length; j++) {
+                            var group = medication.group.split(",")[j].toUpperCase();
+                            var score = (parseFloat(medication.score.split(",")[j]) * 100).toFixed(2) + "%";
+                            detailsHtml += "<p><strong class='medication-group'>" + group + " SCORE:</strong><span class='medication-score'>" + score + "</span></p>";
                           }
-                        }
+
                           // Add more fields here
                           detailsHtml += "</div>";
                           detailsHtml += "<hr>";
-                      }
+                        }
                         document.getElementById("get_presciption_classification").innerHTML = detailsHtml;
                       } else {
                         // Display "No data found" message
