@@ -40,8 +40,6 @@ class Classify_Side_Effect(models.Model):
 
 
 
-
-
 class Medication(models.Model):
     name = models.CharField(max_length=100)
     dosage_form = models.CharField(max_length=100)
