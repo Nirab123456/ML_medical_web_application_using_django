@@ -206,6 +206,41 @@
                                 }
                               }
                             }
+                            else{
+                              detailsHtml += "<p ><strong ><span class='medication-score' class='medication-indication'>No data found</span></strong></p>";
+
+                            }
+
+                            detailsHtml += "<h4> CONTRA-INDICATIONS </h4>";
+
+                            var contraindication_groups = new Set();
+                            if (medication.contraindication_group && medication.contraindication_indication) {
+                              var contraindication_groups = new Set();
+
+                              for (var j = 0; j < medication.contraindication_indication.split(",").length; j++) {
+                                var group = medication.contraindication_group.split(",")[j].toUpperCase();
+                                var indication = medication.contraindication_indication.split(",")[j];
+
+                                // Check if the group is already processed
+                                if (!contraindication_groups.has(indication)) {
+                                  detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
+
+                                  // Add the group to the set of processed groups for indication
+                                  contraindication_groups.add(indication);
+                                }
+                              }
+                            }
+                            else {
+                              detailsHtml += "<p ><strong ><span class='medication-score' class='medication-indication'>No data found</span></strong></p>";
+                            }
+                            if (medication.contraindication_result) {
+
+                              for (var j = 0; j < medication.contraindication_result.split(",").length; j++) {
+                                var result = medication.contraindication_result.split(",")[j];
+                                detailsHtml += "<p><strong class='medication-score'>SUMMERY: </strong>" + result + "</p>";
+                              }
+                            }
+
 
 
                           // Add more fields here
