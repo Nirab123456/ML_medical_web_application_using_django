@@ -8,7 +8,7 @@ class Command(BaseCommand):
     help = 'Import drug class data from CSV'
 
     def add_arguments(self, parser):
-        parser.add_argument('csv_file', type=str, help='final_drug_class_results.csv')
+        parser.add_argument('csv_file', type=str, help='drug_class.csv')
 
     def handle(self, *args, **options):
         csv_file = options['csv_file']
@@ -16,6 +16,7 @@ class Command(BaseCommand):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 medication = Classify_Drug_Class(
+                    generic_name=row['generic_name'],
                     group=row['group'],
                     indication=row['indication'],
                     score=row['Score'],
