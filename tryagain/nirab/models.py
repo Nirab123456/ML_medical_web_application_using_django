@@ -34,6 +34,16 @@ class Classify_Side_Effect(models.Model):
     def __str__(self):
         return self.generic_name
 
+class Classify_CONTRADICTIONS(models.Model):
+    generic_name = models.CharField(max_length=200)
+    group = models.CharField(max_length=200)
+    indication = models.CharField(max_length=200)
+    contraindication = models.TextField(max_length=2000)
+    contraindication_result = models.CharField(max_length=200)
+    score = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.generic_name
 
 
 
