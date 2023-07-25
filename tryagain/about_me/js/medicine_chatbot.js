@@ -1,3 +1,5 @@
+
+
 var timeout; // Global variable to store timeout reference
         
 function showWordRecommendations() {
@@ -49,6 +51,7 @@ function showWordRecommendations() {
   }, 300); // Adjust the delay as needed (in milliseconds)
 }
 
+
 // Function to select a word recommendation and populate the input field with it
 function selectRecommendation() {
   var selectElement = document.querySelector("select");
@@ -57,55 +60,49 @@ function selectRecommendation() {
   document.getElementById("wordRecommendations").innerHTML = "";
 }
 
+
+
+
+
+
+
       function handleFormSubmit(event) {
         event.preventDefault(); // Prevent the form from being submitted traditionally
         handleSelectionChange();
       }
+
+
+
       function handleSelectionChange() {
         var drugName = encodeURIComponent(document.getElementById("name").value);
-
-        // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
+        var question = encodeURIComponent(document.getElementById("question").value);
+        var topic = encodeURIComponent(document.getElementById("topic").value);
+      
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/get_medicine_details/?name=' + drugName , true);
+        xhr.open('GET', '/get_medicine_chat/?name=' + drugName + '&topic=' + topic + '&question=' + question, true);
         xhr.onload = function() {
           if (xhr.status === 200) {
-            var get_medicine_details = JSON.parse(xhr.responseText);
-            if (Array.isArray(get_medicine_details) && get_medicine_details.length > 0) {
-
-              // Display details for each medication
-              var detailsHtml = "";
-              for (var i = 0; i < get_medicine_details.length; i++) {
-                var medication = get_medicine_details[i];
-                detailsHtml += "<div class='medication-details'>";
-                detailsHtml += "<p><strong>Generic Name:</strong> " + medication.generic_name + "</p>";
-                detailsHtml += "<p><strong>DRUG CLASS:</strong> " + medication.drug_class + "</p>";
-                detailsHtml += "<p><strong>Indication:</strong> " + medication.indication + "</p>";
-                detailsHtml += "<p><strong>INDICATION DESCRIPTION:</strong> " + medication.indication_description + "</p>";
-                detailsHtml += "<p><strong>THERAPEUTIC CLASS:</strong> " + medication.therapeutic_class_description + "</p>";
-                detailsHtml += "<p><strong>PHARMACOLOGY DESCRIPTION:</strong> " + medication.pharmacology_description + "</p>";
-                detailsHtml += "<p><strong>DOSAGE DESCRIPTION:</strong> " + medication.dosage_description + "</p>";
-                detailsHtml += "<p><strong> INTERACTIONS DESCRIPTION:</strong> " + medication.interaction_description + "</p>";
-                detailsHtml += "<p><strong>CONTRAINDICATIONS DESCRIPTION:</strong> " + medication.contraindications_description + "</p>";
-                detailsHtml += "<p><strong> SIDE EFFECTS DESCRIPTION:</strong> " + medication.side_effects_description + "</p>";
-                // Add more fields here
-                detailsHtml += "</div>";
-                detailsHtml += "<hr>";
-              }
-              document.getElementById("get_medicine_details").innerHTML = detailsHtml;
+            var get_medicine_chat = JSON.parse(xhr.responseText);
+            console.log(get_medicine_chat); // Add this line for debugging
+            if (get_medicine_chat) {
+              var detailsHtml = "<div>";
+              detailsHtml += "<p><strong>Generic Name:</strong> " + get_medicine_chat['answer']+ "</p>";
+              // Add more fields here
+              detailsHtml += "</div>";
+              detailsHtml += "<hr>";
+              document.getElementById("get_medicine_chat").innerHTML = detailsHtml;
             } else {
-              // Display "No data found" message
-              document.getElementById("get_medicine_details").innerHTML = "<p>No data found</p>";
+              document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
             }
           } else {
             console.error('Request failed. Status:', xhr.status);
-            // Display "No data found" message for error cases
-            document.getElementById("get_medicine_details").innerHTML = "<p>No data found</p>";
+            document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
           }
         };
         xhr.onerror = function() {
           console.error('Request failed. Network error');
-          // Display "No data found" message for network errors
-          document.getElementById("get_medicine_details").innerHTML = "<p>No data found</p>";
+          document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
         };
         xhr.send();
       }
+      
