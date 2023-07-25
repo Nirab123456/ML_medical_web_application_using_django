@@ -22,7 +22,6 @@ class PRESCIPTION_CLASSIFICATION():
             if side_effect_groups:
                 for side_effect_group in side_effect_groups:
                     if side_effect_group['name'] == name:
-                        print('i am here')
                         merged_group['side_effect_group'] = side_effect_group['group']
                         merged_group['side_effect_indication'] = side_effect_group['indication']
                         merged_group['side_effect_score'] = side_effect_group['score']
@@ -32,7 +31,6 @@ class PRESCIPTION_CLASSIFICATION():
             if contraindication_groups:
                 for contraindication_group in contraindication_groups:
                     if contraindication_group['name'] == name:
-                        print('i am here')
                         merged_group['contraindication_group'] = contraindication_group['group']
                         merged_group['contraindication_indication'] = contraindication_group['indication']
                         merged_group['contraindication_result'] = contraindication_group['contraindication_result']
@@ -42,26 +40,8 @@ class PRESCIPTION_CLASSIFICATION():
 
 
             all_groups.append(merged_group)
-        print(f'all_groups: {all_groups}')
-        
-        # for drug_group in drug_class_groups:
-        #     name = drug_group['name']
-        #     merged_group = drug_group.copy()
-
-        #     if side_effect_groups:
-        #         for side_effect_group in side_effect_groups:
-        #             if side_effect_group['name'] == name:
-        #                 print('i am here')
-        #                 merged_group['side_effect_group'] = side_effect_group['group']
-        #                 merged_group['side_effect_indication'] = side_effect_group['indication']
-        #                 merged_group['side_effect_score'] = side_effect_group['score']
-        #             else:
-        #                 continue
-
-
-        #     all_groups.append(merged_group)
         # print(f'all_groups: {all_groups}')
-
+        
         if all_groups:
             return JsonResponse(all_groups, safe=False)
         else:
@@ -80,11 +60,8 @@ class PRESCIPTION_CLASSIFICATION():
             name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
             generic_name_object = Medication.objects.filter(name=name).first()
             if generic_name_object is not None:
-                generic_name = generic_name_object.generic_name
-                drug_class_object = MedicationDetails.objects.filter(generic_name=generic_name).first()
-                if drug_class_object:
-                    drug_class = drug_class_object.drug_class
-                    drug_class_details = Classify_Drug_Class.objects.filter(drug_class=drug_class)
+                    generic_name = generic_name_object.generic_name
+                    drug_class_details = Classify_Drug_Class.objects.filter(generic_name=generic_name)
                     if drug_class_details:
                         for drug_class_detail in drug_class_details:
                             details = {
