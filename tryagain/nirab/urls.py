@@ -39,4 +39,5 @@ urlpatterns = [
     path('presciption_classification/', views.presciption_classification, name='presciption_classification'),
     path('get_word_recommendations/', views.get_word_recommendations, name='get_word_recommendations'),
     path('get_presciption_classification/', views.get_presciption_classification, name='get_presciption_classification'),
+    path('medicine_chatbot/', views.medicine_chatbot, name='medicine_chatbot'),
 ]

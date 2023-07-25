@@ -22,6 +22,16 @@ from .presciption_classification import PRESCIPTION_CLASSIFICATION
 
 
 
+
+
+def medicine_chatbot(request):
+    return render(request, 'medicine_chatbot.html')
+
+
+
+
+
+
 def get_word_recommendations(request):
     if request.method == 'GET':
         input_query = request.GET.get('input', '').strip()
