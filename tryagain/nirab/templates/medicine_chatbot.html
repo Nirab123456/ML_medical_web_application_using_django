@@ -39,6 +39,9 @@
           <div class="mb-3">
             <label class="form-label" for="name">NAME OF THE DRUG</label>
             <input class="form-control" type="text" id="name" name="name" value="" required oninput="showWordRecommendations()">
+            <label style="margin-top: 5px" class="form-label" for="question">ASK YOUR QUESTIONN</label>
+            <input style="margin-top: 5px" class="form-control" type="text" id="question" name="question" value="" required oninput="showWordRecommendations()">
+
         </div>          
           
           <div id="wordRecommendations"></div>
@@ -130,12 +133,14 @@
 
                 function handleSelectionChange() {
                   var drugName = encodeURIComponent(document.getElementById("name").value);
-                    var topic = encodeURIComponent(document.getElementById("topic").value);
+                  var question = encodeURIComponent(document.getElementById("question").value);
+                  var topic = encodeURIComponent(document.getElementById("topic").value);
+
 
                   // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
                   var xhr = new XMLHttpRequest();
 
-                  xhr.open('GET', '/get_medicine_chat/?name=' + drugName + '&topic=' + topic, true);
+                  xhr.open('GET', '/get_medicine_chat/?name=' + drugName + '&topic=' + topic + '&question=' + question , true);
                   xhr.onload = function() {
                     if (xhr.status === 200) {
                       var get_medicine_chat = JSON.parse(xhr.responseText);
