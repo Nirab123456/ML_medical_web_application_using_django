@@ -24,6 +24,16 @@
       <h2>PROVIDE THE BRAND NAME OF ANY BANGLADESHI DRUG TO DET DETAILS </h2>
       <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST" onsubmit="handleFormSubmit(event)">
         {% csrf_token %}
+        <div class="mb-3">
+            <select class="form-control" id="topic" name="topic" onchange="handleSelectionChange()">
+                <option value="none">NONE</option>
+                <option value="indication_description">INTERACTION DESCRIPTION</option>
+                <option value="dosage_description">DOSAGE DESCRIPTION</option>
+                <option value="interaction_description">INTERACTION DESCRIPTION</option>
+                <option value="contraindications_description">CONTRAINDICATIONS DESCRIPTION</option>
+                <option value="side_effects_description">SIDE EFFECTS DESCRIPTION</option>
+            </select>
+        </div>
 
         <div class="mb-3">
           <div class="mb-3">
@@ -32,6 +42,8 @@
         </div>          
           
           <div id="wordRecommendations"></div>
+
+
         </div>
         
         <p id="selectedStrength"></p>
@@ -39,6 +51,10 @@
         <!-- Add a dropdown menu for sorting -->
         
         <script>
+
+
+
+
           var timeout; // Global variable to store timeout reference
         
           function showWordRecommendations() {
@@ -89,6 +105,7 @@
               xhr.send();
             }, 300); // Adjust the delay as needed (in milliseconds)
           }
+
         
           // Function to select a word recommendation and populate the input field with it
           function selectRecommendation() {
@@ -98,16 +115,27 @@
             document.getElementById("wordRecommendations").innerHTML = "";
           }
 
+
+
+
+
+
+
                 function handleFormSubmit(event) {
                   event.preventDefault(); // Prevent the form from being submitted traditionally
                   handleSelectionChange();
                 }
+
+
+
                 function handleSelectionChange() {
                   var drugName = encodeURIComponent(document.getElementById("name").value);
+                    var topic = encodeURIComponent(document.getElementById("topic").value);
 
                   // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
                   var xhr = new XMLHttpRequest();
-                  xhr.open('GET', '/get_medicine_chat/?name=' + drugName , true);
+
+                  xhr.open('GET', '/get_medicine_chat/?name=' + drugName + '&topic=' + topic, true);
                   xhr.onload = function() {
                     if (xhr.status === 200) {
                       var get_medicine_chat = JSON.parse(xhr.responseText);
@@ -150,6 +178,11 @@
                   };
                   xhr.send();
                 }
+
+
+
+
+
 
             </script>  
 
