@@ -18,14 +18,27 @@ from .templatetags.custom_filters import add_or_update_social_media
 from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 from django.http import JsonResponse
 from .presciption_classification import PRESCIPTION_CLASSIFICATION
-
+from .madication_chat import MEDICINE_CHAT
 
 
 
 
 
 def medicine_chatbot(request):
-    return render(request, 'medicine_chatbot.html')
+    if request.method == 'POST':
+        form = MedicineForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            name = name.lower()
+            return render(request, 'medicine_chatbot.html', {'medicine_chatbot_form': form, 'name_of_medication': name})
+    else:
+        form = MedicineForm()
+    return render(request, 'medicine_chatbot.html', {'medicine_chatbot_form': form})
+
+
+def get_medicine_chat(request):
+    MEDICINE_CHATBOT = MEDICINE_CHAT(request=request)
+    return MEDICINE_CHATBOT.get_medicine_details()
 
 
 
