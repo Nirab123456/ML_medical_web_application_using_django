@@ -18,6 +18,7 @@ class MEDICINE_CHAT():
         request = self.request
         name = request.GET.get('name')
         name = name.lower()
+        print(f'name: {name}')
         question = request.GET.get('question')
         question = question.lower()
         print(f'question: {question}')
