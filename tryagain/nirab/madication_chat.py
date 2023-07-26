@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import MedicineForm
-from .models import MedicationDetails,Medication,Classify_Drug_Class,Classify_Side_Effect,Classify_CONTRADICTIONS
+from .models import MedicationDetails,Medication,Classify_Drug_Class,Classify_Side_Effect,Classify_CONTRADICTIONS,med_Ques_Ans
 from django.http import JsonResponse
 from transformers import pipeline
 
@@ -46,6 +46,13 @@ class MEDICINE_CHAT():
                         answer = replay['answer']
                         answer = answer.replace(generic_name.generic_name, name)
                         response_data = {'answer': answer}
+                        med_question_answer = med_Ques_Ans.objects.create(
+                            name=name,
+                            generic_name=generic_name.generic_name,
+                            question=question,
+                            answer=answer,
+                            corrected_answer=answer  # You can modify this field as needed
+                        )
                         return JsonResponse(response_data, status=200)
 
                 return JsonResponse({'error': 'Medication details not found for the given topic'}, status=404)

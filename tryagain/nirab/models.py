@@ -9,6 +9,20 @@ from django.dispatch import receiver
 
 
 
+class med_Ques_Ans(models.Model):
+    name = models.CharField(blank=True, null=True,max_length=100)
+    generic_name = models.CharField(blank=True, null=True,max_length=200)
+    question = models.TextField(blank=True, null=True,max_length=1000)
+    answer = models.TextField(blank=True, null=True,max_length=1000)
+    corrected_answer = models.TextField(blank=True, null=True,max_length=1000)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.generic_name
+
+
+
+
+
 
 class Classify_Drug_Class(models.Model):
     generic_name = models.CharField(max_length=200)
