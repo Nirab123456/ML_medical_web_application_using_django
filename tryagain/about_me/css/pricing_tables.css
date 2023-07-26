@@ -171,9 +171,10 @@ body {
 }
 
 .price-card:hover .btn {
-  background: #0cc652;
+  background: #b4f217;
   border-color: #0cc652;
 }
+
 
 p.price span {
   display: inline-block;
