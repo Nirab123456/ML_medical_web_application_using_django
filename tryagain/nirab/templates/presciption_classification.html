@@ -93,12 +93,12 @@ xhr.onload = function() {
         var drug_class_indication_groups = new Set();
 
 
-        if (medication.group && medication.indication) {
+        if (medication.drug_class_group && medication.drug_class_indication) {
             var drug_class_indication_groups = new Set();
 
-            for (var j = 0; j < medication.indication.split(",").length; j++) {
-              var group = medication.group.split(",")[j].toUpperCase();
-              var indication = medication.indication.split(",")[j];
+            for (var j = 0; j < medication.drug_class_indication.split(",").length; j++) {
+              var group = medication.drug_class_group.split(",")[j].toUpperCase();
+              var indication = medication.drug_class_indication.split(",")[j];
 
               // Check if the group is already processed
               if (!drug_class_indication_groups.has(indication)) {
@@ -219,7 +219,7 @@ xhr.send();
 
                          <!-- Using anchor tag to create a link that turns red on hover -->
                         <a href="{% url 'medicine_chatbot' %}" class="btn btn-warning d-block w-50 custom-button" style="font-size: 12px;">
-                          <span style="color: rgb(15, 14, 14);">TALK WITH YOUR MEDICINES</span></strong>
+                          <strong><span style="color: rgb(245, 244, 244);">TALK WITH YOUR MEDICINES</span></strong>
                           
                         </a>
 

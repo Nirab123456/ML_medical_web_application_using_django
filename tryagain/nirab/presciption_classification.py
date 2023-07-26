@@ -9,39 +9,151 @@ class PRESCIPTION_CLASSIFICATION():
     def __init__(self, request):
         self.request = request
 
+
+
     def get_presciption_classification(self):
         drug_class_groups = self.get_drug_class_classification()
         side_effect_groups = self.get_side_effect_classification()
         contraindication_groups = self.get_contraindication_classification()
+
         all_groups = []
 
-        for drug_group in drug_class_groups:
-            name = drug_group['name']
-            merged_group = drug_group.copy()
+        if drug_class_groups and side_effect_groups and contraindication_groups:
+            for drug_class_group in drug_class_groups:
+                name = drug_class_group['name']
+                merged_group = drug_class_group.copy()
 
-            if side_effect_groups:
                 for side_effect_group in side_effect_groups:
                     if side_effect_group['name'] == name:
-                        merged_group['side_effect_group'] = side_effect_group['group']
-                        merged_group['side_effect_indication'] = side_effect_group['indication']
-                        merged_group['side_effect_score'] = side_effect_group['score']
-                    else:
-                        continue
+                        merged_group['side_effect_group'] = side_effect_group['side_effect_group']
+                        merged_group['side_effect_indication'] = side_effect_group['side_effect_indication']
+                        merged_group['side_effect_score'] = side_effect_group['side_effect_score']
+                        break  # Found the matching side_effect_group, no need to continue the loop
 
-            if contraindication_groups:
                 for contraindication_group in contraindication_groups:
                     if contraindication_group['name'] == name:
-                        merged_group['contraindication_group'] = contraindication_group['group']
-                        merged_group['contraindication_indication'] = contraindication_group['indication']
+                        merged_group['contraindication_group'] = contraindication_group['contraindication_group']
+                        merged_group['contraindication_indication'] = contraindication_group['contraindication_indication']
                         merged_group['contraindication_result'] = contraindication_group['contraindication_result']
-                        merged_group['contraindication_score'] = contraindication_group['score']
-                    else:
-                        continue
+                        merged_group['contraindication_score'] = contraindication_group['contraindication_score']
+                        break  # Found the matching contraindication_group, no need to continue the loop
 
+                all_groups.append(merged_group)
 
-            all_groups.append(merged_group)
-        # print(f'all_groups: {all_groups}')
+        elif drug_class_groups and side_effect_groups:
+            for drug_class_group in drug_class_groups:
+                name = drug_class_group['name']
+                merged_group = drug_class_group.copy()
+
+                for side_effect_group in side_effect_groups:
+                    if side_effect_group['name'] == name:
+                        merged_group['side_effect_group'] = side_effect_group['side_effect_group']
+                        merged_group['side_effect_indication'] = side_effect_group['side_effect_indication']
+                        merged_group['side_effect_score'] = side_effect_group['side_effect_score']
+                        break  # Found the matching side_effect_group, no need to continue the loop
+
+                # Add empty fields for contraindication since it is missing
+                merged_group['contraindication_group'] = ''
+                merged_group['contraindication_indication'] = ''
+                merged_group['contraindication_result'] = ''
+                merged_group['contraindication_score'] = ''
+
+                all_groups.append(merged_group)
+
+        elif drug_class_groups and contraindication_groups:
+            for drug_class_group in drug_class_groups:
+                name = drug_class_group['name']
+                merged_group = drug_class_group.copy()
+
+                for contraindication_group in contraindication_groups:
+                    if contraindication_group['name'] == name:
+                        merged_group['contraindication_group'] = contraindication_group['contraindication_group']
+                        merged_group['contraindication_indication'] = contraindication_group['contraindication_indication']
+                        merged_group['contraindication_result'] = contraindication_group['contraindication_result']
+                        merged_group['contraindication_score'] = contraindication_group['contraindication_score']
+                        break
+
+                # Add empty fields for side_effect since it is missing
+                merged_group['side_effect_group'] = ''
+                merged_group['side_effect_indication'] = ''
+                merged_group['side_effect_score'] = ''
+
+                all_groups.append(merged_group)
+
+        elif side_effect_groups and contraindication_groups:
+
+            for side_effect_group in side_effect_groups:
+                name = side_effect_group['name']
+                merged_group = side_effect_group.copy()
+
+                for contraindication_group in contraindication_groups:
+                    if contraindication_group['name'] == name:
+                        merged_group['contraindication_group'] = contraindication_group['contraindication_group']
+                        merged_group['contraindication_indication'] = contraindication_group['contraindication_indication']
+                        merged_group['contraindication_result'] = contraindication_group['contraindication_result']
+                        merged_group['contraindication_score'] = contraindication_group['contraindication_score']
+                        break
+
+                # Add empty fields for drug_class since it is missing
+                merged_group['drug_class_group'] = ''
+                merged_group['drug_class_indication'] = ''
+                merged_group['drug_class_score'] = ''
+
+                all_groups.append(merged_group)
+
+        elif drug_class_groups:
+
+            for drug_class_group in drug_class_groups:
+                name = drug_class_group['name']
+                merged_group = drug_class_group.copy()
+
+                # Add empty fields for side_effect and contraindication since they are missing
+                merged_group['side_effect_group'] = ''
+                merged_group['side_effect_indication'] = ''
+                merged_group['side_effect_score'] = ''
+                merged_group['contraindication_group'] = ''
+                merged_group['contraindication_indication'] = ''
+                merged_group['contraindication_result'] = ''
+                merged_group['contraindication_score'] = ''
+
+                all_groups.append(merged_group)
+
+        elif side_effect_groups:
+                
+                for side_effect_group in side_effect_groups:
+                    name = side_effect_group['name']
+                    merged_group = side_effect_group.copy()
         
+                    # Add empty fields for drug_class and contraindication since they are missing
+                    merged_group['drug_class_group'] = ''
+                    merged_group['drug_class_indication'] = ''
+                    merged_group['drug_class_score'] = ''
+                    merged_group['contraindication_group'] = ''
+                    merged_group['contraindication_indication'] = ''
+                    merged_group['contraindication_result'] = ''
+                    merged_group['contraindication_score'] = ''
+        
+                    all_groups.append(merged_group)
+
+
+        elif contraindication_groups:
+                
+                for contraindication_group in contraindication_groups:
+                    name = contraindication_group['name']
+                    merged_group = contraindication_group.copy()
+        
+                    # Add empty fields for drug_class and side_effect since they are missing
+                    merged_group['drug_class_group'] = ''
+                    merged_group['drug_class_indication'] = ''
+                    merged_group['drug_class_score'] = ''
+                    merged_group['side_effect_group'] = ''
+                    merged_group['side_effect_indication'] = ''
+                    merged_group['side_effect_score'] = ''
+        
+                    all_groups.append(merged_group)
+
+        print(f'all_groups: {all_groups}')
+        # Your code to return the response
         if all_groups:
             return JsonResponse(all_groups, safe=False)
         else:
@@ -63,7 +175,9 @@ class PRESCIPTION_CLASSIFICATION():
             generic_name_object = Medication.objects.filter(name=name).first()
             if generic_name_object is not None:
                     generic_name = generic_name_object.generic_name
+                    print(f'generic_name: {generic_name}')
                     drug_class_details = Classify_Drug_Class.objects.filter(generic_name=generic_name)
+                    print(f'drug_class_details: {drug_class_details}')
                     if drug_class_details:
                         for drug_class_detail in drug_class_details:
                             details = {
@@ -97,10 +211,10 @@ class PRESCIPTION_CLASSIFICATION():
                 combined_score = ','.join(d['score'] for d in all_groups[i])
                 all_groups[i] = {
                     'name': all_groups[i][0]['name'],
-                    'group': combined_group,
-                    'indication': combined_indication,
+                    'drug_class_group': combined_group,
+                    'drug_class_indication': combined_indication,
                     # 'drug_class': all_groups[i][0]['drug_class'],
-                    'score': combined_score,
+                    'drug_class_score': combined_score,
                 }
             return all_groups
         else:
@@ -121,6 +235,7 @@ class PRESCIPTION_CLASSIFICATION():
             if generic_name_object is not None:
                 generic_name = generic_name_object.generic_name
                 side_effect_details = Classify_Side_Effect.objects.filter(generic_name=generic_name)
+                print(f'side_effect_details: {side_effect_details}')
                 if side_effect_details:
                     for side_effect_detail in side_effect_details:
                         details = {
@@ -159,10 +274,10 @@ class PRESCIPTION_CLASSIFICATION():
                 combined_score = ','.join(d['score'] for d in all_groups[i])
                 all_groups[i] = {
                     'name': all_groups[i][0]['name'],
-                    'group': combined_group,
-                    'indication': combined_indication,
+                    'side_effect_group': combined_group,
+                    'side_effect_indication': combined_indication,
                     # 'side_effect': all_groups[i][0]['side_effect'],
-                    'score': combined_score,
+                    'side_effect_score': combined_score,
                 }
 
             return all_groups
@@ -224,11 +339,11 @@ class PRESCIPTION_CLASSIFICATION():
                 combined_score = ','.join(d['score'] for d in all_groups[i])
                 all_groups[i] = {
                     'name': all_groups[i][0]['name'],
-                    'group': combined_group,
-                    'indication': combined_indication,
-                    # 'contraindication': all_groups[i][0]['contraindication'],
+                    'contraindication_group': combined_group,
+                    'contraindication_indication': combined_indication,
+                    # 'contraindication_contraindication': all_groups[i][0]['contraindication'],
                     'contraindication_result': all_groups[i][0]['contraindication_result'],
-                    'score': combined_score,
+                    'contraindication_score': combined_score,
                 }
 
             return all_groups
