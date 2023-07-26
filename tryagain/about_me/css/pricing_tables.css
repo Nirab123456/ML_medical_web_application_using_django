@@ -70,7 +70,7 @@ body {
   bottom: 12px;
   width: 40px;
   height: 1px;
-  background-color: #0cc652;
+  background-color: #055624;
 }
 
 @media (min-width: 768px) {
@@ -127,7 +127,7 @@ body {
   right: -35px;
   width: 88px;
   height: 88px;
-  background: #0cc652;
+  background: #02441b;
   opacity: 0.2;
   border-radius: 8px;
   transform: rotate(45deg);
@@ -140,7 +140,7 @@ body {
   right: -35px;
   width: 88px;
   height: 88px;
-  background: #0cc652;
+  background: #034d1f;
   opacity: 0.2;
   border-radius: 8px;
   transform: rotate(45deg);
@@ -171,10 +171,9 @@ body {
 }
 
 .price-card:hover .btn {
-  background: #b4f217;
-  border-color: #0cc652;
+  background: #0e0e0e;
+  border-color: #0e0f0f;
 }
-
 
 p.price span {
   display: inline-block;
@@ -182,7 +181,7 @@ p.price span {
   padding-right: 0;
   font-size: 50px;
   font-weight: 600;
-  color: #0cc652;
+  color: #07662b;
   position: relative;
 }
 
