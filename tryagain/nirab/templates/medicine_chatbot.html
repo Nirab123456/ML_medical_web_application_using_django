@@ -24,16 +24,7 @@
       <h2>PROVIDE THE BRAND NAME OF ANY BANGLADESHI DRUG TO DET DETAILS </h2>
       <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST" onsubmit="handleFormSubmit(event)">
         {% csrf_token %}
-        <div class="mb-3">
-            <select class="form-control" id="topic" name="topic" onchange="handleSelectionChange()">
-                <option value="none">NONE</option>
-                <option value="indication_description">INDICATION DESCRIPTION</option>
-                <option value="dosage_description">DOSAGE DESCRIPTION</option>
-                <option value="interaction_description">INTERACTION DESCRIPTION</option>
-                <option value="contraindications_description">CONTRAINDICATIONS DESCRIPTION</option>
-                <option value="side_effects_description">SIDE EFFECTS DESCRIPTION</option>
-            </select>
-        </div>
+
 
         <div class="mb-3">
           <div class="mb-3">
@@ -46,7 +37,18 @@
           
           <div id="wordRecommendations"></div>
 
+          <div class="mb-3">
+            <select class="form-control" id="topic" name="topic" onchange="handleSelectionChange()">
+                <option value="none">NONE</option>
+                <option value="indication_description">INDICATION DESCRIPTION</option>
+                <option value="dosage_description">DOSAGE DESCRIPTION</option>
+                <option value="interaction_description">INTERACTION DESCRIPTION</option>
+                <option value="contraindications_description">CONTRAINDICATIONS DESCRIPTION</option>
+                <option value="side_effects_description">SIDE EFFECTS DESCRIPTION</option>
+            </select>
+        </div>
 
+        
         </div>
         
         <p id="selectedStrength"></p>

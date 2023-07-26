@@ -20,6 +20,7 @@ class MEDICINE_CHAT():
         name = name.lower()
         question = request.GET.get('question')
         question = question.lower()
+        print(f'question: {question}')
         generic_name = Medication.objects.filter(name=name).first()
         topic = request.GET.get('topic')
         if generic_name:
