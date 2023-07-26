@@ -20,77 +20,39 @@ class MEDICINE_CHAT():
         name = name.lower()
         question = request.GET.get('question')
         question = question.lower()
-        print(f'question: {question}')
         generic_name = Medication.objects.filter(name=name).first()
         topic = request.GET.get('topic')
-        print(topic)
         if generic_name:
             question = question.replace(name, generic_name.generic_name)
-            print(f'modified question: {question}')
             details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
+
             if details_of_medicine.exists():
+                topic_field_map = {
+                    'indication_description': 'indication_description',
+                    'dosage_description': 'dosage_description',
+                    'interaction_description': 'interaction_description',
+                    'contraindications_description': 'contraindications_description',
+                    'side_effects_description': 'side_effects_description',
+                }
 
-                if topic == 'indication_description':
-                    self.indication_description = details_of_medicine.values_list('indication_description', flat=True)
+                topic_field = topic_field_map.get(topic)
 
-                    replay = self.init_chat_model(topic=self.indication_description[0],question=question)
-                    answer = replay['answer']
-                    answer = answer.replace(generic_name.generic_name, name)
-                    answer={
-                        'answer':answer
-                    }
-                    return JsonResponse(answer, status=200, safe=False)
-                elif topic == 'dosage_description':
-                    self.dosage_description = details_of_medicine.values_list('dosage_description', flat=True)
+                if topic_field:
+                    field_value = details_of_medicine.values_list(topic_field, flat=True).first()
 
-                    replay = self.init_chat_model(topic=self.dosage_description[0],question=question)
-                    answer = replay['answer']   
-                    answer = answer.replace(generic_name.generic_name, name)
-                    answer={
-                        'answer':answer
-                    }
-                    return JsonResponse(answer, status=200, safe=False)   
-                elif topic == 'interaction_description':
-                    self.interaction_description = details_of_medicine.values_list('interaction_description', flat=True)
+                    if field_value:
+                        replay = self.init_chat_model(topic=field_value, question=question)
+                        answer = replay['answer']
+                        answer = answer.replace(generic_name.generic_name, name)
+                        response_data = {'answer': answer}
+                        return JsonResponse(response_data, status=200)
 
-                    replay = self.init_chat_model(topic=self.interaction_description[0],question=question)
-                    answer = replay['answer']
-                    answer = answer.replace(generic_name.generic_name, name)
-                    answer={
-                        'answer':answer
-                    }
-                    return JsonResponse(answer, status=200, safe=False)
+                return JsonResponse({'error': 'Medication details not found for the given topic'}, status=404)
 
-                elif topic == 'contraindications_description':
-                    self.contraindications_description = details_of_medicine.values_list('contraindications_description', flat=True)
+            return JsonResponse({'error': 'Medication details not found'}, status=404)
 
-                    replay = self.init_chat_model(topic=self.contraindications_description[0],question=question)
-                    answer = replay['answer']
-                    answer = answer.replace(generic_name.generic_name, name)
-                    answer={
-                        'answer':answer
-                    }
-                    return JsonResponse(answer, status=200, safe=False)
+        return JsonResponse({'error': 'Medication not found'}, status=404)
 
-                elif topic == 'side_effects_description':
-                    self.side_effects_description = details_of_medicine.values_list('side_effects_description', flat=True)
-
-                    replay = self.init_chat_model(topic=self.side_effects_description[0],question=question)
-                    answer = replay['answer']
-                    answer = answer.replace(generic_name.generic_name, name)
-                    answer={
-                        'answer':answer
-                    }
-
-                    return JsonResponse(answer, status=200, safe=False)
-                
-                else:
-                    return JsonResponse({'error': 'Medication details not found'}, status=404)
-            else:
-                return JsonResponse({'error': 'Medication details not found'}, status=404)
-        else:
-            return JsonResponse({'error': 'Medication not found'}, status=404)
-        
 
 
 
