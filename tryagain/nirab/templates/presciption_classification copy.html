@@ -1,0 +1,90 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+{% include "MED_nav.html" %}
+<html data-bs-theme="light">
+
+<head>
+    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
+
+  <style>
+      .main-content {
+          margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
+      }
+  </style>
+  <style>
+    /* Define CSS styles for better visibility */
+    .medication-details {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .medication-group {
+      color: blue; /* Change the color as per your preference */
+      font-weight: bold;
+    }
+  
+    .medication-indication {
+      color: green; /* Change the color as per your preference */
+    }
+  
+    .medication-score {
+      color: red; /* Change the color as per your preference */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page cv-page main-content">
+    <main class="page hire-me-page"></main>
+    <div class="price-card">
+      <h2>PROVIDE THE BRAND NAME OF ANY BANGLADESHI DRUG TO DET DETAILS </h2>
+      <form class="border rounded border-0 shadow-lg p-3 p-md-5" data-bs-theme="light" method="POST" onsubmit="handleFormSubmit(event)">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label class="form-label" for="name">NAME OF THE DRUG</label>
+          <div id="name-container">
+              <div class="mb-3 input-group">
+                  <input class="form-control" type="text" id="name-0" name="name" value="" required oninput="showWordRecommendations(event, 0)">
+                  <button type="button" class="btn btn-primary" onclick="addNameField()">Add Another Name Field</button>
+              </div>
+          </div>
+
+      </div>
+
+      <div id="wordRecommendations"></div>
+
+        <p id="selectedStrength"></p>
+        <div id="get_presciption_classification"></div>
+        <!-- Add a dropdown menu for sorting -->
+        
+
+          
+            <div class="mb-3">
+
+            </div>
+            
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-12 button">
+                      <div class="d-flex align-items-center justify-content-center">
+
+                        <button class="btn btn-primary d-block w-50" type="submit" style="font-size: 18px;">
+                          <strong><span style="color: rgb(252, 249, 249);">GET MEDICINE DETAILS</span></strong>
+                        </button>
+                      </div>  
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</body>
+<script src="{% about_me 'js/presciption_classification.js' %}"></script>
+
+</html>
+
+{% endblock %}

@@ -50,7 +50,9 @@ class PRESCIPTION_CLASSIFICATION():
     def get_drug_class_classification(self):
         request = self.request
         names = request.GET.get('name', '')  # Get the comma-separated names as a single string
+        print(f'names: {names}')
         names_list = names.split(',')  # Split the string into a list of names
+        print(f'names_list: {names_list}')
         drug_class_details_list = []
         grouped_by_name = {}
         grouped_list = []
