@@ -170,25 +170,48 @@
                 
                   var xhr = new XMLHttpRequest();
                   xhr.open('GET', '/get_medicine_chat/?name=' + drugNames + '&topic=' + topic + '&question=' + question, true);
+
+
+
+
+
+
                   xhr.onload = function() {
+
+
                     if (xhr.status === 200) {
                       var get_medicine_chat = JSON.parse(xhr.responseText);
-                      console.log(get_medicine_chat); // Add this line for debugging
-                      if (get_medicine_chat) {
+                      if (Array.isArray(get_medicine_chat) && get_medicine_chat.length > 0) {
+
                         var detailsHtml = "<div>";
-                        detailsHtml += "<p><strong>ANSWER:</strong> " + get_medicine_chat['answer']+ "</p>";
-                        // Add more fields here
+                        for (var i = 0; i < get_medicine_chat.length; i++) {
+                          detailsHtml += "<p><strong>" + get_medicine_chat[i]['name'] + " : </strong> " + get_medicine_chat[i]['answer']+ "</p>";
+                          // Add more fields here
+                          detailsHtml += "<hr>";
+                        }
                         detailsHtml += "</div>";
-                        detailsHtml += "<hr>";
                         document.getElementById("get_medicine_chat").innerHTML = detailsHtml;
+
                       } else {
                         document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
                       }
+
+
+
                     } else {
                       console.error('Request failed. Status:', xhr.status);
                       document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
                     }
+
+
+
+
                   };
+
+
+
+
+
                   xhr.onerror = function() {
                     console.error('Request failed. Network error');
                     document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";

@@ -50,9 +50,6 @@
                         <option value="side_effects_description">SIDE EFFECTS DESCRIPTION</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
 
         <p id="selectedStrength"></p>
         <div id="get_medicine_chat"></div>
@@ -163,12 +160,16 @@
 
 
                 function handleSelectionChange() {
-                  var drugName = encodeURIComponent(document.getElementById("name").value);
+                  var nameInputs = document.querySelectorAll("#name-container input");
+                    var drugNames = [];
+                    for (var i = 0; i < nameInputs.length; i++) {
+                      drugNames.push(encodeURIComponent(nameInputs[i].value));
+                    }
                   var question = encodeURIComponent(document.getElementById("question").value);
                   var topic = encodeURIComponent(document.getElementById("topic").value);
                 
                   var xhr = new XMLHttpRequest();
-                  xhr.open('GET', '/get_medicine_chat/?name=' + drugName + '&topic=' + topic + '&question=' + question, true);
+                  xhr.open('GET', '/get_medicine_chat/?name=' + drugNames + '&topic=' + topic + '&question=' + question, true);
                   xhr.onload = function() {
                     if (xhr.status === 200) {
                       var get_medicine_chat = JSON.parse(xhr.responseText);
