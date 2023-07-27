@@ -32,9 +32,8 @@
                             <input class="form-control" type="text" id="name-0" name="name" value="" required oninput="showWordRecommendations(event, 0)">
                             <button type="button" class="btn btn-primary" onclick="addNameField()">Add Another Name Field</button>
                         </div>
-                        <div style="margin-top: 10px" id="wordRecommendations"></div>
-
                     </div>
+                    <div style="margin-top: 10px" id="wordRecommendations"></div>
 
 
                     <h6 style="color: rgb(248, 8, 8);"><strong> SELECT BASIC PRE-DEFINED QUESTIONS FOR FASTER ANSWER OR ASK YOUR OWN QUESTION</strong></h6>
@@ -65,6 +64,8 @@
                     <select class="form-control" id="topic" name="topic" onchange="handleSelectionChange()">
                         <option value="">NONE</option>
                         <option value="indication_description">INDICATION DESCRIPTION</option>
+                        <option value="therapeutic_class_description">THERAPEUTIC CLASS DESCRIPTION</option>
+                        <option value="pharmacology_description">PHARMACOLOGICAL DESCRIPTION</option>
                         <option value="dosage_description">DOSAGE DESCRIPTION</option>
                         <option value="interaction_description">INTERACTION DESCRIPTION</option>
                         <option value="contraindications_description">CONTRAINDICATIONS DESCRIPTION</option>

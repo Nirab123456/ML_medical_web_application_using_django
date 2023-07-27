@@ -40,6 +40,8 @@ class MEDICINE_CHAT():
                         if details_of_medicine.exists():
                             topic_field_map = {
                                 'indication_description': 'indication_description',
+                                'therapeutic_class_description': 'therapeutic_class_description',
+                                'pharmacology_description': 'pharmacology_description',
                                 'dosage_description': 'dosage_description',
                                 'interaction_description': 'interaction_description',
                                 'contraindications_description': 'contraindications_description',
