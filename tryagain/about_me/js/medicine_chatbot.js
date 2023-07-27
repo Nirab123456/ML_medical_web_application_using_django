@@ -112,6 +112,7 @@ function selectRecommendation() {
     const sectionToHide = document.getElementById('sectionToHide');
     const select_question = document.getElementById('select_question');
     const question = document.getElementById('question');
+    const topic = document.getElementById('topic');
 
     function toggleSectionVisibility() {
         if (select_question.value === '' || !select_question.value) {

@@ -22,63 +22,68 @@ class MEDICINE_CHAT():
         question = question.lower()
         print(f'type(question): {question}')
         if question == 'null' :
-            question = request.GET.get('selected_question')
-            print(f'question: {question}')
+            self.selected_question = request.GET.get('selected_question')
+            print(f'self.selected_question: {self.selected_question}')
+        else:
+            topic = request.GET.get('topic')
+            answer_list = []
 
+            for name in names_list:
+                name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
+                generic_name_object = Medication.objects.filter(name=name).first()
+                if generic_name_object is not None:
+                    generic_name = generic_name_object.generic_name
+                    if generic_name:
+                        question = question.replace(name, generic_name)
+                        details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name)
 
-        topic = request.GET.get('topic')
-        answer_list = []
+                        if details_of_medicine.exists():
+                            topic_field_map = {
+                                'indication_description': 'indication_description',
+                                'dosage_description': 'dosage_description',
+                                'interaction_description': 'interaction_description',
+                                'contraindications_description': 'contraindications_description',
+                                'side_effects_description': 'side_effects_description',
+                            }
 
-        for name in names_list:
-            name = name.lower().strip()  # Use strip() to remove leading/trailing spaces
-            generic_name_object = Medication.objects.filter(name=name).first()
-            if generic_name_object is not None:
-                generic_name = generic_name_object.generic_name
-                if generic_name:
-                    question = question.replace(name, generic_name)
-                    details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name)
+                            topic_field = topic_field_map.get(topic)
 
-                    if details_of_medicine.exists():
-                        topic_field_map = {
-                            'indication_description': 'indication_description',
-                            'dosage_description': 'dosage_description',
-                            'interaction_description': 'interaction_description',
-                            'contraindications_description': 'contraindications_description',
-                            'side_effects_description': 'side_effects_description',
-                        }
+                            if topic_field:
+                                field_value = details_of_medicine.values_list(topic_field, flat=True).first()
 
-                        topic_field = topic_field_map.get(topic)
-
-                        if topic_field:
-                            field_value = details_of_medicine.values_list(topic_field, flat=True).first()
-
-                            if field_value:
-                                replay = self.init_chat_model(topic=field_value, question=question)
-                                answer = replay['answer']
-                                answer = answer.replace(generic_name, name)
-                                response_data = {'answer': answer, 'name': name, 'generic_name': generic_name}
-                                print(f'response_data: {response_data}')
-
-
-
-                                med_question_answer = med_Ques_Ans.objects.create(
-                                    name=name,
-                                    generic_name=generic_name,
-                                    question=question,
-                                    answer=answer,
-                                    corrected_answer=answer  # You can modify this field as needed
-                                )
+                                if field_value:
+                                    replay = self.init_chat_model(topic=field_value, question=question)
+                                    answer = replay['answer']
+                                    answer = answer.replace(generic_name, name)
+                                    response_data = {'answer': answer, 'name': name, 'generic_name': generic_name}
+                                    print(f'response_data: {response_data}')
 
 
 
+                                    med_question_answer = med_Ques_Ans.objects.create(
+                                        name=name,
+                                        generic_name=generic_name,
+                                        question=question,
+                                        answer=answer,
+                                        corrected_answer=answer  # You can modify this field as needed
+                                    )
 
-                                answer_list.append(response_data)
+
+
+
+                                    answer_list.append(response_data)
+            
+            if answer_list:
+                print(f'answer_list: {answer_list}')
+                return JsonResponse(answer_list, status=200,safe=False)
+            
+            return JsonResponse({'error': 'Medication details not found'}, status=404)
         
-        if answer_list:
-            print(f'answer_list: {answer_list}')
-            return JsonResponse(answer_list, status=200,safe=False)
-        
-        return JsonResponse({'error': 'Medication details not found'}, status=404)
+
+    def get_selected_question(self):
+        question =self.selected_question
+        print(f'question: {question}')
+
     
 
 
