@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Record, Event, EventVenue, EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication,MedicationDetails
-from .models import Classify_Drug_Class,Classify_Side_Effect,Classify_CONTRADICTIONS,med_Ques_Ans
+from .models import Classify_Drug_Class,Classify_Side_Effect,Classify_CONTRADICTIONS,med_Ques_Ans,SELECTED_QUESTION_ANSWER
 
 # Register your models here.
 
@@ -16,6 +16,7 @@ admin.site.register(MedicationDetails)
 admin.site.register(Classify_Drug_Class)
 admin.site.register(Classify_Side_Effect)
 admin.site.register(Classify_CONTRADICTIONS)
+admin.site.register(SELECTED_QUESTION_ANSWER)
 
 
 

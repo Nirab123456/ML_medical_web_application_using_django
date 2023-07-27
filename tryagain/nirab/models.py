@@ -8,6 +8,36 @@ from django.dispatch import receiver
 
 
 
+"""INDICATION_DESCRIPTION:all the use cases of{G_N}? ==A_T_U_C
+side effect description :all side effects of {G_N}? == A_S_E_C
+pharmacological description:all mechanism of action {G_N}? == A_M_O_C
+interaction description :what to avoid when using {G_N}? == W_T_A_D_C
+interaction description :what  meal or food to avoid when using {G_N}? == W_T_A_F_C
+
+contradiction description :in which cases not to take  {G_N}? == I_W_C_N_T_T_C
+"""
+
+class SELECTED_QUESTION_ANSWER(models.Model):
+    generic_name = models.CharField(max_length=200)
+    A_T_U_C = models.CharField(max_length=200)
+    A_S_E_C = models.CharField(max_length=200)
+    A_M_O_C = models.CharField(max_length=200)
+    W_T_A_D_C = models.CharField(max_length=200)
+    W_T_A_F_C = models.CharField(max_length=200)
+    I_W_C_N_T_T_C = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.generic_name
+
+
+
+
+
+
+
+
+
+
 
 class med_Ques_Ans(models.Model):
     name = models.CharField(blank=True, null=True,max_length=100)
