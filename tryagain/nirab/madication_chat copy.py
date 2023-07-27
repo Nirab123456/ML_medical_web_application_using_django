@@ -20,12 +20,6 @@ class MEDICINE_CHAT():
         names_list = names.split(',')  # Split the string into a list of names
         question = request.GET.get('question')
         question = question.lower()
-        print(f'type(question): {question}')
-        if question == 'null' :
-            question = request.GET.get('selected_question')
-            print(f'question: {question}')
-
-
         topic = request.GET.get('topic')
         answer_list = []
 

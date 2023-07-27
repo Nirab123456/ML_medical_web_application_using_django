@@ -1,7 +1,3 @@
-// JavaScript code to hide the section by default and show it when the button is clicked
-
-// Get references to the button and the section
-
 
 var numNameFields = 1;
 
@@ -109,27 +105,16 @@ function selectRecommendation() {
 
     function handleSelectionChange() {
       var nameInputs = document.querySelectorAll("#name-container input");
-      var drugNames = [];
-      for (var i = 0; i < nameInputs.length; i++) {
+        var drugNames = [];
+        for (var i = 0; i < nameInputs.length; i++) {
           drugNames.push(encodeURIComponent(nameInputs[i].value));
-      }
-
-      var selected_question = encodeURIComponent(document.getElementById("select_question").value);
+        }
       var question = encodeURIComponent(document.getElementById("question").value);
-
       var topic = encodeURIComponent(document.getElementById("topic").value);
-
-      // If selected_question is "none" or not a valid value, use the custom question
-      if (selected_question === "" || selected_question === "none") {
-          selected_question = null;
-      } else {
-          // If a valid value is selected, clear the custom question input
-          document.getElementById("question").value = "";
-          question = null;
-      }
-
+    
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', '/get_medicine_chat/?name=' + drugNames + '&topic=' + topic + '&question=' + question + '&selected_question=' + selected_question, true);
+      xhr.open('GET', '/get_medicine_chat/?name=' + drugNames + '&topic=' + topic + '&question=' + question, true);
+
 
 
 
