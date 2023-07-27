@@ -1,7 +1,3 @@
-// JavaScript code to hide the section by default and show it when the button is clicked
-
-// Get references to the button and the section
-
 
 var numNameFields = 1;
 
@@ -104,6 +100,52 @@ function selectRecommendation() {
       event.preventDefault(); // Prevent the form from being submitted traditionally
       handleSelectionChange();
     }
+
+
+
+
+
+
+
+
+    const showHideButton = document.getElementById('showHideButton');
+    const sectionToHide = document.getElementById('sectionToHide');
+    const select_question = document.getElementById('select_question');
+    const question = document.getElementById('question');
+
+    function toggleSectionVisibility() {
+        if (select_question.value === '' || !select_question.value) {
+            sectionToHide.style.display = 'block';
+        } else {
+            sectionToHide.style.display = 'none';
+        }
+
+        if (question.value) {
+            select_question.style.display = 'none';
+        } else {
+            select_question.style.display = 'block';
+        }
+    }
+
+    // Add event listener for the button click
+    showHideButton.addEventListener('click', () => {
+        if (sectionToHide.style.display === 'none') {
+            sectionToHide.style.display = 'block';
+        } else {
+            sectionToHide.style.display = 'none';
+        }
+
+        // Call toggleSectionVisibility to handle the visibility change
+        toggleSectionVisibility();
+    });
+
+    // Add event listener for the select box change
+    select_question.addEventListener('change', toggleSectionVisibility);
+
+    // Call the function initially to set the initial visibility based on the select box value and question value
+    toggleSectionVisibility();
+
+
 
 
 
