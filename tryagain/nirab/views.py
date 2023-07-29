@@ -19,7 +19,7 @@ from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 from django.http import JsonResponse
 from .presciption_classification import PRESCIPTION_CLASSIFICATION
 from .madication_chat import MEDICINE_CHAT
-
+from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 
 
 
@@ -144,7 +144,7 @@ def presciption_classification_beta(request):
 
 
 def get_presciption_classification_beta(request):
-    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
+    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION_BETA(request=request)
     return PRESCIPTION_classification.get_drug_class_classification()
 
 
