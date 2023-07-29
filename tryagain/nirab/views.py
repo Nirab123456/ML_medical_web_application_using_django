@@ -95,17 +95,6 @@ def get_medicine_details(request):
         return JsonResponse({'error': 'Medication not found'}, status=404)
     
 
-
-def get_presciption_classification(request):
-    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
-    return PRESCIPTION_classification.get_presciption_classification()
-
-
-
-
-
-
-
 def medicine_details(request):
     if request.method == 'POST':
         form = MedicineForm(request.POST)
@@ -116,6 +105,15 @@ def medicine_details(request):
     else:
         form = MedicineForm()
     return render(request, 'medicine_details.html', {'medication_form': form})
+
+
+
+
+
+def get_presciption_classification(request):
+    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
+    return PRESCIPTION_classification.get_presciption_classification()
+
 
 
 def presciption_classification(request):
@@ -130,6 +128,20 @@ def presciption_classification(request):
     return render(request, 'presciption_classification.html', {'medication_form': form})
 
 
+def presciption_classification_beta(request):
+    if request.method == 'POST':
+        form = MedicineForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            name = name.lower()
+            return render(request, 'presciption_classification_beta.html', {'medication_form': form, 'name_of_medication': name})
+    else:
+        form = MedicineForm()
+    return render(request, 'presciption_classification_beta.html', {'medication_form': form})
+
+
+def get_presciption_classification_beta(request):
+    pass
 
 
 
