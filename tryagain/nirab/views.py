@@ -145,7 +145,7 @@ def presciption_classification_beta(request):
 
 def get_presciption_classification_beta(request):
     PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION_BETA(request=request)
-    return PRESCIPTION_classification.get_drug_class_classification()
+    return PRESCIPTION_classification.get_presciption_classification()
 
 
 

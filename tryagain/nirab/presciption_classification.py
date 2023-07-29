@@ -13,7 +13,10 @@ class PRESCIPTION_CLASSIFICATION():
 
     def get_presciption_classification(self):
         drug_class_groups = self.get_drug_class_classification()
+        # print(f'drug_class_list: {drug_class_groups}')
         side_effect_groups = self.get_side_effect_classification()
+        print(f'side_effect_list: {side_effect_groups}')
+
         contraindication_groups = self.get_contraindication_classification()
 
         all_groups = []

@@ -92,20 +92,17 @@ xhr.onload = function() {
         detailsHtml += "<h4> DRUG CLASS </h4>";
         var drug_class_indication_groups = new Set();
 
+        if (medication.heading && medication.specific_class) {
 
-        if (medication.drug_class_group && medication.drug_class_indication) {
-            var drug_class_indication_groups = new Set();
-
-            for (var j = 0; j < medication.drug_class_indication.split(",").length; j++) {
-              var group = medication.drug_class_group.split(",")[j].toUpperCase();
-              var indication = medication.drug_class_indication.split(",")[j];
+            for (var j = 0; j < medication.heading.split(",").length; j++) {
+              var heading = medication.heading.split(",")[j].toUpperCase();
+              var specific_class = medication.specific_class.split(",")[j];
 
               // Check if the group is already processed
-              if (!drug_class_indication_groups.has(indication)) {
-                detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
+              if (!drug_class_indication_groups.has(specific_class)) {
+                detailsHtml += "<p><strong class='medication-group'>MAIN CLASS</strong>"+heading+"</p>";
+                detailsHtml += "<p><strong class='medication-group'>SPECIFIC CLASS</strong>"+specific_class+"</p>";
 
-                // Add the group to the set of processed groups for indication
-                drug_class_indication_groups.add(indication);
               }
             }
         }
