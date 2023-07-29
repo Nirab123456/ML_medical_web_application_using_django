@@ -17,7 +17,17 @@ admin.site.register(Classify_Drug_Class)
 admin.site.register(Classify_Side_Effect)
 admin.site.register(Classify_CONTRADICTIONS)
 admin.site.register(SELECTED_QUESTION_ANSWER)
-admin.site.register(Presciption_drug_class)
+
+
+#show Presciption_drug_class alpabetically
+@admin.register(Presciption_drug_class)
+class Presciption_drug_classAdmin(admin.ModelAdmin):
+    list_display = ('generic_name', 'heading','drug_class')
+    list_filter = ('generic_name', 'heading','drug_class')
+    ordering = ('generic_name',)
+    search_fields = ('generic_name', 'heading','drug_class')
+
+    
 
 
 

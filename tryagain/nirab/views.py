@@ -140,8 +140,12 @@ def presciption_classification_beta(request):
     return render(request, 'presciption_classification_beta.html', {'medication_form': form})
 
 
+
+
+
 def get_presciption_classification_beta(request):
-    pass
+    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
+    return PRESCIPTION_classification.get_drug_class_classification()
 
 
 
