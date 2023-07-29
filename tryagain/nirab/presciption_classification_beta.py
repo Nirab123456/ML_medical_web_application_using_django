@@ -11,6 +11,7 @@ class PRESCIPTION_CLASSIFICATION_BETA():
 
 
     def get_presciption_classification(self):
+        x=self.calculate_drug_class_match()
         drug_class_groups = self.get_drug_class_classification()
         if drug_class_groups:
             return JsonResponse(drug_class_groups, safe=False)
@@ -62,9 +63,74 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                 merged_group['specific_class'] = ','.join([d['specific_class'] for d in group if d['specific_class']])
                 merged_groups.append(merged_group)
 
-        print(f'drug_class_list: {merged_groups}')
         return merged_groups
-    
+        
+
+    def calculate_drug_class_match(self):
+        print("calculate_drug_class_match() function started")
+        drug_class_groups_list = self.get_drug_class_classification()
+        all_list = []
+
+        if drug_class_groups_list is not None:
+            for drug_class_group in drug_class_groups_list:
+                name = drug_class_group['name']
+                headings = drug_class_group['heading'].split(',')
+                specific_class = drug_class_group['specific_class'].split(',')
+
+                # Combine nested list
+                combined_list = [name, headings, specific_class]
+                all_list.append(combined_list)
+
+        # Now, let's check for matches between each pair of lists in all_list
+        for i in range(len(all_list)):
+            name1, headings1, specific_class1 = all_list[i]
+            for j in range(i + 1, len(all_list)):
+                name2, headings2, specific_class2 = all_list[j]
+
+                # Check for matches between headings and specific_class for the current pair of lists
+                heading_matches = set(headings1) & set(headings2)
+                specific_class_matches = set(specific_class1) & set(specific_class2)
+
+                # Print the results for the current comparison
+                print(f"Matching name: {name1} and {name2}")
+                print(f"Matching headings: {list(heading_matches) if heading_matches else 'no matching'}")
+                print(f"Matching specific class: {list(specific_class_matches) if specific_class_matches else 'no matching'}")
+                print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # drug_sets = [self.create_class_set(drug['heading']) for drug in drug_class_groups_list]
+        # print(f'drug_sets: {drug_sets}')
+        # matching_indices = {}
+        # for i, drug_set in enumerate(drug_sets):
+        #     matching_indices[i] = []
+        #     for j, other_set in enumerate(drug_sets):
+        #         if i != j and sorted(drug_set) == sorted(other_set):
+        #             matching_indices[i].append(j)
+
+        # # Collect the matching dictionaries and their matches
+        # matched_data = []
+        # for i, matches in matching_indices.items():
+        #     if matches:
+        #         matched_data.append({
+        #             'original': drug_class_groups_list[i],
+        #             'matches': [drug_class_groups_list[j] for j in matches]
+        #         })
+
+        # print("calculate_drug_class_match() function completed")
+        # return matched_data
+
 
     def get_side_effect_classification(self):
         pass
