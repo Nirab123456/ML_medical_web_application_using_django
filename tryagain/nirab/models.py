@@ -67,6 +67,21 @@ class Classify_Drug_Class(models.Model):
 
 
 
+class Presciption_drug_class(models.Model):
+    generic_name = models.CharField(max_length=200)
+    drug_class = models.CharField(max_length=200)
+    heading = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.generic_name
+    
+
+
+
+
+
+
+
 
 
 class Classify_Side_Effect(models.Model):
