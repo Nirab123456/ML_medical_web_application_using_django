@@ -1,0 +1,986 @@
+Entity Group,Word,Score,Generic Name,Use Case
+disease_disorder,simplex keratitis,0.93262136,acyclovir (ophthalmic),herpes simplex keratitis
+disease_disorder,activated charcoal poisoning,0.99160814,activated charcoal,"poisoning due to foods, heavy meals &amp"
+disease_disorder,chronic obstructive pulmonary disease,0.9997614,aclidinium bromide + formoterol fumarate,maintenance treatment of patients with chronic obstructive pulmonary disease
+sign_symptom,clinical,0.6000981,acetylcysteine,certain clinical condition
+disease_disorder,joint disorders,0.99585986,acemetacin,joint disorders
+disease_disorder,rheumatoid arthritis,0.8770725,aceclofenac,"osteoarthritis, rheumatoid arthritis"
+sign_symptom,dysentery,0.9270135,"bandish [oak galls, tannic acid]",epistaxis menorrhagia blood dysentery
+sign_symptom,bleeding,0.9999553,aushokarist [saraca indica],indicated in- dysfunctional uterine bleeding
+sign_symptom,nervous debility,0.9983592,aswagandharista,nervous debility
+disease_disorder,ashok,0.4990855,ashokarista,premenstrual syndrome
+disease_disorder,malnutrition,0.99222505,aravindasav,malnutrition indigestion immune deficiency dysentery worm
+disease_disorder,immune deficiency,0.99583757,aravindasav,malnutrition indigestion immune deficiency dysentery worm
+sign_symptom,ulcer,0.9689754,antacid [unani],peptic ulcer
+disease_disorder,digestive disorders,0.9997422,aniseed + indian dill + black cardamom + peppermint,digestive disorders
+disease_disorder,andrographis paniculata,0.99433213,andrographis paniculata,viral fever flu common cold sinusitis upper respiratory tract infection viral hepatitis
+disease_disorder,viral fever,0.99669313,andrographis paniculata,viral fever flu common cold sinusitis upper respiratory tract infection viral hepatitis
+disease_disorder,cold,0.65060097,andrographis paniculata,viral fever flu common cold sinusitis upper respiratory tract infection viral hepatitis
+disease_disorder,sinusitis,0.9516066,andrographis paniculata,viral fever flu common cold sinusitis upper respiratory tract infection viral hepatitis
+disease_disorder,infection,0.99960226,andrographis paniculata,viral fever flu common cold sinusitis upper respiratory tract infection viral hepatitis
+disease_disorder,viral hepatitis,0.99973005,andrographis paniculata,viral fever flu common cold sinusitis upper respiratory tract infection viral hepatitis
+sign_symptom,hyper,0.99986756,allopurinol,hyperuricosuria
+sign_symptom,hyperplasia,0.84917355,alfuzosin hydrochloride,treatment of the signs and symptoms of benign prostatic hyperplasia
+disease_disorder,major depressive disorder,0.92785543,agomelatine,major depressive disorder especially in non-responders
+disease_disorder,colorectal cancer,0.9996906,aflibercept,metastatic colorectal cancer
+disease_disorder,tetanus infection,0.9976341,adsorbed tetanus vaccine,not to be used for the treatment of tetanus infection
+sign_symptom,allergic reactions,0.99987024,adrenaline,if a person begins exhibiting severe allergic reactions
+sign_symptom,spermatorrhoe,0.48463264,dasamularista,spermatorrhoea
+disease_disorder,arthritis,0.9990914,curcuminoids [curcuma longa],rheumatoid arthritis
+disease_disorder,infection,0.99985015,cranberry [vaccinium macrocarpon],urinary tract infection
+disease_disorder,mitochondrial disorders,0.99674,coenzyme q10 [ubidecarenone],mitochondrial disorders
+sign_symptom,worms,0.9643743,chirata [swertia chirata],long term uses of chiratacapsule destroy intestinal worms
+sign_symptom,flatulence,0.99987435,chebulic myrobalan + barberry,constipation flatulence
+disease_disorder,papaya,0.28722185,carica papaya leaf extract,no specific data available
+sign_symptom,tooth,0.9998211,camphor + thymol + menthol + eucalyptus oil,"headache, toothache and burns"
+sign_symptom,burns,0.99988055,camphor + thymol + menthol + eucalyptus oil,"headache, toothache and burns"
+disease_disorder,hepatitis,0.5280903,buzuri,hepatitis jaundice
+disease_disorder,rasayan memory deficiency,0.97974956,brahmi rasayan,memory deficiency impaired speech rough &amp
+sign_symptom,impaired,0.6357791,brahmi rasayan,memory deficiency impaired speech rough &amp
+disease_disorder,septicemia,0.6725695,amikacin,bacterial septicemia
+sign_symptom,cough,0.9949721,ambroxol hydrochloride,productive cough
+disease_disorder,pulmonary arterial hypertension,0.99868613,ambrisentan,pulmonary arterial hypertension
+disease_disorder,parkinsonism,0.82489824,amantadine hydrochloride,parkinsonism
+disease_disorder,citrate irritable bowel syndrome,0.8964221,alverine citrate,irritable bowel syndrome
+sign_symptom,alter,0.63822496,aluminium chloride + melaleuca alternifolia oil + geothermal water,hyperhidrosis
+sign_symptom,hyper,0.9995845,aluminium chloride + melaleuca alternifolia oil + geothermal water,hyperhidrosis
+disease_disorder,embolism,0.9735913,alteplase,pulmonary embolism
+disease_disorder,ginkgo biloba,0.957231,ginkgo biloba,sexual dysfunction associated with ssri use
+disease_disorder,sexual dysfunction,0.9768601,ginkgo biloba,sexual dysfunction associated with ssri use
+disease_disorder,diabetes,0.9730953,garlitab,in- diabetes rheumatoid arthritis gout respiratory tract infection
+disease_disorder,rheumatoid arthritis,0.9952963,garlitab,in- diabetes rheumatoid arthritis gout respiratory tract infection
+disease_disorder,infection,0.99911577,garlitab,in- diabetes rheumatoid arthritis gout respiratory tract infection
+sign_symptom,hypertension,0.9997752,garlic oil,"hyperlipidemia, atherosclerosis, mild hypertension"
+sign_symptom,hyper,0.99967146,flaxseed oil [linum usitatissimum],"hyperlipidemia, constipation"
+sign_symptom,consti,0.941056,flaxseed oil [linum usitatissimum],"hyperlipidemia, constipation"
+sign_symptom,hyper,0.9984363,"fishar [snake root, potassium, magnesium]",hypertension
+sign_symptom,ulcers,0.8410942,fermented soy [lactobacillus delbrueckii],occasional heartburn gastric and duodenal ulcers
+disease_disorder,premenstrual syndrome,0.9936517,evening primrose oil,premenstrual syndrome symptoms
+sign_symptom,symptoms,0.99971753,evening primrose oil,premenstrual syndrome symptoms
+sign_symptom,sperm,0.6932687,espand,spermatorrhoea
+disease_disorder,officinalis,0.7700002,emblica officinalis + piper longum,"tuberculosis of lungs, asthma and bronchitis"
+disease_disorder,tuberculosis,0.9966738,emblica officinalis + piper longum,"tuberculosis of lungs, asthma and bronchitis"
+disease_disorder,asthma,0.97834456,emblica officinalis + piper longum,"tuberculosis of lungs, asthma and bronchitis"
+disease_disorder,bronchitis,0.9576125,emblica officinalis + piper longum,"tuberculosis of lungs, asthma and bronchitis"
+sign_symptom,dandr,0.54252064,emblic myrobalan + sesame,dandruff insomnia
+disease_disorder,indigestion,0.984017,emblic myrobalan + chebulic + belleric,constipation anorexia indigestion diabetes
+disease_disorder,diabetes,0.9989666,emblic myrobalan + chebulic + belleric,constipation anorexia indigestion diabetes
+sign_symptom,cough,0.99961406,ejaz,all types of cough
+disease_disorder,echinacea,0.79897064,echinacea,"common cold, cough, bronchitis and other upper respiratory tract infections"
+disease_disorder,infections,0.99939215,echinacea,"common cold, cough, bronchitis and other upper respiratory tract infections"
+sign_symptom,hypertension,0.99316263,amlodipine besilate + valsartan,not indicated for the initial therapy of hypertension
+sign_symptom,hypertension,0.9971272,amlodipine besilate + benazepril hydrochloride,not indicated for the initial therapy of hypertension
+disease_disorder,hypertension,0.98969436,amlodipine besilate,essential hypertension
+sign_symptom,depression,0.9995111,amitriptyline hydrochloride + chlordiazepoxide,moderate to severe depression associated with moderate to severe anxiety
+sign_symptom,anxiety,0.99970955,amitriptyline hydrochloride + chlordiazepoxide,moderate to severe depression associated with moderate to severe anxiety
+sign_symptom,weakness,0.9999323,kabid nawshadri,weakness of stomach and liver hepatitis
+disease_disorder,hepatitis,0.9998857,kabid nawshadri,weakness of stomach and liver hepatitis
+disease_disorder,rheumatoid arthritis,0.88053083,jogaraj guggulu,rheumatoid arthritis
+sign_symptom,digest,0.94557816,jirakaddarista,digestive disturbances
+disease_disorder,anaemia,0.99489665,jinsin,anaemia immunodeficiency
+disease_disorder,immunodeficiency,0.990195,jinsin,anaemia immunodeficiency
+disease_disorder,reactive arthritis,0.90609115,jeerakaddarishta carminative,reactive arthritis
+sign_symptom,dyspepsia,0.8990549,jamani arka,"indigestion, dyspepsia"
+sign_symptom,cold,0.9984622,"jadwar [denudatum, saffron, henbane]",chronic cold catarrh &amp; cough
+sign_symptom,cough,0.9998859,"jadwar [denudatum, saffron, henbane]",chronic cold catarrh &amp; cough
+disease_disorder,peptic,0.7560996,hingastak churna,"hyperacidity, peptic ulcer disease"
+disease_disorder,ulcer disease,0.99827105,hingastak churna,"hyperacidity, peptic ulcer disease"
+sign_symptom,anaemia,0.95798546,herbal multivitamin,anaemia of pregnancy
+sign_symptom,hyperacidity,0.9959131,herbal gastric preparation,hyperacidity
+sign_symptom,cough,0.9231419,herbal cough syrup [vasakarista],"asthma, smokers cough and throat hoarseness"
+sign_symptom,smokers,0.8133186,herbal cough syrup [vasakarista],"asthma, smokers cough and throat hoarseness"
+sign_symptom,cough,0.9996301,herbal cough syrup [vasakarista],"asthma, smokers cough and throat hoarseness"
+sign_symptom,hoarseness,0.9995187,herbal cough syrup [vasakarista],"asthma, smokers cough and throat hoarseness"
+disease_disorder,malaria,0.99982566,artemether + lumefantrine,malaria infections
+disease_disorder,infections,0.9998273,artemether + lumefantrine,malaria infections
+disease_disorder,malaria,0.9989718,artemether,malaria
+disease_disorder,schizophrenia,0.9991634,aripiprazole,schizophrenia schizoaffective disorder
+disease_disorder,schizoaffective disorder,0.99941635,aripiprazole,schizophrenia schizoaffective disorder
+sign_symptom,nausea,0.99996245,aprepitant,prevention of postoperative nausea and vomiting
+sign_symptom,vomiting,0.9999571,aprepitant,prevention of postoperative nausea and vomiting
+sign_symptom,apremi,0.9366192,apremilast,moderate to severe plaque psoriasis
+sign_symptom,plaque,0.86113626,apremilast,moderate to severe plaque psoriasis
+disease_disorder,atrial fibrillation,0.99986184,apixaban,in patients with nonvalvular atrial fibrillation
+disease_disorder,anti,0.5855269,antihemophilic factor [factor viii],haemophilia a
+sign_symptom,anemia,0.97116166,nabayas louha herbal haematinic,iron deficiency anemia
+sign_symptom,oligomenorrhea,0.8984006,monjistha [rubia cordifolia],"dysmenorrhoea, oligomenorrhea"
+sign_symptom,pain,0.99984026,menthol + camphor + methyl salicylate + oleoresin capsicum,"muscle pain sprains, strains and sports injuries"
+disease_disorder,strains,0.63655674,menthol + camphor + methyl salicylate + oleoresin capsicum,"muscle pain sprains, strains and sports injuries"
+sign_symptom,general de,0.9137813,marwareedi,general debility nervous debility
+sign_symptom,nervous debility,0.94749326,marwareedi,general debility nervous debility
+sign_symptom,in - scabies,0.8836004,marham kharish,indicated in- scabies itching pustular piles
+sign_symptom,pustular piles,0.9047929,marham kharish,indicated in- scabies itching pustular piles
+disease_disorder,malus sylvestris,0.99445075,malus sylvestris,no specific data available
+disease_disorder,pulmonary tuberculosis,0.99142003,mahadrakkharist [grape extract],pulmonary fibrosis pulmonary tuberculosis
+disease_disorder,cataracts,0.89047486,lutein + zeaxanthin,cataracts retinitis pigmentosa
+disease_disorder,retinitis pigmentosa,0.81569254,lutein + zeaxanthin,cataracts retinitis pigmentosa
+sign_symptom,spermatorrhoea,0.9142617,liquorice + cascara sagrada + belladona,spermatorrhoea painful micturations nocturnal emission enuresis
+sign_symptom,micturations,0.99708176,liquorice + cascara sagrada + belladona,spermatorrhoea painful micturations nocturnal emission enuresis
+sign_symptom,emission,0.92490745,liquorice + cascara sagrada + belladona,spermatorrhoea painful micturations nocturnal emission enuresis
+sign_symptom,enuresis,0.9896973,liquorice + cascara sagrada + belladona,spermatorrhoea painful micturations nocturnal emission enuresis
+disease_disorder,acne vulgaris,0.9998235,azelaic acid,mild to moderate inflammatory acne vulgaris
+disease_disorder,erectile dysfunction,0.9895356,avanafil,erectile dysfunction
+disease_disorder,bowel syndrome,0.95843166,atropine sulfate,"non ulcer dyspepsia, irritable bowel syndrome"
+disease_disorder,attention deficit hyperactivity disorder,0.9994996,atomoxetine hydrochloride,attention deficit hyperactivity disorder (adhd).
+sign_symptom,hyper,0.9968489,atenolol + chlorthalidone,hypertension
+disease_disorder,angina pectoris,0.9997269,atenolol,for the long-term management of patients with angina pectoris
+sign_symptom,hyperplasia,0.9527774,pumpkin [cucurbita pepo],commonly used by mouth for symptoms of benign prostatic hyperplasia
+sign_symptom,hemorrhoids,0.98997134,psyllium [ispaghula husk] + senna extract,constipation hemorrhoids or piles bowel regulation
+sign_symptom,diarrhea,0.918997,probiotic combination [4 billion],antibiotic associated diarrhea
+disease_disorder,infection,0.99956065,probiotic combination [2.3 billion],urinary tract infection
+sign_symptom,irritable,0.6802018,peppermint oil,irritable bowel syndrome
+disease_disorder,bowel syndrome,0.97413987,peppermint oil,irritable bowel syndrome
+sign_symptom,loss,0.9660247,penitab,loss of memory dementia
+sign_symptom,memory,0.98243815,penitab,loss of memory dementia
+disease_disorder,dementia,0.9905144,penitab,loss of memory dementia
+sign_symptom,pechish,0.7151799,pechish,indicated
+sign_symptom,pain,0.9999573,patrangasav,low back pain
+sign_symptom,pain,0.99996173,beclomethasone dipropionate + chloramphenicol + clotrimazole + lidocaine,shows excellent pain reduction of lidocaine to treat acute otitis media
+disease_disorder,influenza,0.9996724,baloxavir marboxil,treatment of acute uncomplicated influenza
+sign_symptom,spasticity,0.95997876,baclofen,spasticity
+sign_symptom,diarrhoea,0.99461746,bacillus clausii spores,restores the equilibrium of the intestinal flora changed during diarrhoea
+disease_disorder,aztreonam,0.9935901,aztreonam,infections caused by susceptible aerobic gram-negative micro-organisms
+disease_disorder,infections,0.99940264,aztreonam,infections caused by susceptible aerobic gram-negative micro-organisms
+disease_disorder,conjunctivitis,0.99744284,azithromycin dihydrate (ophthalmic),bacterial conjunctivitis
+disease_disorder,depression,0.96901345,st. johns wort,depression insomnia seasonal affective disorder
+disease_disorder,affective disorder,0.9985271,st. johns wort,depression insomnia seasonal affective disorder
+disease_disorder,liver disease,0.9996207,silymarin [milk thistle],indicated for the treatment and prevention of- liver disease
+disease_disorder,vitamin,0.97713625,sharbat amla,vitamin c deficiency diseases
+disease_disorder,deficiency diseases,0.9913236,sharbat amla,vitamin c deficiency diseases
+sign_symptom,urination problems,0.99766284,saw palmetto (500 mg),urination problems in benign prostatic hyperplasia
+sign_symptom,hyper,0.82437634,saw palmetto (500 mg),urination problems in benign prostatic hyperplasia
+disease_disorder,saribadyarista,0.5008914,saribadyarista,skin diseases
+disease_disorder,skin diseases,0.99950147,saribadyarista,skin diseases
+disease_disorder,gingivitis,0.9777317,sanoon babla,pyorrhoea gingivitis toothache
+sign_symptom,toothache,0.9756081,sanoon babla,pyorrhoea gingivitis toothache
+sign_symptom,stress,0.5446131,sanjivani rasayan,stress
+sign_symptom,general debility,0.99743724,salep + coconut + poppy seeds + almond,general debility nervous debility
+sign_symptom,nervous debility,0.9980242,salep + coconut + poppy seeds + almond,general debility nervous debility
+sign_symptom,poly,0.99996555,"salajeet [mineral pitch, red sage]",polyuria leucorrhoea
+sign_symptom,leucorrhoea,0.9237415,"salajeet [mineral pitch, red sage]",polyuria leucorrhoea
+sign_symptom,sexual debility,0.9952691,saffron + sand lizard + nutmeg fruit,sexual debility loss of libido premature ejaculation fatigue
+sign_symptom,loss,0.78127277,saffron + sand lizard + nutmeg fruit,sexual debility loss of libido premature ejaculation fatigue
+sign_symptom,premature ejaculation,0.9995472,saffron + sand lizard + nutmeg fruit,sexual debility loss of libido premature ejaculation fatigue
+sign_symptom,fatigue,0.98146814,saffron + sand lizard + nutmeg fruit,sexual debility loss of libido premature ejaculation fatigue
+sign_symptom,asthma,0.8655398,betamethasone,asthma severe allergic reactions rheumatoid arthritis
+sign_symptom,allergic reactions,0.99708927,betamethasone,asthma severe allergic reactions rheumatoid arthritis
+disease_disorder,rheumatoid arthritis,0.9987235,betamethasone,asthma severe allergic reactions rheumatoid arthritis
+sign_symptom,vertigo,0.9999236,betahistine mesylate,vertigo and dizziness
+disease_disorder,infections,0.9982266,besifloxacin,fewer than 10 infections
+sign_symptom,besil,0.98196524,bepotastine besilate,itching associated with signs and symptoms of allergic conjunctivitis
+sign_symptom,allergic,0.50921357,bepotastine besilate,itching associated with signs and symptoms of allergic conjunctivitis
+disease_disorder,conjunctivitis,0.9391481,bepotastine besilate,itching associated with signs and symptoms of allergic conjunctivitis
+disease_disorder,pneumonia,0.99965525,benzyl penicillin,pneumonia
+sign_symptom,scabies,0.6047292,benzyl benzoate,indicated for scabies
+sign_symptom,sore,0.99974376,benzocaine + camphor + methanol + phenol,"sore throat, toothaches, gum pain, canker sores"
+sign_symptom,toothache,0.95446575,benzocaine + camphor + methanol + phenol,"sore throat, toothaches, gum pain, canker sores"
+sign_symptom,canker sores,0.9935057,benzocaine + camphor + methanol + phenol,"sore throat, toothaches, gum pain, canker sores"
+sign_symptom,cracked,0.94543827,-sitosterol,burn leg ulcer surgical wound obstetric wound cracked nipple
+disease_disorder,hydrochloride erectile dysfunction,0.96864444,yohimbine hydrochloride,erectile dysfunction
+sign_symptom,ulcer,0.99934727,white damar + acacia + bole rubra,diarrhoea gastric ulcer duodenal ulcer
+sign_symptom,ulcer,0.99486005,white damar + acacia + bole rubra,diarrhoea gastric ulcer duodenal ulcer
+disease_disorder,insomnia,0.44509175,valerian root,insomnia
+sign_symptom,hyperurice,0.73449826,tart cherry,gout hyperuricemia
+disease_disorder,infection,0.9862264,"suzark [chir pine, chickpea, pearl]",gonorrhea burning sensation during urination urinary tract infection
+disease_disorder,rheumatoid,0.91446,suranjan,gout rheumatoid arthritis
+disease_disorder,arthritis,0.7322509,suranjan,gout rheumatoid arthritis
+sign_symptom,pain,0.99995553,benzocaine,temporary relief of pain due to minor injury or irritation of the mouth
+disease_disorder,injury,0.997326,benzocaine,temporary relief of pain due to minor injury or irritation of the mouth
+sign_symptom,irritation,0.999926,benzocaine,temporary relief of pain due to minor injury or irritation of the mouth
+disease_disorder,infections,0.9997291,benzathine penicillin,prophylaxis of penicillin-sensitive secondary infections especially in children
+sign_symptom,constipation,0.97699964,bisacodyl,constipation
+disease_disorder,ocular hypertension,0.9830314,bimatoprost,ocular hypertension
+disease_disorder,rhino - conjunctivitis,0.99986154,bilastine,allergic rhino-conjunctivitis
+disease_disorder,renal failure,0.81561196,bicarbonate component [hco3 hemodialysis solution],"renal failure, chronic renal failure and haemodialysis"
+disease_disorder,color,0.9993649,bevacizumab,indiated for - metastatic colorectal cancer
+sign_symptom,corticosteroid - responsive dermatoses,0.89894736,betamethasone dipropionate,resistant or severe corticosteroid-responsive dermatoses
+disease_disorder,otitis externa,0.9820282,betamethasone + neomycin sulphate (e/e),ear : otitis externa
+disease_disorder,infections,0.98826724,betamethasone + gentamicin,"wet, oozing primary infections, and greasy, secondary infections"
+disease_disorder,infections,0.9654506,betamethasone + clotrimazole,topical treatment of inflammatory dermal infections
+sign_symptom,hypercholesterolemia,0.8644123,bempedoic acid,heterozygous familial hypercholesterolemia
+sign_symptom,burn,0.96043223,rhubarb + ginger,heart burn abdominal pain due to gases nausea
+sign_symptom,pain,0.9999659,rhubarb + ginger,heart burn abdominal pain due to gases nausea
+sign_symptom,nausea,0.99993324,rhubarb + ginger,heart burn abdominal pain due to gases nausea
+disease_disorder,leucorrhoea,0.87108094,rehmin,leucorrhoea weakness of uterus
+sign_symptom,weakness,0.9999597,rehmin,leucorrhoea weakness of uterus
+sign_symptom,cough,0.9983405,bromhexine hydrochloride,respiratory tract disorders associated with productive cough
+sign_symptom,edema,0.96655136,bromelain + trypsin,"inflammatory pains, soft tissue inflammation, edema associated with trauma and surgery"
+disease_disorder,trauma,0.7791834,bromelain + trypsin,"inflammatory pains, soft tissue inflammation, edema associated with trauma and surgery"
+disease_disorder,surgery,0.8576923,bromelain + trypsin,"inflammatory pains, soft tissue inflammation, edema associated with trauma and surgery"
+sign_symptom,emotional disturbances,0.9981878,bromazepam,bromazepam is indicated in- emotional disturbances
+disease_disorder,glaucoma,0.7084998,brimonidine tartrate + timolol maleate,glaucoma or ocular hypertension
+sign_symptom,hypertension,0.6833655,brimonidine tartrate + timolol maleate,glaucoma or ocular hypertension
+sign_symptom,hyper,0.75033355,brimonidine tartrate,chronic open-angle glaucoma or ocular hypertension
+disease_disorder,lymphoma kinase,0.924389,brigatinib,patients with anaplastic lymphoma kinase
+disease_disorder,multiple,0.512321,bortezomib,treatment of patients with multiple myeloma
+disease_disorder,squamous cell carcinoma,0.93628675,bleomycin sulfate,squamous cell carcinoma : head and neck
+sign_symptom,hypertensive crises,0.99606687,bisoprolol hemifumarate,not recommended for the emergency treatment of hypertensive crises
+sign_symptom,hyper,0.9983719,bisoprolol fumarate + hydrochlorothiazide,hypertension
+sign_symptom,upset,0.9999075,bismuth subsalicylate,upset stomach indigestion heartburn nausea and diarrhea
+sign_symptom,heartburn,0.8348819,bismuth subsalicylate,upset stomach indigestion heartburn nausea and diarrhea
+sign_symptom,nausea,0.9999515,bismuth subsalicylate,upset stomach indigestion heartburn nausea and diarrhea
+sign_symptom,diarrhea,0.9903002,bismuth subsalicylate,upset stomach indigestion heartburn nausea and diarrhea
+disease_disorder,skin diseases,0.99891585,nimbadi churna,skin diseases
+disease_disorder,infections,0.79141456,neem,viral skin infections
+sign_symptom,arterial,0.82471585,aspirin,prophylaxis against arterial occlusive events
+sign_symptom,monohydra,0.6857262,calcipotriol monohydrate,chronic stable plaque type psoriasis vulgaris in adult patients
+sign_symptom,plaque,0.9769408,calcipotriol monohydrate,chronic stable plaque type psoriasis vulgaris in adult patients
+disease_disorder,vulgaris,0.9777323,calcipotriol monohydrate,chronic stable plaque type psoriasis vulgaris in adult patients
+disease_disorder,apnea,0.7322767,caffeine citrate,apnea of prematurity
+sign_symptom,prematurity,0.9164756,caffeine citrate,apnea of prematurity
+disease_disorder,due to pituitary adenomas,0.98342407,cabergoline,either idiopathic or due to pituitary adenomas
+disease_disorder,cancer,0.9353082,cabazitaxel,patients with hormone refractory metastatic prostate cancer
+sign_symptom,cough,0.9984257,butamirate citrate,acute cough of any etiology
+disease_disorder,renal disease,0.79007965,bumetanide,renal disease including the nephrotic syndrome
+disease_disorder,neph,0.7971239,bumetanide,renal disease including the nephrotic syndrome
+disease_disorder,colitis,0.807039,budesonide (tablet),mild to moderate ulcerative colitis
+disease_disorder,asthma,0.99056834,budesonide (nebuliser suspension),maintenance treatment and as prophylactic therapy of asthma
+disease_disorder,nasal polyps,0.91943747,budesonide (nasal spray),nasal polyposis. prevention against nasal polyps after polypectomy
+sign_symptom,cotton,0.35864216,licorice + yellow silk cotton + mastic tree,hyperacidity gastric ulcer duodenal ulcer
+sign_symptom,hyper,0.5809901,licorice + yellow silk cotton + mastic tree,hyperacidity gastric ulcer duodenal ulcer
+sign_symptom,ulcer,0.99945307,licorice + yellow silk cotton + mastic tree,hyperacidity gastric ulcer duodenal ulcer
+sign_symptom,ulcer,0.99427044,licorice + yellow silk cotton + mastic tree,hyperacidity gastric ulcer duodenal ulcer
+sign_symptom,headache,0.9999243,lavendar [lavendula stoechas],chronic catarrh headache
+disease_disorder,oligospermia,0.94593805,kusta qalyee [calcined stannum],spermatorrhoea oligospermia
+sign_symptom,fever,0.97972065,khakshi,in- fever influenza
+sign_symptom,influenza,0.7118255,khakshi,in- fever influenza
+disease_disorder,infections,0.7075434,ampicillin sodium,infections of thegastrointestinal tract
+sign_symptom,cold,0.33766004,calcium lactate gluconate + calcium carbonate + vitamin c,adjuvant in colds and influenza.
+sign_symptom,deficiencies,0.9735971,calcium lactate,"heartburn, calcium supplement, calcium deficiencies"
+sign_symptom,hyper,0.99990666,calcium gluconate,severe hypermagnesaemia
+disease_disorder,multi,0.97866577,calcium carbonate + vitamin d3 + multimineral,lactation deficiency state
+sign_symptom,state,0.842946,calcium carbonate + vitamin d3 + multimineral,lactation deficiency state
+disease_disorder,renal failure,0.97069883,calcium carbonate [elemental source] + vitamin d3,phosphate binder in chronic renal failure
+sign_symptom,rickets,0.99882686,calcium carbonate [eggshell source] + vitamin d3,rickets
+disease_disorder,vitamin d3 deficiency,0.92830217,calcium carbonate [algae source] + vitamin d3,deficiency
+sign_symptom,hyper,0.9679101,calcium carbonate,increasingly often to treat hyperphosphataemia in chronic renal failure
+disease_disorder,renal failure,0.9996413,calcium carbonate,increasingly often to treat hyperphosphataemia in chronic renal failure
+sign_symptom,hyperphosphatemia,0.94647676,calcium acetate,hyperphosphatemia in end stage renal disease (esrd)
+disease_disorder,end stage,0.9032142,calcium acetate,hyperphosphatemia in end stage renal disease (esrd)
+disease_disorder,renal disease,0.8766664,calcium acetate,hyperphosphatemia in end stage renal disease (esrd)
+sign_symptom,cough syrup,0.80493724,herbal cough syrup [glycyrrhiza glabra],indicated in- cough
+sign_symptom,cough,0.82933253,herbal cough syrup [glycyrrhiza glabra],indicated in- cough
+sign_symptom,cough,0.98523694,herbal cough syrup [adhatoda vasica],all types of cough
+sign_symptom,cough,0.99936324,herbal cough syrup [adhatoda vasica],all types of cough
+disease_disorder,erectile dysfunction,0.9997377,habb-e-nishat,erectile dysfunction
+sign_symptom,haemorrhoid,0.99214315,guggul + barberry + chebulic myrobalan,haemorrhoid
+disease_disorder,chronic,0.99897814,amino acid keto analogues,chronic kidney disease
+disease_disorder,kidney disease,0.8170917,amino acid keto analogues,chronic kidney disease
+disease_disorder,zinc deficiency,0.78542733,carbonyl iron + folic acid + zinc sulfate,"iron, folic acid and zinc deficiency especially during pregnancy and lactation"
+disease_disorder,bronch,0.7333056,carbocisteine,"acute bronchitis, chronic bronchitis, bronchial asthma"
+disease_disorder,asthma,0.6617137,carbocisteine,"acute bronchitis, chronic bronchitis, bronchial asthma"
+sign_symptom,- clonic,0.988265,carbamazepine,partial and secondary generalized tonic-clonic seizures
+sign_symptom,seizures,0.999818,carbamazepine,partial and secondary generalized tonic-clonic seizures
+disease_disorder,osteoarthritis,0.99390835,capsaicin,"rheumatoid arthritis, osteoarthritis"
+disease_disorder,colon cancer,0.987381,capecitabine,adjuvant colon cancer
+sign_symptom,hyper,0.98687774,candesartan cilexetil + hydrochlorothiazide,hypertension
+disease_disorder,heart failure,0.99963534,candesartan cilexetil,"hypertension, heart failure with impaired left ventricular systolic function"
+sign_symptom,headache,0.9999101,camphor + menthol + oil clove + oil eucalyptus + oil turpentine,headache
+sign_symptom,hyper,0.99982136,calcium polystyrene sulfonate,hyperkalemia due to acute and chronic renal failure
+disease_disorder,renal failure,0.99984944,calcium polystyrene sulfonate,hyperkalemia due to acute and chronic renal failure
+sign_symptom,burning,0.5397039,calcium pantothenate,burning feet syndrome
+disease_disorder,feet syndrome,0.8403044,calcium pantothenate,burning feet syndrome
+disease_disorder,hepatitis,0.95675427,dinar,jaundice hepatitis
+sign_symptom,leucorrhoea,0.9064551,devils cotton + ashoka bark + aswagandha,leucorrhoea metritis anaemia
+sign_symptom,metritis,0.9859355,devils cotton + ashoka bark + aswagandha,leucorrhoea metritis anaemia
+sign_symptom,anaemia,0.9994699,devils cotton + ashoka bark + aswagandha,leucorrhoea metritis anaemia
+sign_symptom,weakness,0.9997552,date palm + betel nut + acacia,weakness of uterus leucorrhoea
+sign_symptom,leucorrhoea,0.99929,date palm + betel nut + acacia,weakness of uterus leucorrhoea
+disease_disorder,mellitus,0.68250465,alogliptin benzoate,adults with type-2 diabetes mellitus
+disease_disorder,infections,0.9974916,cefprozil,mild to moderate infections caused by susceptible strains
+disease_disorder,infections,0.99038386,cefpodoxime proxetil + clavulanic acid,infections
+disease_disorder,infections,0.98968863,cefpodoxime proxetil,infections caused by susceptible microorganism
+disease_disorder,infections,0.99979466,cefpirome sulphate,severe infections
+disease_disorder,inflammatory disease,0.9706558,cefoxitin,patients with pelvic inflammatory disease
+disease_disorder,cefo,0.69450176,cefotaxime,infections
+disease_disorder,infections,0.9997677,cefotaxime,infections
+disease_disorder,infections,0.98962057,cefoperazone sodium,infections when caused by susceptible organisms
+disease_disorder,infections,0.9886503,cefixime trihydrate,uncomplicated urinary tract infections
+disease_disorder,neut,0.33968607,cefepime hydrochloride,febrile neutropenic patients
+disease_disorder,infections,0.9996697,cefditoren,mild to moderate infections in adults and adolescents
+disease_disorder,pneumonia,0.999877,cefdinir,community acquired pneumonia
+disease_disorder,infections,0.9848588,cefazolin sodium,infections
+disease_disorder,infections,0.99979955,cefaclor monohydrate,"otitis media, lower respiratory tract infections"
+sign_symptom,dry eye,0.86281013,carmellose sodium,dry eye
+disease_disorder,injuries,0.91848993,carisoprodol,used as an adjunct in physical therapy in injuries
+disease_disorder,dermatitis,0.9865342,biotin,dermatitis
+disease_disorder,bars,0.8982855,barsina,vitiligo or leucoderma
+sign_symptom,cent,0.3257333,adhatoda vasica + centella asiatica,this syrup
+sign_symptom,asiatic,0.5311743,adhatoda vasica + centella asiatica,this syrup
+sign_symptom,flatulence,0.9975436,aloe + black pepper + henbane,constipation flatulence anorexia colic obesity
+disease_disorder,obesity,0.99842024,aloe + black pepper + henbane,constipation flatulence anorexia colic obesity
+disease_disorder,bacterial ear,0.9594593,chloramphenicol + lidocaine hydrochloride,acute bacterial ear infections
+disease_disorder,infections,0.74860466,chloramphenicol + lidocaine hydrochloride,acute bacterial ear infections
+disease_disorder,infections,0.9996178,chloramphenicol (ophthalmic),ocular infections involving the conjunctiva and/or cornea
+sign_symptom,itching,0.93062913,cetirizine hydrochloride (ophthalmic),ocular itching associated with allergic conjunctivitis
+disease_disorder,conjunctivitis,0.9952362,cetirizine hydrochloride (ophthalmic),ocular itching associated with allergic conjunctivitis
+disease_disorder,lung cancer,0.890772,ceritinib,adult patients with metastatic non-small cell lung cancer
+disease_disorder,cephalexin,0.84568995,cephalexin,infections when caused by susceptible organisms
+disease_disorder,infections,0.9997124,cephalexin,infections when caused by susceptible organisms
+disease_disorder,cephradine,0.976315,cephradine,infections caused by sensitive gram-positive and gram-negative bacteria
+disease_disorder,infections,0.9985843,cephradine,infections caused by sensitive gram-positive and gram-negative bacteria
+sign_symptom,high blood pressure,0.99960464,celiprolol hydrochloride,it is used to treat high blood pressure
+sign_symptom,symptoms,0.7991868,celecoxib,for the relief of the signs and symptoms of osteoarthritis
+disease_disorder,osteoarthritis,0.923825,celecoxib,for the relief of the signs and symptoms of osteoarthritis
+disease_disorder,infections,0.94951594,cefuroxime axetil,it is indicated for the treatment of infections caused by sensitive bacteria
+disease_disorder,infections,0.99896216,ceftriaxone sodium,lower respiratory tract infections
+sign_symptom,infections,0.9054223,ceftibuten dihydrate,mild-to-moderate infections
+disease_disorder,infections,0.99295527,ceftazidime pentahydrate,infections caused by susceptible strains of the designated organisms
+disease_disorder,spermatorrhoea,0.88378155,almond + coconut + edible pine + salep,spermatorrhoea oligospermia
+disease_disorder,oligospermia,0.996477,almond + coconut + edible pine + salep,spermatorrhoea oligospermia
+sign_symptom,sexual debility,0.8050367,acacia + dates + asparagus + edible pine,sexual debility
+sign_symptom,bleeding piles,0.9982246,abhayarista,haemorrhoid bleeding piles
+disease_disorder,prostate cancer,0.9895662,abiraterone acetate,metastatic castration-resistant prostate cancer
+disease_disorder,onychomycosis,0.96325225,ciclopirox olamine (nail lacquer),mild to moderate onychomycosis
+disease_disorder,infections,0.99837273,ciclopirox olamine (cream),mild to moderate inflammatory fungal infections
+disease_disorder,cholera,0.9953426,cholera saline,in cholera
+sign_symptom,edema,0.84850895,chlorthalidone,edema associated with congestive heart failure
+disease_disorder,heart failure,0.9995824,chlorthalidone,edema associated with congestive heart failure
+sign_symptom,mania,0.93062454,chlorpromazine hydrochloride,mania and hypomania
+disease_disorder,malaria,0.9998361,chloroquine phosphate,treatment of malaria prophylaxis and suppression of malaria
+disease_disorder,malaria,0.99976903,chloroquine phosphate,treatment of malaria prophylaxis and suppression of malaria
+disease_disorder,infections,0.99736375,chlorhexidine hydrochloride + nystatin,it is used to treat skin infections
+sign_symptom,wounds,0.9960318,chlorhexidine gluconate + cetrimide,for cleansing and irrigating the skin and dirty wounds
+disease_disorder,infection,0.7809481,chlorhexidine gluconate [7.1%],omphalitis (infection of the umbilical cord) in newborn
+disease_disorder,mentally or,0.3495225,chlorhexidine gluconate [0.2%],"following oral surgery, in mentally or physically handicapped patients"
+disease_disorder,handicapped,0.6199876,chlorhexidine gluconate [0.2%],"following oral surgery, in mentally or physically handicapped patients"
+disease_disorder,cerebrovascular disease,0.9996302,citicoline sodium,cerebrovascular disease
+disease_disorder,obsessive - compu,0.8849325,citalopram hydrobromide,obsessive-compulsive disorder and social phobia
+sign_symptom,social phobia,0.99799585,citalopram hydrobromide,obsessive-compulsive disorder and social phobia
+disease_disorder,carcinoma,0.9209598,cisplatin,advanced and metastatic ovarian carcinoma
+disease_disorder,urina,0.87374747,ciprofloxacin,"respiratory tract infections,urinary tract infections, pelvic inflammatory diseases"
+disease_disorder,tract,0.721151,ciprofloxacin,"respiratory tract infections,urinary tract infections, pelvic inflammatory diseases"
+disease_disorder,inflammatory diseases,0.99546206,ciprofloxacin,"respiratory tract infections,urinary tract infections, pelvic inflammatory diseases"
+disease_disorder,motion sickness,0.91671145,cinnarizine + dimenhydrinate,prophylaxis of motion sickness
+sign_symptom,labyrinth,0.8264619,cinnarizine,labyrinthine arteriosclerosis
+disease_disorder,arteriosclerosis,0.9914173,cinnarizine,labyrinthine arteriosclerosis
+sign_symptom,pain,0.9999528,cinchocaine + hydrocortisone + framycetin + esculin,application to relieve pain and discomfort
+sign_symptom,discomfort,0.9999461,cinchocaine + hydrocortisone + framycetin + esculin,application to relieve pain and discomfort
+disease_disorder,hyper,0.6202596,cinacalcet,secondary hyperparathyroidism in patients with chronic kidney disease on dialysis
+disease_disorder,kidney disease,0.9983629,cinacalcet,secondary hyperparathyroidism in patients with chronic kidney disease on dialysis
+disease_disorder,chronic kidney disease,0.99185055,cilnidipine,patients with chronic kidney disease
+disease_disorder,dermatitis,0.94698244,ciclopirox olamine (shampoo),seborrheic dermatitis
+disease_disorder,peripheral arterial disease,0.9995696,clopidogrel bisulphate,"recent mi, recent stroke, or established peripheral arterial disease"
+disease_disorder,peripheral arterial disease,0.99969417,clopidogrel + aspirin,"recent mi, recent stroke, or established peripheral arterial disease"
+disease_disorder,cancer,0.9843284,clonidine hydrochloride,"anxiety, cancer pain, generalized anxiety disorder"
+disease_disorder,generalized anxiety disorder,0.99850065,clonidine hydrochloride,"anxiety, cancer pain, generalized anxiety disorder"
+sign_symptom,obsessions,0.9175967,clomipramine hydrochloride,"depression, obsessions and phobias"
+disease_disorder,ovulatory failure,0.94698447,clomiphene citrate,ovulatory failure in female patients who wish to become pregnant
+disease_disorder,dermatitis,0.99002314,clobetasol propionate (scalp preparation),psoriasis and seborrheic dermatitis
+disease_disorder,inflammation,0.99588877,clioquinol + flumetasone pivalate,external ear inflammation and infections
+disease_disorder,infections,0.9955232,clioquinol + flumetasone pivalate,external ear inflammation and infections
+sign_symptom,infections,0.99879056,clindamycin (lotion),skin infections
+disease_disorder,infections,0.9998072,colistimethate sodium,not indicated for infections due to proteus or neisseria
+disease_disorder,vitamin d3 deficiency,0.9988154,colecalciferol [vitamin d3],patients with vitamin d3 deficiency
+disease_disorder,colchicine,0.4881363,colchicine,in adults and children 4 years or older
+sign_symptom,bleeding,0.9986015,coagulation factor viia [eptacog alfa],bleeding episodes in patients with haemophilia
+disease_disorder,haemophilia,0.9994113,coagulation factor viia [eptacog alfa],bleeding episodes in patients with haemophilia
+disease_disorder,schizophrenia,0.9974209,clozapine,schizophrenia
+sign_symptom,burning,0.64958555,clotrimazole (vaginal tablet),"in vaginal itching, burning and discharge"
+disease_disorder,vaginitis,0.9983725,clotrimazole (vaginal suppository),candidal vaginitis
+disease_disorder,infections,0.9969043,clotrimazole (ear drop),fungal infections
+disease_disorder,cancer,0.9913027,dacomitinib,first-line treatment of patients with metastatic non-small cell lung cancer
+disease_disorder,d - chi,0.91502744,d-chiro-inositol,polycystic ovary syndrome
+disease_disorder,- inositol polycystic ovary syndrome,0.94961774,d-chiro-inositol,polycystic ovary syndrome
+disease_disorder,leukaemic meningitis,0.89812756,cytarabine,leukaemic meningitis
+sign_symptom,anemia,0.99440163,cyanocobalamin,pernicious anemia
+sign_symptom,irritation,0.99994683,crotamiton,itching and skin irritation
+disease_disorder,cancer,0.97192615,crizotinib,patients with- metastatic non-small cell lung cancer
+disease_disorder,corona virus,0.84805745,covid vaccine,corona virus
+sign_symptom,hair growth,0.9998792,copper peptide + procapil + niacinamide + biotin + l-arginine,substantial hair growth
+disease_disorder,prostate cancer,0.9965997,degarelix acetate,adult male patients with advanced hormone-dependent prostate cancer
+sign_symptom,hypersensitivity reactions,0.9998315,deflazacort,"anaphylaxis, asthma, severe hypersensitivity reactions"
+disease_disorder,intoxication,0.7203401,deferoxamine mesylate,acute iron intoxication
+disease_disorder,lymphoblastic leukemia,0.9973739,dasatinib,philadelphia chromosome-positiveacute lymphoblastic leukemia
+sign_symptom,premature ejaculation,0.98061514,dapoxetine hydrochloride,indicated for the treatment of premature ejaculation
+disease_disorder,diabetesmellitus,0.98870957,dapagliflozin propanediol,withtype 2 diabetesmellitus
+disease_disorder,endometriosis,0.99607015,danazol,endometriosis
+sign_symptom,trip,0.94560134,dextromethorphan + phenylephrine + triprolidine,upper respiratory allergies
+sign_symptom,upper respiratory allergies,0.9489093,dextromethorphan + phenylephrine + triprolidine,upper respiratory allergies
+sign_symptom,diaper,0.97437996,dexpanthenol,prevention and treatment of diaper rash in infants
+sign_symptom,rash,0.9996723,dexpanthenol,prevention and treatment of diaper rash in infants
+sign_symptom,esophagitis,0.9970964,dexlansoprazole,healing of erosive esophagitis
+disease_disorder,osteoarthritis,0.98473054,dexibuprofen,osteoarthritis
+disease_disorder,inflammation,0.99719775,dexamethasone + chloramphenicol,post-operative inflammation and any other ocular inflammation associated with infection
+disease_disorder,inflammation,0.5449796,dexamethasone + chloramphenicol,post-operative inflammation and any other ocular inflammation associated with infection
+disease_disorder,infection,0.9998379,dexamethasone + chloramphenicol,post-operative inflammation and any other ocular inflammation associated with infection
+disease_disorder,dermatitis,0.9941651,desonide,mild to moderate atopic dermatitis
+sign_symptom,weak,0.63513607,desogestrel,alternative for women who have a weak tolerance levels for the estrogen hormones
+disease_disorder,diabetes insipidus,0.9827143,desmopressin acetate,primary nocturnal enuresis nocturia and central diabetes insipidus
+sign_symptom,inflammation,0.9999441,difluprednate,inflammation and pain associated with ocular surgery
+sign_symptom,pain,0.9999629,difluprednate,inflammation and pain associated with ocular surgery
+disease_disorder,lympha,0.7439632,diethylcarbamazine citrate,"filariasis, lymphatic filariasis"
+disease_disorder,filariasis,0.98859054,diethylcarbamazine citrate,"filariasis, lymphatic filariasis"
+disease_disorder,dienogest endometriosis,0.9344998,dienogest,endometriosis
+disease_disorder,functional bowel,0.99395275,dicycloverine hydrochloride,functional bowel/irritable bowel syndrome
+sign_symptom,miosis,0.99957937,diclofenac sodium (ophthalmic),in- inhibition of miosis during cataract surgery
+disease_disorder,infections,0.9997063,diclofenac potassium,"severe painful inflammatory infections of the ear, nose, or throat"
+sign_symptom,of electro,0.9853488,dextrose,when there is no significant loss of electrolytes
+sign_symptom,symptoms,0.9992994,dextromethorphan hydrobromide + guaifenesin,preparation provides relief from all the symptoms associated with common cold
+disease_disorder,common cold,0.8676777,dextromethorphan hydrobromide + guaifenesin,preparation provides relief from all the symptoms associated with common cold
+sign_symptom,cough,0.98875767,dextromethorphan hydrobromide,chronic dry cough or unproductive cough
+sign_symptom,cough,0.97181624,dextromethorphan hydrobromide,chronic dry cough or unproductive cough
+disease_disorder,dementia,0.6492192,donepezil hydrochloride,mild to moderate dementia
+disease_disorder,parkinson ' s disease,0.99887764,domperidone maleate,parkinson's disease
+sign_symptom,ear wax,0.9955753,docusate sodium (ear drop),indicated as an aid in the removal of ear wax
+sign_symptom,stroke,0.9467205,dipyridamole,secondary prophylaxis of stroke or transient ischaemic attack
+sign_symptom,ischaemic attack,0.9989091,dipyridamole,secondary prophylaxis of stroke or transient ischaemic attack
+disease_disorder,poliomyelitis,0.9792306,"diphtheria, tetanus, pertussis, poliomyelitis vaccine",prevention
+disease_disorder,vaccine,0.8613695,"diphtheria, tetanus, pertussis, poliomyelitis vaccine",prevention
+sign_symptom,diphtheria,0.96781635,diphtheria + pertussis + tetanus [dpt],immunization
+sign_symptom,cough,0.9654469,diphenhydramine + levomenthol,cough
+disease_disorder,angina pectoris,0.99977416,diltiazem hydrochloride (sr tablet),prophylaxis and treatment of angina pectoris
+disease_disorder,hypertension,0.79301554,diltiazem hydrochloride (fc tablet),alone or in combination in the management of hypertension
+disease_disorder,heart failure,0.9932685,digoxin,heart failure
+sign_symptom,involvement,0.9989502,eflornithine hydrochloride,limited to these areas of involvement
+disease_disorder,hivrna,0.7539451,efavirenz,there are no results from controlled trials evaluating long term suppression of hivrna
+sign_symptom,corp,0.58680683,econazole nitrate,"tinea cruris, and tinea corporis"
+sign_symptom,rhini,0.93132424,ebastine,seasonal and perennial allergic rhinitis. chronic idiopathic urticaria
+disease_disorder,miscarriage,0.63017845,dydrogesterone,treatment of threatened miscarriage treatment of habitual miscarriage
+sign_symptom,enlarged,0.9988881,dutasteride,in men with an enlarged prostate
+sign_symptom,hypersensitivity reactions,0.9976325,doxylamine succinate,hypersensitivity reactions
+disease_disorder,coronary syndrome,0.9143632,eptifibatide,patients with acute coronary syndrome
+sign_symptom,hyper,0.99572706,eplerenone,hypertension
+sign_symptom,tumor,0.9999567,epirubicin hydrochloride,patients with evidence of axillary node tumor involvement
+sign_symptom,involvement,0.9998797,epirubicin hydrochloride,patients with evidence of axillary node tumor involvement
+sign_symptom,hydrochloride allergic conditions,0.87948006,epinastine hydrochloride,allergic conditions
+disease_disorder,diabetic,0.9981518,epalrestat,diabetic peripheral neuropathy
+disease_disorder,peripheral neuropathy,0.9966836,epalrestat,diabetic peripheral neuropathy
+disease_disorder,encephalitis,0.98030585,encephalitis vaccine,"adults, adolescents, children and infants aged 2 months and older"
+disease_disorder,hypertension,0.9932075,enalapril maleate,all grades of essential hypertension and renovascular hypertension
+disease_disorder,type,0.8436236,empagliflozin,adults with type 2 diabetes mellitus
+disease_disorder,diabetes mellitus,0.8833801,empagliflozin,adults with type 2 diabetes mellitus
+sign_symptom,pain,0.99995446,elagolix,moderate to severe pain associated with endometriosis
+disease_disorder,endometriosis,0.99695516,elagolix,moderate to severe pain associated with endometriosis
+disease_disorder,ulcers,0.9397753,esomeprazole + amoxicillin + clarithromycin,"active chronic gastric, duodenal and gastric ulcers"
+disease_disorder,reflux disease,0.99143744,esomeprazole (mups tablet),gastro-esophageal reflux disease
+disease_disorder,ulcer disease,0.9918366,esomeprazole,duodenal ulcer disease
+sign_symptom,seizure,0.9998884,eslicarbazepine acetate,partial seizure
+disease_disorder,major depressive episodes,0.9993103,escitalopram oxalate,treatment of major depressive episodes
+sign_symptom,infections,0.9895794,erythromycin (lotion),bacterial skin infections susceptible to erythromycin.
+disease_disorder,infections,0.90993863,erythromycin (oral),clinical infections
+disease_disorder,type,0.90987766,ertugliflozin,adults with type 2 diabetes mellitus
+disease_disorder,diabetes mellitus,0.9017411,ertugliflozin,adults with type 2 diabetes mellitus
+sign_symptom,headache,0.999803,ergotamine tartrate + caffeine,vascular headache
+sign_symptom,bleeding,0.9996075,ergometrine maleate,"excessive uterine bleeding,postpartum and post-abortion bleeding"
+sign_symptom,symptoms,0.8371907,erdosteine,improves the symptoms associated with short episodes of chronic bronchitis
+sign_symptom,absence,0.60598475,ethosuximide,indicated for the control of absence (petit mal)epilepsy
+disease_disorder,epilepsy,0.9945588,ethosuximide,indicated for the control of absence (petit mal)epilepsy
+disease_disorder,pregnancy,0.97847635,ethinyl estradiol + gestodene,this pill is indicated for the prevention of pregnancy
+disease_disorder,prem,0.99948907,ethinyl estradiol + drospirenone + levomefolate,premenstrual dysphoric disorder
+disease_disorder,acne vulgaris,0.994032,ethinyl estradiol + drospirenone (24 tablet),moderate acne vulgaris
+disease_disorder,rheumatoid arthritis,0.9646461,etanercept,moderately to severely active rheumatoid arthritis
+sign_symptom,anemia,0.9987978,ferrous ascorbate,iron deficiency anemia
+disease_disorder,hemodialysis,0.9654372,ferric pyrophosphate citrate,adult patients with hemodialysis-dependent chronic kidney disease
+disease_disorder,chronic kidney disease,0.9988479,ferric pyrophosphate citrate,adult patients with hemodialysis-dependent chronic kidney disease
+disease_disorder,candi,0.99983084,fenticonazole nitrate [vaginal tablet],genital candidiasis
+disease_disorder,candi,0.99183077,fenticonazole nitrate [vaginal cream],vulvovaginal candidiasis
+sign_symptom,hyper,0.82619345,fenofibrate,hyperlipidemias
+disease_disorder,favipiravir,0.7134679,favipiravir,cases in which other influenza antiviral drugs are ineffective or not sufficiently effective
+disease_disorder,zollinger - ellison syndrome,0.9151716,famotidine,zollinger-ellison syndrome
+sign_symptom,hyper,0.9333776,ezetimibe,homozygous familial hypercholesterolaemia
+disease_disorder,breast cancer,0.9994688,everolimus,"advanced hormone receptor-positive, her2-negative breast cancer"
+disease_disorder,lung,0.8771928,etoposide,"testicular cancer,small cell lung cancer"
+disease_disorder,eczema,0.66364175,fluocinolone acetonide,eczema and dermatitis
+disease_disorder,adrenocortical insufficiency,0.96308357,fludrocortisone acetate,primary and secondary adrenocortical insufficiency
+disease_disorder,cystitis,0.99632627,flavoxate hydrochloride,cystitis
+disease_disorder,zinc deficiency,0.7381009,ferrous sulfate + folic acid + zinc sulfate,zinc deficiency especially during pregnancy and lactation
+disease_disorder,iron,0.4947084,ferrous gluconate,iron-deficiency anemia
+disease_disorder,deficiency,0.795256,ferrous gluconate,iron-deficiency anemia
+sign_symptom,anemia,0.9988347,ferrous gluconate,iron-deficiency anemia
+sign_symptom,folic acid deficiency,0.7003988,ferrous fumarate + folic acid,concomitant folic acid deficiency in adults
+disease_disorder,iron deficiency,0.99960124,ferrous fumarate,prevent or treat iron deficiency anaemia
+sign_symptom,anaemia,0.99931395,ferrous fumarate,prevent or treat iron deficiency anaemia
+sign_symptom,systemic activity,0.9835372,fluticasone propionate (nasal spray),nasal mucosa without detectable systemic activity
+sign_symptom,restful,0.88895094,flurazepam,acute or chronic medical situations requiring restful sleep
+sign_symptom,anxiety depression,0.8889042,flupentixol + melitracen,anxiety depression
+sign_symptom,depression,0.9957768,flupentixol,"psychoses,depression with or without anxiety"
+sign_symptom,anxiety,0.99971515,flupentixol,"psychoses,depression with or without anxiety"
+disease_disorder,conjunctivitis,0.9993447,fluorometholone acetate,acute and chronic non-infectious conjunctivitis
+disease_disorder,dermatitis,0.86031866,fluocinolone acetonide + neomycin sulfate,eczema and dermatitis
+disease_disorder,infections,0.99819046,fusidic acid (ophthalmic),superficial bacterial infections
+sign_symptom,hyper,0.9893729,furosemide + spironolactone,in- essential hypertension
+sign_symptom,fluid,0.96145046,furosemide,fluid retention associated with chronic congestive cardiac failure
+disease_disorder,cardiac failure,0.999578,furosemide,fluid retention associated with chronic congestive cardiac failure
+disease_disorder,infections,0.92157894,fosfomycin trometamol,only for the treatment of uncomplicated urinary tract infections
+disease_disorder,persistent asthma,0.5146814,formoterol fumarate,may be clinically indicated in patients who do not have persistent asthma
+disease_disorder,infections,0.99947673,gentamicin sulfate (injection),"septicaemia, meningitis, respiratory tract infections"
+disease_disorder,bronchitis,0.9717343,gemifloxacin,acute bacterial exacerbation of chronic bronchitis
+sign_symptom,hyper,0.999938,gemfibrozil,hyperlipoproteinemia
+disease_disorder,infections,0.99923205,gatifloxacin (oral),infections
+disease_disorder,conjunctivitis,0.9961766,gatifloxacin (ophthalmic),bacterial conjunctivitis
+sign_symptom,seizure,0.99994075,gabapentin,partial seizure and secondary generalized seizure
+sign_symptom,seizure,0.9999342,gabapentin,partial seizure and secondary generalized seizure
+disease_disorder,dermatitis,0.99913,fusidic acid + hydrocortisone,seborrhoeic dermatitis
+disease_disorder,eczema,0.7971875,fusidic acid + betamethasone,eczema and dermatitis with secondary infections
+disease_disorder,infections,0.9998548,fusidic acid + betamethasone,eczema and dermatitis with secondary infections
+sign_symptom,burning,0.99993324,glycerin + hypromellose + polyethylene glycol + tetrahydrozoline + zinc sulfate,temporary relief of burning and irritation due to exposure to wind or sun
+sign_symptom,irritation,0.99995565,glycerin + hypromellose + polyethylene glycol + tetrahydrozoline + zinc sulfate,temporary relief of burning and irritation due to exposure to wind or sun
+disease_disorder,osteoarthritis,0.9934291,glucosamine sulfate + diacerein,osteoarthritis rheumatoid arthritis
+disease_disorder,rheumatoid arthritis,0.99603134,glucosamine sulfate + diacerein,osteoarthritis rheumatoid arthritis
+disease_disorder,of diabetes,0.93436325,gliclazide,certain form of diabetes (type 2 diabetes mellitus) in adults
+disease_disorder,2 diabetes mellit,0.8631389,gliclazide,certain form of diabetes (type 2 diabetes mellitus) in adults
+disease_disorder,b vaccine,0.77301633,hepatitis b vaccine [rdna],all known subtypes of hepatitis b virus
+disease_disorder,hepatitis b virus,0.919915,hepatitis b vaccine [rdna],all known subtypes of hepatitis b virus
+sign_symptom,metabolic,0.9520511,hartmann's solution,metabolic acidosis associated with dehydration
+disease_disorder,acidosis,0.7240577,hartmann's solution,metabolic acidosis associated with dehydration
+sign_symptom,dehydration,0.99344987,hartmann's solution,metabolic acidosis associated with dehydration
+sign_symptom,psychomotor agitation,0.99708927,haloperidol,"psychomotor agitation in mania, dementia, acute and chronic schizophrenia"
+disease_disorder,schizophrenia,0.9878461,haloperidol,"psychomotor agitation in mania, dementia, acute and chronic schizophrenia"
+sign_symptom,plaque,0.99943465,halobetasol propionate + tazarotene,plaque psoriasis in adults
+sign_symptom,psoriasis,0.9997876,halobetasol propionate + tazarotene,plaque psoriasis in adults
+disease_disorder,infections,0.7223229,griseofulvin [microsize],not justified in minor or trivial infections
+sign_symptom,nausea,0.9999591,granisetron,the prevention and treatment of post operative nausea and vomiting
+sign_symptom,vomiting,0.9999558,granisetron,the prevention and treatment of post operative nausea and vomiting
+sign_symptom,infections,0.8783803,gramacidin + neomycin + polymixin b,superficial infections of the external eye
+disease_disorder,rheumatoid arthritis,0.99527234,golimumab,moderately to severely active rheumatoid arthritis
+disease_disorder,obstructive,0.7372532,glycopyrronium bromide + formoterol fumarate,maintenance treatment of patients with chronic obstructive pulmonary
+disease_disorder,chronic obstructive pulmonary disease,0.99758816,glycopyrronium bromide (respirator solution),long-term maintenance treatment for patients with chronic obstructive pulmonary disease
+disease_disorder,infection,0.86446977,hydrogen peroxide,"theskinto prevent infection of minor cuts, scrapes, and burns."
+sign_symptom,hemor,0.94969195,hydrocortisone acetate + benzyl benzoate + bismuth subgallate + bismuth oxide + balsam peru + zinc oxide,comprehensive symptomatic treatment of internal and external hemorrhoids
+disease_disorder,dermatitis,0.99905896,hydrocortisone acetate,primary irritant dermatitis contact allergic dermatitis eczema
+disease_disorder,allergic dermatitis,0.9992637,hydrocortisone acetate,primary irritant dermatitis contact allergic dermatitis eczema
+disease_disorder,eczema,0.9976546,hydrocortisone acetate,primary irritant dermatitis contact allergic dermatitis eczema
+disease_disorder,adrenocortical insufficiency,0.9601973,hydrocortisone,primary or secondary adrenocortical insufficiency
+sign_symptom,hyper,0.9013345,hydrochlorothiazide,hypertension
+disease_disorder,papillomavirus,0.9680951,"human papillomavirus quadrivalent (types 6, 11, 16, and 18)",genital warts
+disease_disorder,human papillomavirus,0.93709797,human papillomavirus bivalent (types 16 & 18),oncogenic
+disease_disorder,rheumatoid arthritis,0.98759633,ibuprofen,rheumatoid arthritis
+disease_disorder,mantle cell lymphoma,0.9747351,ibrutinib,mantle cell lymphoma
+sign_symptom,tear fluid,0.7033173,hypromellose + carbomer,substitute tear fluid
+disease_disorder,hypromellose,0.7499608,hypromellose,all patients with ocular discomfort
+sign_symptom,discomfort,0.99992716,hypromellose,all patients with ocular discomfort
+sign_symptom,nausea,0.99995816,hyoscine hydrobromide,prevention and control of nausea and vomiting associated with motion sickness/travel sickness
+sign_symptom,vomiting,0.99995077,hyoscine hydrobromide,prevention and control of nausea and vomiting associated with motion sickness/travel sickness
+sign_symptom,motion sickness,0.99907815,hyoscine hydrobromide,prevention and control of nausea and vomiting associated with motion sickness/travel sickness
+sign_symptom,sickness,0.9946062,hyoscine hydrobromide,prevention and control of nausea and vomiting associated with motion sickness/travel sickness
+sign_symptom,pain,0.9999701,hylan g-f 20,pain in osteoarthritis (oa) of the knee
+disease_disorder,osteoarth,0.9422977,hylan g-f 20,pain in osteoarthritis (oa) of the knee
+disease_disorder,hydro,0.9651145,hydroxyurea,resistantchronic myeloid leukemia
+disease_disorder,resistantchron,0.7597818,hydroxyurea,resistantchronic myeloid leukemia
+disease_disorder,myeloid,0.896396,hydroxyurea,resistantchronic myeloid leukemia
+disease_disorder,leukemia,0.79680866,hydroxyurea,resistantchronic myeloid leukemia
+sign_symptom,bleaching,0.8562102,hydroquinone,gradual bleaching
+disease_disorder,raynaud ' s disease,0.9984595,inositol nicotinate,"hyperlipidemias, raynaud's disease"
+disease_disorder,spondylitis,0.9913984,indomethacin (rectal),"rheumatoid arthritis, ankylosing spondylitis"
+disease_disorder,arthritis,0.83720523,indomethacin (oral),rheumatoid arthritis
+disease_disorder,hypertension,0.9919845,indapamide + perindopril arginine,essential hypertension
+disease_disorder,renal function impairment,0.9995788,indapamide,patients with renal function impairment
+sign_symptom,airflow obstruction,0.97785646,indacaterol maleate,airflow obstruction
+sign_symptom,airflow obstruction,0.9877944,indacaterol + glycopyrronium,airflow obstruction
+disease_disorder,hepatitis,0.5403845,inactivated hepatitis a vaccine,active immunization of adults and children from 12 months of age
+sign_symptom,warts,0.99873984,imiquimod,external genital and perianal warts in adults
+disease_disorder,schizophrenia,0.9795559,iloperidone,schizophrenia in adults. when deciding among the alternative treatments
+disease_disorder,infection,0.95682937,idoxuridine,"skin infection, eyes infection, infection of reproduction organs"
+disease_disorder,renal disease,0.9991962,irbesartan,treatment of renal disease in patients with hypertension
+sign_symptom,hypertension,0.9478086,irbesartan,treatment of renal disease in patients with hypertension
+disease_disorder,hepatitis c,0.9998361,interferon alfa-2a [recombinant],in patients with chronic hepatitis c diagnosed by hcv antibody
+disease_disorder,type 1 diabetes,0.9847388,insulin human [rdna] + isophane insulin human,treatment of all patients with type 1 diabetes
+disease_disorder,type 1 diabetes,0.9724067,insulin human [long-acting],treatment of all patients with type 1 diabetes
+disease_disorder,type 1 diabetes,0.9744683,insulin human [fast-acting],treatment of all patients with type 1 diabetes
+disease_disorder,diabetes mellitus,0.9995458,insulin degludec + insulin aspart premixed,diabetes mellitus
+disease_disorder,diabetes mellitus,0.9983256,insulin aspart + insulin aspart protamine,diabetes mellitus
+disease_disorder,acne vulgaris,0.9790053,isotretinoin (topical),mild to moderate inflammatory and non-inflammatory acne vulgaris
+sign_symptom,episode,0.9995615,isosorbide mononitrate,aborting an acute anginal episode
+disease_disorder,gastrointestinal disorders,0.9996495,isopropamide + trifluoperazine,wide range of gastrointestinal disorders
+disease_disorder,tuberculosis,0.9264158,isoniazid,tuberculosis
+sign_symptom,zinc deficiencies,0.8308874,iron polymaltose complex + vitamin b complex + zinc,zinc deficiencies
+disease_disorder,deficiency,0.7819798,iron polymaltose complex + folic acid + zinc + vitamin b-complex,"zinc, iron, folic acid, b-vitamins deficiency"
+sign_symptom,zinc deficiencies,0.9531114,iron hydroxide polymaltose + folic acid + zinc sulfate monohydrate,zinc deficiencies
+sign_symptom,lysine,0.4234201,l-lysine hydrochloride,"infection in cuts, wounds abrasion, surgical incisions and burns"
+sign_symptom,hydroch,0.56280035,l-lysine hydrochloride,"infection in cuts, wounds abrasion, surgical incisions and burns"
+disease_disorder,infection,0.9954057,l-lysine hydrochloride,"infection in cuts, wounds abrasion, surgical incisions and burns"
+disease_disorder,conjunctivitis,0.9971633,ketotifen fumarate (ophthalmic),allergic conjunctivitis
+sign_symptom,pain,0.9998425,ketorolac tromethamine,moderate to severe acute post-operative pain
+sign_symptom,pain,0.9999573,ketoprofen (topical),mild to moderate local pain
+disease_disorder,infections,0.9953418,ketoconazole (tablet),maintenance treatment to prevent recurrence in systemic mycotic infections
+disease_disorder,infections,0.9957443,ketoconazole (shampoo),infections
+disease_disorder,infections,0.99724424,ketoconazole (cream),dermatophyte infections
+sign_symptom,skeletal,0.8853297,ketamine,diagnostic and surgical procedures that do not require skeletal muscle relaxation
+disease_disorder,infections,0.97412926,kanamycin,serious infections caused by bacteria
+sign_symptom,consti,0.7717043,ispaghula husk + ispaghula seed + tinnevelly senna pods,constipation
+sign_symptom,constipation,0.8921036,ispaghula [psyllium] husk,in- constipation
+disease_disorder,renal disease,0.75807524,lanthanum carbonate,patients with end-stage renal disease
+disease_disorder,ulcer,0.995733,lansoprazole,short term treatment of active duodenal ulcer
+disease_disorder,infection,0.9993286,lamivudine + zidovudine,hiv-1 infection
+disease_disorder,hepatitis b,0.9662478,lamivudine [for chronic hepatitis b],associated with evidence of hepatitis b viral replication and active liver inflammation
+disease_disorder,hepatitis b,0.9429748,lamivudine [for chronic hepatitis b],associated with evidence of hepatitis b viral replication and active liver inflammation
+disease_disorder,inflammation,0.91925144,lamivudine [for chronic hepatitis b],associated with evidence of hepatitis b viral replication and active liver inflammation
+disease_disorder,lactobacillus,0.7043876,lactobacillus rhamnosus gg,bowel problems (such asdiarrhea
+sign_symptom,gg bowel problems,0.97868335,lactobacillus rhamnosus gg,bowel problems (such asdiarrhea
+disease_disorder,encephalopathy,0.96269196,lactitol monohydrate,acute and chronic portal systemic encephalopathy
+sign_symptom,lactose,0.9875211,lactase,prevention of symptoms of lactose
+sign_symptom,hypertension,0.73330057,labetalol hydrochloride (injection),hypertension
+disease_disorder,chronic fatigue syndrome,0.9997437,levocarnitine,chronic fatigue syndrome heart diseases
+disease_disorder,heart diseases,0.9998313,levocarnitine,chronic fatigue syndrome heart diseases
+sign_symptom,glaucom,0.87588733,levobunolol,patients with chronicopen-angle glaucomaorocularhypertension
+sign_symptom,hypertension,0.97234786,lercanidipine hydrochloride,mild to moderate essential hypertension
+disease_disorder,glaucoma,0.9482767,latanoprost,patients with open-angle glaucoma or ocular hypertension
+disease_disorder,solid tumors,0.9984273,larotrectinib,adult and pediatric patients with solid tumors
+disease_disorder,type 2 diabetes mellitus,0.96214676,linagliptin,type 2 diabetes mellitus
+disease_disorder,lifitegrast,0.9890297,lifitegrast,dry eye disease
+disease_disorder,dry eye disease,0.94050807,lifitegrast,dry eye disease
+disease_disorder,infections,0.99335057,levofloxacin hemihydrate,"mild, moderate and severe infections"
+disease_disorder,conjunctivitis,0.987195,levofloxacin (ophthalmic),bacterial conjunctivitis
+sign_symptom,motor recovery,0.9143361,levodopa + carbidopa (fc tablet),before physiotherapy increases motor recovery after stroke.
+sign_symptom,inflammation,0.91022646,loteprednol etabonate,post-operative inflammation
+sign_symptom,hyper,0.9908388,losartan potassium + hydrochlorothiazide,hypertension
+disease_disorder,rheumatoid arthritis,0.98812896,lornoxicam,rheumatoid arthritis
+sign_symptom,anxiety states,0.99208605,lorazepam,lorazepam is not recommended in anxiety states in children
+sign_symptom,diarrhea,0.9979803,loperamide hydrochloride,indicated in- acute diarrhea chronic diarrhea abdominal cramps
+sign_symptom,diarrhea,0.999078,loperamide hydrochloride,indicated in- acute diarrhea chronic diarrhea abdominal cramps
+sign_symptom,cramps,0.9210911,loperamide hydrochloride,indicated in- acute diarrhea chronic diarrhea abdominal cramps
+disease_disorder,infections,0.99982697,lomefloxacin (oral),uncomplicated urinary tract infections
+disease_disorder,infections,0.9975157,lomefloxacin (ophthalmic),bacterial infections
+sign_symptom,weight - related comorbid condition,0.99915135,liraglutide,in the presence of at least one weight-related comorbid condition
+sign_symptom,rubella,0.99723077,measles and rubella,simultaneous immunization
+sign_symptom,convulsion,0.9973471,magnesium sulfate heptahydrate,to prevent convulsion
+disease_disorder,magnesium defciency,0.9944388,magnesium oxide,relieving the symptoms of magnesium defciency
+sign_symptom,constipation,0.7472342,magnesium hydroxide + liquid paraffin,constipation associated with chronic cholecystitis hernia
+disease_disorder,cholecystitis,0.9915756,magnesium hydroxide + liquid paraffin,constipation associated with chronic cholecystitis hernia
+disease_disorder,hernia,0.99908364,magnesium hydroxide + liquid paraffin,constipation associated with chronic cholecystitis hernia
+sign_symptom,nausea,0.999936,magnesium hydroxide,"constipation, heart burn, gas and nausea"
+sign_symptom,hyperac,0.61818063,magaldrate,hyperacidity associated with peptic ulcers
+disease_disorder,peptic ulcers,0.8639924,magaldrate,hyperacidity associated with peptic ulcers
+sign_symptom,poly,0.79340994,lynestrenol,polymenorrhoea
+sign_symptom,sinus,0.99642706,lymecycline,acute sinusitis
+sign_symptom,depressive,0.8497952,lurasidone hydrochloride,"schizophrenia, depressive episodes associated with bipolar i disorder"
+disease_disorder,episodes,0.5106478,lurasidone hydrochloride,"schizophrenia, depressive episodes associated with bipolar i disorder"
+disease_disorder,bipolar i disorder,0.9956827,lurasidone hydrochloride,"schizophrenia, depressive episodes associated with bipolar i disorder"
+sign_symptom,lubiprostone,0.9703398,lubiprostone,chronic idiopathic constipation (cic) in adults
+sign_symptom,constipation,0.99137235,lubiprostone,chronic idiopathic constipation (cic) in adults
+sign_symptom,sting,0.99582016,mepyramine maleate,"insect bites, stings and nettle rash"
+sign_symptom,rash,0.9916089,mepyramine maleate,"insect bites, stings and nettle rash"
+sign_symptom,rash,0.9999434,menthol + pramoxine hydrochloride,may also be used for rashes
+disease_disorder,rheumatoid arthritis,0.95811486,menaquinone-7,rheumatoid arthritis
+disease_disorder,alzheimer ' s type,0.97613025,memantine hydrochloride,dementia of the alzheimer's type
+disease_disorder,meloxicam,0.98363096,meloxicam,"osteoarthritis, rheumatoid arthritis"
+disease_disorder,rheumatoid arthritis,0.9688542,meloxicam,"osteoarthritis, rheumatoid arthritis"
+disease_disorder,malaria,0.9997311,mefloquine,acute malaria infections
+disease_disorder,infections,0.99975985,mefloquine,acute malaria infections
+sign_symptom,fever,0.9999181,mefenamic acid,fever toothache headache migraine
+sign_symptom,toothache,0.99377006,mefenamic acid,fever toothache headache migraine
+sign_symptom,headache,0.9998741,mefenamic acid,fever toothache headache migraine
+sign_symptom,migraine,0.9997432,mefenamic acid,fever toothache headache migraine
+sign_symptom,motion,0.9990995,meclizine hydrochloride,"nausea, vomiting, motion sickness, vertigo"
+sign_symptom,vertigo,0.999808,meclizine hydrochloride,"nausea, vomiting, motion sickness, vertigo"
+disease_disorder,allergic disease,0.99947095,mebhydrolin napadisylate,allergic disease
+disease_disorder,contact dermatitis,0.980054,methylprednisolone acetate,"asthma, atopic dermatitis, contact dermatitis"
+disease_disorder,atony,0.54713804,methylergonovine maleate,"following delivery of the placenta, for routine management of uterine atony"
+sign_symptom,hyper,0.9557646,methyldopa,hypertension
+disease_disorder,graves ' disease,0.9983022,methimazole,in patients with graves' disease with hyperthyroidism
+disease_disorder,hyperthyroidism,0.9783285,methimazole,in patients with graves' disease with hyperthyroidism
+disease_disorder,colitis,0.734288,mesalazine [5-aminosalicylic acid],mild to moderately active ulcerative colitis
+disease_disorder,pneumonia,0.97534287,meropenem trihydrate,pneumonia and nosocomial pneumonia urinary tract infections
+disease_disorder,pneumonia,0.9993217,meropenem trihydrate,pneumonia and nosocomial pneumonia urinary tract infections
+disease_disorder,infections,0.9986885,meropenem trihydrate,pneumonia and nosocomial pneumonia urinary tract infections
+sign_symptom,ulcer,0.8973341,misoprostol,nsaid users at high risk of complications from gastric ulcer
+disease_disorder,mira,0.710036,mirabegron,overactive bladder (oab) syndrome
+disease_disorder,over,0.8246418,mirabegron,overactive bladder (oab) syndrome
+sign_symptom,minoxidil,0.99675536,minoxidil,males and females
+disease_disorder,infection,0.9997898,minocycline hydrochloride,pre- and post-operative prophylaxis of infection
+sign_symptom,miglitol,0.97889847,miglitol,adults with type 2diabetes mellitus
+sign_symptom,hemorrhoidal attacks,0.9973843,micronised diosmin + hesperidin,acute hemorrhoidal attacks
+disease_disorder,candidiasis,0.9983948,miconazole nitrate (oral gel),for the treatment of oral and gastrointestinal candidiasis
+disease_disorder,infections,0.9995117,metronidazole + neomycin sulphate + polymyxin b + nystatin,mixed vaginal infections
+disease_disorder,candidiasis,0.99856067,metronidazole + miconazole nitrate,candidiasis
+disease_disorder,amoebiasis,0.99614125,metronidazole,all forms of amoebiasis
+sign_symptom,vitamin deficiencies,0.86815816,multivitamin [adult preparation],vitamin deficiencies
+sign_symptom,anti - inflammatory,0.6271718,mucopolysaccharide polysulphate + salicylic acid,mild to moderate anti-inflammatory
+sign_symptom,high blood,0.7943761,moxonidine,high blood pressure
+disease_disorder,bacterial,0.99947613,moxifloxacin hydrochloride + xanthan gum,bacterial conjunctivitis
+disease_disorder,conjunctivitis,0.9899734,moxifloxacin hydrochloride + xanthan gum,bacterial conjunctivitis
+disease_disorder,bacterial sinusitis,0.97662115,moxifloxacin hydrochloride (tablet),acute bacterial sinusitis
+disease_disorder,conjunctivitis,0.9983128,moxifloxacin hydrochloride (ophthalmic),bacterial conjunctivitis
+disease_disorder,infections,0.77689433,moxifloxacin hydrochloride (injection),infections in adults &gt
+disease_disorder,asthma,0.9905578,montelukast sodium,prophylaxis and chronic treatment of asthma
+sign_symptom,bleeding,0.99983823,monosemicarbazone adrenochrome,prevention and treatment of surgical and non-surgical capillary bleedings
+disease_disorder,lupus nephritis,0.7352741,mycophenolate mofetil,class iii-v lupus nephritis
+sign_symptom,mineral deficiencies,0.99944353,multivitamin & multimineral [a-z silver preparation],vitamin and mineral deficiencies for adults over 45 years of age
+disease_disorder,vitamin and minerals,0.69478863,multivitamin & multimineral [a-z juniors syrup preparation],the treatment and prevention of vitamin and minerals deficiencies
+disease_disorder,infection,0.9798549,nelfinavir,hiv infection
+sign_symptom,pain,0.99993265,nefopam hydrochloride,"post-operative, dental, musculo-skeletal and acute traumatic pain"
+disease_disorder,hypertension,0.97600317,nebivolol + hydrochlorothiazide,essential hypertension
+sign_symptom,gout,0.8610848,naproxen sodium,acute gout
+disease_disorder,conjunctivitis,0.9980955,naphazoline + pheniramine,allergic conjunctivitis
+sign_symptom,overdosage,0.7307916,naloxone hydrochloride,diagnosis of suspected or knownacuteopioid overdosage
+sign_symptom,nalidixic,0.7378464,nalidixic acid,urinary tract infection caused by susceptible gram-negative organisms
+disease_disorder,acid,0.4941697,nalidixic acid,urinary tract infection caused by susceptible gram-negative organisms
+disease_disorder,infection,0.99378693,nalidixic acid,urinary tract infection caused by susceptible gram-negative organisms
+sign_symptom,pain,0.9999454,nalbuphine,moderate to severe pain
+disease_disorder,peripheral vascular disorders,0.9987102,naftidrofuryl oxalate,peripheral vascular disorders
+disease_disorder,lung cancer,0.99960583,nab-paclitaxel [nanoparticle albumin-bound paclitaxel],non-small cell lung cancer
+disease_disorder,cancer,0.97979057,nintedanib,"locally advanced, metastatic or locally recurrent non-small cell lung cancer"
+disease_disorder,extra - articular disorders,0.98900175,nimesulide,acute pain; extra-articular disorders
+disease_disorder,renal cell carcinoma,0.99924815,nilotinib,advanced renal cell carcinoma
+disease_disorder,renal hypertension,0.99144715,nifedipine,renal hypertension
+disease_disorder,glaucoma,0.99764997,netarsudil dimesylate,patients with open-angle glaucoma or ocular hypertension
+disease_disorder,ocular hypertension,0.9902686,netarsudil dimesylate,patients with open-angle glaucoma or ocular hypertension
+disease_disorder,infections,0.86822206,neomycin sulfate + bacitracin zinc + polymyxin b sulfate (ophthalmic),superficial infections of the external eye
+disease_disorder,candidiasis,0.99448043,nystatin (oral),in those born of mothers with vaginal candidiasis
+sign_symptom,metro,0.40329644,norethisterone acetate,metropathia hemorrhagic
+sign_symptom,hemorrhagic,0.8699864,norethisterone acetate,metropathia hemorrhagic
+disease_disorder,cardiac arrest,0.8999042,norepinephrine,cardiac arrest and profound hypotension
+disease_disorder,attack,0.9156285,nitroglycerin (sublingual spray),acute relief of an attack or prophylaxis
+disease_disorder,prop,0.9302338,nitroglycerin (sublingual spray),acute relief of an attack or prophylaxis
+sign_symptom,hypertension,0.93450713,nitroglycerin (iv infusion),peri-operative hypertension
+sign_symptom,infectious conditions,0.6355763,nitrofurazone,infectious conditions
+disease_disorder,infections,0.9995042,nitrofurantoin,prophylaxis of urinary tract infections
+sign_symptom,diarrhea,0.994654,nitazoxanide,diarrhea
+sign_symptom,age groups,0.6975341,oral rehydration salt [powder],all age groups
+sign_symptom,diarrhea,0.998977,oral rehydration salt [flavored],indicated for diarrhea
+disease_disorder,poliomyelitis,0.99924433,oral polio vaccine,poliovaccines are vaccines used to prevent poliomyelitis
+sign_symptom,ulcer,0.97973466,omeprazole (mups tablet),duodenal and gastric ulcers
+sign_symptom,ulcer,0.9991921,omeprazole,nsaid-associated duodenal and gastric ulcer
+sign_symptom,urticaria,0.87084705,omalizumab,chronic spontaneous urticaria
+sign_symptom,itching,0.8150186,olopatadine hydrochloride (ophthalmic),ocular itching associated with allergic conjunctivitis
+disease_disorder,conjunctivitis,0.99692076,olopatadine hydrochloride (ophthalmic),ocular itching associated with allergic conjunctivitis
+disease_disorder,breast cancer,0.9964563,olaparib,breast cancer
+sign_symptom,psychotic features,0.99929893,olanzapine,with or without psychotic features and with or without a rapid cycling course
+sign_symptom,infections,0.8360961,ofloxacin + clotrimazole + beclomethasone + lidocaine,superficial bacterial and fungal infections
+disease_disorder,infections,0.9986828,ofloxacin (oral & injection),mild to moderate infections caused by susceptible strains
+disease_disorder,infections,0.96912396,ofloxacin (ophthalmic),it is indicated for the treatment of external ocular infections
+disease_disorder,carcinoid tumors,0.96920085,octreotide acetate,carcinoid tumors
+disease_disorder,ocular,0.76722157,oxytetracycline + polymixin b sulphate,local treatment of superficial ocular infections
+disease_disorder,infections,0.8899456,oxytetracycline + polymixin b sulphate,local treatment of superficial ocular infections
+disease_disorder,infections,0.99958485,oxytetracycline,oxytetracycline is indicated in- respiratory tract infections
+disease_disorder,peptic ulcer disease,0.99931777,oxyphencyclimine hydrochloride,peptic ulcer disease
+disease_disorder,rosacea,0.6780875,oxymetazoline hydrochloride (cream),persistent facial erythema associated with rosacea in adults
+sign_symptom,numb,0.9980552,oxybuprocaine hydrochloride,used to temporarily numb the front surface of the eye
+disease_disorder,infections,0.99867505,oxiconazole nitrate,dermal infections
+sign_symptom,symptoms,0.9498487,oxaprozin,for relief of the signs and symptoms of osteoarthritis
+disease_disorder,osteoarthritis,0.99808735,oxaprozin,for relief of the signs and symptoms of osteoarthritis
+disease_disorder,colon cancer,0.9196296,oxaliplatin,adjuvant treatment of stage iii colon cancer
+disease_disorder,influenza,0.81474763,oseltamivir,when the influenza virus is circulating in the community
+disease_disorder,infections,0.9954079,ornidazole,treatment of susceptible anaerobic infections
+disease_disorder,obese,0.7035552,orlistat,obese adolescents should be treated with orlistat only
+disease_disorder,septicemia,0.8608327,pefloxacin mesylate dihydrate,septicemia
+sign_symptom,pain,0.9999621,parecoxib,postoperative pain in adults
+sign_symptom,pain,0.99995756,paracetamol+tramadolhydrochloride,moderate to moderately severe pain in adults
+sign_symptom,headache,0.99988437,paracetamol + caffeine,headache
+sign_symptom,pain,0.9999541,paracetamol (iv infusion),mild to moderate pain
+sign_symptom,acid secretion,0.87023497,pantoprazole sodium sesquihydrate,indicated where suppression of acid secretion has therapeutic benefit
+disease_disorder,common cold,0.9883813,paracetamol,"fever, common cold and influenza"
+disease_disorder,influenza,0.9992131,paracetamol,"fever, common cold and influenza"
+disease_disorder,pancreatitis,0.99297583,pancreatin,patients with chronic pancreatitis cystic fibrosis
+disease_disorder,cystic fibrosis,0.9378959,pancreatin,patients with chronic pancreatitis cystic fibrosis
+disease_disorder,schizophrenia,0.99725586,paliperidone palmitate,schizophrenia in adults
+disease_disorder,bacterial,0.9870645,phenoxymethyl penicillin [penicillin v],mild to moderately severe bacterial infections
+disease_disorder,infections,0.9222796,phenoxymethyl penicillin [penicillin v],mild to moderately severe bacterial infections
+sign_symptom,skin conditions,0.82925653,pheniramine maleate,all itching skin conditions
+sign_symptom,pruritus,0.97006726,permethrin + crotamiton,scabies and pruritus
+disease_disorder,heart failure,0.83218896,perindopril arginine,"essential hypertension, stable coronary artery disease, congestive heart failure"
+disease_disorder,epilepsy,0.9978781,perampanel,patients with epilepsy from 4 years of age and older
+disease_disorder,peripheral arterial occlusive disease,0.99942267,pentoxifylline,peripheral arterial occlusive disease
+disease_disorder,cystitis,0.9669621,pentosan polysulfate sodium,interstitial cystitis
+sign_symptom,pain,0.9999329,pentazocine hydrochloride,moderate to severe pain
+disease_disorder,conjunctivitis,0.99808997,pemirolast potassium,allergic conjunctivitis
+disease_disorder,melanoma,0.9996523,pembrolizumab,melanoma
+disease_disorder,hepatitis b,0.999738,peginterferon alfa-2a [pegylated interferon alfa-2a],chronic hepatitis b
+sign_symptom,warts,0.96998185,podophyllotoxin,for the removal of external genital warts
+sign_symptom,migraine,0.993917,pizotifen,not effective in relieving migraine attacks once in progress
+disease_disorder,infections,0.9985557,pivmecillinam,infections caused by mecillinam-sensitive organisms
+disease_disorder,hyper,0.9997534,pitavastatin calcium,adult patients with primary hyperlipidemia or mixed dyslipidemia
+disease_disorder,infections,0.99562573,piperacillin + tazobactam,moderate to severe infections
+disease_disorder,2 diabetes,0.70823085,pioglitazone + metformin hydrochloride,patients with type 2 diabetes
+disease_disorder,parkinson ' s disease,0.9995719,pimavanserin,parkinson's disease psychosis.
+sign_symptom,hypertension,0.9843267,pilocarpine hydrochloride (ophthalmic),ocular hypertension
+sign_symptom,dry cough,0.93712854,pholcodine,temporary relief of non-productive dry cough
+sign_symptom,hypersensitivity reactions,0.93146735,prednisolone,drug hypersensitivity reactions
+sign_symptom,pain,0.99996305,pramoxine hydrochloride + calamine,temporary relief of pain and itching associated with minor burns
+sign_symptom,burns,0.99994564,pramoxine hydrochloride + calamine,temporary relief of pain and itching associated with minor burns
+sign_symptom,restless legs,0.99628353,pramipexole,moderate to severe restless legs syndrome
+disease_disorder,syndrome,0.99313676,pramipexole,moderate to severe restless legs syndrome
+disease_disorder,poisoning,0.98946047,pralidoxime chloride,in severe poisoning
+sign_symptom,acid,0.7298563,potassium citrate,ofuric acidlithiasis with or without calcium stones
+sign_symptom,calcium stones,0.9995965,potassium citrate,ofuric acidlithiasis with or without calcium stones
+sign_symptom,potassium deficit,0.89133215,potassium chloride,replacement of potassium deficit diuretic
+disease_disorder,infections,0.99924064,polymyxin b sulfate,it may be indicated in serious infections caused by susceptible strains of the following organisms
+sign_symptom,fecal impaction,0.9395305,polyethylene glycol 3350 + electrolytes,resolving fecal impaction
+disease_disorder,peptic,0.77566016,propantheline bromide,adjunctive therapy in the treatment of peptic ulcer
+sign_symptom,ulcer,0.8989193,propantheline bromide,adjunctive therapy in the treatment of peptic ulcer
+sign_symptom,allergic reactions,0.9998926,promethazine hydrochloride (injection),amelioration of allergic reactions to blood or plasma
+disease_disorder,abortion,0.7391028,progesterone (capsule),threatened / recurrent abortion
+disease_disorder,parkinsonian syndrome,0.9996775,procyclidine hydrochloride,adjunctive treatment of all forms of parkinsonian syndrome
+disease_disorder,problems,0.76093966,probiotic combination [9 billion],gastrointestinal problems
+sign_symptom,constipation,0.9565025,probiotic combination [10 billion],supports digestive health and relieves constipation
+disease_disorder,malaria,0.9660402,primaquine phosphate,malaria
+sign_symptom,inflammation,0.8885631,prednisolone acetate,steroid-responsive inflammation
+sign_symptom,ulcer,0.96254754,rabeprazole sodium,active duodenal ulcer active benign gastric ulcer
+disease_disorder,ulcer,0.5159156,rabeprazole sodium,active duodenal ulcer active benign gastric ulcer
+disease_disorder,malaria,0.9998142,quinine sulfate,"uncomplicated, severe and complicated falciparum malaria"
+sign_symptom,nausea,0.99994636,pyridoxine hydrochloride + doxylamine succinate,the treatment of nausea and vomiting of pregnancy
+sign_symptom,vomiting,0.99994826,pyridoxine hydrochloride + doxylamine succinate,the treatment of nausea and vomiting of pregnancy
+sign_symptom,pregnancy,0.9957202,pyridoxine hydrochloride + doxylamine succinate,the treatment of nausea and vomiting of pregnancy
+disease_disorder,certain hereditary disorders,0.99957556,pyridoxine hydrochloride,certain hereditary disorders
+sign_symptom,relief,0.41443112,prucalopride succinate,adults in whom laxatives fail to provide adequate relief
+disease_disorder,diabetes mellitus,0.9992831,protamine crystallised insulin aspart,patients with diabetes mellitus
+disease_disorder,graves ' disease,0.99687034,propylthiouracil,in patients with graves' disease with hyperthyroidism
+disease_disorder,hyperthyroidism,0.96625084,propylthiouracil,in patients with graves' disease with hyperthyroidism
+sign_symptom,migraine,0.9906313,propranolol hydrochloride,prophylaxis of migraine
+disease_disorder,prostate cancer,0.9990051,relugolix,adult patients with advanced prostate cancer
+disease_disorder,color,0.9998355,regorafenib,for the treatment of metastatic colorectal cancer
+disease_disorder,parkinson ' s disease,0.9555591,rasagiline,idiopathic parkinson's disease
+sign_symptom,hyper,0.56854314,ramipril,hypertension
+disease_disorder,insomnia,0.8631175,ramelteon,insomnia
+disease_disorder,parkinson ' s disease,0.9946544,rivastigmine tartrate,patients with idiopathic parkinson's disease
+disease_disorder,premature labour,0.86116916,ritodrine hydrochloride,premature labour
+disease_disorder,schizophrenia,0.9975573,risperidone (injection),for the treatment of schizophrenia
+disease_disorder,inflammation,0.68614715,rimexolone,postoperative inflammation following ocular surgery
+disease_disorder,sclerosis,0.9246928,riluzole,amyotrophic lateral sclerosis
+disease_disorder,e. coli,0.9312288,rifaximin,noninvasive strains of e. coli
+disease_disorder,tuberculosis,0.94476235,rifampicin + isoniazid + pyrazinamide + ethambutol,tuberculosis
+disease_disorder,pulmonary tuberculosis,0.9894804,rifampicin + isoniazid + pyrazinamide,pulmonary tuberculosis
+disease_disorder,tuberculosis,0.99958736,rifampicin + isoniazid,continuation phase treatment of tuberculosis
+sign_symptom,blackheads,0.99535865,salicylic acid,mild to moderate acne blackheads and whiteheads redness &amp
+sign_symptom,redness,0.9994726,salicylic acid,mild to moderate acne blackheads and whiteheads redness &amp
+disease_disorder,induced asthma,0.76164925,salbutamol (inhaler),prophylactically before exertion or to prevent exercise-induced asthma
+sign_symptom,allergic,0.9220073,rupatadine fumarate,seasonal &amp; perennial allergic rhinitis and urticaria
+sign_symptom,rhinitis,0.9865796,rupatadine fumarate,seasonal &amp; perennial allergic rhinitis and urticaria
+sign_symptom,infections,0.5913653,roxithromycin,infections caused by susceptible microorganisms- respiratory infections
+disease_disorder,micro,0.62940043,roxithromycin,infections caused by susceptible microorganisms- respiratory infections
+sign_symptom,anemia,0.9753727,roxadustat,adult patients with symptomatic anemia associated with chronic kidney disease
+disease_disorder,kidney disease,0.99194914,roxadustat,adult patients with symptomatic anemia associated with chronic kidney disease
+sign_symptom,hyper,0.99990416,rosuvastatin,heterozygous hypercholesterolemia
+disease_disorder,type 2 diabetes mellitus,0.967066,rosiglitazone + metformin hydrochloride,management of type 2 diabetes mellitus should include diet control
+sign_symptom,restless legs,0.57132596,ropinirole,moderate-to-severe primary restless legs syndrome
+disease_disorder,syndrome,0.999382,ropinirole,moderate-to-severe primary restless legs syndrome
+disease_disorder,citrate erectile dysfunction,0.9911699,sildenafil citrate,erectile dysfunction
+disease_disorder,renal disease,0.9989066,sevelamer hydrochloride,patients with end-stage renal disease
+disease_disorder,infections,0.9948256,sertaconazole nitrate,interdigital tinea pedis and other topical fungal infections
+disease_disorder,type,0.6872967,semaglutide (tablet),adults with type 2 diabetes mellitus
+disease_disorder,diabetes mellitus,0.6834748,semaglutide (tablet),adults with type 2 diabetes mellitus
+disease_disorder,pulmonary arterial hypertension,0.99857754,selexipag,pulmonary arterial hypertension
+sign_symptom,plaque,0.9955478,secukinumab,moderate to severe plaque psoriasis
+sign_symptom,psoriasis,0.8669856,secukinumab,moderate to severe plaque psoriasis
+disease_disorder,saxag,0.89216197,saxagliptin,limitation
+disease_disorder,rheumatoid arthritis,0.98511165,salsalate,rheumatoid arthritis
+disease_disorder,paget ' s disease,0.99809754,salmon calcitonin,active paget's disease in patients who do not respond to alternative treatments
+sign_symptom,vomiting,0.9999232,sodium chloride + dextrose,persistent vomiting
+sign_symptom,cold,0.9998498,sodium chloride (nasal preparation),dry nasal membranes including dry nose resulting from cold and allergy medications
+sign_symptom,epigastric,0.9936427,sodium alginate + sodium bicarbonate + calcium carbonate,all cases of epigastric and retrosternal distress
+sign_symptom,retro,0.99970824,sodium alginate + sodium bicarbonate + calcium carbonate,all cases of epigastric and retrosternal distress
+disease_disorder,type 1 diabetes,0.999439,sitagliptin,not be used in patients with type 1 diabetes
+sign_symptom,overactive,0.6609043,solifenacin succinate,patients with overactive bladder syndrome
+disease_disorder,bladder syndrome,0.99876654,solifenacin succinate,patients with overactive bladder syndrome
+disease_disorder,cirrhosis,0.8621233,sofosbuvir + velpatasvir,without cirrhosis
+disease_disorder,epilepsy,0.9996805,sodium valproate,all types of epilepsy
+sign_symptom,cancer,0.70747095,sodium stibogluconate,cancer/tumors (unspecified) and solid tumors
+sign_symptom,tumors,0.9981279,sodium stibogluconate,cancer/tumors (unspecified) and solid tumors
+sign_symptom,solid tumors,0.5136106,sodium stibogluconate,cancer/tumors (unspecified) and solid tumors
+sign_symptom,hyper,0.99989367,sodium nitroprusside dihydrate,immediate reduction of blood pressure of adult and pediatric patients in hypertensive crises
+sign_symptom,dry eye,0.9157685,sodium hyaluronate (ophthalmic),all forms of dry eye and for post-surgical lubrication
+disease_disorder,infections,0.95947564,sodium fusidate (topical),skin infections
+sign_symptom,antiseptic,0.9084957,sodium fluoride (mouthwash),sodium fluoride is an antiseptic
+disease_disorder,malaria,0.81869817,sulphadoxine + pyrimethamine,malaria
+disease_disorder,rheumatoid arthritis,0.99628276,sulindac,rheumatoid arthritis
+disease_disorder,rheumatoid arthritis,0.809293,sulfasalazine,rheumatoid arthritis &amp; juvenile arthritis
+disease_disorder,arthritis,0.99115175,sulfasalazine,rheumatoid arthritis &amp; juvenile arthritis
+disease_disorder,conjunctivitis,0.9913882,sulfacetamide sodium,conjunctivitis and other superficial ocular infections
+disease_disorder,infections,0.99960536,sulfacetamide sodium,conjunctivitis and other superficial ocular infections
+sign_symptom,pain,0.999962,streptokinase,always commence within 6 hours of the onset of pain
+disease_disorder,heart failure,0.99872804,spironolactone,congestive heart failure
+sign_symptom,infections,0.8692159,spiramycin,"infections of the respiratory tract, buccal cavity, skin and soft tissues"
+sign_symptom,plaque,0.99689806,tazarotene,plaque psoriasis
+sign_symptom,psoriasis,0.9010151,tazarotene,plaque psoriasis
+sign_symptom,pain,0.99995816,tapentadol hydrochloride,moderate to severe acute pain in patients 18 years of age or older
+sign_symptom,prostatic hyperplasia,0.7266153,tamsulosin hydrochloride,functional symptoms of benign prostatic hyperplasia
+disease_disorder,breast cancer,0.98016715,tamoxifen citrate,breast cancer
+disease_disorder,glaucoma,0.965334,tafluprost,patients with open-angle glaucoma or ocular hypertension
+disease_disorder,erectile dysfunction,0.99635345,tadalafil,tadalafil is indicated in- erectile dysfunction
+disease_disorder,cancer,0.97710174,super antioxidant [vitamins & minerals],prevent certain types of cancer
+disease_disorder,renal cell carcinoma,0.99955213,sunitinib,advanced renal cell carcinoma
+sign_symptom,headache,0.9263154,sumatriptan,if a clear diagnosis of migraine headache has been established.
+sign_symptom,conditions,0.9096289,sulphonated surfactant,acne prone and oily skin conditions
+sign_symptom,unable to produce enough on its,0.94759876,testosterone undecanoate,if the body is unable to produce enough on its own
+disease_disorder,spermatogenic disorders,0.9996891,testosterone decanoate,certain types of infertility due to spermatogenic disorders
+sign_symptom,bleeding,0.99936146,terlipressin acetate,short term management of bleeding oesophageal varices
+sign_symptom,varices,0.8540822,terlipressin acetate,short term management of bleeding oesophageal varices
+disease_disorder,osteoporosis,0.9413679,teriparatide,treatment of postmenopausal women with osteoporosis
+disease_disorder,skin disorders,0.81277955,terfenadine,"allergic rhinitis, hay fever, and allergic skin disorders"
+disease_disorder,tinea capitis,0.91576415,terbinafine hydrochloride,tinea capitis
+disease_disorder,hepatitis b virus,0.9851424,tenofovir disoproxil fumarate,chronic hepatitis b virus infection in adults hiv infected adults
+disease_disorder,infection,0.9996195,tenofovir disoproxil fumarate,chronic hepatitis b virus infection in adults hiv infected adults
+disease_disorder,liver disease,0.99872243,tenofovir alafenamide,adults with compensated liver disease
+disease_disorder,temozolomide,0.891054,temozolomide,newly diagnosed glioblastoma multiforme
+disease_disorder,glioblastoma,0.9954871,temozolomide,newly diagnosed glioblastoma multiforme
+disease_disorder,multiforme,0.9499018,temozolomide,newly diagnosed glioblastoma multiforme
+sign_symptom,hypertension,0.9973422,telmisartan,indicated in- hypertension : treatment of essential hypertension in adults
+disease_disorder,hypertension,0.80256844,telmisartan,indicated in- hypertension : treatment of essential hypertension in adults
+disease_disorder,infections,0.99932265,teicoplanin,serious infections due to staphylococci or streptococci
+disease_disorder,streptococci,0.75964046,teicoplanin,serious infections due to staphylococci or streptococci
+sign_symptom,constipation,0.97657686,tegaserod,irritable bowel syndrome with constipation
+disease_disorder,ocular hypertension,0.9930403,timolol maleate,patients with ocular hypertension or open-angle glaucoma
+disease_disorder,glaucoma,0.9956061,timolol maleate,patients with ocular hypertension or open-angle glaucoma
+disease_disorder,infections,0.9960343,tigecycline,infections caused by susceptible strains of the designated microorganisms
+sign_symptom,pain,0.9998379,tiemonium methylsulphate,pain related to functional disorders of the digestive tract and biliary system
+disease_disorder,functional disorders,0.99964905,tiemonium methylsulphate,pain related to functional disorders of the digestive tract and biliary system
+disease_disorder,coronary syndromes,0.84296846,ticagrelor,adult patients with acute coronary syndromes
+sign_symptom,thiotepa,0.8816604,thiotepa,in haematological diseases in adult and paediatric patients
+disease_disorder,encephalopathy,0.9222847,thiamine hydrochloride,beriberi and wernick's encephalopathy
+disease_disorder,theophylline,0.9922252,theophylline,asthma
+disease_disorder,asthma,0.68950576,theophylline,asthma
+disease_disorder,thalidomide,0.9981153,thalidomide,moderate to severe neuritis
+disease_disorder,infection,0.8153393,tetracycline hydrochloride (topical),first aid to help prevent skin infection
+disease_disorder,infections,0.93336356,tetracycline hydrochloride (oral),urinary tract infections with susceptible organisms
+disease_disorder,conjunctivitis,0.99773943,tetracycline hydrochloride (ophthalmic),bacterial conjunctivitis
+sign_symptom,painful conditions,0.9947719,tramadol hydrochloride,moderate to severe painful conditions
+sign_symptom,hyper,0.99311185,torsemide,hypertension alone or in combination with other antihypertensive agents
+sign_symptom,hypertension,0.9271694,torasemide,hypertension
+sign_symptom,hyper,0.99983823,tolvaptan,hypervolemic or euvolemic hyponatremia
+sign_symptom,urge,0.9912738,tolterodine tartrate,"urinary urgency, frequency, and/or urge incontinence"
+sign_symptom,pain,0.99997056,tolfenamic acid,post-operative pain and fever
+sign_symptom,fever,0.9999695,tolfenamic acid,post-operative pain and fever
+disease_disorder,rheumatoid arthritis,0.9969058,tofacitinib,moderately to severely active rheumatoid arthritis
+disease_disorder,infections,0.9543296,tobramycin (ophthalmic),external bacterial infections of the eye caused by susceptible organisms
+disease_disorder,fibrosis,0.8666752,tobramycin (nebuliser solution),cystic fibrosis patients with pseudomonas aeruginosa
+sign_symptom,pseudomonas aeruginosa,0.9921689,tobramycin (nebuliser solution),cystic fibrosis patients with pseudomonas aeruginosa
+disease_disorder,chronic obstructive pulmonary disease,0.99927604,tiotropium (dry powder inhaler),bronchospasm associated with chronic obstructive pulmonary disease
+disease_disorder,hydrochloride,0.99243486,trihexyphenidyl hydrochloride,parkinsonism
+disease_disorder,parkinsonism,0.997321,trihexyphenidyl hydrochloride,parkinsonism
+disease_disorder,psychotic disorders,0.9998831,trifluoperazine,the management of psychotic disorders
+disease_disorder,stevens - johnson syndrome,0.95428187,triamcinolone acetonide (injection),stevens-johnson syndrome
+disease_disorder,vulgaris,0.797276,tretinoin (topical),acne vulgaris
+sign_symptom,remission,0.99989843,tretinoin (oral),tretinoin is for the induction of remission only
+disease_disorder,glaucoma,0.976176,travoprost,patients with open-angle glaucoma or ocular hypertension
+disease_disorder,cancer,0.98685324,trastuzumab emtansine,unresectable locally advanced or metastatic breast cancer
+sign_symptom,hyper,0.9984882,valsartan + hydrochlorothiazide,hypertension
+sign_symptom,hyper,0.76979256,valsartan,for hypertension
+disease_disorder,risk,0.37502414,valganciclovir,adult and pediatric solid organ transplant (sot) patients who are at risk
+disease_disorder,cholestasis,0.9871759,ursodeoxycholic acid,cholestasis (jaundice) viral hepatitis
+disease_disorder,viral hepatitis,0.99917054,ursodeoxycholic acid,cholestasis (jaundice) viral hepatitis
+sign_symptom,dry skin conditions,0.8916158,urea (10%),ichthyosis and dry skin conditions
+disease_disorder,rheumatoid arthritis,0.99004275,undenatured type ii collagen + glucosamine sulfate + chondroitin sulfate,"osteoarthritis, rheumatoid arthritis"
+disease_disorder,osteoarthritis,0.99369174,undenatured type ii collagen,osteoarthritis rheumatoid arthritis
+disease_disorder,rheumatoid arthritis,0.9954601,undenatured type ii collagen,osteoarthritis rheumatoid arthritis
+sign_symptom,symptoms,0.999897,ulipristal acetate [for uterine fibroids],moderate to severe symptoms
+disease_disorder,contra,0.8441166,ulipristal acetate [for emergency contraception],5 days) of unprotected sexual intercourse or contraceptive failure
+disease_disorder,failure,0.898361,ulipristal acetate [for emergency contraception],5 days) of unprotected sexual intercourse or contraceptive failure
+disease_disorder,asthma,0.94807905,tulobuterol hydrochloride,chronic asthma and chronic bronchitis
+disease_disorder,bronchitis,0.9068997,tulobuterol hydrochloride,chronic asthma and chronic bronchitis
+sign_symptom,hypersensitivity,0.99974734,tto thermal toothpaste,faster relief from dental hypersensitivity
+disease_disorder,illnesses,0.9944563,vitamin a,concomitant therapy of mucosa illnesses
+disease_disorder,vinpocetine,0.89542645,vinpocetine,acute cardiovascular disorders
+disease_disorder,acute cardiovascular disorders,0.9838045,vinpocetine,acute cardiovascular disorders
+disease_disorder,leukemia,0.5925822,vincristine sulfate,inacute leukemia
+disease_disorder,hodgkins disease,0.99369127,vinblastine sulfate,previously untreated patients with advanced hodgkins disease
+sign_symptom,asthma,0.5564926,vilanterol trifenatate + fluticasone furoate,asthma
+sign_symptom,asthma,0.68940413,vilanterol + umeclidinium + fluticasone furoate,asthma
+sign_symptom,deletion,0.99455947,venetoclax,in the presence of 17p deletion or tp53 mutation
+sign_symptom,tp53 mutation,0.99948305,venetoclax,in the presence of 17p deletion or tp53 mutation
+disease_disorder,treat,0.99914336,vardenafil,treaterectile dysfunction
+disease_disorder,fever,0.7901136,yellow fever vaccine,any country that requires an international certificate of vaccination for entry
+sign_symptom,nasal congestion,0.9939615,xylometazoline hydrochloride,nasal congestion
+sign_symptom,oxidative stress,0.9651444,"vitamins [c, e, b9 and b12] and minerals [selenium, copper and zinc]",helps to protect cells against oxidative stress
+sign_symptom,hyper,0.9999498,"vitamin b6, b9 & b12",hyperhomocysteinemia
+disease_disorder,peripheral neuritis,0.8533428,"vitamin b1, b2 & b6","it is also used in beri-beri, peripheral neuritis"
+sign_symptom,stressful conditions,0.7494232,vitamin b complex,physiologically stressful conditions
+sign_symptom,seizures,0.9998752,zonisamide,partial seizures in adults withepilepsy
+sign_symptom,migraine,0.98323214,zolmitriptan,migraines with or without aura in adults
+sign_symptom,aura,0.9963482,zolmitriptan,migraines with or without aura in adults
+sign_symptom,hyper,0.9993955,zoledronic acid [for hypercalcemia],hypercalcaemia of malignancy
+disease_disorder,malignancy,0.996301,zoledronic acid [for hypercalcemia],hypercalcaemia of malignancy
+sign_symptom,losing conditions,0.7242366,zinc sulfate monohydrate,zinc deficiency and/or zinc losing conditions
+sign_symptom,rash,0.99993634,zinc oxide + virgin castor oil,nappy rash
+sign_symptom,rash,0.9999049,zinc oxide + benzyl alcohol + benzyl benzoate + benzyl cinnamate + lanolin,napkin rash
+disease_disorder,asthma,0.6218703,zafirlukast,asthma in adults and children 5 years of age and older

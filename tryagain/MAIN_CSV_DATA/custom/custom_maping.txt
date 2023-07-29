@@ -1,0 +1,22 @@
+nausea:
+nausea/vomiting, radiation induced
+nausea/vomiting, chemotherapy induced
+
+nausea/vomiting, postoperative
+
+nausea/vomiting
+nausea
+
+
+CANCER:
+colorectal cancer
+breast cancer, adjuvant
+breast cancer
+cancer
+colon cancer
+lung cancer
+prostate cancer
+
+
+
+
