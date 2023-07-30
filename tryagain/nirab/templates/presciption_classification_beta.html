@@ -91,7 +91,6 @@ xhr.onload = function() {
     console.log(allMachGroups);
     console.log(allMachGroups2);
     console.log(all_groups_uniques);
-    console.log(all_groups_uniques[0]);
 
     if (Array.isArray(drugClassGroups) && drugClassGroups.length > 0) {
       // Display details for each medication
@@ -107,38 +106,24 @@ xhr.onload = function() {
     }
     detailsHtml += "</div>";
 
-
-
-
-
-
-
-      for (var i = 0; i < drugClassGroups.length; i++) {
-        var medication = drugClassGroups[i];
+    if (allMachGroups) {
+      for (var i = 0; i < allMachGroups.length; i++) {
+        var medication = allMachGroups[i];
         detailsHtml += "<div class='medication-details'>";
-        detailsHtml += "<p><strong>BRAND NAME: </strong>" + medication.name + "</p>";
-        detailsHtml += "<h4> DRUG CLASS </h4>";
-        var drug_class_indication_groups = new Set();
+        detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
+        detailsHtml += "<h4> MACHING  ISSUES </h4>";
 
-        if (medication.heading && medication.specific_class) {
-
-            for (var j = 0; j < medication.heading.split(",").length; j++) {
-              var heading = medication.heading.split(",")[j].toUpperCase();
-              var specific_class = medication.specific_class.split(",")[j];
-
-              // Check if the group is already processed
-              if (!drug_class_indication_groups.has(specific_class)) {
-                detailsHtml += "<p><strong class='medication-group'>MAIN CLASS</strong>"+heading+"</p>";
-                detailsHtml += "<p><strong class='medication-group'>SPECIFIC CLASS</strong>"+specific_class+"</p>";
-
-              }
-            }
+        if (medication.heading_matches && medication.specific_class_matches.length > 0) {
+          detailsHtml += "<p><strong>SPECIFIC ISSUES: </strong>" + medication.specific_class_matches + "</p>";
         }
+        else{
+          detailsHtml += "<p><strong>PREDICTED ISSUES: </strong>" + medication.heading_matches + "</p>";
+        }
+        detailsHtml += "</div>";
+      }
+}
 
-      
-        detailsHtml += "<h4> SIDE EFECT CLASS </h4>";
-        var side_effect_indication_groups = new Set();
-    }
+
     detailsHtml += "</div>";
 
     // Display the details on the page
