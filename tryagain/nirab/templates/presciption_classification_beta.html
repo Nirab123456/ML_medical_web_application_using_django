@@ -66,9 +66,9 @@
         <!-- Add a dropdown menu for sorting -->
         <script src="{% about_me 'js/presciption_classification.js' %}"></script>
         
+        <!-- <script src="{% about_me 'js/presciption_classification_beta.js' %}"></script> -->
 <script>
-  
-function toggleMatchingGroups() {
+  function toggleMatchingGroups() {
   var matchingGroups = document.querySelectorAll(".full-details");
   for (var i = 0; i < matchingGroups.length; i++) {
     matchingGroups[i].classList.toggle("hidden");
@@ -100,7 +100,7 @@ xhr.onload = function() {
     const all_groups_uniques = get_presciption_classification.all_matching_uniques;
 
     // // Now you can use these variables as needed
-    // console.log(drugClassGroups);
+    console.log(drugClassGroups);
     // console.log(allMachGroups);
     // console.log(allMachGroups2);
     // console.log(all_groups_uniques);
@@ -124,7 +124,7 @@ xhr.onload = function() {
       for (var i = 0; i < allMachGroups2.length; i++) {
         var medication = allMachGroups2[i];
         // console.log(medication);
-        detailsHtml += "<div class='full-details'>";
+        detailsHtml += "<div class='medication-details full-details hidden'>";
         detailsHtml += "<h6> DETAILED OBSERVATION OF MATCH </h6>";
         detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
         detailsHtml += "<h4> MACHING  ISSUES </h4>";
@@ -143,7 +143,7 @@ xhr.onload = function() {
     if (allMachGroups) {
       for (var i = 0; i < allMachGroups.length; i++) {
         var medication = allMachGroups[i];
-        detailsHtml += "<div class='full-details'>";
+        detailsHtml += "<div class='medication-details full-details hidden'>";
         detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
         detailsHtml += "<h4> MACHING  ISSUES </h4>";
 
@@ -156,6 +156,34 @@ xhr.onload = function() {
         detailsHtml += "</div>";
       }
 }
+
+for (var i = 0; i < drugClassGroups.length; i++) {
+  var medication = drugClassGroups[i];
+  detailsHtml += "<div class='medication-details'>";
+
+  if (medication.heading && medication.specific_class.length > 0) {
+    var headings = medication.heading.split(",");
+    var specificClasses = medication.specific_class.split(",");
+
+    for (var j = 0; j < headings.length; j++) {
+      var heading_matches = headings[j].toUpperCase();
+      console.log(heading_matches);
+      var specific_class_matches = specificClasses[j];
+      console.log(specific_class_matches);
+
+      detailsHtml += "<p><strong>DRUG NAME: </strong>" + medication.name + "</p>";
+      detailsHtml += "<p><strong>HEADING MATCH: </strong>" + specific_class_matches + "</p>";
+    }
+  } else {
+    detailsHtml += "<p><strong>DRUG NAME: </strong>" + medication.name + "</p>";
+    detailsHtml += "<p><strong>HEADING MATCH: </strong>" + (medication.heading_matches || '') + "</p>";
+  }
+
+  detailsHtml += "</div>";
+}
+
+
+
 
 
     detailsHtml += "</div>";
@@ -179,11 +207,9 @@ xhr.onerror = function() {
 xhr.send();
 }
 
-
-handleSelectionChange();
+// handleSelectionChange();
 
 </script>
-
           
             <div class="mb-3">
 
