@@ -70,6 +70,7 @@ class PRESCIPTION_CLASSIFICATION_BETA():
         print("calculate_drug_class_match() function started")
         drug_class_groups_list = self.get_drug_class_classification()
         all_list = []
+        all_matching_list = []
 
         if drug_class_groups_list is not None:
             for drug_class_group in drug_class_groups_list:
@@ -91,11 +92,18 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                 heading_matches = set(headings1) & set(headings2)
                 specific_class_matches = set(specific_class1) & set(specific_class2)
 
-                # Print the results for the current comparison
-                print(f"Matching name: {name1} and {name2}")
-                print(f"Matching headings: {list(heading_matches) if heading_matches else 'no matching'}")
-                print(f"Matching specific class: {list(specific_class_matches) if specific_class_matches else 'no matching'}")
-                print()
+                # If there are matches, add them to the all_matching_list
+                if heading_matches or specific_class_matches:
+                    all_matching_list.append({
+                        'name1': name1,
+                        'name2': name2,
+                        'heading_matches': list(heading_matches),
+                        'specific_class_matches': list(specific_class_matches)
+                    })
+
+        print("calculate_drug_class_match() function completed")
+        print(f'all_matching_list: {all_matching_list}')
+        return all_matching_list
 
 
 
