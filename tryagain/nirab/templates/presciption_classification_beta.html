@@ -84,22 +84,37 @@ xhr.onload = function() {
     const drugClassGroups = get_presciption_classification.drug_class_groups;
     const allMachGroups = get_presciption_classification.all_mach_groups;
     const allMachGroups2 = get_presciption_classification.all_mach_groups_2;
+    const all_groups_uniques = get_presciption_classification.all_matching_uniques;
 
     // Now you can use these variables as needed
     console.log(drugClassGroups);
     console.log(allMachGroups);
     console.log(allMachGroups2);
+    console.log(all_groups_uniques);
+    console.log(all_groups_uniques[0]);
 
-
-
-    if (Array.isArray(get_presciption_classification) && get_presciption_classification.length > 0) {
-
-
-
+    if (Array.isArray(drugClassGroups) && drugClassGroups.length > 0) {
       // Display details for each medication
       var detailsHtml = "";
-      for (var i = 0; i < get_presciption_classification.length; i++) {
-        var medication = get_presciption_classification[i];
+      if (all_groups_uniques) {
+        detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
+        detailsHtml += "<div class='medication-details'>";
+        detailsHtml += "<p><strong>classified releted drugs: </strong>" + all_groups_uniques[0] + "</p>";
+        detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + all_groups_uniques[1] + "</p>";
+        detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + all_groups_uniques[2] + "</p>";
+        detailsHtml += "<h4> DRUG CLASS </h4>";
+
+    }
+    detailsHtml += "</div>";
+
+
+
+
+
+
+
+      for (var i = 0; i < drugClassGroups.length; i++) {
+        var medication = drugClassGroups[i];
         detailsHtml += "<div class='medication-details'>";
         detailsHtml += "<p><strong>BRAND NAME: </strong>" + medication.name + "</p>";
         detailsHtml += "<h4> DRUG CLASS </h4>";
@@ -122,82 +137,20 @@ xhr.onload = function() {
 
       
         detailsHtml += "<h4> SIDE EFECT CLASS </h4>";
-
-
-
-
         var side_effect_indication_groups = new Set();
-
-
-        if (medication.side_effect_group && medication.side_effect_indication) {
-            var side_effect_indication_groups = new Set();
-
-            for (var j = 0; j < medication.side_effect_indication.split(",").length; j++) {
-              var group = medication.side_effect_group.split(",")[j].toUpperCase();
-              var indication = medication.side_effect_indication.split(",")[j];
-
-              // Check if the group is already processed
-              if (!side_effect_indication_groups.has(indication)) {
-                detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
-
-                // Add the group to the set of processed groups for indication
-                side_effect_indication_groups.add(indication);
-              }
-            }
-          }
-          else{
-            detailsHtml += "<p ><strong ><span class='medication-score' class='medication-indication'>No data found</span></strong></p>";
-
-          }
-
-          detailsHtml += "<h4> CONTRA-INDICATIONS </h4>";
-
-          var contraindication_groups = new Set();
-          if (medication.contraindication_group && medication.contraindication_indication) {
-            var contraindication_groups = new Set();
-
-            for (var j = 0; j < medication.contraindication_indication.split(",").length; j++) {
-              var group = medication.contraindication_group.split(",")[j].toUpperCase();
-              var indication = medication.contraindication_indication.split(",")[j];
-
-              // Check if the group is already processed
-              if (!contraindication_groups.has(indication)) {
-                detailsHtml += "<p><strong class='medication-group'>" + group + ":</strong><span class='medication-indication'>" + indication + "</span></p>";
-
-                // Add the group to the set of processed groups for indication
-                contraindication_groups.add(indication);
-              }
-            }
-          }
-          else {
-            detailsHtml += "<p ><strong ><span class='medication-score' class='medication-indication'>No data found</span></strong></p>";
-          }
-          if (medication.contraindication_result) {
-
-            for (var j = 0; j < medication.contraindication_result.split(",").length; j++) {
-              var result = medication.contraindication_result.split(",")[j];
-              detailsHtml += "<p><strong class='medication-score'>SUMMERY: </strong>" + result + "</p>";
-            }
-          }
-
-
-
-        // Add more fields here
-        detailsHtml += "</div>";
-        detailsHtml += "<hr>";
-      }
-      document.getElementById("get_presciption_classification").innerHTML = detailsHtml;
     }
-    
-    else {
-      // Display "No data found" message
-      document.getElementById("get_presciption_classification").innerHTML = "<p>No data found</p>";
-    }
+    detailsHtml += "</div>";
+
+    // Display the details on the page
+    document.getElementById("get_presciption_classification").innerHTML = detailsHtml;
   } else {
-    console.error('Request failed. Status:', xhr.status);
-    // Display "No data found" message for error cases
-    document.getElementById("get_presciption_classification").innerHTML = "<p>No data found</p>";
+    console.error(xhr.responseText);
   }
+
+  } else {
+    console.error(xhr.statusText);
+  }
+
 };
 xhr.onerror = function() {
   console.error('Request failed. Network error');
