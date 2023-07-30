@@ -13,10 +13,10 @@ class PRESCIPTION_CLASSIFICATION_BETA():
 
     def get_presciption_classification(self):
         drug_class_groups,all_mach_groups,all_mach_groups_2,all_matching_uniques=self.re_match_between_matches()
-        print(f'drug_class_groups: {drug_class_groups}')
-        print(f'all_mach_groups: {all_mach_groups}')
-        print(f'all_mach_groups_2: {all_mach_groups_2}')
-        print(f'all_matching_uniques: {all_matching_uniques}')
+        # print(f'drug_class_groups: {drug_class_groups}')
+        # print(f'all_mach_groups: {all_mach_groups}')
+        # print(f'all_mach_groups_2: {all_mach_groups_2}')
+        # print(f'all_matching_uniques: {all_matching_uniques}')
         response_data = {}
 
         if drug_class_groups is not None:
@@ -201,6 +201,7 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                             'heading_matches': list(heading_matches),
                             'specific_class_matches': list(specific_class_matches)
                         })
+                        print(f'1st all_matching_list2: {all_matching_list2}')
 
                     else:
                         all_matching_list2.append({
@@ -211,56 +212,11 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                             'heading_matches': list(heading_matches),
                             'specific_class_matches': list(specific_class_matches)
                         })
+                        print(f'2nd all_matching_list2: {all_matching_list2}')
         #remove duplicates
         all_matching_list2 = [i for n, i in enumerate(all_matching_list2) if i not in all_matching_list2[n + 1:]]
         return drug_class_groups_list,all_matching_list,all_matching_list2,all_combined_list
                             
-
-        #             all_matching_list2.append({
-        #                 'name1': name1,
-        #                 'name2': name2,
-        #                 'name3': name3,
-        #                 'name4': name4,
-        #                 'heading_matches': list(heading_matches),
-        #                 'specific_class_matches': list(specific_class_matches)
-        #             })
-
-        # return drug_class_groups_list,all_matching_list,all_matching_list2
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # drug_sets = [self.create_class_set(drug['heading']) for drug in drug_class_groups_list]
-        # print(f'drug_sets: {drug_sets}')
-        # matching_indices = {}
-        # for i, drug_set in enumerate(drug_sets):
-        #     matching_indices[i] = []
-        #     for j, other_set in enumerate(drug_sets):
-        #         if i != j and sorted(drug_set) == sorted(other_set):
-        #             matching_indices[i].append(j)
-
-        # # Collect the matching dictionaries and their matches
-        # matched_data = []
-        # for i, matches in matching_indices.items():
-        #     if matches:
-        #         matched_data.append({
-        #             'original': drug_class_groups_list[i],
-        #             'matches': [drug_class_groups_list[j] for j in matches]
-        #         })
-
-        # print("calculate_drug_class_match() function completed")
-        # return matched_data
 
 
     def get_side_effect_classification(self):
