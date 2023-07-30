@@ -11,8 +11,7 @@ class PRESCIPTION_CLASSIFICATION_BETA():
 
 
     def get_presciption_classification(self):
-        x=self.calculate_drug_class_match()
-        drug_class_groups = self.get_drug_class_classification()
+        drug_class_groups,all_mach_groups,all_mach_groups_2=self.re_match_between_matches()
         if drug_class_groups:
             return JsonResponse(drug_class_groups, safe=False)
         else:
@@ -67,7 +66,6 @@ class PRESCIPTION_CLASSIFICATION_BETA():
         
 
     def calculate_drug_class_match(self):
-        print("calculate_drug_class_match() function started")
         drug_class_groups_list = self.get_drug_class_classification()
         all_list = []
         all_matching_list = []
@@ -101,9 +99,51 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                         'specific_class_matches': list(specific_class_matches)
                     })
 
-        print("calculate_drug_class_match() function completed")
+        return all_matching_list,drug_class_groups_list
+    
+    def re_match_between_matches(self):
+        print("re_match_between_matches() function started")
+        all_matching_list,drug_class_groups_list = self.calculate_drug_class_match()
         print(f'all_matching_list: {all_matching_list}')
-        return all_matching_list
+        all_list = []
+        all_matching_list2 = []
+
+        if all_matching_list is not None:
+            for all_matching in all_matching_list:
+                name1 = all_matching['name1']
+                name2 = all_matching['name2']
+                heading_matches = all_matching['heading_matches']
+                specific_class_matches = all_matching['specific_class_matches']
+
+                # Combine nested list
+                combined_list = [name1, name2, heading_matches, specific_class_matches]
+                all_list.append(combined_list)
+
+        # Now, let's check for matches between each pair of lists in all_list
+        for i in range(len(all_list)):
+            name1, name2, heading_matches1, specific_class_matches1 = all_list[i]
+            for j in range(i + 1, len(all_list)):
+                name3, name4, heading_matches2, specific_class_matches2 = all_list[j]
+
+                # Check for matches between headings and specific_class for the current pair of lists
+                heading_matches = set(heading_matches1) & set(heading_matches2)
+                specific_class_matches = set(specific_class_matches1) & set(specific_class_matches2)
+
+                # If there are matches, add them to the all_matching_list
+                if heading_matches or specific_class_matches:
+                    all_matching_list2.append({
+                        'name1': name1,
+                        'name2': name2,
+                        'name3': name3,
+                        'name4': name4,
+                        'heading_matches': list(heading_matches),
+                        'specific_class_matches': list(specific_class_matches)
+                    })
+
+        print("re_match_between_matches() function completed")
+        print(f'all_matching_list2: {all_matching_list2}')
+        return drug_class_groups_list,all_matching_list,all_matching_list2
+    
 
 
 
