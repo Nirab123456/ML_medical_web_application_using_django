@@ -12,8 +12,6 @@
       .main-content {
           margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
       }
-  </style>
-  <style>
     /* Define CSS styles for better visibility */
     .medication-details {
       border: 1px solid #ccc;
@@ -34,6 +32,9 @@
       color: red; /* Change the color as per your preference */
     }
 
+    .hidden {
+    display: none;
+  }
 
   </style>
 </head>
@@ -60,11 +61,23 @@
       <div id="wordRecommendations"></div>
 
         <p id="selectedStrength"></p>
+        <button type="button" id="toggleButton">Toggle Matching Groups</button>
         <div id="get_presciption_classification"></div>
         <!-- Add a dropdown menu for sorting -->
         <script src="{% about_me 'js/presciption_classification.js' %}"></script>
         
 <script>
+  
+function toggleMatchingGroups() {
+  var matchingGroups = document.querySelectorAll(".full-details");
+  for (var i = 0; i < matchingGroups.length; i++) {
+    matchingGroups[i].classList.toggle("hidden");
+  }
+}
+
+// Attach the toggle function to the button's click event
+var toggleButton = document.getElementById("toggleButton");
+toggleButton.addEventListener("click", toggleMatchingGroups);
 
 function handleSelectionChange() {
   var nameInputs = document.querySelectorAll("#name-container input");
@@ -111,7 +124,7 @@ xhr.onload = function() {
       for (var i = 0; i < allMachGroups2.length; i++) {
         var medication = allMachGroups2[i];
         // console.log(medication);
-        detailsHtml += "<div class='medication-details'>";
+        detailsHtml += "<div class='full-details'>";
         detailsHtml += "<h6> DETAILED OBSERVATION OF MATCH </h6>";
         detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
         detailsHtml += "<h4> MACHING  ISSUES </h4>";
@@ -130,7 +143,7 @@ xhr.onload = function() {
     if (allMachGroups) {
       for (var i = 0; i < allMachGroups.length; i++) {
         var medication = allMachGroups[i];
-        detailsHtml += "<div class='medication-details'>";
+        detailsHtml += "<div class='full-details'>";
         detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
         detailsHtml += "<h4> MACHING  ISSUES </h4>";
 
@@ -167,7 +180,7 @@ xhr.send();
 }
 
 
-
+handleSelectionChange();
 
 </script>
 
