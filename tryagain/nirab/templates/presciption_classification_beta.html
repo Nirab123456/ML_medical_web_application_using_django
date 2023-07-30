@@ -79,6 +79,19 @@ xhr.open('GET', '/get_presciption_classification_beta/?name=' + drugNames , true
 xhr.onload = function() {
   if (xhr.status === 200) {
     var get_presciption_classification = JSON.parse(xhr.responseText);
+
+    // Assuming 'data' contains the JSON response from the server
+    const drugClassGroups = get_presciption_classification.drug_class_groups;
+    const allMachGroups = get_presciption_classification.all_mach_groups;
+    const allMachGroups2 = get_presciption_classification.all_mach_groups_2;
+
+    // Now you can use these variables as needed
+    console.log(drugClassGroups);
+    console.log(allMachGroups);
+    console.log(allMachGroups2);
+
+
+
     if (Array.isArray(get_presciption_classification) && get_presciption_classification.length > 0) {
 
 
