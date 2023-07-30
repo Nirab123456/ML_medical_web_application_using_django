@@ -9,6 +9,21 @@ function toggleMatchingGroups() {
 var toggleButton = document.getElementById("toggleButton");
 toggleButton.addEventListener("click", toggleMatchingGroups);
 
+function togglefullresults() {
+  var full_result = document.querySelectorAll(".full-result");
+  for (var i = 0; i < full_result.length; i++) {
+    full_result[i].classList.toggle("hidden");
+  }
+}
+
+var full_result_button = document.getElementById("full_result_button");
+full_result_button.addEventListener("click", togglefullresults);
+
+
+
+
+
+
 function handleSelectionChange() {
   var nameInputs = document.querySelectorAll("#name-container input");
     var drugNames = [];
@@ -30,7 +45,7 @@ xhr.onload = function() {
     const all_groups_uniques = get_presciption_classification.all_matching_uniques;
 
     // // Now you can use these variables as needed
-    // console.log(drugClassGroups);
+    console.log(drugClassGroups);
     // console.log(allMachGroups);
     // console.log(allMachGroups2);
     // console.log(all_groups_uniques);
@@ -87,23 +102,35 @@ xhr.onload = function() {
       }
 }
 
+var all_headings = new Set(); // Move the declaration outside the loop
 
-    for (var i = 0; i < drugClassGroups.length; i++) {
-      var medication = drugClassGroups[i];
-      if (medication.heading_matches && medication.specific_class_matches.length > 0) {
-        detailsHtml += "<div class='full_matching_map medication-details'>";
-        detailsHtml += "<p><strong>MATCHING DRUG: </strong>" + medication.name + "</p>";
-        detailsHtml += "<p><strong>SPECIFIC ISSUES: </strong>" + medication.specific_class_matches + "</p>";
-        detailsHtml += "</div>";
-      }
-      else{
-        detailsHtml += "<div class='full_matching_map medication-details'>";
-        detailsHtml += "<p><strong>MATCHING DRUG: </strong>" + medication.name + "</p>";
-        detailsHtml += "<p><strong>PREDICTED ISSUES: </strong>" + medication.heading_matches + "</p>";
-        detailsHtml += "</div>";
-      }
+for (var i = 0; i < drugClassGroups.length; i++) {
+  var medication = drugClassGroups[i];
 
+  if (medication.heading && medication.specific_class.length > 0) {
+    var headings = medication.heading.split(",");
+    var specificClasses = medication.specific_class.split(",");
+
+    for (var j = 0; j < headings.length; j++) {
+      var heading_matches = headings[j].toUpperCase();
+      console.log(heading_matches);
+      var specific_class_matches = specificClasses[j].toUpperCase();
+      console.log(specific_class_matches);
+      all_headings.add(specific_class_matches);
     }
+  } else {
+    var heading_matches = headings[j].toUpperCase();
+    console.log(heading_matches);
+    var specific_class_matches = specificClasses[j].toUpperCase();
+    console.log(specific_class_matches);
+    all_headings.add(heading_matches);
+  }
+
+  detailsHtml += "<div class='full-result medication-details hidden'>";
+  detailsHtml += "<p><strong>DRUG NAME: </strong>" + medication.name.toUpperCase() + "</p>";
+  detailsHtml += "<p><strong>HEADINGS: </strong>" + Array.from(all_headings) + "</p>";
+  detailsHtml += "</div>";
+}
 
 
 
@@ -130,4 +157,3 @@ xhr.onerror = function() {
 xhr.send();
 }
 
-// handleSelectionChange();
