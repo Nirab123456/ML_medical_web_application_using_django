@@ -10,14 +10,26 @@ class PRESCIPTION_CLASSIFICATION_BETA():
         self.request = request
 
 
+
     def get_presciption_classification(self):
         drug_class_groups,all_mach_groups,all_mach_groups_2=self.re_match_between_matches()
-        if drug_class_groups:
-            return JsonResponse(drug_class_groups, safe=False)
-        else:
-            return JsonResponse({}, safe=False)
+        response_data = {}
 
-                
+        if drug_class_groups is not None:
+            response_data['drug_class_groups'] = drug_class_groups
+
+        if all_mach_groups is not None:
+            response_data['all_mach_groups'] = all_mach_groups
+
+        if all_mach_groups_2 is not None:
+            response_data['all_mach_groups_2'] = all_mach_groups_2
+
+        print(f'response_data: {response_data["drug_class_groups"]}')
+        if response_data:
+            return JsonResponse(response_data, safe=False)
+        else:
+            return JsonResponse({'error': 'No data found'}, status=404)
+
     def get_drug_class_classification(self):
         request = self.request
         names = request.GET.get('name', '')  # Get the comma-separated names as a single string
@@ -102,9 +114,7 @@ class PRESCIPTION_CLASSIFICATION_BETA():
         return all_matching_list,drug_class_groups_list
     
     def re_match_between_matches(self):
-        print("re_match_between_matches() function started")
         all_matching_list,drug_class_groups_list = self.calculate_drug_class_match()
-        print(f'all_matching_list: {all_matching_list}')
         all_list = []
         all_matching_list2 = []
 
@@ -140,8 +150,6 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                         'specific_class_matches': list(specific_class_matches)
                     })
 
-        print("re_match_between_matches() function completed")
-        print(f'all_matching_list2: {all_matching_list2}')
         return drug_class_groups_list,all_matching_list,all_matching_list2
     
 
