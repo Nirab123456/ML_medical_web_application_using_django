@@ -51,26 +51,23 @@ xhr.onload = function() {
     // console.log(all_groups_uniques);
 
     if (Array.isArray(drugClassGroups) && drugClassGroups.length > 0) {
-      // Display details for each medication
-      var detailsHtml = "";
-      let anyNonEmptyArray = false;
-
-      for (let i = 0; i < all_groups_uniques.length; i++) {
-        const currentArray = all_groups_uniques[i];
-        if (Array.isArray(currentArray) && currentArray.length > 0) {
-          anyNonEmptyArray = true;
-          detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
-          detailsHtml += "<div class='medication-details'>";
-          detailsHtml += "<p><strong>classified related drugs: </strong>" + currentArray[0] + "</p>";
-          detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + currentArray[1] + "</p>";
-          detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + currentArray[2] + "</p>";
-          detailsHtml += "</div>";
+        // Display details for each medication
+        var detailsHtml = "";
+        function areAllArraysEmpty(arr) {
+            return arr.every(innerArr => innerArr.length === 0);
         }
-      }
 
-      if (!anyNonEmptyArray) {
-        detailsHtml += "<h6> this drugs doesn't bear any relation, use the buttons to toggle full views </h6>";
-      }
+        if (!areAllArraysEmpty(all_groups_uniques)) {
+            detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
+            detailsHtml += "<div class='medication-details'>";
+            detailsHtml += "<p><strong>classified related drugs: </strong>" + all_groups_uniques[0] + "</p>";
+            detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + all_groups_uniques[1] + "</p>";
+            if (all_groups_uniques[2].length > 0) {
+                detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + all_groups_uniques[2] + "</p>";
+            }
+            detailsHtml += "</div>";
+        }
+
 
 
       
@@ -168,5 +165,3 @@ xhr.onerror = function() {
 };
 xhr.send();
 }
-
-
