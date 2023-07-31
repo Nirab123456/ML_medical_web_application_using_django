@@ -45,7 +45,7 @@ xhr.onload = function() {
     const all_groups_uniques = get_presciption_classification.all_matching_uniques;
 
     // // Now you can use these variables as needed
-    console.log(drugClassGroups);
+    console.log(all_groups_uniques);
     // console.log(allMachGroups);
     // console.log(allMachGroups2);
     // console.log(all_groups_uniques);
@@ -53,15 +53,27 @@ xhr.onload = function() {
     if (Array.isArray(drugClassGroups) && drugClassGroups.length > 0) {
       // Display details for each medication
       var detailsHtml = "";
-      if (all_groups_uniques) {
-        detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
-        detailsHtml += "<div class='medication-details'>";
-        detailsHtml += "<p><strong>classified releted drugs: </strong>" + all_groups_uniques[0] + "</p>";
-        detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + all_groups_uniques[1] + "</p>";
-        detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + all_groups_uniques[2] + "</p>";
-        detailsHtml += "</div>";
+      let anyNonEmptyArray = false;
 
-    }
+      for (let i = 0; i < all_groups_uniques.length; i++) {
+        const currentArray = all_groups_uniques[i];
+        if (Array.isArray(currentArray) && currentArray.length > 0) {
+          anyNonEmptyArray = true;
+          detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
+          detailsHtml += "<div class='medication-details'>";
+          detailsHtml += "<p><strong>classified related drugs: </strong>" + currentArray[0] + "</p>";
+          detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + currentArray[1] + "</p>";
+          detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + currentArray[2] + "</p>";
+          detailsHtml += "</div>";
+        }
+      }
+
+      if (!anyNonEmptyArray) {
+        detailsHtml += "<h6> this drugs doesn't bear any relation, use the buttons to toggle full views </h6>";
+      }
+
+
+      
 
 // i have to hide after this section
 
@@ -156,4 +168,5 @@ xhr.onerror = function() {
 };
 xhr.send();
 }
+
 
