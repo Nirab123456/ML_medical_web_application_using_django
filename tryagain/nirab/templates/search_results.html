@@ -40,7 +40,7 @@
             </div>
 
 
-            <select id="sortOption" onchange="handleSelectionChange()">
+            <select id="sortOption">
               <option value="default">Default</option>
               <option value="priceAsc">Price (Low to High)</option>
               <option value="priceDesc">Price (High to Low)</option>
@@ -80,7 +80,20 @@
   console.log('Strength:', strength);
   console.log('Dosage Form:', dosageForm);
   console.log('Drug Name:', drugName);
-  
+
+
+
+
+document.getElementById("sortOption").addEventListener("change", handleSortOptionChange);
+
+function handleSortOptionChange() {
+  var selectedSortOption = document.getElementById("sortOption").value;
+  // Call the function to fetch medication details with the updated sort option
+  fetchMedicationDetails(selectedSortOption);
+}
+
+
+function fetchMedicationDetails(sortOption) {
   // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/get_medication/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName, true);
@@ -91,15 +104,16 @@
       var medicationDetails = JSON.parse(xhr.responseText);
       if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
         // Sort the medication details based on the selected sort option
-        // if (sortOption === "priceAsc") {
-        //   medicationDetails.sort(function(a, b) {
-        //     return a.price_analysis - b.price_analysis;
-        //   });
-        // } else if (sortOption === "priceDesc") {
-        //   medicationDetails.sort(function(a, b) {
-        //     return b.price_analysis - a.price_analysis;
-        //   });
-        // }
+        
+        if (sortOption === "priceAsc") {
+          medicationDetails.sort(function(a, b) {
+            return a.price_analysis - b.price_analysis;
+          });
+        } else if (sortOption === "priceDesc") {
+          medicationDetails.sort(function(a, b) {
+            return b.price_analysis - a.price_analysis;
+          });
+        }
         
         // Display details for each medication
         var detailsHtml = "";
@@ -173,7 +187,8 @@
     document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
   };
   xhr.send();
-
+}
+fetchMedicationDetails("default");
 
 </script>
 
