@@ -2,80 +2,123 @@
 {% include 'base.html' %}
 {% block content %}
 {% load custom_filters %}
-{% include "MED_nav.html" %}
-<html data-bs-theme="light">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
+    <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="{% about_me 'css/search.css' %}">
+<style>
 
 
-    <style>
-      .main-content {
-          margin-left: 7.5rem; /* Adjust this value to match the width of your first div */
-      }
-  </style>
+
+</style>
+
+
 </head>
 
+
 <body>
-  <div class="page cv-page main-content">
-    <main class="page hire-me-page"></main>
-    <div class="price-card">
-
-            <div class="mb-3">
-
-            </div>
-            
+    <div class="page-wrapper bg-img-1 p-t-200 p-b-120" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-4">
+                <div class="card-body">
 
 
-
-            <div class="mb-3">
-
-            </div>
-
-
-
-            <div class="mb-3">
-
-            </div>
+                    <ul class="tab-list">
+                        <li class="tab-list__item active">
+                            <a class="tab-list__link" href="#tab1" data-toggle="tab">DRUG SEARCH/DETAILS DETAILS</a>
+                        </li>
+                        <li class="tab-list__item">
+                            <a class="tab-list__link" href="#tab2" data-toggle="tab">DRUG DETAILS</a>
+                        </li>
+                    </ul>
 
 
-            <select id="sortOption">
-              <option value="default">Default</option>
-              <option value="priceAsc">Price (Low to High)</option>
-              <option value="priceDesc">Price (High to Low)</option>
-            </select>
 
-            <div id="medicationDetails"></div>
-            <!-- Add a dropdown menu for sorting -->
 
-          
-            <div class="mb-3">
+                    <div class="tab-content">
 
-            </div>
-            
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-md-12 button">
-                      <div class="d-flex align-items-center justify-content-center">
-                        
-                      </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="tab-pane active" id="tab1">
+
+
+
+                                
+                                <div class="row row-space">
+                                    <select id="sortOption">
+                                        <option value="default">Default</option>
+                                        <option value="priceAsc">Price (Low to High)</option>
+                                        <option value="priceDesc">Price (High to Low)</option>
+                                      </select>
+
+                                </div>
+
+
+                                <div class="row row-space">
+
+
+                                  <div id="medicationDetails"></div>
+
+
+                                    <!-- <div class="col-2">
+
+
+
+
+
+                                    </div>
+
+
+
+
+                                    <div class="col-2">
+
+
+                                    </div> -->
+                                </div> 
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-  </div>
 </body>
-
 
 <script src="{% about_me 'js/search_results.js' %}"></script>
 
 
-
 </html>
-
 {% endblock %}
-
-
-
-
