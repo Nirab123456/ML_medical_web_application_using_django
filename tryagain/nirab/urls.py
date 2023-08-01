@@ -32,6 +32,14 @@ urlpatterns = [
     path('base_ocr/', views.base_ocr, name='base_ocr'),
     path('base_handwritten/', views.base_handwritten, name='base_handwritten'),
     path('change_password/', views.change_password, name='change_password'),
+
+
+
+
+
+
+
+
     path('medication_search/', views.medication_search, name='medication_search'),
     path('get_medication/', views.get_medication_details, name='get_medication'),
     path('medicine_details/', views.medicine_details, name='medicine_details'),
@@ -42,5 +50,11 @@ urlpatterns = [
     path('medicine_chatbot/', views.medicine_chatbot, name='medicine_chatbot'),
     path('get_medicine_chat/', views.get_medicine_chat, name='get_medicine_chat'),
     path('presciption_classification_beta/', views.presciption_classification_beta, name='presciption_classification_beta'),
-    path('get_presciption_classification_beta/', views.get_presciption_classification_beta, name='get_presciption_classification_beta'),    
+    path('get_presciption_classification_beta/', views.get_presciption_classification_beta, name='get_presciption_classification_beta'),
+    path('med_search/', views.med_search, name='med_search'), 
+
+
+
+
+
 ]

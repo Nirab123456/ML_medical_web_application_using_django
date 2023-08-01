@@ -51,24 +51,29 @@ xhr.onload = function() {
     // console.log(all_groups_uniques);
 
     if (Array.isArray(drugClassGroups) && drugClassGroups.length > 0) {
-        // Display details for each medication
-        var detailsHtml = "";
-        function areAllArraysEmpty(arr) {
-            return arr.every(innerArr => innerArr.length === 0);
-        }
+    // Display details for each medication
+    var detailsHtml = "";
+    var matchingGroupsFound = false;
 
-        if (!areAllArraysEmpty(all_groups_uniques)) {
-            detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
-            detailsHtml += "<div class='medication-details'>";
-            detailsHtml += "<p><strong>classified related drugs: </strong>" + all_groups_uniques[0] + "</p>";
-            detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + all_groups_uniques[1] + "</p>";
-            if (all_groups_uniques[2].length > 0) {
-                detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + all_groups_uniques[2] + "</p>";
-            }
-            detailsHtml += "</div>";
-        }
+    function areAllArraysEmpty(arr) {
+      return arr.every(innerArr => innerArr.length === 0);
+    }
 
+    if (!areAllArraysEmpty(all_groups_uniques)) {
+      matchingGroupsFound = true;
+      detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
+      detailsHtml += "<div class='medication-details'>";
+      detailsHtml += "<p><strong>classified related drugs: </strong>" + all_groups_uniques[0] + "</p>";
+      detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + all_groups_uniques[1] + "</p>";
+      if (all_groups_uniques[2].length > 0) {
+        detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + all_groups_uniques[2] + "</p>";
+      }
+      detailsHtml += "</div>";
+    }
 
+    if (!matchingGroupsFound) {
+      detailsHtml += "<h4> NO MATCHING GROUPS </h4>";
+    }
 
       
 
@@ -122,16 +127,13 @@ for (var i = 0; i < drugClassGroups.length; i++) {
 
     for (var j = 0; j < headings.length; j++) {
       var heading_matches = headings[j].toUpperCase();
-      console.log(heading_matches);
       var specific_class_matches = specificClasses[j].toUpperCase();
       console.log(specific_class_matches);
       all_headings.add(specific_class_matches);
     }
   } else {
     var heading_matches = headings[j].toUpperCase();
-    console.log(heading_matches);
     var specific_class_matches = specificClasses[j].toUpperCase();
-    console.log(specific_class_matches);
     all_headings.add(heading_matches);
   }
 

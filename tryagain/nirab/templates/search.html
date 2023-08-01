@@ -1,0 +1,233 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+{% include "MED_nav.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+    <div class="page-wrapper bg-img-1 p-t-200 p-b-120" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-4">
+                <div class="card-body">
+
+
+                    <ul class="tab-list">
+                        <li class="tab-list__item active">
+                            <a class="tab-list__link" href="#tab1" data-toggle="tab">DRUG SEARCH/DETAILS DETAILS</a>
+                        </li>
+                        <li class="tab-list__item">
+                            <a class="tab-list__link" href="#tab2" data-toggle="tab">DRUG DETAILS</a>
+                        </li>
+                    </ul>
+
+
+
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="tab1">
+                            <form method="POST" action="#">
+                                {% csrf_token %} 
+
+                                <div class="input-group input-group-big">
+                                    <label class="form-label input-group-text label">provide the name of drug:</label>
+                                    <input type="text" class="input--style-1" id="name" name="name" value="{{ name_of_medication }}" placeholder="NAME OF THE DRUG e.g:NAPA" required="required" oninput="showWordRecommendations()">
+                                </div>
+
+
+                                
+                                <div class="row row-space">
+                                    <div class="col-2" >
+                                        
+                                        <div id="wordRecommendations"></div>
+
+                                    </div>
+
+
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">select the strength(optional):</label><input type="text" class="input--style-1" name="check-out" placeholder="mm/dd/yyyy" id="input-end"></div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="form-label input-group-text label" style="font-size: 16px;">
+                                                <strong>Select The dosage form(Optional)</strong>
+                                            </label>
+
+                                            <div class="input-group-text input-group-icon" id="js-select-special">
+                                                <input type="text" class="input--style-1 input--style-1-small" name="traveller" value="1 Adult, 0 Children, 1 Room" disabled="disabled" id="info">
+                                                <i class="zmdi zmdi-chevron-down input-icon"></i>
+                                            </div>
+
+                                            <div class="input-group-text dropdown-select">
+
+                                                <ul class="list-room">
+                                                    <li class="list-room__item">
+                                                        <span class="list-room__name">Room 1</span>
+                                                        <ul class="list-person">
+
+
+                                                            <li class="list-person__item">
+                                                                <span class="name">Adults</span>
+                                                                <div class="quantity quantity1">
+                                                                    <span class="minus">-</span>
+                                                                    <input type="number" class="inputQty" min="0" value="1">
+                                                                    <span class="plus">+</span>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="list-person__item"><span class="name">Children</span>
+                                                                <div class="quantity quantity2"><span class="minus">-</span><input type="number" class="inputQty" min="0" value="0"><span class="plus">+</span></div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="list-room__footer"><a href="#" id="btn-add-room">Add room</a></div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <button style="margin-top: 5px" class="btn-submit" type="submit">get med details</button>
+                                        <button style="margin-top: 5px" class="btn-submit" type="submit">SEARCH MEDICINE</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $(".tab-list__link").on("click", function (e) {
+            e.preventDefault();
+            var targetTab = $(this).attr("href");
+            $(".tab-pane").removeClass("active");
+            $(targetTab).addClass("active");
+        });
+    });
+
+    var timeout; // Global variable to store timeout reference
+        
+        function showWordRecommendations() {
+          clearTimeout(timeout); // Clear previous timeout, if any
+        
+          // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+          timeout = setTimeout(function() {
+            var input = document.getElementById("name").value.trim();
+        
+            // Check if there is any input
+            if (input.length === 0) {
+              document.getElementById("wordRecommendations").innerHTML = "";
+              return;
+            }
+        
+            // Make an AJAX call to fetch word recommendations based on the input
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+            xhr.onload = function() {
+
+
+
+
+              if (xhr.status === 200) {
+                var wordRecommendations = JSON.parse(xhr.responseText);
+        
+                // Display word recommendations in a list
+                var recommendationsHtml = '<div class="input-group">';
+                    recommendationsHtml += '<label class="form-label input-group-text label">select the drug:</label>';
+                    recommendationsHtml += "<select onchange='selectRecommendation()'>"; 
+                    recommendationsHtml += '<option>CAN SELECT MATCHING DRUG NAME</option>';
+                    recommendationsHtml += '</div>';
+
+                for (var i = 0; i < wordRecommendations.length; i++) {
+        
+        
+                  var word = wordRecommendations[i];
+        
+        
+                  recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
+                }
+
+                recommendationsHtml += "</select>";
+        
+                document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
+              } 
+              
+              
+              
+              else {
+                console.error('Request failed. Status:', xhr.status);
+                // Display no recommendations for error cases
+                document.getElementById("wordRecommendations").innerHTML = "";
+              }
+            };
+            xhr.onerror = function() {
+              console.error('Request failed. Network error');
+              // Display no recommendations for network errors
+              document.getElementById("wordRecommendations").innerHTML = "";
+            };
+            xhr.send();
+          }, 300); // Adjust the delay as needed (in milliseconds)
+        }
+        
+        
+        // Function to select a word recommendation and populate the input field with it
+        function selectRecommendation() {
+          var selectElement = document.querySelector("select");
+          var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+          document.getElementById("name").value = selectedOption;
+          document.getElementById("wordRecommendations").innerHTML = "";
+        }
+        
+
+</script>
+
+
+</html>
+{% endblock %}

@@ -23,6 +23,13 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 
 
 
+def med_search(request):
+    return render(request, 'search.html')
+
+
+
+
+
 
 def medicine_chatbot(request):
     if request.method == 'POST':
@@ -160,12 +167,12 @@ def get_medication_details(request):
         medication_details = []
         for medication in medications:
             details = {
-                'name': medication.name,
-                'dosage_form': medication.dosage_form,
-                'generic_name': medication.generic_name,
-                'manufacturer': medication.manufacturer,
-                'price': str(medication.price),
-                'price_analysis': str(medication.price_analysis),
+                'name': medication.name.strip().capitalize(),
+                'dosage_form': medication.dosage_form.strip().capitalize(),
+                'generic_name': medication.generic_name.strip().capitalize(),
+                'manufacturer': medication.manufacturer.strip().capitalize(),
+                'price': str(medication.price).strip(),
+                'price_analysis': str(medication.price_analysis).strip(),
                 # add any other fields you want to include
             }
             medication_details.append(details)
