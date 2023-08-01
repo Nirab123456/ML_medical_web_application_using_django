@@ -2,8 +2,6 @@
 {% include 'base.html' %}
 {% block content %}
 {% load custom_filters %}
-{% include "MED_nav.html" %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,57 +57,56 @@
 
                                     </div>
 
-
+                                    {% if strengths %}
                                     <div class="col-2">
-                                        <div class="input-group"><label class="form-label input-group-text label">select the strength(optional):</label><input type="text" class="input--style-1" name="check-out" placeholder="mm/dd/yyyy" id="input-end"></div>
+                                        <div class="input-group">
+                                            <label class="form-label input-group-text label">select the strength(optional):</label>
+
+                                            <select class="form-select" id="strength" name="strength" onchange="handleSelectionChange()">
+                                                <optgroup label="Strength">
+                                                  <option value="">None</option>
+                                                  {% for strength in strengths %}
+                                                    <option value="{{ strength }}">{{ strength }}</option>
+                                                  {% endfor %}
+                                                </optgroup>
+                                              </select>
+                                        
+                                        
+                                        </div>
                                     </div>
+                                    {% endif %}
+
 
                                 </div>
 
 
-
                                 <div class="row row-space">
+
+                                    {% if dosage_forms %}
+
                                     <div class="col-2">
+
+
                                         <div class="input-group">
-                                            <label class="form-label input-group-text label" style="font-size: 16px;">
-                                                <strong>Select The dosage form(Optional)</strong>
-                                            </label>
+                                            <label class="form-label input-group-text label">select the strength(optional):</label>
 
-                                            <div class="input-group-text input-group-icon" id="js-select-special">
-                                                <input type="text" class="input--style-1 input--style-1-small" name="traveller" value="1 Adult, 0 Children, 1 Room" disabled="disabled" id="info">
-                                                <i class="zmdi zmdi-chevron-down input-icon"></i>
-                                            </div>
-
-                                            <div class="input-group-text dropdown-select">
-
-                                                <ul class="list-room">
-                                                    <li class="list-room__item">
-                                                        <span class="list-room__name">Room 1</span>
-                                                        <ul class="list-person">
-
-
-                                                            <li class="list-person__item">
-                                                                <span class="name">Adults</span>
-                                                                <div class="quantity quantity1">
-                                                                    <span class="minus">-</span>
-                                                                    <input type="number" class="inputQty" min="0" value="1">
-                                                                    <span class="plus">+</span>
-                                                                </div>
-                                                            </li>
-
-                                                            <li class="list-person__item"><span class="name">Children</span>
-                                                                <div class="quantity quantity2"><span class="minus">-</span><input type="number" class="inputQty" min="0" value="0"><span class="plus">+</span></div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-
-                                                <div class="list-room__footer"><a href="#" id="btn-add-room">Add room</a></div>
-
-                                            </div>
-
+                                            <select class="form-select" id="dosage_form" name="dosage_form" onchange="handleSelectionChange()">
+                                                <optgroup label="dosage_form">
+                                                  <option value="">None</option>
+                                                  {% for dosage_form in dosage_forms %}
+                                                    <option value="{{ dosage_form }}">{{ dosage_form }}</option>
+                                                  {% endfor %}
+                                                </optgroup>
+                                              </select>
+                                        
+                                        
                                         </div>
+
+
+
                                     </div>
+                                    {% endif %}
+
                                     <div class="col-2">
                                         <button style="margin-top: 5px" class="btn-submit" type="submit">get med details</button>
                                         <button style="margin-top: 5px" class="btn-submit" type="submit">SEARCH MEDICINE</button>
@@ -225,7 +222,16 @@
           document.getElementById("wordRecommendations").innerHTML = "";
         }
         
+        function handleSelectionChange() {
+  var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+  var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+  var drugName = encodeURIComponent(document.getElementById("name").value);
+  var sortOption = document.getElementById("sortOption").value;
 
+  console.log(selectedStrength);
+    console.log(selectedDosageForm);
+        console.log(drugName);
+        }
 </script>
 
 
