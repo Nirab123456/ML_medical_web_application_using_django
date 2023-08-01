@@ -105,6 +105,10 @@
 
 
                                     </div>
+                                    {% else %}
+
+
+
                                     {% endif %}
 
                                     <div class="col-2">
@@ -223,15 +227,25 @@
         }
         
         function handleSelectionChange() {
-  var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
-  var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
-  var drugName = encodeURIComponent(document.getElementById("name").value);
-  var sortOption = document.getElementById("sortOption").value;
+            var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+            var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+            var drugName = encodeURIComponent(document.getElementById("name").value);
 
-  console.log(selectedStrength);
-    console.log(selectedDosageForm);
-        console.log(drugName);
-        }
+            console.log(selectedStrength);
+                console.log(selectedDosageForm);
+                    console.log(drugName);
+
+            if(!selectedStrength || !selectedDosageForm || !drugName){
+            // Construct the URL with query parameters
+            var url = "/medication_search/?strength=" + selectedStrength +
+                        "&dosage_form=" + selectedDosageForm +
+                        "&name=" + drugName;
+            // Navigate to the target page with the constructed URL
+            window.location.href = url;
+                }
+            }
+
+                
 </script>
 
 
