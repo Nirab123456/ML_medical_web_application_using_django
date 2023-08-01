@@ -40,7 +40,7 @@
                     <div class="tab-content">
 
                         <div class="tab-pane active" id="tab1">
-                            <form method="POST" action="#">
+                            <form method="POST" id="med_search_form" action="#">
                                 {% csrf_token %} 
 
                                 <div class="input-group input-group-big">
@@ -113,7 +113,7 @@
 
                                     <div class="col-2">
                                         <button style="margin-top: 5px" class="btn-submit" type="submit">get med details</button>
-                                        <button style="margin-top: 5px" class="btn-submit" type="submit">SEARCH MEDICINE</button>
+                                        <button style="margin-top: 5px"  class="btn-submit" type="submit">SEARCH MEDICINE</button>
                                     </div>
                                 </div>
 
@@ -226,25 +226,30 @@
           document.getElementById("wordRecommendations").innerHTML = "";
         }
         
-        function handleSelectionChange() {
-            var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
-            var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
-            var drugName = encodeURIComponent(document.getElementById("name").value);
 
-            console.log(selectedStrength);
-                console.log(selectedDosageForm);
-                    console.log(drugName);
+        function handleFormSubmission(event) {
+          var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+          var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+          var drugName = encodeURIComponent(document.getElementById("name").value);
+          // var sortOption = document.getElementById("sortOption").value;
+          console.log(selectedStrength);
+          console.log(selectedDosageForm);
+          console.log(drugName);
 
-            if(!selectedStrength || !selectedDosageForm || !drugName){
+          if (selectedStrength && selectedDosageForm && drugName) {
+            event.preventDefault(); // Prevent default form submission behavior
+
             // Construct the URL with query parameters
-            var url = "/medication_search/?strength=" + selectedStrength +
-                        "&dosage_form=" + selectedDosageForm +
-                        "&name=" + drugName;
-            // Navigate to the target page with the constructed URL
-            window.location.href = url;
-                }
-            }
+            var queryParams = '?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + drugName;
+            // You can add more parameters if needed like this: '&param1=value1&param2=value2'
 
+            // Redirect to the target HTML page with the query parameters
+            window.location.href = '/med_search_results/' + queryParams;
+          }
+        }
+
+        // Attach the handleFormSubmission function to the form's submit event
+        document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
                 
 </script>
 

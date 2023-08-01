@@ -34,17 +34,22 @@ def med_search(request):
             strengths = set(strengths)
             # Convert the result to a list
             strengths = list(strengths)
-            print(f'strengths: {strengths}')
             dosage_forms = Medication.objects.filter(name=name).values_list('dosage_form', flat=True)
             dosage_forms = set(dosage_forms)
             # Convert the result to a list
             dosage_forms = list(dosage_forms)
-            print(f'dosage forms: {dosage_forms}')
             return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
                                                         'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
     else:
         form = MedicineForm()
     return render(request, 'search.html', {'medication_form': form})
+
+
+def med_search_results(request):
+    return render(request, 'search_results.html')
+
+
+
 
 
 

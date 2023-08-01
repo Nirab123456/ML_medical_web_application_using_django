@@ -40,6 +40,7 @@ urlpatterns = [
 
 
 
+
     path('medication_search/', views.medication_search, name='medication_search'),
     path('get_medication/', views.get_medication_details, name='get_medication'),
     path('medicine_details/', views.medicine_details, name='medicine_details'),
@@ -52,6 +53,7 @@ urlpatterns = [
     path('presciption_classification_beta/', views.presciption_classification_beta, name='presciption_classification_beta'),
     path('get_presciption_classification_beta/', views.get_presciption_classification_beta, name='get_presciption_classification_beta'),
     path('med_search/', views.med_search, name='med_search'), 
+    path('med_search_results/', views.med_search_results, name='med_search_results'),
 
 
 
