@@ -6,54 +6,54 @@
 <html lang="en">
 
 <head>
+
+
     <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
     <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
     <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
-
+    <link rel="stylesheet" href="{% about_me 'css/custom.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <style>
-/* Custom CSS styles for the input group */
-.my-custom-input-group {
-  background-color: #a8f5cd;
-  border: 1px solid #151414;
-  padding: 10px;
-  border-radius: 5px;
-}
+
+.my_coll-2 {
+    width: -webkit-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: calc(100% - 20px);
+  }
+  
+  @media (max-width: 1500px) {
+  .my_coll-2 {
+      width: 100%;
+    }
+  }
 
 
 </style>
+
 
 
 </head>
 
 
 <body>
-    <div class="page-wrapper bg-img-1 p-t-200 p-b-120" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
-        <div class="wrapper wrapper--w900">
-            <div class="card card-4">
-                <div class="card-body">
-
-
-
+    <div class="page-wrapper" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+        <div style="margin-left: 15px">
 
 
                     <div class="tab-content">
 
-                        <div class="tab-pane active" id="tab1">
-                                {% csrf_token %} 
+                        <div id="tab1">
 
-                                <div class="input-group input-group-big">
-                                    <label class="label">provide the name of drug:</label>
 
-                                </div>
 
 
                                 <div class="row row-space">
 
                                   
-                                    <div  class="col-2" >
+                                    <div style="margin-top: 25px"  class="col-2" >
 
-                                      <select id="sortOption">
+                                      <select class ='input-group input-group-big' id="sortOption">
                                         <option value="default">Default</option>
                                         <option value="priceAsc">Price (Low to High)</option>
                                         <option value="priceDesc">Price (High to Low)</option>
@@ -74,15 +74,10 @@
 
 
 
+                                  <div class ='row row-space' id="medicationDetails"></div>
 
 
-                                <div class="row row-space">
 
-
-                                  <div id="medicationDetails"></div>
-
-
-                                </div>
 
 
 
@@ -112,8 +107,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 </body>
 
 <!-- <script src="{% about_me 'js/search_results.js' %}"></script> -->
@@ -172,40 +165,42 @@ function fetchMedicationDetails(sortOption) {
           var medication = medicationDetails[i];
           detailsHtml += 
           
-          `<div class="card card-margin">
-            <div class="card-body">
-              <div class="row search-body">
-                <div class="col-lg-12">
-                  <div class="search-result">
-                    <div class="result-body">
-                      <div class="table-responsive">
+                  `
+                  
+
+                      <div class="row row-space">
+                        <div  class="my_coll" >
                         <table class="table  widget-26">
                           <tbody>
                             <tr>
-                              <td class="column-1">
+                              <td>
                                 <div class="widget-26-job-title">
-                                  <a href="#">' + ${medication.name.trim()} + '</a>
+                                  <a href="#">${medication.name.trim()}</a>
                                   <p class="m-0">
-                                    <a href="#" class="employer-name text-center Class">' + ${medication.dosage_form.trim()} + '.</a>
+                                    <a href="#" >${medication.dosage_form.trim()}.</a>
                                   </p>
                                 </div>
                               </td>
                               <td class="column-2" >
                                 <div class="widget-26-job-info">
-                                  <p class="type m-0">' + medication.manufacturer.trim() + '</p>
-                                  <a  class="type m-0 employer-name">' + medication.generic_name.trim() + '.</a>
+                                  <p class="type m-0">${medication.manufacturer.trim()}</p>
+                                  <a  class="type m-0 employer-name">${medication.generic_name.trim()}.</a>
                                 </div>
-                              </td>`
+                              </td>
+                              
+                              
+                              
+                              `
 
           if(medication.price != '0'){
-            detailsHtml += `<td class="column-3" >
+            detailsHtml += `<td style="margin-left: 15px" class="column-3" >
                                 <div class="widget-26-job-category">
-                                    <p class="m-0 text-center Class">' ${medication.price.trim()} '</p>
+                                    <p class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
                                 </div>
                             </td>`
           }
             else{
-            detailsHtml += ` <td class="column-3">
+            detailsHtml += ` <td style="margin-left: 15px" class="column-3">
                      <div class="widget-26-job-category">
                        <p class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>
                      </div>
@@ -215,13 +210,13 @@ function fetchMedicationDetails(sortOption) {
           detailsHtml += `  </tr>
                           </tbody>
                         </table>
-                      </div>
+                    </div>
                   </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>`
+
+                
+
+
+          `
         }
         document.getElementById("medicationDetails").innerHTML = detailsHtml;
       } else {

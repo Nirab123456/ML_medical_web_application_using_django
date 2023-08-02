@@ -1,0 +1,158 @@
+.widget-26 {
+    color: #3c4142;
+    font-weight: 400;
+  }
+
+
+  .widget-26 .widget-26-job-title {
+    min-width: 200px;
+  }
+
+
+  .widget-26 .widget-26-job-info {
+    min-width: 100px;
+    font-weight: 400;
+  }
+  .widget-26 .widget-26-job-category {
+    padding: .5rem;
+    display: inline-flex;
+    white-space: nowrap;
+    border-radius: 15px;
+  }
+
+  
+  .col-2 {
+    width: -webkit-calc((100% - 20px) / 2);
+    width: -moz-calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
+  }
+  
+  @media (max-width: 767px) {
+    .col-2 {
+      width: 100%;
+    }
+  }
+
+  
+  .page-wrapper {
+    min-height: 100vh;
+  }
+
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+   .wrapper {
+    margin: 0 auto;
+  }
+  
+  .wrapper--w680 {
+    max-width: 680px;
+  }
+  
+  .wrapper--w720 {
+    max-width: 720px;
+  }
+  
+  .wrapper--w900 {
+    max-width: 900px;
+  }
+
+
+
+/* ==========================================================================
+   #TAB_CONTENT
+   ========================================================================== */
+
+
+  .tab-content > .tab-pane {
+    display: none;
+    padding: 49px 55px;
+    padding-bottom: 70px;
+  }
+  
+  .tab-content > .tab-pane.active {
+    display: block;
+  }
+  
+  @media (max-width: 767px) {
+    .tab-content > .tab-pane {
+      padding: 30px;
+      padding-bottom: 45px;
+    }
+  }
+  
+
+
+/* ==========================================================================
+   #INPUT_CONTENT
+   ========================================================================== */
+
+
+
+
+
+
+  .input-group {
+    position: relative;
+    margin-bottom: 35px;
+    background: #ffffff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .input-group-big {
+    padding: 10px 20px;
+    padding-right: 60px;
+  }
+  
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+   .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .row-space {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  
+  .row-refine {
+    margin: 0 -15px;
+  }
+  
+  .col-2 {
+    width: -webkit-calc((100% - 20px) / 2);
+    width: -moz-calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
+  }
+  
+  @media (max-width: 767px) {
+    .col-2 {
+      width: 100%;
+    }
+  }
+  
