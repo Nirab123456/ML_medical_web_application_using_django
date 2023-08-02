@@ -1,4 +1,6 @@
+
 $(document).ready(function () {
+  showWordRecommendations();
   $(".tab-list__link").on("click", function (e) {
       e.preventDefault();
       var targetTab = $(this).attr("href");
@@ -15,10 +17,13 @@ var timeout; // Global variable to store timeout reference
     // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
     timeout = setTimeout(function() {
       var input = document.getElementById("name").value.trim();
+      console.log(input);
   
       // Check if there is any input
       if (input.length === 0) {
-        document.getElementById("wordRecommendations").innerHTML = "";
+        var recommendationsHtml = "<select class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectRecommendation()'>";
+        recommendationsHtml += '<option value="">USE A PROPER BRAND NAME</option>';
+        document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
         return;
       }
   
@@ -34,25 +39,22 @@ var timeout; // Global variable to store timeout reference
           var wordRecommendations = JSON.parse(xhr.responseText);
   
           // Display word recommendations in a list
-          var recommendationsHtml = '<div class="input-group">';
-              recommendationsHtml += '<label class="label">select the drug:</label>';
-              recommendationsHtml += '<div class="input-group-icon" id="js-select-special">'
-              recommendationsHtml += "<select onchange='selectRecommendation()'>"; 
-              recommendationsHtml += '<option>CAN SELECT MATCHING DRUG NAME</option>';
-              recommendationsHtml += '</div>';
-              recommendationsHtml += '</div>';
+          var recommendationsHtml = "<select class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectRecommendation()'>";
 
-          for (var i = 0; i < wordRecommendations.length; i++) {
-  
-  
-            var word = wordRecommendations[i];
-  
-  
-            recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
-          }
+          
+            if (wordRecommendations.length !== 0) {
+              for (var i = 0; i < wordRecommendations.length; i++) {
+                var word = wordRecommendations[i];
+                recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
+              }
+            } else {
+              recommendationsHtml += '<option value="">USE A PROPER BRAND NAME</option>';
+            }
 
-          recommendationsHtml += "</select>";
-  
+
+
+
+            recommendationsHtml += "</select>";
           document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
         } 
         
@@ -71,15 +73,15 @@ var timeout; // Global variable to store timeout reference
       };
       xhr.send();
     }, 300); // Adjust the delay as needed (in milliseconds)
+
+
   }
-  
   
   // Function to select a word recommendation and populate the input field with it
   function selectRecommendation() {
     var selectElement = document.querySelector("select");
     var selectedOption = selectElement.options[selectElement.selectedIndex].value;
     document.getElementById("name").value = selectedOption;
-    document.getElementById("wordRecommendations").innerHTML = "";
   }
   
 
@@ -106,3 +108,4 @@ var timeout; // Global variable to store timeout reference
 
   // Attach the handleFormSubmission function to the form's submit event
   document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
+

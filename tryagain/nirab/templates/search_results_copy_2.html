@@ -7,18 +7,10 @@
 
 <head>
     <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% about_me 'css/search.css' %}">
 <style>
-/* Custom CSS styles for the input group */
-.my-custom-input-group {
-  background-color: #a8f5cd;
-  border: 1px solid #151414;
-  padding: 10px;
-  border-radius: 5px;
-}
+
 
 
 </style>
@@ -34,62 +26,72 @@
                 <div class="card-body">
 
 
+                    <ul class="tab-list">
+                        <li class="tab-list__item active">
+                            <a class="tab-list__link" href="#tab1" data-toggle="tab">DRUG SEARCH/DETAILS DETAILS</a>
+                        </li>
+                        <li class="tab-list__item">
+                            <a class="tab-list__link" href="#tab2" data-toggle="tab">DRUG DETAILS</a>
+                        </li>
+                    </ul>
+
 
 
 
                     <div class="tab-content">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <div class="tab-pane active" id="tab1">
-                                {% csrf_token %} 
-
-                                <div class="input-group input-group-big">
-                                    <label class="label">provide the name of drug:</label>
-
-                                </div>
 
 
-                                <div class="row row-space">
 
-                                  
-                                    <div  class="col-2" >
-
-                                      <select id="sortOption">
+                                
+                                <div class="col-2 row row-space">
+                                    <select id="sortOption">
                                         <option value="default">Default</option>
                                         <option value="priceAsc">Price (Low to High)</option>
                                         <option value="priceDesc">Price (High to Low)</option>
                                       </select>
-                                      
-                                    </div>
-
-
-                                    
-                                    <div class="col-2">
-
-                                      
-                                    </div>
 
                                 </div>
-
-
-
-
-
 
 
                                 <div class="row row-space">
 
 
-                                  <div id="medicationDetails"></div>
 
 
-                                </div>
+                                     <div class="col-2">
+
+
+                                      <div id="medicationDetails"></div>
+
+
+
+                                    </div>
 
 
 
 
-                                
-                                
+                                    <!-- <div class="col-2">
 
+
+                                    </div> -->
+
+                                </div> 
 
                         </div>
 
@@ -119,6 +121,7 @@
 <!-- <script src="{% about_me 'js/search_results.js' %}"></script> -->
 <script>
 
+document.addEventListener("DOMContentLoaded", function() {
 
   // Retrieve the query parameters from the URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -170,58 +173,56 @@ function fetchMedicationDetails(sortOption) {
         var detailsHtml = "";
         for (var i = 0; i < medicationDetails.length; i++) {
           var medication = medicationDetails[i];
-          detailsHtml += 
-          
-          `<div class="card card-margin">
-            <div class="card-body">
-              <div class="row search-body">
-                <div class="col-lg-12">
-                  <div class="search-result">
-                    <div class="result-body">
-                      <div class="table-responsive">
-                        <table class="table  widget-26">
-                          <tbody>
-                            <tr>
-                              <td class="column-1">
-                                <div class="widget-26-job-title">
-                                  <a href="#">' + ${medication.name.trim()} + '</a>
-                                  <p class="m-0">
-                                    <a href="#" class="employer-name text-center Class">' + ${medication.dosage_form.trim()} + '.</a>
-                                  </p>
-                                </div>
-                              </td>
-                              <td class="column-2" >
-                                <div class="widget-26-job-info">
-                                  <p class="type m-0">' + medication.manufacturer.trim() + '</p>
-                                  <a  class="type m-0 employer-name">' + medication.generic_name.trim() + '.</a>
-                                </div>
-                              </td>`
+          detailsHtml += '<div class="card card-margin">';
+          detailsHtml += '  <div class="card-body">';
+          detailsHtml += '    <div class="row search-body">';
+          detailsHtml += '      <div class="col-lg-12">';
+          detailsHtml += '        <div class="search-result">';
+          detailsHtml += '          <div class="result-body">';
+          detailsHtml += '            <div class="table-responsive">';
+          detailsHtml += '              <table class="table  widget-26">';
+          detailsHtml += '                <tbody>';
+          detailsHtml += '                  <tr>';
+          detailsHtml += '                    <td class="column-1">';
+          detailsHtml += '                      <div class="widget-26-job-title">';
+          detailsHtml += '                        <a href="#">' + medication.name.trim() + '</a>';
+          detailsHtml += '                        <p class="m-0">';
+          detailsHtml += '                          <a href="#" class="employer-name text-center Class">' + medication.dosage_form.trim() + '.</a>';
+          detailsHtml += '                        </p>';
+          detailsHtml += '                      </div>';
+          detailsHtml += '                    </td>';
+          detailsHtml += '                    <td class="column-2" >';
+          detailsHtml += '                      <div class="widget-26-job-info">';
+          detailsHtml += '                        <p class="type m-0">' + medication.manufacturer.trim() + '</p>';
+          detailsHtml += '                        <a  class="type m-0 employer-name">' + medication.generic_name.trim() + '.</a>';
+          detailsHtml += '                      </div>';
+          detailsHtml += '                    </td>';
 
           if(medication.price != '0'){
-            detailsHtml += `<td class="column-3" >
-                                <div class="widget-26-job-category">
-                                    <p class="m-0 text-center Class">' ${medication.price.trim()} '</p>
-                                </div>
-                            </td>`
+            detailsHtml += '                    <td class="column-3" >';
+            detailsHtml += '                      <div class="widget-26-job-category">';
+            detailsHtml += '                        <p class="m-0 text-center Class">' + medication.price.trim() + '</p>';
+            detailsHtml += '                      </div>';
+            detailsHtml += '                    </td>';
           }
             else{
-            detailsHtml += ` <td class="column-3">
-                     <div class="widget-26-job-category">
-                       <p class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>
-                     </div>
-                    </td>`
+            detailsHtml += '                    <td class="column-3">';
+            detailsHtml += '                      <div class="widget-26-job-category">';
+            detailsHtml += '                        <p class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>';
+            detailsHtml += '                      </div>';
+            detailsHtml += '                    </td>';
             }
 
-          detailsHtml += `  </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>`
+          detailsHtml += '                  </tr>';
+          detailsHtml += '                </tbody>';
+          detailsHtml += '              </table>';
+          detailsHtml += '            </div>';
+          detailsHtml += '          </div>';
+          detailsHtml += '        </div>';
+          detailsHtml += '      </div>';
+          detailsHtml += '    </div>';
+          detailsHtml += '  </div>';
+          detailsHtml += '</div>';
         }
         document.getElementById("medicationDetails").innerHTML = detailsHtml;
       } else {
