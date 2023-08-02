@@ -63,14 +63,12 @@
                                 </div>
 
 
-                                
+                                {% if strengths %}
                                 <div class="row row-space">
+
+                                  
                                     <div class="col-2" >
-
-
                                       <div class="input-group">
-
-
                                         <label class="label">select the drug:</label>
                                         <div class="input-group-icon" id="js-select-special">
 
@@ -79,20 +77,12 @@
                                             <div id="wordRecommendations"></div>
 
                                           </div>  
-
-
-
                                         </div>
-
-
                                       </div>
-
-                                      
-
                                     </div>
 
 
-                                    {% if strengths %}
+                                    
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">select the strength(optional):</label>
@@ -113,15 +103,35 @@
                                               
                                         </div>
                                     </div>
-                                    {% endif %}
-
 
                                 </div>
-
+                                {% else %}
 
                                 <div class="row row-space">
 
-                                    {% if dosage_forms %}
+                                  
+                                    <div style="margin-left: 15px" class="input-group">
+                                      <label class="label">select the drug:</label>
+                                      <div class="input-group-icon" id="js-select-special">
+
+                                        <div style="margin-bottom: 5px" class="rs-select2 js-select-simple select--no-search">
+
+                                          <div id="wordRecommendations"></div>
+
+                                        </div>  
+                                      </div>
+                                    </div>
+
+                                
+
+                              </div>
+
+
+
+                                {% endif %}
+                                {% if dosage_forms %}
+                                <div class="row row-space">
+
 
                                     <div class="col-2">
 
@@ -144,17 +154,24 @@
 
 
                                     </div>
-                                    {% else %}
-
-
-
-                                    {% endif %}
 
                                     <div class="col-2">
                                         <button style="margin-top: 5px" class="btn-submit" type="submit">get med details</button>
                                         <button style="margin-top: 5px"  class="btn-submit" type="submit">SEARCH MEDICINE</button>
                                     </div>
                                 </div>
+                                {% else %}
+                                <div class="row row-space">
+
+                                  <div class="mb-3">
+                                      <button style="margin-top: 5px; margin-left: 5px; " class="btn-submit" type="submit">get med details</button>
+                                      <button style="margin-top: 5px; margin-left: 5px;"  class="btn-submit" type="submit">SEARCH MEDICINE</button>
+                                  </div>
+                              </div>
+
+
+                                {% endif %}
+
 
                             </form>
                         </div>
@@ -269,7 +286,6 @@ var timeout; // Global variable to store timeout reference
     var selectElement = document.querySelector("select");
     var selectedOption = selectElement.options[selectElement.selectedIndex].value;
     document.getElementById("name").value = selectedOption;
-    document.getElementById("wordRecommendations").innerHTML = "";
   }
   
 
