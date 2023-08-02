@@ -35,9 +35,11 @@ var timeout; // Global variable to store timeout reference
   
           // Display word recommendations in a list
           var recommendationsHtml = '<div class="input-group">';
-              recommendationsHtml += '<label class="form-label input-group-text label">select the drug:</label>';
+              recommendationsHtml += '<label class="label">select the drug:</label>';
+              recommendationsHtml += '<div class="input-group-icon" id="js-select-special">'
               recommendationsHtml += "<select onchange='selectRecommendation()'>"; 
               recommendationsHtml += '<option>CAN SELECT MATCHING DRUG NAME</option>';
+              recommendationsHtml += '</div>';
               recommendationsHtml += '</div>';
 
           for (var i = 0; i < wordRecommendations.length; i++) {

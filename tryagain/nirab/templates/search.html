@@ -7,9 +7,18 @@
 
 <head>
     <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
-
+/* Custom CSS styles for the input group */
+.my-custom-input-group {
+  background-color: #a8f5cd;
+  border: 1px solid #151414;
+  padding: 10px;
+  border-radius: 5px;
+}
 
 
 </style>
@@ -44,8 +53,13 @@
                                 {% csrf_token %} 
 
                                 <div class="input-group input-group-big">
-                                    <label class="form-label input-group-text label">provide the name of drug:</label>
+                                    <label class="label">provide the name of drug:</label>
                                     <input type="text" class="input--style-1" id="name" name="name" value="{{ name_of_medication }}" placeholder="NAME OF THE DRUG e.g:NAPA" required="required" oninput="showWordRecommendations()">
+                                    <i class="input-group-symbol">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-capsule">
+                                            <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z"></path>
+                                        </svg>
+                                    </i>
                                 </div>
 
 
@@ -54,24 +68,30 @@
                                     <div class="col-2" >
                                         
                                         <div id="wordRecommendations"></div>
+                                        <div class="select-dropdown"></div>
+
 
                                     </div>
 
                                     {% if strengths %}
                                     <div class="col-2">
                                         <div class="input-group">
-                                            <label class="form-label input-group-text label">select the strength(optional):</label>
+                                            <label class="label">select the strength(optional):</label>
 
-                                            <select class="form-select" id="strength" name="strength" onchange="handleSelectionChange()">
-                                                <optgroup label="Strength">
+                                            <div class="rs-select2 js-select-simple select--no-search">
+
+                                              <select class="form-select list-room__item my-custom-input-group" id="strength" name="strength" onchange="handleSelectionChange()">
+                                                <optgroup label="strength">
                                                   <option value="">None</option>
                                                   {% for strength in strengths %}
                                                     <option value="{{ strength }}">{{ strength }}</option>
                                                   {% endfor %}
                                                 </optgroup>
                                               </select>
-                                        
-                                        
+
+                                            </div>
+                                              
+                                              
                                         </div>
                                     </div>
                                     {% endif %}
@@ -86,20 +106,20 @@
 
                                     <div class="col-2">
 
-
                                         <div class="input-group">
-                                            <label class="form-label input-group-text label">select the strength(optional):</label>
+                                            <label class="label">select the strength(optional):</label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
 
-                                            <select class="form-select" id="dosage_form" name="dosage_form" onchange="handleSelectionChange()">
-                                                <optgroup label="dosage_form">
-                                                  <option value="">None</option>
-                                                  {% for dosage_form in dosage_forms %}
-                                                    <option value="{{ dosage_form }}">{{ dosage_form }}</option>
-                                                  {% endfor %}
-                                                </optgroup>
-                                              </select>
+                                                <select class="form-select list-room__item my-custom-input-group" id="dosage_form" name="dosage_form" onchange="handleSelectionChange()">
+                                                    <optgroup label="dosage_form">
+                                                      <option value="">None</option>
+                                                      {% for dosage_form in dosage_forms %}
+                                                        <option value="{{ dosage_form }}">{{ dosage_form }}</option>
+                                                      {% endfor %}
+                                                    </optgroup>
+                                                  </select>
                                         
-                                        
+                                            </div>
                                         </div>
 
 
@@ -143,7 +163,133 @@
     </div>
 </body>
 
-<script src="{% about_me 'js/search.js' %}"></script>
+<!-- <script src="{% about_me 'js/search.js' %}"></script> -->
+
+<script>
+
+$(document).ready(function () {
+  $(".tab-list__link").on("click", function (e) {
+      e.preventDefault();
+      var targetTab = $(this).attr("href");
+      $(".tab-pane").removeClass("active");
+      $(targetTab).addClass("active");
+  });
+});
+
+var timeout; // Global variable to store timeout reference
+  
+  function showWordRecommendations() {
+    clearTimeout(timeout); // Clear previous timeout, if any
+  
+    // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+    timeout = setTimeout(function() {
+      var input = document.getElementById("name").value.trim();
+  
+      // Check if there is any input
+      if (input.length === 0) {
+        document.getElementById("wordRecommendations").innerHTML = "";
+        return;
+      }
+  
+      // Make an AJAX call to fetch word recommendations based on the input
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+      xhr.onload = function() {
+
+
+
+
+        if (xhr.status === 200) {
+          var wordRecommendations = JSON.parse(xhr.responseText);
+  
+          // Display word recommendations in a list
+          var recommendationsHtml = '<div class="input-group">';
+              recommendationsHtml += '<label class="label">select the drug:</label>';
+              recommendationsHtml += '<div class="input-group-icon" id="js-select-special">';
+              recommendationsHtml += '<div class="rs-select2 js-select-simple select--no-search">';
+              recommendationsHtml += "<select class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectRecommendation()'>"; 
+          for (var i = 0; i < wordRecommendations.length; i++) {
+  
+  
+            var word = wordRecommendations[i];
+  
+  
+            recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
+          }
+
+
+
+        recommendationsHtml += "</select>";
+        recommendationsHtml += '</div>';
+        recommendationsHtml += '</div>';
+        recommendationsHtml += '</div>';
+
+          document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
+        } 
+        
+        
+        
+        else {
+          console.error('Request failed. Status:', xhr.status);
+          // Display no recommendations for error cases
+          document.getElementById("wordRecommendations").innerHTML = "";
+        }
+      };
+      xhr.onerror = function() {
+        console.error('Request failed. Network error');
+        // Display no recommendations for network errors
+        document.getElementById("wordRecommendations").innerHTML = "";
+      };
+      xhr.send();
+    }, 300); // Adjust the delay as needed (in milliseconds)
+
+
+
+
+
+
+  }
+  
+  
+  // Function to select a word recommendation and populate the input field with it
+  function selectRecommendation() {
+    var selectElement = document.querySelector("select");
+    var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+    document.getElementById("name").value = selectedOption;
+    document.getElementById("wordRecommendations").innerHTML = "";
+  }
+  
+
+  function handleFormSubmission(event) {
+    var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+    var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+    var drugName = encodeURIComponent(document.getElementById("name").value);
+    // var sortOption = document.getElementById("sortOption").value;
+    console.log(selectedStrength);
+    console.log(selectedDosageForm);
+    console.log(drugName);
+
+    if (selectedStrength && selectedDosageForm && drugName) {
+      event.preventDefault(); // Prevent default form submission behavior
+
+      // Construct the URL with query parameters
+      var queryParams = '?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + drugName;
+      // You can add more parameters if needed like this: '&param1=value1&param2=value2'
+
+      // Redirect to the target HTML page with the query parameters
+      window.location.href = '/med_search_results/' + queryParams;
+    }
+  }
+
+  // Attach the handleFormSubmission function to the form's submit event
+  document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
+
+
+
+
+</script>
+
+
 
 
 </html>

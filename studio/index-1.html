@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Au Form Wizard</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/css/FontAwesome.css">
+    <link rel="stylesheet" href="assets/css/Material-Design-Iconic-Font.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/mdi-font/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome-4.7/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/datepicker/daterangepicker.css">
+    <link rel="stylesheet" href="assets/css/css/main.css">
+</head>
+
+<body>
+    <div class="page-wrapper bg-img-1 p-t-200 p-b-120">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-4">
+                <div class="card-body">
+                    <ul class="tab-list">
+                        <li class="tab-list__item active"><a class="tab-list__link" href="#tab1" data-toggle="tab">hotels</a></li>
+                        <li class="tab-list__item"><a class="tab-list__link" href="#tab2" data-toggle="tab">car</a></li>
+                        <li class="tab-list__item"><a class="tab-list__link" href="#tab3" data-toggle="tab">flight</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <form method="POST" action="#">
+                                <div class="input-group input-group-big"><label class="form-label input-group-text label">where:</label><input type="text" class="input--style-1" name="address" placeholder="City, region or specific hotel" required="required"></div><i class="far fa-star"></i>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">check-in:</label><input type="text" class="input--style-1" name="check-in" placeholder="mm/dd/yyyy" id="input-start"></div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">check-out:</label><input type="text" class="input--style-1" name="check-out" placeholder="mm/dd/yyyy" id="input-end"></div>
+                                    </div>
+                                </div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">travellers:</label>
+                                            <div class="input-group-text input-group-icon" id="js-select-special"><input type="text" class="input--style-1 input--style-1-small" name="traveller" value="1 Adult, 0 Children, 1 Room" disabled="disabled" id="info"><i class="zmdi zmdi-chevron-down input-icon"></i></div>
+                                            <div class="input-group-text dropdown-select">
+                                                <ul class="list-room">
+                                                    <li class="list-room__item"><span class="list-room__name">Room 1</span>
+                                                        <ul class="list-person">
+                                                            <li class="list-person__item"><span class="name">Adults</span>
+                                                                <div class="quantity quantity1"><span class="minus">-</span><input type="number" class="inputQty" min="0" value="1"><span class="plus">+</span></div>
+                                                            </li>
+                                                            <li class="list-person__item"><span class="name">Children</span>
+                                                                <div class="quantity quantity2"><span class="minus">-</span><input type="number" class="inputQty" min="0" value="0"><span class="plus">+</span></div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <div class="list-room__footer"><a href="#" id="btn-add-room">Add room</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2"><button class="btn-submit" type="submit">search</button></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <form method="POST" action="#">
+                                <div class="input-group input-group-big"><label class="form-label input-group-text label">location:</label><input type="text" class="input--style-1" name="location" placeholder="Destination, hotel name" required="required"></div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">driver age:</label>
+                                            <div class="input-group-text rs-select2 js-select-simple select--no-search"><select name="driver-age">
+                                                    <option value="">23</option>
+                                                    <option value="">24</option>
+                                                    <option value="" selected="">25</option>
+                                                    <option value="">26</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">car group:</label>
+                                            <div class="input-group-text rs-select2 js-select-simple select--no-search"><select name="car-group">
+                                                    <option value="" selected="">Group S-car</option>
+                                                    <option value="">Group 1</option>
+                                                    <option value="">Group 2</option>
+                                                    <option value="">Group 3</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">pick up:</label><input type="text" class="input--style-1 js-single-datepicker" name="pickup" placeholder="mm/dd/yyyy" data-drop="1">
+                                            <div class="input-group-text dropdown-datepicker" id="dropdown-datepicker1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">time:</label>
+                                            <div class="input-group-text rs-select2 js-select-simple select--no-search"><select name="time-pickup">
+                                                    <option value="" selected="">10:00 AM</option>
+                                                    <option value="">5:00 AM</option>
+                                                    <option value="">6:00 AM</option>
+                                                    <option value="">7:00 AM</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">drop off:</label><input type="text" class="input--style-1 js-single-datepicker" name="dropoff" placeholder="mm/dd/yyyy" data-drop="2">
+                                            <div class="input-group-text dropdown-datepicker" id="dropdown-datepicker2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">time:</label>
+                                            <div class="input-group-text rs-select2 js-select-simple select--no-search"><select name="time-dropoff">
+                                                    <option value="" selected="">10:00 AM</option>
+                                                    <option value="">5:00 AM</option>
+                                                    <option value="">6:00 AM</option>
+                                                    <option value="">7:00 AM</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><button class="btn-submit m-t-0" type="submit">search</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                            <form method="POST" action="#">
+                                <div class="input-group input-group-big"><label class="form-label input-group-text label">origin:</label><input type="text" class="input--style-1" name="origin" placeholder="City or airport" required="required"></div>
+                                <div class="input-group input-group-big"><label class="form-label input-group-text label">destination:</label><input type="text" class="input--style-1" name="destination" placeholder="City or airport" required="required"></div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">Departing:</label><input type="text" class="input--style-1" name="check-in" placeholder="mm/dd/yyyy" id="input-start-2"></div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group"><label class="form-label input-group-text label">returning:</label><input type="text" class="input--style-1" name="check-out" placeholder="mm/dd/yyyy" id="input-end-2"></div>
+                                    </div>
+                                </div>
+                                <div class="radio-row"><label class="form-label radio-container m-r-45">First Class <input type="radio" name="class"><span class="radio-checkmark"></span></label><label class="form-label radio-container m-r-45">Business <input type="radio" name="class"><span class="radio-checkmark"></span></label><label class="form-label radio-container">Economy <input type="radio" checked="checked" name="class"><span class="radio-checkmark"></span></label></div><button class="btn-submit m-t-35" type="submit">search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/js/vendor/select2/select2.min.js"></script>
+    <script src="assets/js/vendor/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/js/vendor/bootstrap-wizard/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="assets/js/vendor/datepicker/moment.min.js"></script>
+    <script src="assets/js/vendor/datepicker/daterangepicker.js"></script>
+    <script src="assets/js/js/global.js"></script>
+</body>
+
+</html>
