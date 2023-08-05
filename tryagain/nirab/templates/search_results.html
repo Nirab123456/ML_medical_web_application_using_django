@@ -71,19 +71,19 @@
                                       <nav class="d-flex justify-content-center">
                                         <ul class="pagination pagination-base pagination-boxed pagination-square mb-0">
                                           <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(currentPage - 1, calculateTotalPages())">
+                                            <a class="page-link no-border" href="#" onclick="showPage(currentPage - 1)">
                                               <span aria-hidden="true">«</span>
                                               <span class="sr-only">Previous</span>
                                             </a>
                                           </li>
                                           <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(1, calculateTotalPages())">First</a>
+                                            <a class="page-link no-border" href="#" onclick="showPage(1)">First</a>
                                           </li>
                                           <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(calculateTotalPages(), calculateTotalPages())">Last</a>
+                                            <a class="page-link no-border" href="#" onclick="showPage(calculateTotalPages(medicationDetails))">Last</a>
                                           </li>
                                           <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(currentPage + 1, calculateTotalPages())">
+                                            <a class="page-link no-border" href="#" onclick="showPage(currentPage + 1)">
                                               <span aria-hidden="true">»</span>
                                               <span class="sr-only">Next</span>
                                             </a>
@@ -164,90 +164,74 @@ function handleSortOptionChange() {
   // Call the function to fetch medication details with the updated sort option
   fetchMedicationDetails(selectedSortOption,currentPage);
 }
-
 var currentPage = 1; // Declare currentPage in the global scope
+var medicationDetails = []; // Initialize medicationDetails as an empty array
 
-function fetchMedicationDetails(sortOption,currentPage) {
+function fetchMedicationDetails(sortOption, currentPage) {
   // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/get_medication/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName, true);
-  // xhr.open('GET', '/get_medication/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName + '&sort=' + sortOption, true);
 
-  xhr.onload = function() {
+  xhr.onload = function () {
     if (xhr.status === 200) {
-      var medicationDetails = JSON.parse(xhr.responseText);
+      medicationDetails = JSON.parse(xhr.responseText); // Assign the fetched medication details to the global variable
       if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
         // Sort the medication details based on the selected sort option
-        
         if (sortOption === "priceAsc") {
-          medicationDetails.sort(function(a, b) {
+          medicationDetails.sort(function (a, b) {
             return a.price_analysis - b.price_analysis;
           });
         } else if (sortOption === "priceDesc") {
-          medicationDetails.sort(function(a, b) {
+          medicationDetails.sort(function (a, b) {
             return b.price_analysis - a.price_analysis;
           });
         }
-        
-        var detailsHtml = "";
+        var totalPages = calculateTotalPages(medicationDetails);
+        console.log("INNER Total Pages: " + totalPages);
+
         var startIndex = (currentPage - 1) * 10;
         var endIndex = startIndex + 10;
+        var detailsHtml = "";
         for (var i = startIndex; i < endIndex && i < medicationDetails.length; i++) {
           var medication = medicationDetails[i];
-          detailsHtml += 
-          
-                  `
-                  
-
-                      <div class="row row-space">
-                        <div  class="my_coll" >
-                        <table class="table  widget-26">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div class="widget-26-job-title">
-                                  <a href="#">${medication.name.trim()}</a>
-                                  <p class="m-0">
-                                    <a href="#" >${medication.dosage_form.trim()}.</a>
-                                  </p>
-                                </div>
-                              </td>
-                              <td class="column-2" >
-                                <div class="widget-26-job-info">
-                                  <p class="type m-0">${medication.manufacturer.trim()}</p>
-                                  <a  class="type m-0 employer-name">${medication.generic_name.trim()}.</a>
-                                </div>
-                              </td>
-                              
-                              
-                              
-                              `
-
-          if(medication.price != '0'){
-            detailsHtml += `<td class="column-3" >
-                                <div>
-                                    <p class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
-                                </div>
-                            </td>`
+          detailsHtml +=
+            `<div class="row row-space">
+              <div  class="my_coll" >
+                <table class="table  widget-26">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="widget-26-job-title">
+                          <a href="#">${medication.name.trim()}</a>
+                          <p class="m-0">
+                            <a href="#">${medication.dosage_form.trim()}.</a>
+                          </p>
+                        </div>
+                      </td>
+                      <td class="column-2">
+                        <div class="widget-26-job-info">
+                          <p class="type m-0">${medication.manufacturer.trim()}</p>
+                          <a class="type m-0 employer-name">${medication.generic_name.trim()}.</a>
+                        </div>
+                      </td>`;
+          if (medication.price !== '0') {
+            detailsHtml += `<td class="column-3">
+                              <div>
+                                <p class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
+                              </div>
+                            </td>`;
+          } else {
+            detailsHtml += `<td class="column-3">
+                              <div class="widget-26-job-category">
+                                <p class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>
+                              </div>
+                            </td>`;
           }
-            else{
-            detailsHtml += ` <td class="column-3">
-                     <div class="widget-26-job-category">
-                       <p class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>
-                     </div>
-                    </td>`
-            }
-
-          detailsHtml += `  </tr>
-                          </tbody>
-                        </table>
-                    </div>
+          detailsHtml += `</tr>
+                      </tbody>
+                    </table>
                   </div>
-
-                
-
-
-          `
+                </div>`;
         }
         document.getElementById("medicationDetails").innerHTML = detailsHtml;
       } else {
@@ -260,7 +244,7 @@ function fetchMedicationDetails(sortOption,currentPage) {
       document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
     }
   };
-  xhr.onerror = function() {
+  xhr.onerror = function () {
     console.error('Request failed. Network error');
     // Display "No data found" message for network errors
     document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
@@ -268,33 +252,27 @@ function fetchMedicationDetails(sortOption,currentPage) {
   xhr.send();
 }
 
+function calculateTotalPages(items) {
+  var itemsPerPage = 10;
+  var totalItems = items.length;
+  return Math.ceil(totalItems / itemsPerPage);
+}
 
 function displayPage(pageNumber) {
   currentPage = pageNumber;
   fetchMedicationDetails("default", currentPage);
 }
 
-
-// Function to calculate total pages based on medicationDetails length and items per page
-function calculateTotalPages(itemsPerPage) {
-  var totalMedications = medicationDetails.length;
-  return Math.ceil(totalMedications / itemsPerPage);
-}
-
-// Call this function whenever you update the content or navigate to a new page
-
 // Function to show a specific page
-function showPage(pageNumber, totalPages) {
-  displayPage(pageNumber);
-  // Update the pagination control
+function showPage(pageNumber) {
+  var totalPages = calculateTotalPages(medicationDetails);
+  console.log("Total pages:", totalPages);
+  if (pageNumber >= 1 && pageNumber <= totalPages) {
+    displayPage(pageNumber);
+  }
 }
-
-// Example usage:
-var medicationDetails = []; // Replace this with your actual medicationDetails array
-var itemsPerPage = 10; // Number of medications to display per page
 
 // Call this after fetching medicationDetails
-var totalPages = calculateTotalPages(itemsPerPage);
 displayPage(currentPage);
 
 // Calculate totalPages after fetching the data and update pagination control
