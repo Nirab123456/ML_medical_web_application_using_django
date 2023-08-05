@@ -22,11 +22,12 @@
     width: calc(100% - 20px);
   }
   
-  @media (max-width: 1500px) {
+  @media (max-width: 1700px) {
   .my_coll-2 {
       width: 100%;
     }
   }
+
 
 
 </style>
@@ -37,7 +38,7 @@
 
 
 <body>
-    <div class="page-wrapper" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+    <div class="page-wrapper " style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
         <div style="margin-left: 15px">
 
 
@@ -196,7 +197,7 @@ function fetchMedicationDetails(sortOption) {
 
           if(medication.price != '0'){
             detailsHtml += `<td class="column-3" >
-                                <div class="widget-26-job-category">
+                                <div>
                                     <p class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
                                 </div>
                             </td>`

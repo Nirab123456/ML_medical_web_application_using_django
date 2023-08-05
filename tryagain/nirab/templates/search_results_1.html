@@ -66,6 +66,9 @@
                                     
                                     <div class="col-2">
 
+
+                                      <div style="margin-top: 25px"  id="navigationHtml"></div>
+
                                       
                                     </div>
 
@@ -149,33 +152,61 @@ function fetchMedicationDetails(sortOption) {
   xhr.onload = function() {
     if (xhr.status === 200) {
       var medicationDetails = JSON.parse(xhr.responseText);
-      if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
+      if (medicationDetails) {
         // Sort the medication details based on the selected sort option
         
         if (sortOption === "priceAsc") {
-          medicationDetails.sort(function(a, b) {
+          medicationDetails['medication_details'].sort(function(a, b) {
             return a.price_analysis - b.price_analysis;
           });
         } else if (sortOption === "priceDesc") {
-          medicationDetails.sort(function(a, b) {
+          medicationDetails['medication_details'].sort(function(a, b) {
             return b.price_analysis - a.price_analysis;
           });
         }
+
+        if(medicationDetails['total_pages'] !=0){
+          // 
+
+          navigationHtml = 
+          
+          `
+            <nav class="d-flex justify-content-center">
+            <ul class="pagination pagination-base pagination-boxed pagination-square mb-0">
+            <li class="page-item">
+            <a class="page-link no-border" href="#">
+            <span aria-hidden="true">«</span>
+            <span class="sr-only">Previous</span>
+            </a>
+            </li> `
+            if(medicationDetails['next_page_number'] !=0){
+              navigationHtml += 
+              `
+              <li class="page-item">
+              <a class="page-link no-border" href="#">
+              <span aria-hidden="true">1</span>
+              <span class="sr-only">Previous</span>
+              </a>
+              </li> `
+            }
+
+
+    document.getElementById("navigationHtml").innerHTML = navigationHtml;
+
+
+        }
         
+        // Display details for each medication
         var detailsHtml = "";
-        var startIndex = (currentPage - 1) * 10;
-        var endIndex = startIndex + 10;
-        for (var i = startIndex; i < endIndex && i < medicationDetails.length; i++) {
-          var medication = medicationDetails[i];
+        for (var i = 0; i < medicationDetails['medication_details'].length; i++) {
+          var medication = medicationDetails['medication_details'][i];
           detailsHtml += 
           
                   `
-                  
-
                       <div class="row row-space">
-                        <div  class="my_coll" >
+                        <div  class="my_coll-2" >
                         <table class="table  widget-26">
-                          <tbody>
+                          <tbody clss='main-content'>
                             <tr>
                               <td>
                                 <div class="widget-26-job-title">
@@ -197,11 +228,18 @@ function fetchMedicationDetails(sortOption) {
                               `
 
           if(medication.price != '0'){
-            detailsHtml += `<td class="column-3" >
+            detailsHtml += `
+            
+            <td class="column-3" >
                                 <div>
                                     <p class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
                                 </div>
-                            </td>`
+                            </td>
+                            
+                            
+                            
+                                                        
+                            `
           }
             else{
             detailsHtml += ` <td class="column-3">
@@ -240,19 +278,7 @@ function fetchMedicationDetails(sortOption) {
   };
   xhr.send();
 }
-
-// Initialize the current page to 1
-var currentPage = 1;
-
-// Call this function whenever you want to display a new page
-function displayPage(pageNumber) {
-  currentPage = pageNumber;
-  fetchMedicationDetails("default", currentPage); // Replace "priceAsc" with your desired default sort option
-}
-
-// Call this function to display the first page on initial page load
-displayPage(currentPage);
-
+fetchMedicationDetails("default");
 
 
 
