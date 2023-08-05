@@ -66,7 +66,25 @@
                                     
                                     <div class="col-2">
 
-                                      
+                                    <!-- In your HTML, add this wherever you want to display the pagination control -->
+                                    <div id="pagination"></div>
+                                    <nav class="d-flex justify-content-center">
+                                      <ul class="pagination pagination-base pagination-boxed pagination-square mb-0">
+                                        <li class="page-item">
+                                          <a class="page-link no-border" href="#" onclick="showPage(currentPage - 1, totalPages)">
+                                          </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link no-border" href="#" onclick="showPage(1, totalPages)">First</a></li>
+                                        <li class="page-item"><a class="page-link no-border" href="#" onclick="showPage(currentPage - 1, totalPages)">Previous</a></li>
+                                        <li class="page-item"><a class="page-link no-border" href="#" onclick="showPage(currentPage + 1, totalPages)">Next</a></li>
+                                        <li class="page-item"><a class="page-link no-border" href="#" onclick="showPage(totalPages, totalPages)">Last</a></li>
+                                        <li class="page-item">
+                                          <a class="page-link no-border" href="#" onclick="showPage(currentPage + 1, totalPages)">
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </nav>
+
                                     </div>
 
                                 </div>
@@ -139,7 +157,7 @@ function handleSortOptionChange() {
   fetchMedicationDetails(selectedSortOption);
 }
 
-
+var currentPage = 1; // Declare currentPage in the global scope
 function fetchMedicationDetails(sortOption) {
   // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
   var xhr = new XMLHttpRequest();
@@ -241,21 +259,66 @@ function fetchMedicationDetails(sortOption) {
   xhr.send();
 }
 
-// Initialize the current page to 1
-var currentPage = 1;
-
-// Call this function whenever you want to display a new page
+function generatePaginationControl(currentPage, totalPages) {
+  var paginationHtml = '<div class="pagination">';
+  
+  // Previous button
+  if (currentPage > 1) {
+    paginationHtml += '<button onclick="showPage(' + (currentPage - 1) + ')">Previous</button>';
+  }
+  
+  // Page numbers
+  for (var i = 1; i <= totalPages; i++) {
+    if (i === currentPage) {
+      paginationHtml += '<button class="active">' + i + '</button>';
+    } else {
+      paginationHtml += '<button onclick="showPage(' + i + ')">' + i + '</button>';
+    }
+  }
+  
+  // Next button
+  if (currentPage < totalPages) {
+    paginationHtml += '<button onclick="showPage(' + (currentPage + 1) + ')">Next</button>';
+  }
+  
+  paginationHtml += '</div>';
+  
+  return paginationHtml;
+}
 function displayPage(pageNumber) {
   currentPage = pageNumber;
-  fetchMedicationDetails("default", currentPage); // Replace "priceAsc" with your desired default sort option
+  fetchMedicationDetails("priceAsc", currentPage);
 }
 
-// Call this function to display the first page on initial page load
+// Function to calculate total pages based on medicationDetails length and items per page
+function calculateTotalPages(itemsPerPage) {
+  var totalMedications = medicationDetails.length;
+  return Math.ceil(totalMedications / itemsPerPage);
+}
+
+// Call this function whenever you update the content or navigate to a new page
+function updatePaginationControl(currentPage, totalPages) {
+  var paginationControl = generatePaginationControl(currentPage, totalPages);
+  document.getElementById("pagination").innerHTML = paginationControl;
+}
+
+// Function to show a specific page
+function showPage(pageNumber, totalPages) {
+  displayPage(pageNumber);
+  // Update the pagination control
+  updatePaginationControl(currentPage, totalPages);
+}
+
+// Example usage:
+var medicationDetails = []; // Replace this with your actual medicationDetails array
+var itemsPerPage = 10; // Number of medications to display per page
+
+// Call this after fetching medicationDetails
+var totalPages = calculateTotalPages(itemsPerPage);
 displayPage(currentPage);
 
-
-
-
+// Calculate totalPages after fetching the data and update pagination control
+updatePaginationControl(currentPage, totalPages);
 
 </script>
 
