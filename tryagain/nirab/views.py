@@ -12,6 +12,7 @@ from django.shortcuts import get_object_or_404
 from PIL import Image
 from .bangla_ocr import BanglaOCR
 from .eng_ocr import ENGOCR
+from .med_search import TOTAL_MEDICINE_SEARCH
 import os
 from django.http import FileResponse,HttpResponse
 from .templatetags.custom_filters import add_or_update_social_media
@@ -24,30 +25,19 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 
 
 def med_search(request):
-    if request.method == 'POST':
-        form = MedicineForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            name = name.lower()
-            matching_medications = Medication.objects.filter(name__icontains=name)
-            strengths = Medication.objects.filter(name=name).values_list('strength', flat=True)
-            strengths = set(strengths)
-            # Convert the result to a list
-            strengths = list(strengths)
-            dosage_forms = Medication.objects.filter(name=name).values_list('dosage_form', flat=True)
-            dosage_forms = set(dosage_forms)
-            # Convert the result to a list
-            dosage_forms = list(dosage_forms)
-            return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
-                                                        'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
-    else:
-        form = MedicineForm()
-    return render(request, 'search.html', {'medication_form': form})
+    T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
+    return T_M_S.med_search()
+
+
+
+
+def get_medication_details(request):
+    T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
+    return T_M_S.get_medication_details()
 
 
 def med_search_results(request):
     return render(request, 'search_results.html')
-
 
 
 
@@ -72,8 +62,6 @@ def get_medicine_chat(request):
 
 
 
-
-
 def get_word_recommendations(request):
     if request.method == 'GET':
         input_query = request.GET.get('input', '').strip()
@@ -86,11 +74,6 @@ def get_word_recommendations(request):
         word_recommendations = [word for word in unique_names if word.lower().startswith(input_query.lower())]
 
         return JsonResponse(word_recommendations, safe=False)
-
-
-
-
-
 
 
 
@@ -175,37 +158,6 @@ def presciption_classification_beta(request):
 def get_presciption_classification_beta(request):
     PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION_BETA(request=request)
     return PRESCIPTION_classification.get_presciption_classification()
-
-
-
-def get_medication_details(request):
-    selected_strength = request.GET.get('strength')
-    name = request.GET.get('name')
-    name = name.lower()
-    dosage_form = request.GET.get('dosage_form')
-    generic_name = Medication.objects.filter(name=name,strength=selected_strength).first().generic_name
-    medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name, dosage_form=dosage_form)
-    if medications.exists():
-        medication_details = []
-        for medication in medications:
-            details = {
-                'name': medication.name.strip().capitalize(),
-                'dosage_form': medication.dosage_form.strip().capitalize(),
-                'generic_name': medication.generic_name.strip().capitalize(),
-                'manufacturer': medication.manufacturer.strip().capitalize(),
-                'price': str(medication.price).strip(),
-                'price_analysis': str(medication.price_analysis).strip(),
-                # add any other fields you want to include
-            }
-            medication_details.append(details)
-        return JsonResponse(medication_details, safe=False)
-    else:
-        return JsonResponse({'error': 'Medication not found'}, status=404)
-
-
-
-
-
 
 
 
@@ -323,9 +275,6 @@ def download_text(request, text_path):
 
 
 
-
-
-
 def dashboard(request):
     return render(request, 'dashboard.html')
     
@@ -334,9 +283,6 @@ def dashboard(request):
 def view_record(request):
     record = Record.objects.filter(user=request.user).first()
     return render(request, 'dashboard.html', {'record': record})
-
-
-
 
 
 
@@ -428,17 +374,6 @@ def register_user(request):
 	else:
 		form = RegisterForm()
 	return render(request, 'register.html', {'form': form})
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -552,11 +487,6 @@ def profile_picture(request):
     return render(request, 'dashboard.html', {'profile_picture_form': form})
 
 
-
-
-
-
-
 def add_or_update_profile_picture(request):
     record = Record.objects.filter(user=request.user).first()
     form = profilepicForm(request.POST, request.FILES, instance=record)
@@ -583,8 +513,6 @@ def add_or_update_profile_picture(request):
             form = profilepicForm(instance=record)
 
         return render(request, 'add_or_update_record.html', {'add_or_update_profile_picture_form': form})
-
-
 
 
 def add_or_update_record(request):

@@ -22,12 +22,11 @@
     width: calc(100% - 20px);
   }
   
-  @media (max-width: 1700px) {
+  @media (max-width: 1500px) {
   .my_coll-2 {
       width: 100%;
     }
   }
-
 
 
 </style>
@@ -38,7 +37,7 @@
 
 
 <body>
-    <div class="page-wrapper " style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+    <div class="page-wrapper" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
         <div style="margin-left: 15px">
 
 
@@ -149,30 +148,32 @@ function fetchMedicationDetails(sortOption) {
   xhr.onload = function() {
     if (xhr.status === 200) {
       var medicationDetails = JSON.parse(xhr.responseText);
-      if (medicationDetails) {
+      if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
         // Sort the medication details based on the selected sort option
         
         if (sortOption === "priceAsc") {
-          medicationDetails['medication_details'].sort(function(a, b) {
+          medicationDetails.sort(function(a, b) {
             return a.price_analysis - b.price_analysis;
           });
         } else if (sortOption === "priceDesc") {
-          medicationDetails['medication_details'].sort(function(a, b) {
+          medicationDetails.sort(function(a, b) {
             return b.price_analysis - a.price_analysis;
           });
         }
         
         // Display details for each medication
         var detailsHtml = "";
-        for (var i = 0; i < medicationDetails['medication_details'].length; i++) {
-          var medication = medicationDetails['medication_details'][i];
+        for (var i = 0; i < medicationDetails.length; i++) {
+          var medication = medicationDetails[i];
           detailsHtml += 
           
                   `
+                  
+
                       <div class="row row-space">
-                        <div  class="my_coll-2" >
+                        <div  class="my_coll" >
                         <table class="table  widget-26">
-                          <tbody clss='main-content'>
+                          <tbody>
                             <tr>
                               <td>
                                 <div class="widget-26-job-title">
@@ -194,18 +195,11 @@ function fetchMedicationDetails(sortOption) {
                               `
 
           if(medication.price != '0'){
-            detailsHtml += `
-            
-            <td class="column-3" >
-                                <div>
+            detailsHtml += `<td class="column-3" >
+                                <div class="widget-26-job-category">
                                     <p class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
                                 </div>
-                            </td>
-                            
-                            
-                            
-                                                        
-                            `
+                            </td>`
           }
             else{
             detailsHtml += ` <td class="column-3">
