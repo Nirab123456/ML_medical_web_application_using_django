@@ -992,7 +992,15 @@ input[type=number]::-webkit-outer-spin-button {
 .tab-list__item {
   float: left;
 }
+.tab-list__item a {
+  color: rgb(15, 222, 97);
+  text-decoration: none; /* Optional: Remove underline */
+}
 
+/* Apply the color change on hover */
+.tab-list__item a:hover {
+  color: yellow; /* Change to the desired hover color */
+}
 .tab-list__link {
   display: block;
   text-transform: uppercase;

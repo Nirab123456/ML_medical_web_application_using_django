@@ -19,6 +19,8 @@
   padding: 10px;
   border-radius: 5px;
 }
+/* Define the normal link color */
+
 
 
 </style>
@@ -34,16 +36,15 @@
                 <div class="card-body">
 
 
-                    <ul class="tab-list">
-                        <li class="tab-list__item active">
-                            <a class="tab-list__link" href="#tab1" data-toggle="tab">DRUG SEARCH/DETAILS DETAILS</a>
-                        </li>
-                        <li class="tab-list__item">
-                            <a class="tab-list__link" href="#tab2" data-toggle="tab">DRUG DETAILS</a>
-                        </li>
-                    </ul>
-
-
+                  <ul class="tab-list">
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                      <a href="{% url 'med_search' %}" data-toggle="tab" id="drugSearchLink"><h3 style="color: azure;">DRUG SEARCH</h3></a>
+                    </li>
+                    <li style="margin-left: 150px;" class="tab-list__item">
+                      <a href="{% url 'medicine_details' %}" data-toggle="tab" id="drugDetailsLink"><h3 style="color: azure;">DRUG DETAILS</h3></a>
+                    </li>
+                  </ul>
+                  
 
 
                     <div class="tab-content">
@@ -156,7 +157,6 @@
                                     </div>
 
                                     <div class="col-2">
-                                        <button style="margin-top: 5px" class="btn-submit" type="submit">get med details</button>
                                         <button style="margin-top: 5px"  class="btn-submit" type="submit">SEARCH MEDICINE</button>
                                     </div>
                                 </div>
@@ -164,7 +164,6 @@
                                 <div class="row row-space">
 
                                   <div class="mb-3">
-                                      <button style="margin-top: 5px; margin-left: 5px; " class="btn-submit" type="submit">get med details</button>
                                       <button style="margin-top: 5px; margin-left: 5px;"  class="btn-submit" type="submit">SEARCH MEDICINE</button>
                                   </div>
                               </div>
@@ -177,21 +176,6 @@
                         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -200,6 +184,19 @@
 </body>
 
 <script src="{% about_me 'js/search.js' %}"></script>
+<script>
+  $(document).ready(function () {
+  $("#drugSearchLink, #drugDetailsLink").on("click", function (e) {
+    e.preventDefault(); // Prevent the default behavior
 
+    // Get the URL from the link's href attribute
+    var url = $(this).attr("href");
+
+    // Navigate to the specified URL
+    window.location.href = url;
+  });
+});
+
+</script>
 </html>
 {% endblock %}
