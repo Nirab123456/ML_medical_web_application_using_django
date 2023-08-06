@@ -170,41 +170,6 @@ def get_presciption_classification_beta(request):
 
 
 
-def medication_search(request):
-    if request.method == 'POST':
-        form = MedicineForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            name = name.lower()
-            matching_medications = Medication.objects.filter(name__icontains=name)
-            strengths = Medication.objects.filter(name=name).values_list('strength', flat=True)
-            strengths = set(strengths)
-            # Convert the result to a list
-            strengths = list(strengths)
-            print(f'strengths: {strengths}')
-            dosage_forms = Medication.objects.filter(name=name).values_list('dosage_form', flat=True)
-            dosage_forms = set(dosage_forms)
-            # Convert the result to a list
-            dosage_forms = list(dosage_forms)
-            print(f'dosage forms: {dosage_forms}')
-            return render(request, 'medication.html', {'medication_form': form, 'medications': matching_medications,
-                                                        'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
-    else:
-        form = MedicineForm()
-    return render(request, 'medication.html', {'medication_form': form})
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def change_password(request):
