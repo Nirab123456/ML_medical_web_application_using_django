@@ -11,7 +11,7 @@
     <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
     <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
     <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="{% about_me 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% about_me 'css/search.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <style>
@@ -68,10 +68,10 @@
 
 
 
-                                      <nav class="d-flex justify-content-center">
+                                      <nav style="margin-top: 25px" class="d-flex justify-content-center">
                                         <ul class="pagination pagination-base pagination-boxed pagination-square mb-0">
                                           <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(currentPage - 1)">
+                                            <a class="page-link no-border" href="#" onclick="showPage(0)">
                                               <span aria-hidden="true">«</span>
                                               <span class="sr-only">Previous</span>
                                             </a>
@@ -83,7 +83,7 @@
                                             <a class="page-link no-border" href="#" onclick="showPage(calculateTotalPages(medicationDetails))">Last</a>
                                           </li>
                                           <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(currentPage + 1)">
+                                            <a class="page-link no-border" href="#" onclick="showPage(2)">
                                               <span aria-hidden="true">»</span>
                                               <span class="sr-only">Next</span>
                                             </a>
@@ -150,52 +150,61 @@
   
   // Now you have the values of the query parameters in the variables (strength, dosageForm, drugName).
   // You can use these values as needed in the JavaScript code of this HTML page.
-  console.log('Strength:', strength);
-  console.log('Dosage Form:', dosageForm);
-  console.log('Drug Name:', drugName);
+  // console.log('Strength:', strength);
+  // console.log('Dosage Form:', dosageForm);
+  // console.log('Drug Name:', drugName);
 
 
 
 
-document.getElementById("sortOption").addEventListener("change", handleSortOptionChange);
 
-function handleSortOptionChange() {
-  var selectedSortOption = document.getElementById("sortOption").value;
-  // Call the function to fetch medication details with the updated sort option
-  fetchMedicationDetails(selectedSortOption,currentPage);
-}
-var currentPage = 1; // Declare currentPage in the global scope
-var medicationDetails = []; // Initialize medicationDetails as an empty array
+var currentPage = 1; // The current page number
+var medicationDetails = []; 
 
 function fetchMedicationDetails(sortOption, currentPage) {
-  // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/get_medication/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName, true);
 
   xhr.onload = function () {
     if (xhr.status === 200) {
       medicationDetails = JSON.parse(xhr.responseText); // Assign the fetched medication details to the global variable
+
       if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
         // Sort the medication details based on the selected sort option
-        if (sortOption === "priceAsc") {
-          medicationDetails.sort(function (a, b) {
-            return a.price_analysis - b.price_analysis;
-          });
-        } else if (sortOption === "priceDesc") {
-          medicationDetails.sort(function (a, b) {
-            return b.price_analysis - a.price_analysis;
-          });
-        }
-        var totalPages = calculateTotalPages(medicationDetails);
-        console.log("INNER Total Pages: " + totalPages);
+
+        // console.log(currentPage)
 
         var startIndex = (currentPage - 1) * 10;
         var endIndex = startIndex + 10;
+        
+        if (startIndex < 0) {
+          startIndex = 0; // Ensure startIndex is not negative
+        }
+
+        if (endIndex > medicationDetails.length) {
+          endIndex = medicationDetails.length; // Ensure endIndex is within bounds
+        }
+          // Create a copy of the subset of medication details to be sorted
+          var medicationSubset = medicationDetails.slice(startIndex, endIndex);
+
+          if (sortOption === "priceAsc") {
+            medicationSubset.sort(function (a, b) {
+              return a.price_analysis - b.price_analysis;
+            });
+          } else if (sortOption === "priceDesc") {
+            medicationSubset.sort(function (a, b) {
+              return b.price_analysis - a.price_analysis;
+            });
+          }
+
         var detailsHtml = "";
-        for (var i = startIndex; i < endIndex && i < medicationDetails.length; i++) {
-          var medication = medicationDetails[i];
+        for (var i = 0; i < medicationSubset.length; i++) {
+          var medication = medicationSubset[i];
+
           detailsHtml +=
-            `<div class="row row-space">
+            `
+          <div class="card card-margin">
+            <div class="row row-space">
               <div  class="my_coll" >
                 <table class="table  widget-26">
                   <tbody>
@@ -231,8 +240,14 @@ function fetchMedicationDetails(sortOption, currentPage) {
                       </tbody>
                     </table>
                   </div>
-                </div>`;
-        }
+                </div>
+              </div>
+                `;
+        
+        
+        
+
+              }
         document.getElementById("medicationDetails").innerHTML = detailsHtml;
       } else {
         // Display "No data found" message
@@ -259,23 +274,52 @@ function calculateTotalPages(items) {
 }
 
 function displayPage(pageNumber) {
-  currentPage = pageNumber;
-  fetchMedicationDetails("default", currentPage);
+  showPage(pageNumber);
 }
 
-// Function to show a specific page
+var trackpage=0;
 function showPage(pageNumber) {
   var totalPages = calculateTotalPages(medicationDetails);
-  console.log("Total pages:", totalPages);
+
+  if(pageNumber===2){
+    
+    trackpage += pageNumber;
+    pageNumber =1 + Math.floor(trackpage / 2);
+    if(pageNumber>totalPages){
+      pageNumber=totalPages;
+      trackpage=totalPages*2-2;
+    }
+
+  }
+  else if(pageNumber===0)
+  {
+
+    trackpage -= 2;
+    pageNumber =1+ Math.floor(trackpage / 2);
+    if(pageNumber<1){
+      pageNumber=1;
+      trackpage=0;
+    }
+
+  }
+
+
+document.getElementById("sortOption").addEventListener("change", handleSortOptionChange);
+
+  function handleSortOptionChange() {
+  var sortOption = document.getElementById("sortOption").value;
+  return sortOption;
+}
+
   if (pageNumber >= 1 && pageNumber <= totalPages) {
-    displayPage(pageNumber);
+    var sortOption = handleSortOptionChange();
+    fetchMedicationDetails(sortOption, pageNumber);
   }
 }
 
 // Call this after fetching medicationDetails
-displayPage(currentPage);
+fetchMedicationDetails('default', 1);
 
-// Calculate totalPages after fetching the data and update pagination control
 
 </script>
 
