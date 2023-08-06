@@ -118,23 +118,20 @@
                         var detailsHtml = "";
                         for (var i = 0; i < get_medicine_details.length; i++) {
                           var medication = get_medicine_details[i];
-                          detailsHtml += 
-                          
-                          `
-                          <div class='medication-details'>
-                          <p><strong>Generic Name:</strong>  ${medication.generic_name}  </p>
-                          <p><strong>DRUG CLASS:</strong>  ${medication.drug_class}  </p>
-                          <p><strong>Indication:</strong>   ${medication.indication}  </p>
-                          <p><strong>INDICATION DESCRIPTION:</strong>   ${medication.indication_description}  </p>
-                          <p><strong>THERAPEUTIC CLASS:</strong>   ${medication.therapeutic_class_description}  </p>
-                          <p><strong>PHARMACOLOGY DESCRIPTION:</strong>  ${medication.pharmacology_description}  </p>
-                          <p><strong>DOSAGE DESCRIPTION:</strong>   ${medication.dosage_description}  </p>
-                          <p><strong> INTERACTIONS DESCRIPTION:</strong>   ${medication.interaction_description}  </p>
-                          <p><strong>CONTRAINDICATIONS DESCRIPTION:</strong>   ${medication.contraindications_description}  </p>
-                          <p><strong> SIDE EFFECTS DESCRIPTION:</strong>   ${medication.side_effects_description}  </p>
-                          </div>
-                          <hr>
-                          `;
+                          detailsHtml += "<div class='medication-details'>";
+                          detailsHtml += "<p><strong>Generic Name:</strong> " + medication.generic_name + "</p>";
+                          detailsHtml += "<p><strong>DRUG CLASS:</strong> " + medication.drug_class + "</p>";
+                          detailsHtml += "<p><strong>Indication:</strong> " + medication.indication + "</p>";
+                          detailsHtml += "<p><strong>INDICATION DESCRIPTION:</strong> " + medication.indication_description + "</p>";
+                          detailsHtml += "<p><strong>THERAPEUTIC CLASS:</strong> " + medication.therapeutic_class_description + "</p>";
+                          detailsHtml += "<p><strong>PHARMACOLOGY DESCRIPTION:</strong> " + medication.pharmacology_description + "</p>";
+                          detailsHtml += "<p><strong>DOSAGE DESCRIPTION:</strong> " + medication.dosage_description + "</p>";
+                          detailsHtml += "<p><strong> INTERACTIONS DESCRIPTION:</strong> " + medication.interaction_description + "</p>";
+                          detailsHtml += "<p><strong>CONTRAINDICATIONS DESCRIPTION:</strong> " + medication.contraindications_description + "</p>";
+                          detailsHtml += "<p><strong> SIDE EFFECTS DESCRIPTION:</strong> " + medication.side_effects_description + "</p>";
+                          // Add more fields here
+                          detailsHtml += "</div>";
+                          detailsHtml += "<hr>";
                         }
                         document.getElementById("get_medicine_details").innerHTML = detailsHtml;
                       } else {
