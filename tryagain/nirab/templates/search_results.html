@@ -1,3 +1,5 @@
+{% include "base.html" %}
+{% block content %}
 
 <!DOCTYPE html>
 <head>
@@ -195,10 +197,10 @@ h1 {
         <div class="overlay" id="overlay">
             <nav class="overlay-menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'apps' %}">APPS</a></li>
+                    <li><a href="{% url 'med_search' %}">MEDICINE RECOMENDATION</a></li>
+                    <li><a href="{% url 'presciption_classification_beta' %}">PRESCIPTION CLASSIFICATION</a></li>
+                    <li><a href="{% url 'medicine_chatbot' %}">TALK WITH A DRUG</a></li>
                 </ul>
             </nav>
         </div>
@@ -211,3 +213,4 @@ h1 {
     </script>
 </body>
 </html>
+{% endblock %}

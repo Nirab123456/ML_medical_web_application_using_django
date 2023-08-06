@@ -1,4 +1,3 @@
-
   // Retrieve the query parameters from the URL
   const urlParams = new URLSearchParams(window.location.search);
   const strength = urlParams.get('strength');
@@ -163,8 +162,6 @@ function showPage(pageNumber) {
   
   else if(pageNumber ===991){
     pageNumber=1+ Math.floor(trackpage / 2);
-    console.log(pageNumber)
-    console.log(trackpage)
   }else if (pageNumber >0 && pageNumber < 991){
     trackpage = (pageNumber-1)*2;
     pageNumber =1+ Math.floor(trackpage / 2);
@@ -191,7 +188,6 @@ function showPage(pageNumber) {
 
 function handleSortOptionChange() {
   showPage(991);
-  console.log('change')
 }
 
 
