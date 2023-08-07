@@ -60,8 +60,13 @@ urlpatterns = [
     path('get_presciption_classification/', views.get_presciption_classification, name='get_presciption_classification'),
     path('medicine_chatbot/', views.medicine_chatbot, name='medicine_chatbot'),
     path('get_medicine_chat/', views.get_medicine_chat, name='get_medicine_chat'),
+
+
+
+
     path('presciption_classification_beta/', views.presciption_classification_beta, name='presciption_classification_beta'),
     path('get_presciption_classification_beta/', views.get_presciption_classification_beta, name='get_presciption_classification_beta'),
+    path('presciption_classification_beta_results/', views.presciption_classification_beta_results, name='presciption_classification_beta_results'),
 
 
 

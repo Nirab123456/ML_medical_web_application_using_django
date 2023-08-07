@@ -167,7 +167,8 @@ def get_presciption_classification_beta(request):
     PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION_BETA(request=request)
     return PRESCIPTION_classification.get_presciption_classification()
 
-
+def presciption_classification_beta_results(request):
+    return render(request, 'presciption_classification_beta_results.html')
 
 
 
