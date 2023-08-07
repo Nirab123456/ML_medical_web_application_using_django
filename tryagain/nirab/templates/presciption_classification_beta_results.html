@@ -1,1 +1,286 @@
-<h1>again i am  back</h1>
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{% about_me 'css/search.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+
+.my_coll-2 {
+    width: -webkit-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: calc(100% - 20px);
+  }
+  
+  @media (max-width: 1700px) {
+  .my_coll-2 {
+      width: 100%;
+    }
+  }
+
+
+        .medication-table {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            font-weight: bold;
+            color: #337ab7;
+        }
+
+        td {
+            font-size: 16px;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #5bc0de;
+        }
+</style>
+
+
+
+</head>
+
+
+<body>
+    <div class="page-wrapper " style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+        <div style="margin-left: 15px">
+
+
+                    <div class="tab-content">
+
+                        <div id="tab1">
+
+
+
+
+                                <div class="row row-space">
+
+                                  
+
+                                        <div id="get_presciption_classification"></div>
+
+
+
+
+                                    
+                                    <div class="col-2">
+
+
+
+
+                                      
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+                                
+                                
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            
+</body>
+
+<!-- <script src="{% about_me 'js/search_results.js' %}"></script> -->
+<script>
+  
+
+  // Retrieve the query parameters from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const drugNames = urlParams.get('name');
+  
+
+
+// Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
+var xhr = new XMLHttpRequest();
+xhr.open('GET', '/get_presciption_classification_beta/?name=' + drugNames , true);
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    var get_presciption_classification = JSON.parse(xhr.responseText);
+
+    // Assuming 'data' contains the JSON response from the server
+    const drugClassGroups = get_presciption_classification.drug_class_groups;
+    const allMachGroups = get_presciption_classification.all_mach_groups;
+    const allMachGroups2 = get_presciption_classification.all_mach_groups_2;
+    const all_groups_uniques = get_presciption_classification.all_matching_uniques;
+
+    // // Now you can use these variables as needed
+    console.log(all_groups_uniques);
+    // console.log(allMachGroups);
+    // console.log(allMachGroups2);
+    // console.log(all_groups_uniques);
+
+    if (Array.isArray(drugClassGroups) && drugClassGroups.length > 0) {
+    // Display details for each medication
+    var detailsHtml = "";
+    var matchingGroupsFound = false;
+
+    function areAllArraysEmpty(arr) {
+      return arr.every(innerArr => innerArr.length === 0);
+    }
+
+    if (!areAllArraysEmpty(all_groups_uniques)) {
+      matchingGroupsFound = true;
+      detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
+      detailsHtml += "<div class='medication-details'>";
+      detailsHtml += "<p><strong>classified related drugs: </strong>" + all_groups_uniques[0] + "</p>";
+      detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + all_groups_uniques[1] + "</p>";
+      if (all_groups_uniques[2].length > 0) {
+        detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + all_groups_uniques[2] + "</p>";
+      }
+      detailsHtml += "</div>";
+    }
+
+    if (!matchingGroupsFound) {
+      detailsHtml += "<h4> NO MATCHING GROUPS </h4>";
+    }
+
+      
+
+// i have to hide after this section
+
+    if (allMachGroups2) {
+      for (var i = 0; i < allMachGroups2.length; i++) {
+        var medication = allMachGroups2[i];
+        // console.log(medication);
+        detailsHtml += "<div class='medication-details full-details hidden'>";
+        detailsHtml += "<h6> DETAILED OBSERVATION OF MATCH </h6>";
+        detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
+        detailsHtml += "<h4> MACHING  ISSUES </h4>";
+
+        if (medication.heading_matches && medication.specific_class_matches.length > 0) {
+          detailsHtml += "<p><strong>SPECIFIC ISSUES: </strong>" + medication.specific_class_matches + "</p>";
+        }
+        else{
+          detailsHtml += "<p><strong>PREDICTED ISSUES: </strong>" + medication.heading_matches + "</p>";
+        }
+        detailsHtml += "</div>";
+      }
+}
+
+
+    if (allMachGroups) {
+      for (var i = 0; i < allMachGroups.length; i++) {
+        var medication = allMachGroups[i];
+        detailsHtml += "<div class='medication-details full-details hidden'>";
+        detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
+        detailsHtml += "<h4> MACHING  ISSUES </h4>";
+
+        if (medication.heading_matches && medication.specific_class_matches.length > 0) {
+          detailsHtml += "<p><strong>SPECIFIC ISSUES: </strong>" + medication.specific_class_matches + "</p>";
+        }
+        else{
+          detailsHtml += "<p><strong>PREDICTED ISSUES: </strong>" + medication.heading_matches + "</p>";
+        }
+        detailsHtml += "</div>";
+      }
+}
+
+var all_headings = new Set(); // Move the declaration outside the loop
+
+for (var i = 0; i < drugClassGroups.length; i++) {
+  var medication = drugClassGroups[i];
+
+  if (medication.heading && medication.specific_class.length > 0) {
+    var headings = medication.heading.split(",");
+    var specificClasses = medication.specific_class.split(",");
+
+    for (var j = 0; j < headings.length; j++) {
+      var heading_matches = headings[j].toUpperCase();
+      var specific_class_matches = specificClasses[j].toUpperCase();
+      console.log(specific_class_matches);
+      all_headings.add(specific_class_matches);
+    }
+  } else {
+    var heading_matches = headings[j].toUpperCase();
+    var specific_class_matches = specificClasses[j].toUpperCase();
+    all_headings.add(heading_matches);
+  }
+
+  detailsHtml += "<div class='full-result medication-details hidden'>";
+  detailsHtml += "<p><strong>DRUG NAME: </strong>" + medication.name.toUpperCase() + "</p>";
+  detailsHtml += "<p><strong>HEADINGS: </strong>" + Array.from(all_headings) + "</p>";
+  detailsHtml += "</div>";
+}
+
+
+
+
+
+    detailsHtml += "</div>";
+
+    // Display the details on the page
+    document.getElementById("get_presciption_classification").innerHTML = detailsHtml;
+  } else {
+    console.error(xhr.responseText);
+  }
+
+  } else {
+    console.error(xhr.statusText);
+  }
+
+};
+xhr.onerror = function() {
+  console.error('Request failed. Network error');
+  // Display "No data found" message for network errors
+  document.getElementById("get_presciption_classification").innerHTML = "<p>No data found</p>";
+};
+xhr.send();
+
+</script>
+</html>
+{% endblock %}
