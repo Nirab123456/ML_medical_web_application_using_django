@@ -51,8 +51,8 @@ urlpatterns = [
 
     path('medicine_details/', views.medicine_details, name='medicine_details'),
     path('get_medicine_details/', views.get_medicine_details, name='get_medicine_details'),
-
     path('med_details_search_results/', views.med_details_search_results, name='med_details_search_results'),
+
 
 
     path('presciption_classification/', views.presciption_classification, name='presciption_classification'),
