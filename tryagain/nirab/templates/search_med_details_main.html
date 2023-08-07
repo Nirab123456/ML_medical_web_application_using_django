@@ -34,20 +34,29 @@
                 <div class="card-body">
 
 
-                    <ul class="tab-list">
-                        <li style="margin-left: 15px;" class="tab-list__item">
-                          <a href="{% url 'med_search' %}" data-toggle="tab" id="drugSearchLink"><h5 style="color: rgb(233, 179, 42);">DRUG SEARCH</h5></a>
-                        </li>
-                        <li style="margin-left: 15px;" class="tab-list__item">
-                          <a href="{% url 'medicine_details' %}" data-toggle="tab" id="drugDetailsLink"><h5 style="color: rgb(56, 243, 56);">DRUG DETAILS</h5></a>
-                        </li>
-                        <li style="margin-left: 15px;" class="tab-list__item">
-                          <a href="{% url 'presciption_classification_beta' %}" data-toggle="tab" id="drugDetailsLink"><h5 style="color: rgb(235, 115, 123);">PRESCIPTION CLASSIFICATION</h5></a>
-                        </li>
-                        <li style="margin-left: 15px;" class="tab-list__item">
-                          <a href="{% url 'medicine_chatbot' %}" data-toggle="tab" id="drugDetailsLink"><h5 style="color: rgb(126, 136, 244);">TALK WITH A DRUG</h5></a>
-                        </li>
-                      </ul>
+                  <ul class="tab-list">
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'med_search' %}" class="btn btn-outline-secondary" data-toggle="tab" id="drugSearchLink">
+                            <h5 style="color: rgb(233, 179, 42);">DRUG SEARCH</h5>
+                        </a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'medicine_details' %}" class="btn btn-outline-danger" data-toggle="tab" id="drugDetailsLink">
+                            <h5 style="color: rgb(16, 209, 16);">DRUG DETAILS</h5>
+                        </a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'presciption_classification_beta' %}" class="btn btn-outline-dark" data-toggle="tab" id="prescriptionClassificationLink">
+                            <h5 style="color: rgb(235, 115, 123);">PRESCRIPTION CLASSIFICATION</h5>
+                        </a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'medicine_chatbot' %}" class="btn btn-outline-light" data-toggle="tab" id="drugChatbotLink">
+                            <h5 style="color: rgb(126, 136, 244);">TALK WITH A DRUG</h5>
+                        </a>
+                    </li>
+                </ul>
+
 
 
 
