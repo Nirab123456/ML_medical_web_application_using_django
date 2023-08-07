@@ -25,11 +25,8 @@ full_result_button.addEventListener("click", togglefullresults);
 
 
 function handleSelectionChange() {
-  var nameInputs = document.querySelectorAll("#name-container input");
-    var drugNames = [];
-    for (var i = 0; i < nameInputs.length; i++) {
-      drugNames.push(encodeURIComponent(nameInputs[i].value));
-    }
+  const urlParams = new URLSearchParams(window.location.search);
+  const drugNames = urlParams.get('name');
 
 // Make an AJAX call to fetch the medication details based on the selected strength, dosage form, and drug name
 var xhr = new XMLHttpRequest();
@@ -52,7 +49,7 @@ xhr.onload = function() {
 
     if (Array.isArray(drugClassGroups) && drugClassGroups.length > 0) {
     // Display details for each medication
-    var detailsHtml = "";
+    var detailsHtml = '<div class="table medication-table">';
     var matchingGroupsFound = false;
 
     function areAllArraysEmpty(arr) {
@@ -61,18 +58,25 @@ xhr.onload = function() {
 
     if (!areAllArraysEmpty(all_groups_uniques)) {
       matchingGroupsFound = true;
-      detailsHtml += "<h4> ALL MATCHING GROUPS </h4>";
-      detailsHtml += "<div class='medication-details'>";
-      detailsHtml += "<p><strong>classified related drugs: </strong>" + all_groups_uniques[0] + "</p>";
-      detailsHtml += "<p><strong>ALL MATCHING HEADINGS: </strong>" + all_groups_uniques[1] + "</p>";
+      detailsHtml += 
+      `
+
+      <div>
+        <h3> ALL MATCHING GROUPS </h3>
+        <h4>
+      <p><strong>CLASSIFIED RELATED DRUGS: </strong>${all_groups_uniques[0]}</p>
+      <p><strong>ALL MATCHING HEADINGS: </strong>${all_groups_uniques[1]}</p>
+      
+      `
+
       if (all_groups_uniques[2].length > 0) {
         detailsHtml += "<p><strong>ALL MATCHING SPECIFIC CLASS: </strong>" + all_groups_uniques[2] + "</p>";
       }
-      detailsHtml += "</div>";
+      detailsHtml += "</div></h4>";
     }
 
     if (!matchingGroupsFound) {
-      detailsHtml += "<h4> NO MATCHING GROUPS </h4>";
+      detailsHtml += "<h3> NO MATCHING GROUPS </h3>";
     }
 
       
@@ -83,10 +87,14 @@ xhr.onload = function() {
       for (var i = 0; i < allMachGroups2.length; i++) {
         var medication = allMachGroups2[i];
         // console.log(medication);
-        detailsHtml += "<div class='medication-details full-details hidden'>";
-        detailsHtml += "<h6> DETAILED OBSERVATION OF MATCH </h6>";
-        detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
-        detailsHtml += "<h4> MACHING  ISSUES </h4>";
+        detailsHtml += `
+        
+        <div class='medication-details full-details hidden'>
+        <h3 style="margin-top: 10px;">SPECEFIC DETAILED OBSERVATION OF MATCH <h3>
+            <h4>
+        <p><strong>MATCHING COUPLE: </strong> ${medication.name1} & ${medication.name2}</p>
+        
+        `
 
         if (medication.heading_matches && medication.specific_class_matches.length > 0) {
           detailsHtml += "<p><strong>SPECIFIC ISSUES: </strong>" + medication.specific_class_matches + "</p>";
@@ -94,7 +102,7 @@ xhr.onload = function() {
         else{
           detailsHtml += "<p><strong>PREDICTED ISSUES: </strong>" + medication.heading_matches + "</p>";
         }
-        detailsHtml += "</div>";
+        detailsHtml += "</div></h4>";
       }
 }
 
@@ -102,9 +110,10 @@ xhr.onload = function() {
     if (allMachGroups) {
       for (var i = 0; i < allMachGroups.length; i++) {
         var medication = allMachGroups[i];
-        detailsHtml += "<div class='medication-details full-details hidden'>";
-        detailsHtml += "<p><strong>MATCHING COUPLE: </strong>" + medication.name1 + "&" + medication.name2 + "</p>";
-        detailsHtml += "<h4> MACHING  ISSUES </h4>";
+        detailsHtml += `<div class='medication-details full-details hidden'>
+        <h3 style="margin-top: 10px;"> DETAILED OBSERVATION OF MATCH </h3>
+        <h4>
+        <p><strong>MATCHING COUPLE: </strong>${medication.name1} & ${medication.name2}</p>`
 
         if (medication.heading_matches && medication.specific_class_matches.length > 0) {
           detailsHtml += "<p><strong>SPECIFIC ISSUES: </strong>" + medication.specific_class_matches + "</p>";
@@ -112,11 +121,17 @@ xhr.onload = function() {
         else{
           detailsHtml += "<p><strong>PREDICTED ISSUES: </strong>" + medication.heading_matches + "</p>";
         }
-        detailsHtml += "</div>";
+        detailsHtml += "</div></h4>";
       }
 }
 
 var all_headings = new Set(); // Move the declaration outside the loop
+detailsHtml += `
+<div class='full-result hidden'>
+    <h3 style="margin-top: 10px;"> INDEVISUAL RESULTS </h3>
+
+
+`
 
 for (var i = 0; i < drugClassGroups.length; i++) {
   var medication = drugClassGroups[i];
@@ -137,17 +152,24 @@ for (var i = 0; i < drugClassGroups.length; i++) {
     all_headings.add(heading_matches);
   }
 
-  detailsHtml += "<div class='full-result medication-details hidden'>";
-  detailsHtml += "<p><strong>DRUG NAME: </strong>" + medication.name.toUpperCase() + "</p>";
-  detailsHtml += "<p><strong>HEADINGS: </strong>" + Array.from(all_headings) + "</p>";
-  detailsHtml += "</div>";
+  detailsHtml += `
+  
+  
+  <div  class='full-result medication-details hidden'>
+    <h4>
+  <p><strong>DRUG NAME: </strong>${medication.name.toUpperCase()}</p>
+  <p><strong>HEADINGS: </strong>${Array.from(all_headings)}</p>
+  </h4>
+  </div>`;
 }
 
 
 
 
 
-    detailsHtml += "</div>";
+    detailsHtml += `</div>
+    
+    </div>`;
 
     // Display the details on the page
     document.getElementById("get_presciption_classification").innerHTML = detailsHtml;
@@ -167,3 +189,4 @@ xhr.onerror = function() {
 };
 xhr.send();
 }
+handleSelectionChange();

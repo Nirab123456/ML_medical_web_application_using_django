@@ -1,0 +1,132 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+<style>
+/* Custom CSS styles for the input group */
+.my-custom-input-group {
+  background-color: #a8f5cd;
+  border: 1px solid #151414;
+  padding: 10px;
+  border-radius: 5px;
+}
+/* Define the normal link color */
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+    <div class="page-wrapper bg-img-1 p-t-200 p-b-120" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-4">
+                <div class="card-body">
+
+
+                  <ul class="tab-list">
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                      <a href="{% url 'med_search' %}" data-toggle="tab" id="drugSearchLink"><h5 style="color: rgb(233, 179, 42);">DRUG SEARCH</h5></a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                      <a href="{% url 'medicine_details' %}" data-toggle="tab" id="drugDetailsLink"><h5 style="color: rgb(56, 243, 56);">DRUG DETAILS</h5></a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                      <a href="{% url 'presciption_classification_beta' %}" data-toggle="tab" id="drugDetailsLink"><h5 style="color: rgb(235, 115, 123);">PRESCIPTION CLASSIFICATION</h5></a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                      <a href="{% url 'medicine_chatbot' %}" data-toggle="tab" id="drugDetailsLink"><h5 style="color: rgb(126, 136, 244);">TALK WITH A DRUG</h5></a>
+                    </li>
+                  </ul>
+                  
+
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="tab1">
+                            <form method="POST" id="med_search_form" action="#">
+                                {% csrf_token %} 
+
+                                <div id="name-container" class=" input-group input-group-big">
+                                    <label class="label">provide the name of drug:</label>
+                                    <div class="presciption_classification">
+                                    <input  type="text" class="input--style-1" id="name-0" name="name" value="{{ name_of_medication }}" placeholder="NAME OF THE DRUG e.g:NAPA" required="required" oninput="showWordRecommendations(event, 0)">
+                                    <button type="button" class="btn btn-info" onclick="addNameField()">ADD ONE MORE DEUG</button>
+                                  </div>
+                                    <i class="input-group-symbol">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-capsule">
+                                            <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z"></path>
+                                        </svg>
+                                    </i>
+                                </div>
+
+
+                                <div class="row row-space">
+
+                                  
+                                    <div  class="col-2" >
+                                      <div class="input-group">
+                                        <label class="label">select the drug:</label>
+                                        <div class="input-group-icon" id="js-select-special">
+
+                                          <div class="rs-select2 js-select-simple select--no-search">
+
+                                            <div style="margin-bottom: 5px" id="wordRecommendations"></div>
+
+                                          </div>  
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                    
+                                    <div class="col-2">
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row row-space">
+
+
+                                    <div class="col-2">
+
+
+
+
+
+                                    </div>
+
+                                    <div class="col-2">
+                                        <button style="margin-top: 5px"  class="btn-submit" type="submit">SEARCH MEDICINE</button>
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% about_me 'js/presciption_classification_search.js' %}"></script>
+
+</html>
+{% endblock %}
