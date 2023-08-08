@@ -67,7 +67,6 @@ urlpatterns = [
 
     path('medicine_chatbot/', views.medicine_chatbot, name='medicine_chatbot'),
     path('get_medicine_chat/', views.get_medicine_chat, name='get_medicine_chat'),
-    path('search_medication_chatbot_results/', views.search_medication_chatbot_results, name='search_medication_chatbot_results'),
 
 
 
