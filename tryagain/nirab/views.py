@@ -170,7 +170,8 @@ def get_presciption_classification_beta(request):
 def presciption_classification_beta_results(request):
     return render(request, 'presciption_classification_beta_results.html')
 
-
+def search_medication_chatbot_results(request):
+    return render(request, 'search_medication_chatbot_results.html')
 
 
 def change_password(request):
