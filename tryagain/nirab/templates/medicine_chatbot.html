@@ -149,6 +149,8 @@
 
                                     </div>
 
+                                    <div id="get_medicine_chat"></div>
+
                                     <div  style="margin-top: 5px; margin-left: 200px;">
 
                                         <button class="btn btn-primary d-block w-50" type="submit" style="font-size: 18px;" onclick="handleFormSubmit(event)">
@@ -395,20 +397,55 @@
           
     
           var xhr = new XMLHttpRequest();
-            // Build the query parameters string
-            var queryParams = '?name=' + drugNames + '&topic=' + topic + '&question=' + question + '&selected_question=' + selected_question;
+          xhr.open('GET', '/get_medicine_chat/?name=' + drugNames + '&topic=' + topic + '&question=' + question + '&selected_question=' + selected_question, true);
+    
+    
 
-            // Construct the new URL with query parameters
-            var newURL = '/search_medication_chatbot_results/' + queryParams;
-            console.log(newURL);
-
-            // Redirect to the new URL
-            window.location.href = newURL;
-    }
-
-  // Attach the handleFormSubmission function to the form's submit event
-  document.getElementById("med_search_form").addEventListener("submit", handleSelectionChange);
-
+    
+          xhr.onload = function() {
+    
+    
+            if (xhr.status === 200) {
+              var get_medicine_chat = JSON.parse(xhr.responseText);
+              console.log(get_medicine_chat);
+              if (Array.isArray(get_medicine_chat) && get_medicine_chat.length > 0) {
+    
+                var detailsHtml = "<div>";
+                for (var i = 0; i < get_medicine_chat.length; i++) {
+                  detailsHtml += "<p><strong>" + get_medicine_chat[i]['name'] + " : </strong> " + get_medicine_chat[i]['answer']+ "</p>";
+                  // Add more fields here
+                  detailsHtml += "<hr>";
+                }
+                detailsHtml += "</div>";
+                document.getElementById("get_medicine_chat").innerHTML = detailsHtml;
+    
+              } else {
+                document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
+              }
+    
+    
+    
+            } else {
+              console.error('Request failed. Status:', xhr.status);
+              document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
+            }
+    
+    
+    
+    
+          };
+    
+    
+    
+    
+    
+          xhr.onerror = function() {
+            console.error('Request failed. Network error');
+            document.getElementById("get_medicine_chat").innerHTML = "<p>No data found </p>";
+          };
+          xhr.send();
+        }
+        
 
 
 
