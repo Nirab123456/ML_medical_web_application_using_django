@@ -23,6 +23,9 @@ class TOTAL_MEDICINE_SEARCH:
             form = MedicineForm(request.POST)
             if form.is_valid():
                 name = form.cleaned_data['name']
+                generic_name = form.cleaned_data['generic_name']
+                print(f'generic_name : {generic_name}')
+                print(f'name : {name}')
                 name = name.lower()
                 matching_medications = Medication.objects.filter(name__icontains=name)
                 strengths = Medication.objects.filter(name=name).values_list('strength', flat=True)

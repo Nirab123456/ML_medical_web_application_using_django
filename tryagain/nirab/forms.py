@@ -9,11 +9,11 @@ from django.forms import ModelForm
 
 
 class MedicineForm(ModelForm):
-    name = forms.CharField(required=True,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Medicine Name'}))
+    name = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Medicine Name'}))
+    generic_name = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Generic Name'}))
     class Meta:
         model = Medication
-        fields = ['name']
-
+        fields = ['name','generic_name']
 
 
 
