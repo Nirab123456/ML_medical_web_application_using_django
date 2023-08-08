@@ -122,7 +122,18 @@ def get_word_recommendations(request):
 
         return JsonResponse(word_recommendations, safe=False)
 
+def get_generic_name_recommendations(request):
+    if request.method == 'GET':
+        input_query = request.GET.get('input', '').strip()
+        unique_generic_names_txt = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'staticfiles', 'unique_generic_name_list.txt')
 
+        with open(unique_generic_names_txt, 'r') as f:
+            unique_generic_names = f.readlines()
+        unique_generic_names = [x.replace('\n', '') for x in unique_generic_names]
+        # Filter word_list based on the input_query
+        generic_name_recommendations = [word for word in unique_generic_names if word.lower().startswith(input_query.lower())]
+
+        return JsonResponse(generic_name_recommendations, safe=False)
 
 
 

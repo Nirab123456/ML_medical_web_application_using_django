@@ -54,6 +54,7 @@ urlpatterns = [
     path('med_details_search_results/', views.med_details_search_results, name='med_details_search_results'),
 
     path('get_word_recommendations/', views.get_word_recommendations, name='get_word_recommendations'),
+    path('get_generic_name_recommendations/', views.get_generic_name_recommendations, name='get_generic_name_recommendations'),
 
 
 
