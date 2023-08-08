@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import MedicineForm
-from .models import MedicationDetails,Medication,Classify_Drug_Class,Classify_Side_Effect,Classify_CONTRADICTIONS,med_Ques_Ans,SELECTED_QUESTION_ANSWER
+from .models import MedicationDetails,Medication,med_Ques_Ans,SELECTED_QUESTION_ANSWER
 from django.http import JsonResponse
 from transformers import pipeline
 

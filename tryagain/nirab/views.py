@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import RegisterForm , addrecord , VenueForm , EventForm , OCRImageForm,Mail_me_Form,profilepicForm,BlogForm,SocialMediaForm,ChangePasswordForm,MedicineForm
-from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication,MedicationDetails,Classify_Drug_Class
+from . models import Record , Event , EventVenue , EventAttendee , RecordImage,Record_mail_me,Post,SocialMedia,Medication,MedicationDetails
 import datetime
 import calendar
 from calendar import HTMLCalendar
@@ -18,7 +18,6 @@ from django.http import FileResponse,HttpResponse
 from .templatetags.custom_filters import add_or_update_social_media
 from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 from django.http import JsonResponse
-from .presciption_classification import PRESCIPTION_CLASSIFICATION
 from .madication_chat import MEDICINE_CHAT
 from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 
@@ -125,14 +124,6 @@ def get_word_recommendations(request):
 
 
 
-
-
-
-
-
-def get_presciption_classification(request):
-    PRESCIPTION_classification = PRESCIPTION_CLASSIFICATION(request=request)
-    return PRESCIPTION_classification.get_presciption_classification()
 
 
 
