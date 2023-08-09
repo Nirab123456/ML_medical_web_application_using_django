@@ -1,0 +1,309 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+/* Custom CSS styles for the input group */
+.my-custom-input-group {
+  background-color: #a8f5cd;
+  border: 1px solid #151414;
+  padding: 10px;
+  border-radius: 5px;
+}
+/* Define the normal link color */
+
+.hidden {
+            display: none;
+        }
+
+</style>
+
+
+</head>
+
+
+<body>
+    <div class="page-wrapper bg-img-1 p-t-200 p-b-120" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-4">
+                <div class="card-body">
+
+
+                    <label class="input-group input-group-big"> <h3 >PROVIDE A BRAND NAME TO GET ALTERNATE DRUGS</h3></label>
+
+
+
+                  <ul class="tab-list">
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'med_search' %}" class="btn btn-outline-secondary" data-toggle="tab" id="drugSearchLink">
+                            <h5 style="color: rgb(233, 179, 42);">DRUG SEARCH</h5>
+                        </a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'medicine_details' %}" class="btn btn-outline-danger" data-toggle="tab" id="drugDetailsLink">
+                            <h5 style="color: rgb(16, 209, 16);">DRUG DETAILS</h5>
+                        </a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'presciption_classification_beta' %}" class="btn btn-outline-dark" data-toggle="tab" id="prescriptionClassificationLink">
+                            <h5 style="color: rgb(235, 115, 123);">PRESCRIPTION CLASSIFICATION</h5>
+                        </a>
+                    </li>
+                    <li style="margin-left: 15px;" class="tab-list__item">
+                        <a href="{% url 'medicine_chatbot' %}" class="btn btn-outline-light" data-toggle="tab" id="drugChatbotLink">
+                            <h5 style="color: rgb(126, 136, 244);">TALK WITH A DRUG</h5>
+                        </a>
+                    </li>
+                </ul>
+
+                  
+
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="tab1">
+                            <form method="POST" id="med_search_form" action="#">
+                                {% csrf_token %} 
+
+                                <div class="row row-space">
+
+                                  <div class="input-group input-group-big">
+                                    <label class="label">PROVIDE THE GENERIC NAME:</label>
+                                    <input type="text" class="input--style-1" id="generic_name" name="generic_name" value="{{ generic_name }}" placeholder="NAME OF THE DRUG e.g:PARACETAMOL"   oninput="genericrecomendation()">
+                                      <i class="input-group-symbol">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-capsule">
+                                              <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z"></path>
+                                          </svg>
+                                      </i>
+                                  </div>
+                                  
+                                </div>
+
+
+                                {% if strengths %}
+                                <div class="row row-space">
+
+                                  
+                                    <div  class="col-2" >
+                                      <div class="input-group">
+                                        <label class="label">select the drug:</label>
+                                        <div class="input-group-icon" id="js-select-special">
+
+                                          <div class="rs-select2 js-select-simple select--no-search">
+
+                                            <div style="margin-bottom: 5px" id="genericrecomendation"></div>
+
+                                          </div>  
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                    
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">SELECT THE STRENGTH:</label>
+
+                                            <div class="rs-select2 js-select-simple select--no-search">
+
+                                              <select class="form-select list-room__item my-custom-input-group" id="strength" name="strength" onchange="handleSelectionChange()">
+                                                <optgroup label="strength">
+                                                  <option value="">CHOOSE A STRENGTH</option>
+                                                  {% for strength in strengths %}
+                                                    <option value="{{ strength }}">{{ strength }}</option>
+                                                  {% endfor %}
+                                                </optgroup>
+                                              </select>
+
+                                            </div>
+                                              
+                                              
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {% else %}
+
+                                <div class="row row-space">
+
+                                  
+                                    <div style="margin-right: 15px" class="input-group">
+                                      <label class="label">select the drug:</label>
+                                      <div class="input-group-icon" id="js-select-special">
+
+                                        <div style="margin-bottom: 5px" class="rs-select2 js-select-simple select--no-search">
+
+                                          <div id="genericrecomendation"></div>
+
+                                        </div>  
+                                      </div>
+                                    </div>
+
+                                
+
+                              </div>
+
+
+
+                                {% endif %}
+                                {% if dosage_forms %}
+                                <div class="row row-space">
+
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">SELECT THE DOSAGE FORM:</label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+
+                                                <select class="form-select list-room__item my-custom-input-group" id="dosage_form" name="dosage_form" onchange="handleSelectionChange()">
+                                                    <optgroup label="dosage_form">
+                                                      <option value="">CHOOSE A FORM</option>
+                                                      {% for dosage_form in dosage_forms %}
+                                                        <option value="{{ dosage_form }}">{{ dosage_form }}</option>
+                                                      {% endfor %}
+                                                    </optgroup>
+                                                  </select>
+                                        
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="col-2">
+                                        <button style="margin-top: 5px"  class="btn-submit" type="submit">SEARCH MEDICINE</button>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="row row-space">
+
+                                  <div class="col-2">
+                                    <div class="mb-3">
+                                        <button style="margin-top: 5px; margin-left: 5px;"  class="btn-submit " type="submit">SEARCH MEDICINE</button>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <div class="mb-3">
+                                        <a href="{% url 'med_search' %}">
+                                          <h3 style="margin-top: 5px; margin-left: 5px;" class="btn btn-lg btn-outline-danger " >SEARCH BY BRAND NAME</h3>
+                                        </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+
+                                {% endif %}
+
+
+                                </form>
+
+
+
+                              </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- <script src="{% about_me 'js/search.js' %}"></script> -->
+<script>
+
+var timeout; // Global variable to store timeout reference
+  
+  function genericrecomendation() {
+    clearTimeout(timeout); // Clear previous timeout, if any
+  
+    // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+    timeout = setTimeout(function() {
+      var input = document.getElementById("generic_name").value.trim();
+      console.log(input);
+  
+      // Check if there is any input
+      if (input.length === 0) {
+        var recommendationsHtml = `
+        <select class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectgenericrecomendtions()'>
+        <option value="">USE A PROPER GENERIC NAME</option>
+        </select>
+        `
+        document.getElementById("genericrecomendation").innerHTML = recommendationsHtml;
+        return;
+      }
+  
+      // Make an AJAX call to fetch word recommendations based on the input
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/get_generic_name_recommendations/?input=' + encodeURIComponent(input), true);
+      xhr.onload = function() {
+
+
+
+
+        if (xhr.status === 200) {
+          var wordRecommendations = JSON.parse(xhr.responseText);
+  
+          // Display word recommendations in a list
+          var recommendationsHtml = "<select id='generic_select' class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectgenericrecomendtions()'>";
+
+          
+            if (wordRecommendations.length !== 0) {
+              for (var i = 0; i < wordRecommendations.length; i++) {
+                var word = wordRecommendations[i];
+                recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
+              }
+            } else {
+              recommendationsHtml += '<option value="">USE A PROPER GENERIC NAME</option>';
+            }
+
+
+
+
+            recommendationsHtml += "</select>";
+          document.getElementById("genericrecomendation").innerHTML = recommendationsHtml;
+        } 
+        
+        
+        
+        else {
+          console.error('Request failed. Status:', xhr.status);
+          // Display no recommendations for error cases
+          document.getElementById("genericrecomendation").innerHTML = "";
+        }
+      };
+      xhr.onerror = function() {
+        console.error('Request failed. Network error');
+        // Display no recommendations for network errors
+        document.getElementById("genericrecomendation").innerHTML = "";
+      };
+      xhr.send();
+    }, 300); // Adjust the delay as needed (in milliseconds)
+
+
+  }
+  
+  // Function to select a word recommendation and populate the input field with it
+  function selectgenericrecomendtions() {
+    var selectElement = document.getElementById("generic_select");
+    var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+    document.getElementById("generic_name").value = selectedOption;
+  }
+  genericrecomendation();
+
+</script>
+</html>
+{% endblock %}

@@ -27,6 +27,9 @@ def med_search(request):
     T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
     return T_M_S.med_search()
 
+def med_search_generic(request):
+    T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
+    return T_M_S.med_search_generic()
 
 
 
