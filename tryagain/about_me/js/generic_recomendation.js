@@ -1,13 +1,13 @@
-
 function toggleMatchingGroups(target) {
     var allGroups = document.querySelectorAll(".coll-2");
     for (var i = 0; i < allGroups.length; i++) {
+        var inputField = allGroups[i].querySelector("input");
         if (allGroups[i].classList.contains(target)) {
             allGroups[i].classList.remove("hidden");
-            allGroups[i].querySelector("input").required = true;
+            inputField.required = true;
         } else {
             allGroups[i].classList.add("hidden");
-            allGroups[i].querySelector("input").required = false;
+            inputField.required = false;
         }
     }
 
@@ -23,12 +23,16 @@ function toggleMatchingGroups(target) {
     }
 }
 
-// Attach the toggle function to the buttons' click events
-var toggleButtons = document.querySelectorAll(".toggle-button");
-toggleButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        var target = button.getAttribute("data-target");
-        toggleMatchingGroups(target);
+let genericButtonClicked = false;
+
+document.addEventListener("DOMContentLoaded", function() {
+    const genericButton = document.querySelector(".toggle-button[data-target='generic_name']");
+    
+    genericButton.addEventListener("click", function() {
+        if (!genericButtonClicked) {
+            genericButtonClicked = true;
+            toggleMatchingGroups('generic_name');
+        }
     });
 });
 
@@ -109,3 +113,4 @@ var timeout; // Global variable to store timeout reference
     var selectedOption = selectElement.options[selectElement.selectedIndex].value;
     document.getElementById("generic_name").value = selectedOption;
   }
+

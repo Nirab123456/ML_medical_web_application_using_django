@@ -77,29 +77,62 @@
                         <div class="tab-pane active" id="tab1">
                             <form method="POST" id="med_search_form" action="#">
                                 {% csrf_token %} 
-                                
+
+
+                                {% if generic_name %}
+
                                 <div class="row row-space">
-                                  <div class="drug_name coll-2">
-                                      <div class="input-group input-group-big">
-                                          <label class="label">provide the name of drug:</label>
-                                          <input type="text" class="input--style-1" id="name" name="name" value="{{ name_of_medication }}" placeholder="NAME OF THE DRUG e.g:NAPA"  oninput="showWordRecommendations()">
-                                          <i class="input-group-symbol">
-                                              <button class="btn btn-outline-warning btn-sm toggle-button" data-target="generic_name" onclick="genericrecomendation()">SEARCH BY <br> GENERIC NAME</button>
-                                          </i>
-                                      </div>
-                                  </div>
-                              
-                                  <div class="coll-2 generic_name hidden">
-                                      <div class="input-group input-group-big">
+
+                                        <div class="input-group input-group-big">
                                           <label class="label">PROVIDE THE GENERIC NAME:</label>
-                                          <input type="text" class="input--style-1" id="generic_name" name="generic_name" value="" placeholder="NAME OF THE DRUG e.g:PARACETAMOL"   oninput="genericrecomendation()">
+                                          <input type="text" class="input--style-1" id="generic_name" name="generic_name" value="{{ generic_name }}" placeholder="NAME OF THE DRUG e.g:PARACETAMOL"   oninput="genericrecomendation()">
                                           <i class="input-group-symbol">
                                               <button class="btn btn-outline-warning btn-sm toggle-button" data-target="drug_name">SEARCH BY <br> DRUG NAME</button>
                                           </i>
                                       </div>
-                                  </div>
-                              </div>
+
+
+
+
+                                  </div>  
+
+
+                            {% else %}
+   
+
+
+                            <div class="row row-space">
+                                <div class="drug_name coll-2">
+                                    <div class="input-group input-group-big">
+                                        <label class="label">provide the name of drug:</label>
+                                        <input type="text" class="input--style-1" id="name" name="name" value="{{ name_of_medication }}" placeholder="NAME OF THE DRUG e.g:NAPA"  oninput="showWordRecommendations()">
+                                        <i class="input-group-symbol">
+                                            <button class="btn btn-outline-warning btn-sm toggle-button"  data-target="generic_name" onclick="genericrecomendation()">SEARCH BY <br> GENERIC NAME</button>
+                                        </i>
+                                    </div>
+                                </div>
+
+                            
+                                <div class="coll-2 generic_name hidden">
+                                    <div class="input-group input-group-big">
+                                        <label class="label">PROVIDE THE GENERIC NAME:</label>
+                                        <input type="text" class="input--style-1" id="generic_name" name="generic_name" value="{{ generic_name }}" placeholder="NAME OF THE DRUG e.g:PARACETAMOL"   oninput="genericrecomendation()">
+                                        <i class="input-group-symbol">
+                                            <button class="btn btn-outline-warning btn-sm toggle-button" data-target="drug_name">SEARCH BY <br> DRUG NAME</button>
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                              {% endif %}
+
+
                               
+
+
 
                                 {% if strengths %}
                                 <div class="row row-space">
@@ -110,9 +143,17 @@
                                           <label class="label">select the drug:</label>
                                           <div class="input-group-icon" id="js-select-special">
                                               <div style="margin-bottom: 5px" class="rs-select2 js-select-simple select--no-search">
+                                                    {% if name_of_medication %}
                                                   <div id="wordRecommendations"></div>
+                                                    {% endif %}
+
+
+                                                    {% if generic_name %}
 
                                                   <div  id="genericrecomendation">
+
+                                                    {% endif %}
+
 
 
                                                   </div>
@@ -147,6 +188,7 @@
                                     </div>
 
                                 </div>
+                                
                                 {% else %}
 
                                 <div class="row row-space">
@@ -157,6 +199,7 @@
                                         <label class="label">select the drug:</label>
                                         <div class="input-group-icon" id="js-select-special">
                                             <div style="margin-bottom: 5px" class="rs-select2 js-select-simple select--no-search">
+                                                
                                                 <div id="wordRecommendations"></div>
 
                                                 <div id="genericrecomendation">
@@ -175,8 +218,9 @@
                               </div>
 
 
+                              {% endif %}
 
-                                {% endif %}
+
                                 {% if dosage_forms %}
                                 <div class="row row-space">
 
@@ -233,6 +277,7 @@
 <script src="{% about_me 'js/search.js' %}"></script>
 <script>
 
+
 function toggleMatchingGroups(target) {
     var allGroups = document.querySelectorAll(".coll-2");
     for (var i = 0; i < allGroups.length; i++) {
@@ -257,14 +302,19 @@ function toggleMatchingGroups(target) {
     }
 }
 
-// Attach the toggle function to the buttons' click events
-var toggleButtons = document.querySelectorAll(".toggle-button");
-toggleButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        var target = button.getAttribute("data-target");
-        toggleMatchingGroups(target);
+let genericButtonClicked = false;
+
+document.addEventListener("DOMContentLoaded", function() {
+    const genericButton = document.querySelector(".toggle-button[data-target='generic_name']");
+    
+    genericButton.addEventListener("click", function() {
+        if (!genericButtonClicked) {
+            genericButtonClicked = true;
+            toggleMatchingGroups('generic_name');
+        }
     });
 });
+
 
 var timeout; // Global variable to store timeout reference
   

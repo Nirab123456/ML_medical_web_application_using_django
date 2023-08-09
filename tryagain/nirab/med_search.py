@@ -22,22 +22,41 @@ class TOTAL_MEDICINE_SEARCH:
         if request.method == 'POST':
             form = MedicineForm(request.POST)
             if form.is_valid():
+
                 name = form.cleaned_data['name']
+                print(f'Name is {name}')
                 generic_name = form.cleaned_data['generic_name']
-                print(f'generic_name : {generic_name}')
-                print(f'name : {name}')
-                name = name.lower()
-                matching_medications = Medication.objects.filter(name__icontains=name)
-                strengths = Medication.objects.filter(name=name).values_list('strength', flat=True)
-                strengths = set(strengths)
-                # Convert the result to a list
-                strengths = list(strengths)
-                dosage_forms = Medication.objects.filter(name=name).values_list('dosage_form', flat=True)
-                dosage_forms = set(dosage_forms)
-                # Convert the result to a list
-                dosage_forms = list(dosage_forms)
+                print(f'Generic Name is {generic_name}')
+
+                if generic_name == None:
+                    name = name.lower()
+                    matching_medications = Medication.objects.filter(name__icontains=name)
+                    strengths = matching_medications.values_list('strength', flat=True)
+                    strengths = set(strengths)
+                    # Convert the result to a list
+                    strengths = list(strengths)
+                    dosage_forms = matching_medications.values_list('dosage_form', flat=True)
+                    dosage_forms = set(dosage_forms)
+                    # Convert the result to a list
+                    dosage_forms = list(dosage_forms)
+                    print('i am name')
+                    return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
+                                                                'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
+                else :
+                    generic_name = form.cleaned_data['generic_name']
+                    generic_name = generic_name.lower()
+                    matching_medications = Medication.objects.filter(generic_name__icontains=generic_name)
+                    strengths = matching_medications.values_list('strength', flat=True)
+                    strengths = set(strengths)
+                    # Convert the result to a list
+                    strengths = list(strengths)
+                    dosage_forms = matching_medications.values_list('dosage_form', flat=True)
+                    dosage_forms = set(dosage_forms)
+                    # Convert the result to a list
+                    dosage_forms = list(dosage_forms)
+                    print('i am generic name')
                 return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
-                                                            'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
+                                                            'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms})
         else:
             form = MedicineForm()
         return render(request, 'search.html', {'medication_form': form})
