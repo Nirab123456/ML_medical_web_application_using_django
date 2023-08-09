@@ -73,15 +73,19 @@
                             <form method="POST" id="med_search_form" action="#">
                                 {% csrf_token %} 
 
-                                <div class="input-group input-group-big">
-                                    <label class="label">provide the name of drug:</label>
-                                    <input type="text" class="input--style-1" id="name" name="name" value="{{ name_of_medication }}" placeholder="NAME OF THE DRUG e.g:NAPA" required="required" oninput="showWordRecommendations()">
-                                    <i class="input-group-symbol">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-capsule">
-                                            <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z"></path>
-                                        </svg>
-                                    </i>
-                                </div>
+                                <div class="row row-space">
+
+                                    <div class="input-group input-group-big">
+                                      <label class="label">PROVIDE THE GENERIC NAME:</label>
+                                      <input type="text" class="input--style-1" id="generic_name" name="generic_name" value="{{ generic_name }}" placeholder="NAME OF THE DRUG e.g:PARACETAMOL"   oninput="genericrecomendation()">
+                                        <i class="input-group-symbol">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-capsule">
+                                                <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z"></path>
+                                            </svg>
+                                        </i>
+                                    </div>
+                                    
+                                  </div>
 
 
                                 <div class="row row-space">
@@ -89,17 +93,17 @@
                                   
                                     <div  class="col-2" >
                                         <div class="input-group">
-                                            <label class="label">select the drug:</label>
-                                            <div class="input-group-icon" id="js-select-special">
-    
-                                              <div class="rs-select2 js-select-simple select--no-search">
-    
-                                                <div style="margin-bottom: 5px" id="wordRecommendations"></div>
-    
-                                              </div>  
-                                            </div>
+                                          <label class="label">select the drug:</label>
+                                          <div class="input-group-icon" id="js-select-special">
+  
+                                            <div class="rs-select2 js-select-simple select--no-search">
+  
+                                              <div style="margin-bottom: 5px" id="genericrecomendation"></div>
+  
+                                            </div>  
                                           </div>
-                                    </div>
+                                        </div>
+                                      </div>
 
 
                                     
@@ -120,6 +124,7 @@
 
 
                                     </div>
+
                                     <div class="row row-space">
 
                                         <div class="col-2">
@@ -128,8 +133,8 @@
 
                                         <div class="col-2">
                                             <div class="mb-3">
-                                                <a href="{% url 'medicine_details_generic' %}">
-                                                  <h3 style="margin-top: 5px; margin-left: 5px;" class="btn btn-lg btn-outline-danger " >SEARCH BY GENERIC NAME</h3>
+                                                <a href="{% url 'medicine_details' %}">
+                                                  <h3 style="margin-top: 5px; margin-left: 5px;" class="btn btn-lg btn-outline-danger " >SEARCH BY BRAND NAME</h3>
                                                 </a>
                                             </div>
                                           </div>   
@@ -164,7 +169,7 @@
     </div>
 </body>
 
-<script src="{% about_me 'js/search_med_details.js' %}"></script>
+<script src="{% about_me 'js/search_med_details_generic.js' %}"></script>
 
 </html>
 {% endblock %}

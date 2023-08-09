@@ -49,48 +49,22 @@ def med_details_search_results(request):
 
 
 def get_medicine_details(request):
-    name = request.GET.get('name')
-    name = name.lower()
-    generic_name = Medication.objects.filter(name=name).first()
-    if generic_name:
-        details_of_medicine = MedicationDetails.objects.filter(generic_name=generic_name.generic_name)
-        if details_of_medicine.exists():
-            details_list = []
-            for detail in details_of_medicine:
-                details = {
-                    'generic_name': detail.generic_name,
-                    'drug_class': detail.drug_class,
-                    'indication': detail.indication,
-                    'indication_description': detail.indication_description,
-                    'therapeutic_class_description': detail.therapeutic_class_description,
-                    'pharmacology_description': detail.pharmacology_description,
-                    'dosage_description': detail.dosage_description,
-                    'interaction_description': detail.interaction_description,
-                    'contraindications_description': detail.contraindications_description,
-                    'side_effects_description': detail.side_effects_description,
-                }
-                details_list.append(details)
-            return JsonResponse(details_list, safe=False)
-        else:
-            return JsonResponse({'error': 'Medication details not found'}, status=404)
-    else:
-        return JsonResponse({'error': 'Medication not found'}, status=404)
-    
+    T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
+    return T_M_S.get_medicine_details()
+
+   
 
 def medicine_details(request):
-    if request.method == 'POST':
-        form = MedicineForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            name = name.lower()
-            return render(request, 'search_med_details.html', {'medication_form': form, 'name_of_medication': name})
-    else:
-        form = MedicineForm()
-    return render(request, 'search_med_details.html', {'medication_form': form})
+    T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
+    return T_M_S.medicine_details()
 
+def medicine_details_generic(request):
+    T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
+    return T_M_S.medicine_details_generic()
 
-
-
+def get_medicine_details_generic(request):
+    T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
+    return T_M_S.get_medicine_details_generic()
 
 
 

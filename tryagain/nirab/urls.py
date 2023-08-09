@@ -54,6 +54,11 @@ urlpatterns = [
     path('medicine_details/', views.medicine_details, name='medicine_details'),
     path('get_medicine_details/', views.get_medicine_details, name='get_medicine_details'),
     path('med_details_search_results/', views.med_details_search_results, name='med_details_search_results'),
+    path('medicine_details_generic/', views.medicine_details_generic, name='medicine_details_generic'),
+    path('get_medicine_details_generic/', views.get_medicine_details_generic, name='get_medicine_details_generic'),
+
+
+
 
     path('get_word_recommendations/', views.get_word_recommendations, name='get_word_recommendations'),
     path('get_generic_name_recommendations/', views.get_generic_name_recommendations, name='get_generic_name_recommendations'),

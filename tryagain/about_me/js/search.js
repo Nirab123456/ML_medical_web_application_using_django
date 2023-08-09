@@ -1,14 +1,3 @@
-
-$(document).ready(function () {
-  showWordRecommendations();
-  $(".tab-list__link").on("click", function (e) {
-      e.preventDefault();
-      var targetTab = $(this).attr("href");
-      $(".tab-pane").removeClass("active");
-      $(targetTab).addClass("active");
-  });
-});
-
 var timeout; // Global variable to store timeout reference
   
   function showWordRecommendations() {
