@@ -1,40 +1,3 @@
-function toggleMatchingGroups(target) {
-    var allGroups = document.querySelectorAll(".coll-2");
-    for (var i = 0; i < allGroups.length; i++) {
-        var inputField = allGroups[i].querySelector("input");
-        if (allGroups[i].classList.contains(target)) {
-            allGroups[i].classList.remove("hidden");
-            inputField.required = true;
-        } else {
-            allGroups[i].classList.add("hidden");
-            inputField.required = false;
-        }
-    }
-
-    // Show the genericrecomendation div and hide the wordRecommendations div when searching by generic_name
-    var wordRecommendationsDiv = document.getElementById("wordRecommendations");
-    var genericRecomendationDiv = document.getElementById("genericrecomendation");
-    if (target === "generic_name") {
-        wordRecommendationsDiv.style.display = "none";
-        genericRecomendationDiv.style.display = "block";
-    } else {
-        wordRecommendationsDiv.style.display = "block";
-        genericRecomendationDiv.style.display = "none";
-    }
-}
-
-let genericButtonClicked = false;
-
-document.addEventListener("DOMContentLoaded", function() {
-    const genericButton = document.querySelector(".toggle-button[data-target='generic_name']");
-    
-    genericButton.addEventListener("click", function() {
-        if (!genericButtonClicked) {
-            genericButtonClicked = true;
-            toggleMatchingGroups('generic_name');
-        }
-    });
-});
 
 var timeout; // Global variable to store timeout reference
   
@@ -113,4 +76,42 @@ var timeout; // Global variable to store timeout reference
     var selectedOption = selectElement.options[selectElement.selectedIndex].value;
     document.getElementById("generic_name").value = selectedOption;
   }
+
+  // Function to select a word recommendation and populate the input field with it
+  function selectRecommendation() {
+    var selectElement = document.querySelector("select");
+    var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+    document.getElementById("generic_name").value = selectedOption;
+  }
+  
+
+  function handleFormSubmission(event) {
+    var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+    var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+    var drugName = encodeURIComponent(document.getElementById("generic_name").value);
+    // var sortOption = document.getElementById("sortOption").value;
+    console.log(selectedStrength);
+    console.log(selectedDosageForm);
+    console.log(drugName);
+
+    if (selectedStrength && selectedDosageForm && drugName) {
+      event.preventDefault(); // Prevent default form submission behavior
+
+      // Construct the URL with query parameters
+      var queryParams = '?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&generic_name=' + drugName;
+      // You can add more parameters if needed like this: '&param1=value1&param2=value2'
+
+      // Redirect to the target HTML page with the query parameters
+      window.location.href = '/med_search_results/' + queryParams;
+    }
+  }
+
+  // Attach the handleFormSubmission function to the form's submit event
+  document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
+
+
+
+  genericrecomendation();
+
+
 

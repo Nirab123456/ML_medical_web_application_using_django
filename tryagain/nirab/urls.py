@@ -41,7 +41,8 @@ urlpatterns = [
 
 
 
-    path('get_medication/', views.get_medication_details, name='get_medication'),
+    path('get_medication_details/', views.get_medication_details, name='get_medication_details'),
+    path('get_generic_medication_details/', views.get_generic_medication_details, name='get_generic_medication_details'),
     path('med_search/', views.med_search, name='med_search'), 
     path('med_search_generic/', views.med_search_generic, name='med_search_generic'),
     path('med_search_results/', views.med_search_results, name='med_search_results'),

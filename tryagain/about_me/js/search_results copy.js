@@ -1,152 +1,8 @@
-{% load about_me %}
-{% include 'base.html' %}
-{% block content %}
-{% load custom_filters %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-
-    <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="{% about_me 'css/search.css' %}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<style>
-
-.my_coll-2 {
-    width: -webkit-calc(100% - 20px);
-    width: -moz-calc(100% - 20px);
-    width: calc(100% - 20px);
-  }
-  
-  @media (max-width: 1700px) {
-  .my_coll-2 {
-      width: 100%;
-    }
-  }
-
-
-
-</style>
-
-
-
-</head>
-
-
-<body>
-    <div class="page-wrapper " style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
-        <div style="margin-left: 15px">
-
-
-                    <div class="tab-content">
-
-                        <div id="tab1">
-
-
-
-
-                                <div class="row row-space">
-
-                                  
-                                    <div style="margin-top: 25px"  class="col-2" >
-
-                                      <select class ='input-group input-group-big' id="sortOption" onclick="handleSortOptionChange()">
-                                        <option value="default">Default</option>
-                                        <option value="priceAsc">Price (Low to High)</option>
-                                        <option value="priceDesc">Price (High to Low)</option>
-                                      </select>
-                                      
-                                    </div>
-
-
-                                    
-                                    <div class="col-2">
-
-
-                                      <nav style="margin-top: 25px" class="d-flex justify-content-center">
-                                        <ul class="pagination pagination-base pagination-boxed pagination-square mb-0">
-                                          <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(0)">
-                                              <span aria-hidden="true">«</span>
-                                              <span class="sr-only">Previous</span>
-                                            </a>
-                                          </li>
-                                          <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(1)">First</a>
-                                          </li>
-                                          <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(calculateTotalPages(medicationDetails))">Last</a>
-                                          </li>
-                                          <li class="page-item">
-                                            <a class="page-link no-border" href="#" onclick="showPage(2)">
-                                              <span aria-hidden="true">»</span>
-                                              <span class="sr-only">Next</span>
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </nav>
-                                      
-
-                                      
-                                    </div>
-
-                                </div>
-
-
-
-
-                                  <div class ='row row-space' id="medicationDetails"></div>
-
-
-
-
-
-
-
-                                
-                                
-
-
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
-
-
-            
-</body>
-
-<!-- <script src="{% about_me 'js/search_results.js' %}"></script> -->
-<script>
-  
-
   // Retrieve the query parameters from the URL
   const urlParams = new URLSearchParams(window.location.search);
   const strength = urlParams.get('strength');
   const dosageForm = urlParams.get('dosage_form');
   const drugName = urlParams.get('name');
-  const generic_name = urlParams.get('generic_name');
   
   // Now you have the values of the query parameters in the variables (strength, dosageForm, drugName).
   // You can use these values as needed in the JavaScript code of this HTML page.
@@ -164,11 +20,8 @@ document.getElementById("sortOption").addEventListener("change", handleSortOptio
 
 function fetchMedicationDetails(sortOption, currentPage) {
   var xhr = new XMLHttpRequest();
-  if(!generic_name){
-  xhr.open('GET', '/get_medication_details/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName, true);
-  }else{
-    xhr.open('GET', '/get_generic_medication_details/?strength=' + strength + '&dosage_form=' + dosageForm + '&generic_name=' + generic_name, true);
-  }
+  xhr.open('GET', '/get_medication/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName, true);
+
   xhr.onload = function () {
     if (xhr.status === 200) {
       medicationDetails = JSON.parse(xhr.responseText); // Assign the fetched medication details to the global variable
@@ -340,7 +193,3 @@ function handleSortOptionChange() {
 
 // Call this after fetching medicationDetails
 fetchMedicationDetails('default', 1);
-
-</script>
-</html>
-{% endblock %}
