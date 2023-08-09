@@ -65,6 +65,10 @@ xhr.onload = function () {
       var detailsHtml = "";
       for (var i = 0; i < medicationSubset.length; i++) {
         var medication = medicationSubset[i];
+        var generic_name = medication.generic_name.trim();
+        var queryParams = '?generic_name=' + generic_name;
+        var url = '/med_details_search_results/' + queryParams;
+
 
         detailsHtml +=
           `
@@ -78,14 +82,15 @@ xhr.onload = function () {
                       <div class="widget-26-job-title">
                         <a href="#">${medication.name.trim()}</a>
                         <p class="m-0">
-                          <a href="#">${medication.dosage_form.trim()}.</a>
+                          <a href="${url}">${medication.generic_name.trim()}.</a>
                         </p>
                       </div>
                     </td>
                     <td class="column-2">
                       <div class="widget-26-job-info">
                         <p class="type m-0">${medication.manufacturer.trim()}</p>
-                        <a class="type m-0 employer-name">${medication.generic_name.trim()}.</a>
+                        <a class="type m-0 employer-name">${medication.dosage_form.trim()}.</a>
+
                       </div>
                     </td>`;
         if (medication.price !== '0') {
