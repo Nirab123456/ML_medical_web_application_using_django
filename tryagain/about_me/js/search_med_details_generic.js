@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
   // Your JavaScript code here
 
   var timeout; // Global variable to store timeout reference
@@ -99,4 +98,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // Attach the handleFormSubmission function to the form's submit event
     document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
     genericrecomendation();
-  });
