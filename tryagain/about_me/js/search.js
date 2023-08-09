@@ -1,3 +1,13 @@
+$(document).ready(function () {
+  showWordRecommendations();
+  $(".tab-list__link").on("click", function (e) {
+      e.preventDefault();
+      var targetTab = $(this).attr("href");
+      $(".tab-pane").removeClass("active");
+      $(targetTab).addClass("active");
+  });
+});
+
 var timeout; // Global variable to store timeout reference
   
   function showWordRecommendations() {
@@ -72,7 +82,7 @@ var timeout; // Global variable to store timeout reference
     var selectedOption = selectElement.options[selectElement.selectedIndex].value;
     document.getElementById("name").value = selectedOption;
   }
-  
+
 
   function handleFormSubmission(event) {
     var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
@@ -97,4 +107,4 @@ var timeout; // Global variable to store timeout reference
 
   // Attach the handleFormSubmission function to the form's submit event
   document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
-
+  showWordRecommendations();

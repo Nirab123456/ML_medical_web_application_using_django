@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 
 var timeout; // Global variable to store timeout reference
   
@@ -112,6 +113,6 @@ var timeout; // Global variable to store timeout reference
 
 
   genericrecomendation();
-
+});
 
 
