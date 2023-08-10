@@ -205,6 +205,7 @@ class TOTAL_MEDICINE_SEARCH:
             for medication in medications:
                 details = {
                     'name': medication.name.strip().capitalize(),
+                    'strength': medication.strength.strip().capitalize(),
                     'dosage_form': medication.dosage_form.strip().capitalize(),
                     'generic_name': medication.generic_name.strip().capitalize(),
                     'manufacturer': medication.manufacturer.strip().capitalize(),
@@ -213,9 +214,8 @@ class TOTAL_MEDICINE_SEARCH:
                     # add any other fields you want to include
                 }
                 medication_details.append(details)
-            
-            self.medication_details = medication_details
 
+            print(f'medication details: {medication_details}')            
             return JsonResponse(medication_details, safe=False)
         else:
             return JsonResponse({'error': 'Medication not found'}, status=404)
