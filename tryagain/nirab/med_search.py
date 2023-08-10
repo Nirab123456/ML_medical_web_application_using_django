@@ -23,13 +23,10 @@ class TOTAL_MEDICINE_SEARCH:
             if form.is_valid():
 
                 name = form.cleaned_data['name']
-                print(f'Name is {name}')
-                generic_name = form.cleaned_data['generic_name']
-                print(f'Generic Name is {generic_name}')
-
                 if name != None:
                     name = name.lower()
-                    matching_medications = Medication.objects.filter(name__icontains=name)
+                    # matching_medications = Medication.objects.filter(name__icontains=name)
+                    matching_medications = Medication.objects.filter(name=name)
                     strengths = matching_medications.values_list('strength', flat=True)
                     strengths = set(strengths)
                     # Convert the result to a list
@@ -41,21 +38,7 @@ class TOTAL_MEDICINE_SEARCH:
                     print('i am name')
                     return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
                                                                 'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
-                elif generic_name != None :
-                    generic_name = form.cleaned_data['generic_name']
-                    generic_name = generic_name.lower()
-                    matching_medications = Medication.objects.filter(generic_name__icontains=generic_name)
-                    strengths = matching_medications.values_list('strength', flat=True)
-                    strengths = set(strengths)
-                    # Convert the result to a list
-                    strengths = list(strengths)
-                    dosage_forms = matching_medications.values_list('dosage_form', flat=True)
-                    dosage_forms = set(dosage_forms)
-                    # Convert the result to a list
-                    dosage_forms = list(dosage_forms)
-                    print('i am generic name')
-                return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
-                                                            'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms})
+
         else:
             form = MedicineForm()
         return render(request, 'search.html', {'medication_form': form})
@@ -96,28 +79,115 @@ class TOTAL_MEDICINE_SEARCH:
         name = request.GET.get('name')
         name = name.lower()
         dosage_form = request.GET.get('dosage_form')
-        generic_name = Medication.objects.filter(name=name,strength=selected_strength).first().generic_name
-        medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name, dosage_form=dosage_form)
-        if medications.exists():
-            medication_details = []
-            for medication in medications:
-                details = {
-                    'name': medication.name.strip().capitalize(),
-                    'dosage_form': medication.dosage_form.strip().capitalize(),
-                    'generic_name': medication.generic_name.strip().capitalize(),
-                    'manufacturer': medication.manufacturer.strip().capitalize(),
-                    'price': str(medication.price).strip(),
-                    'price_analysis': str(medication.price_analysis).strip(),
-                    # add any other fields you want to include
-                }
-                medication_details.append(details)
-            
-            self.medication_details = medication_details
+        generic_name = Medication.objects.filter(name=name,strength=selected_strength,dosage_form=dosage_form).first()
+        generic_strength_name = Medication.objects.filter(name=name,strength=selected_strength).first()
+        generic_dosage_name = Medication.objects.filter(name=name,dosage_form=dosage_form).first()
+        if generic_name != None:
+            generic_name=generic_name.generic_name
+            print('generic name:',generic_name)
+            medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name, dosage_form=dosage_form)
+            print('lenth of medication:',len(medications))
+            if medications.exists():
+                medication_details = []
+                for medication in medications:
+                    details = {
+                        'name': medication.name.strip().capitalize(),
+                        'dosage_form': medication.dosage_form.strip().capitalize(),
+                        'generic_name': medication.generic_name.strip().capitalize(),
+                        'manufacturer': medication.manufacturer.strip().capitalize(),
+                        'price': str(medication.price).strip(),
+                        'price_analysis': str(medication.price_analysis).strip(),
+                        # add any other fields you want to include
+                    }
+                    medication_details.append(details)
+                
+                self.medication_details = medication_details
 
-            return JsonResponse(medication_details, safe=False)
-        else:
-            return JsonResponse({'error': 'Medication not found'}, status=404)
+                return JsonResponse(medication_details, safe=False)
+            else:
+                return JsonResponse({'error': 'Medication not found'}, status=404)
+            
+        elif generic_strength_name and generic_dosage_name != None:
+            full_med_details=[]
+            generic_name = generic_strength_name.generic_name
+            medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name)
+            if medications.exists():
+                for medication in medications:
+                    details = {
+                        'name': medication.name.strip().capitalize(),
+                        'dosage_form': medication.dosage_form.strip().capitalize(),
+                        'generic_name': medication.generic_name.strip().capitalize(),
+                        'manufacturer': medication.manufacturer.strip().capitalize(),
+                        'price': str(medication.price).strip(),
+                        'price_analysis': str(medication.price_analysis).strip(),
+                        # add any other fields you want to include
+                    }
+                    full_med_details.append(details)
+                
+            generic_name = generic_dosage_name.generic_name
+            medications = Medication.objects.filter(dosage_form=dosage_form, generic_name=generic_name)
+            if medications.exists():
+                for medication in medications:
+                    details = {
+                        'name': medication.name.strip().capitalize(),
+                        'dosage_form': medication.dosage_form.strip().capitalize(),
+                        'generic_name': medication.generic_name.strip().capitalize(),
+                        'manufacturer': medication.manufacturer.strip().capitalize(),
+                        'price': str(medication.price).strip(),
+                        'price_analysis': str(medication.price_analysis).strip(),
+                        # add any other fields you want to include
+                    }
+                    full_med_details.append(details)
+                
+
+            return JsonResponse(full_med_details, safe=False)
         
+
+
+        elif generic_strength_name != None:
+            generic_name = generic_strength_name.generic_name
+            medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name)
+            if medications.exists():
+                medication_details = []
+                for medication in medications:
+                    details = {
+                        'name': medication.name.strip().capitalize(),
+                        'dosage_form': medication.dosage_form.strip().capitalize(),
+                        'generic_name': medication.generic_name.strip().capitalize(),
+                        'manufacturer': medication.manufacturer.strip().capitalize(),
+                        'price': str(medication.price).strip(),
+                        'price_analysis': str(medication.price_analysis).strip(),
+                        # add any other fields you want to include
+                    }
+                    medication_details.append(details)
+                
+                self.medication_details = medication_details
+
+                return JsonResponse(medication_details, safe=False)
+        elif generic_dosage_name != None:
+            generic_name = generic_dosage_name.generic_name
+            medications = Medication.objects.filter(dosage_form=dosage_form, generic_name=generic_name)
+            if medications.exists():
+                medication_details = []
+                for medication in medications:
+                    details = {
+                        'name': medication.name.strip().capitalize(),
+                        'dosage_form': medication.dosage_form.strip().capitalize(),
+                        'generic_name': medication.generic_name.strip().capitalize(),
+                        'manufacturer': medication.manufacturer.strip().capitalize(),
+                        'price': str(medication.price).strip(),
+                        'price_analysis': str(medication.price_analysis).strip(),
+                        # add any other fields you want to include
+                    }
+                    medication_details.append(details)
+                
+                self.medication_details = medication_details
+
+                return JsonResponse(medication_details, safe=False)
+
+
+
+
     def get_generic_medication_details(self):
         request = self.request
         selected_strength = request.GET.get('strength')
