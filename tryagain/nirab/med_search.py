@@ -199,10 +199,75 @@ class TOTAL_MEDICINE_SEARCH:
         generic_name = request.GET.get('generic_name')
         generic_name = generic_name.lower()
         dosage_form = request.GET.get('dosage_form')
-        medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name, dosage_form=dosage_form)
-        if medications.exists():
+        target_medications = Medication.objects.filter(strength=selected_strength, generic_name__icontains=generic_name, dosage_form=dosage_form)
+        strength_medication = Medication.objects.filter(strength=selected_strength, generic_name__icontains=generic_name)
+        dosage_medication = Medication.objects.filter(dosage_form=dosage_form, generic_name__icontains=generic_name)
+        if target_medications.exists():
             medication_details = []
-            for medication in medications:
+            for medication in target_medications:
+                details = {
+                    'name': medication.name.strip().capitalize(),
+                    'strength': medication.strength.strip().capitalize(),
+                    'dosage_form': medication.dosage_form.strip().capitalize(),
+                    'generic_name': medication.generic_name.strip().capitalize(),
+                    'manufacturer': medication.manufacturer.strip().capitalize(),
+                    'price': str(medication.price).strip(),
+                    'price_analysis': str(medication.price_analysis).strip(),
+                    # add any other fields you want to include
+                }
+                medication_details.append(details)
+
+            print(f'medication details: {medication_details}')            
+            return JsonResponse(medication_details, safe=False)
+        elif strength_medication.exists() and dosage_medication.exists():
+            medication_details = []
+            for medication in strength_medication:
+                details = {
+                    'name': medication.name.strip().capitalize(),
+                    'strength': medication.strength.strip().capitalize(),
+                    'dosage_form': medication.dosage_form.strip().capitalize(),
+                    'generic_name': medication.generic_name.strip().capitalize(),
+                    'manufacturer': medication.manufacturer.strip().capitalize(),
+                    'price': str(medication.price).strip(),
+                    'price_analysis': str(medication.price_analysis).strip(),
+                    # add any other fields you want to include
+                }
+                medication_details.append(details)
+            for medication in dosage_medication:
+                details = {
+                    'name': medication.name.strip().capitalize(),
+                    'strength': medication.strength.strip().capitalize(),
+                    'dosage_form': medication.dosage_form.strip().capitalize(),
+                    'generic_name': medication.generic_name.strip().capitalize(),
+                    'manufacturer': medication.manufacturer.strip().capitalize(),
+                    'price': str(medication.price).strip(),
+                    'price_analysis': str(medication.price_analysis).strip(),
+                    # add any other fields you want to include
+                }
+                medication_details.append(details)
+
+            print(f'medication details: {medication_details}')            
+            return JsonResponse(medication_details, safe=False)
+        elif strength_medication.exists():
+            medication_details = []
+            for medication in strength_medication:
+                details = {
+                    'name': medication.name.strip().capitalize(),
+                    'strength': medication.strength.strip().capitalize(),
+                    'dosage_form': medication.dosage_form.strip().capitalize(),
+                    'generic_name': medication.generic_name.strip().capitalize(),
+                    'manufacturer': medication.manufacturer.strip().capitalize(),
+                    'price': str(medication.price).strip(),
+                    'price_analysis': str(medication.price_analysis).strip(),
+                    # add any other fields you want to include
+                }
+                medication_details.append(details)
+
+            print(f'medication details: {medication_details}')            
+            return JsonResponse(medication_details, safe=False)
+        elif dosage_medication.exists():
+            medication_details = []
+            for medication in dosage_medication:
                 details = {
                     'name': medication.name.strip().capitalize(),
                     'strength': medication.strength.strip().capitalize(),
@@ -218,7 +283,7 @@ class TOTAL_MEDICINE_SEARCH:
             print(f'medication details: {medication_details}')            
             return JsonResponse(medication_details, safe=False)
         else:
-            return JsonResponse({'error': 'Medication not found'}, status=404)
+            return JsonResponse({'message': 'No medication found'}, status=404)            
 
 
     def medicine_details(self):
