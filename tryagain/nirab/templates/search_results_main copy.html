@@ -54,27 +54,11 @@
                                   
                                     <div style="margin-top: 25px"  class="col-2" >
 
-                                      <div class="row row-space">
-
-                                        <div class="col-2">
-                                          <select class ='input-group input-group-big' id="sortOption" onchange="handleSortOptionChange()">
-                                            <option value="default">Default</option>
-                                            <option value="priceAsc">Price (Low to High)</option>
-                                            <option value="priceDesc">Price (High to Low)</option>
-                                          </select>
-                                        </div>
-
-                                        <div class="col-2">
-
-                                          <select class ='input-group input-group-big' id="dose_strength_sort" onchange="handledose_strength_sort()">
-                                            <option value="default">Default</option>
-                                            <option value="dosage_form_value">DOSAGE FORM</option>
-                                            <option value="strength_value">STRENGTH</option>
-                                          </select>
-
-                                        </div>
-
-                                    </div>
+                                      <select class ='input-group input-group-big' id="sortOption" onclick="handleSortOptionChange()">
+                                        <option value="default">Default</option>
+                                        <option value="priceAsc">Price (Low to High)</option>
+                                        <option value="priceDesc">Price (High to Low)</option>
+                                      </select>
                                       
                                     </div>
 
@@ -177,9 +161,10 @@ const generic_name = urlParams.get('generic_name');
 
 
 var currentPage = 1; // The current page number
-var medicationDetails=[]; 
+var medicationDetails = []; 
 document.getElementById("sortOption").addEventListener("change", handleSortOptionChange());
 
+function fetchMedicationDetails(sortOption, currentPage) {
 var xhr = new XMLHttpRequest();
 if(!generic_name){
 xhr.open('GET', '/get_medication_details/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName, true);
@@ -188,28 +173,12 @@ xhr.open('GET', '/get_medication_details/?strength=' + strength + '&dosage_form=
 }
 xhr.onload = function () {
   if (xhr.status === 200) {
-    var fetchedDetails = JSON.parse(xhr.responseText); // Parsed data from the response
-    console.log('Fetched Details:', fetchedDetails);
-    
-    medicationDetails = fetchedDetails;
-    fetchMedicationDetails('default', 1);
+    medicationDetails = JSON.parse(xhr.responseText); // Assign the fetched medication details to the global variable
 
-  } else {
-    console.error('Request failed. Status:', xhr.status);
+    if (Array.isArray(medicationDetails) && medicationDetails.length > 0) {
+      // Sort the medication details based on the selected sort option
 
-    window.location.href = previousURL;
-  }
-};
-xhr.onerror = function () {
-  console.error('Request failed. Network error');
-  // Display "No data found" message for network errors
-  document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
-};
-xhr.send();
-
-console.log('Medication Details:', medicationDetails);
-
-function fetchMedicationDetails(sortOption, currentPage) {
+      // console.log(currentPage)
 
       var startIndex = (currentPage - 1) * 10;
       var endIndex = startIndex + 10;
@@ -291,15 +260,26 @@ function fetchMedicationDetails(sortOption, currentPage) {
 
             }
       document.getElementById("medicationDetails").innerHTML = detailsHtml;
+    } else {
+      // Display "No data found" message
+      document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
+    }
+  } else {
+    console.error('Request failed. Status:', xhr.status);
 
+    window.location.href = previousURL;
 
-
-
+    // // Display "No data found" message for error cases
+    // document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
+  }
+};
+xhr.onerror = function () {
+  console.error('Request failed. Network error');
+  // Display "No data found" message for network errors
+  document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
+};
+xhr.send();
 }
-
-// 
-
-
 
 function calculateTotalPages(items) {
 var itemsPerPage = 10;
