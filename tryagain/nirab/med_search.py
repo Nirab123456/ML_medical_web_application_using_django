@@ -92,6 +92,7 @@ class TOTAL_MEDICINE_SEARCH:
                 for medication in medications:
                     details = {
                         'name': medication.name.strip().capitalize(),
+                        'strength': medication.strength.strip().capitalize(),
                         'dosage_form': medication.dosage_form.strip().capitalize(),
                         'generic_name': medication.generic_name.strip().capitalize(),
                         'manufacturer': medication.manufacturer.strip().capitalize(),
@@ -115,6 +116,7 @@ class TOTAL_MEDICINE_SEARCH:
                 for medication in medications:
                     details = {
                         'name': medication.name.strip().capitalize(),
+                        'strength': medication.strength.strip().capitalize(),
                         'dosage_form': medication.dosage_form.strip().capitalize(),
                         'generic_name': medication.generic_name.strip().capitalize(),
                         'manufacturer': medication.manufacturer.strip().capitalize(),
@@ -130,6 +132,7 @@ class TOTAL_MEDICINE_SEARCH:
                 for medication in medications:
                     details = {
                         'name': medication.name.strip().capitalize(),
+                        'strength': medication.strength.strip().capitalize(),
                         'dosage_form': medication.dosage_form.strip().capitalize(),
                         'generic_name': medication.generic_name.strip().capitalize(),
                         'manufacturer': medication.manufacturer.strip().capitalize(),
@@ -152,6 +155,7 @@ class TOTAL_MEDICINE_SEARCH:
                 for medication in medications:
                     details = {
                         'name': medication.name.strip().capitalize(),
+                        'strength': medication.strength.strip().capitalize(),
                         'dosage_form': medication.dosage_form.strip().capitalize(),
                         'generic_name': medication.generic_name.strip().capitalize(),
                         'manufacturer': medication.manufacturer.strip().capitalize(),
@@ -172,6 +176,7 @@ class TOTAL_MEDICINE_SEARCH:
                 for medication in medications:
                     details = {
                         'name': medication.name.strip().capitalize(),
+                        'strength': medication.strength.strip().capitalize(),
                         'dosage_form': medication.dosage_form.strip().capitalize(),
                         'generic_name': medication.generic_name.strip().capitalize(),
                         'manufacturer': medication.manufacturer.strip().capitalize(),

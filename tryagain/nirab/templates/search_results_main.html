@@ -66,11 +66,7 @@
 
                                         <div class="col-2">
 
-                                          <select class ='input-group input-group-big' id="dose_strength_sort" onchange="handledose_strength_sort()">
-                                            <option value="default">Default</option>
-                                            <option value="dosage_form_value">DOSAGE FORM</option>
-                                            <option value="strength_value">STRENGTH</option>
-                                          </select>
+                                          <div id="strength_selection"></div>
 
                                         </div>
 
@@ -193,6 +189,8 @@ xhr.onload = function () {
     
     medicationDetails = fetchedDetails;
     fetchMedicationDetails('default', 1);
+    get_unique_strengths();
+    get_unique_dosage_forms();
 
   } else {
     console.error('Request failed. Status:', xhr.status);
@@ -298,6 +296,62 @@ function fetchMedicationDetails(sortOption, currentPage) {
 }
 
 // 
+
+
+
+function get_unique_strengths() {
+  var unique_strengths = [];
+
+  // Assuming medicationDetails is populated with data
+  for (var i = 0; i < medicationDetails.length; i++) {
+    var medication = medicationDetails[i];
+    var strength = medication.strength.trim();
+    if (!unique_strengths.includes(strength)) {
+      unique_strengths.push(strength);
+    }
+  }
+
+  var detailsHtml = ''; // Initialize detailsHtml
+
+  // Build the select dropdown HTML
+  for (var i = 0; i < unique_strengths.length; i++) {
+    var strength = unique_strengths[i];
+    detailsHtml += `
+      <option value="${strength}">${strength}</option>
+    `;
+  }
+
+  // Wrap the select in a container and set the innerHTML
+  var strengthSelectionHtml = `
+    <select class="input-group input-group-big" id="dose_strength_sort" onchange="handledose_strength_sort()">
+      <option value="default">Default</option>
+      ${detailsHtml}
+    </select>
+  `;
+
+  // Get the DOM element and set its innerHTML
+  var strengthSelectionElement = document.getElementById("strength_selection");
+  if (strengthSelectionElement) {
+    strengthSelectionElement.innerHTML = strengthSelectionHtml;
+  } else {
+    console.error("Element with id 'strength_selection' not found in the DOM.");
+  }
+}
+
+
+function get_unique_dosage_forms() {
+  var unique_dosage_forms = [];
+  for (var i = 0; i < medicationDetails.length; i++) {
+    var medication = medicationDetails[i];
+    var dosage_form = medication.dosage_form.trim();
+    if (!unique_dosage_forms.includes(dosage_form)) {
+      unique_dosage_forms.push(dosage_form);
+    }
+  }
+  return unique_dosage_forms;
+}
+
+
 
 
 
