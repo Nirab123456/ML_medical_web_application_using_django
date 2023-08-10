@@ -255,7 +255,7 @@ def save_mail_form(request):
             messages.success(request, "Your Record Has Been Saved Successfully!")
             return redirect('index')  # Change 'real' to 'index'
         else:
-            print(form.errors)
+            # print(form.errors)
             messages.error(request, "There was an error in your form submission.")
     else:
         form = Mail_me_Form()

@@ -181,16 +181,16 @@
           for (var i = 0; i < nameInputs.length; i++) {
               drugNames.push(encodeURIComponent(nameInputs[i].value));
           }
-          console.log(drugNames);
+        //   console.log(drugNames);
 
     
           var selected_question = encodeURIComponent(document.getElementById("select_question").value);
-          console.log(selected_question);
+        //   console.log(selected_question);
           var question = encodeURIComponent(document.getElementById("question").value);
-          console.log(question);
+        //   console.log(question);
     
           var topic = encodeURIComponent(document.getElementById("topic").value);
-          console.log(topic);
+        //   console.log(topic);
           if (topic === "" || topic === "none") {
               topic = null;
           }
@@ -217,7 +217,7 @@
     
             if (xhr.status === 200) {
               var get_medicine_chat = JSON.parse(xhr.responseText);
-              console.log(get_medicine_chat);
+            //   console.log(get_medicine_chat);
               if (Array.isArray(get_medicine_chat) && get_medicine_chat.length > 0) {
     
                 var detailsHtml = "<div>";

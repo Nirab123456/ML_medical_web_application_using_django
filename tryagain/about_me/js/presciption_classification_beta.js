@@ -42,7 +42,7 @@ xhr.onload = function() {
     const all_groups_uniques = get_presciption_classification.all_matching_uniques;
 
     // // Now you can use these variables as needed
-    console.log(all_groups_uniques);
+    // console.log(all_groups_uniques);
     // console.log(allMachGroups);
     // console.log(allMachGroups2);
     // console.log(all_groups_uniques);

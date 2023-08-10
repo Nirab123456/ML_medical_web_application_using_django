@@ -61,7 +61,6 @@ class MEDICINE_CHAT():
                                     answer = replay['answer']
                                     answer = answer.replace(generic_name, name)
                                     response_data = {'answer': answer, 'name': name, 'generic_name': generic_name}
-                                    print(f'response_data: {response_data}')
 
 
 
@@ -79,7 +78,6 @@ class MEDICINE_CHAT():
                                     answer_list.append(response_data)
             
             if answer_list:
-                print(f'answer_list: {answer_list}')
                 return JsonResponse(answer_list, status=200,safe=False)
             
             return JsonResponse({'error': 'Medication details not found'}, status=404)
@@ -87,9 +85,7 @@ class MEDICINE_CHAT():
 
     def get_selected_question(self):
         question =self.selected_question
-        print(f'question: {question}')
         name_list = self.names_list
-        print(f'name_list: {name_list}')
         answer_list = []
         for name in name_list:
             name = name.lower()
@@ -114,7 +110,6 @@ class MEDICINE_CHAT():
                             response_data = {'answer': answer, 'name': name, 'generic_name': generic_name}
                             answer_list.append(response_data)
         if answer_list:
-            print(f'answer_list: {answer_list}')
             return answer_list
 
 

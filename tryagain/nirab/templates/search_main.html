@@ -242,7 +242,7 @@ var timeout; // Global variable to store timeout reference
     // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
     timeout = setTimeout(function() {
       var input = document.getElementById("name").value.trim();
-      console.log(input);
+      // console.log(input);
   
       // Check if there is any input
       if (input.length === 0) {
@@ -315,9 +315,9 @@ var timeout; // Global variable to store timeout reference
     var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
     var drugName = encodeURIComponent(document.getElementById("name").value);
     // var sortOption = document.getElementById("sortOption").value;
-    console.log(selectedStrength);
-    console.log(selectedDosageForm);
-    console.log(drugName);
+    // console.log(selectedStrength);
+    // console.log(selectedDosageForm);
+    // console.log(drugName);
 
     if (selectedStrength && selectedDosageForm && drugName) {
       event.preventDefault(); // Prevent default form submission behavior

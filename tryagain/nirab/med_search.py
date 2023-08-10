@@ -35,7 +35,6 @@ class TOTAL_MEDICINE_SEARCH:
                     dosage_forms = set(dosage_forms)
                     # Convert the result to a list
                     dosage_forms = list(dosage_forms)
-                    print('i am name')
                     return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
                                                                 'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
 
@@ -50,7 +49,6 @@ class TOTAL_MEDICINE_SEARCH:
             if form.is_valid():
 
                 generic_name = form.cleaned_data['generic_name']
-                print(f'Generic Name is {generic_name}')
 
                 if generic_name != None :
                     generic_name = form.cleaned_data['generic_name']
@@ -64,7 +62,6 @@ class TOTAL_MEDICINE_SEARCH:
                     dosage_forms = set(dosage_forms)
                     # Convert the result to a list
                     dosage_forms = list(dosage_forms)
-                    print('i am generic name')
                 return render(request, 'search_generic.html', {'medication_form': form, 'medications': matching_medications,
                                                             'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms})
         else:
@@ -84,9 +81,7 @@ class TOTAL_MEDICINE_SEARCH:
         generic_dosage_name = Medication.objects.filter(name=name,dosage_form=dosage_form).first()
         if generic_name != None:
             generic_name=generic_name.generic_name
-            print('generic name:',generic_name)
             medications = Medication.objects.filter(strength=selected_strength, generic_name=generic_name, dosage_form=dosage_form)
-            print('lenth of medication:',len(medications))
             if medications.exists():
                 medication_details = []
                 for medication in medications:
@@ -217,7 +212,6 @@ class TOTAL_MEDICINE_SEARCH:
                 }
                 medication_details.append(details)
 
-            print(f'medication details: {medication_details}')            
             return JsonResponse(medication_details, safe=False)
         elif strength_medication.exists() and dosage_medication.exists():
             medication_details = []
@@ -246,7 +240,6 @@ class TOTAL_MEDICINE_SEARCH:
                 }
                 medication_details.append(details)
 
-            print(f'medication details: {medication_details}')            
             return JsonResponse(medication_details, safe=False)
         elif strength_medication.exists():
             medication_details = []
@@ -263,7 +256,6 @@ class TOTAL_MEDICINE_SEARCH:
                 }
                 medication_details.append(details)
 
-            print(f'medication details: {medication_details}')            
             return JsonResponse(medication_details, safe=False)
         elif dosage_medication.exists():
             medication_details = []
@@ -280,7 +272,6 @@ class TOTAL_MEDICINE_SEARCH:
                 }
                 medication_details.append(details)
 
-            print(f'medication details: {medication_details}')            
             return JsonResponse(medication_details, safe=False)
         else:
             return JsonResponse({'message': 'No medication found'}, status=404)            

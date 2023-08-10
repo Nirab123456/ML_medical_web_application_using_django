@@ -30,8 +30,7 @@ class BanglaOCR:
                     image_url = existing_record.image.url
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
-                        print(file_path)
-                    return render(request, 'base_ocr.html', {'BN_OCR_form': form, 'BN_OCR_image_url': existing_record.image.url, 'BN_OCR_text': text, 'BN_OCR_file_path': file_path})
+                        return render(request, 'base_ocr.html', {'BN_OCR_form': form, 'BN_OCR_image_url': existing_record.image.url, 'BN_OCR_text': text, 'BN_OCR_file_path': file_path})
                 else:
                     record_image = form.save(commit=False)
                     record_image.user = request.user
@@ -40,15 +39,13 @@ class BanglaOCR:
                     image_url = record_image.image.url
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
-                        print(file_path)
-                    return render(request, 'base_ocr.html', {'BN_OCR_form': form, 'BN_OCR_image_url': record_image.image.url, 'BN_OCR_text': text, 'BN_OCR_file_path': file_path})
+                        return render(request, 'base_ocr.html', {'BN_OCR_form': form, 'BN_OCR_image_url': record_image.image.url, 'BN_OCR_text': text, 'BN_OCR_file_path': file_path})
         else:
             form = OCRImageForm()
         return render(request, 'base_ocr.html', {'BN_OCR_form': form})
 
     def get_ocr(self, image_url):
         image_path = os.path.join(settings.MEDIA_ROOT, image_url.lstrip('/').replace('media/', ''))
-        print(image_path)  # Add this line to print the image path
         if os.path.exists(image_path):
             img = cv2.imread(image_path)
             if img is not None:

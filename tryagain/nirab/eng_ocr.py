@@ -37,8 +37,7 @@ class ENGOCR:
                     image_url = existing_record.image.url
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
-                        print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path})
+                        return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path})
                 else:
                     record_image = form.save(commit=False)
                     record_image.user = request.user
@@ -47,15 +46,13 @@ class ENGOCR:
                     image_url = record_image.image.url
                     text,file_path = self.get_ocr(image_url)
                     if file_path:
-                        print(file_path)
-                    return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path})
+                        return render(request, 'base_ocr.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path})
         else:
             form = OCRImageForm()
         return render(request, 'base_ocr.html', {'ENG_OCR_form': form})
 
     def get_ocr(self, image_url):
         image_path = os.path.join(settings.MEDIA_ROOT, image_url.lstrip('/').replace('media/', ''))
-        print(image_path)  # Add this line to print the image path
         if os.path.exists(image_path):
             img = cv2.imread(image_path)
             if img is not None:
@@ -130,8 +127,7 @@ class ENGOCR:
 
 
                     if file_path:
-                        print(file_path)
-                    return render(request, 'base_handwritten.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path , 'ENG_OCR_pdf_output_file':pdf_output_file})
+                        return render(request, 'base_handwritten.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': existing_record.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path , 'ENG_OCR_pdf_output_file':pdf_output_file})
                 
                 
                 
@@ -190,8 +186,7 @@ class ENGOCR:
 
 
                     if file_path:
-                        print(file_path)
-                    return render(request, 'base_handwritten.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path, 'ENG_OCR_pdf_output_file':pdf_output_file})
+                        return render(request, 'base_handwritten.html', {'ENG_OCR_form': form, 'ENG_OCR_image_url': record_image.image.url, 'ENG_OCR_text': text, 'ENG_OCR_file_path': file_path, 'ENG_OCR_pdf_output_file':pdf_output_file})
         else:
             form = OCRImageForm()
         return render(request, 'base_handwritten.html', {'ENG_OCR_form': form})

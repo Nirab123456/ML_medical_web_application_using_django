@@ -17,7 +17,7 @@ $(document).ready(function () {
       // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
       timeout = setTimeout(function() {
         var input = document.getElementById("name").value.trim();
-        console.log(input);
+        // console.log(input);
     
         // Check if there is any input
         if (input.length === 0) {
@@ -88,7 +88,7 @@ $(document).ready(function () {
     function handleFormSubmission(event) {
       var drugName = encodeURIComponent(document.getElementById("name").value);
       // var sortOption = document.getElementById("sortOption").value;
-      console.log(drugName);
+      // console.log(drugName);
   
       if (drugName) {
         event.preventDefault(); // Prevent default form submission behavior

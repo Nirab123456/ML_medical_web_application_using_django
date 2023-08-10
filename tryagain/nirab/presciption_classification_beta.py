@@ -201,7 +201,7 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                             'heading_matches': list(heading_matches),
                             'specific_class_matches': list(specific_class_matches)
                         })
-                        print(f'1st all_matching_list2: {all_matching_list2}')
+                        # print(f'1st all_matching_list2: {all_matching_list2}')
 
                     else:
                         all_matching_list2.append({
@@ -212,7 +212,7 @@ class PRESCIPTION_CLASSIFICATION_BETA():
                             'heading_matches': list(heading_matches),
                             'specific_class_matches': list(specific_class_matches)
                         })
-                        print(f'2nd all_matching_list2: {all_matching_list2}')
+                        # print(f'2nd all_matching_list2: {all_matching_list2}')
         #remove duplicates
         all_matching_list2 = [i for n, i in enumerate(all_matching_list2) if i not in all_matching_list2[n + 1:]]
         return drug_class_groups_list,all_matching_list,all_matching_list2,all_combined_list
