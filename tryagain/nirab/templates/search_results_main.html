@@ -29,7 +29,18 @@
   }
 
 
+  .col-3 {
+  width: -webkit-calc((100% - 2px) / 3);
+  width: -moz-calc((100% - 2px) / 3);
+  width: calc((100% - 2px) / 3);
+}
 
+/* @media (max-width: 767px) {
+  .col-3 {
+    width: 100%;
+  }
+  
+} */
 </style>
 
 
@@ -48,38 +59,39 @@
 
 
 
-
-                                <div class="row row-space">
-
                                   
-                                    <div style="margin-top: 25px"  class="col-2" >
 
-                                      <div class="row row-space">
+                                      <div  class="row row-space">
 
-                                        <div class="col-2">
+                                        <div style="margin-top: 20px;" class="col-3">
                                           <select class ='input-group input-group-big' id="sortOption" onchange="handleSortOptionChange()">
-                                            <option value="default">Default</option>
+                                            <option value="default">PRICE</option>
                                             <option value="priceAsc">Price (Low to High)</option>
                                             <option value="priceDesc">Price (High to Low)</option>
                                           </select>
                                         </div>
 
-                                        <div class="col-2">
+                                        <div style="margin-top: 20px;" class="col-3">
 
                                           <div id="strength_selection"></div>
+
+                                        </div>
+                                        <div style="margin-top: 20px;" class="col-3">
+
+                                          <div id="dosage_form_selection"></div>
 
                                         </div>
 
                                     </div>
                                       
-                                    </div>
 
 
-                                    
-                                    <div class="col-2">
+                                    <div class="row row-space">
+
+                                    <div class=".col-3">
 
 
-                                      <nav style="margin-top: 25px" class="d-flex justify-content-center">
+                                      <nav style="margin-top: 2px; margin-bottom: 2px;" class="d-flex justify-content-center">
                                         <ul class="pagination pagination-base pagination-boxed pagination-square mb-0">
                                           <li class="page-item">
                                             <a class="page-link no-border" href="#" onclick="showPage(0)">
@@ -324,7 +336,7 @@ function get_unique_strengths() {
   // Wrap the select in a container and set the innerHTML
   var strengthSelectionHtml = `
     <select class="input-group input-group-big" id="dose_strength_sort" onchange="handledose_strength_sort()">
-      <option value="default">Default</option>
+      <option value="default">STRENGTH</option>
       ${detailsHtml}
     </select>
   `;
@@ -348,7 +360,29 @@ function get_unique_dosage_forms() {
       unique_dosage_forms.push(dosage_form);
     }
   }
-  return unique_dosage_forms;
+
+  var detailsHtml = '';
+  for (var i = 0; i < unique_dosage_forms.length; i++) {
+    var dosage_form = unique_dosage_forms[i];
+    detailsHtml += `
+      <option value="${dosage_form}">${dosage_form}</option>
+    `;
+  }
+
+  var dosageFormSelectionHtml = `
+    <select class="input-group input-group-big" id="dosage_form_sort" onchange="handledosage_form_sort()">
+      <option value="default">FORMS</option>
+      ${detailsHtml}
+    </select>
+  `;
+
+  var dosageFormSelectionElement = document.getElementById("dosage_form_selection");
+  if (dosageFormSelectionElement) {
+    dosageFormSelectionElement.innerHTML = dosageFormSelectionHtml;
+  } else {
+    console.error("Element with id 'dosage_form_selection' not found in the DOM.");
+  }
+
 }
 
 
