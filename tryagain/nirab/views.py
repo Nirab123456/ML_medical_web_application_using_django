@@ -23,6 +23,12 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 
 
 
+
+def main_bmi_calculator(request):
+    return render(request, 'main_bmi_calculator.html')
+
+
+
 def med_search(request):
     T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
     return T_M_S.med_search()

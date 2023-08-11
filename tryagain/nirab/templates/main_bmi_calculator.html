@@ -1,0 +1,32 @@
+{% include "base.html" %}
+{% block content %}
+{% load about_me %}
+<!DOCTYPE html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link href="{% about_me 'css/med_nav.css' %}" rel="stylesheet" media="all">
+
+</head>
+
+<body>
+    <div>
+        <div>
+            <div id="tool_bmi" class="tool_bmi app-tool-block nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5"></div>
+            <script id="tool-script_bmi" src="{% about_me 'bmi/js/inline_launcher.js' %}"></script>
+
+        </div>
+        <div class="button_container" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+        <div class="overlay" id="overlay">
+          {% include 'medicine_navigation.html' %}
+        </div>
+    </div>
+    <script>
+        $('#toggle').click(function() {
+            $(this).toggleClass('active');
+            $('#overlay').toggleClass('open');
+            });
+    </script>
+</body>
+</html>
+{% endblock %}

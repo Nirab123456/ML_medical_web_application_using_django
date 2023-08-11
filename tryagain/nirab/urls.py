@@ -82,7 +82,7 @@ urlpatterns = [
 
 
 
-
+    path('main_bmi_calculator/', views.main_bmi_calculator, name='main_bmi_calculator'),
 
 
 
