@@ -1,0 +1,1 @@
+data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 100 100' %3E%3Cpolyline points='90,56,34,56 54,76 34,76,10,50 34,24 54,24,34,44 90,44 90,56' fill='%23005eb8'/%3E%3C/svg%3E
