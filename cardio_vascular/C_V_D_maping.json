@@ -1,0 +1,42 @@
+HeartDisease mapping:
+{'No': 0, 'Yes': 1}
+
+Smoking mapping:
+{'No': 0, 'Yes': 1}
+
+AlcoholDrinking mapping:
+{'No': 0, 'Yes': 1}
+
+Stroke mapping:
+{'No': 0, 'Yes': 1}
+
+DiffWalking mapping:
+{'No': 0, 'Yes': 1}
+
+Sex mapping:
+{'Female': 0, 'Male': 1}
+
+AgeCategory mapping:
+{'18-24': 0, '25-29': 1, '30-34': 2, '35-39': 3, '40-44': 4, '45-49': 5, '50-54': 6, '55-59': 7, '60-64': 8, '65-69': 9, '70-74': 10, '75-79': 11, '80 or older': 12}
+
+Race mapping:
+{'American Indian/Alaskan Native': 0, 'Asian': 1, 'Black': 2, 'Hispanic': 3, 'Other': 4, 'White': 5}
+
+Diabetic mapping:
+{'No': 0, 'No, borderline diabetes': 1, 'Yes': 2, 'Yes (during pregnancy)': 3}
+
+PhysicalActivity mapping:
+{'No': 0, 'Yes': 1}
+
+GenHealth mapping:
+{'Excellent': 0, 'Fair': 1, 'Good': 2, 'Poor': 3, 'Very good': 4}
+
+Asthma mapping:
+{'No': 0, 'Yes': 1}
+
+KidneyDisease mapping:
+{'No': 0, 'Yes': 1}
+
+SkinCancer mapping:
+{'No': 0, 'Yes': 1}
+
