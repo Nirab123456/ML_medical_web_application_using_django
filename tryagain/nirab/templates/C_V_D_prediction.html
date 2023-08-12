@@ -158,7 +158,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="gender">
+                                                    <select id="gender" onchange="update_all_selection()">
                                                         <option disabled="disabled" selected="selected">CHOOSE YOUR GENDER</option>
                                                         <option value="0">FEMALE</option>
                                                         <option value="1">MALE</option>
@@ -175,7 +175,7 @@
                                                 <label class="label">WHAT IS YOUR BMI</label>
 
                                                 <div class="col_2_mini">
-                                                    <input class="input--style-4" type="int" name="bmi">
+                                                    <input class="input--style-4" type="int" id="bmi">
                                                 </div>
 
                                                 <div class="col_2_mini">
@@ -203,14 +203,14 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <div class="rs-select2 js-select-simple select--no-search">
-                                                <select name="ethnic_group">
+                                                <select id="ethnic_group" onchange="update_all_selection()">
                                                     <option disabled="disabled" selected="selected">SELECT YOUR ETHNIC GROUP</option>
-                                                    <option>WHITE</option>
-                                                    <option>BLACK</option>
-                                                    <option>ASIAN</option>
-                                                    <option>AMERICAN INDIAN</option>
-                                                    <option>HISPANIC</option>
-                                                    <option>OTHER</option>
+                                                    <option value="0">WHITE</option>
+                                                    <option value="1">BLACK</option>
+                                                    <option value="2">ASIAN</option>
+                                                    <option value="3">AMERICAN INDIAN</option>
+                                                    <option value="4">HISPANIC</option>
+                                                    <option value="5">OTHER</option>
                                                 </select>
                                                 <div class="select-dropdown"></div>
                                             </div>
@@ -224,7 +224,7 @@
 
                                             <div class="row row-space">
                                                 <label class="label">WHAT IS YOUR AGE</label>
-                                                <input class="input--style-4" type="number" name="age" min="10" max="150">                                                     
+                                                <input class="input--style-4" type="number" id="age" min="10" max="150">                                                     
                                             </div>
                                                     
                                         </div>
@@ -237,7 +237,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="alcohole">
+                                                    <select  id="alcohole" onchange="update_all_selection()">
                                                         <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -252,7 +252,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="smoke">
+                                                    <select  id="smoke" onchange="update_all_selection()" >
                                                         <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -270,7 +270,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="exersise">
+                                                    <select  id="exersise" onchange="update_all_selection()">
                                                         <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -289,7 +289,7 @@
                                             <h4>HOW ARE YOU FEELING(PSYCHOLOGICALLY) TODAY?</h4>
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="required" name="psychologogy">
+                                                    <select id="psychologogy" onchange="update_all_selection()">
                                                         <option disabled="disabled" selected="selected">SELECT AN OPTION</option>
                                                         <option value="0">WORSE</option>
                                                         <option value="1">VERY BAD</option>
@@ -317,7 +317,7 @@
         
                                                 <div class="row row-space">
                                                     <label class="label">WHAT IS YOUR AVARAGE SLEEPING TIME(HOURS)</label>
-                                                    <input class="input--style-4" type="number" name="sleeping_time" min="0" max="24">
+                                                    <input class="input--style-4" type="number" id="sleeping_time" min="0" max="24">
                                                 </div>
                                                         
                                             </div>
@@ -341,7 +341,7 @@
 
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select  id="physical_health" name="physical_health" onchange="updatePhysicalHealthSelect()">
+                                                    <select   id="physical_health" onchange="update_all_selection()">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">VERY SICK</option>
                                                         <option value="1">SICKNESS</option>
@@ -366,7 +366,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</label>
-                                                    <select required="option" name="general_health">
+                                                    <select required="option" id="general_health" onchange="update_all_selection()">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">POOR</option>
                                                         <option value="1">FAIR</option>
@@ -388,7 +388,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU FEEL DIFICUELTY IN WALKING?</label>
-                                                    <select required="option" name="diff_walking">
+                                                    <select  id="diff_walking" onchange="update_all_selection()">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -404,7 +404,7 @@
                                             <div class="p-t-10">
                                                 <label class="label">DO YOU HAVE DIABETIC </label>
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="diabetic">
+                                                    <select required="option" id="diabetic">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -425,7 +425,7 @@
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE ASTHMA?</label>
 
-                                                    <select required="option" name="asthma">
+                                                    <select onchange="update_all_selection()" id="asthma">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -441,7 +441,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE KIDNEY DISEASE?</label>
-                                                    <select required="option" name="kidney">
+                                                    <select onchange="update_all_selection()" id="kidney">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -461,7 +461,7 @@
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE  SKIN CANCER?</label>
 
-                                                    <select required="option" name="skin_cancer">
+                                                    <select onchange="update_all_selection()" id="skin_cancer">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -477,7 +477,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE ANY STROKE HISTORY?</label>
-                                                    <select required="option" name="stroke">
+                                                    <select onchange="update_all_selection()" id="stroke">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -500,7 +500,7 @@
                                 <div class="col-2">
 
                                     <div class="p-t-15">
-                                        <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                                        <button class="btn btn--radius-2 btn--blue" type="submit" onclick="update_all_selection()">Submit</button>
                                     </div>
 
                                 </div>
@@ -532,12 +532,47 @@
 
     
     
-    function updatePhysicalHealthSelect() {
-        var physicalHealthSelect = document.getElementById("physical_health");
-        var physicalHealth = physicalHealthSelect.value;
-        console.log(physicalHealth);
+    function update_all_selection() {
+        var gender = document.getElementById("gender").value;
+        var bmi = document.getElementById("bmi").value;
+        var ethnic_group = document.getElementById("ethnic_group").value;
+        var age = document.getElementById("age").value;
+        var alcohole = document.getElementById("alcohole").value;
+        var smoke = document.getElementById("smoke").value;
+        var exersise = document.getElementById("exersise").value;
+        var psychologogy = document.getElementById("psychologogy").value;
+        var sleeping_time = document.getElementById("sleeping_time").value;
+        var physical_health = document.getElementById("physical_health").value;
+        var general_health = document.getElementById("general_health").value;
+        var diff_walking = document.getElementById("diff_walking").value;
+        var diabetic = document.getElementById("diabetic").value;
+        var asthma = document.getElementById("asthma").value;
+        var kidney = document.getElementById("kidney").value;
+        var skin_cancer = document.getElementById("skin_cancer").value;
+        var stroke = document.getElementById("stroke").value;
+
+        console.log('stroke', stroke);
+        console.log('skin_cancer', skin_cancer);
+        console.log('kidney', kidney);
+        console.log('asthma', asthma);
+        console.log('diabetic', diabetic);
+        console.log('diff_walking', diff_walking);
+        console.log('general_health', general_health);
+        console.log('physical_health', physical_health);
+        console.log('sleeping_time', sleeping_time);
+        console.log('psychologogy', psychologogy);
+        console.log('exersise', exersise);
+        console.log('smoke', smoke);
+        console.log('alcohole', alcohole);
+        console.log('age', age);
+        console.log('ethnic',ethnic_group);
+        console.log('bmi',bmi);
+        console.log('gender',gender);
+
+
+        
     }
-    updatePhysicalHealthSelect();
+
 
 
 </script>
