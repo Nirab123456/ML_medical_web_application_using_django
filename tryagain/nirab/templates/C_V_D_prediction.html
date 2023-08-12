@@ -506,6 +506,12 @@
 
                                 </div>
 
+                                <div class="col-2">
+
+                                    <div id="prediction_result"></div>
+                                        
+                                </div>
+
                             </div>
 
 
@@ -595,14 +601,38 @@
 
             xhr.open('GET', url, true);
             xhr.send();
-            
 
-        }
+            xhr.onload = function () {
+            if (xhr.status === 200) {
+
+                medicationDetails = JSON.parse(xhr.responseText);
+                console.log('medicationDetails', medicationDetails);
+
+                detailshtml = `
+                
+                <div class="input-group">
+
+                    <div class="row row-space">
+                        
+                        <h3>YOUR CARDIO VASCULAR DISEASE PREDICTION IS ${medicationDetails}</h3>
+                        
+                    </div>
+                        
+                </div>
+                
+                `;
+                document.getElementById("prediction_result").innerHTML = detailshtml;
+
+
+            }
+
+            }
 
 
         
     }
-
+    
+    }
 
 
 </script>
