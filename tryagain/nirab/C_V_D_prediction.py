@@ -3,7 +3,18 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.http import JsonResponse
 from sklearn.preprocessing import MinMaxScaler
+import torch
+import torch.nn as nn
+import os
 
+model = nn.Sequential(
+    nn.Linear(17, 64),
+    nn.ReLU(),
+    nn.Linear(64, 64),
+    nn.ReLU(),
+    nn.Linear(64, 1),
+    nn.Sigmoid()
+)
 
 
 class C_V_D_PREDICTION():
@@ -93,12 +104,48 @@ class C_V_D_PREDICTION():
         psychology = (psychology) / 10
         sleeping_time = (sleeping_time) / 24
 
-        pred_list = [float(bmi),float(smoke),float(alcohol),float(stroke),
+        self.pred_list = [float(bmi),float(smoke),float(alcohol),float(stroke),
                      float(physical_health),float(psychology),
                     float(diff_walking),float(gender),float(age),float(ethnic_group),
                     float(diabetic),float(exercise),float(general_health),float(sleeping_time),
                     float(asthma),float(kidney),float(skin_cancer)]
-        print('pred_list:', pred_list)
+        print('pred_list:', self.pred_list)
+
+        result = self.calculate_prediction()
+        result = result * 100
+        print('result:', result)
+
+
+    def calculate_prediction(self):
+        pred = self.pred_list
+        pred = torch.FloatTensor(pred)
+        model = nn.Sequential(
+        nn.Linear(17, 64),
+        nn.ReLU(),
+        nn.Linear(64, 64),
+        nn.ReLU(),
+        nn.Linear(64, 1),
+        nn.Sigmoid()
+        )
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        model.to(device)
+        pred = pred.to(device)
+        model.load_state_dict(torch.load(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'staticfiles', 'C_V_D_model_1.pt')))
+        model.eval()
+        with torch.no_grad():
+            output = model(pred)
+            print('output_1:', output)
+            output = output.cpu()
+
+            output = output.numpy()
+            output = output.tolist()
+            print('output_2:', output)
+            output = output[0]
+            print('output_results:', output)
+            return output
+
+
+
                      
 
 
