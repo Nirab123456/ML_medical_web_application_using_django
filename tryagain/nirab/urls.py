@@ -83,6 +83,7 @@ urlpatterns = [
 
 
     path('main_bmi_calculator/', views.main_bmi_calculator, name='main_bmi_calculator'),
+    path('C_V_D_prediction/', views.C_V_D_prediction, name='C_V_D_prediction'),
 
 
 

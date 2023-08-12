@@ -1,0 +1,537 @@
+{% load about_me %}
+{% include 'base.html' %}
+{% block content %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% about_me 'CVD/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'CVD/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% about_me 'CVD/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% about_me 'CVD/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% about_me 'CVD/css/main.css' %}" rel="stylesheet" media="all">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+
+.col_2_mini {
+  width: -webkit-calc((100%) / 2);
+  width: -moz-calc((100%) / 2);
+  width: calc((100%) / 2);
+}
+.custom-small-button {
+        padding: 5px 20px; /* Adjust the padding as needed */
+        font-size: 10px; /* Adjust the font size as needed */
+    }
+
+
+/* ==========================================================================
+   #TAB
+   ========================================================================== */
+   .tab-list {
+    list-style: none;
+    padding: 0 35px;
+    padding-top: 55px;
+  }
+  
+  .tab-list::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  @media (max-width: 767px) {
+    .tab-list {
+      padding: 0 10px;
+      padding-top: 40px;
+    }
+  }
+  
+  .tab-list__item {
+    float: left;
+  }
+  .tab-list__item a {
+    color: rgb(15, 222, 97);
+    text-decoration: none; /* Optional: Remove underline */
+  }
+  
+  /* Apply the color change on hover */
+  .tab-list__item a:hover {
+    color: yellow; /* Change to the desired hover color */
+  }
+  .tab-list__link {
+    display: block;
+    text-transform: uppercase;
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: rgba(128, 128, 128, 0.6);
+    padding: 0 20px;
+  }
+  
+  .tab-list__link:hover {
+    color: #fff;
+  }
+  
+  @media (max-width: 767px) {
+    .tab-list__link {
+      font-size: 22px;
+    }
+  }
+  
+  .tab-list .active .tab-list__link {
+    color: #fff;
+  }
+  
+  .tab-content > .tab-pane {
+    display: none;
+    padding: 49px 55px;
+    padding-bottom: 70px;
+  }
+  
+  .tab-content > .tab-pane.active {
+    display: block;
+  }
+  
+  @media (max-width: 767px) {
+    .tab-content > .tab-pane {
+      padding: 30px;
+      padding-bottom: 45px;
+    }
+  }
+  
+</style>
+
+
+</head>
+
+<body>
+    <div class="page-wrapper bg-img-1 p-t-200 p-b-120" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
+        <div  class="wrapper">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">GET CARDIO VASCULAR DISEASE PREDICTION</h2>
+
+                    <div class="row row-space">
+
+                            <ul class="tab-list">
+                                <li class="tab-list__item active btn btn-dark">
+                                    <a class="tab-list__link" href="#tab1" data-toggle="tab">PERSONAL INFO</a>
+                                </li>
+                                <li class="tab-list__item btn btn-success">
+                                    <a class="tab-list__link" href="#tab2" data-toggle="tab">MEDICAL INFO</a>
+                                </li>
+                            </ul>
+
+                    </div>
+
+                    <div style="margin-top: 10px;" class="tab-content">
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="tab-pane active" id="tab1">
+                                <h2 class="title">PERSONAL INFO</h2>
+
+
+                                <div class="row row-space">
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <select required="option" name="gender">
+                                                        <option disabled="disabled" selected="selected">CHOOSE YOUR GENDER</option>
+                                                        <option value="0">FEMALE</option>
+                                                        <option value="1">MALE</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="row row-space">
+                                                <label class="label">WHAT IS YOUR BMI</label>
+
+                                                <div class="col_2_mini">
+                                                    <input class="input--style-4" type="int" name="bmi">
+                                                </div>
+
+                                                <div class="col_2_mini">
+
+                                                    <a href="{% url 'main_bmi_calculator' %}">
+                                                        <h3 type="button" class="btn btn-danger custom-small-button">CALCULATE</h3>
+                                                    </a>
+                                                                                                
+                                                    
+                                                    
+                                                </div>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+                                <div class="row row-space">
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="subject">
+                                                    <option disabled="disabled" selected="selected">SELECT YOUR ETHNIC GROUP</option>
+                                                    <option>WHITE</option>
+                                                    <option>BLACK</option>
+                                                    <option>ASIAN</option>
+                                                    <option>AMERICAN INDIAN</option>
+                                                    <option>HISPANIC</option>
+                                                    <option>OTHER</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+
+                                            <div class="row row-space">
+                                                <label class="label">WHAT IS YOUR AGE</label>
+                                                <input class="input--style-4" type="int" name="age" min="10" max="150">                                                     
+                                            </div>
+                                                    
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-2">
+
+                                        <div class="input-group">
+                                            <h4>HOW ARE YOU FEELING(PSYCHOLOGICALLY) TODAY?</h4>
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <select required="required" name="subject">
+                                                        <option disabled="disabled" selected="selected">SELECT AN OPTION</option>
+                                                        <option value="0">WORSE</option>
+                                                        <option value="1">VERY BAD</option>
+                                                        <option value="2">POOR</option>
+                                                        <option value="3">NOT WELL</option>
+                                                        <option value="4">NORMAL</option>
+                                                        <option value="5">OKAY</option>
+                                                        <option value="6">SATISFIED</option>
+                                                        <option value="7">GOOD</option>
+                                                        <option value="8">EXCELLENT</option>
+                                                        <option value="9">HAPPY</option>
+                                                        <option value="10">VERY HAPPY</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                    
+                                    </div>
+
+                                    <div class="row row-space">
+
+                                        <div class="col-2">
+                                            <div class="input-group">
+        
+                                                <div class="row row-space">
+                                                    <label class="label">WHAT IS YOUR AVARAGE SLEEPING TIME(HOURS)</label>
+                                                    <input class="input--style-4" type="int" name="sleeping_time" min="0" max="24">                                                     
+                                                </div>
+                                                        
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane" id="tab2">
+                                <h2 class="title">MEDICAL INFO</h2> 
+
+
+
+
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <label class="label">RATE YOUR PHYSICAL HEALTH CONDITION.</label>
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">VERY SICK</option>
+                                                        <option value="1">SICK</option>
+                                                        <option value="2">POOR</option>
+                                                        <option value="3">NOT WELL</option>
+                                                        <option value="4">NUMB</option>
+                                                        <option value="5">AVERAGE</option>
+                                                        <option value="6">FINE</option>
+                                                        <option value="7">GOOD</option>
+                                                        <option value="8">VERY GOOD</option>
+                                                        <option value="9">EXCELLENT</option>
+                                                        <option value="10">AMAZING</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <label class="label">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</label>
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">POOR</option>
+                                                        <option value="1">FAIR</option>
+                                                        <option value="2">GOOD</option>
+                                                        <option value="3">VERY GOOD</option>
+                                                        <option value="4">EXCELLENT</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                </div>
+
+                                <div class="row row-space">
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <label class="label">DO YOU FEEL DIFICUELTY IN WALKING?</label>
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <label class="label">DO YOU HAVE DIABETIC </label>
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <label class="label">DO YOU HAVE ASTHMA?</label>
+
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <label class="label">DO YOU HAVE KIDNEY DISEASE?</label>
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <label class="label">DO YOU HAVE  SKIN CANCER?</label>
+
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="p-t-10">
+                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                    <label class="label">DO YOU HAVE ANY STROKE HISTORY?</label>
+                                                    <select required="option" name="subject">
+                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                        <option value="0">NO</option>
+                                                        <option value="1">YES</option>
+                                                    </select>
+                                                    <div class="select-dropdown"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="row row-space">
+
+                                <div class="col-2">
+
+                                    <div class="p-t-15">
+                                        <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+                        
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% about_me 'CVD/vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% about_me 'CVD/vendor/select2/select2.min.js' %}"></script>
+    <script src="{% about_me 'CVD/vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% about_me 'CVD/vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% about_me 'CVD/js/global.js' %}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
+{% endblock %}
+<!-- end document-->

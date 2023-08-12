@@ -1,8 +1,0 @@
-{
-	"version":"4.0.6",
-	"adobe_analytics": true,
-	"antbits_analytics": true,
-	"webtrends": false,
-	"cookies": false,
-	"environment": "production"
-}

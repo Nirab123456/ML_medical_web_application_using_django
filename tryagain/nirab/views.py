@@ -24,6 +24,11 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 
 
 
+def C_V_D_prediction(request):
+    return render(request, 'C_V_D_prediction.html')
+
+
+
 def main_bmi_calculator(request):
     return render(request, 'main_bmi_calculator.html')
 
