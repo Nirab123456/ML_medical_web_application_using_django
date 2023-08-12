@@ -616,7 +616,7 @@ input {
   color: #525252;
   font-weight: 400;
   margin-bottom: 40px;
-}
+}s
 
 /* ==========================================================================
    #CARD
@@ -625,11 +625,11 @@ input {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background: #de9783b0;
+  background: #efdc12b4;
 }
 
 .card-4 {
-  background: #de9783b0;
+  background: #efdc12b4;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;

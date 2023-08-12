@@ -135,10 +135,10 @@
 
                             <ul class="tab-list">
                                 <li class="tab-list__item active btn btn-dark">
-                                    <a class="tab-list__link" href="#tab1" data-toggle="tab">PERSONAL INFO</a>
+                                    <a class="tab-list__link" href="#personal_info" data-toggle="tab">PERSONAL INFO</a>
                                 </li>
                                 <li class="tab-list__item btn btn-success">
-                                    <a class="tab-list__link" href="#tab2" data-toggle="tab">MEDICAL INFO</a>
+                                    <a class="tab-list__link" href="#medical_info" data-toggle="tab">MEDICAL INFO</a>
                                 </li>
                             </ul>
 
@@ -148,7 +148,7 @@
 
                         <form method="POST">
                             {% csrf_token %}
-                            <div class="tab-pane active" id="tab1">
+                            <div class="tab-pane active" id="personal_info">
                                 <h2 class="title">PERSONAL INFO</h2>
 
 
@@ -203,7 +203,7 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <div class="rs-select2 js-select-simple select--no-search">
-                                                <select name="subject">
+                                                <select name="ethnic_group">
                                                     <option disabled="disabled" selected="selected">SELECT YOUR ETHNIC GROUP</option>
                                                     <option>WHITE</option>
                                                     <option>BLACK</option>
@@ -224,7 +224,7 @@
 
                                             <div class="row row-space">
                                                 <label class="label">WHAT IS YOUR AGE</label>
-                                                <input class="input--style-4" type="int" name="age" min="10" max="150">                                                     
+                                                <input class="input--style-4" type="number" name="age" min="10" max="150">                                                     
                                             </div>
                                                     
                                         </div>
@@ -237,7 +237,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="alcohole">
                                                         <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -252,7 +252,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="smoke">
                                                         <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -270,7 +270,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="exersise">
                                                         <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -289,7 +289,7 @@
                                             <h4>HOW ARE YOU FEELING(PSYCHOLOGICALLY) TODAY?</h4>
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="required" name="subject">
+                                                    <select required="required" name="psychologogy">
                                                         <option disabled="disabled" selected="selected">SELECT AN OPTION</option>
                                                         <option value="0">WORSE</option>
                                                         <option value="1">VERY BAD</option>
@@ -317,7 +317,7 @@
         
                                                 <div class="row row-space">
                                                     <label class="label">WHAT IS YOUR AVARAGE SLEEPING TIME(HOURS)</label>
-                                                    <input class="input--style-4" type="int" name="sleeping_time" min="0" max="24">                                                     
+                                                    <input class="input--style-4" type="number" name="sleeping_time" min="0" max="24">
                                                 </div>
                                                         
                                             </div>
@@ -328,7 +328,7 @@
 
                             </div>
 
-                            <div class="tab-pane" id="tab2">
+                            <div class="tab-pane" id="medical_info">
                                 <h2 class="title">MEDICAL INFO</h2> 
 
 
@@ -337,11 +337,11 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group">
-                                            
+                                            <h3 class="label">RATE YOUR PHYSICAL HEALTH CONDITION.</h3>
+
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <label class="label">RATE YOUR PHYSICAL HEALTH CONDITION.</label>
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="physical_health">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">VERY SICK</option>
                                                         <option value="1">SICK</option>
@@ -366,7 +366,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</label>
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="general_health">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">POOR</option>
                                                         <option value="1">FAIR</option>
@@ -388,7 +388,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU FEEL DIFICUELTY IN WALKING?</label>
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="diff_walking">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -404,7 +404,7 @@
                                             <div class="p-t-10">
                                                 <label class="label">DO YOU HAVE DIABETIC </label>
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="diabetic">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -425,7 +425,7 @@
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE ASTHMA?</label>
 
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="asthma">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -441,7 +441,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE KIDNEY DISEASE?</label>
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="kidney">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -461,7 +461,7 @@
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE  SKIN CANCER?</label>
 
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="skin_cancer">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -477,7 +477,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE ANY STROKE HISTORY?</label>
-                                                    <select required="option" name="subject">
+                                                    <select required="option" name="stroke">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
