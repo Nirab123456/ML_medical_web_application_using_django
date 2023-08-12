@@ -151,7 +151,7 @@
                             <div class="tab-pane active" id="personal_info">
                                 <h2 class="title">PERSONAL INFO</h2>
 
-
+                                
                                 <div class="row row-space">
 
                                     <div class="col-2">
@@ -341,10 +341,10 @@
 
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" name="physical_health">
+                                                    <select  id="physical_health" name="physical_health" onchange="updatePhysicalHealthSelect()">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">VERY SICK</option>
-                                                        <option value="1">SICK</option>
+                                                        <option value="1">SICKNESS</option>
                                                         <option value="2">POOR</option>
                                                         <option value="3">NOT WELL</option>
                                                         <option value="4">NUMB</option>
@@ -528,7 +528,19 @@
 
     <!-- Main JS-->
     <script src="{% about_me 'CVD/js/global.js' %}"></script>
+<script>
 
+    
+    
+    function updatePhysicalHealthSelect() {
+        var physicalHealthSelect = document.getElementById("physical_health");
+        var physicalHealth = physicalHealthSelect.value;
+        console.log(physicalHealth);
+    }
+    updatePhysicalHealthSelect();
+
+
+</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
