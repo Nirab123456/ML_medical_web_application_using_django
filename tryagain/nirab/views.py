@@ -20,7 +20,7 @@ from .ADD_OR_UPDATE_RECORD import ADD_OR_UPDATE_record
 from django.http import JsonResponse
 from .madication_chat import MEDICINE_CHAT
 from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
-
+from .C_V_D_prediction import C_V_D_PREDICTION
 
 
 
@@ -31,7 +31,9 @@ def C_V_D_prediction(request):
 def main_bmi_calculator(request):
     return render(request, 'main_bmi_calculator.html')
 
-
+def get_C_V_D_prediction(request):
+    C_V_D_PREDICTION_ = C_V_D_PREDICTION(request=request)
+    return C_V_D_PREDICTION_.get_C_V_D_prediction()
 
 def med_search(request):
     T_M_S = TOTAL_MEDICINE_SEARCH(request=request)

@@ -146,8 +146,7 @@
 
                     <div style="margin-top: 10px;" class="tab-content">
 
-                        <form method="POST">
-                            {% csrf_token %}
+
                             <div class="tab-pane active" id="personal_info">
                                 <h2 class="title">PERSONAL INFO</h2>
 
@@ -158,7 +157,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select id="gender" onchange="update_all_selection()">
+                                                    <select id="gender" onchange="">
                                                         <option disabled="disabled" selected="selected">CHOOSE YOUR GENDER</option>
                                                         <option value="0">FEMALE</option>
                                                         <option value="1">MALE</option>
@@ -203,7 +202,7 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <div class="rs-select2 js-select-simple select--no-search">
-                                                <select id="ethnic_group" onchange="update_all_selection()">
+                                                <select id="ethnic_group" onchange="">
                                                     <option disabled="disabled" selected="selected">SELECT YOUR ETHNIC GROUP</option>
                                                     <option value="0">WHITE</option>
                                                     <option value="1">BLACK</option>
@@ -237,7 +236,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select  id="alcohole" onchange="update_all_selection()">
+                                                    <select  id="alcohole" onchange="">
                                                         <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -252,7 +251,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select  id="smoke" onchange="update_all_selection()" >
+                                                    <select  id="smoke" onchange="" >
                                                         <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -270,7 +269,7 @@
                                         <div class="input-group">
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select  id="exersise" onchange="update_all_selection()">
+                                                    <select  id="exersise" onchange="">
                                                         <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -289,7 +288,7 @@
                                             <h4>HOW ARE YOU FEELING(PSYCHOLOGICALLY) TODAY?</h4>
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select id="psychologogy" onchange="update_all_selection()">
+                                                    <select id="psychologogy" onchange="">
                                                         <option disabled="disabled" selected="selected">SELECT AN OPTION</option>
                                                         <option value="0">WORSE</option>
                                                         <option value="1">VERY BAD</option>
@@ -328,7 +327,7 @@
 
                             </div>
 
-                            <div class="tab-pane" id="medical_info">
+                            <div class="tab-pane active" id="medical_info">
                                 <h2 class="title">MEDICAL INFO</h2> 
 
 
@@ -341,7 +340,7 @@
 
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select   id="physical_health" onchange="update_all_selection()">
+                                                    <select   id="physical_health" onchange="">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">VERY SICK</option>
                                                         <option value="1">SICKNESS</option>
@@ -366,7 +365,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</label>
-                                                    <select required="option" id="general_health" onchange="update_all_selection()">
+                                                    <select required="option" id="general_health" onchange="">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">POOR</option>
                                                         <option value="1">FAIR</option>
@@ -388,7 +387,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU FEEL DIFICUELTY IN WALKING?</label>
-                                                    <select  id="diff_walking" onchange="update_all_selection()">
+                                                    <select  id="diff_walking" onchange="">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -425,7 +424,7 @@
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE ASTHMA?</label>
 
-                                                    <select onchange="update_all_selection()" id="asthma">
+                                                    <select onchange="" id="asthma">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -441,7 +440,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE KIDNEY DISEASE?</label>
-                                                    <select onchange="update_all_selection()" id="kidney">
+                                                    <select onchange="" id="kidney">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -461,7 +460,7 @@
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE  SKIN CANCER?</label>
 
-                                                    <select onchange="update_all_selection()" id="skin_cancer">
+                                                    <select onchange="" id="skin_cancer">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -477,7 +476,7 @@
                                             <div class="p-t-10">
                                                 <div class="rs-select2 js-select-simple select--no-search">
                                                     <label class="label">DO YOU HAVE ANY STROKE HISTORY?</label>
-                                                    <select onchange="update_all_selection()" id="stroke">
+                                                    <select onchange="" id="stroke">
                                                         <option disabled="disabled" selected="selected">Choose option</option>
                                                         <option value="0">NO</option>
                                                         <option value="1">YES</option>
@@ -507,7 +506,7 @@
 
                             </div>
 
-                        </form>
+
                         
                     </div>
 
@@ -532,7 +531,7 @@
 
     
     
-    function update_all_selection() {
+    function  update_all_selection(){
         var gender = document.getElementById("gender").value;
         var bmi = document.getElementById("bmi").value;
         var ethnic_group = document.getElementById("ethnic_group").value;
@@ -568,6 +567,35 @@
         console.log('ethnic',ethnic_group);
         console.log('bmi',bmi);
         console.log('gender',gender);
+
+        if(gender && bmi && ethnic_group && age && alcohole && smoke && stroke && exersise && psychologogy && sleeping_time && physical_health && general_health && diff_walking && diabetic && asthma && kidney && skin_cancer && stroke){
+            console.log('all ok');
+            var xhr = new XMLHttpRequest();
+            var url = '/get_C_V_D_prediction/?' +
+                'gender=' + gender +
+                '&bmi=' + bmi +
+                '&ethnic_group=' + ethnic_group +
+                '&age=' + age +
+                '&alcohole=' + alcohole +
+                '&smoke=' + smoke +
+                '&exersise=' + exersise +
+                '&psychologogy=' + psychologogy +
+                '&sleeping_time=' + sleeping_time +
+                '&stroke=' + stroke +
+                '&physical_health=' + physical_health +
+                '&general_health=' + general_health +
+                '&diff_walking=' + diff_walking +
+                '&diabetic=' + diabetic +
+                '&asthma=' + asthma +
+                '&kidney=' + kidney +
+                '&skin_cancer=' + skin_cancer;
+            console.log('url', url);
+
+            xhr.open('GET', url, true);
+            xhr.send();
+            
+
+        }
 
 
         
