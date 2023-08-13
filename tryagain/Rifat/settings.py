@@ -7,11 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Specify the URL prefix for static files.
 STATIC_URL = '/static/'
 
-BLOG_STATIC_URL = '/blog_static/'
 
 # Specify the directory for the blog static files.
 BLOG_STATIC_ROOT = os.path.join(BASE_DIR, 'blog')
@@ -19,6 +16,8 @@ BLOG_STATIC_ROOT = os.path.join(BASE_DIR, 'blog')
 ABOUT_ME_URL = '/about_me/'
 ABOUT_ME_ROOT = os.path.join(BASE_DIR, 'about_me')
 
+MAIN_TAMPLATE_URL = '/main_template/'
+MAIN_TAMPLATE_ROOT = os.path.join(BASE_DIR, 'main_template')
 
 # Add the following lines at the end of the file.
 STATICFILES_DIRS = [

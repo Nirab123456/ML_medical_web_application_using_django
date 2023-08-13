@@ -2,7 +2,7 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,Post ,SocialMedia,Medication
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,SocialMedia,Medication
 from django.forms import ModelForm
 
 
@@ -89,20 +89,6 @@ class SocialMediaForm(forms.ModelForm):
         }
 
 
-class BlogForm(forms.ModelForm):
-    title = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Title'}))
-    slug = forms.CharField(max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Slug'}))
-    content = forms.CharField(max_length=100,label="",widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Content'}))
-    status = forms.IntegerField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Status'}))
-    class Meta:
-        model = Post
-        fields = ['title','slug','content','status']
-        widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
-            'status': forms.TextInput(attrs={'class': 'form-control'}),
-        }
 
 
 
