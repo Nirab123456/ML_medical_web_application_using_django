@@ -3,6 +3,12 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('index_new/',views.index_new,name='index_new'),
+
+
+
+
+
     path('<int:year>/<str:month>',views.event,name='event'),
     path('login/',views.login_user,name='login_user'),
     path('profile/',views.profile,name='profile'),

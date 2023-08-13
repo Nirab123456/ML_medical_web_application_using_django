@@ -24,6 +24,10 @@ from .C_V_D_prediction import C_V_D_PREDICTION
 
 
 
+def index_new(request):
+    return render(request, 'index_new.html')
+
+
 def C_V_D_prediction(request):
     return render(request, 'C_V_D_prediction.html')
 
