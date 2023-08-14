@@ -7,10 +7,9 @@
             <span>Topic</span>
         </a>
 
-        <div class="d-lg-none ms-auto me-4">
-            <a href="#new_login_reg.html" id="loadNewContent" class="navbar-icon bi-person smoothscroll"></a>
-        </div>
-        
+        <div>
+            <a href="{% url 'login_register' %}"  class="navbar-icon bi-person"></a>
+        </div>        
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,8 +49,9 @@
             </ul>
 
             <div class="d-none d-lg-block">
-                <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                <a href="#top" class="navbar-icon bi bi-arrow-90deg-up smoothscroll"></a>
             </div>
+            
         </div>
         <script>
             $(document).ready(function() {
