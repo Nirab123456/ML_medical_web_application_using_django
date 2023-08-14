@@ -1,0 +1,103 @@
+{% load main_template %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .inner {
+            max-width: 1000px;
+            margin: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .scroll-container {
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: auto;
+            height: 400px;
+            scroll-snap-type: mandatory;
+            scroll-behavior: smooth;
+            font-size: 0px;
+        }
+
+        .scroll-container .scroll-section {
+            display: inline-block;
+            vertical-align: middle;
+            background: #fff;
+            border: solid 1px #ccc;
+            box-sizing: border-box; /* Add this to include border in the size */
+            margin: 0; /* Remove any default margin */
+            padding: 0; /* Remove any default padding */
+        }
+
+        .scroll-container.same-size {
+            padding-bottom: 50%;
+            height: 0px;
+            width: 50%;
+            scroll-snap-points-y: repeat(calc(100% + 17px));
+        }
+
+        .scroll-container.same-size .wrap {
+            position: relative;
+            height: auto;
+            width: 100%;
+            width: calc(100% + 17px);
+            padding: 0px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .scroll-container.same-size .scroll-section {
+            height: 100%;
+            width: 100%;
+            border: solid 1px #ccc;
+            background: #eee;
+            padding: 15px;
+        }
+
+        /* Small screens */
+        @media screen and (max-width: 643px) {
+            .scroll-container.same-size {
+                width: 100%;
+                padding-bottom: 100%;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="custom-block-image img-fluid">
+        <div class="scroll-container ">
+            <div class="wrap">
+                <img class="scroll-section" src="{% main_template 'images/topics/result_1.png' %}">
+            </div>
+            <div class="wrap">
+                <img class="scroll-section" src="{% main_template 'images/topics/result_2.png' %}">
+            </div>
+            <div class="wrap">
+                <img class="scroll-section" src="{% main_template 'images/topics/result_3.png' %}">
+            </div>
+            <div class="wrap">
+                <img class="scroll-section" src="{% main_template 'images/topics/result_4.png' %}">
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            //detect if we support scroll snap or not (not the best but should work)
+            var scrollSnap = false;
+            scrollSnap = 'webkitScrollSnapType' in document.documentElement.style;
+            scrollSnap = 'scrollSnapType' in document.documentElement.style;
+
+            if (scrollSnap === true) {
+                $('#supports').append('<h3 class="success">It looks like your browser does support scroll snap!</h3>');
+            } else {
+                $('#supports').append('<h3 class="failure">It looks like your browser might not support scroll snap properties</h3>');
+            }
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
