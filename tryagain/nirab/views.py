@@ -23,8 +23,129 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 from .C_V_D_prediction import C_V_D_PREDICTION
 
 
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST['name']
+        password = request.POST['password']
+
+        # Check if user has entered correct credentials
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'You have successfully logged in')
+            return redirect('profile')
+        else:
+            messages.success(request, 'Error logging in, please try again')
+            return redirect('login_user')
+    else:
+        return render(request, 'login.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
+
+def register_user(request):
+	if request.method == 'POST':
+		form = RegisterForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data.get('username')
+			password = form.cleaned_data.get('password1')
+			# Authenticate
+			user = authenticate(username=username, password=password)
+			login(request, user)
+			messages.success(request, "You Have Registered Successfully! compleate by updating details and profile picture PLEASE")
+			return redirect('add_or_update_profile_picture')
+	else:
+		form = RegisterForm()
+	return render(request, 'register.html', {'form': form})
+
+
+
+# def login_register(request):
+#     if request.method == 'GET':
+#         username = request.POST['name']
+#         print('username',username)
+#         password = request.POST['password']
+#         print('password',password)
+#         # Check if user has entered correct credentials
+#         user = authenticate(username=username, password=password)
+
+#         if user is not None:
+#             login(request, user)
+#             messages.success(request, 'You have successfully logged in')
+#             return redirect('profile')
+#         else:
+#             messages.success(request, 'Error logging in, please try again')
+#             return redirect('login_register')
+#     elif request.method == 'POST':
+#         register_form = RegisterForm(request.POST)
+#         if register_form.is_valid():
+#             register_form.save()
+#             username = register_form.cleaned_data.get('username')
+#             password = register_form.cleaned_data.get('password1')
+#             # Authenticate
+#             user = authenticate(username=username, password=password)
+#             login(request, user)
+#             messages.success(request, "You Have Registered Successfully! compleate by updating details and profile picture PLEASE")
+#             return redirect('add_or_update_profile_picture')
+#         else:
+#             register_form = RegisterForm()
+#         return render(request, 'new_login_reg.html', {'register_form': register_form})
+#     else:
+#         return render(request, 'new_login_reg.html')
+
+
 def login_register(request):
-    return render(request, 'new_login_reg.html')
+    if request.method == 'GET':
+        return render(request, 'new_login_reg.html')  # Display the form for GET requests
+
+    elif request.method == 'POST':
+        if 'name' in request.POST:
+            username = request.POST['name']
+            print('username',username)
+            password = request.POST['password']
+            
+            # Check if user has entered correct credentials
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'You have successfully logged in')
+                return redirect('profile')
+            else:
+                messages.error(request, 'Error logging in, please try again')
+                return redirect('login_register')
+        
+        elif 'username' in request.POST:  # Assuming the username field is in your RegisterForm
+            print('i am username')
+            register_form = RegisterForm(request.POST)
+            
+            if register_form.is_valid():
+                user = register_form.save()  # Save the user object
+                username = register_form.cleaned_data.get('username')
+                password = register_form.cleaned_data.get('password1')
+                # Authenticate
+                user = authenticate(username=username, password=password)
+                login(request, user)
+                messages.success(request, "You have registered successfully! Complete your profile by updating details and profile picture.")
+                return redirect('add_or_update_profile_picture')
+            else:
+                messages.error(request, "Registration error, please try again")
+                return render(request, 'new_login_reg.html', {'register_form': register_form})
+        else:
+            messages.error(request, "Invalid form submission")
+            return render(request, 'new_login_reg.html')  # Handle other cases
+        
+    return render(request, 'new_login_reg.html')  # Handle other HTTP methods
+
+
+
+
+
+
+
 
 
 def index_new(request):
@@ -308,46 +429,9 @@ def event(request, year=datetime.now().year, month=datetime.now().strftime('%B')
 
 
 
-def login_user(request):
-    if request.method == 'POST':
-        username = request.POST['name']
-        password = request.POST['password']
-
-        # Check if user has entered correct credentials
-        user = authenticate(username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            messages.success(request, 'You have successfully logged in')
-            return redirect('profile')
-        else:
-            messages.success(request, 'Error logging in, please try again')
-            return redirect('login_user')
-    else:
-        return render(request, 'login.html')
-
-
-def logout_user(request):
-    logout(request)
-    return redirect('home')
 
 
 
-def register_user(request):
-	if request.method == 'POST':
-		form = RegisterForm(request.POST)
-		if form.is_valid():
-			form.save()
-			username = form.cleaned_data.get('username')
-			password = form.cleaned_data.get('password1')
-			# Authenticate
-			user = authenticate(username=username, password=password)
-			login(request, user)
-			messages.success(request, "You Have Registered Successfully! compleate by updating details and profile picture PLEASE")
-			return redirect('add_or_update_profile_picture')
-	else:
-		form = RegisterForm()
-	return render(request, 'register.html', {'form': form})
 
 
 

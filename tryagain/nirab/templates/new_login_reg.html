@@ -1,3 +1,4 @@
+{% block content %}
 <html>
 <head>
     <style>
@@ -353,53 +354,68 @@ body {
     <!-- FORM SECTION -->
     <div class="row">
         <!-- SIGN UP -->
-        <div class="col align-items-center flex-col sign-up">
-            <div class="form-wrapper align-items-center">
-                <div class="form sign-up">
-                    <div class="input-group">
-                        <i class='bx bxs-user'></i>
-                        <input type="text" placeholder="Username">
+            <form method="POST" class="col align-items-center flex-col sign-up">
+                {% csrf_token %}
+
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-up">
+                        
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" name="username" placeholder="Username">
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" name="first_name" placeholder="first name">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" name="last_name" placeholder="last name">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" name="password1" placeholder="Password">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" name="password2" placeholder="Confirm password">
+                        </div>
+                        <button>
+                            Sign up
+                        </button>
+                        <p>
+                            <span>
+                                Already have an account?
+                            </span>
+                            <b onclick="toggle()" class="pointer">
+                                Sign in here
+                            </b>
+                        </p>
                     </div>
-                    <div class="input-group">
-                        <i class='bx bx-mail-send'></i>
-                        <input type="email" placeholder="Email">
-                    </div>
-                    <div class="input-group">
-                        <i class='bx bxs-lock-alt'></i>
-                        <input type="password" placeholder="Password">
-                    </div>
-                    <div class="input-group">
-                        <i class='bx bxs-lock-alt'></i>
-                        <input type="password" placeholder="Confirm password">
-                    </div>
-                    <button>
-                        Sign up
-                    </button>
-                    <p>
-                        <span>
-                            Already have an account?
-                        </span>
-                        <b onclick="toggle()" class="pointer">
-                            Sign in here
-                        </b>
-                    </p>
                 </div>
-            </div>
-        
-        </div>
+            
+            </form>
+
         <!-- END SIGN UP -->
         <!-- SIGN IN -->
-        <div class="col align-items-center flex-col sign-in">
+        <form method="POST" class="col align-items-center flex-col sign-in">
+            {% csrf_token %}
+
             <div class="form-wrapper align-items-center">
                 <div class="form sign-in">
                     <div class="input-group">
                         <i class='bx bxs-user'></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" name="name" placeholder="Username">
                     </div>
                     <div class="input-group">
                         <i class='bx bxs-lock-alt'></i>
-                        <input type="password" placeholder="Password">
-                    </div>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>                    
                     <button>
                         Sign in
                     </button>
@@ -421,7 +437,7 @@ body {
             <div class="form-wrapper">
     
             </div>
-        </div>
+        </form>
         <!-- END SIGN IN -->
     </div>
     <!-- END FORM SECTION -->
@@ -470,3 +486,4 @@ setTimeout(() => {
 }, 200)
 </script>
 </html>
+{% endblock %}
