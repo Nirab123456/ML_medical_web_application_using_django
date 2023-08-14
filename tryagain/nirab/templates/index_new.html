@@ -1,5 +1,4 @@
 {% load main_template %}
-{% include 'base.html' %}
 {% block content %}
 {% load custom_filters %}
 <!doctype html>
@@ -67,7 +66,7 @@ https://templatemo.com/tm-590-topic-listing
     <body id="top">
 
         <main>
-
+            
             {% include 'new_main_nav_bar.html' %}
             
 
@@ -105,7 +104,7 @@ https://templatemo.com/tm-590-topic-listing
 
                         <div class="col-lg-4 col-12 mb-4 mb-lg-0">
                             <div class="custom-block bg-white shadow-lg">
-                                <a href="topics-detail.html">
+                                <a href="{% url 'base_ocr' %}">
                                     <div class="d-flex">
                                         <div>
                                             <h5 class="mb-2">OCR & Transfer To Hand-Written</h5>
@@ -132,7 +131,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                             <p class="text-white">GET EVERYTHING ABOUT DRUGS.AI WILL HELP YOU FOR YOUR QUERY.YOU CAN FIND ALTERNATE MEDICINES.</p>
 
-                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
+                                            <a href="{% url 'med_search' %}" class="btn custom-btn mt-2 mt-lg-3">Visit the site</a>
                                         </div>
 
                                         <span class="badge bg-finance rounded-pill ms-auto">25</span>
@@ -485,13 +484,13 @@ https://templatemo.com/tm-590-topic-listing
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingTwo">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    How to find a topic?
+                                                    BANGLA IMAGE OR TEXT TO HANDWRITTEN (DEMO)
                                                 </button>
                                                 </h2>
             
                                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                        You can search on Google with <strong>keywords</strong> such as templatemo portfolio, templatemo one-page layours, photography, digital marketing, etc.
+                                                        <p style="color: brown;">We are working continuously on this feature to bring in  thank you in advance.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -551,7 +550,7 @@ https://templatemo.com/tm-590-topic-listing
             </section>
 
 
-            <section class="timeline-section section-padding" id="section_3">
+            <!-- <section class="timeline-section section-padding" id="section_3">
                 <div class="section-overlay"></div>
 
                 <div class="container">
@@ -609,10 +608,10 @@ https://templatemo.com/tm-590-topic-listing
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
 
-            <section class="faq-section section-padding" id="section_4">
+            <!-- <section class="faq-section section-padding" id="section_4">
                 <div class="container">
                     <div class="row">
 
@@ -674,7 +673,7 @@ https://templatemo.com/tm-590-topic-listing
 
                     </div>
                 </div>
-            </section>
+            </section> -->
 
 
             <section class="contact-section section-padding section-bg" id="section_5">

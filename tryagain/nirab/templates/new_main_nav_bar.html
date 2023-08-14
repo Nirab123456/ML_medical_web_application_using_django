@@ -1,4 +1,23 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .auth_navbar-icon {
+  background: green; /* Set the background color to green */
+  border-radius: var(--border-radius-large);
+  display: inline-block;
+  font-size: var(--h5-font-size);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.auth_navbar-icon:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+
+</style>
 
 <nav class="navbar navbar-expand-lg">
     <div class="container">
@@ -6,10 +25,19 @@
             <i class="bi-back"></i>
             <span>Topic</span>
         </a>
+        {% if user.is_authenticated %}
+
+        <div>
+            <a href="{% url 'login_register' %}"  class="auth_navbar-icon bi-person"></a>
+        </div> 
+
+        {% else %}
 
         <div>
             <a href="{% url 'login_register' %}"  class="navbar-icon bi-person"></a>
-        </div>        
+        </div> 
+        
+        {% endif %}
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,12 +66,12 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">LOGOUT/CHANGE-PASSWORD</a>
 
                     <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                        <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout_user' %}">Logout</a></li>
 
-                        <li><a class="dropdown-item" href="contact.html">Contact Form</a></li>
+                        <li><a class="dropdown-item" href="{% url 'change_password' %}">Change Password</a></li>
                     </ul>
                 </li>
             </ul>
