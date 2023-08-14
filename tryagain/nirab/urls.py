@@ -4,17 +4,18 @@ from . import views
 urlpatterns = [
     path('',views.home,name='home'),
     path('index_new/',views.index_new,name='index_new'),
+    path('login/',views.login_user,name='login_user'),
+    path('register/',views.register_user,name='register'),
+    path('logout/',views.logout_user,name='logout_user'),
+    path('login_register/',views.login_register,name='login_register'),
 
 
 
 
 
     path('<int:year>/<str:month>',views.event,name='event'),
-    path('login/',views.login_user,name='login_user'),
     path('profile/',views.profile,name='profile'),
     path('real/',views.real, name='real'),
-    path('logout/',views.logout_user,name='logout_user'),
-    path('register/',views.register_user,name='register'),
     path('record',views.view_record,name='record'),
     path('delete_record/',views.delete_record,name='delete_record'),
     path('add_event/',views.add_event,name='add_event'),

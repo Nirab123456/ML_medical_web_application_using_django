@@ -23,6 +23,9 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 from .C_V_D_prediction import C_V_D_PREDICTION
 
 
+def login_register(request):
+    return render(request, 'new_login_reg.html')
+
 
 def index_new(request):
     return render(request, 'index_new.html')
