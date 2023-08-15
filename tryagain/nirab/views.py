@@ -23,6 +23,20 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 from .C_V_D_prediction import C_V_D_PREDICTION
 
 
+def trial(request):
+    return render(request, 'trial.html')
+
+
+
+
+
+
+
+
+
+
+
+
 def login_user(request):
     if request.method == 'POST':
         username = request.POST['name']

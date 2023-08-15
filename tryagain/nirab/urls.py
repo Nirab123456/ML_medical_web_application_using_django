@@ -95,5 +95,5 @@ urlpatterns = [
     path('get_C_V_D_prediction/', views.get_C_V_D_prediction, name='get_C_V_D_prediction'),
 
 
-
+    path('trial/', views.trial, name='trial'),
 ]
