@@ -1,315 +1,590 @@
-{%load about_me%}
+{% load main_template %}
 {% block content %}
-{% include "base_apps_NAV.html" %}
 {% load custom_filters %}
 {% check_allowed_image_count request.user as is_allowed %}
-{% if is_allowed %}
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
-    
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>base ocr</title>
-    <link rel="stylesheet" href="{% about_me 'css/pricing_tables.css' %}">
-    <style>
-        .main-content {
-            margin-left: 7rem; /* Adjust this value to match the width of your first div */
-        }
+    <title>Topic Detail Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Open+Sans&amp;display=swap">
+    <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet"> 
+    <link href="{% main_template 'css/rotating_border_animated_buttons.css' %}" rel="stylesheet"> 
 
-    </style>
+<style>
+    input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
 
-<script>
-    function convertToBangla() {
-        var text = document.getElementById("text").innerHTML;
-        if (text.includes("আমাদের")) {
-            document.getElementById("text").innerHTML = convertToEnglishLogic(text);
-        } else {
-            document.getElementById("text").innerHTML = convertToBanglaLogic(text);
-        }
-    }
-    function convertToBanglaLogic(text) {
-        return 'আমাদের ওয়েবসাইটে স্বাগতম, যেখানে আপনি সহজেই চিত্রগুলি বাংলা বা ইংরেজি ভাষায় পাঠায় পরিণত করতে পারবেন। আপনার চিত্রটি আপলোড করুন এবং আপনার পছন্দসই পদ্ধতি নির্বাচন করুন, এবং ভয়লা! আপনি কিছুক্ষণের মধ্যেই আপনার পাঠ্য ফাইল বা স্ট্রিং পেয়ে যাবেন।';
-    }
-    function convertToEnglishLogic(text) {
-        return 'Welcome to our website, where you can effortlessly convert images into text using either Bangla or English language. Simply upload your image and select your preferred method, and voila! You\'ll receive your text file or string in no time.';
-    }
-</script>    
+input[type="file"] + label {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+input[type="file"]:focus + label {
+  outline: 2px solid #0964b0;
+}
+
+
+.scrollable-text {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow: auto;
+    padding-right: 15px; /* Add some padding to prevent text from sticking to the scrollbar */
+}
+
+</style>
 
 </head>
 
-<body>
-    <div class="page cv-page main-content">
-        <section class="pricing-section">
+<body id="top">
+    <main>
+        {% include 'new_main_nav_bar.html' %}
 
-
-
+        <header class="d-flex flex-column justify-content-center align-items-center site-header">
             <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-lg-5 mb-5">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><span>Homepage</span></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Web Design</span></li>
+                            </ol>
+                        </nav>
+                        <h2 class="text-white">Welcome to our<br>Optical character recognition sector.</h2>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="bg-white shadow-lg topics-detail-block"><img class="img-fluid topics-detail-block-image" src="{% main_template 'images/topics/OCR.png' %}"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="explore-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
 
-
-
-                <div class="row justify-content-md-center">
-
-
-                    <div class="col-md-8 col-lg-6 col-xl-5">
-                        <div class="text-center section-title title-ex1">
-
-                            <h2><span style="color: rgb(33, 37, 41);">OPTICAL IMAGE READING</span></h2>
-                            <p><br><span id="text" style="color: rgb(5, 6, 6);">
-                                Welcome to our website, where you can effortlessly convert images into text using either Bangla or English language.
-                                Simply upload your image and select your preferred method, and voila! You'll receive your text file or string in no time.
-                            </span><br><br></p>
-                            <button class="btn btn-outline-secondary" onclick="convertToBangla()">Convert to Bangla</button>
-
-                        </div>
-                        
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">Browse Apps</h1>
                     </div>
 
-
                 </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">HANDWRITTEN STYLE TRANSFER </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">ENG & BANGLA OCR</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">DRUG KNOWLEDGE</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">BANGLA OCR</button>
+                        </li>
+
+
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">HEALTH CARE</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                <div class="row">
 
 
 
 
 
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="topics-detail.html">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">FIND ALTERNATE DRUG</h5>
 
-                <div class="row" style="margin-top: 10px;">
+                                                        <p class="mb-0">Use A Brand Name Or Generic Name Select The Dosage Form & Strength </p>
+                                                    </div>
 
-
-
-
-                            <div class="col-md-12">
-
-
-                                        <div class="price-card">
-
-
-
-                                            <h2>BN-OCR</h2>
-
-                                            <p>বাংলায় আপনার ছবির পাঠ্য রূপান্তর করুন</p>
-
-
-
-                                            <div style="margin-top: 20px;">
-
-
-                                                <div>
-                                                    {% if BN_OCR_image_url %}
-                                                        <div>
-                                                            <img src="{{ BN_OCR_image_url }}" class="img-fluid" alt="Image">
-                                                        </div>
-                                                    {% else %}
-
-                                                    {% endif %}
+                                                    <span class="badge bg-design rounded-pill ms-auto">14</span>
                                                 </div>
 
+                                                <img src="{% main_template 'images/topics/drug_find.png' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="topics-detail.html">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">FIND DEUG DETAILS</h5>
 
+                                                            <p class="mb-0"> Just Simply Use A Brand Name Or Generic Name To Get The Drug Info</p>
+                                                    </div>
 
-                                                <div style="margin-top: 10px;">
-                                                    <form id="BNform" action="" method="POST" enctype="multipart/form-data">
-                                                        {% csrf_token %}
-                                                        {{ BN_OCR_form.as_p }}
-                                                        <a class="btn btn-primary btn-mid" role="button" onclick="BNform()" href="#">রূপান্তর</a>
-                                                    </form>
-
-                                                    <script>
-                                                        function BNform() {
-                                                            document.getElementById("BNform").action = "{% url 'BN_OCR' %}";
-                                                            document.getElementById("BNform").submit();
-                                                        }
-                                                    </script>
+                                                    <span class="badge bg-design rounded-pill ms-auto">75</span>
                                                 </div>
 
+                                                <img src="{% main_template 'images/topics/drug_details.png' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="topics-detail.html">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Search Through Generic Name</h5>
 
+                                                            <p class="mb-0">You can also search your drug and its details using generic name</p>
+                                                    </div>
 
-
-
-                                                <div style="margin-top: 10px;">
-
-
-                                                    {% if BN_OCR_text %}
-
-                                                        <p>{{ BN_OCR_text }}</p>
-
-                                                    {% else %}
-                                                    
-                                                    {% endif %}
-                                            
-                                            
+                                                    <span class="badge bg-design rounded-pill ms-auto">100</span>
                                                 </div>
                                                 
-
-
-
-
-                                                <div style="margin-top: 10px;">
-
-                                                    {% if BN_OCR_file_path %}    
-
-                                                    <div>
-
-                                                        <div>
-                                                            <a href="{% url 'download_text' BN_OCR_file_path %}" class="btn btn-danger btn-mid">টেক্সট ফাইল ডাউনলোড করুন</a>
-
-                                                        </div>
-
-                                                        {% else %}
-
-
-                                                    </div>
-                                                    
-                                                    {% endif %}
-
-
-                                                </div>
-
-
-
-
-
-
-                                            </div>
-
-
-
+                                                <img src="{% main_template 'images/topics/generic_search.png' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
                                         </div>
+                                    </div>
 
 
+
+
+                                </div>
                             </div>
 
+                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
 
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="col-md-12" style="margin-top: 10px;">
-
-
-                            <div class="price-card featured">
-                                <h2>ENG-OCR</h2>
-                                <p>CONVERT YOUR PHOtO INTO TEXT</p>
                                 
-                                
-                                <div style="margin-top: 20px;">
+                                <div class="row">
 
 
-                                        <div>
-                                            {% if ENG_OCR_image_url %}
-                                                <div>
-                                                    <img src="{{ ENG_OCR_image_url }}" class="img-fluid" alt="Image">
+
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="topics-detail.html">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Bangla OCR DEMO</h5>
+
+                                                        <p class="mb-0">We can convert your desigred Bangla OCR image to Text.Try it out</p>
+
+                                                    </div>
+
+                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
                                                 </div>
-                                            {% else %}
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        
+                                                            <img src="{% main_template 'images/topics/smple_bangla.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    
+                                                    </div>
+                                                    <div class="col-2" >
+                                                            <p class="custom-block-image img-fluid"></n>দক্ষিণ এশিয়ার প্রাচীন ও ধ্রুপদী যুগে বাংলাদেশ অঞ্চলটিতে বঙ্গ, পুপ্ডু, গৌড়, গাঙ্গাধদ্ধি, সমতট ও হরিকেল নামক জনপদ গড়ে উঠেছিল।.........</p>
 
-
-
-                                            {% endif %}
-                                        </div>
-
-
-                                        <div style="margin-top: 10px;">
-                                            <form id="ENGFORM" action="" method="POST" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                {{ ENG_OCR_form.as_p }}
-                                                <a class="btn btn-primary btn-mid" role="button" onclick="ENGFORM()" href="#">CONVERT</a>
-                                            </form>
-
-                                            <script>
-                                                function ENGFORM() {
-                                                    document.getElementById("ENGFORM").action = "{% url 'ENG_OCR' %}";
-                                                    document.getElementById("ENGFORM").submit();
-                                                }
-                                            </script>
-                                        </div>
-
-
-
-                                        <div style="margin-top: 10px;">
-
-
-                                            {% if ENG_OCR_text %}
-
-                                                <p>{{ ENG_OCR_text }}</p>
-
-                                            {% else %}
-
-                                            {% endif %}
-                                    
-                                    
-                                        </div>
-                                    
-
-
-
-                                        <div style="margin-top: 10px;">
-
-                                            {% if ENG_OCR_file_path %}    
-
-                                            <div>
-
-                                                <div>
-                                                    <a href="{% url 'download_text' ENG_OCR_file_path %}" class="btn btn-danger btn-mid">Download Text File</a>
-
+                                                    </div>
                                                 </div>
-
-                                                {% else %}
-
-
-                                            </div>
-
-                                            {% endif %}
-
-
+                                            </a>
                                         </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="topics-detail.html">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">ENG OCR DEMO</h5>
+
+                                                        <p class="mb-0">We can convert your desigred English OCR image to Text.Try it out</p>
+
+                                                    </div>
+
+                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        
+                                                            <img src="{% main_template 'images/topics/eng_sample.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    
+                                                    </div>
+                                                    <div class="col-2" >
+                                                            <p class="custom-block-image img-fluid"></n>Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. From east to west it stretches almost 4,700 miles (7,560 kilometers) .........</p>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
 
 
 
 
-
-                                
                                 </div>
 
 
 
+                              </div>
+
+
+                              <!-- BANGLA OCR -->
+
+                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0 ">
+                                        <div class="custom-block bg-white shadow-lg ">
+
+
+                                            <form method="POST" id="BNform" action="{% url 'BN_OCR' %}" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                <a class='' href="topics-detail.html">
+                                                    <div class="d-flex rotating-border rotating-border--google">
+                                                        <div>
+                                                            <h5 class="mb-2">CHOOSE YOUR IMAGE</h5>
+
+                                                        </div>
+
+                                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        {% if BN_OCR_image_url %}
+                                                            <img src="{{ BN_OCR_image_url }}" class="custom-block-image img-fluid" alt="">
+                                                        {% else %}
+                                                        <img id="blah">
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <div>
+                                                            <input type="file" id="image" name="image" onchange="readURL(this);">
+
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+
+                                                </a>
+
+
+                                            </form>
+
+                                            {% if BN_OCR_file_path %}
+                                            <a style="margin-top: 5px;" class="custom-btn btn-2" href="{% url 'download_text' BN_OCR_file_path %}">DOWNLOAD</a>
+                                            {% endif %}
+                                            <script>
+                                            function BNform() {
+                                                document.getElementById("BNform").action = "{% url 'BN_OCR' %}";
+                                                document.getElementById("BNform").submit();
+                                            }
+                                            </script>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block custom-block-overlay">
+                                            <div class="d-flex flex-column h-100">
+                                                <img src="{% main_template 'images/topics/bangla_ocr_result_1.jpg' %}" class="custom-block-image img-fluid" alt="">
+
+                                                <div class="custom-block-overlay-text d-flex">
+                                                    {% if BN_OCR_text %}
+                                                    <h5 class="text-white mb-2">Result:  </h5>
+
+                                                    <div >
+                                                        <p style="color: azure;" class="scrollable-text" class="text-white">{{ BN_OCR_text }}</p>
+                                                    </div>
+                                                    {% else %}
+                                                    <div>
+                                                        <h5 class="text-white mb-2">BANGLA OPTICAL CHARACTERS RECOGNITION</h5>
+                                                        <p class="text-white">Bangla OCR (Optical Character Recognition) technology is employed for the conversion of printed or handwritten Bangla text within images into digital, machine-readable text. The PyTesseract Python library serves as a tool to harness the capabilities of the Tesseract OCR engine for Bangla OCR purposes.</p>
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                                
+
+
+                                                <div class="section-overlay"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
 
 
+
+
+
+
+
+
+
+
+
+                            <div class="tab-pane faq-section section-padding" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
+                                <div class="row">
+
+                                    <div class="accordion" id="accordionExample">
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                ENGLISH IMAGE OR TEXT TO HANDWRITTEN (DEMO)
+                                                </button>
+                                            </h2>
+        
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="row">
+
+
+
+                                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                                            <div class="custom-block bg-white shadow-lg">
+                                                                <a href="topics-detail.html">
+                                                                    <div class="d-flex">
+                                                                        <div>
+                                                                            <h5 class="mb-2">DEMO PHOTOS OR TEXT</h5>
+                
+                                                                            <p class="mb-0">We can convert your desigred images or text like this into hand written pdf now print and enjoy(avoid images with special charecters).</p>
+                
+                                                                        </div>
+                
+                                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                                    </div>
+                                                                        {% include 'image_scroll_demo_1.html' %}
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                
+                                                        <div class="col-lg-6 col-md-6 col-12">
+                                                            <div class="custom-block bg-white shadow-lg">
+                                                                <a href="topics-detail.html">
+                                                                    <div class="d-flex">
+                                                                        <div>
+                                                                            <h5 class="mb-2">Demo Pdf</h5>
+                
+                                                                            <p class="mb-0">Download the pdf and prit it out for better understending </p>
+                
+                                                                        </div>
+                
+                                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                                    </div>
+                                                                    {% include 'image_scroll_demo_1_result.html' %}
+
+                                                                </a>
+                                                                <a href="{% main_template 'images/topics/handwriten_result_demo.pdf' %}" download class="btn btn-outline-dark">
+                                                                    Download Demo PDF
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                
+                
+                
+                
+                                                    </div>                                                    </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                BANGLA IMAGE OR TEXT TO HANDWRITTEN (DEMO)
+                                            </button>
+                                            </h2>
+        
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p style="color: brown;">We are working continuously on this feature to bring in  thank you in advance.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="topics-detail.html">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">C.V.D PREDICTION</h5>
+
+                                                        <p class="mb-0">Answer some of our simple questions to measure the approximate CARDIO VASCULAR DISEASE provabality</p>
+
+                                                    </div>
+
+                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                </div>
+
+                                                <img src="{% main_template 'images/topics/cvd_prediction_1.png' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="topics-detail.html">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">MODEL DETAILS AND ANALYSIS</h5>
+
+                                                        <p class="mb-0">For details knowladge about model training testing and evalution check here</p>
+                                                    </div>
+
+                                                    <span class="badge bg-education rounded-pill ms-auto">75</span>
+                                                </div>
+
+                                                <img src="{% main_template 'images/topics/model_result.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                 </div>
-
-
-
             </div>
-
-
-
-
-
-
-
-
-
-
         </section>
 
 
 
 
 
-    </div>
+        <!-- <section class="topics-detail-section section-padding" id="topics-detail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 m-auto">
+                        <h3 class="mb-4">HOW DOSE OCR WORKS?</h3>
+                        <p>OCR (Optical Character Recognition) is a technology that converts printed or handwritten text from images into editable text. PyTesseract is a Python library that uses the Tesseract OCR engine to achieve this, making it easy to extract text from images in Python programs.</p><blockquote>
+                                Freelancing your skills isn’t going to make you a millionaire overnight.
+                            </blockquote>
+                        <div class="row my-4">
+                            <div class="col-12 col-md-6 col-lg-6"><img class="img-fluid topics-detail-block-image" src="assets/img/businesswoman-using-tablet-analysis.jpg"></div>
+                            <div class="col-12 col-md-6 col-lg-6 mt-4 mt-lg-0 mt-md-0"><img class="img-fluid topics-detail-block-image" src="assets/img/colleagues-working-cozy-office-medium-shot.jpg"></div>
+                        </div>
+                        <p>Most people start with freelancing skills they already have as a side hustle to build up income. This extra cash can be used for a vacation, to boost up savings, investing, build business.</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+
+
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-5"><img class="img-fluid newsletter-image" src="assets/img/rear-view-young-college-student.jpg" alt=""></div>
+                    <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center subscribe-form-wrap">
+                        <form class="custom-form subscribe-form" action="#" method="post" role="form">
+                            <h4 class="mb-4 pb-2">Get Newsletter</h4><input class="form-control" type="email" id="subscribe-email" name="subscribe-email" pattern="[^ @]*@[^ @]*" placeholder="Email Address" required="">
+                            <div class="col-12 col-lg-12"><button type="submit" class="form-control">Subscribe</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-4 pb-2"><a class="navbar-brand mb-2" href="index.html"><i class="bi-back"></i><span>Topic</span></a></div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h6 class="site-footer-title mb-3">Resources</h6>
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Home</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">How it works</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">FAQs</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Information</h6>
+                    <p class="text-white d-flex mb-1"><a class="site-footer-link"> 305-240-9671 </a></p>
+                    <p class="text-white d-flex"><a href="mailto:info@company.com" class="site-footer-link"> info@company.com </a></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 ms-auto mt-4 mt-lg-0">
+                    <div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> English</button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button">Thai</button></li>
+                            <li><button class="dropdown-item" type="button">Myanmar</button></li>
+                            <li><button class="dropdown-item" type="button">Arabic</button></li>
+                        </ul>
+                    </div>
+                    <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved. <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% main_template 'js/jquery.min.js' %}"></script>
+    <script src="{% main_template 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
+    <script src="{% main_template 'js/click-scroll.js' %}"></script>
+    <script src="{% main_template 'js/custom.js' %}"></script>
+    <script>
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var img = new Image();
+            img.onload = function () {
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width = 512;
+                canvas.height = 512;
+                ctx.drawImage(img, 0, 0, 512, 512);
+                $('#blah').attr('src', canvas.toDataURL('image/png'));
+            };
+            img.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+    </script>
 </body>
 
 </html>
-{% endif %}
 {% endblock %}

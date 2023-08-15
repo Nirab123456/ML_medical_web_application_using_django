@@ -12,36 +12,30 @@
     <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
     <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet"> 
-    
-    <style>
-  .box {
-    background-color: bisque;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-  }
+    <link href="{% main_template 'css/rotating_border_animated_buttons.css' %}" rel="stylesheet"> 
 
-  input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-  }
+<style>
+    input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
 
-  input[type="file"] + label {
-    display: inline-block;
-    padding: 4px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-  }
+input[type="file"] + label {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
 
-  input[type="file"]:focus + label {
-    outline: 2px solid #0964b0;
-  }
-      </style>
+input[type="file"]:focus + label {
+  outline: 2px solid #0964b0;
+}
+</style>
 
 </head>
 
@@ -60,7 +54,6 @@
                             </ol>
                         </nav>
                         <h2 class="text-white">Welcome to our<br>Optical character recognition sector.</h2>
-                        <div class="d-flex align-items-center mt-5"><a class="btn custom-btn custom-border-btn smoothscroll me-4" role="button" href="#topics-detail">Read More</a><a href="#top" class="custom-icon bi-bookmark smoothscroll"></a></div>
                     </div>
                     <div class="col-12 col-lg-5">
                         <div class="bg-white shadow-lg topics-detail-block"><img class="img-fluid topics-detail-block-image" src="{% main_template 'images/topics/OCR.png' %}"></div>
@@ -256,32 +249,46 @@
                               <!-- BANGLA OCR -->
 
                             <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
-                                        <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h5 class="mb-2">CHOOSE YOUR IMAGE</h5>
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0 ">
+                                        <div class="custom-block bg-white shadow-lg ">
 
+
+                                            <form method="POST" id="BNform">
+                                                {% csrf_token %}
+                                                <a class='rotating-border rotating-border--google' href="topics-detail.html">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">CHOOSE YOUR IMAGE</h5>
+
+                                                        </div>
+
+                                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
                                                     </div>
 
-                                                    <span class="badge bg-finance rounded-pill ms-auto">30</span>
-                                                </div>
+                                                    <div class="row">
+                                                        <img id="blah">
+                                                    </div>
+                                                    <div class="row">
 
-                                                <div class="box">
-                                                    <input type="file" id="file-6">
-                                                    <label for="file-6">
-                                                      <figure>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
-                                                          <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path>
-                                                        </svg>
-                                                      </figure> <span>Select File</span>
-                                                    </label>
-                                                  </div>
-                                                  
+                                                        <div>
+                                                            <input type="file" name="image" onchange="readURL(this);">
+
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+
+                                                </a>
+                                                <button class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+                                            </form>
+                                            <script>
+                                            function BNform() {
+                                                document.getElementById("BNform").action = "{% url 'BN_OCR' %}";
+                                                document.getElementById("BNform").submit();
+                                            }
+                                            </script>
 
 
-                                            </a>
                                         </div>
                                     </div>
 
@@ -529,6 +536,29 @@
     <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
     <script src="{% main_template 'js/click-scroll.js' %}"></script>
     <script src="{% main_template 'js/custom.js' %}"></script>
+    <script>
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var img = new Image();
+            img.onload = function () {
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width = 512;
+                canvas.height = 512;
+                ctx.drawImage(img, 0, 0, 512, 512);
+                $('#blah').attr('src', canvas.toDataURL('image/png'));
+            };
+            img.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+    </script>
 </body>
 
 </html>

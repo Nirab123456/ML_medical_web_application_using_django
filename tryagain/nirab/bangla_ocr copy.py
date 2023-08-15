@@ -19,10 +19,8 @@ class BanglaOCR:
 
     def add_image(self, request):
         if request.method == 'POST':
-            print('i am here')
             form = OCRImageForm(request.POST, request.FILES)
             if form.is_valid():
-                print('i am here 2')
                 existing_record = RecordImage.objects.filter(user=request.user).first()
                 if existing_record:
                     existing_record.image.delete()  # Delete the old image
@@ -31,7 +29,6 @@ class BanglaOCR:
                     messages.success(request, 'Image Updated Successfully')
                     image_url = existing_record.image.url
                     text,file_path = self.get_ocr(image_url)
-                    print('text:',text)
                     if file_path:
                         return render(request, 'base_ocr.html', {'BN_OCR_form': form, 'BN_OCR_image_url': existing_record.image.url, 'BN_OCR_text': text, 'BN_OCR_file_path': file_path})
                 else:
@@ -41,7 +38,6 @@ class BanglaOCR:
                     messages.success(request, 'Image Added Successfully')
                     image_url = record_image.image.url
                     text,file_path = self.get_ocr(image_url)
-                    print('text:',text)
                     if file_path:
                         return render(request, 'base_ocr.html', {'BN_OCR_form': form, 'BN_OCR_image_url': record_image.image.url, 'BN_OCR_text': text, 'BN_OCR_file_path': file_path})
         else:

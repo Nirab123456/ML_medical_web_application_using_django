@@ -182,14 +182,20 @@ class EventForm(ModelForm):
             }
 
 
-class OCRImageForm(ModelForm):
+# class OCRImageForm(ModelForm):
+#     image = forms.FileInput
+#     class Meta:
+#         model = RecordImage
+#         fields = ['image']
+#         widgets = {
+#             'image': forms.FileInput(attrs={'class':'form-control','placeholder':'Image'}),
+#         }
+
+class OCRImageForm(forms.ModelForm):
+    image = forms.ImageField(widget=forms.FileInput(attrs={'accept': 'image/*'}))
     class Meta:
         model = RecordImage
-        fields = ['image']
-        widgets = {
-            'image': forms.FileInput(attrs={'class':'form-control','placeholder':'Image'}),
-        }
-
+        fields = ['image']  # Specify the fields you want to include in the form
 
 
 
