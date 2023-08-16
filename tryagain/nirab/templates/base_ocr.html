@@ -156,18 +156,26 @@ input[type="file"]:focus + label {
 
                                                         <div class="input-group input-group-lg">
                                                                 
-                        
-                                                            <form method="get" class="custom-form ">
+                                                            <form method="POST" class="custom-form" id="ENG_TEXT_HANDWRITTEN" action="{% url 'ENG_TEXT_HANDWRITTEN' %}">
+                                                                {% csrf_token %}
                                                                 <div class="input-group input-group-lg">
 
                                 
-                                                                    <input name="keyword" class="form-control" >
+                                                                    <input type="text" name="text_handwritten" id="text_handwritten" class="form-control" maxlength="1000" >
                                 
-                                                                    <button style="margin-top: 5px;" class="custom-btn btn-7">Search</button>
+                                                                    <button style="margin-top: 5px;" class="custom-btn btn-7" >TRANSFER</button>
 
                                                                 </div>
                                                             </form>
-                                                            
+                                                            {% if ENG_handwritten_pdf_output_file %}
+                                                            <a style="margin-top: 5px; text-align: center;" class="custom-btn btn-5" href="{% url 'download_pdf' ENG_handwritten_pdf_output_file %}">DOWNLOAD PDF</a>
+                                                            {% endif %}
+                                                            <script>
+                                                                function ENG_TEXT_HANDWRITTEN() {
+                                                                    document.getElementById("text_handwritten").action = "{% url 'ENG_TEXT_HANDWRITTEN' %}";
+                                                                    document.getElementById("text_handwritten").submit();
+                                                                }
+                                                            </script>
                                                             
                                                         </div>
 
@@ -507,7 +515,6 @@ input[type="file"]:focus + label {
         <section class="section-padding section-bg">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-lg-5"><img class="img-fluid newsletter-image" src="assets/img/rear-view-young-college-student.jpg" alt=""></div>
                     <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center subscribe-form-wrap">
                         <form class="custom-form subscribe-form" action="#" method="post" role="form">
                             <h4 class="mb-4 pb-2">Get Newsletter</h4><input class="form-control" type="email" id="subscribe-email" name="subscribe-email" pattern="[^ @]*@[^ @]*" placeholder="Email Address" required="">

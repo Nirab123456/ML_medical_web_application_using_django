@@ -2,7 +2,7 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,SocialMedia,Medication
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,SocialMedia,Medication,handwritten_text_model
 from django.forms import ModelForm
 
 
@@ -197,7 +197,11 @@ class OCRImageForm(forms.ModelForm):
         model = RecordImage
         fields = ['image']  # Specify the fields you want to include in the form
 
-
+class handwritten_text_form(forms.ModelForm):
+    text_handwritten = forms.TextInput(attrs={'class':'form-control','placeholder':'Handwritten Text'})
+    class Meta:
+        model = handwritten_text_model
+        fields = ['text_handwritten']
 
 
 

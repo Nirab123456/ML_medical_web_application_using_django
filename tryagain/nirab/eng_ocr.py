@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import OCRImageForm
+from .forms import OCRImageForm,handwritten_text_form
 from .models import RecordImage
 from .ENG_HANDWRITTEN import HandwrittenImageGenerator
 from PIL import Image
@@ -12,6 +12,7 @@ import pytesseract
 import subprocess
 import sys
 import uuid
+import re
 from django.conf import settings
 
 
@@ -71,6 +72,94 @@ class ENGOCR:
                 return text,file_path
         return None
     
+
+    def eng_text_to_handwritten(self, request):
+        if request.method == 'POST':
+            form = handwritten_text_form(request.POST, request.FILES)
+
+            if form.is_valid():
+
+
+                text = form.cleaned_data['text_handwritten']
+                
+                if text:
+                    text = text.replace('\n', '')
+                    text = re.sub(r'[^\w\s,.\-?!]', '', text)
+                    unique_id = uuid.uuid4().hex
+                    file_name = f'{unique_id}.txt'
+                    file_path = os.path.join(settings.MEDIA_ROOT, file_name)
+                    with open(file_path, 'w') as file:
+                        file.write(text)
+
+                    MAIN_TXT_FILE = file_path
+                    MAIN_FILE_PATH, MAIN_FILE_NAME = os.path.split(MAIN_TXT_FILE)# split the path and filename
+                    MAIN_FILE_NAME_WITHOUT_EXT = os.path.splitext(MAIN_FILE_NAME)[0]# split the filename and extension
+                    output_dir = MAIN_FILE_PATH# output directory
+                    output_file = os.path.join(output_dir, f"{MAIN_FILE_NAME_WITHOUT_EXT}.pdf")# output file name
+                    with open(MAIN_TXT_FILE, 'r') as file:
+                        data = file.read().replace('\n', '')
+
+                    l = len(data)
+                    nn = len(data) // 500
+                    FILE_NAMES = []
+
+                    for i in range(nn):
+                        unique_id = uuid.uuid4().hex  # Generate a unique ID
+                        file_name = f'{unique_id}.txt'  # Create a unique file name
+                        FILE_NAMES.append(file_name)  # Add the file name to the list
+                        
+                        with open(file_name, 'w') as file:
+                            file.write(data[i * 600:(i + 1) * 600])
+                            
+    ####################################################################################
+
+                    PHOTO_FILENAME = []
+                    for file_name in FILE_NAMES:
+                        with open(file_name, 'r') as file:
+                            data = file.read().replace('\n', '')
+                            generator.generate_handwritten_image(data, f"{file_name}_outt.png")
+                            PHOTO_FILENAME.append(f"{file_name}_outt.png")
+
+                    pdf = generator.convert_photos_to_pdf(PHOTO_FILENAME, output_file)
+
+                    # detete file_names and 
+                    for file_name in FILE_NAMES:
+                        os.remove(file_name)
+                    for file_name in PHOTO_FILENAME:
+                        os.remove(file_name)
+
+                    pdf_output_file = output_file
+
+
+                    if file_path:
+                        return render(request, 'base_ocr.html', {'handwritten_text_form': form, 'ENG_handwritten_text': text, 'ENG_handwritten_file_path': file_path , 'ENG_handwritten_pdf_output_file':pdf_output_file})
+                    
+                else:
+                    messages.warning(request, 'Please Enter Some Text')
+                    return render(request, 'base_ocr.html', {'handwritten_text_form': form})
+        else:
+            form = handwritten_text_form()
+        return render(request, 'base_ocr.html', {'handwritten_text_form': form})
+    
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def eng_ocr_handwritten(self, request):
         if request.method == 'POST':
             form = OCRImageForm(request.POST, request.FILES)
@@ -112,6 +201,8 @@ class ENGOCR:
                     for file_name in FILE_NAMES:
                         with open(file_name, 'r') as file:
                             data = file.read().replace('\n', '')
+                            data = re.sub(r'[^\w\s,.\-?!]', '', data)
+
                             generator.generate_handwritten_image(data, f"{file_name}_outt.png")
                             PHOTO_FILENAME.append(f"{file_name}_outt.png")
 
@@ -152,6 +243,8 @@ class ENGOCR:
                     output_file = os.path.join(output_dir, f"{MAIN_FILE_NAME_WITHOUT_EXT}.pdf")# output file name
                     with open(MAIN_TXT_FILE, 'r') as file:
                         data = file.read().replace('\n', '')
+                        data = re.sub(r'[^\w\s,.\-?!]', '', data)
+
 
                     l = len(data)
                     nn = len(data) // 500

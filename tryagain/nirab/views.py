@@ -363,6 +363,9 @@ def ENG_OCR_HANDWRITTEN(request):
     return ENGLISH_OCR.eng_ocr_handwritten(request)
 
 
+def ENG_TEXT_HANDWRITTEN(request):
+    ENGLISH_OCR = ENGOCR()
+    return ENGLISH_OCR.eng_text_to_handwritten(request)
 
 
 

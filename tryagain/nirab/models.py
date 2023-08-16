@@ -252,3 +252,12 @@ class SocialMedia(models.Model):
     def __str__(self):
         return f'{self.user}'
 
+
+
+
+class handwritten_text_model(models.Model):
+    text_handwritten = models.TextField(max_length=5000)
+    class Meta:
+        ordering = ['-id']
+    def __str__(self):
+        return self.text_handwritten
