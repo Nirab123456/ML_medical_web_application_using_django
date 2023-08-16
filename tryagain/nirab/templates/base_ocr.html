@@ -2,6 +2,8 @@
 {% block content %}
 {% load custom_filters %}
 {% check_allowed_image_count request.user as is_allowed %}
+<!-- {% if is_allowed %}
+{% endif %} -->
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -160,7 +162,7 @@ input[type="file"]:focus + label {
                                                                 {% csrf_token %}
                                                                 <div class="input-group input-group-lg">
 
-                                
+                                                                    <!-- have set max length gere  but truly it is unlimited there is  -->
                                                                     <input type="text" name="text_handwritten" id="text_handwritten" class="form-control" maxlength="1000" >
                                 
                                                                     <button style="margin-top: 5px;" class="custom-btn btn-7" >TRANSFER</button>

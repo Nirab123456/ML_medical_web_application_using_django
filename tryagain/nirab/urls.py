@@ -4,9 +4,8 @@ from . import views
 urlpatterns = [
     # path('',views.home,name='home'),
     path('',views.index_new,name='index_new'),
+    path('index_new/',views.index_new,name='index_new'),
 
-    path('login/',views.login_user,name='login_user'),
-    path('register/',views.register_user,name='register'),
     path('logout/',views.logout_user,name='logout_user'),
     path('login_register/',views.login_register,name='login_register'),
 
@@ -30,7 +29,6 @@ urlpatterns = [
     path('save_mail_form/', views.save_mail_form, name='save_mail_form'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile_picture/', views.profile_picture, name='profile_picture'),
-    path('apps/', views.apps, name='apps'),
     path('ENG_OCR_HANDWRITTEN', views.ENG_OCR_HANDWRITTEN, name='ENG_OCR_HANDWRITTEN'),
     path('ENG_TEXT_HANDWRITTEN/', views.ENG_TEXT_HANDWRITTEN, name='ENG_TEXT_HANDWRITTEN'),
     path('about/', views.about, name='about'),
