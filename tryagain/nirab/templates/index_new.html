@@ -32,6 +32,244 @@ https://templatemo.com/tm-590-topic-listing
 
 -->
 <style>
+      .mycustom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  }
+
+
+  
+/* 7 */
+  .btn-7 {
+  background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  }
+  .btn-7 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  }
+  .btn-7:before,
+  .btn-7:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+  }
+  .btn-7:before{
+   height: 0%;
+   width: 2px;
+  }
+  .btn-7:after {
+  width: 0%;
+  height: 2px;
+  }
+  .btn-7:hover{
+  color: rgba(251,75,2,1);
+  background: transparent;
+  }
+  .btn-7:hover:before {
+  height: 100%;
+  }
+  .btn-7:hover:after {
+  width: 100%;
+  }
+  .btn-7 span:before,
+  .btn-7 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+  }
+  .btn-7 span:before {
+  width: 2px;
+  height: 0%;
+  }
+  .btn-7 span:after {
+  height: 2px;
+  width: 0%;
+  }
+  .btn-7 span:hover:before {
+  height: 100%;
+  }
+  .btn-7 span:hover:after {
+  width: 100%;
+  }
+/* 13 */
+.btn-13{
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  }
+  .btn-13 span {
+  background: rgb(238, 0, 0);
+  background: linear-gradient(0deg, rgb(0, 40, 238) 0%, rgb(251, 156, 2) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  }
+  .btn-13 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-13 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-13:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  }
+  .btn-13:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  }
+/* 12 */
+  .btn-12{
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  }
+  .btn-12 span {
+  background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  }
+  .btn-12 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-12:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  }
+  .btn-12:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  }
+ 
+</style>
+
+<style>
   .col-2 {
   width: -webkit-calc((100% - 2px) / 2);
   width: -moz-calc((100% - 2px) / 2);
@@ -221,7 +459,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                <a href="{% url 'med_search' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">FIND ALTERNATE DRUG</h5>
@@ -239,7 +477,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                <a href="{% url 'medicine_details' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">FIND DEUG DETAILS</h5>
@@ -257,19 +495,20 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">Search Through Generic Name</h5>
 
                                                                 <p class="mb-0">You can also search your drug and its details using generic name</p>
+                                                                <a href="{% url 'medicine_details_generic' %}"><button style="margin-top: 5px;" class="mycustom-btn btn-12"><span>Search!</span><span>DETAILS</span></button></a>
+                                                                <a href="{% url 'med_search_generic' %}"><button style="margin-top: 5px; margin-left: 10px;" class="mycustom-btn btn-13"><span>Search!</span><span>DRUGS</span></button></a>
+
                                                         </div>
 
                                                         <span class="badge bg-design rounded-pill ms-auto">100</span>
                                                     </div>
                                                     
                                                     <img src="{% main_template 'images/topics/generic_search.png' %}" class="custom-block-image img-fluid" alt="">
-                                                </a>
                                             </div>
                                         </div>
 
@@ -288,7 +527,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                <a href="{% url 'base_ocr' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">Bangla OCR DEMO</h5>
@@ -316,7 +555,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                <a href="{% url 'base_ocr' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">ENG OCR DEMO</h5>
@@ -354,7 +593,7 @@ https://templatemo.com/tm-590-topic-listing
                                 <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                <a href="{% url 'presciption_classification_beta' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">Presciption Classification</h5>
@@ -381,7 +620,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                                             <p class="text-white">Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
 
-                                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
+                                                            <a href="{% url 'medicine_chatbot' %}" class="btn custom-btn mt-2 mt-lg-3">LET'S TALK WITH DRUGS</a>
                                                         </div>
 
                                                         <span class="badge bg-finance rounded-pill ms-auto">25</span>
@@ -435,7 +674,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                                             <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                                                 <div class="custom-block bg-white shadow-lg">
-                                                                    <a href="topics-detail.html">
+                                                                    <a href="{% url 'base_ocr' %}">
                                                                         <div class="d-flex">
                                                                             <div>
                                                                                 <h5 class="mb-2">DEMO PHOTOS OR TEXT</h5>
@@ -454,7 +693,7 @@ https://templatemo.com/tm-590-topic-listing
                     
                                                             <div class="col-lg-6 col-md-6 col-12">
                                                                 <div class="custom-block bg-white shadow-lg">
-                                                                    <a href="topics-detail.html">
+                                                                    <a href="{% url 'base_ocr' %}">
                                                                         <div class="d-flex">
                                                                             <div>
                                                                                 <h5 class="mb-2">Demo Pdf</h5>
@@ -507,7 +746,7 @@ https://templatemo.com/tm-590-topic-listing
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                <a href="{% url 'C_V_D_prediction' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">C.V.D PREDICTION</h5>
@@ -526,19 +765,20 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                <a href="{% url 'main_bmi_calculator' %}">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">MODEL DETAILS AND ANALYSIS</h5>
+                                                            <h5 class="mb-2">CALCULATE BMI</h5>
 
-                                                            <p class="mb-0">For details knowladge about model training testing and evalution check here</p>
+                                                            <p class="mb-0">This bmi calculator is inspired and a basic restructure of bmi calculator of NHS</p>
                                                         </div>
 
                                                         <span class="badge bg-education rounded-pill ms-auto">75</span>
                                                     </div>
 
-                                                    <img src="{% main_template 'images/topics/model_result.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                                    <img src="{% main_template 'images/topics/bmi_calculator.png' %}" class="custom-block-image img-fluid" alt="">
                                                 </a>
+                                                <a href="https://www.nhs.uk/live-well/healthy-weight/bmi-calculator/">Refarance:NHS</a>
                                             </div>
                                         </div>
                                     </div>
@@ -676,7 +916,7 @@ https://templatemo.com/tm-590-topic-listing
             </section> -->
 
 
-            <section class="contact-section section-padding section-bg" id="section_5">
+            <!-- <section class="contact-section section-padding section-bg" id="section_5">
                 <div class="container">
                     <div class="row">
 
@@ -738,7 +978,7 @@ https://templatemo.com/tm-590-topic-listing
 
                     </div>
                 </div>
-            </section>
+            </section> -->
         </main>
 
 <footer class="site-footer section-padding">
@@ -746,7 +986,7 @@ https://templatemo.com/tm-590-topic-listing
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="index.html">
+                        <a class="navbar-brand mb-2" href="{% url 'index_new' %}">
                             <i class="bi-back"></i>
                             <span>Topic</span>
                         </a>
@@ -760,16 +1000,12 @@ https://templatemo.com/tm-590-topic-listing
                                 <a href="#" class="site-footer-link">Home</a>
                             </li>
 
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">How it works</a>
-                            </li>
 
                             <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">FAQs</a>
+                                <a href="{% url 'about' %}" class="site-footer-link">ABOUT ME</a>
                             </li>
-
                             <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Contact</a>
+                                <a href="{% url 'hire_me' %}" class="site-footer-link">HIRE ME/SEND MESSAGE </a>
                             </li>
                         </ul>
                     </div>
@@ -804,8 +1040,8 @@ https://templatemo.com/tm-590-topic-listing
                             </ul>
                         </div>
 
-                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
-                        <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                        <p class="copyright-text mt-lg-5 mt-4">Copyright ©. All rights reserved.
+                        <br><br>Design: <a rel="nofollow" href="{% url 'about' %}" target="_blank">RIFATUL ISLAM MAJUMDER</a></p>
                         
                     </div>
 
