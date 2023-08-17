@@ -1,6 +1,6 @@
 {% load main_template %}
 {% block content %}
-{% load custom_filters %}
+
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -13,6 +13,8 @@
     <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet"> 
     <link href="{% main_template 'css/rotating_border_animated_buttons.css' %}" rel="stylesheet"> 
+
+
 
 <style>
     input[type="file"] {
@@ -35,6 +37,61 @@ input[type="file"] + label {
 input[type="file"]:focus + label {
   outline: 2px solid #0964b0;
 }
+
+
+.scrollable-text {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow: auto;
+    padding-right: 15px; /* Add some padding to prevent text from sticking to the scrollbar */
+}
+
+</style>
+
+<style>
+    /* Global variables */
+:root {
+  --glass: rgba(255, 255, 255, 0.2);
+  --glass-icon: rgba(255, 255, 255, 0.3);
+  --gradient: linear-gradient(35deg, red, purple);
+  --option: #320a28;
+}
+
+/* <select> styles */
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20em;
+  height: 3em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+      no-repeat right 0.8em center / 1.4em,
+    var(--gradient);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* <option> colors */
+option {
+  color: inherit;
+  background-color: var(--option);
+}
+
+/* Remove focus outline */
+select:focus {
+  outline: none;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
 </style>
 
 </head>
@@ -53,10 +110,14 @@ input[type="file"]:focus + label {
                                 <li class="breadcrumb-item active" aria-current="page"><span>Web Design</span></li>
                             </ol>
                         </nav>
-                        <h2 class="text-white">Welcome to our<br>Optical character recognition sector.</h2>
+                        <h2 class="text-white">Welcome to our<br>HEALTH CARE SECTION.</h2>
                     </div>
+
                     <div class="col-12 col-lg-5">
-                        <div class="bg-white shadow-lg topics-detail-block"><img class="img-fluid topics-detail-block-image" src="{% main_template 'images/topics/OCR.png' %}"></div>
+                        <div style="align-self: center;">
+                        {% include 'heart_beat.html' %}
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -77,15 +138,15 @@ input[type="file"]:focus + label {
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">HANDWRITTEN STYLE TRANSFER </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">ENG & BANGLA OCR</button>
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">C.V.D PREDICTION</button>
                         </li>
 
+
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">DRUG KNOWLEDGE</button>
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">BMI CALCULATOR</button>
                         </li>
+
+
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">BANGLA OCR</button>
@@ -93,83 +154,210 @@ input[type="file"]:focus + label {
 
 
 
-                        <li class="nav-item" role="presentation">
+                        <!-- <li class="nav-item" role="presentation">
                             <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">HEALTH CARE</button>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
 
             <div class="container">
                 <div class="row">
-
                     <div class="col-12">
 
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
                                 <div class="row">
-
-
-
-
-
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">FIND ALTERNATE DRUG</h5>
+                                                        <h5 class="mb-2">Personal Info</h5>
 
-                                                        <p class="mb-0">Use A Brand Name Or Generic Name Select The Dosage Form & Strength </p>
+                                                        <p class="mb-0">ANSWER THE BASIC QUESTIONS PLEASE</p>
                                                     </div>
 
-                                                    <span class="badge bg-design rounded-pill ms-auto">14</span>
+                                                    <!-- <span class="badge bg-design rounded-pill ms-auto">14</span> -->
+                                                </div>
+                                                <div style="margin-top: 5px;" class="d-flex input-group input-group-lg">
+
+                                                    <div class="row ">
+                                                        <label class="label">WHAT IS YOUR AGE</label>
+
+                                                        <input class="form-control mb-2" type="number" id="age" min="18" max="150">                                                     
+                                                    </div>
+
                                                 </div>
 
-                                                <img src="{% main_template 'images/topics/drug_find.png' %}" class="custom-block-image img-fluid" alt="">
-                                            </a>
+
+                                                <div style="margin-top: 5px;" class="input-group input-group-lg">
+                                                    <div class="row">
+                                                        <div class="row">
+
+                                                            <label >WHAT IS YOUR BMI</label>
+
+                                                        </div>
+
+                                                        <!-- have set max length gere  but truly it is unlimited there is  -->
+                                                        <input type="int" name="text_handwritten" id="bmi" class="form-control" maxlength="1000" >
+                                                        
+                                                
+                                                    </div>
+
+
+                                                </div>
+
+                                                <select style="margin-top: 5px;" id="gender" onchange="">
+                                                    <option disabled="disabled" selected="selected">CHOOSE YOUR GENDER</option>
+                                                    <option value="0">FEMALE</option>
+                                                    <option value="1">MALE</option>
+                                                </select>
+
+                                                <select style="margin-top: 5px; margin-bottom: 5px;" id="psychologogy" onchange="">
+                                                    <option disabled="disabled" selected="selected">RATE YOUR psychologogycal HEALTH CONDITION.</option>
+                                                    <option value="0">WORSE</option>
+                                                    <option value="1">VERY BAD</option>
+                                                    <option value="2">POOR</option>
+                                                    <option value="3">NOT WELL</option>
+                                                    <option value="4">NORMAL</option>
+                                                    <option value="5">OKAY</option>
+                                                    <option value="6">SATISFIED</option>
+                                                    <option value="7">GOOD</option>
+                                                    <option value="8">EXCELLENT</option>
+                                                    <option value="9">HAPPY</option>
+                                                    <option value="10">VERY HAPPY</option>
+                                                </select>
+
+                                                <select style="margin-top: 5px;"  style="margin-top: 5px;" id="ethnic_group" onchange="">
+                                                    <option disabled="disabled" selected="selected">SELECT YOUR ETHNIC GROUP</option>
+                                                    <option value="5">WHITE</option>
+                                                    <option value="2">BLACK</option>
+                                                    <option value="1">ASIAN</option>
+                                                    <option value="0">AMERICAN INDIAN</option>
+                                                    <option value="3">HISPANIC</option>
+                                                    <option value="4">OTHER</option>
+                                                </select>
+
+                                                <select style="margin-top: 5px;"  id="general_health" onchange="">
+                                                    <option disabled="disabled" selected="selected">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</option>
+                                                    <option value="3">POOR</option>
+                                                    <option value="1">FAIR</option>
+                                                    <option value="2">GOOD</option>
+                                                    <option value="4">VERY GOOD</option>
+                                                    <option value="0">EXCELLENT</option>
+                                                </select>
+
+                                                  
+
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">FIND DEUG DETAILS</h5>
+                                                        <h5 class="mb-2">Lifestyle Info</h5>
 
-                                                            <p class="mb-0"> Just Simply Use A Brand Name Or Generic Name To Get The Drug Info</p>
+                                                            <p class="mb-0">This questions are directly related to your lifestyle and its is important to answer it accurately to get proper prediction report.</p>
                                                     </div>
 
-                                                    <span class="badge bg-design rounded-pill ms-auto">75</span>
                                                 </div>
 
-                                                <img src="{% main_template 'images/topics/drug_details.png' %}" class="custom-block-image img-fluid" alt="">
-                                            </a>
-                                        </div>
+                                                <div style="margin-top: 5px;" class="d-flex input-group input-group-lg">
+
+                                                    <div class="row ">
+                                                        <label class="label">WHAT IS YOUR AVARAGE SLEEPING TIME(HOURS)?</label>
+
+                                                        <input class="form-control mb-2" type="number" id="sleeping_time" min="0" max="24">                                                     
+                                                    </div>
+
+                                                </div>
+
+                                                <select style="margin-top: 5px;"  id="alcohole" onchange="">
+                                                    <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+
+                                                <select style="margin-top: 5px;"  id="smoke" onchange="" >
+                                                    <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+
+                                                <select style="margin-top: 5px;"  id="exersise" onchange="">
+                                                    <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+
+
+
+
+                                            </div>
                                     </div>
 
                                     <div class="col-lg-4 col-md-6 col-12">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h5 class="mb-2">Search Through Generic Name</h5>
 
-                                                            <p class="mb-0">You can also search your drug and its details using generic name</p>
+                                                <div style="margin-top: 5px;" class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Medical Info</h5>
+
+                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
                                                     </div>
 
-                                                    <span class="badge bg-design rounded-pill ms-auto">100</span>
                                                 </div>
+
+                                                <select style="margin-top: 5px;" id="physical_health" onchange="">
+                                                    <option disabled="disabled" selected="selected">RATE YOUR PHYSICAL HEALTH CONDITION.</option>
+                                                    <option value="0">VERY SICK</option>
+                                                    <option value="1">SICKNESS</option>
+                                                    <option value="2">POOR</option>
+                                                    <option value="3">NOT WELL</option>
+                                                    <option value="4">NUMB</option>
+                                                    <option value="5">AVERAGE</option>
+                                                    <option value="6">FINE</option>
+                                                    <option value="7">GOOD</option>
+                                                    <option value="8">VERY GOOD</option>
+                                                    <option value="9">EXCELLENT</option>
+                                                    <option value="10">AMAZING</option>
+                                                </select>      
                                                 
-                                                <img src="{% main_template 'images/topics/generic_search.png' %}" class="custom-block-image img-fluid" alt="">
-                                            </a>
+                                                <select style="margin-top: 5px;" id="diff_walking" onchange="">
+                                                    <option disabled="disabled" selected="selected">DO YOU FEEL DIFICUELTY IN WALKING?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" required="option" id="diabetic">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE DIABETIC?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">NO, BORDERLINE DIABETES</option>
+                                                    <option value="2">YES</option>
+                                                    <option value="3">YES(DURING PREGNANCY)</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="asthma">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ASTHMA?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="kidney">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE KIDNEY DISEASE?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="skin_cancer">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ANY TYPE OF SKIN CANCER?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="stroke">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ANY STROKE HISTORY?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
                             </div>
 
@@ -177,66 +365,23 @@ input[type="file"]:focus + label {
 
                                 
                                 <div class="row">
-
-
-
-                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                    <div class="mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">Bangla OCR DEMO</h5>
+                                                        <h5 class="mb-2">Graduation</h5>
 
-                                                        <p class="mb-0">We can convert your desigred Bangla OCR image to Text.Try it out</p>
-
+                                                        <p class="mb-0">CALCULATE YOUR BODY MASS INDEX</p>
                                                     </div>
 
-                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-2">
-                                                        
-                                                            <img src="{% main_template 'images/topics/smple_bangla.png' %}" class="custom-block-image img-fluid" alt="">
-                                                    
-                                                    </div>
-                                                    <div class="col-2" >
-                                                            <p class="custom-block-image img-fluid"></n>দক্ষিণ এশিয়ার প্রাচীন ও ধ্রুপদী যুগে বাংলাদেশ অঞ্চলটিতে বঙ্গ, পুপ্ডু, গৌড়, গাঙ্গাধদ্ধি, সমতট ও হরিকেল নামক জনপদ গড়ে উঠেছিল।.........</p>
 
-                                                    </div>
-                                                </div>
-                                            </a>
+
+                                                <div id="tool_bmi" class="tool_bmi app-tool-block nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5"></div>
+                                                <script id="tool-script_bmi" src="{% main_template 'bmi/js/inline_launcher.js' %}"></script>
+
                                         </div>
                                     </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h5 class="mb-2">ENG OCR DEMO</h5>
-
-                                                        <p class="mb-0">We can convert your desigred English OCR image to Text.Try it out</p>
-
-                                                    </div>
-
-                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-2">
-                                                        
-                                                            <img src="{% main_template 'images/topics/eng_sample.png' %}" class="custom-block-image img-fluid" alt="">
-                                                    
-                                                    </div>
-                                                    <div class="col-2" >
-                                                            <p class="custom-block-image img-fluid"></n>Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. From east to west it stretches almost 4,700 miles (7,560 kilometers) .........</p>
-
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-
 
 
                                 </div>
@@ -253,34 +398,43 @@ input[type="file"]:focus + label {
                                         <div class="custom-block bg-white shadow-lg ">
 
 
-                                            <form method="POST" id="BNform">
+                                            <form method="POST" id="BNform" action="{% url 'BN_OCR' %}" enctype="multipart/form-data">
                                                 {% csrf_token %}
-                                                <a class='rotating-border rotating-border--google' href="topics-detail.html">
-                                                    <div class="d-flex">
+                                                <a class='' href="topics-detail.html">
+                                                    <div class="d-flex rotating-border rotating-border--google">
                                                         <div>
                                                             <h5 class="mb-2">CHOOSE YOUR IMAGE</h5>
 
                                                         </div>
 
-                                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
                                                     </div>
 
                                                     <div class="row">
+                                                        {% if BN_OCR_image_url %}
+                                                            <img src="{{ BN_OCR_image_url }}" class="custom-block-image img-fluid" alt="">
+                                                        {% else %}
                                                         <img id="blah">
+                                                        {% endif %}
                                                     </div>
                                                     <div class="row">
 
                                                         <div>
-                                                            <input type="file" name="image" onchange="readURL(this);">
+                                                            <input type="file" id="image" name="image" onchange="readURL(this);">
 
                                                         </div>
                                                         
                                                     </div>
                                                     
+                                                    <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
 
                                                 </a>
-                                                <button class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+
+
                                             </form>
+
+                                            {% if BN_OCR_file_path %}
+                                            <a style="margin-top: 5px; text-align: center;" class="custom-btn btn-7" href="{% url 'download_text' BN_OCR_file_path %}">DOWNLOAD</a>
+                                            {% endif %}
                                             <script>
                                             function BNform() {
                                                 document.getElementById("BNform").action = "{% url 'BN_OCR' %}";
@@ -295,17 +449,25 @@ input[type="file"]:focus + label {
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="custom-block custom-block-overlay">
                                             <div class="d-flex flex-column h-100">
-                                                <img src="{% main_template 'images/topics/presciption_classification.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                                <img src="{% main_template 'images/topics/bangla_ocr_result_1.jpg' %}" class="custom-block-image img-fluid" alt="">
 
                                                 <div class="custom-block-overlay-text d-flex">
-                                                    <div>
-                                                        <h5 class="text-white mb-2">BANGLA OPTICAL CHARECTERS RECOGNITION</h5>
+                                                    {% if BN_OCR_text %}
+                                                    <h5 class="text-white mb-2">Result:  </h5>
 
-                                                        <p class="text-white">Bangla OCR (Optical Character Recognition) technology is employed for the conversion of printed or handwritten Bangla text within images into digital, machine-readable text. The PyTesseract Python library serves as a tool to harness the capabilities of the Tesseract OCR engine for Bangla OCR purposes. Through PyTesseract, developers are empowered to seamlessly integrate this technology into their Python applications, facilitating automated extraction and processing of Bangla text from images. This advancement significantly contributes to improved accessibility and streamlined data management for the Bangla language.</p>
+                                                    <div >
+                                                        <p style="color: azure;" class="scrollable-text" class="text-white">{{ BN_OCR_text }}</p>
+                                                        <button id="copyButton" class="custom-btn btn-5">Copy Text</button>
+
                                                     </div>
-
-                                                    <span class="badge bg-finance rounded-pill ms-auto">25</span>
+                                                    {% else %}
+                                                    <div>
+                                                        <h5 class="text-white mb-2">BANGLA OPTICAL CHARACTERS RECOGNITION</h5>
+                                                        <p class="text-white">Bangla OCR (Optical Character Recognition) technology is employed for the conversion of printed or handwritten Bangla text within images into digital, machine-readable text. The PyTesseract Python library serves as a tool to harness the capabilities of the Tesseract OCR engine for Bangla OCR purposes.</p>
+                                                    </div>
+                                                    {% endif %}
                                                 </div>
+                                                
 
 
                                                 <div class="section-overlay"></div>
@@ -326,96 +488,9 @@ input[type="file"]:focus + label {
 
 
 
-                            <div class="tab-pane faq-section section-padding" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
-                                <div class="row">
-
-                                    <div class="accordion" id="accordionExample">
-
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingOne">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                ENGLISH IMAGE OR TEXT TO HANDWRITTEN (DEMO)
-                                                </button>
-                                            </h2>
-        
-                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-
-                                                    <div class="row">
 
 
-
-                                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
-                                                            <div class="custom-block bg-white shadow-lg">
-                                                                <a href="topics-detail.html">
-                                                                    <div class="d-flex">
-                                                                        <div>
-                                                                            <h5 class="mb-2">DEMO PHOTOS OR TEXT</h5>
-                
-                                                                            <p class="mb-0">We can convert your desigred images or text like this into hand written pdf now print and enjoy(avoid images with special charecters).</p>
-                
-                                                                        </div>
-                
-                                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
-                                                                    </div>
-                                                                        {% include 'image_scroll_demo_1.html' %}
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                
-                                                        <div class="col-lg-6 col-md-6 col-12">
-                                                            <div class="custom-block bg-white shadow-lg">
-                                                                <a href="topics-detail.html">
-                                                                    <div class="d-flex">
-                                                                        <div>
-                                                                            <h5 class="mb-2">Demo Pdf</h5>
-                
-                                                                            <p class="mb-0">Download the pdf and prit it out for better understending </p>
-                
-                                                                        </div>
-                
-                                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
-                                                                    </div>
-                                                                    {% include 'image_scroll_demo_1_result.html' %}
-
-                                                                </a>
-                                                                <a href="{% main_template 'images/topics/handwriten_result_demo.pdf' %}" download class="btn btn-outline-dark">
-                                                                    Download Demo PDF
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                
-                
-                
-                
-                                                    </div>                                                    </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingTwo">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                BANGLA IMAGE OR TEXT TO HANDWRITTEN (DEMO)
-                                            </button>
-                                            </h2>
-        
-                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <p style="color: brown;">We are working continuously on this feature to bring in  thank you in advance.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-
-
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
+                            <!-- <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
@@ -454,7 +529,7 @@ input[type="file"]:focus + label {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                 </div>
@@ -489,7 +564,6 @@ input[type="file"]:focus + label {
         <section class="section-padding section-bg">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-lg-5"><img class="img-fluid newsletter-image" src="assets/img/rear-view-young-college-student.jpg" alt=""></div>
                     <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center subscribe-form-wrap">
                         <form class="custom-form subscribe-form" action="#" method="post" role="form">
                             <h4 class="mb-4 pb-2">Get Newsletter</h4><input class="form-control" type="email" id="subscribe-email" name="subscribe-email" pattern="[^ @]*@[^ @]*" placeholder="Email Address" required="">
@@ -536,29 +610,7 @@ input[type="file"]:focus + label {
     <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
     <script src="{% main_template 'js/click-scroll.js' %}"></script>
     <script src="{% main_template 'js/custom.js' %}"></script>
-    <script>
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
 
-        reader.onload = function (e) {
-            var img = new Image();
-            img.onload = function () {
-                var canvas = document.createElement('canvas');
-                var ctx = canvas.getContext('2d');
-                canvas.width = 512;
-                canvas.height = 512;
-                ctx.drawImage(img, 0, 0, 512, 512);
-                $('#blah').attr('src', canvas.toDataURL('image/png'));
-            };
-            img.src = e.target.result;
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-    </script>
 </body>
 
 </html>

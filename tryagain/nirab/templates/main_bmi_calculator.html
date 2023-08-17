@@ -4,9 +4,6 @@
 <!DOCTYPE html>
 <head>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <link href="{% about_me 'css/med_nav.css' %}" rel="stylesheet" media="all">
-
 </head>
 
 <body>
@@ -17,9 +14,6 @@
 
         </div>
         <div class="button_container" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
-        <div class="overlay" id="overlay">
-          {% include 'medicine_navigation.html' %}
-        </div>
     </div>
     <script>
         $('#toggle').click(function() {

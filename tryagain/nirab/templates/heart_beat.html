@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulsating Monitor</title>
+  <style>
+    :root {
+    --spd: 2s;
+    --monitor-size: 50vmin;
+    --border-size: 4vmin;
+    --line-height: 50.05vmin;
+    --font-size: 1.7vmin;
+  }
+  
+  .monitor {
+    width: var(--monitor-size);
+    height: var(--monitor-size);
+    background: 
+      linear-gradient(-90deg, #fff 0 0.5vmin, transparent 1vmin 100%), 
+      linear-gradient(90deg, #212121 60%, #02ff4e 80% 100%);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    background-color: #212121;
+    position: relative;
+    animation: pulse var(--spd) infinite;
+    border-radius: calc(var(--monitor-size) * 0.015);
+    overflow: hidden;
+    border: var(--border-size) solid #141414;
+    border-color: #141414 #555555 #757575 #232323;
+    color: rgba(0, 128, 0, 0.4);
+    line-height: var(--line-height);
+    font-size: var(--font-size);
+    text-indent: 1.5vmin;
+    word-spacing: 42.45vmin;
+    text-shadow: 0.2vmin 0 0 rgba(0, 128, 0, 0.3);
+  }
+  
+  .monitor:before,
+  .monitor:after {
+    position: absolute;
+    left: 0;
+    background: #212121;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vmin;
+  }
+  
+  .monitor:after {
+    box-shadow: 0 0 0 2px #000;
+    clip-path: polygon(
+      0% 50.75%, 35.85% 50.75%, 42.85% 29%, 54.75% 65%, 
+      59.9% 44%, 66% 60%, 70% 48.25%, 72% 50.75%, 100% 50.75%, 
+      100% 100%, 0% 100%, 0% 50%, 35.35% 50%, 42.85% 27%, 54.6% 62.5%, 
+      59.8% 42%, 66% 58.25%, 69.75% 47%, 72% 50%, 100% 50%, 
+      100% 0%, 0% 0%
+    );
+    content: "0.4 \A 0.3 \A 0.2 \A 0.1 \A 0.0 \A -0.1 \A -0.2 \A -0.3 \A -0.4";
+    line-height: 5.125vmin;
+    padding-top: 1.95vmin;
+    padding-left: 1.5vmin;
+    white-space: pre-wrap;
+    text-shadow: 4.5vmin 0 0 rgba(0, 128, 0, 0.6);
+    box-sizing: border-box;
+    text-indent: 0;
+  }
+  
+  .monitor:before {
+    z-index: 2;
+    background: 
+      repeating-linear-gradient(90deg, 
+        #fff0 0 calc(5vmin - 2px), 
+        #02ff3911 0 5vmin, 
+        #fff0 0 calc(5vmin + 1px)), 
+      repeating-linear-gradient(0deg, 
+        #fff0 0 calc(5vmin - 2px), 
+        #02ff3911 0 5vmin, 
+        #fff0 0 calc(5vmin + 1px));
+    background-position: 0 0, 0 0.4vmin;
+    box-shadow: 0 0 2vmin 0 #000 inset, 0 0 0 0.15vmin #000 inset;
+    content: "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9";
+    word-spacing: 2.65vmin;
+    text-indent: 3.75vmin;
+    text-align: left; 
+    line-height: 4.25vmin;
+    text-shadow: 0 4.6vmin 0 rgba(0, 128, 0, 0.6);
+  }
+  
+  @keyframes pulse {
+    0%, 100% { background-position: -100% 0; }
+    50% { background-position: 100% 0; }
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="monitor">
+    <div class="content">
+      <!-- Content of the monitor goes here -->
+    </div>
+  </div>
+</body>
+</html>
