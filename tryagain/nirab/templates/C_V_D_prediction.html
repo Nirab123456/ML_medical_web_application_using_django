@@ -1,208 +1,236 @@
-{% load about_me %}
-{% include 'base.html' %}
+{% load main_template %}
 {% block content %}
-{% load custom_filters %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
 
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Topic Detail Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Open+Sans&amp;display=swap">
+    <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet"> 
+    <link href="{% main_template 'css/rotating_border_animated_buttons.css' %}" rel="stylesheet"> 
 
-    <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
 
-    <!-- Icons font CSS-->
-    <link href="{% about_me 'CVD/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'CVD/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-    <link href="{% about_me 'CVD/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'CVD/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="{% about_me 'CVD/css/main.css' %}" rel="stylesheet" media="all">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <style>
-
-.col_2_mini {
-  width: -webkit-calc((100%) / 2);
-  width: -moz-calc((100%) / 2);
-  width: calc((100%) / 2);
+    input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
-.custom-small-button {
-        padding: 5px 20px; /* Adjust the padding as needed */
-        font-size: 10px; /* Adjust the font size as needed */
-    }
+
+input[type="file"] + label {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+input[type="file"]:focus + label {
+  outline: 2px solid #0964b0;
+}
 
 
-/* ==========================================================================
-   #TAB
-   ========================================================================== */
-   .tab-list {
-    list-style: none;
-    padding: 0 35px;
-    padding-top: 55px;
-  }
-  
-  .tab-list::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  @media (max-width: 767px) {
-    .tab-list {
-      padding: 0 10px;
-      padding-top: 40px;
-    }
-  }
-  
-  .tab-list__item {
-    float: left;
-  }
-  .tab-list__item a {
-    color: rgb(15, 222, 97);
-    text-decoration: none; /* Optional: Remove underline */
-  }
-  
-  /* Apply the color change on hover */
-  .tab-list__item a:hover {
-    color: yellow; /* Change to the desired hover color */
-  }
-  .tab-list__link {
-    display: block;
-    text-transform: uppercase;
-    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
-    font-weight: 500;
-    font-size: 22px;
-    color: rgba(128, 128, 128, 0.6);
-    padding: 0 20px;
-  }
-  
-  .tab-list__link:hover {
-    color: #fff;
-  }
-  
-  @media (max-width: 767px) {
-    .tab-list__link {
-      font-size: 22px;
-    }
-  }
-  
-  .tab-list .active .tab-list__link {
-    color: #fff;
-  }
-  
-  .tab-content > .tab-pane {
-    display: none;
-    padding: 49px 55px;
-    padding-bottom: 70px;
-  }
-  
-  .tab-content > .tab-pane.active {
-    display: block;
-  }
-  
-  @media (max-width: 767px) {
-    .tab-content > .tab-pane {
-      padding: 30px;
-      padding-bottom: 45px;
-    }
-  }
-  
+.scrollable-text {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow: auto;
+    padding-right: 15px; /* Add some padding to prevent text from sticking to the scrollbar */
+}
+
 </style>
 
+<style>
+    /* Global variables */
+:root {
+  --glass: rgba(255, 255, 255, 0.2);
+  --glass-icon: rgba(255, 255, 255, 0.3);
+  --gradient: linear-gradient(35deg, red, purple);
+  --option: #320a28;
+}
+
+/* <select> styles */
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20em;
+  height: 3em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+      no-repeat right 0.8em center / 1.4em,
+    var(--gradient);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* <option> colors */
+option {
+  color: inherit;
+  background-color: var(--option);
+}
+
+/* Remove focus outline */
+select:focus {
+  outline: none;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+</style>
 
 </head>
 
-<body>
-    <div class="page-wrapper bg-img-1 p-t-200 p-b-120" style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
-        <div  class="wrapper">
-            <div class="card card-4">
-                <div class="card-body">
-                    <h2 class="title">GET CARDIO VASCULAR DISEASE PREDICTION</h2>
+<body id="top">
+    <main>
+        {% include 'new_main_nav_bar.html' %}
 
-                    <div class="row row-space">
-
-                            <ul class="tab-list">
-                                <li class="tab-list__item active btn btn-dark">
-                                    <a class="tab-list__link" href="#personal_info" data-toggle="tab">PERSONAL INFO</a>
-                                </li>
-                                <li class="tab-list__item btn btn-success">
-                                    <a class="tab-list__link" href="#medical_info" data-toggle="tab">MEDICAL INFO</a>
-                                </li>
-                            </ul>
-
+        <header class="d-flex flex-column justify-content-center align-items-center site-header">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-lg-5 mb-5">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><span>Homepage</span></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Web Design</span></li>
+                            </ol>
+                        </nav>
+                        <h2 class="text-white">Welcome to our<br>HEALTH CARE SECTION.</h2>
                     </div>
 
-                    <div style="margin-top: 10px;" class="tab-content">
+                    <div class="col-12 col-lg-5">
+                        <div style="align-self: center;">
+                        {% include 'heart_beat.html' %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="explore-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">Browse Apps</h1>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">C.V.D PREDICTION</button>
+                        </li>
 
 
-                            <div class="tab-pane active" id="personal_info">
-                                <h2 class="title">PERSONAL INFO</h2>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">BMI CALCULATOR</button>
+                        </li>
 
+
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">BANGLA OCR</button>
+                        </li>
+
+
+
+                        <!-- <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">HEALTH CARE</button>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
                                 
-                                <div class="row row-space">
+                                
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Personal Info</h5>
 
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select id="gender" onchange="">
-                                                        <option disabled="disabled" selected="selected">CHOOSE YOUR GENDER</option>
-                                                        <option value="0">FEMALE</option>
-                                                        <option value="1">MALE</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
+                                                        <p class="mb-0">ANSWER THE BASIC QUESTIONS PLEASE</p>
+                                                    </div>
+
+                                                    <!-- <span class="badge bg-design rounded-pill ms-auto">14</span> -->
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                <div style="margin-top: 5px;" class="d-flex input-group input-group-lg">
 
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="row row-space">
-                                                <label class="label">WHAT IS YOUR BMI</label>
+                                                    <div class="row ">
+                                                        <label class="label">WHAT IS YOUR AGE</label>
 
-                                                <div class="col_2_mini">
-                                                    <input class="input--style-4" type="int" id="bmi">
+                                                        <input class="form-control mb-2" type="number" id="age" min="18" max="150">                                                     
+                                                    </div>
+
                                                 </div>
 
-                                                <div class="col_2_mini">
 
-                                                    <a href="{% url 'main_bmi_calculator' %}">
-                                                        <h3 type="button" class="btn btn-danger custom-small-button">CALCULATE</h3>
-                                                    </a>
-                                                                                                
-                                                    
-                                                    
+                                                <div style="margin-top: 5px;" class="input-group input-group-lg">
+                                                    <div class="row">
+                                                        <div class="row">
+
+                                                            <label >WHAT IS YOUR BMI</label>
+
+                                                        </div>
+
+                                                        <!-- have set max length gere  but truly it is unlimited there is  -->
+                                                        <input type="int" name="text_handwritten" id="bmi" class="form-control" maxlength="1000" >
+                                                        
+                                                
+                                                    </div>
+
+
                                                 </div>
-                                                    
-                                            </div>
-                                        </div>
-                                    </div>
 
+                                                <select style="margin-top: 5px;" id="gender" onchange="">
+                                                    <option disabled="disabled" selected="selected">CHOOSE YOUR GENDER</option>
+                                                    <option value="0">FEMALE</option>
+                                                    <option value="1">MALE</option>
+                                                </select>
 
+                                                <select style="margin-top: 5px; margin-bottom: 5px;" id="psychologogy" onchange="">
+                                                    <option disabled="disabled" selected="selected">RATE YOUR psychologogycal HEALTH CONDITION.</option>
+                                                    <option value="0">WORSE</option>
+                                                    <option value="1">VERY BAD</option>
+                                                    <option value="2">POOR</option>
+                                                    <option value="3">NOT WELL</option>
+                                                    <option value="4">NORMAL</option>
+                                                    <option value="5">OKAY</option>
+                                                    <option value="6">SATISFIED</option>
+                                                    <option value="7">GOOD</option>
+                                                    <option value="8">EXCELLENT</option>
+                                                    <option value="9">HAPPY</option>
+                                                    <option value="10">VERY HAPPY</option>
+                                                </select>
 
-
-                                </div>
-
-
-                                <div class="row row-space">
-
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="rs-select2 js-select-simple select--no-search">
-                                                <select id="ethnic_group" onchange="">
+                                                <select style="margin-top: 5px;"  style="margin-top: 5px;" id="ethnic_group" onchange="">
                                                     <option disabled="disabled" selected="selected">SELECT YOUR ETHNIC GROUP</option>
                                                     <option value="5">WHITE</option>
                                                     <option value="2">BLACK</option>
@@ -211,434 +239,380 @@
                                                     <option value="3">HISPANIC</option>
                                                     <option value="4">OTHER</option>
                                                 </select>
-                                                <div class="select-dropdown"></div>
-                                            </div>
+
+                                                <select style="margin-top: 5px;"  id="general_health" onchange="">
+                                                    <option disabled="disabled" selected="selected">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</option>
+                                                    <option value="3">POOR</option>
+                                                    <option value="1">FAIR</option>
+                                                    <option value="2">GOOD</option>
+                                                    <option value="4">VERY GOOD</option>
+                                                    <option value="0">EXCELLENT</option>
+                                                </select>
+
+                                                  
+
                                         </div>
                                     </div>
 
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Lifestyle Info</h5>
 
+                                                            <p class="mb-0">This questions are directly related to your lifestyle and its is important to answer it accurately to get proper prediction report.</p>
+                                                    </div>
 
-                                    <div class="col-2">
-                                        <div class="input-group">
-
-                                            <div class="row row-space">
-                                                <label class="label">WHAT IS YOUR AGE</label>
-                                                <input class="input--style-4" type="number" id="age" min="18" max="150">                                                     
-                                            </div>
-                                                    
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select  id="alcohole" onchange="">
-                                                        <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
                                                 </div>
+
+                                                <div style="margin-top: 5px;" class="d-flex input-group input-group-lg">
+
+                                                    <div class="row ">
+                                                        <label class="label">WHAT IS YOUR AVARAGE SLEEPING TIME(HOURS)?</label>
+
+                                                        <input class="form-control mb-2" type="number" id="sleeping_time" min="0" max="24">                                                     
+                                                    </div>
+
+                                                </div>
+
+                                                <select style="margin-top: 5px;"  id="alcohole" onchange="">
+                                                    <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+
+                                                <select style="margin-top: 5px;"  id="smoke" onchange="" >
+                                                    <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+
+                                                <select style="margin-top: 5px;"  id="exersise" onchange="">
+                                                    <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+
+
+
+
                                             </div>
-                                        </div>
                                     </div>
 
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select  id="smoke" onchange="" >
-                                                        <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+
+                                                <div style="margin-top: 5px;" class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Medical Info</h5>
+
+                                                            <p class="mb-0">For detailed analysis of you sutuation all of the basic medical info is also necessery.</p>
+                                                    </div>
+
                                                 </div>
-                                            </div>
+
+                                                <select style="margin-top: 5px;" id="physical_health" onchange="">
+                                                    <option disabled="disabled" selected="selected">RATE YOUR PHYSICAL HEALTH CONDITION.</option>
+                                                    <option value="0">VERY SICK</option>
+                                                    <option value="1">SICKNESS</option>
+                                                    <option value="2">POOR</option>
+                                                    <option value="3">NOT WELL</option>
+                                                    <option value="4">NUMB</option>
+                                                    <option value="5">AVERAGE</option>
+                                                    <option value="6">FINE</option>
+                                                    <option value="7">GOOD</option>
+                                                    <option value="8">VERY GOOD</option>
+                                                    <option value="9">EXCELLENT</option>
+                                                    <option value="10">AMAZING</option>
+                                                </select>      
+                                                
+                                                <select style="margin-top: 5px;" id="diff_walking" onchange="">
+                                                    <option disabled="disabled" selected="selected">DO YOU FEEL DIFICUELTY IN WALKING?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" required="option" id="diabetic">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE DIABETIC?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">NO, BORDERLINE DIABETES</option>
+                                                    <option value="2">YES</option>
+                                                    <option value="3">YES(DURING PREGNANCY)</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="asthma">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ASTHMA?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="kidney">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE KIDNEY DISEASE?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="skin_cancer">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ANY TYPE OF SKIN CANCER?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
+                                                <select style="margin-top: 5px;" onchange="" id="stroke">
+                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ANY STROKE HISTORY?</option>
+                                                    <option value="0">NO</option>
+                                                    <option value="1">YES</option>
+                                                </select>
                                         </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select  id="exersise" onchange="">
-                                                        <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-2">
-
-                                        <div class="input-group">
-                                            <h4>HOW ARE YOU FEELING(PSYCHOLOGICALLY) TODAY?</h4>
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select id="psychologogy" onchange="">
-                                                        <option disabled="disabled" selected="selected">SELECT AN OPTION</option>
-                                                        <option value="0">WORSE</option>
-                                                        <option value="1">VERY BAD</option>
-                                                        <option value="2">POOR</option>
-                                                        <option value="3">NOT WELL</option>
-                                                        <option value="4">NORMAL</option>
-                                                        <option value="5">OKAY</option>
-                                                        <option value="6">SATISFIED</option>
-                                                        <option value="7">GOOD</option>
-                                                        <option value="8">EXCELLENT</option>
-                                                        <option value="9">HAPPY</option>
-                                                        <option value="10">VERY HAPPY</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                                                    
-                                    </div>
-
-                                    <div class="row row-space">
-
-                                        <div class="col-2">
-                                            <div class="input-group">
-        
-                                                <div class="row row-space">
-                                                    <label class="label">WHAT IS YOUR AVARAGE SLEEPING TIME(HOURS)</label>
-                                                    <input class="input--style-4" type="number" id="sleeping_time" min="0" max="24">
-                                                </div>
-                                                        
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="tab-pane active" id="medical_info">
-                                <h2 class="title">MEDICAL INFO</h2> 
-
-
-
-
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <h3 class="label">RATE YOUR PHYSICAL HEALTH CONDITION.</h3>
-
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select   id="physical_health" onchange="">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="0">VERY SICK</option>
-                                                        <option value="1">SICKNESS</option>
-                                                        <option value="2">POOR</option>
-                                                        <option value="3">NOT WELL</option>
-                                                        <option value="4">NUMB</option>
-                                                        <option value="5">AVERAGE</option>
-                                                        <option value="6">FINE</option>
-                                                        <option value="7">GOOD</option>
-                                                        <option value="8">VERY GOOD</option>
-                                                        <option value="9">EXCELLENT</option>
-                                                        <option value="10">AMAZING</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <label class="label">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</label>
-                                                    <select required="option" id="general_health" onchange="">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="3">POOR</option>
-                                                        <option value="1">FAIR</option>
-                                                        <option value="2">GOOD</option>
-                                                        <option value="4">VERY GOOD</option>
-                                                        <option value="0">EXCELLENT</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-                                        </div>                                
                                     </div>
                                 </div>
 
-                                <div class="row row-space">
+                                <div style="margin-top: 5px;" class="row justify-content-center align-items-center">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
 
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <label class="label">DO YOU FEEL DIFICUELTY IN WALKING?</label>
-                                                    <select  id="diff_walking" onchange="">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
+
+
+
+                                            <button onclick="update_all_selection()" style="margin-top: 5px;" class="mycustom-btn btn-12">
+                                                <span>PREDICTION!</span><span>CALCULATE</span>
+                                            </button>
+
+                                            <div id="prediction_result"></div>
+
+
+
                                         </div>
                                     </div>
-                                    
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <label class="label">DO YOU HAVE DIABETIC </label>
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select required="option" id="diabetic">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">NO, BORDERLINE DIABETES</option>
-                                                        <option value="2">YES</option>
-                                                        <option value="3">YES(DURING PREGNANCY)</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
                                 </div>
                                 
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <label class="label">DO YOU HAVE ASTHMA?</label>
+                            </div>
 
-                                                    <select onchange="" id="asthma">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
 
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <label class="label">DO YOU HAVE KIDNEY DISEASE?</label>
-                                                    <select onchange="" id="kidney">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
                                 
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <label class="label">DO YOU HAVE  SKIN CANCER?</label>
+                                <div class="row">
+                                    <div class="mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">BMI CALCULATOR</h5>
 
-                                                    <select onchange="" id="skin_cancer">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
+                                                        <p class="mb-0">CALCULATE YOUR BODY MASS INDEX</p>
+                                                    </div>
+
                                                 </div>
-                                            </div>
+
+
+                                                <div id="tool_bmi" class="tool_bmi app-tool-block nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5"></div>
+                                                <script id="tool-script_bmi" src="{% main_template 'bmi/js/inline_launcher.js' %}"></script>
+
                                         </div>
                                     </div>
 
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="p-t-10">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <label class="label">DO YOU HAVE ANY STROKE HISTORY?</label>
-                                                    <select onchange="" id="stroke">
-                                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                                        <option value="0">NO</option>
-                                                        <option value="1">YES</option>
-                                                    </select>
-                                                    <div class="select-dropdown"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                 </div>
 
+
+
+                              </div>
+
+
+                              <!-- BANGLA OCR -->
+
+                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
+                                <div class="row">
+                                    <div class="mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">BMI CALCULATOR</h5>
+
+                                                        <p class="mb-0">CALCULATE YOUR BODY MASS INDEX</p>
+                                                    </div>
+
+                                                </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
                             </div>
 
 
 
 
-                            <div class="row row-space">
-
-                                <div class="col-2">
-
-                                    <div class="p-t-15">
-                                        <button class="btn btn--radius-2 btn--blue" type="submit" onclick="update_all_selection()">Submit</button>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-2">
-
-                                    <div id="prediction_result"></div>
-                                        
-                                </div>
-
-                            </div>
-
-
-                        
-                    </div>
 
 
 
+
+
+
+
+
+
+
+
+                        </div>
 
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Jquery JS-->
-    <script src="{% about_me 'CVD/vendor/jquery/jquery.min.js' %}"></script>
-    <!-- Vendor JS-->
-    <script src="{% about_me 'CVD/vendor/select2/select2.min.js' %}"></script>
-    <script src="{% about_me 'CVD/vendor/datepicker/moment.min.js' %}"></script>
-    <script src="{% about_me 'CVD/vendor/datepicker/daterangepicker.js' %}"></script>
 
-    <!-- Main JS-->
-    <script src="{% about_me 'CVD/js/global.js' %}"></script>
-<script>
 
-    
-    
-    function  update_all_selection(){
-        var gender = document.getElementById("gender").value;
-        var bmi = document.getElementById("bmi").value;
-        var ethnic_group = document.getElementById("ethnic_group").value;
-        var age = document.getElementById("age").value;
-        var alcohole = document.getElementById("alcohole").value;
-        var smoke = document.getElementById("smoke").value;
-        var exersise = document.getElementById("exersise").value;
-        var psychologogy = document.getElementById("psychologogy").value;
-        var sleeping_time = document.getElementById("sleeping_time").value;
-        var physical_health = document.getElementById("physical_health").value;
-        var general_health = document.getElementById("general_health").value;
-        var diff_walking = document.getElementById("diff_walking").value;
-        var diabetic = document.getElementById("diabetic").value;
-        var asthma = document.getElementById("asthma").value;
-        var kidney = document.getElementById("kidney").value;
-        var skin_cancer = document.getElementById("skin_cancer").value;
-        var stroke = document.getElementById("stroke").value;
 
-        // console.log('stroke', stroke);
-        // console.log('skin_cancer', skin_cancer);
-        // console.log('kidney', kidney);
-        // console.log('asthma', asthma);
-        // console.log('diabetic', diabetic);
-        // console.log('diff_walking', diff_walking);
-        // console.log('general_health', general_health);
-        // console.log('physical_health', physical_health);
-        // console.log('sleeping_time', sleeping_time);
-        // console.log('psychologogy', psychologogy);
-        // console.log('exersise', exersise);
-        // console.log('smoke', smoke);
-        // console.log('alcohole', alcohole);
-        // console.log('age', age);
-        // console.log('ethnic',ethnic_group);
-        // console.log('bmi',bmi);
-        // console.log('gender',gender);
 
-        if(gender && bmi && ethnic_group && age && alcohole && smoke && stroke && exersise && psychologogy && sleeping_time && physical_health && general_health && diff_walking && diabetic && asthma && kidney && skin_cancer && stroke){
-            console.log('all ok');
-            var xhr = new XMLHttpRequest();
-            var url = '/get_C_V_D_prediction/?' +
-                'gender=' + gender +
-                '&bmi=' + bmi +
-                '&ethnic_group=' + ethnic_group +
-                '&age=' + age +
-                '&alcohole=' + alcohole +
-                '&smoke=' + smoke +
-                '&exersise=' + exersise +
-                '&psychologogy=' + psychologogy +
-                '&sleeping_time=' + sleeping_time +
-                '&stroke=' + stroke +
-                '&physical_health=' + physical_health +
-                '&general_health=' + general_health +
-                '&diff_walking=' + diff_walking +
-                '&diabetic=' + diabetic +
-                '&asthma=' + asthma +
-                '&kidney=' + kidney +
-                '&skin_cancer=' + skin_cancer;
-            // console.log('url', url);
 
-            xhr.open('GET', url, true);
-            xhr.send();
 
-            xhr.onload = function () {
-            if (xhr.status === 200) {
 
-                medicationDetails = JSON.parse(xhr.responseText);
-                console.log('medicationDetails', medicationDetails);
 
-                detailshtml = `
-                
-                <div class="input-group">
-
-                    <div class="row row-space">
-                        
-                        <h3>YOUR CARDIO VASCULAR DISEASE PREDICTION IS ${medicationDetails}</h3>
-                        
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center subscribe-form-wrap">
+                        <form class="custom-form subscribe-form" action="#" method="post" role="form">
+                            <h4 class="mb-4 pb-2">Get Newsletter</h4><input class="form-control" type="email" id="subscribe-email" name="subscribe-email" pattern="[^ @]*@[^ @]*" placeholder="Email Address" required="">
+                            <div class="col-12 col-lg-12"><button type="submit" class="form-control">Subscribe</button></div>
+                        </form>
                     </div>
-                        
                 </div>
-                
-                `;
-                document.getElementById("prediction_result").innerHTML = detailshtml;
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-4 pb-2"><a class="navbar-brand mb-2" href="index.html"><i class="bi-back"></i><span>Topic</span></a></div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h6 class="site-footer-title mb-3">Resources</h6>
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Home</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">How it works</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">FAQs</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Information</h6>
+                    <p class="text-white d-flex mb-1"><a class="site-footer-link"> 305-240-9671 </a></p>
+                    <p class="text-white d-flex"><a href="mailto:info@company.com" class="site-footer-link"> info@company.com </a></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 ms-auto mt-4 mt-lg-0">
+                    <div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> English</button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button">Thai</button></li>
+                            <li><button class="dropdown-item" type="button">Myanmar</button></li>
+                            <li><button class="dropdown-item" type="button">Arabic</button></li>
+                        </ul>
+                    </div>
+                    <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved. <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% main_template 'js/jquery.min.js' %}"></script>
+    <script src="{% main_template 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
+    <script src="{% main_template 'js/click-scroll.js' %}"></script>
+    <script src="{% main_template 'js/custom.js' %}"></script>
+    <script>
 
-
-            }
-
-            }
-
-
-        
-    }
     
-    }
+    
+        function  update_all_selection(){
+            var gender = document.getElementById("gender").value;
+            var bmi = document.getElementById("bmi").value;
+            var ethnic_group = document.getElementById("ethnic_group").value;
+            var age = document.getElementById("age").value;
+            var alcohole = document.getElementById("alcohole").value;
+            var smoke = document.getElementById("smoke").value;
+            var exersise = document.getElementById("exersise").value;
+            var psychologogy = document.getElementById("psychologogy").value;
+            var sleeping_time = document.getElementById("sleeping_time").value;
+            var physical_health = document.getElementById("physical_health").value;
+            var general_health = document.getElementById("general_health").value;
+            var diff_walking = document.getElementById("diff_walking").value;
+            var diabetic = document.getElementById("diabetic").value;
+            var asthma = document.getElementById("asthma").value;
+            var kidney = document.getElementById("kidney").value;
+            var skin_cancer = document.getElementById("skin_cancer").value;
+            var stroke = document.getElementById("stroke").value;
+    
+            console.log('stroke', stroke);
+            console.log('skin_cancer', skin_cancer);
+            console.log('kidney', kidney);
+            console.log('asthma', asthma);
+            console.log('diabetic', diabetic);
+            console.log('diff_walking', diff_walking);
+            console.log('general_health', general_health);
+            console.log('physical_health', physical_health);
+            console.log('sleeping_time', sleeping_time);
+            console.log('psychologogy', psychologogy);
+            console.log('exersise', exersise);
+            console.log('smoke', smoke);
+            console.log('alcohole', alcohole);
+            console.log('age', age);
+            console.log('ethnic',ethnic_group);
+            console.log('bmi',bmi);
+            console.log('gender',gender);
+    
+            if(gender && bmi && ethnic_group && age && alcohole && smoke && stroke && exersise && psychologogy && sleeping_time && physical_health && general_health && diff_walking && diabetic && asthma && kidney && skin_cancer && stroke){
+                console.log('all ok');
+                var xhr = new XMLHttpRequest();
+                var url = '/get_C_V_D_prediction/?' +
+                    'gender=' + gender +
+                    '&bmi=' + bmi +
+                    '&ethnic_group=' + ethnic_group +
+                    '&age=' + age +
+                    '&alcohole=' + alcohole +
+                    '&smoke=' + smoke +
+                    '&exersise=' + exersise +
+                    '&psychologogy=' + psychologogy +
+                    '&sleeping_time=' + sleeping_time +
+                    '&stroke=' + stroke +
+                    '&physical_health=' + physical_health +
+                    '&general_health=' + general_health +
+                    '&diff_walking=' + diff_walking +
+                    '&diabetic=' + diabetic +
+                    '&asthma=' + asthma +
+                    '&kidney=' + kidney +
+                    '&skin_cancer=' + skin_cancer;
+                console.log('url', url);
+    
+                xhr.open('GET', url, true);
+                xhr.send();
+    
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+    
+                        medicationDetails = JSON.parse(xhr.responseText);
+                        console.log('medicationDetails', medicationDetails);
+
+                        detailshtml = `
+                        
+
+                                
+                                <blockquote class="row">YOUR CARDIO VASCULAR DISEASE HAPPENING PROVABILITY IS ALMOST ${medicationDetails.toFixed(2)}%</blockquote>
+                                
+                                
+                        
+                        `;
+                        document.getElementById("prediction_result").innerHTML = detailshtml;
 
 
-</script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+                    }
+    
+                }
+    
+    
+            
+        }
+        
+        }
+    
+    
+    </script>
+
+</body>
 
 </html>
-<!-- end document-->
 {% endblock %}
-<!-- end document-->
