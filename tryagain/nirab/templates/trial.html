@@ -361,8 +361,26 @@ select::-ms-expand {
                                         </div>
                                     </div>
                                 </div>
-                                <button  onclick="update_all_selection()" style="margin-top: 5px;" class="mycustom-btn btn-12"><span>PREDICTION!</span><span>CALCULATE</span></button>
-                            
+
+                                <div style="margin-top: 5px;" class="row justify-content-center align-items-center">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+
+
+
+
+                                            <button onclick="update_all_selection()" style="margin-top: 5px;" class="mycustom-btn btn-12">
+                                                <span>PREDICTION!</span><span>CALCULATE</span>
+                                            </button>
+
+                                            <div id="prediction_result"></div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
 
                             <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
@@ -571,15 +589,13 @@ select::-ms-expand {
     
                     detailshtml = `
                     
-                    <div class="input-group">
     
-                        <div class="row row-space">
+                        <div class="row">
                             
                             <h3>YOUR CARDIO VASCULAR DISEASE PREDICTION IS ${medicationDetails}</h3>
                             
                         </div>
                             
-                    </div>
                     
                     `;
                     document.getElementById("prediction_result").innerHTML = detailshtml;
