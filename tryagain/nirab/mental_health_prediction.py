@@ -14,6 +14,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import torch.nn.functional as F
 import re 
+from json import dumps
 # Load tokenizer and model
 
 
@@ -258,37 +259,39 @@ class MENTAL_HEALTH:
         for object in all_prediction_objects:
             object_dict = {}
             object_dict['id'] = object.id
-            object_dict['admiration'] = object.admiration
-            object_dict['amusement'] = object.amusement
-            object_dict['anger'] = object.anger
-            object_dict['annoyance'] = object.annoyance
-            object_dict['approval'] = object.approval
-            object_dict['caring'] = object.caring
-            object_dict['confusion'] = object.confusion
-            object_dict['curiosity'] = object.curiosity
-            object_dict['desire'] = object.desire
-            object_dict['disappointment'] = object.disappointment
+            object_dict['admiration'] = round(float(object.admiration), 3)
+            object_dict['amusement'] = round(float(object.amusement), 3)
+            object_dict['anger'] = round(float(object.anger), 3)
+            object_dict['annoyance'] = round(float(object.annoyance), 3)
+            object_dict['approval'] = round(float(object.approval), 3)
+            object_dict['caring'] = round(float(object.caring), 3)
+            object_dict['confusion'] = round(float(object.confusion), 3)
+            object_dict['curiosity'] = round(float(object.curiosity), 3)
+            object_dict['desire'] = round(float(object.desire), 3)
+            object_dict['disappointment'] = round(float(object.disappointment), 3)
 
-            object_dict['disapproval'] = object.disapproval
-            object_dict['disgust'] = object.disgust
-            object_dict['embarrassment'] = object.embarrassment
-            object_dict['excitement'] = object.excitement
-            object_dict['fear'] = object.fear
-            object_dict['gratitude'] = object.gratitude
-            object_dict['grief'] = object.grief
-            object_dict['joy'] = object.joy
-            object_dict['love'] = object.love
-            object_dict['nervousness'] = object.nervousness
-            object_dict['optimism'] = object.optimism
-            object_dict['pride'] = object.pride
-            object_dict['realization'] = object.realization
-            object_dict['relief'] = object.relief
-            object_dict['remorse'] = object.remorse
-            object_dict['sadness'] = object.sadness
-            object_dict['surprise'] = object.surprise
-            object_dict['neutral'] = object.neutral
+            object_dict['disapproval'] = round(float(object.disapproval), 3)
+            object_dict['disgust'] = round(float(object.disgust), 3)
+            object_dict['embarrassment'] = round(float(object.embarrassment), 3)
+            object_dict['excitement'] = round(float(object.excitement), 3)
+            object_dict['fear'] = round(float(object.fear), 3)
+            object_dict['gratitude'] = round(float(object.gratitude), 3)
+            object_dict['grief'] = round(float(object.grief), 3)
+            object_dict['joy'] = round(float(object.joy), 3)
+            object_dict['love'] = round(float(object.love), 3)
+            object_dict['nervousness'] = round(float(object.nervousness), 3)
+            object_dict['optimism'] = round(float(object.optimism), 3)
+            object_dict['pride'] = round(float(object.pride), 3)
+            object_dict['realization'] = round(float(object.realization), 3)
+            object_dict['relief'] = round(float(object.relief), 3)
+            object_dict['remorse'] = round(float(object.remorse), 3)
+            object_dict['sadness'] = round(float(object.sadness), 3)
+            object_dict['surprise'] = round(float(object.surprise), 3)
+            object_dict['neutral'] = round(float(object.neutral), 3)
             all_prediction_objects_list.append(object_dict)
-
+            
+        print('all_objectsssssssssssssss',all_prediction_objects_list)
+        all_prediction_objects_list = dumps(all_prediction_objects_list)
 
         return render(request, 'mental_health_prediction.html', {'all_prediction_objects_list':all_prediction_objects_list})
 

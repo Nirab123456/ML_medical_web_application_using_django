@@ -133,6 +133,16 @@ select::-ms-expand {
                 </div>
             </div>
 
+            {% if all_prediction_objects_list %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Generate a click on the "BANGLA OCR" tab
+                    document.getElementById("finance-tab").click();
+                });
+            </script>
+            {% endif %}
+
+
             <div class="container-fluid">
                 <div class="row">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -143,7 +153,7 @@ select::-ms-expand {
 
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">BMI CALCULATOR</button>
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">DIERY INPUT</button>
                         </li>
 
 
@@ -226,6 +236,8 @@ select::-ms-expand {
                                                     </div>
 
                                                 </div>
+
+
 
 
 
@@ -313,7 +325,12 @@ select::-ms-expand {
     <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
     <script src="{% main_template 'js/click-scroll.js' %}"></script>
     <script src="{% main_template 'js/custom.js' %}"></script>
-
+    {% if all_prediction_objects_list %}
+    <script>
+        var all_prediction_objects_list = JSON.parse("{{all_prediction_objects_list|escapejs}}");
+        console.log(all_prediction_objects_list);
+    </script>
+    {% endif %}
 
 </body>
 

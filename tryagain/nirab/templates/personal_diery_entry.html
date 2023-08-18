@@ -268,7 +268,7 @@ input[class^='btn-']:hover {
         <div class="container-row container-row-journal">
           <div class="container-item container-item-journal">
 
-            <form method="POST" id="entryForm" action="">
+            <form method="POST" id="entryForm" action="{% url 'personal_diary_input' %}">
               {% csrf_token %}
               
               <label for="entry-title" class="journal-label">Entry Title</label>
@@ -279,7 +279,7 @@ input[class^='btn-']:hover {
                   class="entry-text-title"
                   placeholder="Name of entry ✏️"
                   required
-                  maxlength="2000"
+                  maxlength="200"
               />
               
               <label for="entry" class="journal-label">Today's Entry</label>
@@ -291,9 +291,16 @@ input[class^='btn-']:hover {
                   maxlength="2000"
               ></textarea>
               
-              <button class="btn-main entry-submit-btn" type="submit">Submit</button>
+              <button class="btn-main entry-submit-btn" type="submit" onclick="entryForm()">Submit</button>
           </form>
-          
+
+          <script>
+            function entryForm() {
+                document.getElementById("entryForm").action = "{% url 'personal_diary_input' %}";
+                document.getElementById("entryForm").submit();
+            }
+        </script>
+
           <script>
               document.getElementById("entryForm").addEventListener("submit", function(event) {
                   // Validate title length
