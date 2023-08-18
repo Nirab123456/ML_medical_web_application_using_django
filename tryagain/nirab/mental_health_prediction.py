@@ -77,6 +77,7 @@ class MENTAL_HEALTH:
                     model = AutoModelForSequenceClassification.from_pretrained("SamLowe/roberta-base-go_emotions")
                     all_prediction_objects_list = []
                     for object in yesterday_diery_object:
+                        id = object.id
                         title = object.title
                         content = object.content
                         title_prediction_dict={}
@@ -101,6 +102,7 @@ class MENTAL_HEALTH:
                                 # #take upto 2 decimal points
                                 # prediction_value = round(prediction_value, 2)
                                 content_prediction_dict[label] = prediction_value
+
                         else:
                             continue
 
@@ -133,12 +135,16 @@ class MENTAL_HEALTH:
                         if len(title_prediction_dict) > 0 and len(content_prediction_dict) > 0:
                             for key in title_prediction_dict.keys():
                                 combined_prediction_dict[key] = (title_prediction_dict[key]*WEIGHT_OF_TITLE) + (content_prediction_dict[key]*WEIGHT_OF_CONTENT)
+
+
                         elif len(title_prediction_dict) > 0 and len(content_prediction_dict) <= 0:
                             combined_prediction_dict = title_prediction_dict
-                        
+
+                        combined_prediction_dict['id'] = id
+
                         all_prediction_objects_list.append(combined_prediction_dict)
                     for object in all_prediction_objects_list:
-                        MENTAL_HEALTH_PREDICTION_MODEL.objects.create(user=user,admiration=object['admiration'],
+                        MENTAL_HEALTH_PREDICTION_MODEL.objects.create(user=user,admiration=object['admiration'],id=object['id'],
                                                                     amusement = object['amusement'],anger = object['anger'],
                                                                     annoyance = object['annoyance'],approval = object['approval'],
                                                                     caring = object['caring'],confusion = object['confusion'],
@@ -154,7 +160,6 @@ class MENTAL_HEALTH:
                                                                     sadness = object['sadness'],surprise = object['surprise'],
                                                                     neutral = object['neutral'])
             if mebtal_care_record_count_today <= 0:
-                print("inside today")
                 today = timezone.now().date()
                 start_of_day = timezone.make_aware(timezone.datetime.combine(today, timezone.datetime.min.time()))
                 end_of_day = start_of_day + timedelta(days=1)
@@ -167,6 +172,7 @@ class MENTAL_HEALTH:
                     model = AutoModelForSequenceClassification.from_pretrained("SamLowe/roberta-base-go_emotions")
                     all_prediction_objects_list = []
                     for object in today_diery_object:
+                        id = object.id
                         title = object.title
                         content = object.content
                         title_prediction_dict={}
@@ -226,9 +232,11 @@ class MENTAL_HEALTH:
                         elif len(title_prediction_dict) > 0 and len(content_prediction_dict) <= 0:
                             combined_prediction_dict = title_prediction_dict
 
+                        combined_prediction_dict['id'] = id
+
                         all_prediction_objects_list.append(combined_prediction_dict)
                     for object in all_prediction_objects_list:
-                        MENTAL_HEALTH_PREDICTION_MODEL.objects.create(user=user,admiration=object['admiration'],
+                        MENTAL_HEALTH_PREDICTION_MODEL.objects.create(user=user,admiration=object['admiration'],id=object['id'],
                                                                     amusement = object['amusement'],anger = object['anger'],
                                                                     annoyance = object['annoyance'],approval = object['approval'],
                                                                     caring = object['caring'],confusion = object['confusion'],
@@ -249,6 +257,7 @@ class MENTAL_HEALTH:
         all_prediction_objects_list = []
         for object in all_prediction_objects:
             object_dict = {}
+            object_dict['id'] = object.id
             object_dict['admiration'] = object.admiration
             object_dict['amusement'] = object.amusement
             object_dict['anger'] = object.anger
@@ -280,7 +289,6 @@ class MENTAL_HEALTH:
             object_dict['neutral'] = object.neutral
             all_prediction_objects_list.append(object_dict)
 
-            print(all_prediction_objects_list)
 
         return render(request, 'mental_health_prediction.html', {'all_prediction_objects_list':all_prediction_objects_list})
 

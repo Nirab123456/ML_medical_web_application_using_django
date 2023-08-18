@@ -32,6 +32,7 @@ class SELECTED_QUESTION_ANSWER(models.Model):
 
 class MENTAL_HEALTH_PREDICTION_MODEL(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mental_health_prediction_model', null=True)
+    id = models.CharField(max_length=200, primary_key=True)
     admiration = models.CharField(max_length=200)
     amusement = models.CharField(max_length=200)
     anger = models.CharField(max_length=200)
@@ -70,6 +71,7 @@ class MENTAL_HEALTH_PREDICTION_MODEL(models.Model):
 
 class PERSONAL_DIARY(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='personal_diary', null=True)
+    id = models.AutoField(primary_key=True)
     title = models.TextField(max_length=200)
     content = models.TextField(blank=True,null=True,max_length=2000)
     created_at = models.DateTimeField(auto_now_add=True)
