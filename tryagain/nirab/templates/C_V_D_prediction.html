@@ -537,23 +537,23 @@ select::-ms-expand {
             var skin_cancer = document.getElementById("skin_cancer").value;
             var stroke = document.getElementById("stroke").value;
     
-            console.log('stroke', stroke);
-            console.log('skin_cancer', skin_cancer);
-            console.log('kidney', kidney);
-            console.log('asthma', asthma);
-            console.log('diabetic', diabetic);
-            console.log('diff_walking', diff_walking);
-            console.log('general_health', general_health);
-            console.log('physical_health', physical_health);
-            console.log('sleeping_time', sleeping_time);
-            console.log('psychologogy', psychologogy);
-            console.log('exersise', exersise);
-            console.log('smoke', smoke);
-            console.log('alcohole', alcohole);
-            console.log('age', age);
-            console.log('ethnic',ethnic_group);
-            console.log('bmi',bmi);
-            console.log('gender',gender);
+            // console.log('stroke', stroke);
+            // console.log('skin_cancer', skin_cancer);
+            // console.log('kidney', kidney);
+            // console.log('asthma', asthma);
+            // console.log('diabetic', diabetic);
+            // console.log('diff_walking', diff_walking);
+            // console.log('general_health', general_health);
+            // console.log('physical_health', physical_health);
+            // console.log('sleeping_time', sleeping_time);
+            // console.log('psychologogy', psychologogy);
+            // console.log('exersise', exersise);
+            // console.log('smoke', smoke);
+            // console.log('alcohole', alcohole);
+            // console.log('age', age);
+            // console.log('ethnic',ethnic_group);
+            // console.log('bmi',bmi);
+            // console.log('gender',gender);
     
             if(gender && bmi && ethnic_group && age && alcohole && smoke && stroke && exersise && psychologogy && sleeping_time && physical_health && general_health && diff_walking && diabetic && asthma && kidney && skin_cancer && stroke){
                 console.log('all ok');
@@ -576,7 +576,7 @@ select::-ms-expand {
                     '&asthma=' + asthma +
                     '&kidney=' + kidney +
                     '&skin_cancer=' + skin_cancer;
-                console.log('url', url);
+                // console.log('url', url);
     
                 xhr.open('GET', url, true);
                 xhr.send();
@@ -585,7 +585,7 @@ select::-ms-expand {
                     if (xhr.status === 200) {
     
                         medicationDetails = JSON.parse(xhr.responseText);
-                        console.log('medicationDetails', medicationDetails);
+                        // console.log('medicationDetails', medicationDetails);
 
                         detailshtml = `
                         

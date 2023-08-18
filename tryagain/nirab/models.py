@@ -30,6 +30,53 @@ class SELECTED_QUESTION_ANSWER(models.Model):
         return self.generic_name
 
 
+class MENTAL_HEALTH_PREDICTION_MODEL(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mental_health_prediction_model', null=True)
+    admiration = models.CharField(max_length=200)
+    amusement = models.CharField(max_length=200)
+    anger = models.CharField(max_length=200)
+    annoyance = models.CharField(max_length=200)
+    approval = models.CharField(max_length=200)
+    caring = models.CharField(max_length=200)
+    confusion = models.CharField(max_length=200)
+    curiosity = models.CharField(max_length=200)
+    desire = models.CharField(max_length=200)
+    disappointment = models.CharField(max_length=200)
+    disapproval = models.CharField(max_length=200)
+    disgust = models.CharField(max_length=200)
+    embarrassment = models.CharField(max_length=200)
+    excitement = models.CharField(max_length=200)
+    fear = models.CharField(max_length=200)
+    gratitude = models.CharField(max_length=200)
+    grief = models.CharField(max_length=200)
+    joy = models.CharField(max_length=200)
+    love = models.CharField(max_length=200)
+    nervousness = models.CharField(max_length=200)
+    optimism = models.CharField(max_length=200)
+    pride = models.CharField(max_length=200)
+    realization = models.CharField(max_length=200)
+    relief = models.CharField(max_length=200)
+    remorse = models.CharField(max_length=200)
+    sadness = models.CharField(max_length=200)
+    surprise = models.CharField(max_length=200)
+    neutral = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.user
+    
+
+
+
+
+class PERSONAL_DIARY(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='personal_diary', null=True)
+    title = models.TextField(max_length=200)
+    content = models.TextField(blank=True,null=True,max_length=2000)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.title
+
+
 
 
 

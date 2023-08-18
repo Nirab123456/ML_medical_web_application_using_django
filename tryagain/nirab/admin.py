@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Record, Event, EventVenue, EventAttendee , RecordImage,Record_mail_me,SocialMedia,Medication,MedicationDetails
-from .models import med_Ques_Ans,SELECTED_QUESTION_ANSWER,Presciption_drug_class
+from .models import med_Ques_Ans,SELECTED_QUESTION_ANSWER,Presciption_drug_class,MENTAL_HEALTH_PREDICTION_MODEL
 
 # Register your models here.
 
@@ -13,6 +13,8 @@ admin.site.register(SocialMedia)
 admin.site.register(Medication)
 admin.site.register(MedicationDetails)
 admin.site.register(SELECTED_QUESTION_ANSWER)
+admin.site.register(MENTAL_HEALTH_PREDICTION_MODEL)
+
 
 
 #show Presciption_drug_class alpabetically
