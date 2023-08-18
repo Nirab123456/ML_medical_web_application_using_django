@@ -137,9 +137,9 @@ select::-ms-expand {
                 <div class="row">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
 
-                        <li class="nav-item" role="presentation">
+                        <!-- <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">C.V.D PREDICTION</button>
-                        </li>
+                        </li> -->
 
 
                         <li class="nav-item" role="presentation">
@@ -166,224 +166,15 @@ select::-ms-expand {
                     <div class="col-12">
 
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
-                                
-                                
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                        <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h5 class="mb-2">Personal Info</h5>
 
-                                                        <p class="mb-0">ANSWER THE BASIC QUESTIONS PLEASE</p>
-                                                    </div>
-
-                                                    <!-- <span class="badge bg-design rounded-pill ms-auto">14</span> -->
-                                                </div>
-                                                <div style="margin-top: 5px;" class="d-flex input-group input-group-lg">
-
-                                                    <div class="row ">
-                                                        <label class="label">WHAT IS YOUR AGE</label>
-
-                                                        <input class="form-control mb-2" type="number" id="age" min="18" max="150">                                                     
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div style="margin-top: 5px;" class="input-group input-group-lg">
-                                                    <div class="row">
-                                                        <div class="row">
-
-                                                            <label >WHAT IS YOUR BMI</label>
-
-                                                        </div>
-
-                                                        <!-- have set max length gere  but truly it is unlimited there is  -->
-                                                        <input type="int" name="text_handwritten" id="bmi" class="form-control" maxlength="1000" >
-                                                        
-                                                
-                                                    </div>
-
-
-                                                </div>
-
-                                                <select style="margin-top: 5px;" id="gender" onchange="">
-                                                    <option disabled="disabled" selected="selected">CHOOSE YOUR GENDER</option>
-                                                    <option value="0">FEMALE</option>
-                                                    <option value="1">MALE</option>
-                                                </select>
-
-                                                <select style="margin-top: 5px; margin-bottom: 5px;" id="psychologogy" onchange="">
-                                                    <option disabled="disabled" selected="selected">RATE YOUR psychologogycal HEALTH CONDITION.</option>
-                                                    <option value="0">WORSE</option>
-                                                    <option value="1">VERY BAD</option>
-                                                    <option value="2">POOR</option>
-                                                    <option value="3">NOT WELL</option>
-                                                    <option value="4">NORMAL</option>
-                                                    <option value="5">OKAY</option>
-                                                    <option value="6">SATISFIED</option>
-                                                    <option value="7">GOOD</option>
-                                                    <option value="8">EXCELLENT</option>
-                                                    <option value="9">HAPPY</option>
-                                                    <option value="10">VERY HAPPY</option>
-                                                </select>
-
-                                                <select style="margin-top: 5px;"  style="margin-top: 5px;" id="ethnic_group" onchange="">
-                                                    <option disabled="disabled" selected="selected">SELECT YOUR ETHNIC GROUP</option>
-                                                    <option value="5">WHITE</option>
-                                                    <option value="2">BLACK</option>
-                                                    <option value="1">ASIAN</option>
-                                                    <option value="0">AMERICAN INDIAN</option>
-                                                    <option value="3">HISPANIC</option>
-                                                    <option value="4">OTHER</option>
-                                                </select>
-
-                                                <select style="margin-top: 5px;"  id="general_health" onchange="">
-                                                    <option disabled="disabled" selected="selected">HOW ARE YOU FEELING(PHYSICALLY) TODAY?</option>
-                                                    <option value="3">POOR</option>
-                                                    <option value="1">FAIR</option>
-                                                    <option value="2">GOOD</option>
-                                                    <option value="4">VERY GOOD</option>
-                                                    <option value="0">EXCELLENT</option>
-                                                </select>
-
-                                                  
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                        <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h5 class="mb-2">Lifestyle Info</h5>
-
-                                                            <p class="mb-0">This questions are directly related to your lifestyle and its is important to answer it accurately to get proper prediction report.</p>
-                                                    </div>
-
-                                                </div>
-
-                                                <div style="margin-top: 5px;" class="d-flex input-group input-group-lg">
-
-                                                    <div class="row ">
-                                                        <label class="label">WHAT IS YOUR AVARAGE SLEEPING TIME(HOURS)?</label>
-
-                                                        <input class="form-control mb-2" type="number" id="sleeping_time" min="0" max="24">                                                     
-                                                    </div>
-
-                                                </div>
-
-                                                <select style="margin-top: 5px;"  id="alcohole" onchange="">
-                                                    <option disabled="disabled" selected="selected">DO YOU DRINK ALCOHOLE?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
-
-                                                <select style="margin-top: 5px;"  id="smoke" onchange="" >
-                                                    <option disabled="disabled" selected="selected">DO YOU SMOKE?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
-
-                                                <select style="margin-top: 5px;"  id="exersise" onchange="">
-                                                    <option disabled="disabled" selected="selected">DO YOU EXCERSISE REGULARLY?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
+                            <!-- <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                                            
+                            </div> -->
 
 
 
 
-                                            </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-6 col-12">
-                                        <div class="custom-block bg-white shadow-lg">
-
-                                                <div style="margin-top: 5px;" class="d-flex">
-                                                    <div>
-                                                        <h5 class="mb-2">Medical Info</h5>
-
-                                                            <p class="mb-0">For detailed analysis of you sutuation all of the basic medical info is also necessery.</p>
-                                                    </div>
-
-                                                </div>
-
-                                                <select style="margin-top: 5px;" id="physical_health" onchange="">
-                                                    <option disabled="disabled" selected="selected">RATE YOUR PHYSICAL HEALTH CONDITION.</option>
-                                                    <option value="0">VERY SICK</option>
-                                                    <option value="1">SICKNESS</option>
-                                                    <option value="2">POOR</option>
-                                                    <option value="3">NOT WELL</option>
-                                                    <option value="4">NUMB</option>
-                                                    <option value="5">AVERAGE</option>
-                                                    <option value="6">FINE</option>
-                                                    <option value="7">GOOD</option>
-                                                    <option value="8">VERY GOOD</option>
-                                                    <option value="9">EXCELLENT</option>
-                                                    <option value="10">AMAZING</option>
-                                                </select>      
-                                                
-                                                <select style="margin-top: 5px;" id="diff_walking" onchange="">
-                                                    <option disabled="disabled" selected="selected">DO YOU FEEL DIFICUELTY IN WALKING?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
-                                                <select style="margin-top: 5px;" required="option" id="diabetic">
-                                                    <option disabled="disabled" selected="selected">DO YOU HAVE DIABETIC?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">NO, BORDERLINE DIABETES</option>
-                                                    <option value="2">YES</option>
-                                                    <option value="3">YES(DURING PREGNANCY)</option>
-                                                </select>
-                                                <select style="margin-top: 5px;" onchange="" id="asthma">
-                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ASTHMA?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
-                                                <select style="margin-top: 5px;" onchange="" id="kidney">
-                                                    <option disabled="disabled" selected="selected">DO YOU HAVE KIDNEY DISEASE?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
-                                                <select style="margin-top: 5px;" onchange="" id="skin_cancer">
-                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ANY TYPE OF SKIN CANCER?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
-                                                <select style="margin-top: 5px;" onchange="" id="stroke">
-                                                    <option disabled="disabled" selected="selected">DO YOU HAVE ANY STROKE HISTORY?</option>
-                                                    <option value="0">NO</option>
-                                                    <option value="1">YES</option>
-                                                </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div style="margin-top: 5px;" class="row justify-content-center align-items-center">
-                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                        <div class="custom-block bg-white shadow-lg">
-
-
-
-
-                                            <button onclick="update_all_selection()" style="margin-top: 5px;" class="mycustom-btn btn-12">
-                                                <span>PREDICTION!</span><span>CALCULATE</span>
-                                            </button>
-
-                                            <div id="prediction_result"></div>
-
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+                            <div class="tab-pane fade show active" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
 
                                 
                                 <div class="row">
@@ -391,16 +182,24 @@ select::-ms-expand {
                                         <div class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">BMI CALCULATOR</h5>
+                                                        <h5 class="mb-2">DIERY ENTRY </h5>
 
-                                                        <p class="mb-0">CALCULATE YOUR BODY MASS INDEX</p>
+                                                        <p class="mb-0">DESCRIBE A EVENT WITH TITLE</p>
+                                                        <p>YOUR TODAYS RECORD COUNT IS :
+                                                            <span class="badge bg-education {% if record_count_today >= 10 %}text-danger{% endif %}">
+                                                                {{ record_count_today }}
+                                                            </span>
+                                                                                                                    
+                                                        </p>
+
                                                     </div>
+
+                                                    <span class="badge bg-education rounded-pill ms-auto">{{personal_instance_count}}</span>
+
 
                                                 </div>
 
-
-                                                <div id="tool_bmi" class="tool_bmi app-tool-block nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5"></div>
-                                                <script id="tool-script_bmi" src="{% main_template 'bmi/js/inline_launcher.js' %}"></script>
+                                                {% include 'personal_diery_entry.html' %}
 
                                         </div>
                                     </div>
@@ -514,105 +313,7 @@ select::-ms-expand {
     <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
     <script src="{% main_template 'js/click-scroll.js' %}"></script>
     <script src="{% main_template 'js/custom.js' %}"></script>
-    <script>
 
-    
-    
-        function  update_all_selection(){
-            var gender = document.getElementById("gender").value;
-            var bmi = document.getElementById("bmi").value;
-            var ethnic_group = document.getElementById("ethnic_group").value;
-            var age = document.getElementById("age").value;
-            var alcohole = document.getElementById("alcohole").value;
-            var smoke = document.getElementById("smoke").value;
-            var exersise = document.getElementById("exersise").value;
-            var psychologogy = document.getElementById("psychologogy").value;
-            var sleeping_time = document.getElementById("sleeping_time").value;
-            var physical_health = document.getElementById("physical_health").value;
-            var general_health = document.getElementById("general_health").value;
-            var diff_walking = document.getElementById("diff_walking").value;
-            var diabetic = document.getElementById("diabetic").value;
-            var asthma = document.getElementById("asthma").value;
-            var kidney = document.getElementById("kidney").value;
-            var skin_cancer = document.getElementById("skin_cancer").value;
-            var stroke = document.getElementById("stroke").value;
-    
-            console.log('stroke', stroke);
-            console.log('skin_cancer', skin_cancer);
-            console.log('kidney', kidney);
-            console.log('asthma', asthma);
-            console.log('diabetic', diabetic);
-            console.log('diff_walking', diff_walking);
-            console.log('general_health', general_health);
-            console.log('physical_health', physical_health);
-            console.log('sleeping_time', sleeping_time);
-            console.log('psychologogy', psychologogy);
-            console.log('exersise', exersise);
-            console.log('smoke', smoke);
-            console.log('alcohole', alcohole);
-            console.log('age', age);
-            console.log('ethnic',ethnic_group);
-            console.log('bmi',bmi);
-            console.log('gender',gender);
-    
-            if(gender && bmi && ethnic_group && age && alcohole && smoke && stroke && exersise && psychologogy && sleeping_time && physical_health && general_health && diff_walking && diabetic && asthma && kidney && skin_cancer && stroke){
-                console.log('all ok');
-                var xhr = new XMLHttpRequest();
-                var url = '/get_C_V_D_prediction/?' +
-                    'gender=' + gender +
-                    '&bmi=' + bmi +
-                    '&ethnic_group=' + ethnic_group +
-                    '&age=' + age +
-                    '&alcohole=' + alcohole +
-                    '&smoke=' + smoke +
-                    '&exersise=' + exersise +
-                    '&psychologogy=' + psychologogy +
-                    '&sleeping_time=' + sleeping_time +
-                    '&stroke=' + stroke +
-                    '&physical_health=' + physical_health +
-                    '&general_health=' + general_health +
-                    '&diff_walking=' + diff_walking +
-                    '&diabetic=' + diabetic +
-                    '&asthma=' + asthma +
-                    '&kidney=' + kidney +
-                    '&skin_cancer=' + skin_cancer;
-                console.log('url', url);
-    
-                xhr.open('GET', url, true);
-                xhr.send();
-    
-                xhr.onload = function () {
-                if (xhr.status === 200) {
-    
-                    medicationDetails = JSON.parse(xhr.responseText);
-                    console.log('medicationDetails', medicationDetails);
-    
-                    detailshtml = `
-                    
-    
-                        <div class="row">
-                            
-                            <blockquote>YOUR CARDIO VASCULAR DISEASE HAPPENING PROVABILITY IS ALMOST ${medicationDetails.toFixed(2)}%</blockquote>
-                            
-                        </div>
-                            
-                    
-                    `;
-                    document.getElementById("prediction_result").innerHTML = detailshtml;
-    
-    
-                }
-    
-                }
-    
-    
-            
-        }
-        
-        }
-    
-    
-    </script>
 
 </body>
 

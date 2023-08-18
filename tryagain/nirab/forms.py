@@ -2,8 +2,27 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,SocialMedia,Medication,handwritten_text_model
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,SocialMedia,Medication,handwritten_text_model,MENTAL_HEALTH_PREDICTION_MODEL,PERSONAL_DIARY
 from django.forms import ModelForm
+
+
+
+
+class PERSONAL_DIARY_FORM(forms.ModelForm):
+    title = forms.TextInput(attrs={'class':'form-control','placeholder':'Title'})
+    content = forms.TextInput(attrs={'class':'form-control','placeholder':'Content'})
+    class Meta:
+        model = PERSONAL_DIARY
+        fields = ['title','content']
+
+
+
+
+
+
+
+
+
 
 
 
