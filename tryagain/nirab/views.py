@@ -21,65 +21,14 @@ from django.http import JsonResponse
 from .madication_chat import MEDICINE_CHAT
 from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 from .C_V_D_prediction import C_V_D_PREDICTION
+from .mental_health_prediction import MENTAL_HEALTH
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from datetime import timedelta
 
-@login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
+
 def trial(request):
-    user = request.user
-    
-    # Calculate the date range for the current day
-    today = timezone.now().date()
-    start_of_day = timezone.make_aware(timezone.datetime.combine(today, timezone.datetime.min.time()))
-    end_of_day = start_of_day + timedelta(days=1)
-    
-    # Count the number of records created by the user today
-    record_count_today = PERSONAL_DIARY.objects.filter(user=user, created_at__range=(start_of_day, end_of_day)).count()
-    
-    if record_count_today <= 10:  # Set your desired daily limit here (e.g., 3 records)
-        if request.method == 'POST':
-            form = PERSONAL_DIARY_FORM(request.POST)
-            if form.is_valid():
-                title = form.cleaned_data['title']
-                content = form.cleaned_data['content']
-                PERSONAL_DIARY.objects.create(user=user,title=title,content=content)
-                count = PERSONAL_DIARY.objects.filter(user=user).count()
-                count = count + 1
-                messages.success(request, "Your Record Has Been Saved Successfully!")
-                return render(request, 'trial.html', {'personal_diery_form': form,'personal_instance_count':count,'record_count_today':record_count_today})
-
-        else:
-            form = PERSONAL_DIARY_FORM()
-            user = request.user
-            count = PERSONAL_DIARY.objects.filter(user=user).count()
-            count = count + 1
-        return render(request, 'trial.html', {'personal_diery_form': form,'personal_instance_count':count,'record_count_today':record_count_today})
-    else:
-        messages.error(request, "You have reached your daily limit of 10 records")
-        return render(request, 'trial.html', {'record_count_today':record_count_today})
-
-
-# @login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
-# def trial(request):
-#     if request.method == 'POST':
-#         form = PERSONAL_DIARY_FORM(request.POST)
-#         user = request.user
-#         if form.is_valid():
-#             title = form.cleaned_data['title']
-#             content = form.cleaned_data['content']
-#             PERSONAL_DIARY.objects.create(user=user,title=title,content=content)
-#             count = PERSONAL_DIARY.objects.filter(user=user).count()
-#             count = count + 1
-#             messages.success(request, "Your Record Has Been Saved Successfully!")
-#             return render(request, 'trial.html', {'personal_diery_form': form,'personal_instance_count':count})
-
-#     else:
-#         form = PERSONAL_DIARY_FORM()
-#         user = request.user
-#         count = PERSONAL_DIARY.objects.filter(user=user).count()
-#         count = count + 1
-#     return render(request, 'trial.html', {'personal_diery_form': form,'personal_instance_count':count})
+    return render(request, 'trial.html')
 
 
 def logout_user(request):
@@ -195,6 +144,16 @@ def medicine_details_generic(request):
 def get_medicine_details_generic(request):
     T_M_S = TOTAL_MEDICINE_SEARCH(request=request)
     return T_M_S.get_medicine_details_generic()
+
+@login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
+def personal_diary_input(request):
+    MENTAL_HEALTH_ = MENTAL_HEALTH(request=request)
+    return MENTAL_HEALTH_.personal_diary_input()
+
+@login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
+def predict_mental_health(request):
+    MENTAL_HEALTH_ = MENTAL_HEALTH(request=request)
+    return MENTAL_HEALTH_.predict_mental_health()
 
 
 

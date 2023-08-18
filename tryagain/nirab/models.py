@@ -62,7 +62,7 @@ class MENTAL_HEALTH_PREDICTION_MODEL(models.Model):
     neutral = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return self.user
+        return f'{self.user}'
     
 
 

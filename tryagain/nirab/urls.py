@@ -94,5 +94,10 @@ urlpatterns = [
     path('get_C_V_D_prediction/', views.get_C_V_D_prediction, name='get_C_V_D_prediction'),
 
 
+
+    path('personal_diary_input/', views.personal_diary_input, name='personal_diary_input'),
+    path('predict_mental_health/', views.predict_mental_health, name='predict_mental_health'),
+
+
     path('trial/', views.trial, name='trial'),
 ]
