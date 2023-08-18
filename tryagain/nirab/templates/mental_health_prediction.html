@@ -237,6 +237,7 @@ select::-ms-expand {
 
                                                 </div>
 
+                                                <canvas id="combinedChart"></canvas>
 
 
 
@@ -325,10 +326,108 @@ select::-ms-expand {
     <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
     <script src="{% main_template 'js/click-scroll.js' %}"></script>
     <script src="{% main_template 'js/custom.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js"></script>
     {% if all_prediction_objects_list %}
     <script>
-        var all_prediction_objects_list = JSON.parse("{{all_prediction_objects_list|escapejs}}");
-        console.log(all_prediction_objects_list);
+    document.addEventListener("DOMContentLoaded", function() {
+            var data = JSON.parse("{{all_prediction_objects_list|escapejs}}");
+
+            console.log(data);
+
+
+        var combinedChartCtx = document.getElementById('combinedChart').getContext('2d');
+        var combinedChart = new Chart(combinedChartCtx, {
+        type: 'line',
+        data: {
+            labels: data.map(obj => obj.id),
+            datasets: getCombinedDatasets(data),
+        },
+        options: {
+            scales: {
+            x: {
+                display: true,
+                title: {
+                display: true,
+                text: 'ID',
+                },
+            },
+            y: {
+                display: true,
+                title: {
+                display: true,
+                text: 'Value',
+                },
+            },
+            },
+        },
+        });
+
+        // Create individual graphs for each key
+        var keys = Object.keys(data[0][0]).filter(key => key !== 'id');
+        keys.forEach(key => {
+        var individualChartCtx = document.createElement('canvas');
+        individualChartCtx.id = key + 'Chart';
+        document.body.appendChild(individualChartCtx);
+
+        var individualChart = new Chart(individualChartCtx, {
+            type: 'line',
+            data: {
+            labels: data.map(obj => obj.id),
+            datasets: [{
+                label: key,
+                data: data.map(obj => obj[key]),
+                borderColor: getRandomColor(),
+                fill: false,
+            }],
+            },
+            options: {
+            scales: {
+                x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'ID',
+                },
+                },
+                y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                },
+                },
+            },
+            },
+        });
+        });
+
+        // Function to generate random color
+        function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+        }
+
+        // Function to generate datasets for the combined graph
+        function getCombinedDatasets(data) {
+        var keys = Object.keys(data[0]).filter(key => key !== 'id');
+
+        return keys.map(key => ({
+            label: key,
+            data: data.map(obj => obj[key]),
+            borderColor: getRandomColor(),
+            fill: false,
+        }));
+        }
+
+
+
+        
+    });
+
     </script>
     {% endif %}
 
