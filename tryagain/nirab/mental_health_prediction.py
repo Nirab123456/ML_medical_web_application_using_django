@@ -61,198 +61,102 @@ class MENTAL_HEALTH:
     def predict_mental_health(self):
         request = self.request
         user=self.user
-        if request.method == 'GET':
-            yesterday = timezone.now().date() - timedelta(days=1)
-            today = timezone.now().date()
+        all_mental_prediction_objects = MENTAL_HEALTH_PREDICTION_MODEL.objects.filter(user=user) 
+        all_mental_prediction_objects_list = []
+        for object in all_mental_prediction_objects:
+            all_mental_prediction_objects_list.append(object.id)
+        all_diery_objects = PERSONAL_DIARY.objects.filter(user=user)
+        all_diery_objects_id_list = []
+        for object in all_diery_objects:
+            all_diery_objects_id_list.append(object.id)
+        print('all_diery_objects_id_list',all_diery_objects_id_list)
+        print('all_mental_prediction_objects_list',all_mental_prediction_objects_list)
+        # Convert elements in all_diery_objects_id_list to strings
+        all_diery_objects_id_list_str = list(map(str, all_diery_objects_id_list))
 
-            # check if the user has created a record yesterday
-            mental_care_record_count_yesterday = MENTAL_HEALTH_PREDICTION_MODEL.objects.filter(user=user, created_at__date=yesterday).count()
-            mebtal_care_record_count_today = MENTAL_HEALTH_PREDICTION_MODEL.objects.filter(user=user, created_at__date=today).count()
-            if mental_care_record_count_yesterday <=0 :
-                #check yesterday diery object count
-                yesterday_diery_object = PERSONAL_DIARY.objects.filter(user=user, created_at__date=yesterday)
-                yesterday_diery_object_count = yesterday_diery_object.count()
-                if yesterday_diery_object_count > 0:
+        # Find the common elements
+        common_elements = list(set(all_diery_objects_id_list_str).intersection(all_mental_prediction_objects_list))
+        print('common_elements', common_elements)
+
+        # Convert common_elements back to integers
+        common_elements_int = list(map(int, common_elements))
+
+        # Find elements not available in all_mental_prediction_objects_list
+        not_available_in_mental_prediction_objects_list = list(set(all_diery_objects_id_list) - set(common_elements_int))
+        print('not_available_in_mental_prediction_objects_list', not_available_in_mental_prediction_objects_list)
+        if len(not_available_in_mental_prediction_objects_list) >=1:
+            device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+            tokenizer = AutoTokenizer.from_pretrained("SamLowe/roberta-base-go_emotions")
+            model = AutoModelForSequenceClassification.from_pretrained("SamLowe/roberta-base-go_emotions")
+            for id in not_available_in_mental_prediction_objects_list:
+                object = get_object_or_404(PERSONAL_DIARY, id=id)
+                title = object.title
+                content = object.content
+                title_prediction_dict={}
+                content_prediction_dict={}
+                if content :
+                    input_text = content
+                    input_text = input_text.lower()
+                    input_text = input_text.replace('\n', '')
+                    input_text = re.sub(r'[^\w\s,.\-?!]', '', input_text)
+                    inputs = tokenizer(input_text, return_tensors="pt")
                     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-                    tokenizer = AutoTokenizer.from_pretrained("SamLowe/roberta-base-go_emotions")
-                    model = AutoModelForSequenceClassification.from_pretrained("SamLowe/roberta-base-go_emotions")
-                    all_prediction_objects_list = []
-                    for object in yesterday_diery_object:
-                        id = object.id
-                        title = object.title
-                        content = object.content
-                        title_prediction_dict={}
-                        content_prediction_dict={}
-                        if content :
-                            input_text = content
-                            input_text = input_text.lower()
-                            input_text = input_text.replace('\n', '')
-                            input_text = re.sub(r'[^\w\s,.\-?!]', '', input_text)
-                            inputs = tokenizer(input_text, return_tensors="pt")
-                            device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-                            model.to(device)
-                            inputs.to(device)
-                            with torch.no_grad():
-                                outputs = model(**inputs)
-                            logits = outputs.logits 
-                            probabilities = F.softmax(logits, dim=1)
+                    model.to(device)
+                    inputs.to(device)
+                    with torch.no_grad():
+                        outputs = model(**inputs)
+                    logits = outputs.logits 
+                    probabilities = F.softmax(logits, dim=1)
 
-                            for i, label_id in enumerate(probabilities[0]):
-                                label = model.config.id2label[i]
-                                prediction_value = label_id.item()  # Convert tensor to float
-                                # #take upto 2 decimal points
-                                # prediction_value = round(prediction_value, 2)
-                                content_prediction_dict[label] = prediction_value
+                    for i, label_id in enumerate(probabilities[0]):
+                        label = model.config.id2label[i]
+                        prediction_value = label_id.item()     
+                        content_prediction_dict[label] = prediction_value
 
-                        else:
-                            continue
-
-                        if title:
-                            input_text = title
-                            input_text = input_text.lower()
-                            input_text = input_text.replace('\n', '')
-                            input_text = re.sub(r'[^\w\s,.\-?!]', '', input_text)
-                            inputs = tokenizer(input_text, return_tensors="pt")
-                            device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-                            model.to(device)
-                            inputs.to(device)
-                            with torch.no_grad():
-                                outputs = model(**inputs)
-                            logits = outputs.logits 
-                            probabilities = F.softmax(logits, dim=1)
-
-                            for i, label_id in enumerate(probabilities[0]):
-                                label = model.config.id2label[i]
-                                prediction_value = label_id.item()
-
-                                # #take upto 2 decimal points
-                                # prediction_value = round(prediction_value, 2)
-                                title_prediction_dict[label] = prediction_value
-                        else:
-                            continue
-                        combined_prediction_dict={}
-                        WEIGHT_OF_TITLE = 0.3
-                        WEIGHT_OF_CONTENT = 0.7
-                        if len(title_prediction_dict) > 0 and len(content_prediction_dict) > 0:
-                            for key in title_prediction_dict.keys():
-                                combined_prediction_dict[key] = (title_prediction_dict[key]*WEIGHT_OF_TITLE) + (content_prediction_dict[key]*WEIGHT_OF_CONTENT)
-
-
-                        elif len(title_prediction_dict) > 0 and len(content_prediction_dict) <= 0:
-                            combined_prediction_dict = title_prediction_dict
-
-                        combined_prediction_dict['id'] = id
-
-                        all_prediction_objects_list.append(combined_prediction_dict)
-                    for object in all_prediction_objects_list:
-                        MENTAL_HEALTH_PREDICTION_MODEL.objects.create(user=user,admiration=object['admiration'],id=object['id'],
-                                                                    amusement = object['amusement'],anger = object['anger'],
-                                                                    annoyance = object['annoyance'],approval = object['approval'],
-                                                                    caring = object['caring'],confusion = object['confusion'],
-                                                                    curiosity = object['curiosity'],desire = object['desire'],
-                                                                    disappointment = object['disappointment'],disapproval = object['disapproval'],
-                                                                    disgust = object['disgust'],embarrassment = object['embarrassment'],
-                                                                    excitement = object['excitement'],fear = object['fear'],
-                                                                    gratitude = object['gratitude'],grief = object['grief'],
-                                                                    joy = object['joy'],love = object['love'],
-                                                                    nervousness = object['nervousness'],optimism = object['optimism'],
-                                                                    pride = object['pride'],realization = object['realization'],
-                                                                    relief = object['relief'],remorse = object['remorse'],
-                                                                    sadness = object['sadness'],surprise = object['surprise'],
-                                                                    neutral = object['neutral'])
-            if mebtal_care_record_count_today <= 0:
-                today = timezone.now().date()
-                start_of_day = timezone.make_aware(timezone.datetime.combine(today, timezone.datetime.min.time()))
-                end_of_day = start_of_day + timedelta(days=1)
-                record_count_today = PERSONAL_DIARY.objects.filter(user=user, created_at__range=(start_of_day, end_of_day)).count()
-                if record_count_today >= 10:
-                    today_diery_object = PERSONAL_DIARY.objects.filter(user=user, created_at__date=today)
-                    
+                if title:
+                    input_text = title
+                    input_text = input_text.lower()
+                    input_text = input_text.replace('\n', '')
+                    input_text = re.sub(r'[^\w\s,.\-?!]', '', input_text)
+                    inputs = tokenizer(input_text, return_tensors="pt")
                     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-                    tokenizer = AutoTokenizer.from_pretrained("SamLowe/roberta-base-go_emotions")
-                    model = AutoModelForSequenceClassification.from_pretrained("SamLowe/roberta-base-go_emotions")
-                    all_prediction_objects_list = []
-                    for object in today_diery_object:
-                        id = object.id
-                        title = object.title
-                        content = object.content
-                        title_prediction_dict={}
-                        content_prediction_dict={}
-                        if content :
-                            input_text = content
-                            input_text = input_text.lower()
-                            input_text = input_text.replace('\n', '')
-                            input_text = re.sub(r'[^\w\s,.\-?!]', '', input_text)
-                            inputs = tokenizer(input_text, return_tensors="pt")
-                            device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-                            model.to(device)
-                            inputs.to(device)
-                            with torch.no_grad():
-                                outputs = model(**inputs)
-                            logits = outputs.logits 
-                            probabilities = F.softmax(logits, dim=1)
+                    model.to(device)
+                    inputs.to(device)
+                    with torch.no_grad():
+                        outputs = model(**inputs)
+                    logits = outputs.logits 
+                    probabilities = F.softmax(logits, dim=1)
 
-                            for i, label_id in enumerate(probabilities[0]):
-                                label = model.config.id2label[i]
-                                prediction_value = label_id.item()  # Convert tensor to float
-                                # #take upto 2 decimal points
-                                # prediction_value = round(prediction_value, 2)
-                                content_prediction_dict[label] = prediction_value
-                        else:
-                            continue
+                    for i, label_id in enumerate(probabilities[0]):
+                        label = model.config.id2label[i]
+                        prediction_value = label_id.item()
 
-                        if title:
-                            input_text = title
-                            input_text = input_text.lower()
-                            input_text = input_text.replace('\n', '')
-                            input_text = re.sub(r'[^\w\s,.\-?!]', '', input_text)
-                            inputs = tokenizer(input_text, return_tensors="pt")
-                            device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-                            model.to(device)
-                            inputs.to(device)
-                            with torch.no_grad():
-                                outputs = model(**inputs)
-                            logits = outputs.logits 
-                            probabilities = F.softmax(logits, dim=1)
+                        title_prediction_dict[label] = prediction_value
 
-                            for i, label_id in enumerate(probabilities[0]):
-                                label = model.config.id2label[i]
-                                prediction_value = label_id.item()
+                combined_prediction_dict={}
+                WEIGHT_OF_TITLE = 0.3
+                WEIGHT_OF_CONTENT = 0.7
+                if len(title_prediction_dict) > 0 and len(content_prediction_dict) > 0:
+                    for key in title_prediction_dict.keys():
+                        combined_prediction_dict[key] = (title_prediction_dict[key]*WEIGHT_OF_TITLE) + (content_prediction_dict[key]*WEIGHT_OF_CONTENT)
+                elif len(title_prediction_dict) > 0 and len(content_prediction_dict) <= 0:
+                    combined_prediction_dict = title_prediction_dict
 
-                                # #take upto 2 decimal points
-                                # prediction_value = round(prediction_value, 2)
-                                title_prediction_dict[label] = prediction_value
-                        else:
-                            continue
-                        combined_prediction_dict={}
-                        WEIGHT_OF_TITLE = 0.3
-                        WEIGHT_OF_CONTENT = 0.7
-                        if len(title_prediction_dict) > 0 and len(content_prediction_dict) > 0:
-                            for key in title_prediction_dict.keys():
-                                combined_prediction_dict[key] = (title_prediction_dict[key]*WEIGHT_OF_TITLE) + (content_prediction_dict[key]*WEIGHT_OF_CONTENT)
-                        elif len(title_prediction_dict) > 0 and len(content_prediction_dict) <= 0:
-                            combined_prediction_dict = title_prediction_dict
-
-                        combined_prediction_dict['id'] = id
-
-                        all_prediction_objects_list.append(combined_prediction_dict)
-                    for object in all_prediction_objects_list:
-                        MENTAL_HEALTH_PREDICTION_MODEL.objects.create(user=user,admiration=object['admiration'],id=object['id'],
-                                                                    amusement = object['amusement'],anger = object['anger'],
-                                                                    annoyance = object['annoyance'],approval = object['approval'],
-                                                                    caring = object['caring'],confusion = object['confusion'],
-                                                                    curiosity = object['curiosity'],desire = object['desire'],
-                                                                    disappointment = object['disappointment'],disapproval = object['disapproval'],
-                                                                    disgust = object['disgust'],embarrassment = object['embarrassment'],
-                                                                    excitement = object['excitement'],fear = object['fear'],
-                                                                    gratitude = object['gratitude'],grief = object['grief'],
-                                                                    joy = object['joy'],love = object['love'],
-                                                                    nervousness = object['nervousness'],optimism = object['optimism'],
-                                                                    pride = object['pride'],realization = object['realization'],
-                                                                    relief = object['relief'],remorse = object['remorse'],
-                                                                    sadness = object['sadness'],surprise = object['surprise'],
-                                                                    neutral = object['neutral'])
-                        
+                MENTAL_HEALTH_PREDICTION_MODEL.objects.create(user=user,admiration=combined_prediction_dict['admiration'],id=id,
+                                                                  amusement = combined_prediction_dict['amusement'],anger = combined_prediction_dict['anger'],
+                                                                    annoyance = combined_prediction_dict['annoyance'],approval = combined_prediction_dict['approval'],
+                                                                    caring = combined_prediction_dict['caring'],confusion = combined_prediction_dict['confusion'],
+                                                                    curiosity = combined_prediction_dict['curiosity'],desire = combined_prediction_dict['desire'],
+                                                                    disappointment = combined_prediction_dict['disappointment'],disapproval = combined_prediction_dict['disapproval'],
+                                                                    disgust = combined_prediction_dict['disgust'],embarrassment = combined_prediction_dict['embarrassment'],
+                                                                    excitement = combined_prediction_dict['excitement'],fear = combined_prediction_dict['fear'],
+                                                                    gratitude = combined_prediction_dict['gratitude'],grief = combined_prediction_dict['grief'],
+                                                                    joy = combined_prediction_dict['joy'],love = combined_prediction_dict['love'],
+                                                                    nervousness = combined_prediction_dict['nervousness'],optimism = combined_prediction_dict['optimism'],
+                                                                    pride = combined_prediction_dict['pride'],realization = combined_prediction_dict['realization'],
+                                                                    relief = combined_prediction_dict['relief'],remorse = combined_prediction_dict['remorse'],
+                                                                    sadness = combined_prediction_dict['sadness'],surprise = combined_prediction_dict['surprise'],
+                                                                    neutral = combined_prediction_dict['neutral'])
         #get all prediction objects of a user
         all_prediction_objects = MENTAL_HEALTH_PREDICTION_MODEL.objects.filter(user=user)
         all_prediction_objects_list = []
@@ -289,15 +193,7 @@ class MENTAL_HEALTH:
             object_dict['surprise'] = round(float(object.surprise), 3)
             object_dict['neutral'] = round(float(object.neutral), 3)
             all_prediction_objects_list.append(object_dict)
-            
-        print('all_objectsssssssssssssss',all_prediction_objects_list)
         all_prediction_objects_list = dumps(all_prediction_objects_list)
 
         return render(request, 'mental_health_prediction.html', {'all_prediction_objects_list':all_prediction_objects_list})
-
-                        
-                            
-
-
-
 

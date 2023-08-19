@@ -14,7 +14,14 @@ admin.site.register(Medication)
 admin.site.register(MedicationDetails)
 admin.site.register(SELECTED_QUESTION_ANSWER)
 admin.site.register(MENTAL_HEALTH_PREDICTION_MODEL)
-admin.site.register(PERSONAL_DIARY)
+# admin.site.register(PERSONAL_DIARY)
+@admin.register(PERSONAL_DIARY)
+class PERSONAL_DIARYAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at', 'id')
+    list_filter = ('title', 'content', 'id')
+    ordering = ('title',)
+    search_fields = ('title', 'content', 'id')
+
 
 
 
