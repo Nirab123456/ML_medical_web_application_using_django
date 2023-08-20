@@ -288,6 +288,42 @@ select::-ms-expand {
 
                                   </div>
 
+                                  {% if noneditable_id %}
+
+                                  <div class="tab-pane fade" id="editable_diery_tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   
+
+                                    <div class="row">
+                                        <div class="mb-4 mb-lg-3">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">DIERY ENTRY </h5>
+    
+                                                            <p class="mb-0">DESCRIBE A EVENT WITH TITLE</p>
+                                                            <p>YOUR TODAYS RECORD COUNT IS :
+                                                                <span class="badge bg-education {% if record_count_today >= 10 %}text-danger{% endif %}">
+                                                                    {{ record_count_today }}
+                                                                </span>
+                                                                                                                        
+                                                            </p>
+    
+                                                        </div>
+    
+                                                        <span class="badge bg-education rounded-pill ms-auto">{{personal_instance_count}}</span>
+    
+    
+                                                    </div>
+    
+                                                    {% include 'editable_diery.html' %}
+    
+                                            </div>
+                                        </div>
+    
+    
+                                    </div>    
+                                  </div>
+                                      
+                                {% endif %}
 
 
 
