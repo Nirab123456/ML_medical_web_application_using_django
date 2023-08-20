@@ -266,11 +266,45 @@ select::-ms-expand {
                                                 </div>
                         
                                                 <div class="col-lg-8 col-12 mt-3 mx-auto">
-                                                    <div id="diery_details_container"></div>
+                                                    <div class="diery_details_container"></div>
                                                 </div>
-
+                        
                                                 <div class="col-lg-12 col-12">
-                                                    <div id="diry_list_pagination"></div>
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination justify-content-center mb-0">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">Prev</span>
+                                                                </a>
+                                                            </li>
+                        
+                                                            <li class="page-item active" aria-current="page">
+                                                                <a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">3</a>
+                                                            </li>
+                        
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">4</a>
+                                                            </li>
+                        
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">5</a>
+                                                            </li>
+                                                            
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
                                                 </div>
                         
                                             </div>
@@ -457,94 +491,71 @@ select::-ms-expand {
 
     {% if all_diery_objects_list %}
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var data = JSON.parse('{{ all_diery_objects_list|safe }}');
-            console.log(data);
-    
-            function calculateTotalPages(items) {
-                var itemsPerPage = 3;
-                var totalItems = items.length;
-                return Math.ceil(totalItems / itemsPerPage);
+    document.addEventListener("DOMContentLoaded", function() {
+        var data = JSON.parse("{{all_diery_objects_list|escapejs}}");
+        console.log(data);
+
+
+        function calculateTotalPages(items) {
+            var itemsPerPage = 3;
+            var totalItems = items.length;
+            return Math.ceil(totalItems / itemsPerPage);
             }
+        function displayPage(pageNumber) {
+        showPage(pageNumber);
+        }
+
+        function getPageItems(pageNumber) {
+        var itemsPerPage = 3;
+        var data = JSON.parse("{{all_diery_objects_list|escapejs}}");
+        var startIndex = (pageNumber - 1) * itemsPerPage;
+        var endIndex = startIndex + itemsPerPage;
+        return data.slice(startIndex, endIndex);
+        }
+
+        function showPage(pageNumber) {
+        var pageItems = getPageItems(pageNumber);
+
+        var container = document.getElementById('diery_details_container');
+
+        container.innerHTML = '';
+        for (var i = 0; i < pageItems.length; i++) {
+        var pageItem = pageItems[i];
+
+
+        container.innerHTML = `
+                                <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                                    <div class="d-flex">                        
+                                        <div class="custom-block-topics-listing-info d-flex">
+                                            <div>
+                                                <h5 class="mb-2">${pageItem.title}</h5>
     
-            function getPageItems(pageNumber) {
-                var itemsPerPage = 3;
-                var startIndex = (pageNumber - 1) * itemsPerPage;
-                var endIndex = startIndex + itemsPerPage;
-                return data.slice(startIndex, endIndex);
-            }
+                                                <p class="mb-0">${pageItem.content}</p>
     
-            function showPage(pageNumber) {
-                var pageItems = getPageItems(pageNumber);
-                var container = ''; // Initialize container
+                                                <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                            </div>
     
-                for (var i = 0; i < pageItems.length; i++) {
-                    var pageItem = pageItems[i];
-    
-                    container += `
-                        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                            <div class="d-flex">
-                                <div class="custom-block-topics-listing-info d-flex">
-                                    <div>
-                                        <h5 class="mb-2">${pageItem.title}</h5>
-                                        <p class="mb-0">${pageItem.content}</p>
-                                        <button href="topics-detail.html" class="btn-7 custom-btn mt-3 mt-lg-4">EDIT</button>
+                                            <span class="badge bg-design rounded-pill ms-auto">14</span>
+                                        </div>
                                     </div>
-                                    <span class="badge bg-design rounded-pill ms-auto">14</span>
                                 </div>
-                            </div>
-                        </div>`;
-                }
-    
-                document.getElementById("diery_details_container").innerHTML = container;
-            }
+        
+        
+        `;
 
-
-            function pagination() {
-                var totalPages = calculateTotalPages(data);
-                var currentPage = 1;
-                showPage(currentPage);
-    
-                var paginationContainer = `
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center mb-0">
-                `;
-    
-                for (var i = 1; i <= totalPages; i++) {
-                    paginationContainer += `
-                        <li onclick="showPage(${i})" class="page-item page-link">${i}</li>
-                        
-                        `;
-
-
-                }
-
-                paginationContainer += `
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                `;
-
-                document.getElementById("diry_list_pagination").innerHTML += paginationContainer;
 
             }
+        }
+
+        var totalPages = calculateTotalPages(data);
+        var currentPage = 1;
+        displayPage(currentPage);
 
 
 
+    });
 
-
-    
-            var totalPages = calculateTotalPages(data);
-            var currentPage = 1;
-            showPage(currentPage);
-            pagination();   
-        });
     </script>
-    
 
     {% endif %}
 

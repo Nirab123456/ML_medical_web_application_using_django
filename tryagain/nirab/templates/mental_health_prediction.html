@@ -457,93 +457,80 @@ select::-ms-expand {
 
     {% if all_diery_objects_list %}
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var data = JSON.parse('{{ all_diery_objects_list|safe }}');
-            console.log(data);
+        var data; // Declare the data variable in the global scope
     
-            function calculateTotalPages(items) {
-                var itemsPerPage = 3;
-                var totalItems = items.length;
-                return Math.ceil(totalItems / itemsPerPage);
-            }
+        // Define the functions first
+        function calculateTotalPages(items) {
+            var itemsPerPage = 3;
+            var totalItems = items.length;
+            return Math.ceil(totalItems / itemsPerPage);
+        }
     
-            function getPageItems(pageNumber) {
-                var itemsPerPage = 3;
-                var startIndex = (pageNumber - 1) * itemsPerPage;
-                var endIndex = startIndex + itemsPerPage;
-                return data.slice(startIndex, endIndex);
-            }
+        function getPageItems(pageNumber) {
+            var itemsPerPage = 3;
+            var startIndex = (pageNumber - 1) * itemsPerPage;
+            var endIndex = startIndex + itemsPerPage;
+            return data.slice(startIndex, endIndex);
+        }
     
-            function showPage(pageNumber) {
-                var pageItems = getPageItems(pageNumber);
-                var container = ''; // Initialize container
+        function showPage(pageNumber) {
+            var pageItems = getPageItems(pageNumber);
+            var container = ''; // Initialize container
     
-                for (var i = 0; i < pageItems.length; i++) {
-                    var pageItem = pageItems[i];
+            for (var i = 0; i < pageItems.length; i++) {
+                var pageItem = pageItems[i];
     
-                    container += `
-                        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                            <div class="d-flex">
-                                <div class="custom-block-topics-listing-info d-flex">
-                                    <div>
-                                        <h5 class="mb-2">${pageItem.title}</h5>
-                                        <p class="mb-0">${pageItem.content}</p>
-                                        <button href="topics-detail.html" class="btn-7 custom-btn mt-3 mt-lg-4">EDIT</button>
-                                    </div>
-                                    <span class="badge bg-design rounded-pill ms-auto">14</span>
+                container += `
+                    <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                        <div class="d-flex">
+                            <div class="custom-block-topics-listing-info d-flex">
+                                <div>
+                                    <h5 class="mb-2">${pageItem.title}</h5>
+                                    <p class="mb-0">${pageItem.content}</p>
+                                    <button href="topics-detail.html" class="btn-7 custom-btn mt-3 mt-lg-4">EDIT</button>
                                 </div>
+                                <span class="badge bg-design rounded-pill ms-auto">14</span>
                             </div>
-                        </div>`;
-                }
-    
-                document.getElementById("diery_details_container").innerHTML = container;
+                        </div>
+                    </div>`;
             }
-
-
-            function pagination() {
-                var totalPages = calculateTotalPages(data);
-                var currentPage = 1;
-                showPage(currentPage);
     
-                var paginationContainer = `
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center mb-0">
-                `;
+            document.getElementById("diery_details_container").innerHTML = container;
+        }
     
-                for (var i = 1; i <= totalPages; i++) {
-                    paginationContainer += `
-                        <li onclick="showPage(${i})" class="page-item page-link">${i}</li>
-                        
-                        `;
-
-
-                }
-
-                paginationContainer += `
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                `;
-
-                document.getElementById("diry_list_pagination").innerHTML += paginationContainer;
-
-            }
-
-
-
-
-
-    
+        function pagination() {
             var totalPages = calculateTotalPages(data);
             var currentPage = 1;
             showPage(currentPage);
-            pagination();   
+    
+            var paginationContainer = `
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center mb-0">
+            `;
+    
+            for (var i = 1; i <= totalPages; i++) {
+                paginationContainer += `
+                    <li class="page-item"><button class="page-link" onclick="showPage(${i});">${i}</button></li>`;
+            }
+    
+            paginationContainer += `
+                    </ul>
+                </nav>
+            `;
+    
+            document.getElementById("diry_list_pagination").innerHTML = paginationContainer;
+        }
+    
+        // Now listen for the DOMContentLoaded event
+        document.addEventListener("DOMContentLoaded", function() {
+            data = JSON.parse('{{ all_diery_objects_list|safe }}');
+            console.log(data);
+    
+            pagination();
         });
     </script>
+    
+    
     
 
     {% endif %}
