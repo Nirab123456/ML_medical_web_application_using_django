@@ -153,7 +153,7 @@ select::-ms-expand {
 
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">VIEW DIERY</button>
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">DIERY INPUT</button>
                         </li>
 
 
@@ -258,103 +258,59 @@ select::-ms-expand {
 
 
 
-                                        <div class="container">
-                                            <div class="row">
-                        
-                                                <div class="col-lg-12 col-12 text-center">
-                                                    <h3 class="mb-4">YOUR DIERY RECORSDS</h3>
-                                                </div>
-                        
-                                                <div class="col-lg-8 col-12 mt-3 mx-auto">
-                                                    <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                                        <div class="d-flex">                        
-                                                            <div class="custom-block-topics-listing-info d-flex">
-                                                                <div>
-                                                                    <h5 class="mb-2">Web Design</h5>
-                        
-                                                                    <p class="mb-0">Topic Listing includes home, listing, detail and contact pages. Feel free to modify this template for your custom websites.</p>
-                        
-                                                                    <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
-                                                                </div>
-                        
-                                                                <span class="badge bg-design rounded-pill ms-auto">14</span>
-                                                            </div>
+                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'base_ocr' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">Bangla OCR DEMO</h5>
+
+                                                            <p class="mb-0">We can convert your desigred Bangla OCR image to Text.Try it out</p>
+
+                                                        </div>
+
+                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            
+                                                                <img src="{% main_template 'images/topics/smple_bangla.png' %}" class="custom-block-image img-fluid" alt="">
+                                                        
+                                                        </div>
+                                                        <div class="col-2" >
+                                                                <p class="custom-block-image img-fluid"></n>দক্ষিণ এশিয়ার প্রাচীন ও ধ্রুপদী যুগে বাংলাদেশ অঞ্চলটিতে বঙ্গ, পুপ্ডু, গৌড়, গাঙ্গাধদ্ধি, সমতট ও হরিকেল নামক জনপদ গড়ে উঠেছিল।.........</p>
+
                                                         </div>
                                                     </div>
-                        
-                                                    <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                                        <div class="d-flex">
-                        
-                                                            <div class="custom-block-topics-listing-info d-flex">
-                                                                <div>
-                                                                    <h5 class="mb-2">Advertising</h5>
-                        
-                                                                    <p class="mb-0">Visit TemplateMo website to download free CSS templates. Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus</p>
-                        
-                                                                    <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
-                                                                </div>
-                        
-                                                                <span class="badge bg-advertising rounded-pill ms-auto">30</span>
-                                                            </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'base_ocr' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">ENG OCR DEMO</h5>
+
+                                                            <p class="mb-0">We can convert your desigred English OCR image to Text.Try it out</p>
+
+                                                        </div>
+
+                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            
+                                                                <img src="{% main_template 'images/topics/eng_sample.png' %}" class="custom-block-image img-fluid" alt="">
+                                                        
+                                                        </div>
+                                                        <div class="col-2" >
+                                                                <p class="custom-block-image img-fluid"></n>Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. From east to west it stretches almost 4,700 miles (7,560 kilometers) .........</p>
+
                                                         </div>
                                                     </div>
-                        
-                                                    <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                                        <div class="d-flex">
-                        
-                                                            <div class="custom-block-topics-listing-info d-flex">
-                                                                <div>
-                                                                    <h5 class="mb-2">Podcast</h5>
-                        
-                                                                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus</p>
-                        
-                                                                    <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
-                                                                </div>
-                        
-                                                                <span class="badge bg-music rounded-pill ms-auto">20</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                        
-                                                <div class="col-lg-12 col-12">
-                                                    <nav aria-label="Page navigation example">
-                                                        <ul class="pagination justify-content-center mb-0">
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#" aria-label="Previous">
-                                                                    <span aria-hidden="true">Prev</span>
-                                                                </a>
-                                                            </li>
-                        
-                                                            <li class="page-item active" aria-current="page">
-                                                                <a class="page-link" href="#">1</a>
-                                                            </li>
-                                                            
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">2</a>
-                                                            </li>
-                                                            
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">3</a>
-                                                            </li>
-                        
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">4</a>
-                                                            </li>
-                        
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">5</a>
-                                                            </li>
-                                                            
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#" aria-label="Next">
-                                                                    <span aria-hidden="true">Next</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </nav>
-                                                </div>
-                        
+                                                </a>
                                             </div>
                                         </div>
 

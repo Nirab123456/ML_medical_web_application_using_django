@@ -1,0 +1,565 @@
+{% load main_template %}
+{% block content %}
+
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Topic Detail Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Open+Sans&amp;display=swap">
+    <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet"> 
+    <link href="{% main_template 'css/rotating_border_animated_buttons.css' %}" rel="stylesheet"> 
+
+
+
+<style>
+    input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="file"] + label {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+input[type="file"]:focus + label {
+  outline: 2px solid #0964b0;
+}
+
+
+.scrollable-text {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow: auto;
+    padding-right: 15px; /* Add some padding to prevent text from sticking to the scrollbar */
+}
+
+</style>
+
+<style>
+    /* Global variables */
+:root {
+  --glass: rgba(255, 255, 255, 0.2);
+  --glass-icon: rgba(255, 255, 255, 0.3);
+  --gradient: linear-gradient(35deg, red, purple);
+  --option: #320a28;
+}
+
+/* <select> styles */
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20em;
+  height: 3em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+      no-repeat right 0.8em center / 1.4em,
+    var(--gradient);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* <option> colors */
+option {
+  color: inherit;
+  background-color: var(--option);
+}
+
+/* Remove focus outline */
+select:focus {
+  outline: none;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+</style>
+
+</head>
+
+<body id="top">
+    <main>
+        {% include 'new_main_nav_bar.html' %}
+
+        <header class="d-flex flex-column justify-content-center align-items-center site-header">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-lg-5 mb-5">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><span>Homepage</span></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Web Design</span></li>
+                            </ol>
+                        </nav>
+                        <h2 class="text-white">We offer a multifunctional helth care analysis along with personal diery mannagement and english profeciency analysis.</h2>
+                    </div>
+
+                    <div class="col-12 col-lg-5">
+                        <div style="align-self: center;">
+                        {% include 'heart_beat.html' %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="explore-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">Browse Apps</h1>
+                    </div>
+
+                </div>
+            </div>
+
+            {% if all_prediction_objects_list %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Generate a click on the "BANGLA OCR" tab
+                    document.getElementById("finance-tab").click();
+                });
+            </script>
+            {% endif %}
+
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">HANDWRITTEN STYLE TRANSFER </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">ENG & BANGLA OCR</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">DIERY INPUT</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">MENTAL HEALTH GRAPH</button>
+                            </li>
+
+
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">HEALTH CARE</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                    <div class="row">
+                                        <div class="mb-4 mb-lg-3">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">DIERY ENTRY </h5>
+    
+                                                            <p class="mb-0">DESCRIBE A EVENT WITH TITLE</p>
+                                                            <p>YOUR TODAYS RECORD COUNT IS :
+                                                                <span class="badge bg-education {% if record_count_today >= 10 %}text-danger{% endif %}">
+                                                                    {{ record_count_today }}
+                                                                </span>
+                                                                                                                        
+                                                            </p>
+    
+                                                        </div>
+    
+                                                        <span class="badge bg-education rounded-pill ms-auto">{{personal_instance_count}}</span>
+    
+    
+                                                    </div>
+    
+                                                    {% include 'personal_diery_entry.html' %}
+    
+                                            </div>
+                                        </div>
+    
+    
+                                    </div>          
+                                </div>
+
+                                <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+
+                                    
+                                    <div class="row">
+
+
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'base_ocr' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">Bangla OCR DEMO</h5>
+
+                                                            <p class="mb-0">We can convert your desigred Bangla OCR image to Text.Try it out</p>
+
+                                                        </div>
+
+                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            
+                                                                <img src="{% main_template 'images/topics/smple_bangla.png' %}" class="custom-block-image img-fluid" alt="">
+                                                        
+                                                        </div>
+                                                        <div class="col-2" >
+                                                                <p class="custom-block-image img-fluid"></n>দক্ষিণ এশিয়ার প্রাচীন ও ধ্রুপদী যুগে বাংলাদেশ অঞ্চলটিতে বঙ্গ, পুপ্ডু, গৌড়, গাঙ্গাধদ্ধি, সমতট ও হরিকেল নামক জনপদ গড়ে উঠেছিল।.........</p>
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'base_ocr' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">ENG OCR DEMO</h5>
+
+                                                            <p class="mb-0">We can convert your desigred English OCR image to Text.Try it out</p>
+
+                                                        </div>
+
+                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            
+                                                                <img src="{% main_template 'images/topics/eng_sample.png' %}" class="custom-block-image img-fluid" alt="">
+                                                        
+                                                        </div>
+                                                        <div class="col-2" >
+                                                                <p class="custom-block-image img-fluid"></n>Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. From east to west it stretches almost 4,700 miles (7,560 kilometers) .........</p>
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+
+                                  </div>
+
+                                <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'presciption_classification_beta' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">Presciption Classification</h5>
+
+                                                            <p class="mb-0">Provide all the brand name of drugs to classify them in common classes</p>
+                                                        </div>
+
+                                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                                    </div>
+
+                                                    <img src="{% main_template 'images/topics/presciption_classification_1.png' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="custom-block custom-block-overlay">
+                                                <div class="d-flex flex-column h-100">
+                                                    <img src="{% main_template 'images/topics/presciption_classification.jpg' %}" class="custom-block-image img-fluid" alt="">
+
+                                                    <div class="custom-block-overlay-text d-flex">
+                                                        <div>
+                                                            <h5 class="text-white mb-2">Talk with drug</h5>
+
+                                                            <p class="text-white">Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
+
+                                                            <a href="{% url 'medicine_chatbot' %}" class="btn custom-btn mt-2 mt-lg-3">LET'S TALK WITH DRUGS</a>
+                                                        </div>
+
+                                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
+                                                    </div>
+
+                                                    <div class="social-share d-flex">
+                                                        <p class="text-white me-4">Share:</p>
+
+                                                        <ul class="social-icon">
+                                                            <li class="social-icon-item">
+                                                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                                            </li>
+
+                                                            <li class="social-icon-item">
+                                                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                                            </li>
+
+                                                            <li class="social-icon-item">
+                                                                <a href="#" class="social-icon-link bi-pinterest"></a>
+                                                            </li>
+                                                        </ul>
+
+                                                        <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
+                                                    </div>
+
+                                                    <div class="section-overlay"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane faq-section section-padding" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
+                                    <div class="row">
+
+                                        <div class="accordion" id="accordionExample">
+
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    ENGLISH IMAGE OR TEXT TO HANDWRITTEN (DEMO)
+                                                    </button>
+                                                </h2>
+            
+                                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+
+                                                        <div class="row">
+
+
+
+                                                            <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                                                <div class="custom-block bg-white shadow-lg">
+                                                                    <a href="{% url 'base_ocr' %}">
+                                                                        <div class="d-flex">
+                                                                            <div>
+                                                                                <h5 class="mb-2">DEMO PHOTOS OR TEXT</h5>
+                    
+                                                                                <p class="mb-0">We can convert your desigred images or text like this into hand written pdf now print and enjoy(avoid images with special charecters).</p>
+                    
+                                                                            </div>
+                    
+                                                                            <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                                        </div>
+                                                                            {% include 'image_scroll_demo_1.html' %}
+
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                    
+                                                            <div class="col-lg-6 col-md-6 col-12">
+                                                                <div class="custom-block bg-white shadow-lg">
+                                                                    <a href="{% url 'base_ocr' %}">
+                                                                        <div class="d-flex">
+                                                                            <div>
+                                                                                <h5 class="mb-2">Demo Pdf</h5>
+                    
+                                                                                <p class="mb-0">Download the pdf and prit it out for better understending </p>
+                    
+                                                                            </div>
+                    
+                                                                            <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                                        </div>
+                                                                        {% include 'image_scroll_demo_1_result.html' %}
+
+                                                                    </a>
+                                                                    <a href="{% main_template 'images/topics/handwriten_result_demo.pdf' %}" download class="btn btn-outline-dark">
+                                                                        Download Demo PDF
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                    
+                    
+                    
+                    
+                                                        </div>                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    BANGLA IMAGE OR TEXT TO HANDWRITTEN (DEMO)
+                                                </button>
+                                                </h2>
+            
+                                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <p style="color: brown;">We are working continuously on this feature to bring in  thank you in advance.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'C_V_D_prediction' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">C.V.D PREDICTION</h5>
+
+                                                            <p class="mb-0">Answer some of our simple questions to measure the approximate CARDIO VASCULAR DISEASE provabality</p>
+
+                                                        </div>
+
+                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                    </div>
+
+                                                    <img src="{% main_template 'images/topics/cvd_prediction_1.png' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'main_bmi_calculator' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">MENTAL HE</h5>
+
+                                                            <p class="mb-0">This bmi calculator is inspired and a basic restructure of bmi calculator of NHS</p>
+                                                        </div>
+
+                                                        <span class="badge bg-education rounded-pill ms-auto">75</span>
+                                                    </div>
+
+                                                    <img src="{% main_template 'images/topics/bmi_calculator.png' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
+                                                <a href="https://www.nhs.uk/live-well/healthy-weight/bmi-calculator/">Refarance:NHS</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+        </main>
+
+<footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mb-4 pb-2">
+                        <a class="navbar-brand mb-2" href="{% url 'index_new' %}">
+                            <i class="bi-back"></i>
+                            <span>Topic</span>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <h6 class="site-footer-title mb-3">Resources</h6>
+
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Home</a>
+                            </li>
+
+
+                            <li class="site-footer-link-item">
+                                <a href="{% url 'about' %}" class="site-footer-link">ABOUT ME</a>
+                            </li>
+                            <li class="site-footer-link-item">
+                                <a href="{% url 'hire_me' %}" class="site-footer-link">HIRE ME/SEND MESSAGE </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                        <h6 class="site-footer-title mb-3">Information</h6>
+
+                        <p class="text-white d-flex mb-1">
+                            <a href="tel: 305-240-9671" class="site-footer-link">
+                                305-240-9671
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <a href="mailto:info@company.com" class="site-footer-link">
+                                info@company.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            English</button>
+
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button">Thai</button></li>
+
+                                <li><button class="dropdown-item" type="button">Myanmar</button></li>
+
+                                <li><button class="dropdown-item" type="button">Arabic</button></li>
+                            </ul>
+                        </div>
+
+                        <p class="copyright-text mt-lg-5 mt-4">Copyright ©. All rights reserved.
+                        <br><br>Design: <a rel="nofollow" href="{% url 'about' %}" target="_blank">RIFATUL ISLAM MAJUMDER</a></p>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="{% main_template 'js/jquery.min.js' %}"></script>
+        <script src="{% main_template 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
+        <script src="{% main_template 'js/click-scroll.js' %}"></script>
+        <script src="{% main_template 'js/custom.js' %}"></script>
+
+    </body>
+</html>
+{% endblock %}

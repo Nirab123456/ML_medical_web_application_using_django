@@ -15,6 +15,8 @@ import torch
 import torch.nn.functional as F
 import re 
 from json import dumps
+from django.core.serializers.json import DjangoJSONEncoder
+
 # Load tokenizer and model
 
 
@@ -196,4 +198,28 @@ class MENTAL_HEALTH:
         all_prediction_objects_list = dumps(all_prediction_objects_list)
 
         return render(request, 'mental_health_prediction.html', {'all_prediction_objects_list':all_prediction_objects_list})
+    
 
+
+
+    def get_diery_objects(self):
+        request = self.request
+        user = self.user
+        all_diery_objects = PERSONAL_DIARY.objects.filter(user=user)
+        all_diery_objects_list = []
+        
+        for obj in all_diery_objects:
+            object_dict = {
+                'id': obj.id,
+                'title': obj.title,
+                'content': obj.content,
+                'created_at': obj.created_at.strftime('%Y-%m-%d %H:%M:%S'),  # Convert datetime to string
+            }
+            all_diery_objects_list.append(object_dict)
+
+        print('all_diery_objects_list', all_diery_objects_list)
+        
+        # Serialize the list of dictionaries to JSON
+        all_diery_objects_list_json = dumps(all_diery_objects_list, cls=DjangoJSONEncoder)
+        
+        return render(request, 'mental_health_prediction.html', {'all_diery_objects_list': all_diery_objects_list_json})
