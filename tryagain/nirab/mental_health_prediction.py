@@ -223,3 +223,21 @@ class MENTAL_HEALTH:
         all_diery_objects_list_json = dumps(all_diery_objects_list, cls=DjangoJSONEncoder)
         
         return render(request, 'mental_health_prediction.html', {'all_diery_objects_list': all_diery_objects_list_json})
+    
+    def edit_diery_objects(self):
+        request = self.request
+        user = self.user
+        if request.method == 'GET':
+            id = request.GET.get('id')
+            print('id',id)
+            if id:
+                object = get_object_or_404(PERSONAL_DIARY, id=id)
+                editable_title = object.title
+                editable_content = object.content
+                print('editable_title',editable_title)
+                print('editable_content',editable_content)
+                return render(request, 'mental_health_prediction.html', {'editable_title':editable_title,'editable_content':editable_content,'noneditable_id':id})
+            else:
+                return render(request, 'mental_health_prediction.html')
+        else:
+            return render(request, 'mental_health_prediction.html')

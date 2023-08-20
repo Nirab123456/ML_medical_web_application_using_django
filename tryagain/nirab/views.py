@@ -160,6 +160,10 @@ def get_diery_objects(request):
     MENTAL_HEALTH_ = MENTAL_HEALTH(request=request)
     return MENTAL_HEALTH_.get_diery_objects()
 
+@login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
+def edit_diery_objects(request):
+    MENTAL_HEALTH_ = MENTAL_HEALTH(request=request)
+    return MENTAL_HEALTH_.edit_diery_objects()
 
 
 def medicine_chatbot(request):
