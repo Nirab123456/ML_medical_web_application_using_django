@@ -268,7 +268,7 @@ input[class^='btn-']:hover {
         <div class="container-row container-row-journal">
           <div class="container-item container-item-journal">
 
-            <form method="POST" id="entryForm" action="{% url 'personal_diary_input' %}">
+            <form method="POST" id="updateform" action="{% url 'update_diery_objects' %}">
               {% csrf_token %}
               
               <label for="entry-title" class="journal-label">Entry Title</label>
@@ -282,6 +282,8 @@ input[class^='btn-']:hover {
                   maxlength="200"
                   value="{{ editable_title }}"
               />
+
+              <input name="id" type="hidden" value="{{ noneditable_id }}"> <!-- This is the hidden input field for the id of the entry to be edited. -->
               
               <label for="entry" class="journal-label">Today's Entry</label>
               <textarea
@@ -294,18 +296,18 @@ input[class^='btn-']:hover {
                   
               >{{editable_content}}</textarea>
               
-              <button class="btn-main entry-submit-btn" type="submit" onclick="entryForm()">Submit</button>
+              <button class="btn-main entry-submit-btn" type="submit" onclick="updateform()">Submit</button>
           </form>
 
           <script>
-            function entryForm() {
-                document.getElementById("entryForm").action = "{% url 'personal_diary_input' %}";
-                document.getElementById("entryForm").submit();
+            function updateform() {
+                document.getElementById("updateform").action = "{% url 'update_diery_objects' %}";
+                document.getElementById("updateform").submit();
             }
         </script>
 
           <script>
-              document.getElementById("entryForm").addEventListener("submit", function(event) {
+              document.getElementById("updateform").addEventListener("submit", function(event) {
                   // Validate title length
                   const titleInput = document.getElementById("title");
                   if (titleInput.value.length > 2000) {

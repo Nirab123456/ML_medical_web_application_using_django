@@ -99,6 +99,7 @@ urlpatterns = [
     path('predict_mental_health/', views.predict_mental_health, name='predict_mental_health'),
     path('get_diery_objects/', views.get_diery_objects, name='get_diery_objects'),
     path('edit_diery_objects/', views.edit_diery_objects, name='edit_diery_objects'),
+    path('update_diery_objects/', views.update_diery_objects, name='update_diery_objects'),
 
     path('trial/', views.trial, name='trial'),
 ]

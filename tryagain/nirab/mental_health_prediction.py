@@ -241,3 +241,25 @@ class MENTAL_HEALTH:
                 return render(request, 'mental_health_prediction.html')
         else:
             return render(request, 'mental_health_prediction.html')
+        
+
+    def update_diery_objects(self):
+        request = self.request
+        user = self.user
+        if request.method == 'POST':
+            id = request.POST.get('id')
+            title = request.POST.get('title')
+            content = request.POST.get('content')
+            print('id',id)
+            print('title',title)
+            print('content',content)
+            if id:
+                object = get_object_or_404(PERSONAL_DIARY, id=id)
+                object.title = title
+                object.content = content
+                object.save()
+                return redirect('get_diery_objects')
+            else:
+                return render(request, 'mental_health_prediction.html')
+        else:
+            return render(request, 'mental_health_prediction.html')

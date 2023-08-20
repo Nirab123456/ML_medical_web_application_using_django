@@ -9,13 +9,12 @@ from django.forms import ModelForm
 
 
 class PERSONAL_DIARY_FORM(forms.ModelForm):
+    id = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'ID'}))
     title = forms.TextInput(attrs={'class':'form-control','placeholder':'Title'})
     content = forms.TextInput(attrs={'class':'form-control','placeholder':'Content'})
     class Meta:
         model = PERSONAL_DIARY
-        fields = ['title','content']
-
-
+        fields = ['id','title','content']
 
 
 

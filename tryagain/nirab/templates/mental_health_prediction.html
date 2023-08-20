@@ -141,6 +141,22 @@ select::-ms-expand {
                 });
             </script>
             {% endif %}
+            {% if all_diery_objects_list %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Generate a click on the "BANGLA OCR" tab
+                    document.getElementById("marketing-tab").click();
+                });
+            </script>
+            {% endif %}
+            {% if noneditable_id %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Generate a click on the "BANGLA OCR" tab
+                    document.getElementById("editable_diery_tab").click();
+                });
+            </script>
+            {% endif %}
 
 
             <div class="container-fluid">
@@ -151,16 +167,28 @@ select::-ms-expand {
                             <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">DIERY INPUT</button>
                         </li>
 
+                        {% if all_diery_objects_list %}
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">VIEW DIERY</button>
                         </li>
+                        {% else %}
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="{% url 'get_diery_objects' %}">VIEW DIERY</a>
+                        </li>
+                        {% endif %}
 
-
+                        {% if all_prediction_objects_list %}
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">MENTAL HEALTH GRAPH</button>
                         </li>
+                        {% else %}
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="{% url 'predict_mental_health' %}">MENTAL HEALTH GRAPH</a>
+                        </li>
+                        {% endif %}
+
                         {% if noneditable_id %}
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="editable_diery_tab" data-bs-toggle="tab" data-bs-target="#editable_diery_tab-pane" type="button" role="tab" aria-controls="editable_diery_tab-pane" aria-selected="false">EDITABLE DIERY</button>
@@ -235,12 +263,6 @@ select::-ms-expand {
 
                                                 <canvas style="margin-top: 10px;" id="combinedChart"></canvas>
 
-                                                {% else %}
-
-                                                <a href="{% url 'predict_mental_health' %}" class="btn custom-btn btn-5 mt-2 mt-lg-3">GET MENTAL HEALTH PREDICTION ANALYSIS</a>
-
-
-
                                                 {% endif %}
 
 
@@ -299,17 +321,11 @@ select::-ms-expand {
                                                         <div>
                                                             <h5 class="mb-2">DIERY ENTRY </h5>
     
-                                                            <p class="mb-0">DESCRIBE A EVENT WITH TITLE</p>
-                                                            <p>YOUR TODAYS RECORD COUNT IS :
-                                                                <span class="badge bg-education {% if record_count_today >= 10 %}text-danger{% endif %}">
-                                                                    {{ record_count_today }}
-                                                                </span>
-                                                                                                                        
-                                                            </p>
+                                                            <p class="mb-0">Edit your diry object though though it will not be used in mental state prediction if have been used already</p>
     
                                                         </div>
     
-                                                        <span class="badge bg-education rounded-pill ms-auto">{{personal_instance_count}}</span>
+                                                        <span class="badge bg-education rounded-pill ms-auto">{{ noneditable_id }}</span>
     
     
                                                     </div>
@@ -528,7 +544,7 @@ select::-ms-expand {
                                     <p class="mb-0">${pageItem.content}</p>
                                     <button onclick="edit_diery(${pageItem.id})" class="btn-7 custom-btn mt-3 mt-lg-4">EDIT</button>
                                 </div>
-                                <span class="badge bg-design rounded-pill ms-auto">14</span>
+                                <span class="badge bg-design rounded-pill ms-auto">${pageItem.id}</span>
                             </div>
                         </div>
                     </div>`;
