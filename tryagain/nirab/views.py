@@ -28,7 +28,8 @@ from datetime import timedelta
 
 
 def trial(request):
-    return render(request, 'trial.html')
+    about_me = 'KNOW ABOUT ME'
+    return render(request, 'trial.html',{'about_me': about_me})
 
 
 def logout_user(request):
