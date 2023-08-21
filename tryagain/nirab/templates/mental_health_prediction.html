@@ -92,6 +92,9 @@ select::-ms-expand {
   display: none;
 }
 
+.navbar {
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+}
 </style>
 
 </head>
@@ -100,28 +103,11 @@ select::-ms-expand {
     <main>
         {% include 'new_main_nav_bar.html' %}
 
-        <header class="d-flex flex-column justify-content-center align-items-center site-header">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-12 col-lg-5 mb-5">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html"><span>Homepage</span></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Web Design</span></li>
-                            </ol>
-                        </nav>
-                        <h2 class="text-white">We offer a multifunctional helth care analysis along with personal diery mannagement and english profeciency analysis.</h2>
-                    </div>
 
-                    <div class="col-12 col-lg-5">
-                        <div style="align-self: center;">
-                        {% include 'heart_beat.html' %}
-                        </div>
+                {% include 'mental_health_header_styling.html' %}
 
-                    </div>
-                </div>
-            </div>
-        </header>
+
+
         <section class="explore-section section-padding" id="section_2">
             <div class="container">
                 <div class="row">
