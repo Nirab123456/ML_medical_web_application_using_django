@@ -344,14 +344,14 @@ def save_mail_form(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Your Record Has Been Saved Successfully!")
-            return redirect('index')  # Change 'real' to 'index'
+            return redirect('index_new')  # Change 'real' to 'index'
         else:
             # print(form.errors)
             messages.error(request, "There was an error in your form submission.")
     else:
         form = Mail_me_Form()
     
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'trial.html', {'send_message_form': form})
 
 
 def home(request):
