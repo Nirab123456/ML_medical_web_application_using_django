@@ -141,6 +141,17 @@ select::-ms-expand {
                 });
             </script>
             {% endif %}
+
+            {% if noneditable_id %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Generate a click on the "BANGLA OCR" tab
+                    document.getElementById("editable_diery_tab").click();
+                });
+            </script>
+
+            {% else %}
+                        
             {% if all_diery_objects_list %}
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
@@ -149,13 +160,7 @@ select::-ms-expand {
                 });
             </script>
             {% endif %}
-            {% if noneditable_id %}
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    // Generate a click on the "BANGLA OCR" tab
-                    document.getElementById("editable_diery_tab").click();
-                });
-            </script>
+
             {% endif %}
 
 

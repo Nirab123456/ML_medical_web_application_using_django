@@ -202,7 +202,7 @@ class MENTAL_HEALTH:
 
 
 
-    def pre_get_diery_objects(self):
+    def get_diery_objects(self):
         request = self.request
         user = self.user
         all_diery_objects = PERSONAL_DIARY.objects.filter(user=user)
@@ -218,19 +218,15 @@ class MENTAL_HEALTH:
             all_diery_objects_list.append(object_dict)
 
         print('all_diery_objects_list', all_diery_objects_list)
-        return all_diery_objects_list
-    
-    def get_diery_objects(self):
-        request = self.request
-        all_diery_objects_list = self.pre_get_diery_objects()
-        all_diery_objects_list_json = dumps(all_diery_objects_list, cls=DjangoJSONEncoder)        
-        return render(request, 'mental_health_prediction.html', {'all_diery_objects_list': all_diery_objects_list_json})
         
+        # Serialize the list of dictionaries to JSON
+        all_diery_objects_list_json = dumps(all_diery_objects_list, cls=DjangoJSONEncoder)
+        
+        return render(request, 'mental_health_prediction.html', {'all_diery_objects_list': all_diery_objects_list_json})
+    
     def edit_diery_objects(self):
         request = self.request
         user = self.user
-        all_diery_objects_list = self.pre_get_diery_objects()
-        all_diery_objects_list_json = dumps(all_diery_objects_list, cls=DjangoJSONEncoder)
         if request.method == 'GET':
             id = request.GET.get('id')
             print('id',id)
@@ -240,11 +236,11 @@ class MENTAL_HEALTH:
                 editable_content = object.content
                 print('editable_title',editable_title)
                 print('editable_content',editable_content)
-                return render(request, 'mental_health_prediction.html', {'editable_title':editable_title,'editable_content':editable_content,'noneditable_id':id,'all_diery_objects_list': all_diery_objects_list_json})
+                return render(request, 'mental_health_prediction.html', {'editable_title':editable_title,'editable_content':editable_content,'noneditable_id':id})
             else:
-                return render(request, 'mental_health_prediction.html', {'all_diery_objects_list': all_diery_objects_list_json})
+                return render(request, 'mental_health_prediction.html')
         else:
-            return render(request, 'mental_health_prediction.html', {'all_diery_objects_list': all_diery_objects_list_json})
+            return render(request, 'mental_health_prediction.html')
         
 
     def update_diery_objects(self):
