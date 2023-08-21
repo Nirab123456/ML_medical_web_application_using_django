@@ -5,13 +5,7 @@
     <style>
 
         
-body{
-  font-family: Helvetica, Arial, sans-serif;
-}
-.container{
-  width: 50%;
-  margin: 0 auto;
-}
+
 @keyframes load{
   from {
     width: 0%
@@ -31,6 +25,13 @@ body{
   from {
     width: 0%
   }
+}
+
+h4{
+    margin: 0 0 10px 0;
+    font-size: 25px;
+    color: #110f0f;
+    text-shadow: 1px 1px 1px rgba(222, 63, 63, 0.5);
 }
 
 .bar{
@@ -59,9 +60,35 @@ body{
   background-color: #ffcc33;
 }
 .bar.back::before{
-  background-color: #a6cfe3;
+  background-color: #06608d;
 }
-
+.bar.python::before{
+  background-color: #4c2ceb;
+}
+.bar.js::before{
+  background-color: #ed9016;
+}
+.bar.mlapp::before{
+  background-color: #802600;
+}
+.bar.datanalysis::before{
+  background-color: #560669;
+}
+.bar.git::before{
+  background-color: #0c0301;
+}
+.bar.django::before{
+  background-color: #0b7003;
+}
+.bar.bootstrap::before{
+  background-color: #ba0c66;
+}
+.bar.torch::before{
+  background-color: #980909;
+}
+.bar.CSS3::before{
+  background-color: #660ab1;
+}
 .bar.learning::before{
   width: calc(20% - 10px);
 }
@@ -77,40 +104,66 @@ body{
 .bar.expert::before{
   width: calc(100% - 10px);
 }
+.bar.python::before{
+    width: calc(90% - 10px);
+}
+.bar.js::before{
+    width: calc(60% - 10px);
+}
+.bar.mlapp::before{
+    width: calc(80% - 10px);
+}
+.bar.datanalysis::before{
+    width: calc(60% - 10px);
+}
+.bar.git::before{
+    width: calc(80% - 10px);
+}
+.bar.django::before{
+    width: calc(80% - 10px);
+}
+.bar.bootstrap::before{
+    width: calc(50% - 10px);
+}
+.bar.torch::before{
+    width: calc(40% - 10px);
+}
+.bar.CSS3::before{
+    width: calc(70% - 10px);
+}
 
     </style>
 </head>
 <body>
 <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
     <div class="custom-block  shadow-lg">
-            <h1>Skill Set</h1>
-            <div class="bar learning" data-skill="TDD"></div>
-            <div class="bar back basic" data-skill="Python"></div>
-            <div class="bar back intermediate" data-skill="C#"></div>
-            <div class="bar front advanced" data-skill="CSS3"></div>
+            <h4>LANGUAGE SKILL</h4>
+            <div class="bar python" data-skill="Python"></div>
             <div class="bar front expert" data-skill="HTML5"></div>
+            <div class="bar js" data-skill="JAVA SCRIPT"></div>
+            <div class="bar front advanced" data-skill="CSS3"></div>
+            <div class="bar learning" data-skill="C#"></div>
         
     </div>
 </div>
 <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
     <div class="custom-block  shadow-lg">   
-            <h1>Skill Set</h1>
-            <div class="bar learning" data-skill="TDD"></div>
-            <div class="bar back basic" data-skill="Python"></div>
-            <div class="bar back intermediate" data-skill="C#"></div>
-            <div class="bar front advanced" data-skill="CSS3"></div>
-            <div class="bar front expert" data-skill="HTML5"></div>
-        
+            <h4>FRAMEWORK SKILLS</h4>
+            <div class="bar git" data-skill="GIT-HUB"></div>
+            <div class="bar django" data-skill="DJANGO"></div>
+            <div class="bar bootstrap" data-skill="BOOTSTRAP STUDIO"></div>
+            <div class="bar torch" data-skill="PY-TORCH"></div>
+            <div class="bar torch" data-skill="HUGGING FACE"></div>
     </div>
 </div>
 <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
     <div class="custom-block  shadow-lg"> 
-            <h1>Skill Set</h1>
-            <div class="bar learning" data-skill="TDD"></div>
-            <div class="bar back basic" data-skill="Python"></div>
-            <div class="bar back intermediate" data-skill="C#"></div>
-            <div class="bar front advanced" data-skill="CSS3"></div>
-            <div class="bar front expert" data-skill="HTML5"></div>
+            <h4>AREA OF SKILLS</h4>
+            <div class="bar back expert" data-skill="WEB DEVELOPER"></div>
+            <div class="bar back expert" data-skill="WEB APLICTION DEVELOPER"></div>
+            <div class="bar mlapp" data-skill="ML APPLICATION DEVELOPER"></div>
+            <div class="bar datanalysis" data-skill="DATA ANALYSIS"></div>
+            <div class="bar front basic" data-skill="ML/DL/RL"></div>
         
     </div>
 </div>
