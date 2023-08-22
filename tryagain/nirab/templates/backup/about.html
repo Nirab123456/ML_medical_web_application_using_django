@@ -1,0 +1,190 @@
+{% block content %}
+{%load about_me%}
+<!DOCTYPE html>
+<html data-bs-theme="light">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>about</title>
+    <link rel="stylesheet" href="{% about_me 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="{% about_me 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% about_me 'css/pikaday.min.css' %}">
+	<style>
+        .main-content {
+            margin-left: 4.5rem; /* Adjust this value to match the width of your first div */
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="page cv-page main-content">
+        <main >
+            <section class="portfolio-block block-intro border-bottom">
+                <div class="container">
+                    <a href="{% about_me 'img/IMG_0539.jpeg' %}" class="avatar">
+                        <img src="{% about_me 'img/IMG_0539.jpeg' %}" alt="Avatar" style="border-radius: 5%; width: 10%; height: 10%;">
+                    </a>
+                    <div class="about-me">
+                        <p style="font-size: 21px;">HI!&nbsp; I'm<br><strong>Rifatul Islam Majumder</strong><br><strong>DATA&nbsp; ANALYST</strong> and&nbsp;<strong>Full Stack Web-Application Developer</strong>. I thrive on exploring the new era of AI and leveraging a diverse range of tools and technologies to create exceptional solutions.<br><br>With expertise in <strong><span style="color: rgb(29, 11, 235);">PyTorch, Stable Baselines3, Gym, NumPy, Pandas, Scikit-learn, OpenCV, and Media Pipeline</span></strong>, I possess a comprehensive skill set that empowers me to tackle complex challenges in AI and web development.<br><br>Using PyTorch, I design and implement deep learning models, harnessing the power of neural networks to solve intricate problems. I leverage Stable Baselines3, a robust reinforcement learning library, to train agents that learn and make decisions based on their environment.<br><br>By utilizing Gym, I develop interactive environments for reinforcement learning tasks, providing a platform to train and evaluate AI agents. With NumPy and Pandas, I efficiently manipulate and analyze data, enabling the extraction of meaningful insights that drive informed decision-making.<br><br>As an ML Engineer, I leverage Scikit-learn, a powerful machine learning library, to build models for classification, regression, and clustering tasks. I also utilize OpenCV, an open-source computer vision library, to implement image and video processing algorithms, enabling tasks such as object detection and tracking.<br><br>Furthermore, I harness the capabilities of MediaPipe to develop real-time multimedia processing pipelines, allowing for tasks like facial recognition, gesture recognition, and augmented reality experiences.<br><br>My ability to seamlessly integrate these technologies into web applications adds an extra dimension to my expertise. By combining powerful AI algorithms with intuitive user interfaces, I create impactful web applications that engage users and deliver tangible results.<br><br><span style="color: rgb(10, 10, 10); background-color: rgb(255, 255, 255);">With expertise in both machine learning and web development, I bring a unique blend of skills to the table. I specialize in building ML-based web applications that combine the power of intelligent algorithms with seamless user experiences. By harnessing the potential of AI, I create innovative solutions that drive businesses towards success.&nbsp; From developing intelligent recommendation systems to implementing advanced image recognition capabilities, I excel at creating ML models that uncover valuable insights from complex datasets. Additionally, I am proficient in crafting intuitive user interfaces using front-end technologies like </span><strong><span style="color: rgb(28, 9, 241); background-color: rgb(255, 255, 255);">BOOTSTRAP</span></strong><span style="color: rgb(10, 10, 10); background-color: rgb(255, 255, 255);">, as well as back-end frameworks such as </span><strong><span style="color: rgb(98, 11, 241); background-color: rgb(255, 255, 255);">Django </span></strong><span style="color: rgb(10, 10, 10); background-color: rgb(255, 255, 255);">.</span><br><br>If you're seeking a versatile professional&nbsp; to develop cutting-edge AI-based web applications, I'm here to bring your vision to life. Let's embark on an exciting journey together and unlock the full potential of these technologies!</p>
+                        <a class="btn btn-outline-primary" role="button" href="{% url 'hire_me'%}">Hire me</a>
+                        <a class="btn btn-outline-success" role="button" href="{% url 'projects' %}">MY PROJECTS</a>
+                    </div>
+                </div>
+            </section>
+            <section class="portfolio-block cv">
+                <div class="container">
+                    <div class="work-experience group">
+                        <div class="heading">
+                            <h2 class="text-center">Work Experience</h2>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>DATA ANALYST</h3>
+                                </div>
+                                <div class="col-md-6"><span class="text-muted period">#</span></div>
+                            </div>
+                            <p>#</p>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3><strong>FULL STACK&nbsp;</strong><br><strong>WEB DEVELOPER</strong></h3>
+                                </div>
+                                <div class="col-md-6"><span class="text-muted period">#</span></div>
+                            </div>
+                            <p>#</p>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>FULL STACK ML WEB APPICATION DEVELOPER</h3>
+                                </div>
+                                <div class="col-md-6"><span class="text-muted period">#</span></div>
+                            </div>
+                            <p>#</p>
+                        </div>
+                    </div>
+                    <div class="education group">
+                        <div class="heading">
+                            <h2 class="text-center">Education</h2>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>High School</h3><span class="badge rounded-pill bg-success">MILESTONE&nbsp; COLLAGE</span>
+                                </div>
+                                <div class="col-6"><span class="text-muted period">#</span></div>
+                            </div>
+                            <p>#</p>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>PHARMACEUTICALS</h3><span class="badge rounded-pill bg-success">EAST WEST UNIVERSITY</span>
+                                </div>
+                                <div class="col-md-6"><span class="text-muted period">#</span></div>
+                            </div>
+                            <p>#</p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="border rounded border-0 skills portfolio-info-card">
+                                    <h2>Skills</h2>
+                                    <h3>PYTHON</h3>
+                                    <div class="progress" style="padding-right: 109px;">
+                                        <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="visually-hidden">100%</span></div>
+                                    </div>
+                                    <h3>DJNGO</h3>
+                                    <div class="progress" style="overflow: hidden;position: static;transform: perspective(0px);padding-bottom: 1px;padding-top: 0px;margin-right: -30px;padding-right: 0px;">
+                                        <div class="progress-bar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"><span class="visually-hidden">90%</span></div>
+                                    </div>
+                                    <h3>DATA ANALYSIS</h3>
+                                    <div class="progress" style="margin-right: -37px;padding-right: 94px;">
+                                        <div class="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="visually-hidden">80%</span></div>
+                                    </div>
+                                    <h3>BOOTSTRAP</h3>
+                                    <div class="progress" style="padding-right: 0px;margin-right: 76px;">
+                                        <div class="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="visually-hidden">80%</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="border rounded border-0 contact-info portfolio-info-card" style="padding-right: 35px;margin-right: -64px;padding-left: 12px;">
+                                    <h2>Contact Info</h2>
+                                    <div class="row">
+                                        <div class="col-auto"><i class="icon ion-android-calendar icon"></i></div>
+                                        <div class="col-9"><span>8/03/2003</span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto"><i class="icon ion-person icon"></i></div>
+                                        <div class="col-9"><span>RIFATUL ISLAM MAJUMDER</span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto"><i class="icon ion-ios-telephone icon"></i></div>
+                                        <div class="col-9"><span><span style="color: rgb(77, 77, 77);">+8801732718266</span><br><br></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto"><i class="icon ion-at icon"></i></div>
+                                        <div class="col-9"><span><span style="color: rgb(77, 77, 77);">rifatulislammajumder@rifatulislammajumder.me</span><br><br></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hobbies group">
+                        <div class="heading">
+                            <h2 class="text-center">Hobbies</h2>
+                        </div>
+                        <p class="text-center text-muted">#########################################</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="page-footer py-3 border-top">
+            <div class="container my-4">
+                <div class="links"><a href="#">More about me</a><a href="#">Contact me</a><a href="#">Projects</a></div>
+                <div class="social-icons">
+                    <a class="me-3" href="https://www.facebook.com/nirab.islam.77/">
+                        <i class="icon ion-social-facebook"></i>
+                    </a>
+                    <a class="me-3" href="#">
+                        <i class="icon ion-social-instagram-outline"></i>
+                    </a>
+                    <a class="me-3" href="https://twitter.com/Rifatul65843329">
+                        <i class="icon ion-social-twitter"></i>
+                    </a>
+                    <a class="me-3" href="www.linkedin.com/in/rifatul-islam-majumder"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                        </svg>
+                    </a>
+                    <a class="me-3" href="https://github.com/Nirab123456"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>
+                    <a class="me-3" href="https://www.upwork.com/freelancers/~018e29dfa7a8f86511?viewMode=1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-workspace">
+                            <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+                            <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"></path>
+                        </svg>
+
+                    <a class="me-3" href="https://discord.gg/bBSz5dVn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-discord">
+                            <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"></path>
+                        </svg>
+                    </a>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+{% endblock %}

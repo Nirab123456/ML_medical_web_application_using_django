@@ -26,10 +26,13 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from datetime import timedelta
 
-
 def trial(request):
+    return render(request, 'trial.html')
+
+
+def about(request):
     about_me = 'KNOW ABOUT ME'
-    return render(request, 'trial.html',{'about_me': about_me})
+    return render(request, 'about.html',{'about_me': about_me})
 
 
 def logout_user(request):
@@ -287,9 +290,6 @@ def projects(request):
 def hire_me(request):
     return render(request, 'hire_me.html')
 
-
-def about(request):
-    return render(request, 'about.html')
 
 
 def ENG_OCR_HANDWRITTEN(request):
