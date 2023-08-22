@@ -275,10 +275,11 @@ def change_password(request):
 
 
 
-
+@login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
 def base_handwritten(request):
     return render(request, 'base_handwritten.html')
 
+@login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
 def base_ocr(request):
     return render(request, 'base_ocr.html')
 
