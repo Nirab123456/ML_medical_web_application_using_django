@@ -1,10 +1,6 @@
 from PIL import Image
 from fpdf import FPDF
 from PIL import Image
-import os
-import uuid
-from django.conf import settings
-
 class HandwrittenImageGenerator:
     def __init__(self, background_image_path, character_images_directory):
         self.BG = Image.open(background_image_path)

@@ -19,10 +19,6 @@ ABOUT_ME_ROOT = os.path.join(BASE_DIR, 'about_me')
 MAIN_TAMPLATE_URL = '/main_template/'
 MAIN_TAMPLATE_ROOT = os.path.join(BASE_DIR, 'main_template')
 
-# Add the following lines at the end of the file.
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
-]
 
 
 ENG_HANDWRITTEN_URL = '/eng_handwritten/'

@@ -6,10 +6,8 @@ from . models import Record , Event , EventVenue , EventAttendee , RecordImage,R
 import datetime
 import calendar
 from calendar import HTMLCalendar
-import time
 from datetime import datetime, timedelta
 from django.shortcuts import get_object_or_404
-from PIL import Image
 from .bangla_ocr import BanglaOCR
 from .eng_ocr import ENGOCR
 from .med_search import TOTAL_MEDICINE_SEARCH
@@ -23,13 +21,14 @@ from .presciption_classification_beta import PRESCIPTION_CLASSIFICATION_BETA
 from .C_V_D_prediction import C_V_D_PREDICTION
 from .mental_health_prediction import MENTAL_HEALTH
 from django.contrib.auth.decorators import login_required
-from django.utils import timezone
-from datetime import timedelta
-
 
 def trial(request):
+    return render(request, 'trial.html')
+
+
+def about(request):
     about_me = 'KNOW ABOUT ME'
-    return render(request, 'trial.html',{'about_me': about_me})
+    return render(request, 'about.html',{'about_me': about_me})
 
 
 def logout_user(request):
@@ -287,9 +286,6 @@ def projects(request):
 def hire_me(request):
     return render(request, 'hire_me.html')
 
-
-def about(request):
-    return render(request, 'about.html')
 
 
 def ENG_OCR_HANDWRITTEN(request):

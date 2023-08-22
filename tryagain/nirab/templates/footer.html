@@ -1,0 +1,104 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Reset default margin and padding for the whole page */
+
+
+    /* Footer styling */
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f5f5;
+      color: #fff;
+      height: 80px;
+    }
+
+    /* Social Icon Styling */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem; /* Add some space between icons */
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #555;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .social-icon:hover {
+      background-color: #0f0202;
+      transform: scale(1.1); /* Add a slight zoom effect on hover */
+    }
+
+    .fa {
+      font-size: 1.5rem;
+    }
+
+    /* Tooltip Styling */
+    .tooltip {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #050505;
+      color: #fff;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .social-icon:hover .tooltip {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="footer">
+    <div class="social-icons">
+
+      <a class="social-icon" href="#" title="Codepen">
+        <i class="bi bi-person-workspace"></i>
+        <span class="tooltip">Upwork</span>
+      </a>
+      <a class="social-icon" href="#" title="Github">
+        <i class="bi bi-github"></i>
+        <span class="tooltip">Github</span>
+      </a>
+      <a class="social-icon" href="#" title="Twitter">
+        <i class="bi bi-file-excel"></i>
+        <span class="tooltip">Twitter</span>
+      </a>
+
+      <a class="social-icon" href="#" title="Instagram">
+        <i class="bi bi-instagram"></i>
+        <span class="tooltip">Instagram</span>
+      </a>
+      <a class="social-icon" href="#" title="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+        <span class="tooltip">LinkedIn</span>
+      </a>
+      <a class="social-icon" href="#" title="Facebook">
+
+            <i class="bi bi-facebook"></i>
+
+        <span class="tooltip">Facebook</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+{% endblock %}

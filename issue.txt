@@ -1,0 +1,3 @@
+issue:
+1)preview image in eng_ocr and bangla ocr
+2)new tamplate : have to fix the direct link of bmi calculator 

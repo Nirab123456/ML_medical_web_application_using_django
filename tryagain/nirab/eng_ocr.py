@@ -3,14 +3,9 @@ from django.contrib import messages
 from .forms import OCRImageForm,handwritten_text_form
 from .models import RecordImage
 from .ENG_HANDWRITTEN import HandwrittenImageGenerator
-from PIL import Image
 import cv2
-import numpy as np
-import matplotlib.pyplot as plt
 import os
 import pytesseract
-import subprocess
-import sys
 import uuid
 import re
 from django.conf import settings
