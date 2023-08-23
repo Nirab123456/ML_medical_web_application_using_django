@@ -296,6 +296,12 @@ https://templatemo.com/tm-590-topic-listing
     object-fit: contain; /* Adjust to "cover" if needed */
 }
 
+.coll-2{
+    width: -webkit-calc((100% - 2px) / 2);
+    width: -moz-calc((100% - 2px) / 2);
+    width: calc((100% - 2px) / 2);
+}
+
 
 </style>
     </head>
@@ -356,38 +362,44 @@ https://templatemo.com/tm-590-topic-listing
                                 </a>
                             </div>
                         </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="custom-block custom-block-overlay">
-                                <div class="d-flex flex-column h-100">
-                                    <img src="{% main_template 'images/heatlt_care.jpg' %}" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-overlay-text d-flex">
+                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="{% url 'predict_mental_health' %}">
+                                    <div class="d-flex">
                                         <div>
-                                            <h5 class="text-white mb-2">HEALTH CARE</h5>
+                                            <h5 class="mb-2">MENTAL CARE</h5>
 
-                                            <p class="text-white">Get everything about drugs.Ai will help you for your query.You can find alternate medicines.</p>
-
-                                            <a href="{% url 'med_search' %}" class="btn custom-btn mt-2 mt-lg-3">VISIT HEALTH CARE</a>
+                                            <p class="mb-0">We offer multifunctional mental care analysis which can also be used to evulate english profeciency</p>
                                         </div>
 
-                                        <div>
-                                            <h5 class="text-white mb-2">MENTAL CARE</h5>
-
-                                            <p class="text-white">We offer multifunctional health care analysis which can also be used to evulate english profeciency</p>
-
-                                            <a href="{% url 'predict_mental_health' %}" class="btn custom-btn mt-2 mt-lg-3">VISIT MENTAL CARE</a>
-                                        </div>
-
-                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
+                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
                                     </div>
 
-
-
-                                    <div class="section-overlay"></div>
-                                </div>
+                                    <img src="{% main_template 'images/topics/mental_health.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                </a>
                             </div>
                         </div>
+                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="{% url 'med_search' %}">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">HEALTH CARE</h5>
+
+                                            <p class="mb-0">Get everything about drugs.Ai will help you for your query.You can find alternate medicines.</p>
+                                        </div>
+
+                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
+                                    </div>
+
+                                    <img src="{% main_template 'images/heatlt_care.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+
+
+
 
                     </div>
                 </div>
@@ -1041,7 +1053,7 @@ https://templatemo.com/tm-590-topic-listing
         <script src="{% main_template 'js/jquery.min.js' %}"></script>
         <script src="{% main_template 'js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
-                <!-- <script src="{% main_template 'js/click-scroll.js' %}"></script> -->
+                <script src="{% main_template 'js/click-scroll.js' %}"></script>
 
         <script src="{% main_template 'js/custom.js' %}"></script>
 
