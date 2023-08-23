@@ -1,116 +1,185 @@
-{% load about_me %}
-{% include 'base.html' %}
+{% load main_template %}
 {% block content %}
 {% load custom_filters %}
+{% check_allowed_image_count request.user as is_allowed %}
+<!-- {% if is_allowed %}
+{% endif %} -->
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
 
 <head>
-
-
-    <link href="{% about_me 'css/full_search.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'css/material-design-iconic-font.css' %}" rel="stylesheet" media="all">
-    <link href="{% about_me 'css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="{% about_me 'css/search.css' %}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Topic Detail Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Open+Sans&amp;display=swap">
+    <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet"> 
+    <link href="{% main_template 'css/rotating_border_animated_buttons.css' %}" rel="stylesheet"> 
 
 <style>
+    input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
 
-.my_coll-2 {
-    width: -webkit-calc(100% - 20px);
-    width: -moz-calc(100% - 20px);
-    width: calc(100% - 20px);
-  }
-  
-  @media (max-width: 1700px) {
-  .my_coll-2 {
-      width: 100%;
-    }
-  }
+input[type="file"] + label {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+input[type="file"]:focus + label {
+  outline: 2px solid #0964b0;
+}
 
 
-        .medication-table {
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            background-color: #fff;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            font-weight: bold;
-            color: #337ab7;
-        }
-
-        td {
-            font-size: 16px;
-        }
-
-        strong {
-            font-weight: bold;
-            color: #5bc0de;
-        }
+.scrollable-text {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow: auto;
+    padding-right: 15px; /* Add some padding to prevent text from sticking to the scrollbar */
+}
+.navbar {
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+}
 </style>
-
-
 
 </head>
 
+<body id="top">
+    <main>
+        {% include 'new_main_nav_bar.html' %}
 
-<body>
-    <div class="page-wrapper " style="background: url(&quot;{% about_me 'img/bg-img-01.jpg' %}&quot;) center / cover no-repeat;">
-        <div style="margin-left: 15px">
-
-
-                    <div class="tab-content">
-
-                        <div id="tab1">
+        {% include 'medication_health_header_styling .html' %}
 
 
+        <section class="explore-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
 
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">DRUG RESULTS</h1>
+                    </div>
 
-                                <div class="row row-space">
-
-                                  
-
-                                        <div id="get_medicine_details"></div>
-
-
-
-
-                                    
-                                    <div class="col-2">
+                </div>
+            </div>
 
 
 
 
-                                      
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">DRUG DETAILS</button>
+                        </li>
+
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">ENGLISH OCR</button>
+                        </li>
+
+
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">BANGLA OCR</button>
+                        </li>
+
+
+
+                        <!-- <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">HEALTH CARE</button>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                <div class="row">
+
+                                  <div class="custom-block bg-white shadow-lg" id="get_medicine_details"></div>
+
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+
+                                
+                                <div class="row">
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+
+
+
+
+                                        </div>
                                     </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block custom-block-overlay">
+
+                                        </div>
+
+
+                                    </div>
+
+
+
 
                                 </div>
 
 
 
+                              </div>
+
+
+                              <!-- BANGLA OCR -->
+
+                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0 ">
+                                        <div class="custom-block bg-white shadow-lg ">
 
 
 
 
-                                
-                                
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block custom-block-overlay">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
 
 
                         </div>
 
+                </div>
+            </div>
+        </section>
 
 
 
@@ -121,25 +190,60 @@
 
 
 
-
-
-
-
-
-
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center subscribe-form-wrap">
+                        <form class="custom-form subscribe-form" action="#" method="post" role="form">
+                            <h4 class="mb-4 pb-2">Get Newsletter</h4><input class="form-control" type="email" id="subscribe-email" name="subscribe-email" pattern="[^ @]*@[^ @]*" placeholder="Email Address" required="">
+                            <div class="col-12 col-lg-12"><button type="submit" class="form-control">Subscribe</button></div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-4 pb-2"><a class="navbar-brand mb-2" href="index.html"><i class="bi-back"></i><span>Topic</span></a></div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h6 class="site-footer-title mb-3">Resources</h6>
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Home</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">How it works</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">FAQs</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Information</h6>
+                    <p class="text-white d-flex mb-1"><a class="site-footer-link"> 305-240-9671 </a></p>
+                    <p class="text-white d-flex"><a href="mailto:info@company.com" class="site-footer-link"> info@company.com </a></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 ms-auto mt-4 mt-lg-0">
+                    <div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> English</button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button">Thai</button></li>
+                            <li><button class="dropdown-item" type="button">Myanmar</button></li>
+                            <li><button class="dropdown-item" type="button">Arabic</button></li>
+                        </ul>
+                    </div>
+                    <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved. <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% main_template 'js/jquery.min.js' %}"></script>
+    <script src="{% main_template 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
+            <!-- <script src="{% main_template 'js/click-scroll.js' %}"></script> -->
+
+    <script src="{% main_template 'js/custom.js' %}"></script>
+    <script src="{% main_template 'js/med_details_results.js' %}"></script>
 
 
-            
 </body>
 
-<script src="{% about_me 'js/med_details_results.js' %}"></script>
-<script>
-  
-
-
-</script>
 </html>
 {% endblock %}
