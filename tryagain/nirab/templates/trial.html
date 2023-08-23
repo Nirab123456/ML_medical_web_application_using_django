@@ -1,29 +1,28 @@
 {% load main_template %}
 {% block content %}
-{% load custom_filters %}
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
 
-        <title>Topic Listing Bootstrap 5 Template</title>
+      <title>Topic Listing Bootstrap 5 Template</title>
 
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- CSS FILES -->        
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                      
+      <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
 
-        <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
+      <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
 
-        <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet">      
+      <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet">      
 <!--
 
 TemplateMo 590 topic listing
@@ -31,339 +30,793 @@ TemplateMo 590 topic listing
 https://templatemo.com/tm-590-topic-listing
 
 -->
-
-
-<style>
-.navbar {
-    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-}
-p{
-    color: #110f0f;
-}
-
-</style>
     </head>
     
-    <body id="top">
+    <body class="topics-listing-page" id="top">
 
         <main>
-            
-            {% include 'new_main_nav_bar.html' %}
 
-
-            {% include 'mental_health_header_styling.html' %}
+          {% include 'new_main_nav_bar.html' %}
 
 
 
-            <section class="explore-section section-padding" id="section_2">
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
                 <div class="container">
-                    <div class="row">
+                    <div class="row align-items-center">
 
-                        <div class="col-12 text-center">
-                            <h2 class="mb-4">MY DETAILS</h1>
+                        <div class="col-lg-5 col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page">Topics Listing</li>
+                                </ol>
+                            </nav>
+
+                            <h2 class="text-white">DRUG SEARCH Listing</h2>
                         </div>
 
                     </div>
                 </div>
-
-                <div class="container-fluid">
-                    <div class="row">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            </header>
 
 
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">EDUCATIONAL BACKGROUND</button>
-                            </li>
-
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">MY SKILL-SETS</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">PRSONAL DETAILS</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
+            <section class="section-padding">
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-12">
 
-                            <div class="tab-content" id="myTabContent">
-                                
-                                <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
-                                    <div class="row">
+                       <!-- < this is the drug filtering section > -->
+
+                      <div class="row">
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                          <div class="custom-block bg-white shadow-lg">
+
+                            <select id="sortOption" class="form-control" style="margin-top: 5px; margin-bottom: 5px;"  onchange="">
+                              <option value="default">PRICE Filter</option>
+                              <option value="priceAsc">Price (Low to High)</option>
+                              <option value="priceDesc">Price (High to Low)</option>
+                          </select>  
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                          <div class="custom-block bg-white shadow-lg">
+
+                            <div id="strength_selection"></div>
+
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                          <div class="custom-block bg-white shadow-lg">
+                            <div id="dosage_form_selection"></div>
+
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                       <!-- < this is the drug listing section > -->
+
+                      <div style="margin-top: 20px;" class="row">
+
+                        <div id="medicationDetails"></div>
+
+
+                    </div>
 
 
 
-                                        {% include 'skill_sets.html' %}
+                       <!-- < this is the blank section > -->
+
+                        <div class="col-lg-8 col-12 mt-3 mx-auto">
+
+                        </div>
 
 
 
-                                    </div>
-                                </div>
 
-                                <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+                        <!-- < this is the pagination section > -->
+                        <div class="col-lg-12 col-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center mb-0">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">Prev</span>
+                                        </a>
+                                    </li>
 
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
                                     
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h3 class="mb-0">Collage Degree</h3>
-                                                        <a><h6 class="mb-0">Collage:<p>Milestone Collage</p></h6></a>
-                                                        <p class="mb-0">Email: N/A</p>
-                                                        <p class="mb-0">Major: School of science</p>
-                                                        <p class="mb-0">Duration: 2018-2020</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
 
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h3 class="mb-0">Bachelor's Degree</h3>
-                                                        <a href="https://www.ewubd.edu/"><h6 class="mb-0">University:<p>EAST WEST UNIVERSITY</p></h6></a>
-                                                        <p class="mb-0">Email: 2021-3-70-096@std.ewubd.edu</p>
-                                                        <p class="mb-0">Major: PHARMACY</p>
-                                                        <p class="mb-0">Duration: 2021-2023</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
 
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h3 class="mb-0">CURRENT:</h3>
-                                                        <a href="https://www.senecacollege.ca/home.html"><h6 class="mb-0">Collage:<p>SENECA COLLAGE</p></h6></a>
-                                                        <p class="mb-0">Email: rimajumder@myseneca.ca</p>
-                                                        <p class="mb-0">Major: BIO-TECHNOLOGY</p>
-                                                        <p class="mb-0">Duration: 2023-- </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-
-
-                                <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h3 class="mb-0">INTRODUCTION</h3>
-                                                        <a><h6 class="mb-0">Name:<p>Rifatul Islam Majumder</p></h6></a>
-                                                        <p class="mb-0">Nationality: Bangladeshi</p>
-                                                        <p class="mb-0">AGE: 21</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h3 class="mb-0">CONTACT INFO</h3>
-                                                        <a><h6 class="mb-0">Email:<p>rifatulislammajumder@rifatulislammajumder.me</p></h6></a>
-                                                        <p class="mb-0">SECONDERY EMAIL: rifatulislam210@gmail.com</p>
-                                                        <p class="mb-0">Contact No(Canada): __</p>
-                                                        <p class="mb-0">Contact No(Banglasedesh): +8801732718066</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-
-                                                {% include 'personal_info.html' %}
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">5</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
 
                     </div>
                 </div>
             </section>
 
-            <section class="section-padding section-bg">
+
+            <!-- <section class="section-padding section-bg">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-lg-12 col-12">
-                            <h3 class="mb-4 pb-2">We'd love to hear from you</h3>
+                            <h3 class="mb-4">Trending Topics</h3>
                         </div>
 
-                        <div class="col-lg-6 col-12">
+                        <div class="col-lg-6 col-md-6 col-12 mt-3 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="topics-detail.html">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">Investment</h5>
 
-
-                            <form id="hire_me_form" action="{% url 'save_mail_form' %}" method="post" class="custom-form contact-form" role="form">
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-floating">
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
-                                            
-                                            <label for="floatingInput">Name</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12"> 
-                                        <div class="form-floating">
-                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
-                                            
-                                            <label for="floatingInput">Email address</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12">
-                                        <div class="form-floating">
-                                            <select class="form-control" style="margin-top: 5px; margin-bottom: 5px;" name="topic" onchange="">
-                                                <option disabled="disabled" selected="selected">Select a subject.</option>
-                                                <option value="HIRE_ME">HIRE ME</option>
-                                                <option value="CONTACT_ME">CONTACT ME</option>
-                                                <option value="COLLABORATION">COLLABORATION REQUEST</option>
-                                            </select>  
-                                            <label for="floatingInput">Subject</label>
+                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
                                         </div>
 
-                                        <div class="form-floating">
-                                            <textarea class="form-control" id="message" name="message" placeholder="Tell me about the project"></textarea>
-                                            
-                                            <label for="floatingTextarea">Tell me about the project</label>
+                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                    </div>
+
+                                    <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12 mt-lg-3">
+                            <div class="custom-block custom-block-overlay">
+                                <div class="d-flex flex-column h-100">
+                                    <img src="images/businesswoman-using-tablet-analysis.jpg" class="custom-block-image img-fluid" alt="">
+
+                                    <div class="custom-block-overlay-text d-flex">
+                                        <div>
+                                            <h5 class="text-white mb-2">Finance</h5>
+
+                                            <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis</p>
+
+                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
                                         </div>
 
+                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
                                     </div>
 
-                                    <div class="col-lg-4 col-12 ms-auto">
-                                        <button type="submit" class="form-control">Submit</button>
-                                    </div>
 
+                                    <div class="section-overlay"></div>
                                 </div>
-                            </form>
-                            <script>
-                            function hire_me_form() {
-                                document.getElementById("hire_me_form").action = "{% url 'save_mail_form' %}";
-                                document.getElementById("hire_me_form").submit();
-                            }
-                            </script>
-
-                            
-                        </div>
-
-                        <div class="col-lg-5 col-12 mx-auto mt-5 mt-lg-0">
-                            <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.065641062665!2d-122.4230416990949!3d37.80335401520422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858127459fabad%3A0x808ba520e5e9edb7!2sFrancisco%20Park!5e1!3m2!1sen!2sth!4v1684340239744!5m2!1sen!2sth" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                            <h5 class="mt-4 mb-2">Topic Listing Center</h5>
-
-                            <p>Bay St &amp;, Larkin St, San Francisco, CA 94109, United States</p>
+                            </div>
                         </div>
 
                     </div>
                 </div>
-            </section>
-
-
+            </section> -->
         </main>
 
-<footer class="site-footer section-padding">
-            <div class="container">
-                <div class="row">
+        <footer class="site-footer section-padding">
+          <div class="container">
+              <div class="row">
 
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="{% url 'index_new' %}">
-                            <i class="bi-back"></i>
-                            <span>Topic</span>
-                        </a>
-                    </div>
+                  <div class="col-lg-3 col-12 mb-4 pb-2">
+                      <a class="navbar-brand mb-2" href="{% url 'index_new' %}">
+                          <i class="bi-back"></i>
+                          <span>Topic</span>
+                      </a>
+                  </div>
 
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <h6 class="site-footer-title mb-3">Resources</h6>
+                  <div class="col-lg-3 col-md-4 col-6">
+                      <h6 class="site-footer-title mb-3">Resources</h6>
 
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Home</a>
-                            </li>
+                      <ul class="site-footer-links">
+                          <li class="site-footer-link-item">
+                              <a href="#" class="site-footer-link">Home</a>
+                          </li>
 
 
-                            <li class="site-footer-link-item">
-                                <a href="{% url 'about' %}" class="site-footer-link">ABOUT ME</a>
-                            </li>
-                            <li class="site-footer-link-item">
-                                <a href="{% url 'hire_me' %}" class="site-footer-link">HIRE ME/SEND MESSAGE </a>
-                            </li>
-                        </ul>
-                    </div>
+                          <li class="site-footer-link-item">
+                              <a href="{% url 'about' %}" class="site-footer-link">ABOUT ME</a>
+                          </li>
+                          <li class="site-footer-link-item">
+                              <a href="{% url 'hire_me' %}" class="site-footer-link">HIRE ME/SEND MESSAGE </a>
+                          </li>
+                      </ul>
+                  </div>
 
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="site-footer-title mb-3">Information</h6>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                      <h6 class="site-footer-title mb-3">Information</h6>
 
-                        <p class="text-white d-flex mb-1">
-                            <a href="tel: 305-240-9671" class="site-footer-link">
-                                305-240-9671
-                            </a>
-                        </p>
+                      <p class="text-white d-flex mb-1">
+                          <a href="tel: 305-240-9671" class="site-footer-link">
+                              305-240-9671
+                          </a>
+                      </p>
 
-                        <p class="text-white d-flex">
-                            <a href="mailto:info@company.com" class="site-footer-link">
-                                info@company.com
-                            </a>
-                        </p>
-                    </div>
+                      <p class="text-white d-flex">
+                          <a href="mailto:info@company.com" class="site-footer-link">
+                              info@company.com
+                          </a>
+                      </p>
+                  </div>
 
-                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            English</button>
+                  <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                      <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          English</button>
 
-                            <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Thai</button></li>
+                          <ul class="dropdown-menu">
+                              <li><button class="dropdown-item" type="button">Thai</button></li>
 
-                                <li><button class="dropdown-item" type="button">Myanmar</button></li>
+                              <li><button class="dropdown-item" type="button">Myanmar</button></li>
 
-                                <li><button class="dropdown-item" type="button">Arabic</button></li>
-                            </ul>
-                        </div>
+                              <li><button class="dropdown-item" type="button">Arabic</button></li>
+                          </ul>
+                      </div>
 
-                        <p class="copyright-text mt-lg-5 mt-4">Copyright ©. All rights reserved.
-                        <br><br>Design: <a rel="nofollow" href="{% url 'about' %}" target="_blank">RIFATUL ISLAM MAJUMDER</a></p>
-                        
-                    </div>
+                      <p class="copyright-text mt-lg-5 mt-4">Copyright ©. All rights reserved.
+                      <br><br>Design: <a rel="nofollow" href="{% url 'about' %}" target="_blank">RIFATUL ISLAM MAJUMDER</a></p>
+                      
+                  </div>
 
-                </div>
-            </div>
-        </footer>
-
+              </div>
+          </div>
+      </footer>
 
         <!-- JAVASCRIPT FILES -->
         <script src="{% main_template 'js/jquery.min.js' %}"></script>
         <script src="{% main_template 'js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
-                <!-- <script src="{% main_template 'js/click-scroll.js' %}"></script> -->
-
+        <!-- <script src="{% main_template 'js/click-scroll.js' %}"></script> -->
         <script src="{% main_template 'js/custom.js' %}"></script>
+        <script>
+          const previousURL = document.referrer;
+        // console.log('Previous URL:', previousURL);
+        
+        
+        // Retrieve the query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const strength = urlParams.get('strength');
+        const dosageForm = urlParams.get('dosage_form');
+        const drugName = urlParams.get('name');
+        const generic_name = urlParams.get('generic_name');
+        
+        // Now you have the values of the query parameters in the variables (strength, dosageForm, drugName).
+        // You can use these values as needed in the JavaScript code of this HTML page.
+        // console.log('Strength:', strength);
+        // console.log('Dosage Form:', dosageForm);
+        // console.log('Drug Name:', drugName);
+        
+        
+        
+        
+        
+        var currentPage = 1; // The current page number
+        var medicationDetails=[]; 
+        document.getElementById("sortOption").addEventListener("change", handleSortOptionChange());
+        
+        var xhr = new XMLHttpRequest();
+        if(!generic_name){
+        xhr.open('GET', '/get_medication_details/?strength=' + strength + '&dosage_form=' + dosageForm + '&name=' + drugName, true);
+        }else{
+          xhr.open('GET', '/get_generic_medication_details/?strength=' + strength + '&dosage_form=' + dosageForm + '&generic_name=' + generic_name, true);
+        }
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            var fetchedDetails = JSON.parse(xhr.responseText); // Parsed data from the response
+            
+            medicationDetails = fetchedDetails;
+            fetchMedicationDetails('default', 1);
+            get_unique_strengths();
+            get_unique_dosage_forms();
+        
+          } else {
+            console.error('Request failed. Status:', xhr.status);
+        
+            window.location.href = previousURL;
+          }
+        };
+        xhr.onerror = function () {
+          console.error('Request failed. Network error');
+          // Display "No data found" message for network errors
+          document.getElementById("medicationDetails").innerHTML = "<p>No data found</p>";
+        };
+        xhr.send();
+        
+        
+        get_unique_strengths();
+        
+        get_unique_dosage_forms();
+        
+        
+        
+        
+        function handledose_strength_sort() {
+          fetchMedicationDetails('default', 1);
+        }
+        
+        
+        function fetchMedicationDetails(sortOption, currentPage) {
+          var dose_strength_sort = document.getElementById("dose_strength_sort").value;
+          var dosage_form_sort = document.getElementById("dosage_form_sort").value;
+        
+          if (dose_strength_sort ==='default' && dosage_form_sort ==='default'){
+        
+        
+              var startIndex = (currentPage - 1) * 10;
+              var endIndex = startIndex + 10;
+              
+              if (startIndex < 0) {
+                startIndex = 0; // Ensure startIndex is not negative
+              }
+        
+              if (endIndex > medicationDetails.length) {
+                endIndex = medicationDetails.length; // Ensure endIndex is within bounds
+              }
+                // Create a copy of the subset of medication details to be sorted
+                var medicationSubset = medicationDetails.slice(startIndex, endIndex);
+        
+                if (sortOption === "priceAsc") {
+                  medicationSubset.sort(function (a, b) {
+                    return a.price_analysis - b.price_analysis;
+                  });
+                } else if (sortOption === "priceDesc") {
+                  medicationSubset.sort(function (a, b) {
+                    return b.price_analysis - a.price_analysis;
+                  });
+                }
+        
+              var detailsHtml = "";
+              for (var i = 0; i < medicationSubset.length; i++) {
+                var medication = medicationSubset[i];
+                var generic_name = medication.generic_name.trim();
+                var queryParams = '?generic_name=' + generic_name;
+                var url = '/med_details_search_results/' + queryParams;
+        
+        
+                detailsHtml +=
+                  `
+                  <div style="margin-top: 10px;" class="col-lg-4 col-md-6 col-12">
+                      <div class="custom-block bg-white shadow-lg">
+                      <table class="table  widget-26">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="widget-26-job-title">
+                                <a href="#">${medication.name.trim()}</a>
+                                <p class="m-0">
+                                  <a href="${url}">${medication.generic_name.trim()}.</a>
+                                </p>
+                              </div>
+                            </td>
+                            <td class="column-2">
+                              <div class="widget-26-job-info">
+                                <p  class="type m-0">${medication.manufacturer.trim()}</p>
+                                <a  class="type m-0 employer-name">${medication.dosage_form.trim()}.</a>
+                              </div>
+                            </td>`;
+                  if (medication.price !== '0') {
+                  detailsHtml += `<td class="column-3">
+                                    <div>
+                                      <p style="text-align: center;" class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
+                                      <p style="text-align: center;" class="type m-0 employer-name">${medication.strength.trim()}.</p>
+                                    </div>
+                                  </td>`;
+                } else {
+                  detailsHtml += `<td class="column-3">
+                                    <div class="widget-26-job-category">
+                                      <p style="text-align: center;" class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>
+                                      <p style="text-align: center;" class="type m-0 employer-name">${medication.strength.trim()}.</p>
+                                    </div>
+                                  </td>`;
+                }
+                detailsHtml += `</tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
 
+                      `;
+              
+              
+              
+        
+                    }
+              document.getElementById("medicationDetails").innerHTML = detailsHtml;
+        
+        
+        
+                  }
+          else if (dose_strength_sort !=='default' && dosage_form_sort !=='default'){
+        
+          var dose_strength_sort = document.getElementById("dose_strength_sort").value;
+          var dosage_form_sort = document.getElementById("dosage_form_sort").value;
+          var new_medicationDetails = [];
+          for (var i = 0; i < medicationDetails.length; i++) {
+            var medication = medicationDetails[i];
+            var dosage_form = medication.dosage_form.trim();
+            var strength = medication.strength.trim();
+            if (dosage_form === dosage_form_sort) {
+              new_medicationDetails.push(medication);
+            }
+            else if (strength === dose_strength_sort) {
+              new_medicationDetails.push(medication);
+            }
+          }
+        
+        
+        
+          var startIndex = (currentPage - 1) * 10;
+              var endIndex = startIndex + 10;
+              
+              if (startIndex < 0) {
+                startIndex = 0; // Ensure startIndex is not negative
+              }
+        
+              if (endIndex > new_medicationDetails.length) {
+                endIndex = new_medicationDetails.length; // Ensure endIndex is within bounds
+              }
+                // Create a copy of the subset of medication details to be sorted
+                var medicationSubset = new_medicationDetails.slice(startIndex, endIndex);
+        
+                if (sortOption === "priceAsc") {
+                  medicationSubset.sort(function (a, b) {
+                    return a.price_analysis - b.price_analysis;
+                  });
+                } else if (sortOption === "priceDesc") {
+                  medicationSubset.sort(function (a, b) {
+                    return b.price_analysis - a.price_analysis;
+                  });
+                }
+        
+              var detailsHtml = "";
+              for (var i = 0; i < medicationSubset.length; i++) {
+                var medication = medicationSubset[i];
+                var generic_name = medication.generic_name.trim();
+                var queryParams = '?generic_name=' + generic_name;
+                var url = '/med_details_search_results/' + queryParams;
+        
+        
+                detailsHtml +=
+                  `
+                <div class="card card-margin">
+                  <div class="row row-space">
+                    <div  class="my_coll" >
+                      <table class="table  widget-26">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="widget-26-job-title">
+                                <a href="#">${medication.name.trim()}</a>
+                                <p class="m-0">
+                                  <a href="${url}">${medication.generic_name.trim()}.</a>
+                                </p>
+                              </div>
+                            </td>
+                            <td class="column-2">
+                              <div class="widget-26-job-info">
+                                <p  class="type m-0">${medication.manufacturer.trim()}</p>
+                                <a  class="type m-0 employer-name">${medication.dosage_form.trim()}.</a>
+                              </div>
+                            </td>`;
+                  if (medication.price !== '0') {
+                  detailsHtml += `<td class="column-3">
+                                    <div>
+                                      <p style="text-align: center;" class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
+                                      <p style="text-align: center;" class="type m-0 employer-name">${medication.strength.trim()}.</p>
+                                    </div>
+                                  </td>`;
+                } else {
+                  detailsHtml += `<td class="column-3">
+                                    <div class="widget-26-job-category">
+                                      <p style="text-align: center;" class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>
+                                      <p style="text-align: center;" class="type m-0 employer-name">${medication.strength.trim()}.</p>
+                                    </div>
+                                  </td>`;
+                }
+                detailsHtml += `</tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                      `;
+              
+              
+              
+        
+                    }
+              document.getElementById("medicationDetails").innerHTML = detailsHtml;
+        
+        
+        
+        
+        
+        
+          }
+          else if (dose_strength_sort !=='default' || dosage_form_sort !=='default'){
+          var dose_strength_sort = document.getElementById("dose_strength_sort").value;
+          var dosage_form_sort = document.getElementById("dosage_form_sort").value;
+          var new_medicationDetails = [];
+          if (dosage_form_sort !== 'default') {
+          for (var i = 0; i < medicationDetails.length; i++) {
+            var medication = medicationDetails[i];
+            var dosage_form = medication.dosage_form.trim();
+            if (dosage_form === dosage_form_sort) {
+              new_medicationDetails.push(medication);
+            }
+          }
+        
+        
+          }
+          else if (dose_strength_sort !== 'default') {
+          for (var i = 0; i < medicationDetails.length; i++) {
+            var medication = medicationDetails[i];
+            var strength = medication.strength.trim();
+            if (strength === dose_strength_sort) {
+              new_medicationDetails.push(medication);
+            }
+          }
+          }
+        
+          var startIndex = (currentPage - 1) * 10;
+              var endIndex = startIndex + 10;
+              
+              if (startIndex < 0) {
+                startIndex = 0; // Ensure startIndex is not negative
+              }
+        
+              if (endIndex > new_medicationDetails.length) {
+                endIndex = new_medicationDetails.length; // Ensure endIndex is within bounds
+              }
+                // Create a copy of the subset of medication details to be sorted
+                var medicationSubset = new_medicationDetails.slice(startIndex, endIndex);
+        
+                if (sortOption === "priceAsc") {
+                  medicationSubset.sort(function (a, b) {
+                    return a.price_analysis - b.price_analysis;
+                  });
+                } else if (sortOption === "priceDesc") {
+                  medicationSubset.sort(function (a, b) {
+                    return b.price_analysis - a.price_analysis;
+                  });
+                }
+        
+              var detailsHtml = "";
+              for (var i = 0; i < medicationSubset.length; i++) {
+                var medication = medicationSubset[i];
+                var generic_name = medication.generic_name.trim();
+                var queryParams = '?generic_name=' + generic_name;
+                var url = '/med_details_search_results/' + queryParams;
+        
+        
+                detailsHtml +=
+                  `
+                <div class="card card-margin">
+                  <div class="row row-space">
+                    <div  class="my_coll" >
+                      <table class="table  widget-26">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="widget-26-job-title">
+                                <a href="#">${medication.name.trim()}</a>
+                                <p class="m-0">
+                                  <a href="${url}">${medication.generic_name.trim()}.</a>
+                                </p>
+                              </div>
+                            </td>
+                            <td class="column-2">
+                              <div class="widget-26-job-info">
+                                <p  class="type m-0">${medication.manufacturer.trim()}</p>
+                                <a  class="type m-0 employer-name">${medication.dosage_form.trim()}.</a>
+                              </div>
+                            </td>`;
+                  if (medication.price !== '0') {
+                  detailsHtml += `<td class="column-3">
+                                    <div>
+                                      <p style="text-align: center;" class="m-0 text-center Class">PRICE: ${medication.price.trim()} </p>
+                                      <p style="text-align: center;" class="type m-0 employer-name">${medication.strength.trim()}.</p>
+                                    </div>
+                                  </td>`;
+                } else {
+                  detailsHtml += `<td class="column-3">
+                                    <div class="widget-26-job-category">
+                                      <p style="text-align: center;" class="m-0 text-center Class">PRICE DATA IS UNAVAILABLE</p>
+                                      <p style="text-align: center;" class="type m-0 employer-name">${medication.strength.trim()}.</p>
+                                    </div>
+                                  </td>`;
+                }
+                detailsHtml += `</tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                      `;
+              
+              
+              
+        
+                    }
+              document.getElementById("medicationDetails").innerHTML = detailsHtml;
+        
+        
+        }
+        
+        
+        }
+        
+        // 
+        
+        
+        
+        function get_unique_strengths() {
+          var unique_strengths = [];
+        
+          // Assuming medicationDetails is populated with data
+          for (var i = 0; i < medicationDetails.length; i++) {
+            var medication = medicationDetails[i];
+            var strength = medication.strength.trim();
+            if (!unique_strengths.includes(strength)) {
+              unique_strengths.push(strength);
+            }
+          }
+        
+          // Build the select dropdown HTML
+          var detailsHtml = `
+          <select id="dose_strength_sort" class="form-control" style="margin-top: 5px; margin-bottom: 5px;"  onchange="handledose_strength_sort()">
+          <option value="default">STRENGTH</option>
+          `;
+          for (var i = 0; i < unique_strengths.length; i++) {
+            var strength = unique_strengths[i];
+            detailsHtml += `
+              <option value="${strength}">${strength}</option>
+            `;
+          }
+          detailsHtml += `</select>`;
+        
+          // Get the DOM element and set its innerHTML
+          var strengthSelectionElement = document.getElementById("strength_selection");
+          if (strengthSelectionElement) {
+            strengthSelectionElement.innerHTML = detailsHtml;
+          } else {
+            console.error("Element with id 'strength_selection' not found in the DOM.");
+          }
+        }
+        
+        // Call the function to populate the strengths
+        
+        
+        function get_unique_dosage_forms() {
+          var unique_dosage_forms = [];
+          for (var i = 0; i < medicationDetails.length; i++) {
+            var medication = medicationDetails[i];
+            var dosage_form = medication.dosage_form.trim();
+            if (!unique_dosage_forms.includes(dosage_form)) {
+              unique_dosage_forms.push(dosage_form);
+            }
+          }
+        
+          var detailsHtml = `
+          <select id="dosage_form_sort" class="form-control" style="margin-top: 5px; margin-bottom: 5px;"  onchange="handledose_strength_sort()">
+          <option value="default">FORMS</option>
+          `;
+          for (var i = 0; i < unique_dosage_forms.length; i++) {
+            var dosage_forms = unique_dosage_forms[i];
+            detailsHtml += `
+              <option value="${dosage_forms}">${dosage_forms}</option>
+            `;
+          }
+          detailsHtml += `</select>`;
+        
+          // Get the DOM element and set its innerHTML
+          var dosage_form_selection_Element = document.getElementById("dosage_form_selection");
+          if (dosage_form_selection_Element) {
+            dosage_form_selection_Element.innerHTML = detailsHtml;
+          } else {
+            console.error("Element with id 'dosage_form_selection_Element' not found in the DOM.");
+          }
+        
+        }
+        
+        
+        
+        
+        
+        function calculateTotalPages(items) {
+        var itemsPerPage = 10;
+        var totalItems = items.length;
+        return Math.ceil(totalItems / itemsPerPage);
+        }
+        
+        function displayPage(pageNumber) {
+        showPage(pageNumber);
+        }
+        
+        var trackpage=0;
+        function showPage(pageNumber) {
+        var totalPages = calculateTotalPages(medicationDetails);
+        
+        if(pageNumber===2){
+          
+          trackpage += pageNumber;
+          pageNumber =1 + Math.floor(trackpage / 2);
+          if(pageNumber>totalPages){
+            pageNumber=totalPages;
+            trackpage=totalPages*2-2;
+          }
+        
+        }
+        else if(pageNumber===0)
+        {
+        
+          trackpage -= 2;
+          pageNumber =1+ Math.floor(trackpage / 2);
+          if(pageNumber<1){
+            pageNumber=1;
+            trackpage=0;
+          }
+        
+        }
+        
+        else if(pageNumber ===991){
+          pageNumber=1+ Math.floor(trackpage / 2);
+        }else if (pageNumber >0 && pageNumber < 991){
+          trackpage = (pageNumber-1)*2;
+          pageNumber =1+ Math.floor(trackpage / 2);
+        }
+        else if (pageNumber > totalPages) {
+          pageNumber = totalPages;
+        } else if (pageNumber < 1) {
+          pageNumber = 1;
+        }
+        
+        
+        
+        
+        function handleSortOptionChange() {
+        var sortOption = document.getElementById("sortOption").value;
+        return sortOption;
+        }
+        
+        if (pageNumber >= 1 && pageNumber <= totalPages) {
+          var sortOption = handleSortOptionChange();
+          fetchMedicationDetails(sortOption, pageNumber);
+        }
+        }
+        
+        function handleSortOptionChange() {
+        showPage(991);
+        }
+        
+        
+        // Call this after fetching medicationDetails
+        fetchMedicationDetails('default', 1);
+        
+        </script>
     </body>
 </html>
 {% endblock %}
