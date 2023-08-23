@@ -73,7 +73,7 @@ https://templatemo.com/tm-590-topic-listing
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                           <div class="custom-block shadow-lg">
 
-                            <select id="sortOption" class="form-control" style="margin-top: 5px; margin-bottom: 5px;"  onchange="handledose_strength_sort()">
+                            <select id="sortOption" class="form-control" style="margin-top: 5px; margin-bottom: 5px;"  onchange="">
                               <option value="default">PRICE Filter</option>
                               <option value="priceAsc">Price (Low to High)</option>
                               <option value="priceDesc">Price (High to Low)</option>
@@ -154,6 +154,7 @@ https://templatemo.com/tm-590-topic-listing
         // console.log('Strength:', strength);
         // console.log('Dosage Form:', dosageForm);
         // console.log('Drug Name:', drugName);
+        document.getElementById("sortOption").addEventListener("change", handleSortOptionChange());
         
         var xhr = new XMLHttpRequest();
         if(!generic_name){
@@ -198,11 +199,12 @@ https://templatemo.com/tm-590-topic-listing
         
         
         
-
+        function handledose_strength_sort() {
+          fetchMedicationDetails('default', 1);
+        }
         
         
-        function fetchMedicationDetails(currentPage) {
-          var sortOption = document.getElementById("sortOption").value;
+        function fetchMedicationDetails(sortOption, currentPage) {
           var dose_strength_sort = document.getElementById("dose_strength_sort").value;
           var dosage_form_sort = document.getElementById("dosage_form_sort").value;
         
@@ -603,23 +605,67 @@ https://templatemo.com/tm-590-topic-listing
         
 
 
-              
-
-        var currentPage_number;
+        
+        var trackpage=0;
         function showPage(pageNumber) {
-            currentPage_number = pageNumber;
-          fetchMedicationDetails(pageNumber);
+        var totalPages = calculateTotalPages(medicationDetails);
+        
+        if(pageNumber===2){
+          
+          trackpage += pageNumber;
+          pageNumber =1 + Math.floor(trackpage / 2);
+          if(pageNumber>totalPages){
+            pageNumber=totalPages;
+            trackpage=totalPages*2-2;
+          }
+        
+        }
+        else if(pageNumber===0)
+        {
+        
+          trackpage -= 2;
+          pageNumber =1+ Math.floor(trackpage / 2);
+          if(pageNumber<1){
+            pageNumber=1;
+            trackpage=0;
+          }
+        
         }
         
-        function handledose_strength_sort(){
-          fetchMedicationDetails(currentPage_number);
-
+        else if(pageNumber ===991){
+          pageNumber=1+ Math.floor(trackpage / 2);
+        }else if (pageNumber >0 && pageNumber < 991){
+          trackpage = (pageNumber-1)*2;
+          pageNumber =1+ Math.floor(trackpage / 2);
+        }
+        else if (pageNumber > totalPages) {
+          pageNumber = totalPages;
+        } else if (pageNumber < 1) {
+          pageNumber = 1;
         }
         
+        
+        
+        
+        function handleSortOptionChange() {
+        var sortOption = document.getElementById("sortOption").value;
+        return sortOption;
+        }
+        
+        if (pageNumber >= 1 && pageNumber <= totalPages) {
+          var sortOption = handleSortOptionChange();
+          fetchMedicationDetails(sortOption, pageNumber);
+        }
+        }
+        
+        
+        function handleSortOptionChange() {
+        showPage(991);
+        }
         
         
         // Call this after fetching medicationDetails
-        fetchMedicationDetails(1);
+        fetchMedicationDetails('default', 1);
         pagination();
         
         </script>
