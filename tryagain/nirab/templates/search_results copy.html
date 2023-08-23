@@ -578,48 +578,48 @@ https://templatemo.com/tm-590-topic-listing
         }
 
         function pagination(pn) {
-          console.log(pn);
-          var data = medicationDetails;
-          var totalPages = calculateTotalPages(data);
-          console.log(totalPages);
-          currentPage_number = pn;
+    console.log(pn);
+    var data = medicationDetails;
+    var totalPages = calculateTotalPages(data);
+    console.log(totalPages);
+    currentPage_number = pn;
 
-          var paginationContainer = `
-              <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center mb-0">
-          `;
+    var paginationContainer = `
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center mb-0">
+    `;
 
-          // Determine how many pages to show before and after the current page
-          var pagesToShow = 2;
-          var startPage = Math.max(1, pn - pagesToShow);
-          var endPage = Math.min(totalPages, pn + pagesToShow);
+    // Determine how many pages to show before and after the current page
+    var pagesToShow = 3;
+    var startPage = Math.max(1, pn - pagesToShow);
+    var endPage = Math.min(totalPages, pn + pagesToShow);
 
-          if (startPage > 1) {
-              paginationContainer += `
-                  <li class="page-item"><button class="page-link" onclick="showPage(1);">1</button></li>
-                  <li class="page-item disabled"><span class="page-link">...</span></li>
-              `;
-          }
+    if (startPage > 1) {
+        paginationContainer += `
+            <li class="page-item"><button class="page-link" onclick="showPage(1);">1</button></li>
+            <li class="page-item disabled"><span class="page-link">...</span></li>
+        `;
+    }
 
-          for (var i = startPage; i <= endPage; i++) {
-              paginationContainer += `
-                  <li class="page-item"><button class="page-link" onclick="showPage(${i});">${i}</button></li>`;
-          }
+    for (var i = startPage; i <= endPage; i++) {
+        paginationContainer += `
+            <li class="page-item"><button class="page-link" onclick="showPage(${i});">${i}</button></li>`;
+    }
 
-          if (endPage < totalPages) {
-              paginationContainer += `
-                  <li class="page-item disabled"><span class="page-link">...</span></li>
-                  <li class="page-item"><button class="page-link" onclick="showPage(${totalPages});">${totalPages}</button></li>
-              `;
-          }
+    if (endPage < totalPages) {
+        paginationContainer += `
+            <li class="page-item disabled"><span class="page-link">...</span></li>
+            <li class="page-item"><button class="page-link" onclick="showPage(${totalPages});">${totalPages}</button></li>
+        `;
+    }
 
-          paginationContainer += `
-                  </ul>
-              </nav>
-          `;
+    paginationContainer += `
+            </ul>
+        </nav>
+    `;
 
-          document.getElementById("diry_list_pagination").innerHTML = paginationContainer;
-      }
+    document.getElementById("diry_list_pagination").innerHTML = paginationContainer;
+}
 
 
               
