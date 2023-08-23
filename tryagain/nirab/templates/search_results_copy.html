@@ -71,7 +71,7 @@ https://templatemo.com/tm-590-topic-listing
                       <div class="row">
 
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                          <div class="custom-block shadow-lg">
+                          <div class="custom-block bg-white shadow-lg">
 
                             <select id="sortOption" class="form-control" style="margin-top: 5px; margin-bottom: 5px;"  onchange="">
                               <option value="default">PRICE Filter</option>
@@ -82,7 +82,7 @@ https://templatemo.com/tm-590-topic-listing
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                          <div class="custom-block shadow-lg">
+                          <div class="custom-block bg-white shadow-lg">
 
                             <div id="strength_selection"></div>
 
@@ -90,7 +90,7 @@ https://templatemo.com/tm-590-topic-listing
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                          <div class="custom-block shadow-lg">
+                          <div class="custom-block bg-white shadow-lg">
                             <div id="dosage_form_selection"></div>
 
                           </div>
@@ -117,9 +117,41 @@ https://templatemo.com/tm-590-topic-listing
 
                         <!-- < this is the pagination section > -->
                         <div class="col-lg-12 col-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center mb-0">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">Prev</span>
+                                        </a>
+                                    </li>
 
-                          <div id="diry_list_pagination"></div>
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
 
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">5</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
 
                     </div>
@@ -127,6 +159,58 @@ https://templatemo.com/tm-590-topic-listing
             </section>
 
 
+            <!-- <section class="section-padding section-bg">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <h3 class="mb-4">Trending Topics</h3>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12 mt-3 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="topics-detail.html">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">Investment</h5>
+
+                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                        </div>
+
+                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                    </div>
+
+                                    <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12 mt-lg-3">
+                            <div class="custom-block custom-block-overlay">
+                                <div class="d-flex flex-column h-90">
+                                    <img src="images/businesswoman-using-tablet-analysis.jpg" class="custom-block-image img-fluid" alt="">
+
+                                    <div class="custom-block-overlay-text d-flex">
+                                        <div>
+                                            <h5 class="text-white mb-2">Finance</h5>
+
+                                            <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis</p>
+
+                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
+                                        </div>
+
+                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
+                                    </div>
+
+
+                                    <div class="section-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section> -->
         </main>
 
 
@@ -154,6 +238,13 @@ https://templatemo.com/tm-590-topic-listing
         // console.log('Strength:', strength);
         // console.log('Dosage Form:', dosageForm);
         // console.log('Drug Name:', drugName);
+        
+        
+        
+        
+        
+        var currentPage = 1; // The current page number
+        var medicationDetails=[]; 
         document.getElementById("sortOption").addEventListener("change", handleSortOptionChange());
         
         var xhr = new XMLHttpRequest();
@@ -162,10 +253,6 @@ https://templatemo.com/tm-590-topic-listing
         }else{
           xhr.open('GET', '/get_generic_medication_details/?strength=' + strength + '&dosage_form=' + dosageForm + '&generic_name=' + generic_name, true);
         }
-
-
-
-        
         xhr.onload = function () {
           if (xhr.status === 200) {
             var fetchedDetails = JSON.parse(xhr.responseText); // Parsed data from the response
@@ -174,16 +261,13 @@ https://templatemo.com/tm-590-topic-listing
             fetchMedicationDetails('default', 1);
             get_unique_strengths();
             get_unique_dosage_forms();
-            pagination()
+        
           } else {
             console.error('Request failed. Status:', xhr.status);
         
             window.location.href = previousURL;
           }
         };
-
-
-
         xhr.onerror = function () {
           console.error('Request failed. Network error');
           // Display "No data found" message for network errors
@@ -559,52 +643,19 @@ https://templatemo.com/tm-590-topic-listing
         
         }
         
-
-
-
-
-
+        
+        
+        
+        
         function calculateTotalPages(items) {
         var itemsPerPage = 9;
         var totalItems = items.length;
         return Math.ceil(totalItems / itemsPerPage);
         }
         
-        function getPageItems(pageNumber) {
-            var itemsPerPage = 9;
-            var startIndex = (pageNumber - 1) * itemsPerPage;
-            var endIndex = startIndex + itemsPerPage;
-            return data.slice(startIndex, endIndex);
+        function displayPage(pageNumber) {
+        showPage(pageNumber);
         }
-
-        function pagination() {
-          var data = medicationDetails;
-            var totalPages = calculateTotalPages(data);
-            console.log(totalPages);
-
-            var currentPage = 1;
-            showPage(currentPage);
-    
-            var paginationContainer = `
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center mb-0">
-            `;
-    
-            for (var i = 1; i <= totalPages; i++) {
-                paginationContainer += `
-                    <li class="page-item"><button class="page-link" onclick="showPage(${i});">${i}</button></li>`;
-            }
-    
-            paginationContainer += `
-                    </ul>
-                </nav>
-            `;
-    
-            document.getElementById("diry_list_pagination").innerHTML = paginationContainer;
-        }
-        
-
-
         
         var trackpage=0;
         function showPage(pageNumber) {
@@ -658,7 +709,6 @@ https://templatemo.com/tm-590-topic-listing
         }
         }
         
-        
         function handleSortOptionChange() {
         showPage(991);
         }
@@ -666,7 +716,6 @@ https://templatemo.com/tm-590-topic-listing
         
         // Call this after fetching medicationDetails
         fetchMedicationDetails('default', 1);
-        pagination();
         
         </script>
     </body>
