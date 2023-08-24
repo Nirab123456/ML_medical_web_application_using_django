@@ -128,13 +128,13 @@ th, td {
 
                                                         {% if  generic_name  %}
                                                         <h5 class="mb-2">FIND ALTERNATE DRUG USING GENERIC NAME</h5>
-                                                        {% include 'generic.html' %}
+                                                        {% include 'generic_drug_search_form.html' %}
 
 
                                                         {% else %}
                                                         <h5 class="mb-2">FIND ALTERNATE DRUG USING BRAND NAME</h5>
 
-                                                        {% include 'brand_generic_drug_search.html' %}
+                                                        {% include 'brand_drug_search_form.html' %}
                                                         {% endif %}
                                                             
 
@@ -207,7 +207,7 @@ th, td {
 
                                                         {% else %}
                                                         <h5 class="mb-2">FIND ALTERNATE DRUG USING GENERIC NAME</h5>
-                                                        {% include 'generic.html' %}
+                                                        {% include 'generic_drug_search_form.html' %}
                                                         {% endif %}
                                                          
                                                         {% endif %}

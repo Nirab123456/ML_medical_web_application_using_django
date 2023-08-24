@@ -5,13 +5,13 @@
 
 </head>
 <body>
-    <form method="POST" class="custom-form" id="brand_drug_details_form" action="{% url 'medicine_details_generic' %}">
+    <form method="POST" class="custom-form" id="brand_drug_details_form" action="#">
         {% csrf_token %}
         <p>GENERIC NAME</p>
         <div class="input-group input-group-lg">
 
             <!-- have set max length gere  but truly it is unlimited there is  -->
-            <input type="text" name="name" id="name_D_D" class="form-control"  placeholder="e.g:NAPA" required oninput="showWordRecommendations()" >
+            <input type="text"  id="name_D_D" class="form-control"  placeholder="e.g:NAPA" required oninput="showWordRecommendations_D_D()" >
 
 
         </div>
@@ -53,16 +53,11 @@
 
     </form>
 
-    <script>
-        function brand_drug_details_form() {
-            document.getElementById("brand_drug_details_form").action = "{% url 'medicine_details_generic' %}";
-            document.getElementById("brand_drug_details_form").submit();
-        }
-    </script>
+
 </body>
 <script>
     //   $(document).ready(function () {
-    //   showWordRecommendations();
+    //   showWordRecommendations_D_D();
     //   $(".tab-list__link").on("click", function (e) {
     //       e.preventDefault();
     //       var targetTab = $(this).attr("href");
@@ -73,7 +68,7 @@
     
     var timeout; // Global variable to store timeout reference
       
-      function showWordRecommendations() {
+      function showWordRecommendations_D_D() {
         clearTimeout(timeout); // Clear previous timeout, if any
       
         // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
