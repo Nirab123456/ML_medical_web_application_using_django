@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <form method="POST" class="custom-form" id="generic_drug_details_form" action="#">
+        {% csrf_token %}
+        <p>GENERIC NAME</p>
+        <div class="input-group input-group-lg">
+
+            <!-- have set max length gere  but truly it is unlimited there is  -->
+            <input type="text" name="generic_name" id="generic_name_D_D" class="form-control" value="{{ generic_name }}" placeholder="e.g:PARACETAMOL" required oninput="genericrecomendation()" >
+
+
+        </div>
+
+        <div class="row">
+
+          
+                <div  class="col-2" >
+                    <div class="col-lg-12 col-12">
+                        <div class="input-group input-group-lg">
+
+                            <div id="genericrecomendation_D_D"></div> 
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+        </div>
+
+        <div class="row">
+              <div class="col-2">
+                <button style="margin-top: 15px;" class="custom-btn btn-12">Submit</button>
+            </div>
+        </div>
+
+            
+
+
+
+
+
+
+
+    </form>
+
+
+</body>
+<script>
+      //   $(document).ready(function () {
+      //   showWordRecommendations();
+      //   $(".tab-list__link").on("click", function (e) {
+      //       e.preventDefault();
+      //       var targetTab = $(this).attr("href");
+      //       $(".tab-pane").removeClass("active");
+      //       $(targetTab).addClass("active");
+      //   });
+      // });
+      function genericrecomendation() {
+        clearTimeout(timeout); // Clear previous timeout, if any
+      
+        // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+        timeout = setTimeout(function() {
+          var input = document.getElementById("generic_name_D_D").value.trim();
+
+      
+          if (input.length === 0) {
+              var recommendationsHtml = "<select class='form-control' id='generic_selection' style='margin-top: 5px; margin-bottom: 5px;'  onchange='selectgenericrecomendtions()'>";
+              recommendationsHtml += `<option disabled="disabled" selected="selected">Select a proper generic name.</option>
+                                        </select>
+                                        `;
+              document.getElementById("genericrecomendation_D_D").innerHTML = recommendationsHtml;
+              return;
+            }
+
+      
+          // Make an AJAX call to fetch word recommendations based on the input
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', '/get_generic_name_recommendations/?input=' + encodeURIComponent(input), true);
+          xhr.onload = function() {
+    
+    
+    
+    
+
+
+
+            if (xhr.status === 200) {
+                var wordRecommendations = JSON.parse(xhr.responseText);
+        
+                // Display word recommendations in a list
+                var recommendationsHtml=`<label class="label">Select the drug</label>
+                <select class='form-control' id='generic_selection' style='margin-top: 5px; margin-bottom: 5px;' onchange='selectgenericrecomendtions()'>
+                
+                `;
+                
+                  if (wordRecommendations.length !== 0) {
+                    for (var i = 0; i < wordRecommendations.length; i++) {
+                      var word = wordRecommendations[i];
+                      recommendationsHtml += `
+                      
+                      <option value="${word}">${word}</option>
+                      
+                      `;
+                    }
+                  } else {
+                    recommendationsHtml += `<option disabled="disabled" selected="selected">No recommendations found.</option>
+                                            
+                                            `;
+                  }
+      
+      
+      
+      
+                  recommendationsHtml += `</select>
+                                          `;
+                document.getElementById("genericrecomendation_D_D").innerHTML = recommendationsHtml;
+              }
+
+            
+            
+            
+            else {
+              console.error('Request failed. Status:', xhr.status);
+              // Display no recommendations for error cases
+              document.getElementById("genericrecomendation_D_D").innerHTML = "";
+            }
+          };
+          xhr.onerror = function() {
+            console.error('Request failed. Network error');
+            // Display no recommendations for network errors
+            document.getElementById("genericrecomendation_D_D").innerHTML = "";
+          };
+          xhr.send();
+        }, 300); // Adjust the delay as needed (in milliseconds)
+    
+    
+      }
+
+
+      
+      // Function to select a word recommendation and populate the input field with it
+      function selectgenericrecomendtions() {
+
+        var selectElement = document.getElementById("generic_selection");
+          var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+          console.log(selectedOption);
+          document.getElementById("generic_name_D_D").value = selectedOption;
+      }
+    
+      
+    
+      function handleFormSubmission(event) {
+      var generic_name = encodeURIComponent(document.getElementById("generic_name_D_D").value);
+      // var sortOption = document.getElementById("sortOption").value;
+  
+      if (generic_name) {
+        event.preventDefault(); // Prevent default form submission behavior
+  
+        // Construct the URL with query parameters
+        var queryParams = '?generic_name=' + generic_name;
+        // You can add more parameters if needed like this: '&param1=value1&param2=value2'
+  
+        // Redirect to the target HTML page with the query parameters
+        window.location.href = '/med_details_search_results/' + queryParams;
+      }
+    }
+
+
+    
+      // Attach the handleFormSubmission function to the form's submit event
+      document.getElementById("generic_drug_details_form").addEventListener("submit", handleFormSubmission);
+    
+
+    
+    
+    </script>
+</html>

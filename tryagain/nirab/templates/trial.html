@@ -225,97 +225,52 @@ th, td {
                             <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
 
                                 
-                                <div class="row">
+                                    <div class="row">
 
 
 
-                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
-                                        <div class="custom-block bg-white shadow-lg">
 
 
-                                            <form method="POST" id="ENGform" action="{% url 'ENG_OCR' %}" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                <a class='' href="topics-detail.html">
-                                                    <div class="d-flex rotating-border rotating-border--google">
+                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                    <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">CHOOSE YOUR IMAGE</h5>
+
+                                                            {% include 'generic_drug_details_form.html' %}
 
                                                         </div>
-
                                                     </div>
-
-                                                    <div class="row">
-                                                        {% if ENG_OCR_image_url %}
-                                                            <img src="{{ ENG_OCR_image_url }}" class="custom-block-image img-fluid" alt="">
-                                                        {% else %}
-                                                        <img id="blah">
-                                                        {% endif %}
-                                                    </div>
-                                                    <div class="row">
-
-                                                        <div>
-                                                            <input type="file" id="image" name="image" onchange="readURL(this);">
-
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
-
-                                                </a>
-
-
-                                            </form>
-
-                                            {% if ENG_OCR_file_path %}
-                                            <a style="margin-top: 5px; text-align: center;" class="custom-btn btn-7" href="{% url 'download_text' ENG_OCR_file_path %}">DOWNLOAD</a>
-                                            {% endif %}
-                                            <script>
-                                            function BNform() {
-                                                document.getElementById("ENGform").action = "{% url 'ENG_OCR' %}";
-                                                document.getElementById("ENGform").submit();
-                                            }
-                                            </script>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="custom-block custom-block-overlay">
-                                            <div class="d-flex flex-column h-100">
-                                                <img src="{% main_template 'images/topics/english_ocr_result_1.jpg' %}" class="custom-block-image img-fluid" alt="">
-
-                                                <div class="custom-block-overlay-text d-flex">
-                                                    {% if ENG_OCR_text %}
-                                                    <h5 class="text-white mb-2">Result:  </h5>
-
-                                                    <div >
-                                                        <p style="color: azure;" class="scrollable-text" class="text-white">{{ ENG_OCR_text }}</p>
-                                                        <button id="copyButton" class="custom-btn btn-5">Copy Text</button>
-
-                                                    </div>
-
-                                                    {% else %}
-                                                    <div>
-                                                        <h5 class="text-white mb-2">English OPTICAL CHARACTERS RECOGNITION</h5>
-                                                        <p class="text-white">English OCR (Optical Character Recognition) technology is employed for the conversion of printed or handwritten English text within images into digital, machine-readable text. The PyTesseract Python library serves as a tool to harness the capabilities of the Tesseract OCR engine for English OCR purposes.</p>
-                                                    </div>
-                                                    {% endif %}
-                                                </div>
-                                                
-
-
-                                                <div class="section-overlay"></div>
                                             </div>
                                         </div>
 
 
+
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                    <div class="d-flex">
+                                                        <div>
+
+
+
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
                                     </div>
-
-
-
-
-                                </div>
+                                
+                                
+                                
+                                
+                            </div>
+                                    
 
 
 
