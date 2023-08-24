@@ -62,17 +62,18 @@ class TOTAL_MEDICINE_SEARCH:
                     dosage_forms = set(dosage_forms)
                     # Convert the result to a list
                     dosage_forms = list(dosage_forms)
-                return render(request, 'search_generic.html', {'medication_form': form, 'medications': matching_medications,
+                return render(request, 'trial.html', {'medication_form': form, 'medications': matching_medications,
                                                             'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms})
         else:
             form = MedicineForm()
-        return render(request, 'search_generic.html', {'medication_form': form})
+        return render(request, 'trial.html', {'medication_form': form})
 
 
 
     def get_medication_details(self):
         request = self.request
         selected_strength = request.GET.get('strength')
+        print(selected_strength)
         name = request.GET.get('name')
         name = name.lower()
         dosage_form = request.GET.get('dosage_form')
@@ -191,6 +192,7 @@ class TOTAL_MEDICINE_SEARCH:
     def get_generic_medication_details(self):
         request = self.request
         selected_strength = request.GET.get('strength')
+        print(selected_strength)
         generic_name = request.GET.get('generic_name')
         generic_name = generic_name.lower()
         dosage_form = request.GET.get('dosage_form')

@@ -32,243 +32,7 @@
   
 }
 </style>
-<style>
-    .mycustom-btn {
-width: 130px;
-height: 40px;
-color: #fff;
-border-radius: 5px;
-padding: 10px 25px;
-font-family: 'Lato', sans-serif;
-font-weight: 500;
-background: transparent;
-cursor: pointer;
-transition: all 0.3s ease;
-position: relative;
-display: inline-block;
- box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
- 7px 7px 20px 0px rgba(0,0,0,.1),
- 4px 4px 5px 0px rgba(0,0,0,.1);
-outline: none;
-}
 
-
-
-/* 7 */
-.btn-7 {
-background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
-line-height: 42px;
-padding: 0;
-border: none;
-}
-.btn-7 span {
-position: relative;
-display: block;
-width: 100%;
-height: 100%;
-}
-.btn-7:before,
-.btn-7:after {
-position: absolute;
-content: "";
-right: 0;
-bottom: 0;
-background: rgba(251,75,2,1);
-box-shadow:
- -7px -7px 20px 0px rgba(255,255,255,.9),
- -4px -4px 5px 0px rgba(255,255,255,.9),
- 7px 7px 20px 0px rgba(0,0,0,.2),
- 4px 4px 5px 0px rgba(0,0,0,.3);
-transition: all 0.3s ease;
-}
-.btn-7:before{
- height: 0%;
- width: 2px;
-}
-.btn-7:after {
-width: 0%;
-height: 2px;
-}
-.btn-7:hover{
-color: rgba(251,75,2,1);
-background: transparent;
-}
-.btn-7:hover:before {
-height: 100%;
-}
-.btn-7:hover:after {
-width: 100%;
-}
-.btn-7 span:before,
-.btn-7 span:after {
-position: absolute;
-content: "";
-left: 0;
-top: 0;
-background: rgba(251,75,2,1);
-box-shadow:
- -7px -7px 20px 0px rgba(255,255,255,.9),
- -4px -4px 5px 0px rgba(255,255,255,.9),
- 7px 7px 20px 0px rgba(0,0,0,.2),
- 4px 4px 5px 0px rgba(0,0,0,.3);
-transition: all 0.3s ease;
-}
-.btn-7 span:before {
-width: 2px;
-height: 0%;
-}
-.btn-7 span:after {
-height: 2px;
-width: 0%;
-}
-.btn-7 span:hover:before {
-height: 100%;
-}
-.btn-7 span:hover:after {
-width: 100%;
-}
-/* 13 */
-.btn-13{
-position: relative;
-right: 20px;
-bottom: 20px;
-border:none;
-box-shadow: none;
-width: 130px;
-height: 40px;
-line-height: 42px;
--webkit-perspective: 230px;
-perspective: 230px;
-}
-.btn-13 span {
-background: rgb(238, 0, 0);
-background: linear-gradient(0deg, rgb(0, 40, 238) 0%, rgb(251, 156, 2) 100%);
-display: block;
-position: absolute;
-width: 130px;
-height: 40px;
-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
- 7px 7px 20px 0px rgba(0,0,0,.1),
- 4px 4px 5px 0px rgba(0,0,0,.1);
-border-radius: 5px;
-margin:0;
-text-align: center;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
--webkit-transition: all .3s;
-transition: all .3s;
-}
-.btn-13 span:nth-child(1) {
-box-shadow:
- -7px -7px 20px 0px #fff9,
- -4px -4px 5px 0px #fff9,
- 7px 7px 20px 0px #0002,
- 4px 4px 5px 0px #0001;
--webkit-transform: rotateX(90deg);
--moz-transform: rotateX(90deg);
-transform: rotateX(90deg);
--webkit-transform-origin: 50% 50% -20px;
--moz-transform-origin: 50% 50% -20px;
-transform-origin: 50% 50% -20px;
-}
-.btn-13 span:nth-child(2) {
--webkit-transform: rotateX(0deg);
--moz-transform: rotateX(0deg);
-transform: rotateX(0deg);
--webkit-transform-origin: 50% 50% -20px;
--moz-transform-origin: 50% 50% -20px;
-transform-origin: 50% 50% -20px;
-}
-.btn-13:hover span:nth-child(1) {
-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
- 7px 7px 20px 0px rgba(0,0,0,.1),
- 4px 4px 5px 0px rgba(0,0,0,.1);
--webkit-transform: rotateX(0deg);
--moz-transform: rotateX(0deg);
-transform: rotateX(0deg);
-}
-.btn-13:hover span:nth-child(2) {
-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
- 7px 7px 20px 0px rgba(0,0,0,.1),
- 4px 4px 5px 0px rgba(0,0,0,.1);
-color: transparent;
--webkit-transform: rotateX(-90deg);
--moz-transform: rotateX(-90deg);
-transform: rotateX(-90deg);
-}
-/* 12 */
-.btn-12{
-position: relative;
-right: 20px;
-bottom: 20px;
-border:none;
-box-shadow: none;
-width: 130px;
-height: 40px;
-line-height: 42px;
--webkit-perspective: 230px;
-perspective: 230px;
-}
-.btn-12 span {
-background: rgb(0,172,238);
-background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
-display: block;
-position: absolute;
-width: 130px;
-height: 40px;
-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
- 7px 7px 20px 0px rgba(0,0,0,.1),
- 4px 4px 5px 0px rgba(0,0,0,.1);
-border-radius: 5px;
-margin:0;
-text-align: center;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
--webkit-transition: all .3s;
-transition: all .3s;
-}
-.btn-12 span:nth-child(1) {
-box-shadow:
- -7px -7px 20px 0px #fff9,
- -4px -4px 5px 0px #fff9,
- 7px 7px 20px 0px #0002,
- 4px 4px 5px 0px #0001;
--webkit-transform: rotateX(90deg);
--moz-transform: rotateX(90deg);
-transform: rotateX(90deg);
--webkit-transform-origin: 50% 50% -20px;
--moz-transform-origin: 50% 50% -20px;
-transform-origin: 50% 50% -20px;
-}
-.btn-12 span:nth-child(2) {
--webkit-transform: rotateX(0deg);
--moz-transform: rotateX(0deg);
-transform: rotateX(0deg);
--webkit-transform-origin: 50% 50% -20px;
--moz-transform-origin: 50% 50% -20px;
-transform-origin: 50% 50% -20px;
-}
-.btn-12:hover span:nth-child(1) {
-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
- 7px 7px 20px 0px rgba(0,0,0,.1),
- 4px 4px 5px 0px rgba(0,0,0,.1);
--webkit-transform: rotateX(0deg);
--moz-transform: rotateX(0deg);
-transform: rotateX(0deg);
-}
-.btn-12:hover span:nth-child(2) {
-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
- 7px 7px 20px 0px rgba(0,0,0,.1),
- 4px 4px 5px 0px rgba(0,0,0,.1);
-color: transparent;
--webkit-transform: rotateX(-90deg);
--moz-transform: rotateX(-90deg);
-transform: rotateX(-90deg);
-}
-
-</style>
 </head>
 
 <body id="top">
@@ -346,7 +110,7 @@ transform: rotateX(-90deg);
                                         <div class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">FROM TEXT</h5>
+                                                        <h5 class="mb-2">FIND ALTERNATE DRUG USING BRAND NAME</h5>
 
                                                                 
                                                             <form method="POST" class="custom-form" id="med_search_form" action="{% url 'med_search' %}">
@@ -355,15 +119,18 @@ transform: rotateX(-90deg);
                                                                 <div class="input-group input-group-lg">
 
                                                                     <!-- have set max length gere  but truly it is unlimited there is  -->
-                                                                    <input type="text" name="name" id="name" class="form-control" value="{{ name_of_medication }}" placeholder="NAME OF THE DRUG e.g:NAPA" required oninput="showWordRecommendations()" >
+                                                                    <input type="text" name="name" id="name" class="form-control" value="{{ name_of_medication }}" placeholder="e.g:NAPA" required oninput="showWordRecommendations()" >
                                 
 
                                                                 </div>
                                                                 {% if strengths %}
+                                                                {% if name_of_medication %}
+
                                                                 <div class="row">
                             
                                                                   
                                                                         <div  class="col-2" >
+                                                                            <label class="label">Select the drug</label>
 
                                                                             <div class="col-lg-12 col-12">
                                                                                 <div class="input-group input-group-lg">
@@ -379,8 +146,9 @@ transform: rotateX(-90deg);
                             
                                                                     
                                                                         <div class="col-2">
+                                                                            <label class="label">SELECT THE STRENGTH:</label>
+
                                                                             <div class="input-group">
-                                                                                <label class="label">SELECT THE STRENGTH:</label>
                             
                                                                                 <select class='form-control' id="strength" name="strength" style='margin-top: 5px; margin-bottom: 5px;'  onchange='handleSelectionChange()'>
 
@@ -399,8 +167,11 @@ transform: rotateX(-90deg);
 
                                                                 </div>
                             
+                                                                {% endif %}
                                                                 {% else %}
                                                                 <div class="col-lg-12 col-12">
+                                                                    <label class="label">Select the drug</label>
+
                                                                     <div class="input-group input-group-lg">
 
                                                                         <div id="wordRecommendations"></div> 
@@ -411,14 +182,15 @@ transform: rotateX(-90deg);
 
                                                                 {% endif %}
                                                                 {% if dosage_forms %}
+                                                                {% if name_of_medication %}
+
                                                                 <div class="row">
                             
                                                                 
                             
                                                                     
-                                                                        <div class="col-2">
+                                                                            <label class="label">SELECT THE DOSAGE FORM:</label>
                                                                             <div class="input-group">
-                                                                                <label class="label">SELECT THE DOSAGE FORM:</label>
                             
                                                                                 <select class='form-control' id="dosage_form" name="dosage_form" style='margin-top: 5px; margin-bottom: 5px;'  onchange='handleSelectionChange()'>
 
@@ -433,21 +205,23 @@ transform: rotateX(-90deg);
                                                                             </div>
                                                                               
                                                                               
-                                                                        </div>
 
                                                                         <div class="col-2">
-                                                                            <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+                                                                            <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
                                                                         </div>
 
                                                                 </div>
 
+                                                                {% endif %}
                                                                 {% else %}
 
+
                                                                         <div class="col-2">
-                                                                            <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+                                                                            <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
                                                                         </div>
 
                                                                 {% endif %}
+
 
 
 
@@ -472,57 +246,135 @@ transform: rotateX(-90deg);
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">FIND ALTERNATE DRUG USING GENERIC NAME</h5>
 
+                                                                
+                                                            <form method="POST" class="custom-form" id="med_search_generic_form" action="{% url 'med_search_generic' %}">
+                                                                {% csrf_token %}
+                                                                <p>Brand Name</p>
+                                                                <div class="input-group input-group-lg">
 
-                                            <form method="POST" id="ENGHANDWRITTEN" action="{% url 'ENG_OCR_HANDWRITTEN' %}" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                <h5>FROM IMAGE :</h5>
+                                                                    <!-- have set max length gere  but truly it is unlimited there is  -->
+                                                                    <input type="text" name="generic_name" id="generic_name" class="form-control" value="{{ generic_name }}" placeholder="e.g:PARACETAMOL" required oninput="showWordRecommendations()" >
+                                
 
-                                                <a class='' href="topics-detail.html">
-                                                    <div class="d-flex rotating-border rotating-border--google">
-                                                        <div>
-                                                            <h5 class="mb-2">Choose your image.</h5>
+                                                                </div>
+                                                                {% if strengths %}
+                                                                <div class="row">
+                            
+                                                                  
+                                                                        <div  class="col-2" >
+                                                                            <label class="label">Select the drug</label>
 
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="row">
-                                                        {% if ENG_OCR_image_url %}
-                                                            <img src="{{ ENG_OCR_image_url }}" class="custom-block-image img-fluid" alt="">
-                                                        {% else %}
-                                                        <img id="blah">
-                                                        {% endif %}
-                                                    </div>
-                                                    <div class="row">
-
-                                                        <div>
-                                                            <input type="file" id="image" name="image" onchange="readURL(this);">
-
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
-
-                                                </a>
-
-
-                                            </form>
-
-                                            {% if ENG_OCR_pdf_output_file %}
-                                            <a style="margin-top: 5px; text-align: center;" class="custom-btn btn-7" href="{% url 'download_pdf' ENG_OCR_pdf_output_file %}">DOWNLOAD PDF</a>
-                                            {% endif %}
-                                            <script>
-                                            function ENGHANDWRITTEN() {
-                                                document.getElementById("ENGHANDWRITTEN").action = "{% url 'ENG_OCR_HANDWRITTEN' %}";
-                                                document.getElementById("ENGHANDWRITTEN").submit();
-                                            }
-                                            </script>
+                                                                            <div class="col-lg-12 col-12">
+                                                                                <div class="input-group input-group-lg">
+            
+                                                                                    <div id="wordRecommendations"></div> 
+                                                                                    
+                                                                                </div>
                                         
-                                        
+                                                                            </div>
+            
+                                                                        </div>
+                            
+                            
+                                                                    
+                                                                        <div class="col-2">
+                                                                            <label class="label">SELECT THE STRENGTH:</label>
+
+                                                                            <div class="input-group">
+                            
+                                                                                <select class='form-control' id="strength" name="strength" style='margin-top: 5px; margin-bottom: 5px;'  onchange='handleSelectionChange()'>
+
+                                                                                    <optgroup label="strength">
+                                                                                    <option disabled="disabled" selected="selected">CHOOSE A STRENGTH.</option>
+                                                                                    {% for strength in strengths %}
+                                                                                        <option value="{{ strength }}">{{ strength }}</option>
+                                                                                    {% endfor %}
+                                                                                    </optgroup>
+                                                                                </select>
+                            
+                                                                            </div>
+                                                                              
+                                                                              
+                                                                        </div>
+
+                                                                </div>
+                            
+                                                                {% else %}
+                                                                <div class="col-lg-12 col-12">
+                                                                    <label class="label">Select the drug</label>
+
+                                                                    <div class="input-group input-group-lg">
+
+                                                                        <div id="wordRecommendations"></div> 
+                                                                        
+                                                                    </div>
+                            
+                                                                </div>
+
+                                                                {% endif %}
+                                                                {% if dosage_forms %}
+                                                                <div class="row">
+                            
+                                                                
+                            
+                                                                    
+                                                                            <label class="label">SELECT THE DOSAGE FORM:</label>
+                                                                            <div class="input-group">
+                            
+                                                                                <select class='form-control' id="dosage_form" name="dosage_form" style='margin-top: 5px; margin-bottom: 5px;'  onchange='handleSelectionChange()'>
+
+                                                                                    <optgroup label="dosage_form">
+                                                                                    <option disabled="disabled" selected="selected">CHOOSE A DOSAGE FORM.</option>
+                                                                                    {% for dosage_form in dosage_forms %}
+                                                                                        <option value="{{ dosage_form }}">{{ dosage_form }}</option>
+                                                                                    {% endfor %}
+                                                                                    </optgroup>
+                                                                                </select>
+                            
+                                                                            </div>
+                                                                              
+                                                                              
+
+                                                                        <div class="col-2">
+                                                                            <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+                                                                        </div>
+
+                                                                </div>
+
+                                                                {% else %}
+
+                                                                        <div class="col-2">
+                                                                            <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+                                                                        </div>
+
+                                                                {% endif %}
+
+
+
+
+
+
+
+                                                            </form>
+
+                                                            <script>
+                                                                function med_search_generic_form() {
+                                                                    document.getElementById("med_search_generic_form").action = "{% url 'med_search_generic' %}";
+                                                                    document.getElementById("med_search_generic_form").submit();
+                                                                }
+                                                            </script>
+                                                            
+
+                                                    </div>
+
+                                                </div>
+
                                         </div>
                                     </div>
                                 </div>

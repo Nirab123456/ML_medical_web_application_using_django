@@ -15,8 +15,6 @@
     <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
     <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet"> 
-    <link href="{% main_template 'css/rotating_border_animated_buttons.css' %}" rel="stylesheet"> 
-
 <style>
 
 .col-2 {
@@ -113,122 +111,7 @@
                                                         <h5 class="mb-2">FIND ALTERNATE DRUG USING BRAND NAME</h5>
 
                                                                 
-                                                            <form method="POST" class="custom-form" id="med_search_form" action="{% url 'med_search' %}">
-                                                                {% csrf_token %}
-                                                                <p>Brand Name</p>
-                                                                <div class="input-group input-group-lg">
-
-                                                                    <!-- have set max length gere  but truly it is unlimited there is  -->
-                                                                    <input type="text" name="name" id="name" class="form-control" value="{{ name_of_medication }}" placeholder=" e.g:NAPA" required oninput="showWordRecommendations()" >
-                                
-
-                                                                </div>
-                                                                {% if strengths %}
-                                                                <div class="row">
-                            
-                                                                  
-                                                                        <div  class="col-2" >
-                                                                            <label class="label">Select the drug</label>
-
-                                                                            <div class="col-lg-12 col-12">
-                                                                                <div class="input-group input-group-lg">
-            
-                                                                                    <div id="wordRecommendations"></div> 
-                                                                                    
-                                                                                </div>
-                                        
-                                                                            </div>
-            
-                                                                        </div>
-                            
-                            
-                                                                    
-                                                                        <div class="col-2">
-                                                                            <label class="label">SELECT THE STRENGTH:</label>
-
-                                                                            <div class="input-group">
-                            
-                                                                                <select class='form-control' id="strength" name="strength" style='margin-top: 5px; margin-bottom: 5px;'  onchange='handleSelectionChange()'>
-
-                                                                                    <optgroup label="strength">
-                                                                                    <option disabled="disabled" selected="selected">CHOOSE A STRENGTH.</option>
-                                                                                    {% for strength in strengths %}
-                                                                                        <option value="{{ strength }}">{{ strength }}</option>
-                                                                                    {% endfor %}
-                                                                                    </optgroup>
-                                                                                </select>
-                            
-                                                                            </div>
-                                                                              
-                                                                              
-                                                                        </div>
-
-                                                                </div>
-                            
-                                                                {% else %}
-                                                                <div class="col-lg-12 col-12">
-                                                                    <label class="label">Select the drug</label>
-
-                                                                    <div class="input-group input-group-lg">
-
-                                                                        <div id="wordRecommendations"></div> 
-                                                                        
-                                                                    </div>
-                            
-                                                                </div>
-
-                                                                {% endif %}
-                                                                {% if dosage_forms %}
-                                                                <div class="row">
-                            
-                                                                
-                            
-                                                                    
-                                                                            <label class="label">SELECT THE DOSAGE FORM:</label>
-                                                                            <div class="input-group">
-                            
-                                                                                <select class='form-control' id="dosage_form" name="dosage_form" style='margin-top: 5px; margin-bottom: 5px;'  onchange='handleSelectionChange()'>
-
-                                                                                    <optgroup label="dosage_form">
-                                                                                    <option disabled="disabled" selected="selected">CHOOSE A DOSAGE FORM.</option>
-                                                                                    {% for dosage_form in dosage_forms %}
-                                                                                        <option value="{{ dosage_form }}">{{ dosage_form }}</option>
-                                                                                    {% endfor %}
-                                                                                    </optgroup>
-                                                                                </select>
-                            
-                                                                            </div>
-                                                                              
-                                                                              
-
-                                                                        <div class="col-2">
-                                                                            <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
-                                                                        </div>
-
-                                                                </div>
-
-                                                                {% else %}
-
-                                                                        <div class="col-2">
-                                                                            <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
-                                                                        </div>
-
-                                                                {% endif %}
-
-
-
-
-
-
-
-                                                            </form>
-
-                                                            <script>
-                                                                function med_search_form() {
-                                                                    document.getElementById("med_search_form").action = "{% url 'med_search' %}";
-                                                                    document.getElementById("med_search_form").submit();
-                                                                }
-                                                            </script>
+                                                        {% include 'brand_generic_drug_search.html' %}
                                                             
 
                                                     </div>
@@ -238,57 +121,20 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">FIND ALTERNATE DRUG USING GENERIC NAME</h5>
 
-
-                                            <form method="POST" id="ENGHANDWRITTEN" action="{% url 'ENG_OCR_HANDWRITTEN' %}" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                <h5>FROM IMAGE :</h5>
-
-                                                <a class='' href="topics-detail.html">
-                                                    <div class="d-flex rotating-border rotating-border--google">
-                                                        <div>
-                                                            <h5 class="mb-2">Choose your image.</h5>
-
-                                                        </div>
+                                                                
+                                                        {% include 'generic.html' %}
+                                                            
 
                                                     </div>
 
-                                                    <div class="row">
-                                                        {% if ENG_OCR_image_url %}
-                                                            <img src="{{ ENG_OCR_image_url }}" class="custom-block-image img-fluid" alt="">
-                                                        {% else %}
-                                                        <img id="blah">
-                                                        {% endif %}
-                                                    </div>
-                                                    <div class="row">
+                                                </div>
 
-                                                        <div>
-                                                            <input type="file" id="image" name="image" onchange="readURL(this);">
-
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
-
-                                                </a>
-
-
-                                            </form>
-
-                                            {% if ENG_OCR_pdf_output_file %}
-                                            <a style="margin-top: 5px; text-align: center;" class="custom-btn btn-7" href="{% url 'download_pdf' ENG_OCR_pdf_output_file %}">DOWNLOAD PDF</a>
-                                            {% endif %}
-                                            <script>
-                                            function ENGHANDWRITTEN() {
-                                                document.getElementById("ENGHANDWRITTEN").action = "{% url 'ENG_OCR_HANDWRITTEN' %}";
-                                                document.getElementById("ENGHANDWRITTEN").submit();
-                                            }
-                                            </script>
-                                        
-                                        
                                         </div>
                                     </div>
                                 </div>
@@ -615,124 +461,7 @@
 
     <script src="{% main_template 'js/custom.js' %}"></script>
 
-    <script>
-        $(document).ready(function () {
-        showWordRecommendations();
-        $(".tab-list__link").on("click", function (e) {
-            e.preventDefault();
-            var targetTab = $(this).attr("href");
-            $(".tab-pane").removeClass("active");
-            $(targetTab).addClass("active");
-        });
-      });
-      
-      var timeout; // Global variable to store timeout reference
-        
-        function showWordRecommendations() {
-          clearTimeout(timeout); // Clear previous timeout, if any
-        
-          // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
-          timeout = setTimeout(function() {
-            var input = document.getElementById("name").value.trim();
-            // console.log(input);
-        
-            // Check if there is any input
-            if (input.length === 0) {
-              var recommendationsHtml = "<select class='form-control' style='margin-top: 5px; margin-bottom: 5px;'  onchange='selectRecommendation()'>";
-              recommendationsHtml += `<option disabled="disabled" selected="selected">Select a proper brand name.</option>
-                                        </select>
-                                        `;
-              document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
-              return;
-            }
-        
-            // Make an AJAX call to fetch word recommendations based on the input
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
-            xhr.onload = function() {
-      
-      
-      
-      
-              if (xhr.status === 200) {
-                var wordRecommendations = JSON.parse(xhr.responseText);
-        
-                // Display word recommendations in a list
-                var recommendationsHtml = "<select class='form-control' style='margin-top: 5px; margin-bottom: 5px;'  onchange='selectRecommendation()'>";
-      
-                
-                  if (wordRecommendations.length !== 0) {
-                    for (var i = 0; i < wordRecommendations.length; i++) {
-                      var word = wordRecommendations[i];
-                      recommendationsHtml += `
-                      
-                      <option value="${word}">${word}</option>
-                      
-                      `;
-                    }
-                  } else {
-                    recommendationsHtml += `<option disabled="disabled" selected="selected">No recommendations found.</option>
-                                            
-                                            `;
-                  }
-      
-      
-      
-      
-                  recommendationsHtml += `</select>
-                                          `;
-                document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
-              } 
-              
-              
-              
-              else {
-                console.error('Request failed. Status:', xhr.status);
-                // Display no recommendations for error cases
-                document.getElementById("wordRecommendations").innerHTML = "";
-              }
-            };
-            xhr.onerror = function() {
-              console.error('Request failed. Network error');
-              // Display no recommendations for network errors
-              document.getElementById("wordRecommendations").innerHTML = "";
-            };
-            xhr.send();
-          }, 300); // Adjust the delay as needed (in milliseconds)
-      
-      
-        }
-        
-        // Function to select a word recommendation and populate the input field with it
-        function selectRecommendation() {
-          var selectElement = document.querySelector("select");
-          var selectedOption = selectElement.options[selectElement.selectedIndex].value;
-          document.getElementById("name").value = selectedOption;
-        }
-      
-      
-        function handleFormSubmission(event) {
-          var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
-          var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
-          var drugName = encodeURIComponent(document.getElementById("name").value);
 
-      
-          if (selectedStrength && selectedDosageForm && drugName) {
-            event.preventDefault(); // Prevent default form submission behavior
-      
-            // Construct the URL with query parameters
-            var queryParams = '?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + drugName;
-            // You can add more parameters if needed like this: '&param1=value1&param2=value2'
-      
-            // Redirect to the target HTML page with the query parameters
-            window.location.href = '/med_search_results/' + queryParams;
-          }
-        }
-      
-        // Attach the handleFormSubmission function to the form's submit event
-        document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
-        showWordRecommendations();
-      </script>
 
 
 </body>
