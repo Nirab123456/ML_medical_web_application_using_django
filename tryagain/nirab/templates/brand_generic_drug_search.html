@@ -22,7 +22,7 @@
 
           
                 <div  class="col-2" >
-                    <label class="label">Select the drug</label>
+                    
 
                     <div class="col-lg-12 col-12">
                         <div class="input-group input-group-lg">
@@ -62,7 +62,6 @@
         {% endif %}
         {% else %}
         <div class="col-lg-12 col-12">
-            <label class="label">Select the drug</label>
 
             <div class="input-group input-group-lg">
 
@@ -109,7 +108,7 @@
 
 
                 <div class="col-2">
-                    <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+                    <button style="margin-top: 15px;" class="custom-btn btn-12">Submit</button>
                 </div>
 
         {% endif %}
@@ -126,15 +125,15 @@
     </script>
 </body>
 <script>
-    $(document).ready(function () {
-    showWordRecommendations();
-    $(".tab-list__link").on("click", function (e) {
-        e.preventDefault();
-        var targetTab = $(this).attr("href");
-        $(".tab-pane").removeClass("active");
-        $(targetTab).addClass("active");
-    });
-  });
+  //   $(document).ready(function () {
+  //   showWordRecommendations();
+  //   $(".tab-list__link").on("click", function (e) {
+  //       e.preventDefault();
+  //       var targetTab = $(this).attr("href");
+  //       $(".tab-pane").removeClass("active");
+  //       $(targetTab).addClass("active");
+  //   });
+  // });
   
   var timeout; // Global variable to store timeout reference
     
@@ -148,7 +147,8 @@
     
         // Check if there is any input
         if (input.length === 0) {
-          var recommendationsHtml = "<select class='form-control' style='margin-top: 5px; margin-bottom: 5px;'  onchange='selectRecommendation()'>";
+          var recommendationsHtml = `<label class="label">Select the drug</label>
+          <select class='form-control' style='margin-top: 5px; margin-bottom: 5px;'  onchange='selectRecommendation()'>`;
           recommendationsHtml += `<option disabled="disabled" selected="selected">Select a proper brand name.</option>
                                     </select>
                                     `;
@@ -241,7 +241,6 @@
   
     // Attach the handleFormSubmission function to the form's submit event
     document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
-    showWordRecommendations();
 
   </script>
 </html>

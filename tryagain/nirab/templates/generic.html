@@ -61,7 +61,6 @@
         {% endif %}
         {% else %}
         <div class="col-lg-12 col-12">
-            <label class="label">Select the drug</label>
 
             <div class="input-group input-group-lg">
 
@@ -106,7 +105,7 @@
         {% else %}
 
                 <div class="col-2">
-                    <button style="margin-top: 15px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
+                    <button style="margin-top: 15px;" class="custom-btn btn-12">Submit</button>
                 </div>
 
         {% endif %}
@@ -127,15 +126,15 @@
     </script>
 </body>
 <script>
-        $(document).ready(function () {
-        showWordRecommendations();
-        $(".tab-list__link").on("click", function (e) {
-            e.preventDefault();
-            var targetTab = $(this).attr("href");
-            $(".tab-pane").removeClass("active");
-            $(targetTab).addClass("active");
-        });
-      });
+      //   $(document).ready(function () {
+      //   showWordRecommendations();
+      //   $(".tab-list__link").on("click", function (e) {
+      //       e.preventDefault();
+      //       var targetTab = $(this).attr("href");
+      //       $(".tab-pane").removeClass("active");
+      //       $(targetTab).addClass("active");
+      //   });
+      // });
       function genericrecomendation() {
         clearTimeout(timeout); // Clear previous timeout, if any
       
@@ -169,8 +168,10 @@
                 var wordRecommendations = JSON.parse(xhr.responseText);
         
                 // Display word recommendations in a list
-                var recommendationsHtml = "<select class='form-control' id='generic_selection' style='margin-top: 5px; margin-bottom: 5px;' onchange='selectgenericrecomendtions()'>";
-      
+                var recommendationsHtml=`<label class="label">Select the drug</label>
+                <select class='form-control' id='generic_selection' style='margin-top: 5px; margin-bottom: 5px;' onchange='selectgenericrecomendtions()'>
+                
+                `;
                 
                   if (wordRecommendations.length !== 0) {
                     for (var i = 0; i < wordRecommendations.length; i++) {
@@ -249,11 +250,6 @@
       document.getElementById("med_search_generic_form").addEventListener("submit", handleFormSubmission);
     
 
-
-      
-      genericrecomendation();
-    
-    
     
     
     </script>
