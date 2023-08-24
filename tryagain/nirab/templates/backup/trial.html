@@ -1,0 +1,858 @@
+{% load main_template %}
+{% block content %}
+{% include 'base.html' %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Topic Listing Bootstrap 5 Template</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="{% main_template 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% main_template 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% main_template 'css/templatemo-topic-listing.css' %}" rel="stylesheet">      
+<!--
+
+TemplateMo 590 topic listing
+
+https://templatemo.com/tm-590-topic-listing
+
+-->
+<style>
+      .mycustom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  }
+
+
+  
+/* 7 */
+  .btn-7 {
+  background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  }
+  .btn-7 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  }
+  .btn-7:before,
+  .btn-7:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+  }
+  .btn-7:before{
+   height: 0%;
+   width: 2px;
+  }
+  .btn-7:after {
+  width: 0%;
+  height: 2px;
+  }
+  .btn-7:hover{
+  color: rgba(251,75,2,1);
+  background: transparent;
+  }
+  .btn-7:hover:before {
+  height: 100%;
+  }
+  .btn-7:hover:after {
+  width: 100%;
+  }
+  .btn-7 span:before,
+  .btn-7 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+  }
+  .btn-7 span:before {
+  width: 2px;
+  height: 0%;
+  }
+  .btn-7 span:after {
+  height: 2px;
+  width: 0%;
+  }
+  .btn-7 span:hover:before {
+  height: 100%;
+  }
+  .btn-7 span:hover:after {
+  width: 100%;
+  }
+/* 13 */
+.btn-13{
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  }
+  .btn-13 span {
+  background: rgb(238, 0, 0);
+  background: linear-gradient(0deg, rgb(0, 40, 238) 0%, rgb(251, 156, 2) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  }
+  .btn-13 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-13 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-13:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  }
+  .btn-13:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  }
+/* 12 */
+  .btn-12{
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  }
+  .btn-12 span {
+  background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  }
+  .btn-12 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  }
+  .btn-12:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  }
+  .btn-12:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  }
+ 
+</style>
+
+<style>
+
+
+.hidden {
+            display: none;
+        }
+
+</style>
+
+</head>
+
+<body id="top">
+    <main>
+        {% include 'new_main_nav_bar.html' %}
+
+        {% include 'medication_health_header_styling .html' %}
+
+
+        <section class="explore-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">Browse Apps</h1>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">#########</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">DRUG DETAILS</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">PRESCIPTION CLASSIFICATION</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">DRUG AI</button>
+                        </li>
+
+
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">DRUG SEARCH</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                <div class="row">
+
+
+
+
+
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="{% url 'med_search' %}">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">FIND ALTERNATE DRUG</h5>
+
+                                                        <p class="mb-0">Use A Brand Name Or Generic Name Select The Dosage Form & Strength </p>
+                                                    </div>
+
+                                                    <span class="badge bg-design rounded-pill ms-auto">14</span>
+                                                </div>
+
+                                                <img src="{% main_template 'images/topics/drug_find.png' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="{% url 'medicine_details' %}">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">FIND DEUG DETAILS</h5>
+
+                                                            <p class="mb-0"> Just Simply Use A Brand Name Or Generic Name To Get The Drug Info</p>
+                                                    </div>
+
+                                                    <span class="badge bg-design rounded-pill ms-auto">75</span>
+                                                </div>
+
+                                                <img src="{% main_template 'images/topics/drug_details.png' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Search Through Generic Name</h5>
+
+                                                            <p class="mb-0">You can also search your drug and its details using generic name</p>
+                                                            <a href="{% url 'medicine_details_generic' %}"><button style="margin-top: 5px;" class="mycustom-btn btn-12"><span>Search!</span><span>DETAILS</span></button></a>
+                                                            <a href="{% url 'med_search_generic' %}"><button style="margin-top: 5px; margin-left: 10px;" class="mycustom-btn btn-13"><span>Search!</span><span>DRUGS</span></button></a>
+
+                                                    </div>
+
+                                                    <span class="badge bg-design rounded-pill ms-auto">100</span>
+                                                </div>
+                                                
+                                                <img src="{% main_template 'images/topics/generic_search.png' %}" class="custom-block-image img-fluid" alt="">
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+
+                                
+                                <div class="row">
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="{% url 'base_ocr' %}">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Bangla OCR DEMO</h5>
+
+                                                        <p class="mb-0">We can convert your desigred Bangla OCR image to Text.Try it out</p>
+
+                                                    </div>
+
+                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        
+                                                            <img src="{% main_template 'images/topics/smple_bangla.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    
+                                                    </div>
+                                                    <div class="col-2" >
+                                                            <p class="custom-block-image img-fluid"></n>দক্ষিণ এশিয়ার প্রাচীন ও ধ্রুপদী যুগে বাংলাদেশ অঞ্চলটিতে বঙ্গ, পুপ্ডু, গৌড়, গাঙ্গাধদ্ধি, সমতট ও হরিকেল নামক জনপদ গড়ে উঠেছিল।.........</p>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="{% url 'base_ocr' %}">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">ENG OCR DEMO</h5>
+
+                                                        <p class="mb-0">We can convert your desigred English OCR image to Text.Try it out</p>
+
+                                                    </div>
+
+                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        
+                                                            <img src="{% main_template 'images/topics/eng_sample.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    
+                                                    </div>
+                                                    <div class="col-2" >
+                                                            <p class="custom-block-image img-fluid"></n>Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. From east to west it stretches almost 4,700 miles (7,560 kilometers) .........</p>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+                              </div>
+
+                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="{% url 'presciption_classification_beta' %}">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Presciption Classification</h5>
+
+                                                        <p class="mb-0">Provide all the brand name of drugs to classify them in common classes</p>
+                                                    </div>
+
+                                                    <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                                </div>
+
+                                                <img src="{% main_template 'images/topics/presciption_classification_1.png' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block custom-block-overlay">
+                                            <div class="d-flex flex-column h-100">
+                                                <img src="{% main_template 'images/topics/presciption_classification.jpg' %}" class="custom-block-image img-fluid" alt="">
+
+                                                <div class="custom-block-overlay-text d-flex">
+                                                    <div>
+                                                        <h5 class="text-white mb-2">Talk with drug</h5>
+
+                                                        <p class="text-white">Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
+
+                                                        <a href="{% url 'medicine_chatbot' %}" class="btn custom-btn mt-2 mt-lg-3">LET'S TALK WITH DRUGS</a>
+                                                    </div>
+
+                                                    <span class="badge bg-finance rounded-pill ms-auto">25</span>
+                                                </div>
+
+                                                <div class="social-share d-flex">
+                                                    <p class="text-white me-4">Share:</p>
+
+                                                    <ul class="social-icon">
+                                                        <li class="social-icon-item">
+                                                            <a href="#" class="social-icon-link bi-twitter"></a>
+                                                        </li>
+
+                                                        <li class="social-icon-item">
+                                                            <a href="#" class="social-icon-link bi-facebook"></a>
+                                                        </li>
+
+                                                        <li class="social-icon-item">
+                                                            <a href="#" class="social-icon-link bi-pinterest"></a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
+                                                </div>
+
+                                                <div class="section-overlay"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane faq-section section-padding" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
+                                <div class="row">
+
+                                    <div class="accordion" id="accordionExample">
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                ENGLISH IMAGE OR TEXT TO HANDWRITTEN (DEMO)
+                                                </button>
+                                            </h2>
+        
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="row">
+
+
+
+                                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                                            <div class="custom-block bg-white shadow-lg">
+                                                                <a href="{% url 'base_ocr' %}">
+                                                                    <div class="d-flex">
+                                                                        <div>
+                                                                            <h5 class="mb-2">DEMO PHOTOS OR TEXT</h5>
+                
+                                                                            <p class="mb-0">We can convert your desigred images or text like this into hand written pdf now print and enjoy(avoid images with special charecters).</p>
+                
+                                                                        </div>
+                
+                                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                                    </div>
+                                                                        {% include 'image_scroll_demo_1.html' %}
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                
+                                                        <div class="col-lg-6 col-md-6 col-12">
+                                                            <div class="custom-block bg-white shadow-lg">
+                                                                <a href="{% url 'base_ocr' %}">
+                                                                    <div class="d-flex">
+                                                                        <div>
+                                                                            <h5 class="mb-2">Demo Pdf</h5>
+                
+                                                                            <p class="mb-0">Download the pdf and prit it out for better understending </p>
+                
+                                                                        </div>
+                
+                                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                                    </div>
+                                                                    {% include 'image_scroll_demo_1_result.html' %}
+
+                                                                </a>
+                                                                <a href="{% main_template 'images/topics/handwriten_result_demo.pdf' %}" download class="btn btn-outline-dark">
+                                                                    Download Demo PDF
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                
+                
+                
+                
+                                                    </div>                                                    </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                BANGLA IMAGE OR TEXT TO HANDWRITTEN (DEMO)
+                                            </button>
+                                            </h2>
+        
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p style="color: brown;">We are working continuously on this feature to bring in  thank you in advance.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">DRUG SEARCH</h5>
+
+                                                        <p class="mb-0">Use brand name to search website</p>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+
+                                              <script>
+                                                function med_search_form() {
+                                                    document.getElementById("med_search_form").action = "{% url 'med_search' %}";
+                                                    document.getElementById("med_search_form").submit();
+                                                }
+                                            </script>
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="{% url 'predict_mental_health' %}">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">DRUG SEARCH GENERIC</h5>
+
+                                                        <p class="mb-0">Use generic name to search drug</p>
+                                                    </div>
+
+                                                </div>
+
+                                                <img src="{% main_template 'images/topics/mental_health.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center subscribe-form-wrap">
+                        <form class="custom-form subscribe-form" action="#" method="post" role="form">
+                            <h4 class="mb-4 pb-2">Get Newsletter</h4><input class="form-control" type="email" id="subscribe-email" name="subscribe-email" pattern="[^ @]*@[^ @]*" placeholder="Email Address" required="">
+                            <div class="col-12 col-lg-12"><button type="submit" class="form-control">Subscribe</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-4 pb-2"><a class="navbar-brand mb-2" href="index.html"><i class="bi-back"></i><span>Topic</span></a></div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h6 class="site-footer-title mb-3">Resources</h6>
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Home</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">How it works</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">FAQs</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Information</h6>
+                    <p class="text-white d-flex mb-1"><a class="site-footer-link"> 305-240-9671 </a></p>
+                    <p class="text-white d-flex"><a href="mailto:info@company.com" class="site-footer-link"> info@company.com </a></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 ms-auto mt-4 mt-lg-0">
+                    <div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> English</button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button">Thai</button></li>
+                            <li><button class="dropdown-item" type="button">Myanmar</button></li>
+                            <li><button class="dropdown-item" type="button">Arabic</button></li>
+                        </ul>
+                    </div>
+                    <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved. <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% main_template 'js/jquery.min.js' %}"></script>
+    <script src="{% main_template 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% main_template 'js/jquery.sticky.js' %}"></script>
+    <script src="{% main_template 'js/click-scroll.js' %}"></script>
+
+    <script src="{% main_template 'js/custom.js' %}"></script>
+<script>
+  $(document).ready(function () {
+  showWordRecommendations();
+  $(".tab-list__link").on("click", function (e) {
+      e.preventDefault();
+      var targetTab = $(this).attr("href");
+      $(".tab-pane").removeClass("active");
+      $(targetTab).addClass("active");
+  });
+});
+
+var timeout; // Global variable to store timeout reference
+  
+  function showWordRecommendations() {
+    clearTimeout(timeout); // Clear previous timeout, if any
+  
+    // Set a new timeout to fetch word recommendations after a brief delay (e.g., 300ms)
+    timeout = setTimeout(function() {
+      var input = document.getElementById("name").value.trim();
+      // console.log(input);
+  
+      // Check if there is any input
+      if (input.length === 0) {
+        var recommendationsHtml = "<select class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectRecommendation()'>";
+        recommendationsHtml += '<option value="">USE A PROPER BRAND NAME</option>';
+        document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
+        return;
+      }
+  
+      // Make an AJAX call to fetch word recommendations based on the input
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+      xhr.onload = function() {
+
+
+
+
+        if (xhr.status === 200) {
+          var wordRecommendations = JSON.parse(xhr.responseText);
+  
+          // Display word recommendations in a list
+          var recommendationsHtml = "<select class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectRecommendation()'>";
+
+          
+            if (wordRecommendations.length !== 0) {
+              for (var i = 0; i < wordRecommendations.length; i++) {
+                var word = wordRecommendations[i];
+                recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
+              }
+            } else {
+              recommendationsHtml += '<option value="">USE A PROPER BRAND NAME</option>';
+            }
+
+
+
+
+            recommendationsHtml += "</select>";
+          document.getElementById("wordRecommendations").innerHTML = recommendationsHtml;
+        } 
+        
+        
+        
+        else {
+          console.error('Request failed. Status:', xhr.status);
+          // Display no recommendations for error cases
+          document.getElementById("wordRecommendations").innerHTML = "";
+        }
+      };
+      xhr.onerror = function() {
+        console.error('Request failed. Network error');
+        // Display no recommendations for network errors
+        document.getElementById("wordRecommendations").innerHTML = "";
+      };
+      xhr.send();
+    }, 300); // Adjust the delay as needed (in milliseconds)
+
+
+  }
+  
+  // Function to select a word recommendation and populate the input field with it
+  function selectRecommendation() {
+    var selectElement = document.querySelector("select");
+    var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+    document.getElementById("name").value = selectedOption;
+  }
+
+
+  function handleFormSubmission(event) {
+    var selectedStrength = encodeURIComponent(document.getElementById("strength").value);
+    var selectedDosageForm = encodeURIComponent(document.getElementById("dosage_form").value);
+    var drugName = encodeURIComponent(document.getElementById("name").value);
+    // var sortOption = document.getElementById("sortOption").value;
+    // console.log(selectedStrength);
+    // console.log(selectedDosageForm);
+    // console.log(drugName);
+
+    if (selectedStrength && selectedDosageForm && drugName) {
+      event.preventDefault(); // Prevent default form submission behavior
+
+      // Construct the URL with query parameters
+      var queryParams = '?strength=' + selectedStrength + '&dosage_form=' + selectedDosageForm + '&name=' + drugName;
+      // You can add more parameters if needed like this: '&param1=value1&param2=value2'
+
+      // Redirect to the target HTML page with the query parameters
+      window.location.href = '/med_search_results/' + queryParams;
+    }
+  }
+
+  // Attach the handleFormSubmission function to the form's submit event
+  document.getElementById("med_search_form").addEventListener("submit", handleFormSubmission);
+  showWordRecommendations();
+</script>
+
+</body>
+
+</html>
+{% endblock %}

@@ -35,12 +35,12 @@ class TOTAL_MEDICINE_SEARCH:
                     dosage_forms = set(dosage_forms)
                     # Convert the result to a list
                     dosage_forms = list(dosage_forms)
-                    return render(request, 'trial.html', {'medication_form': form, 'medications': matching_medications,
+                    return render(request, 'search.html', {'medication_form': form, 'medications': matching_medications,
                                                                 'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
 
         else:
             form = MedicineForm()
-        return render(request, 'trial.html', {'medication_form': form})
+        return render(request, 'search.html', {'medication_form': form})
 
     def med_search_generic(self):
         request = self.request
