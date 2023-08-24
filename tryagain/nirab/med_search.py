@@ -27,34 +27,40 @@ class TOTAL_MEDICINE_SEARCH:
                     name = name.lower()
                     # matching_medications = Medication.objects.filter(name__icontains=name)
                     matching_medications = Medication.objects.filter(name=name)
-                    generic_name_first = matching_medications.first().generic_name
-                    mediation_details = MedicationDetails.objects.filter(generic_name=generic_name_first).first()
-                    if mediation_details:
-                        generic_name = mediation_details.generic_name
-                        indication = mediation_details.indication
-                        side_effects_description = mediation_details.side_effects_description
-                        strengths = matching_medications.values_list('strength', flat=True)
-                        strengths = set(strengths)
-                        # Convert the result to a list
-                        strengths = list(strengths)
-                        dosage_forms = matching_medications.values_list('dosage_form', flat=True)
-                        dosage_forms = set(dosage_forms)
-                        # Convert the result to a list
-                        dosage_forms = list(dosage_forms)
-                        return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
-                                                                    'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms,
-                                                                    'brand_search_generic_name': generic_name, 'brand_search_indication': indication, 'brand_search_side_effects_description': side_effects_description})
+                    if matching_medications.count() > 0:
+                        generic_name_first = matching_medications.first().generic_name
+                        mediation_details = MedicationDetails.objects.filter(generic_name=generic_name_first).first()
+                        if mediation_details:
+                            generic_name = mediation_details.generic_name
+                            indication = mediation_details.indication
+                            side_effects_description = mediation_details.side_effects_description
+                            strengths = matching_medications.values_list('strength', flat=True)
+                            strengths = set(strengths)
+                            # Convert the result to a list
+                            strengths = list(strengths)
+                            dosage_forms = matching_medications.values_list('dosage_form', flat=True)
+                            dosage_forms = set(dosage_forms)
+                            # Convert the result to a list
+                            dosage_forms = list(dosage_forms)
+                            return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
+                                                                        'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms,
+                                                                        'brand_search_generic_name': generic_name, 'brand_search_indication': indication, 'brand_search_side_effects_description': side_effects_description})
+                        else:
+                            strengths = matching_medications.values_list('strength', flat=True)
+                            strengths = set(strengths)
+                            # Convert the result to a list
+                            strengths = list(strengths)
+                            dosage_forms = matching_medications.values_list('dosage_form', flat=True)
+                            dosage_forms = set(dosage_forms)
+                            # Convert the result to a list
+                            dosage_forms = list(dosage_forms)
+                            return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
+                                                                        'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
                     else:
-                        strengths = matching_medications.values_list('strength', flat=True)
-                        strengths = set(strengths)
-                        # Convert the result to a list
-                        strengths = list(strengths)
-                        dosage_forms = matching_medications.values_list('dosage_form', flat=True)
-                        dosage_forms = set(dosage_forms)
-                        # Convert the result to a list
-                        dosage_forms = list(dosage_forms)
-                        return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
-                                                                    'strengths': strengths, 'name_of_medication': name, 'dosage_forms': dosage_forms})
+                        return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form,
+                                                                        'name_of_medication': name})
+                        
+
 
         else:
             form = MedicineForm()
@@ -67,16 +73,17 @@ class TOTAL_MEDICINE_SEARCH:
             if form.is_valid():
 
                 generic_name = form.cleaned_data['generic_name']
-
-                if generic_name != None :
+                matching_medications = Medication.objects.filter(generic_name__icontains=generic_name)
+                print('count',matching_medications.count())
+                if matching_medications.count() > 0:
                     generic_name = form.cleaned_data['generic_name']
                     generic_name = generic_name.lower()
                     mediation_details = MedicationDetails.objects.filter(generic_name=generic_name).first()
+                    print(mediation_details)
                     if mediation_details:
                         generic_name = mediation_details.generic_name
                         indication = mediation_details.indication
                         side_effects_description = mediation_details.side_effects_description                
-                        matching_medications = Medication.objects.filter(generic_name__icontains=generic_name)
                         strengths = matching_medications.values_list('strength', flat=True)
                         strengths = set(strengths)
                         # Convert the result to a list
@@ -85,22 +92,28 @@ class TOTAL_MEDICINE_SEARCH:
                         dosage_forms = set(dosage_forms)
                         # Convert the result to a list
                         dosage_forms = list(dosage_forms)
-                    return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
-                                                                'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms,
-                                                                'generic_search_generic_name': generic_name, 'generic_search_indication': indication, 'generic_search_side_effects_description': side_effects_description})
+                        return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
+                                                                    'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms,
+                                                                    'generic_search_generic_name': generic_name, 'generic_search_indication': indication, 'generic_search_side_effects_description': side_effects_description})
+                    
+                    else:
+                        strengths = matching_medications.values_list('strength', flat=True)
+                        strengths = set(strengths)
+                        # Convert the result to a list
+                        strengths = list(strengths)
+                        dosage_forms = matching_medications.values_list('dosage_form', flat=True)
+                        dosage_forms = set(dosage_forms)
+                        # Convert the result to a list
+                        dosage_forms = list(dosage_forms)
+                        return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
+                                                                    'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms})
+                    
+                    
+                        
+                        
                 else:
-                    matching_medications = Medication.objects.filter(generic_name__icontains=generic_name)
-                    strengths = matching_medications.values_list('strength', flat=True)
-                    strengths = set(strengths)
-                    # Convert the result to a list
-                    strengths = list(strengths)
-                    dosage_forms = matching_medications.values_list('dosage_form', flat=True)
-                    dosage_forms = set(dosage_forms)
-                    # Convert the result to a list
-                    dosage_forms = list(dosage_forms)
-                    return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form, 'medications': matching_medications,
-                                                                'strengths': strengths, 'generic_name': generic_name, 'dosage_forms': dosage_forms})
-    
+                    return render(request, 'FULL_MED_SEARCH.html')
+        
         else:
             form = MedicineForm()
         return render(request, 'FULL_MED_SEARCH.html', {'medication_form': form})
