@@ -1,45 +1,67 @@
+{% load main_template %}
+{% block content %}
+{% load custom_filters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
     <form method="POST" class="custom-form" id="brand_bot_form" action="#">
         {% csrf_token %}
-        <p>GENERIC NAME</p>
-        <div class="row" id="brand_bot_input_container">
-                <div class="col-2">
-                    <input style="margin-top: 5px;" type="text" id="name-0" class="form-control" placeholder="e.g: NAPA" required oninput="showwordRecommendations_M_B(event,0)">
-                </div>
-
-        </div>
-
-
-                <div class="col-2">
-                    <a style="margin-top: 15px;" onclick="addNameField()" class="custom-btn btn-12">Add Field</a>
-                </div>
-        
         <div class="row">
-            <div class="col-2">
-                <div class="col-lg-12 col-12">
-                    <div class="input-group input-group-lg">
-                        <div id="wordRecommendations_M_B"></div>
-                    </div>
+            <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                <div class="custom-block bg-white shadow-lg">
+
+                        <p>GENERIC NAME</p>
+                        <div class="row" id="brand_bot_input_container">
+                            
+                                <div class="col-2">
+                                    <input style="margin-top: 5px;" type="text" id="name-0" class="form-control" placeholder="e.g: NAPA" required oninput="showwordRecommendations_M_B(event,0)">
+                                </div>
+
+                        </div>
+
+
+                                <div class="col-2">
+                                    <a style="margin-top: 15px;" onclick="addNameField()" class="custom-btn btn-12">Add Field</a>
+                                </div>
+                        
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="col-lg-12 col-12">
+                                    <div class="input-group input-group-lg">
+                                        <div id="wordRecommendations_M_B"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-2">
+                                <button style="margin-top: 15px;" class="custom-btn btn-12">Submit</button>
+                            </div>
+                        </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-2">
-                <button style="margin-top: 15px;" class="custom-btn btn-12">Submit</button>
+            <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                <div class="custom-block bg-white shadow-lg">
+
+                    <div class="d-flex">
+
+                    </div>
+
+                </div>
             </div>
         </div>
     </form>
+</body>
     
-    <script>
+<script>
     var numNameFields = 1;
 
-function addNameField() {
+    function addNameField() {
     var nameContainer = document.getElementById("brand_bot_input_container");
     var nameFieldContainer = document.createElement("div");
     nameFieldContainer.className = "col-2"; // Assuming you want the same column size as other fields
@@ -75,7 +97,7 @@ function addNameField() {
 }
 
 // Function to remove the clicked name field
-function removeNameField(containerToRemove) {
+    function removeNameField(containerToRemove) {
         var nameContainer = document.getElementById("brand_bot_input_container");
         nameContainer.removeChild(containerToRemove);
     
@@ -300,6 +322,6 @@ function removeNameField(containerToRemove) {
           xhr.send();
         }
 
-    </script>
-</body>
+</script>
 </html>
+{% endblock %}
