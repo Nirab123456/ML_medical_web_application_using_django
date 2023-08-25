@@ -14,7 +14,8 @@
             <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                 <div class="custom-block bg-white shadow-lg">
 
-                        <p>GENERIC NAME</p>
+                        <p>Brand NAME</p>
+                        <p style="font-size: 14px; color: brown;">Please select deug name one by one</p>
                         <div class="row" id="brand_bot_input_container">
                             
                                 <div class="col-2">
@@ -23,11 +24,6 @@
 
                         </div>
 
-
-                                <div class="col-2">
-                                    <a style="margin-top: 15px;" onclick="addNameField()" class="custom-btn btn-12">Add Field</a>
-                                </div>
-                        
                         <div class="row">
                             <div class="col-2">
                                 <div class="col-lg-12 col-12">
@@ -37,6 +33,12 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-2">
+                            <a style="margin-top: 15px;" onclick="addNameField()" class="btn custom-btn btn-dark">Add Field</a>
+                        </div>
+                        
+
                         
                         <div class="row">
                             <div class="col-2">
@@ -64,7 +66,6 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-2">
                                         
                             <section id="sectionToHide">
 
@@ -74,14 +75,15 @@
                                     <div id="showHideButton"></div>
                 
                                     <!-- Your section to hide/show -->
-                                    <input style="margin-top: 5px; font-size: 14px;" type="text" id="question" name="question" class="form-control" placeholder="can i use the drug during pregnency?" >
+                                    <input style="margin-top: 5px; font-size: 18px;" type="text" id="question" name="question" class="form-control" placeholder="can i use the drug during pregnency?" >
 
                                 </div>
 
                             </section>
 
-                        </div>
-                        <div id="fulltopic" class="col-2">
+                    </div>
+                    <div class="row">
+                        <div id="fulltopic" >
                             <label style="color: rgb(248, 8, 8);" class="label">SELECT A TOPIC OF CHOICE</label>
 
                             <select class="form-control" id="topic" name="topic">
