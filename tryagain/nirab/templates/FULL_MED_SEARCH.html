@@ -101,7 +101,7 @@ th, td {
 
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">BANGLA OCR</button>
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">MEDICATION BOT</button>
                         </li>
 
 
@@ -277,87 +277,47 @@ th, td {
 
                               <!-- BANGLA OCR -->
 
-                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0 ">
-                                        <div class="custom-block bg-white shadow-lg ">
+                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   
+                                <div class="row">
 
 
-                                            <form method="POST" id="BNform" action="{% url 'BN_OCR' %}" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                <a class='' href="topics-detail.html">
-                                                    <div class="d-flex rotating-border rotating-border--google">
-                                                        <div>
-                                                            <h5 class="mb-2">CHOOSE YOUR IMAGE</h5>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="row">
-                                                        {% if BN_OCR_image_url %}
-                                                            <img src="{{ BN_OCR_image_url }}" class="custom-block-image img-fluid" alt="">
-                                                        {% else %}
-                                                        <img id="blah">
-                                                        {% endif %}
-                                                    </div>
-                                                    <div class="row">
-
-                                                        <div>
-                                                            <input type="file" id="image" name="image" onchange="readURL(this);">
-
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <button style="margin-top: 5px;" class="custom-btn btn-12"><span>Submit!</span><span>Submit Image</span></button>
-
-                                                </a>
 
 
-                                            </form>
 
-                                            {% if BN_OCR_file_path %}
-                                            <a style="margin-top: 5px; text-align: center;" class="custom-btn btn-7" href="{% url 'download_text' BN_OCR_file_path %}">DOWNLOAD</a>
-                                            {% endif %}
-                                            <script>
-                                            function BNform() {
-                                                document.getElementById("BNform").action = "{% url 'BN_OCR' %}";
-                                                document.getElementById("BNform").submit();
-                                            }
-                                            </script>
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="custom-block custom-block-overlay">
-                                            <div class="d-flex flex-column h-100">
-                                                <img src="{% main_template 'images/topics/bangla_ocr_result_1.jpg' %}" class="custom-block-image img-fluid" alt="">
-
-                                                <div class="custom-block-overlay-text d-flex">
-                                                    {% if BN_OCR_text %}
-                                                    <h5 class="text-white mb-2">Result:  </h5>
-
-                                                    <div >
-                                                        <p style="color: azure;" class="scrollable-text" class="text-white">{{ BN_OCR_text }}</p>
-                                                        <button id="copyButton" class="custom-btn btn-5">Copy Text</button>
-
-                                                    </div>
-                                                    {% else %}
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
                                                     <div>
-                                                        <h5 class="text-white mb-2">BANGLA OPTICAL CHARACTERS RECOGNITION</h5>
-                                                        <p class="text-white">Bangla OCR (Optical Character Recognition) technology is employed for the conversion of printed or handwritten Bangla text within images into digital, machine-readable text. The PyTesseract Python library serves as a tool to harness the capabilities of the Tesseract OCR engine for Bangla OCR purposes.</p>
+                                                        <h5 class="mb-2">FIND FULL DRUG DETAILS USING GENERIC NAME</h5>
+                                                        {% include 'medication_bot_form.html' %}
+
                                                     </div>
-                                                    {% endif %}
                                                 </div>
-                                                
-
-
-                                                <div class="section-overlay"></div>
-                                            </div>
                                         </div>
                                     </div>
+
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">FIND FULL DRUG DETAILS USING BRAND NAME</h5>
+
+
+
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
                                 </div>
                             </div>
 

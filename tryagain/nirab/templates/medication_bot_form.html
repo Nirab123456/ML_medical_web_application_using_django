@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form method="POST" class="custom-form" id="brand_bot_form" action="#">
+        {% csrf_token %}
+        <p>GENERIC NAME</p>
+        <div class="row">
+            <div id="brand_bot_input_container">
+
+                <div class="col-2">
+                    <input type="text" id="name-0" class="form-control" placeholder="e.g: NAPA" required oninput="showWordRecommendations_M_B()">
+                </div>
+
+            </div>
+
+            <div class="col-2">
+                <a style="margin-top: 15px;" onclick="addNameField()" class="custom-btn btn-12">Add Field</a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="col-lg-12 col-12">
+                    <div class="input-group input-group-lg">
+                        <div id="wordRecommendations_M_B"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-2">
+                <button style="margin-top: 15px;" class="custom-btn btn-12">Submit</button>
+            </div>
+        </div>
+    </form>
+    
+    <script>
+    var numNameFields = 1;
+
+function addNameField() {
+    var nameContainer = document.getElementById("brand_bot_input_container");
+    var nameFieldContainer = document.createElement("div");
+    nameFieldContainer.className = "col-2"; // Assuming you want the same column size as other fields
+
+    var newInput = document.createElement("input");
+    newInput.className = "form-control";
+    newInput.type = "text";
+    newInput.name = "name-" + numNameFields;
+    newInput.id = "name-" + numNameFields;
+    newInput.placeholder = "e.g: NAPA";
+    newInput.required = true;
+    newInput.oninput = function(event) {
+        showWordRecommendations(event, numNameFields);
+    };
+
+    var deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "btn btn-danger";
+        deleteButton.textContent = "Remove";
+        deleteButton.onclick = function() {
+            removeNameField(nameFieldContainer);
+        };
+
+    nameFieldContainer.appendChild(newInput);
+    nameFieldContainer.appendChild(deleteButton);
+    
+    // Find the last row div and insert the new container before it
+    var lastRowDiv = nameContainer.querySelector(".row:last-child > .col-2:last-child");
+    nameContainer.insertBefore(nameFieldContainer, lastRowDiv);
+
+    numNameFields++;
+}
+
+// Function to remove the clicked name field
+function removeNameField(containerToRemove) {
+        var nameContainer = document.getElementById("brand_bot_input_container");
+        nameContainer.removeChild(containerToRemove);
+    
+        numNameFields--;
+
+
+    }
+        // Function to show word recommendations (assuming you have this implemented)
+        function showWordRecommendations(event, fieldNumber) {
+            // Your logic here
+        }
+    </script>
+</body>
+</html>
