@@ -7,19 +7,17 @@
     <form method="POST" class="custom-form" id="brand_bot_form" action="#">
         {% csrf_token %}
         <p>GENERIC NAME</p>
-        <div class="row">
-            <div id="brand_bot_input_container">
-
+        <div class="row" id="brand_bot_input_container">
                 <div class="col-2">
-                    <input type="text" id="name-0" class="form-control" placeholder="e.g: NAPA" required oninput="showWordRecommendations_M_B()">
+                    <input style="margin-top: 5px;" type="text" id="name-0" class="form-control" placeholder="e.g: NAPA" required oninput="showWordRecommendations_M_B()">
                 </div>
 
-            </div>
-
-            <div class="col-2">
-                <a style="margin-top: 15px;" onclick="addNameField()" class="custom-btn btn-12">Add Field</a>
-            </div>
         </div>
+
+
+                <div class="col-2">
+                    <a style="margin-top: 15px;" onclick="addNameField()" class="custom-btn btn-12">Add Field</a>
+                </div>
         
         <div class="row">
             <div class="col-2">
@@ -61,6 +59,7 @@ function addNameField() {
         deleteButton.type = "button";
         deleteButton.className = "btn btn-danger";
         deleteButton.textContent = "Remove";
+        deleteButton.style.marginBottom = "5px";
         deleteButton.onclick = function() {
             removeNameField(nameFieldContainer);
         };
