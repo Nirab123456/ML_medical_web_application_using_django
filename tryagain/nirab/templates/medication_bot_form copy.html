@@ -40,7 +40,7 @@
                         
                         <div class="row">
                             <div class="col-2">
-                                <button style="margin-top: 15px;" class="custom-btn btn-12" onclick="handleFormSubmit(event)">Submit</button>
+                                <button style="margin-top: 15px;" class="custom-btn btn-12" onclick="handleSelectionChange(event)">Submit</button>
                             </div>
                         </div>
                 </div>
@@ -81,7 +81,7 @@
                             </section>
 
                         </div>
-                        <div  class="col-2">
+                        <div id="topic" class="col-2">
                             <label style="color: rgb(248, 8, 8);" class="label">SELECT A TOPIC OF CHOICE</label>
                             <select class="form-control" id="topic" name="topic">
                                 <option value="">SELECT A TOPIC OF CHOICE</option>
@@ -98,15 +98,6 @@
 
                     </div>
                     </div>
-                    <div class="custom-block bg-white shadow-lg">
-                        <div class="row">
-                            <div class="col-2">
-                                <div id="get_medicine_chat"></div>
-                            </div>
-                        </div>
-                    </div>
-
-
 
                 </div>
             </div>
@@ -298,12 +289,12 @@
     
     
         function handleSelectionChange() {
-          var nameInputs = document.querySelectorAll("#brand_bot_input_container input");
+          var nameInputs = document.querySelectorAll("#name-container input");
+          console.log('nameInputs', nameInputs)
           var drugNames = [];
           for (var i = 0; i < nameInputs.length; i++) {
               drugNames.push(encodeURIComponent(nameInputs[i].value));
           }
-          console.log('drugNames', drugNames)
         //   console.log(drugNames);
 
     
@@ -327,11 +318,6 @@
               question = null;
           }
 
-          console.log('selected_question', selected_question)
-            console.log('question', question)
-            console.log('topic', topic)
-
-
           
     
           var xhr = new XMLHttpRequest();
@@ -346,7 +332,6 @@
             if (xhr.status === 200) {
               var get_medicine_chat = JSON.parse(xhr.responseText);
             //   console.log(get_medicine_chat);
-            console.log('get_medicine_chat', get_medicine_chat)
               if (Array.isArray(get_medicine_chat) && get_medicine_chat.length > 0) {
     
                 var detailsHtml = "<div>";
