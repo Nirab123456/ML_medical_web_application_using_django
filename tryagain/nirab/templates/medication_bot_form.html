@@ -81,9 +81,11 @@
                             </section>
 
                         </div>
-                        <div  class="col-2">
+                        <div id="fulltopic" class="col-2">
                             <label style="color: rgb(248, 8, 8);" class="label">SELECT A TOPIC OF CHOICE</label>
+
                             <select class="form-control" id="topic" name="topic">
+
                                 <option value="">SELECT A TOPIC OF CHOICE</option>
                                 <option value="indication_description">INDICATION DESCRIPTION</option>
                                 <option value="therapeutic_class_description">THERAPEUTIC CLASS DESCRIPTION</option>
@@ -98,17 +100,12 @@
 
                     </div>
                     </div>
-                    <div class="custom-block bg-white shadow-lg">
-                        <div class="row">
-                            <div class="col-2">
+
                                 <div id="get_medicine_chat"></div>
-                            </div>
-                        </div>
-                    </div>
 
 
 
-                </div>
+
             </div>
         </div>
     </form>
@@ -251,6 +248,7 @@
         const select_question = document.getElementById('select_question');
         const question = document.getElementById('question');
         const topic = document.getElementById('topic');
+        const fulltopic = document.getElementById('fulltopic');
     
         function toggleSectionVisibility() {
             if (select_question.value === '' || !select_question.value) {
@@ -265,10 +263,10 @@
                 select_question.style.display = 'block';
             }
             if (select_question.value !== '' ){
-                topic.style.display = 'none';
+                fulltopic.style.display = 'none';
             }
             else{
-                topic.style.display = 'block';
+                fulltopic.style.display = 'block';
             }
         }
     
@@ -349,13 +347,27 @@
             console.log('get_medicine_chat', get_medicine_chat)
               if (Array.isArray(get_medicine_chat) && get_medicine_chat.length > 0) {
     
-                var detailsHtml = "<div>";
+                var detailsHtml = `
+                <div style="margin-top: 10px;" class="custom-block bg-white shadow-lg">
+                    <div class="row">
+                        <div class="col-2">
+
+                
+                
+                
+                `;
                 for (var i = 0; i < get_medicine_chat.length; i++) {
                   detailsHtml += "<p><strong>" + get_medicine_chat[i]['name'] + " : </strong> " + get_medicine_chat[i]['answer']+ "</p>";
-                  // Add more fields here
-                  detailsHtml += "<hr>";
+
                 }
-                detailsHtml += "</div>";
+                detailsHtml += `
+                </div>
+                </div>
+                </div>
+
+                
+                
+                `;
                 document.getElementById("get_medicine_chat").innerHTML = detailsHtml;
     
               } else {
