@@ -23,10 +23,13 @@
     <div class="container">
         <a class="navbar-brand" href="{% url 'index_new' %}">
             <i class="bi-back"></i>
-            <span>Topic</span>
+            <span>Rifatul</span>
         </a>
         {% if user.is_authenticated %}
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-lg-5 me-lg-auto">
@@ -52,7 +55,7 @@
                     <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                         <li><a class="dropdown-item" href="{% url 'logout_user' %}">Logout</a></li>
 
-                        <li><a class="dropdown-item" href="{% url 'change_password' %}">Change Password</a></li>
+                        <li><a class="dropdown-item" href="{% url 'change_password' %}">Change Pass</a></li>
                     </ul>
                 </li>
             </ul>
