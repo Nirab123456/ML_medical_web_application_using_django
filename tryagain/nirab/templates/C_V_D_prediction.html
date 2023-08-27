@@ -132,7 +132,14 @@ select::-ms-expand {
 
                 </div>
             </div>
-
+            {% if phenomonia_prediction %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Generate a click on the "BANGLA OCR" tab
+                    document.getElementById("finance-tab").click();
+                });
+            </script>
+            {% endif %}
             <div class="container-fluid">
                 <div class="row">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -149,7 +156,7 @@ select::-ms-expand {
 
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">BANGLA OCR</button>
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">PHENOMONI PREDICTION</button>
                         </li>
 
 

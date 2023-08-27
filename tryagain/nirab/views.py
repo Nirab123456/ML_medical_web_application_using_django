@@ -108,6 +108,7 @@ def get_C_V_D_prediction(request):
     C_V_D_PREDICTION_ = C_V_D_PREDICTION(request=request)
     return C_V_D_PREDICTION_.get_C_V_D_prediction()
 
+@login_required(login_url='/login_register/')  # Redirect to LOGIN_URL if user is not logged in
 def phenomonia_prediction(request): 
     PHENOMONIA_PREDICTION=PHENOMONIA_PREDICTION_CLASS(request=request)
     return PHENOMONIA_PREDICTION.phenomonia_prediction()

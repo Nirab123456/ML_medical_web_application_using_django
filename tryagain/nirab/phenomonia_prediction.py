@@ -46,7 +46,6 @@ class PHENOMONIA_PREDICTION_CLASS():
                 self.image_path = image_path
                 image_url = image_path.url
                 prediction = self.get_phenomonia_prediction()
-                print('prediction',prediction)
                 return render(request, 'C_V_D_prediction.html', {'form': form,'image_path':image_url,'phenomonia_prediction':prediction})
         else:
             form = phenomonia_prediction_form()
@@ -100,7 +99,5 @@ class PHENOMONIA_PREDICTION_CLASS():
                 prediction = 'NORMAL'
             else:
                 prediction = 'PNEUMONIA'
-
-        print('prediction:',prediction)
         return prediction
 
