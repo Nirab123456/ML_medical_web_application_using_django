@@ -460,7 +460,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'med_search' %}?clickButton=true">
+                                                <a href="{% url 'med_search' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">FIND DRUG/DETAILS</h5>
@@ -468,7 +468,6 @@ https://templatemo.com/tm-590-topic-listing
                                                             <p class="mb-0">Use A Brand Name Or Generic Name Select The Dosage Form & Strength </p>
                                                         </div>
 
-                                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
                                                     </div>
 
                                                     <img src="{% main_template 'images/topics/drug_find.png' %}" class="custom-block-image img-fluid" alt="">
@@ -478,38 +477,36 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'med_search' %}">
+                                                <a href="{% url 'presciption_classification_beta' %}">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">PRESCIPTION CLASSIFICATION/MED BOT</h5>
+                                                            <h5 class="mb-2">PRESCIPTION CLASSIFICATION</h5>
 
-                                                                <p class="mb-0"> Just Simply Use A Brand Name Or Generic Name To Get The Drug Info</p>
+                                                            <p class="mb-0">Provide all the brand name of drugs to classify them in common classes</p>
                                                         </div>
 
-                                                        <span class="badge bg-design rounded-pill ms-auto">75</span>
                                                     </div>
 
-                                                    <img src="{% main_template 'images/topics/drug_details.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    <img src="{% main_template 'images/topics/presciption_classification_1.png' %}" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-4 col-md-6 col-12">
                                             <div class="custom-block bg-white shadow-lg">
+                                                <a href="javascript:void(0);" onclick="goToMedSearch()">
+
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">Search Through Generic Name</h5>
+                                                            <h5 class="mb-2">MED BOT</h5>
 
-                                                                <p class="mb-0">You can also search your drug and its details using generic name</p>
-                                                                <a href="{% url 'medicine_details_generic' %}"><button style="margin-top: 5px;" class="mycustom-btn btn-12"><span>Search!</span><span>DETAILS</span></button></a>
-                                                                <a href="{% url 'med_search_generic' %}"><button style="margin-top: 5px; margin-left: 10px;" class="mycustom-btn btn-13"><span>Search!</span><span>DRUGS</span></button></a>
-
+                                                            <p>Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
                                                         </div>
 
-                                                        <span class="badge bg-design rounded-pill ms-auto">100</span>
                                                     </div>
                                                     
-                                                    <img src="{% main_template 'images/topics/generic_search.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    <img src="{% main_template 'images/topics/presciption_classification.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
                                             </div>
                                         </div>
 
@@ -518,7 +515,11 @@ https://templatemo.com/tm-590-topic-listing
 
                                     </div>
                                 </div>
-
+                                <script>
+                                    function goToMedSearch() {
+                                        window.location.href = "{% url 'med_search' %}" + "?clickButton=true";
+                                    }
+                                </script>
                                 <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
 
                                     
@@ -591,18 +592,40 @@ https://templatemo.com/tm-590-topic-listing
 
                                   </div>
 
-                                <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
+                                <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   
+                                    <div class="row">
+
+
+
+
+
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'med_search' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">FIND DRUG/DETAILS</h5>
+
+                                                            <p class="mb-0">Use A Brand Name Or Generic Name Select The Dosage Form & Strength </p>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <img src="{% main_template 'images/topics/drug_find.png' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
                                                 <a href="{% url 'presciption_classification_beta' %}">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">Presciption Classification</h5>
+                                                            <h5 class="mb-2">PRESCIPTION CLASSIFICATION</h5>
 
                                                             <p class="mb-0">Provide all the brand name of drugs to classify them in common classes</p>
                                                         </div>
 
-                                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
                                                     </div>
 
                                                     <img src="{% main_template 'images/topics/presciption_classification_1.png' %}" class="custom-block-image img-fluid" alt="">
@@ -610,36 +633,30 @@ https://templatemo.com/tm-590-topic-listing
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="custom-block custom-block-overlay">
-                                                <div class="d-flex flex-column h-100">
-                                                    <img src="{% main_template 'images/topics/presciption_classification.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="javascript:void(0);" onclick="goToMedSearch()">
 
-                                                    <div class="custom-block-overlay-text d-flex">
+                                                    <div class="d-flex">
                                                         <div>
-                                                            <h5 class="text-white mb-2">Talk with drug</h5>
+                                                            <h5 class="mb-2">MED BOT</h5>
 
-                                                            <p class="text-white">Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
-
-                                                            <a href="javascript:void(0);" onclick="goToMedSearch()" class="btn custom-btn mt-2 mt-lg-3">LET'S TALK WITH DRUGS</a>
+                                                            <p>Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
                                                         </div>
 
-                                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
                                                     </div>
-
-
-
-                                                    <div class="section-overlay"></div>
-                                                </div>
+                                                    
+                                                    <img src="{% main_template 'images/topics/presciption_classification.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
                                             </div>
                                         </div>
+
+
+
+
                                     </div>
                                 </div>
-                                <script>
-                                    function goToMedSearch() {
-                                        window.location.href = "{% url 'med_search' %}" + "?clickButton=true";
-                                    }
-                                </script>
+
                                 <div class="tab-pane faq-section section-padding" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
                                     <div class="row">
 
