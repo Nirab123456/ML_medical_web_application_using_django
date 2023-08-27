@@ -460,10 +460,10 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'med_search' %}">
+                                                <a href="{% url 'med_search' %}?clickButton=true">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">FIND ALTERNATE DRUG</h5>
+                                                            <h5 class="mb-2">FIND DRUG/DETAILS</h5>
 
                                                             <p class="mb-0">Use A Brand Name Or Generic Name Select The Dosage Form & Strength </p>
                                                         </div>
@@ -478,10 +478,10 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'medicine_details' %}">
+                                                <a href="{% url 'med_search' %}">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">FIND DEUG DETAILS</h5>
+                                                            <h5 class="mb-2">PRESCIPTION CLASSIFICATION/MED BOT</h5>
 
                                                                 <p class="mb-0"> Just Simply Use A Brand Name Or Generic Name To Get The Drug Info</p>
                                                         </div>
@@ -621,31 +621,13 @@ https://templatemo.com/tm-590-topic-listing
 
                                                             <p class="text-white">Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
 
-                                                            <a href="{% url 'medicine_chatbot' %}" class="btn custom-btn mt-2 mt-lg-3">LET'S TALK WITH DRUGS</a>
+                                                            <a href="javascript:void(0);" onclick="goToMedSearch()" class="btn custom-btn mt-2 mt-lg-3">LET'S TALK WITH DRUGS</a>
                                                         </div>
 
                                                         <span class="badge bg-finance rounded-pill ms-auto">25</span>
                                                     </div>
 
-                                                    <div class="social-share d-flex">
-                                                        <p class="text-white me-4">Share:</p>
 
-                                                        <ul class="social-icon">
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-twitter"></a>
-                                                            </li>
-
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-facebook"></a>
-                                                            </li>
-
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-pinterest"></a>
-                                                            </li>
-                                                        </ul>
-
-                                                        <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
-                                                    </div>
 
                                                     <div class="section-overlay"></div>
                                                 </div>
@@ -653,7 +635,11 @@ https://templatemo.com/tm-590-topic-listing
                                         </div>
                                     </div>
                                 </div>
-
+                                <script>
+                                    function goToMedSearch() {
+                                        window.location.href = "{% url 'med_search' %}" + "?clickButton=true";
+                                    }
+                                </script>
                                 <div class="tab-pane faq-section section-padding" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
                                     <div class="row">
 

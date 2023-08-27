@@ -317,6 +317,18 @@ th, td {
 
     <script src="{% main_template 'js/custom.js' %}"></script>
 
+<script>
+
+    // Check if the URL parameter is present
+    const urlParams = new URLSearchParams(window.location.search);
+    const clickButton = urlParams.get('clickButton');
+
+    // If the parameter is present and set to "true", trigger the button click
+    if (clickButton === 'true') {
+        document.getElementById("finance-tab").click();
+    }
+    
+</script>
 
 
 
