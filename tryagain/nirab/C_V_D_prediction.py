@@ -123,13 +123,3 @@ class C_V_D_PREDICTION():
             output = output[0]
             print('output_results:', output)
             return output
-
-
-
-                     
-
-
-
-
-
-

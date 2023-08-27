@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Record, Event, EventVenue, EventAttendee , RecordImage,Record_mail_me,SocialMedia,Medication,MedicationDetails
-from .models import med_Ques_Ans,SELECTED_QUESTION_ANSWER,Presciption_drug_class,MENTAL_HEALTH_PREDICTION_MODEL,PERSONAL_DIARY
+from .models import med_Ques_Ans,SELECTED_QUESTION_ANSWER,Presciption_drug_class,MENTAL_HEALTH_PREDICTION_MODEL,PERSONAL_DIARY,PHENOMONIA_PREDICTION
 
 # Register your models here.
 
@@ -21,6 +21,14 @@ class PERSONAL_DIARYAdmin(admin.ModelAdmin):
     list_filter = ('title', 'content', 'id')
     ordering = ('title',)
     search_fields = ('title', 'content', 'id')
+
+@admin.register(PHENOMONIA_PREDICTION)
+class PHENOMONIA_PREDICTIONAdmin(admin.ModelAdmin):
+    list_display=('user','image','prediction','created_at')
+    list_filter=('user','image','prediction','created_at')
+    ordering=('user',)
+    search_fields=('user','image','prediction','created_at')
+    
 
 
 

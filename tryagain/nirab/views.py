@@ -25,6 +25,8 @@ from .mental_health_prediction import MENTAL_HEALTH
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from datetime import timedelta
+from .phenomonia_prediction import PHENOMONIA_PREDICTION_CLASS
+
 
 def trial(request):
     return render(request, 'trial.html')
@@ -105,6 +107,11 @@ def main_bmi_calculator(request):
 def get_C_V_D_prediction(request):
     C_V_D_PREDICTION_ = C_V_D_PREDICTION(request=request)
     return C_V_D_PREDICTION_.get_C_V_D_prediction()
+
+def phenomonia_prediction(request): 
+    PHENOMONIA_PREDICTION=PHENOMONIA_PREDICTION_CLASS(request=request)
+    return PHENOMONIA_PREDICTION.phenomonia_prediction()
+
 
 def med_search(request):
     T_M_S = TOTAL_MEDICINE_SEARCH(request=request)

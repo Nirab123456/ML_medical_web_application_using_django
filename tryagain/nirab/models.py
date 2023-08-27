@@ -8,6 +8,24 @@ from django.dispatch import receiver
 
 
 
+class PHENOMONIA_PREDICTION(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='phenomonia_prediction', null=True)
+    image = models.ImageField(upload_to='images/phenomonia_prediction/', null=True, blank=True)
+    prediction = models.CharField(max_length=200, null=True, blank=True)
+    image_count = models.IntegerField(default=0)
+    allowed_image_count = models.IntegerField(default=500)
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return f'{self.user}'
+
+
+
+
+
+
+
+
 """INDICATION_DESCRIPTION:all the use cases of{G_N}? ==A_T_U_C
 side effect description :all side effects of {G_N}? == A_S_E_C
 pharmacological description:all mechanism of action {G_N}? == A_M_O_C

@@ -2,8 +2,28 @@ from django.contrib.auth.forms import (UserCreationForm, UserChangeForm, Passwor
                                        PasswordResetForm, SetPasswordForm, AuthenticationForm)
 from django.contrib.auth.models import User 
 from django import forms
-from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,SocialMedia,Medication,handwritten_text_model,MENTAL_HEALTH_PREDICTION_MODEL,PERSONAL_DIARY
+from .models import Record, Event, EventVenue, EventAttendee,RecordImage,Record_mail_me,SocialMedia,Medication,handwritten_text_model,MENTAL_HEALTH_PREDICTION_MODEL,PERSONAL_DIARY,PHENOMONIA_PREDICTION
 from django.forms import ModelForm
+
+
+
+
+class phenomonia_prediction_form(forms.ModelForm):
+    image = forms.ImageField(required=True,label="",widget=forms.FileInput(attrs={'class':'form-control'}))
+    prediction = forms.CharField(required=False,max_length=100,label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Prediction'}))
+    class Meta:
+        model = PHENOMONIA_PREDICTION
+        fields = ['image','prediction']
+        widgets = {
+            'image': forms.FileInput(attrs={'class':'form-control','placeholder':'Image'}),
+            'prediction': forms.TextInput(attrs={'class':'form-control','placeholder':'Prediction'}),
+        }
+
+
+
+
+
+
 
 
 

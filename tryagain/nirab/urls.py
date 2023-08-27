@@ -92,7 +92,7 @@ urlpatterns = [
     path('main_bmi_calculator/', views.main_bmi_calculator, name='main_bmi_calculator'),
     path('C_V_D_prediction/', views.C_V_D_prediction, name='C_V_D_prediction'),
     path('get_C_V_D_prediction/', views.get_C_V_D_prediction, name='get_C_V_D_prediction'),
-
+    path('phenomonia_prediction/', views.phenomonia_prediction, name='phenomonia_prediction'),
 
 
     path('personal_diary_input/', views.personal_diary_input, name='personal_diary_input'),

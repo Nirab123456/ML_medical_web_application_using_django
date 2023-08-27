@@ -417,21 +417,29 @@ select::-ms-expand {
 
                             <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
                                 <div class="row">
-                                    <div class="mb-4 mb-lg-3">
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
-                                                    <div>
-                                                        <h5 class="mb-2">BMI CALCULATOR</h5>
-
-                                                        <p class="mb-0">CALCULATE YOUR BODY MASS INDEX</p>
-                                                    </div>
-
+                                                    {% include 'image_prev.html' %}
                                                 </div>
-
-
 
                                         </div>
                                     </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="{% url 'base_ocr' %}">
+                                                <div class="d-flex">
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+
 
 
                                 </div>
