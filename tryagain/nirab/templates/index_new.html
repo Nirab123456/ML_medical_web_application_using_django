@@ -433,13 +433,13 @@ https://templatemo.com/tm-590-topic-listing
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">PRESCIPTION KNOWLEDGE</button>
+                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">HEALTH CARE</button>
                             </li>
 
 
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">HEALTH CARE</button>
+                                <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">DIERY/MENTAL HEALTH</button>
                             </li>
                         </ul>
                     </div>
@@ -604,14 +604,14 @@ https://templatemo.com/tm-590-topic-listing
                                                 <a href="{% url 'med_search' %}">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">FIND DRUG/DETAILS</h5>
+                                                            <h5 class="mb-2">PNEUMONIA DETECTION</h5>
 
-                                                            <p class="mb-0">Use A Brand Name Or Generic Name Select The Dosage Form & Strength </p>
+                                                            <p class="mb-0">This prediction model is built on pytorch using varified Dataset from kagle and achived 98% accuracy in validation and testing.</p>
                                                         </div>
 
                                                     </div>
 
-                                                    <img src="{% main_template 'images/topics/drug_find.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    <img src="{% main_template 'images/topics/pneumonia.jpg' %}" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -621,14 +621,14 @@ https://templatemo.com/tm-590-topic-listing
                                                 <a href="{% url 'presciption_classification_beta' %}">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">PRESCIPTION CLASSIFICATION</h5>
+                                                            <h5 class="mb-2">CVD DETECTION</h5>
 
-                                                            <p class="mb-0">Provide all the brand name of drugs to classify them in common classes</p>
+                                                            <p class="mb-0">Answer some of our simple questions to measure the approximate CARDIO VASCULAR DISEASE provabality</p>
                                                         </div>
 
                                                     </div>
 
-                                                    <img src="{% main_template 'images/topics/presciption_classification_1.png' %}" class="custom-block-image img-fluid" alt="">
+                                                    <img src="{% main_template 'images/topics/cvd_prediction_1.png' %}" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -639,14 +639,14 @@ https://templatemo.com/tm-590-topic-listing
 
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">MED BOT</h5>
+                                                            <h5 class="mb-2">BMI CALCULATION</h5>
 
-                                                            <p>Ai model has been used and have been trained to answer your question about a specified drug or with a list of drugs</p>
+                                                            <p>We are using a reference system of NSH for calculating BMI</p>
                                                         </div>
 
                                                     </div>
                                                     
-                                                    <img src="{% main_template 'images/topics/presciption_classification.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                                    <img src="{% main_template 'images/topics/bmi_calculator.png' %}" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -748,41 +748,66 @@ https://templatemo.com/tm-590-topic-listing
 
                                 <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
                                     <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+
+
+
+
+
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'C_V_D_prediction' %}">
+                                                <a href="{% url 'med_search' %}">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">C.V.D PREDICTION</h5>
+                                                            <h5 class="mb-2">DIERY INPUT/EDIT DIERY</h5>
 
-                                                            <p class="mb-0">Answer some of our simple questions to measure the approximate CARDIO VASCULAR DISEASE provabality</p>
-
-                                                        </div>
-
-                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
-                                                    </div>
-
-                                                    <img src="{% main_template 'images/topics/cvd_prediction_1.png' %}" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'predict_mental_health' %}">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">MENTAL HEALTH CARE</h5>
-
-                                                            <p class="mb-0">This is a multifunctional feature which can predict your mental health from your daily diery</p>
+                                                            <p class="mb-0">We are offering a multifunctional diery input mechanism which can be used in several ways</p>
                                                         </div>
 
                                                     </div>
 
-                                                    <img src="{% main_template 'images/topics/mental_health.jpg' %}" class="custom-block-image img-fluid" alt="">
+                                                    <img src="{% main_template 'images/topics/diery_input.png' %}" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
+
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="{% url 'presciption_classification_beta' %}">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">MENTAL STATE CLASSIFICATION</h5>
+
+                                                            <p class="mb-0">A sentiment classification model has been use to properly segment each diery object in 28 sectors</p>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <img src="{% main_template 'images/topics/mental_state.png' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="#">
+
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">ENGLISH PROFECIENCY CLASIFICATION <h5>
+
+                                                            <p style="color: brown;">This feature is currently unavailable we are trying heard to bring it on.</p>
+                                                        </div>
+
+                                                    </div>
+                                                    
+                                                    <img src="{% main_template 'images/topics/eng_profeciency.png' %}" class="custom-block-image img-fluid" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+
+
                                     </div>
                                 </div>
                             </div>
