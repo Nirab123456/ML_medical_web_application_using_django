@@ -9,6 +9,12 @@
 
 <style>
 
+img{
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
+}
+
 .container_image_X_P{
   height: 350px;
   width: 430px;
@@ -102,32 +108,51 @@
 
      <body>
       <form action="{% url 'phenomonia_prediction' %}" method="POST" enctype="multipart/form-data" id="upload-form">
-        {% csrf_token %}
-        <div class="container_image_X_P">
-           <div class="wrapper">
-              <div class="image">
-                 <img name="image" src="" alt="">
-              </div>
-              <div class="content">
-                 <div class="icon">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                 </div>
-                 <div class="text">
-                    No file chosen, yet!
-                 </div>
-              </div>
-              <div id="cancel-btn">
-                 <i class="fas fa-times"></i>
-              </div>
-              <div class="file-name">
-                 File name here
-              </div>
-           </div>
-           <button type="submit" >Submit</button>
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                <div class="custom-block bg-white shadow-lg">
+                    {% csrf_token %}
+                    <div class="container_image_X_P">
+                      <div class="wrapper">
+                          <div class="image">
+                            <img name="image" src="" alt="">
+                          </div>
+                          <div class="content">
+                            <div class="icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="text">
+                                No file chosen, yet!
+                            </div>
+                          </div>
+                          <div id="cancel-btn">
+                            <i class="fas fa-times"></i>
+                          </div>
+                          <div class="file-name">
+                            File name here
+                          </div>
+                      </div>
+                      <button type="button" id="custom-btn">Choose a file</button>
+                      <input id="default-btn" type="file" hidden name="image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+              <div class="custom-block bg-white shadow-lg">
+                
+                <button style="margin-top: 15px;" class="btn-lg custom-btn btn-6">Submit</button>
 
-           <button type="button" id="custom-btn">Choose a file</button>
-           <input id="default-btn" type="file" hidden name="image">
+                {% if image_path %}
+                <img src="{{ image_path }}" >
+                {% endif %}
+
+
+
+
+                </div>
+            </div>
         </div>
+
       </form>
       <script>
         const wrapper = document.querySelector(".wrapper");
