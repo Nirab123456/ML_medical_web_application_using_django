@@ -611,7 +611,20 @@ select::-ms-expand {
     
     
     </script>
+    <script>
 
+        // Check if the URL parameter is present
+        const urlParams = new URLSearchParams(window.location.search);
+        const clickButton = urlParams.get('cvd_button');
+
+        // If the parameter is present and set to "true", trigger the button click
+        if (clickButton === 'true') {
+            document.getElementById("finance-tab").click();
+        }else if(clickButton === 'bmi'){
+            document.getElementById("marketing-tab").click();
+        }
+        
+    </script>
 </body>
 
 </html>

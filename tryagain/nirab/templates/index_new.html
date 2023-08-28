@@ -601,7 +601,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'med_search' %}">
+                                                <a href="javascript:void(1);" onclick="C_V_D_X_RAY_PNU()">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">PNEUMONIA DETECTION</h5>
@@ -615,10 +615,14 @@ https://templatemo.com/tm-590-topic-listing
                                                 </a>
                                             </div>
                                         </div>
-
+                                            <script>
+                                                function C_V_D_X_RAY_PNU() {
+                                                    window.location.href = "{% url 'C_V_D_prediction' %}" + "?cvd_button=true";
+                                                }
+                                            </script>
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'presciption_classification_beta' %}">
+                                                <a href="{% url 'C_V_D_prediction' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">CVD DETECTION</h5>
@@ -635,7 +639,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="javascript:void(0);" onclick="goToMedSearch()">
+                                                <a href="javascript:void(2);" onclick="C_V_D_X_RAY_BMI()">
 
                                                     <div class="d-flex">
                                                         <div>
@@ -651,7 +655,11 @@ https://templatemo.com/tm-590-topic-listing
                                             </div>
                                         </div>
 
-
+                                        <script>
+                                            function C_V_D_X_RAY_BMI() {
+                                                window.location.href = "{% url 'C_V_D_prediction' %}" + "?cvd_button=bmi" ;
+                                            }
+                                        </script>
 
 
                                     </div>
@@ -755,7 +763,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'med_search' %}">
+                                                <a href="{% url 'personal_diary_input' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">DIERY INPUT/EDIT DIERY</h5>
@@ -772,7 +780,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="{% url 'presciption_classification_beta' %}">
+                                                <a href="{% url 'predict_mental_health' %}">
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2">MENTAL STATE CLASSIFICATION</h5>
