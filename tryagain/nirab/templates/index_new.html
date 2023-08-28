@@ -342,67 +342,13 @@ https://templatemo.com/tm-590-topic-listing
 
 
             <section class="featured-section">
-                <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row">
 
-                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-                            <div class="custom-block bg-white shadow-lg">
-                                <a href="{% url 'base_ocr' %}">
-                                    <div class="d-flex">
-                                        <div>
-                                            <h5 class="mb-2">OCR & Transfer To Hand-Written</h5>
-
-                                            <p class="mb-0">Read And Transfer Your Optical Images To Text && Convert Your Optical Image to Handwritten Pdf.</p>
-                                        </div>
-
-                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
-                                    </div>
-
-                                    <img src="{% main_template 'images/OCR.png' %}" class="custom-block-image img-fluid" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-                            <div class="custom-block bg-white shadow-lg">
-                                <a href="{% url 'predict_mental_health' %}">
-                                    <div class="d-flex">
-                                        <div>
-                                            <h5 class="mb-2">MENTAL CARE</h5>
-
-                                            <p class="mb-0">We offer multifunctional mental care analysis which can also be used to evulate english profeciency</p>
-                                        </div>
-
-                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
-                                    </div>
-
-                                    <img src="{% main_template 'images/topics/mental_health.jpg' %}" class="custom-block-image img-fluid" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-                            <div class="custom-block bg-white shadow-lg">
-                                <a href="{% url 'med_search' %}">
-                                    <div class="d-flex">
-                                        <div>
-                                            <h5 class="mb-2">HEALTH CARE</h5>
-
-                                            <p class="mb-0">Get everything about drugs.Ai will help you for your query.You can find alternate medicines.</p>
-                                        </div>
-
-                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
-                                    </div>
-
-                                    <img src="{% main_template 'images/heatlt_care.jpg' %}" class="custom-block-image img-fluid" alt="">
-                                </a>
-                            </div>
-                        </div>
-
-
+                        {% include 'index_new_styling.html' %}
 
 
 
                     </div>
-                </div>
             </section>
 
 
