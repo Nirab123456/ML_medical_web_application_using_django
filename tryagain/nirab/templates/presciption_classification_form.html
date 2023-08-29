@@ -5,6 +5,13 @@
 <html lang="en">
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+            .hidden {
+            display: none;
+        }
+</style>
+
 </head>
 <body>
 
@@ -49,6 +56,14 @@
             </div>
             <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                 <div class="custom-block bg-white shadow-lg">
+                    <div class="row">
+                        <div class="col-2">
+                            <button class="btn custom-btn btn-danger" type="button" id="full_result_button">TOGGLE TO FULL RESULT</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn custom-btn " type="button" id="toggleButton">Toggle Matching Groups</button>
+                        </div>
+                    </div>
 
 
                     <div id="get_presciption_classification"></div>
@@ -187,6 +202,26 @@
           handleSelectionChange_P_C();
         }
     
+        function toggleMatchingGroups() {
+        var matchingGroups = document.querySelectorAll(".full-details");
+        for (var i = 0; i < matchingGroups.length; i++) {
+            matchingGroups[i].classList.toggle("hidden");
+        }
+        }
+
+        // Attach the toggle function to the button's click event
+        var toggleButton = document.getElementById("toggleButton");
+        toggleButton.addEventListener("click", toggleMatchingGroups);
+
+        function togglefullresults() {
+        var full_result = document.querySelectorAll(".full-result");
+        for (var i = 0; i < full_result.length; i++) {
+            full_result[i].classList.toggle("hidden");
+        }
+        }
+
+        var full_result_button = document.getElementById("full_result_button");
+        full_result_button.addEventListener("click", togglefullresults);
     
     
         function handleSelectionChange_P_C() {
