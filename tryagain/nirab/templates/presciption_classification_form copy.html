@@ -1,0 +1,202 @@
+{% load main_template %}
+{% block content %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <form method="POST" class="custom-form" id="brand_bot_form" action="#">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                <div class="custom-block bg-white shadow-lg">
+
+                        <p>Brand NAME</p>
+                        <p style="font-size: 14px; color: brown;">Please select deug name one by one</p>
+                        <div class="row" id="presciption_classification_input_container">
+                            
+                                <div class="col-2">
+                                    <input style="margin-top: 5px;" type="text" id="name_p_c-0" class="form-control" placeholder="e.g: NAPA" required oninput="showwordRecommendations_P_C(event,0)">
+                                </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="col-lg-12 col-12">
+                                    <div class="input-group input-group-lg">
+                                        <div id="wordRecommendations_P_C"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <a style="margin-top: 15px;" onclick="addNameField()" class="btn custom-btn btn-dark">Add Field</a>
+                        </div>
+                        
+
+                        
+                        <div class="row">
+                            <div class="col-2">
+                                <button style="margin-top: 15px;" class="custom-btn btn-12" onclick="handleFormSubmit_P_C(event)">Submit</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                <div class="custom-block bg-white shadow-lg">
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</body>
+    
+<script>
+    var numNameFields = 1;
+
+    function addNameField() {
+    var nameContainer = document.getElementById("presciption_classification_input_container");
+    var nameFieldContainer = document.createElement("div");
+    nameFieldContainer.className = "col-2"; // Assuming you want the same column size as other fields
+
+    var newInput = document.createElement("input");
+    newInput.className = "form-control";
+    newInput.type = "text";
+    newInput.name = "name_p_c-" + numNameFields;
+    newInput.id = "name_p_c-" + numNameFields;
+    newInput.placeholder = "e.g: NAPA";
+    newInput.required = true;
+    newInput.oninput = function(event) {
+        showwordRecommendations_P_C(event, numNameFields);
+    };
+
+    var deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "btn btn-danger";
+        deleteButton.textContent = "Remove";
+        deleteButton.style.marginBottom = "5px";
+        deleteButton.onclick = function() {
+            removeNameField(nameFieldContainer);
+        };
+
+    nameFieldContainer.appendChild(newInput);
+    nameFieldContainer.appendChild(deleteButton);
+    
+    // Find the last row div and insert the new container before it
+    var lastRowDiv = nameContainer.querySelector(".row:last-child > .col-2:last-child");
+    nameContainer.insertBefore(nameFieldContainer, lastRowDiv);
+
+    numNameFields++;
+}
+
+// Function to remove the clicked name field
+    function removeNameField(containerToRemove) {
+        var nameContainer = document.getElementById("presciption_classification_input_container");
+        nameContainer.removeChild(containerToRemove);
+    
+        numNameFields--;
+
+
+    }
+
+
+    // Global variable to store timeout references for each name field
+    var timeouts = {};
+
+
+
+    function showwordRecommendations_P_C(event, fieldNum) {
+        var input = event.target.value;
+        console.log(input);
+
+        // Clear previous timeout, if any
+        clearTimeout(timeouts[fieldNum]);
+        timeouts[fieldNum] = setTimeout(function() {
+        // Make an AJAX call to fetch word recommendations based on the input
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/get_word_recommendations/?input=' + encodeURIComponent(input), true);
+        xhr.onload = function() {
+
+
+
+
+            if (xhr.status === 200) {
+            var wordRecommendations_P_C = JSON.parse(xhr.responseText);
+    
+            // Display word recommendations in a list
+            // var recommendationsHtml = "<select class=' my-custom-input-group form-select' aria-label='Default select example'  onchange='selectRecommendation_M_B()'>";
+
+            var recommendationsHtml = `<label class="label">Select the drug</label>
+            <select class='form-control' style='margin-top: 5px; margin-bottom: 5px;'  onchange='selectRecommendation_M_B()'>`;
+                if (wordRecommendations_P_C.length !== 0) {
+                for (var i = 0; i < wordRecommendations_P_C.length; i++) {
+                    var word = wordRecommendations_P_C[i];
+                    recommendationsHtml += '<option value="' + word + '">' + word + '</option>';
+                }
+                } else {
+                recommendationsHtml += '<option value="">USE A PROPER BRAND NAME</option>';
+                }
+
+
+
+
+                recommendationsHtml += "</select>";
+            document.getElementById("wordRecommendations_P_C").innerHTML = recommendationsHtml;
+            } 
+            
+            
+            
+            else {
+            console.error('Request failed. Status:', xhr.status);
+            // Display no recommendations for error cases
+            document.getElementById("wordRecommendations_P_C").innerHTML = "";
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Request failed. Network error');
+            // Display no recommendations for network errors
+            document.getElementById("wordRecommendations_P_C").innerHTML = "";
+        };
+        xhr.send();
+        }, 300); // Adjust the delay as needed (in milliseconds)
+
+
+    }
+    
+    // Function to select a word recommendation and populate the input field with it
+    function selectRecommendation_M_B() {
+        var selectElement = document.querySelector("select");
+        var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+        document.getElementById("name_p_c-" + (numNameFields - 1)).value = selectedOption;
+    }
+    
+    
+        function handleFormSubmit_P_C(event) {
+          event.preventDefault(); // Prevent the form from being submitted traditionally
+          handleSelectionChange_P_C();
+        }
+    
+    
+    
+        function handleSelectionChange_P_C() {
+          var nameInputs = document.querySelectorAll("#presciption_classification_input_container input");
+          var drugNames = [];
+          for (var i = 0; i < nameInputs.length; i++) {
+              drugNames.push(encodeURIComponent(nameInputs[i].value));
+          }
+          console.log('drugNames', drugNames)
+        //   console.log(drugNames);
+
+        }
+
+</script>
+</html>
+{% endblock %}
